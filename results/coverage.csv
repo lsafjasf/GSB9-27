@@ -1,0 +1,4 @@
+method,n_per_rep,reps,coverage_95,mean_stderr
+crude,4000,400,0.9675,8.387591e-02
+stratified,4000,400,0.9625,2.332982e-02
+control_variate,4000,400,0.9350,3.015466e-02

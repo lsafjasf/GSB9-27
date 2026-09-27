@@ -1,0 +1,5 @@
+method,n,estimate,stderr,variance_reduction,elapsed_s
+crude,200000,8.72895619,1.184821e-02,1,0.0975
+stratified(8/dim),200000,8.71870472,1.644827e-03,51.89,0.0983
+control_variate,200000,8.71367303,4.242433e-03,7.8,0.1484
+importance(matched),200000,8.71721162,2.947101e-19,1.616e+33,0.1503
