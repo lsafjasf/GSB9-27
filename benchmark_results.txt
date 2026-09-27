@@ -1,0 +1,25 @@
+== 快速实现（NN-chain + Lance-Williams, O(n^2)）==
+       n   method    time(s)  peakRSS(MB)     matrix(MB)
+    1000   single      0.181         16.3              4
+    1000  average      0.194         16.3              4
+    2000   single      0.865         28.3             16
+    2000  average      0.814         28.4             16
+    4000   single      3.290         75.3             64
+    4000  average      3.546         75.4             64
+    6000   single      7.892        153.1            144
+    6000  average      8.783        152.9            144
+    8000   single     14.364        260.8            256
+    8000  average     16.599        260.8            256
+   10000   single     22.692        398.9            400
+   10000  average     25.302        398.9            400
+   12000   single     33.851        568.4            576
+   12000  average     36.146        568.4            576
+
+== 朴素实现（每步全量重算, O(n^3) 时间 / O(n^2) 距离重算）==
+       n   method    time(s)  peakRSS(MB)
+     100   single      0.031         11.9
+     100  average      0.032         11.8
+     200   single      0.238         12.0
+     200  average      0.257         12.0
+     400   single      1.971         12.8
+     400  average      2.304         12.6

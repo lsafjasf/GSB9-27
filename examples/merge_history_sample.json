@@ -1,0 +1,89 @@
+{
+  "method": "average",
+  "n_points": 8,
+  "points": [
+    [
+      0.0,
+      0.0
+    ],
+    [
+      1.0,
+      0.2
+    ],
+    [
+      0.3,
+      1.0
+    ],
+    [
+      10.0,
+      0.0
+    ],
+    [
+      10.5,
+      0.8
+    ],
+    [
+      0.0,
+      10.0
+    ],
+    [
+      0.8,
+      10.4
+    ],
+    [
+      0.2,
+      11.0
+    ]
+  ],
+  "merges": [
+    {
+      "step": 0,
+      "cluster1": 6,
+      "cluster2": 7,
+      "distance": 0.848528,
+      "size": 2
+    },
+    {
+      "step": 1,
+      "cluster1": 3,
+      "cluster2": 4,
+      "distance": 0.943398,
+      "size": 2
+    },
+    {
+      "step": 2,
+      "cluster1": 5,
+      "cluster2": 8,
+      "distance": 0.957116,
+      "size": 3
+    },
+    {
+      "step": 3,
+      "cluster1": 0,
+      "cluster2": 1,
+      "distance": 1.019804,
+      "size": 2
+    },
+    {
+      "step": 4,
+      "cluster1": 2,
+      "cluster2": 11,
+      "distance": 1.053523,
+      "size": 3
+    },
+    {
+      "step": 5,
+      "cluster1": 9,
+      "cluster2": 12,
+      "distance": 9.834159,
+      "size": 5
+    },
+    {
+      "step": 6,
+      "cluster1": 10,
+      "cluster2": 13,
+      "distance": 11.706462,
+      "size": 8
+    }
+  ]
+}
