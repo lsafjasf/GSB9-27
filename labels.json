@@ -1,0 +1,83 @@
+{
+  "comment": "人工标注的克隆对拍数据。clone=true 为语义克隆(应检出), false 为负样本(不应检出)。键格式: 文件名::函数名",
+  "pairs": [
+    {
+      "a": "exact_clone.py::compute_discount",
+      "b": "exact_clone.py::compute_discount_v2",
+      "clone": true,
+      "kind": "完全重复"
+    },
+    {
+      "a": "renamed_clone.py::average_score",
+      "b": "renamed_clone.py::mean_rating",
+      "clone": true,
+      "kind": "重命名"
+    },
+    {
+      "a": "reordered_clone.py::build_report",
+      "b": "reordered_clone.py::make_summary",
+      "clone": true,
+      "kind": "语句换序"
+    },
+    {
+      "a": "partial_overlap.py::import_users",
+      "b": "partial_overlap.py::import_customers",
+      "clone": true,
+      "kind": "部分重叠"
+    },
+    {
+      "a": "renamed_clone.py::average_score",
+      "b": "other_module.py::calc_mean_value",
+      "clone": true,
+      "kind": "跨文件重命名"
+    },
+    {
+      "a": "renamed_clone.py::mean_rating",
+      "b": "other_module.py::calc_mean_value",
+      "clone": true,
+      "kind": "跨文件重命名"
+    },
+    {
+      "a": "similar_not_clone.py::flatten_matrix",
+      "b": "similar_not_clone.py::transpose_matrix",
+      "clone": false,
+      "kind": "结构相似/功能不同"
+    },
+    {
+      "a": "similar_not_clone.py::moving_average",
+      "b": "similar_not_clone.py::find_peaks",
+      "clone": false,
+      "kind": "结构相似/功能不同"
+    },
+    {
+      "a": "small_blocks.py::get_name",
+      "b": "small_blocks.py::get_title",
+      "clone": false,
+      "kind": "小块雷同(应由min-tokens过滤)"
+    },
+    {
+      "a": "small_blocks.py::add",
+      "b": "small_blocks.py::mul",
+      "clone": false,
+      "kind": "小块雷同(应由min-tokens过滤)"
+    },
+    {
+      "a": "exact_clone.py::compute_discount",
+      "b": "renamed_clone.py::average_score",
+      "clone": false,
+      "kind": "无关函数"
+    },
+    {
+      "a": "partial_overlap.py::import_users",
+      "b": "similar_not_clone.py::flatten_matrix",
+      "clone": false,
+      "kind": "无关函数"
+    },
+    {
+      "a": "reordered_clone.py::build_report",
+      "b": "similar_not_clone.py::moving_average",
+      "clone": false,
+      "kind": "无关函数"
+    }
+  ]
+}
