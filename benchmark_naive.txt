@@ -1,0 +1,6 @@
+naive reference (full recompute every step, dim=2)
+      n |  single(s) average(s)
+     50 |       0.02       0.02
+    100 |       0.15       0.15
+    200 |       1.24       1.22
+    400 |       9.80       9.90
