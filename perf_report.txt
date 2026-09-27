@@ -1,0 +1,3 @@
+=== Lookup performance ===
+nodes=10 vnodes/weight=160 ring_points=1600: 1000000 lookups in 0.678s -> 678 ns/op (1.47 M lookups/s)
+nodes=10 vnodes/weight=1000 ring_points=10000: 1000000 lookups in 0.748s -> 748 ns/op (1.34 M lookups/s)

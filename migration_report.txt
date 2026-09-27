@@ -1,0 +1,10 @@
+=== Migration ratio: measured vs theoretical lower bound ===
+nodes=10 equal-weight, keys=200000, vnodes_per_weight=160
+operation                  measured   theory_min   unrelated_mv
+add 1 node (w=1)            8.7030%      9.0909%              0
+remove 1 node (w=1)         8.9705%     10.0000%              0
+add 1 node (w=3)           23.5140%     23.0769%              0
+
+unrelated_mv = keys that moved between two UNAFFECTED nodes (must be 0: consistent hashing never migrates them).
+theory_min = share of key space the added/removed node must own:
+  add w to total W -> w/(W+w);  remove w from W -> w/W.
