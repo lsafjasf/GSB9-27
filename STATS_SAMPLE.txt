@@ -1,0 +1,74 @@
+############################################################
+# Sample 1: stop-and-wait ARQ under 10% bidirectional loss
+# Command: python3 demo_protocol.py
+############################################################
+seed: 4242  payload: 32768 bytes
+md5(payload)  = bfe8057cb0d6aa76f01a997234d2302e
+md5(received) = bfe8057cb0d6aa76f01a997234d2302e
+integrity ok  : True  bytes: 32768
+finish time   : 6.737 simulated seconds
+
+injection statistics:
+direction          sent       lost      loss%  delivered       dups   reorders     avg(s)     p95(s)     p99(s)     max(s)
+downlink             42          7     0.1667         35          0          0     0.0505     0.0584     0.0590     0.0590
+uplink               35          3     0.0857         32          0          0     0.0502     0.0598     0.0599     0.0599
+
+protocol statistics:
+{
+  "ack_sent": 35,
+  "avg_attempts_per_chunk": 1.3125,
+  "chunks_total": 32,
+  "data_retransmits": 10,
+  "data_sent": 42,
+  "duplicate_data_received": 0,
+  "finish_time": 6.736563,
+  "max_attempts_for_one_chunk": 3,
+  "stale_acks_received": 0,
+  "stale_data_received": 3,
+  "timeouts": 10
+}
+
+############################################################
+# Sample 2: time-segmented injection profile
+# Command: python3 demo_segments.py
+############################################################
+seed: 20260928
+simulated duration: 7.596 s
+
+direction         sent       lost      loss%  delivered       dups   reorders     avg(s)     p95(s)     p99(s)     max(s)
+downlink           150         10     0.0667        140          2         10     0.0852     0.1454     0.3028     0.3445
+uplink              75          3     0.0400         72          0          0     0.0202     0.0248     0.0250     0.0250
+
+observed downlink seq inversions at receiver: 8 (tracked reorders: 10 )
+
+json stats:
+{
+  "downlink": {
+    "avg_delay": 0.085222,
+    "delivered": 140,
+    "direction": "downlink",
+    "duplicate_deliveries": 2,
+    "loss_rate": 0.066667,
+    "lost": 10,
+    "max_delay": 0.34454,
+    "p50_delay": 0.077308,
+    "p95_delay": 0.145407,
+    "p99_delay": 0.302833,
+    "reorders": 10,
+    "sent": 150
+  },
+  "uplink": {
+    "avg_delay": 0.020223,
+    "delivered": 72,
+    "direction": "uplink",
+    "duplicate_deliveries": 0,
+    "loss_rate": 0.04,
+    "lost": 3,
+    "max_delay": 0.02497,
+    "p50_delay": 0.020265,
+    "p95_delay": 0.024789,
+    "p99_delay": 0.02497,
+    "reorders": 0,
+    "sent": 75
+  }
+}
