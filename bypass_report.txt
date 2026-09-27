@@ -1,0 +1,189 @@
+==============================================================================
+绕过用例集检出报告  (黑名单: admin / root / café / cafe+́ / ̀admin / a+̀̕)
+==============================================================================
+
+[B01] 同形替换：西里尔 а 替换拉丁 a
+  输入     : 'аdmin'
+  码位     : U+0430 U+0064 U+006D U+0069 U+006E
+  比较键   : 'admin'
+  发现     : mixed_script @0 [U+0430] CYRILLIC SMALL LETTER A :: 同形混用：['CYRILLIC', 'LATIN'] 字母混排，可疑字符骨架映射为 'a'
+  策略[严格(全部REJECT)] -> 拒绝(mixed_script)
+  策略[宽松(全部WARN)] -> 放行(命中黑名单), 净化后='аdmin'
+  策略[默认(混合策略)] -> 拒绝(mixed_script)
+
+[B02] 同形替换：西里尔 і 替换拉丁 i
+  输入     : 'admіn'
+  码位     : U+0061 U+0064 U+006D U+0456 U+006E
+  比较键   : 'admin'
+  发现     : mixed_script @3 [U+0456] CYRILLIC SMALL LETTER BYELORUSSIAN-UKRAINIAN I :: 同形混用：['CYRILLIC', 'LATIN'] 字母混排，可疑字符骨架映射为 'i'
+  策略[严格(全部REJECT)] -> 拒绝(mixed_script)
+  策略[宽松(全部WARN)] -> 放行(命中黑名单), 净化后='admіn'
+  策略[默认(混合策略)] -> 拒绝(mixed_script)
+
+[B03] 同形替换：希腊 α 替换拉丁 a
+  输入     : 'αdmin'
+  码位     : U+03B1 U+0064 U+006D U+0069 U+006E
+  比较键   : 'admin'
+  发现     : mixed_script @0 [U+03B1] GREEK SMALL LETTER ALPHA :: 同形混用：['GREEK', 'LATIN'] 字母混排，可疑字符骨架映射为 'a'
+  策略[严格(全部REJECT)] -> 拒绝(mixed_script)
+  策略[宽松(全部WARN)] -> 放行(命中黑名单), 净化后='αdmin'
+  策略[默认(混合策略)] -> 拒绝(mixed_script)
+
+[B04] 同形混用：西里尔 а/м + 罗马数字 ⅰ
+  输入     : 'аdмⅰn'
+  码位     : U+0430 U+0064 U+043C U+2170 U+006E
+  比较键   : 'admin'
+  发现     : mixed_script @0 [U+0430] CYRILLIC SMALL LETTER A :: 同形混用：['CYRILLIC', 'LATIN'] 字母混排，可疑字符骨架映射为 'a'
+  发现     : folded :: NFKC 兼容性折叠会改变该字符串（全角/兼容字符等）
+  策略[严格(全部REJECT)] -> 拒绝(folded,mixed_script)
+  策略[宽松(全部WARN)] -> 放行(命中黑名单), 净化后='аdмⅰn'
+  策略[默认(混合策略)] -> 拒绝(mixed_script)
+
+[B05] 全角大写拼出 ROOT
+  输入     : 'ＲＯＯＴ'
+  码位     : U+FF32 U+FF2F U+FF2F U+FF34
+  比较键   : 'root'
+  发现     : folded :: NFKC 兼容性折叠会改变该字符串（全角/兼容字符等）
+  策略[严格(全部REJECT)] -> 拒绝(folded)
+  策略[宽松(全部WARN)] -> 放行(命中黑名单), 净化后='ＲＯＯＴ'
+  策略[默认(混合策略)] -> 放行(命中黑名单), 净化后='ＲＯＯＴ'
+
+[B06] 分解形式 café（e + 组合尖音符）
+  输入     : 'café'
+  码位     : U+0063 U+0061 U+0066 U+0065 U+0301
+  比较键   : 'café'
+  发现     : folded :: NFKC 兼容性折叠会改变该字符串（全角/兼容字符等）
+  策略[严格(全部REJECT)] -> 拒绝(folded)
+  策略[宽松(全部WARN)] -> 放行(命中黑名单), 净化后='café'
+  策略[默认(混合策略)] -> 放行(命中黑名单), 净化后='café'
+
+[B07] 预组合 é（与 B06 同键）
+  输入     : 'café'
+  码位     : U+0063 U+0061 U+0066 U+00E9
+  比较键   : 'café'
+  发现     : （无安全发现；属归一化等价命中）
+  策略[严格(全部REJECT)] -> 放行(命中黑名单), 净化后='café'
+  策略[宽松(全部WARN)] -> 放行(命中黑名单), 净化后='café'
+  策略[默认(混合策略)] -> 放行(命中黑名单), 净化后='café'
+
+[B08] 组合顺序调换：黑名单序列的重排形式
+  输入     : 'à̕'
+  码位     : U+0061 U+0315 U+0300
+  比较键   : 'à̕'
+  发现     : folded :: NFKC 兼容性折叠会改变该字符串（全角/兼容字符等）
+  策略[严格(全部REJECT)] -> 拒绝(folded)
+  策略[宽松(全部WARN)] -> 放行(命中黑名单), 净化后='à̕'
+  策略[默认(混合策略)] -> 放行(命中黑名单), 净化后='à̕'
+
+[B09] 零宽插入：零宽空格
+  输入     : 'ad\u200bmin'
+  码位     : U+0061 U+0064 U+200B U+006D U+0069 U+006E
+  比较键   : 'admin'
+  发现     : invisible @2 [U+200B] ZERO WIDTH SPACE :: 不可见格式字符（零宽/控制/标签）
+  策略[严格(全部REJECT)] -> 拒绝(invisible)
+  策略[宽松(全部WARN)] -> 放行(命中黑名单), 净化后='ad\u200bmin'
+  策略[默认(混合策略)] -> 放行(命中黑名单), 净化后='admin'
+
+[B10] 零宽插入：零宽连接符
+  输入     : 'a\u200ddmin'
+  码位     : U+0061 U+200D U+0064 U+006D U+0069 U+006E
+  比较键   : 'admin'
+  发现     : invisible @1 [U+200D] ZERO WIDTH JOINER :: 不可见格式字符（零宽/控制/标签）
+  策略[严格(全部REJECT)] -> 拒绝(invisible)
+  策略[宽松(全部WARN)] -> 放行(命中黑名单), 净化后='a\u200ddmin'
+  策略[默认(混合策略)] -> 放行(命中黑名单), 净化后='admin'
+
+[B11] 零宽插入：单词连接符
+  输入     : 'admi\u2060n'
+  码位     : U+0061 U+0064 U+006D U+0069 U+2060 U+006E
+  比较键   : 'admin'
+  发现     : invisible @4 [U+2060] WORD JOINER :: 不可见格式字符（零宽/控制/标签）
+  策略[严格(全部REJECT)] -> 拒绝(invisible)
+  策略[宽松(全部WARN)] -> 放行(命中黑名单), 净化后='admi\u2060n'
+  策略[默认(混合策略)] -> 放行(命中黑名单), 净化后='admin'
+
+[B12] 插入 RLO 双向覆盖
+  输入     : 'admi\u202en'
+  码位     : U+0061 U+0064 U+006D U+0069 U+202E U+006E
+  比较键   : 'admin'
+  发现     : bidi_control @4 [U+202E] RIGHT-TO-LEFT OVERRIDE :: 双向文本控制符，可制造视觉欺骗
+  策略[严格(全部REJECT)] -> 拒绝(bidi_control)
+  策略[宽松(全部WARN)] -> 放行(命中黑名单), 净化后='admi\u202en'
+  策略[默认(混合策略)] -> 拒绝(bidi_control)
+
+[B13] 双向隔离符包裹
+  输入     : '\u2066admin\u2069'
+  码位     : U+2066 U+0061 U+0064 U+006D U+0069 U+006E U+2069
+  比较键   : 'admin'
+  发现     : bidi_control @0 [U+2066] LEFT-TO-RIGHT ISOLATE :: 双向文本控制符，可制造视觉欺骗
+  发现     : bidi_control @6 [U+2069] POP DIRECTIONAL ISOLATE :: 双向文本控制符，可制造视觉欺骗
+  策略[严格(全部REJECT)] -> 拒绝(bidi_control)
+  策略[宽松(全部WARN)] -> 放行(命中黑名单), 净化后='\u2066admin\u2069'
+  策略[默认(混合策略)] -> 拒绝(bidi_control)
+
+[B14] 零宽插入：标签字符
+  输入     : 'adm\U000e0061in'
+  码位     : U+0061 U+0064 U+006D U+E0061 U+0069 U+006E
+  比较键   : 'admin'
+  发现     : invisible @3 [U+E0061] TAG LATIN SMALL LETTER A :: 不可见格式字符（零宽/控制/标签）
+  策略[严格(全部REJECT)] -> 拒绝(invisible)
+  策略[宽松(全部WARN)] -> 放行(命中黑名单), 净化后='adm\U000e0061in'
+  策略[默认(混合策略)] -> 放行(命中黑名单), 净化后='admin'
+
+[B15] 追加变体选择符
+  输入     : 'admin️'
+  码位     : U+0061 U+0064 U+006D U+0069 U+006E U+FE0F
+  比较键   : 'admin'
+  发现     : variation_selector @5 [U+FE0F] VARIATION SELECTOR-16 :: 变体选择符，渲染不可见或改变字形
+  策略[严格(全部REJECT)] -> 拒绝(variation_selector)
+  策略[宽松(全部WARN)] -> 放行(命中黑名单), 净化后='admin️'
+  策略[默认(混合策略)] -> 放行(命中黑名单), 净化后='admin'
+
+[B16] 插入非字符码位
+  输入     : 'adm\ufffein'
+  码位     : U+0061 U+0064 U+006D U+FFFE U+0069 U+006E
+  比较键   : 'admin'
+  发现     : noncharacter @3 [U+FFFE] <unnamed> :: Unicode 非字符码位（noncharacter）
+  策略[严格(全部REJECT)] -> 拒绝(noncharacter)
+  策略[宽松(全部WARN)] -> 放行(命中黑名单), 净化后='adm\ufffein'
+  策略[默认(混合策略)] -> 放行(命中黑名单), 净化后='adm\ufffein'
+
+[B17] 前置游离组合符
+  输入     : '̀admin'
+  码位     : U+0300 U+0061 U+0064 U+006D U+0069 U+006E
+  比较键   : 'admin'
+  发现     : dangling_mark @0 [U+0300] COMBINING GRAVE ACCENT :: 组合记号前没有基字
+  策略[严格(全部REJECT)] -> 拒绝(dangling_mark)
+  策略[宽松(全部WARN)] -> 放行(命中黑名单), 净化后='̀admin'
+  策略[默认(混合策略)] -> 放行(命中黑名单), 净化后='̀admin'
+
+[B18] 全角小写拼出 root
+  输入     : 'ｒｏｏｔ'
+  码位     : U+FF52 U+FF4F U+FF4F U+FF54
+  比较键   : 'root'
+  发现     : folded :: NFKC 兼容性折叠会改变该字符串（全角/兼容字符等）
+  策略[严格(全部REJECT)] -> 拒绝(folded)
+  策略[宽松(全部WARN)] -> 放行(命中黑名单), 净化后='ｒｏｏｔ'
+  策略[默认(混合策略)] -> 放行(命中黑名单), 净化后='ｒｏｏｔ'
+
+[B19] 零宽插入：零宽非连接符
+  输入     : 'r\u200coot'
+  码位     : U+0072 U+200C U+006F U+006F U+0074
+  比较键   : 'root'
+  发现     : invisible @1 [U+200C] ZERO WIDTH NON-JOINER :: 不可见格式字符（零宽/控制/标签）
+  策略[严格(全部REJECT)] -> 拒绝(invisible)
+  策略[宽松(全部WARN)] -> 放行(命中黑名单), 净化后='r\u200coot'
+  策略[默认(混合策略)] -> 放行(命中黑名单), 净化后='root'
+
+[B20] 同形替换：希腊 ο 替换拉丁 o
+  输入     : 'rοοt'
+  码位     : U+0072 U+03BF U+03BF U+0074
+  比较键   : 'root'
+  发现     : mixed_script @1 [U+03BF] GREEK SMALL LETTER OMICRON :: 同形混用：['GREEK', 'LATIN'] 字母混排，可疑字符骨架映射为 'o'
+  策略[严格(全部REJECT)] -> 拒绝(mixed_script)
+  策略[宽松(全部WARN)] -> 放行(命中黑名单), 净化后='rοοt'
+  策略[默认(混合策略)] -> 拒绝(mixed_script)
+
+==============================================================================
+结论：全部用例均被检出——或被策略拒绝，或归一化后命中黑名单比较键。
+==============================================================================
