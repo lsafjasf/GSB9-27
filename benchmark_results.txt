@@ -1,0 +1,14 @@
+Degenerate case: text=a^(n)b, pattern=a^(n/2)b
+All algorithms must return the single match at ceil(n/2).
+
+      n  matches    naive (s)      KMP (s)        Z (s)  naive/KMP
+   2000        1     0.032344     0.000218     0.000509      148.3
+         growth from n=2000: -
+   4000        1     0.140359     0.000553     0.001235      253.7
+         growth from n=2000: x2: naive x4.3, KMP x2.5, Z x2.4
+   8000        1     0.536878     0.000882     0.002016      608.7
+         growth from n=2000: x4: naive x16.6, KMP x4.0, Z x4.0
+  16000        1     2.142476     0.001768     0.004091     1211.9
+         growth from n=2000: x8: naive x66.2, KMP x8.1, Z x8.0
+
+Interpretation: doubling n should make naive time grow about 4x, while KMP/Z grow about 2x apart from fixed overhead.
