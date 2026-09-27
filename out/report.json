@@ -1,0 +1,35 @@
+{
+  "cycles": 300,
+  "seed": 42,
+  "legacy": {
+    "total_alerts": 265,
+    "false_positives": 207,
+    "true_positives": 58,
+    "false_negatives": 20,
+    "malicious_events": 78,
+    "false_positive_rate": 0.7811,
+    "false_negative_rate": 0.2564,
+    "fp_by_category": {
+      "atomic_rewrite": 28,
+      "delete_recreate": 20,
+      "legit_update": 33,
+      "log_rotation": 72,
+      "permission_change": 29,
+      "touch_only": 25
+    },
+    "fn_by_category": {
+      "stealth_tamper": 20
+    }
+  },
+  "fixed": {
+    "total_alerts": 78,
+    "false_positives": 0,
+    "true_positives": 78,
+    "false_negatives": 0,
+    "malicious_events": 78,
+    "false_positive_rate": 0.0,
+    "false_negative_rate": 0.0,
+    "fp_by_category": {},
+    "fn_by_category": {}
+  }
+}

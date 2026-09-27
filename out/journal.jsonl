@@ -1,0 +1,66 @@
+{"actor": "pkg-mgr", "op": "authorize", "path": "usr/bin/tool", "sha256": "6525b9f9aa6d48f7290d86495c0477f06561637c980e3c2252bb6cde4d898db2", "ts": 1790535638.853}
+{"op": "consume", "path": "usr/bin/tool", "sha256": "6525b9f9aa6d48f7290d86495c0477f06561637c980e3c2252bb6cde4d898db2", "ts": 1790535638.854}
+{"actor": "pkg-mgr", "op": "authorize", "path": "usr/bin/tool", "sha256": "45eb5c31652c80b7832516e5d84294e94be0365bf64765d49399e85bdc74593d", "ts": 1790535638.857}
+{"op": "consume", "path": "usr/bin/tool", "sha256": "45eb5c31652c80b7832516e5d84294e94be0365bf64765d49399e85bdc74593d", "ts": 1790535638.857}
+{"actor": "pkg-mgr", "op": "authorize", "path": "usr/bin/tool", "sha256": "a98707111d31fac7c891f37b5968b906e9dfd1be5ac8644ce044f8dfe9780587", "ts": 1790535638.858}
+{"op": "consume", "path": "usr/bin/tool", "sha256": "a98707111d31fac7c891f37b5968b906e9dfd1be5ac8644ce044f8dfe9780587", "ts": 1790535638.859}
+{"actor": "pkg-mgr", "op": "authorize", "path": "usr/bin/tool", "sha256": "c61c4ee154f3ac9be60a0ade1b7b479c9a1ab01213825f69b4311253bf3a44d8", "ts": 1790535638.86}
+{"op": "consume", "path": "usr/bin/tool", "sha256": "c61c4ee154f3ac9be60a0ade1b7b479c9a1ab01213825f69b4311253bf3a44d8", "ts": 1790535638.86}
+{"actor": "pkg-mgr", "op": "authorize", "path": "usr/bin/tool", "sha256": "534e8c0bd3c3b6443c1b862632b1d47ee80fd0325e207fc394a60cdf023ab738", "ts": 1790535638.864}
+{"op": "consume", "path": "usr/bin/tool", "sha256": "534e8c0bd3c3b6443c1b862632b1d47ee80fd0325e207fc394a60cdf023ab738", "ts": 1790535638.864}
+{"actor": "pkg-mgr", "op": "authorize", "path": "usr/bin/tool", "sha256": "1daad68c4de61440d07cc62efd488ec08d60f5a33ec5fb3ef2e9fc40cd57cb98", "ts": 1790535638.87}
+{"op": "consume", "path": "usr/bin/tool", "sha256": "1daad68c4de61440d07cc62efd488ec08d60f5a33ec5fb3ef2e9fc40cd57cb98", "ts": 1790535638.871}
+{"actor": "pkg-mgr", "op": "authorize", "path": "usr/bin/tool", "sha256": "25c641eac11b416a58c924ab244eb7c5e5852df3bad09e1b9ce6f32711ee2a0e", "ts": 1790535638.872}
+{"op": "consume", "path": "usr/bin/tool", "sha256": "25c641eac11b416a58c924ab244eb7c5e5852df3bad09e1b9ce6f32711ee2a0e", "ts": 1790535638.873}
+{"actor": "pkg-mgr", "op": "authorize", "path": "usr/bin/tool", "sha256": "fe71781dfbcb44ead1ec101b0addf18a8d05657dae6221cebae9de8799b73598", "ts": 1790535638.885}
+{"op": "consume", "path": "usr/bin/tool", "sha256": "fe71781dfbcb44ead1ec101b0addf18a8d05657dae6221cebae9de8799b73598", "ts": 1790535638.886}
+{"actor": "pkg-mgr", "op": "authorize", "path": "usr/bin/tool", "sha256": "e76e66f9e720e328ba9c513e099f8bc9bf0585a59cb33074cf94f38c5956c5a8", "ts": 1790535638.891}
+{"op": "consume", "path": "usr/bin/tool", "sha256": "e76e66f9e720e328ba9c513e099f8bc9bf0585a59cb33074cf94f38c5956c5a8", "ts": 1790535638.892}
+{"actor": "pkg-mgr", "op": "authorize", "path": "usr/bin/tool", "sha256": "eeb646c839bfa6d2b1ebe52a3fd51aea534ae467c48667a7446d4052d7f47305", "ts": 1790535638.894}
+{"op": "consume", "path": "usr/bin/tool", "sha256": "eeb646c839bfa6d2b1ebe52a3fd51aea534ae467c48667a7446d4052d7f47305", "ts": 1790535638.895}
+{"actor": "pkg-mgr", "op": "authorize", "path": "usr/bin/tool", "sha256": "705c9fa0ec38dee13a9ab0d9d73bd0026aa7ecace43eeadf9198bb707b19d82c", "ts": 1790535638.933}
+{"op": "consume", "path": "usr/bin/tool", "sha256": "705c9fa0ec38dee13a9ab0d9d73bd0026aa7ecace43eeadf9198bb707b19d82c", "ts": 1790535638.934}
+{"actor": "pkg-mgr", "op": "authorize", "path": "usr/bin/tool", "sha256": "b1cfa909ff95cf5ce17e6c765c1cede8c97cbc8f50e8c55b24f91f2b2a6cba3b", "ts": 1790535638.935}
+{"op": "consume", "path": "usr/bin/tool", "sha256": "b1cfa909ff95cf5ce17e6c765c1cede8c97cbc8f50e8c55b24f91f2b2a6cba3b", "ts": 1790535638.936}
+{"actor": "pkg-mgr", "op": "authorize", "path": "usr/bin/tool", "sha256": "0c580fdd0f225f40e073ca0de057adaabfcc1b85a0fe24bc05dde7b9ac6a6eac", "ts": 1790535638.94}
+{"op": "consume", "path": "usr/bin/tool", "sha256": "0c580fdd0f225f40e073ca0de057adaabfcc1b85a0fe24bc05dde7b9ac6a6eac", "ts": 1790535638.941}
+{"actor": "pkg-mgr", "op": "authorize", "path": "usr/bin/tool", "sha256": "aa2d1688588ff84952c4fe25b5e55f3f98155545e257fc254590a76728b18c7a", "ts": 1790535638.943}
+{"op": "consume", "path": "usr/bin/tool", "sha256": "aa2d1688588ff84952c4fe25b5e55f3f98155545e257fc254590a76728b18c7a", "ts": 1790535638.944}
+{"actor": "pkg-mgr", "op": "authorize", "path": "usr/bin/tool", "sha256": "1970276f2ce263e21a46890b71e79efaf2325932a7433d25928f0688f4aecff3", "ts": 1790535638.945}
+{"op": "consume", "path": "usr/bin/tool", "sha256": "1970276f2ce263e21a46890b71e79efaf2325932a7433d25928f0688f4aecff3", "ts": 1790535638.946}
+{"actor": "pkg-mgr", "op": "authorize", "path": "usr/bin/tool", "sha256": "4e0c7057657e2d3e93d34c56b48bcecab7dbf557b55e6c6a98081c7ebaa63133", "ts": 1790535638.974}
+{"op": "consume", "path": "usr/bin/tool", "sha256": "4e0c7057657e2d3e93d34c56b48bcecab7dbf557b55e6c6a98081c7ebaa63133", "ts": 1790535638.975}
+{"actor": "pkg-mgr", "op": "authorize", "path": "usr/bin/tool", "sha256": "50c32a22a0f6acdf5ea7f5b9c36d62e89475e01e2c7aaf1cf1bbe5b60a73544c", "ts": 1790535638.98}
+{"op": "consume", "path": "usr/bin/tool", "sha256": "50c32a22a0f6acdf5ea7f5b9c36d62e89475e01e2c7aaf1cf1bbe5b60a73544c", "ts": 1790535638.981}
+{"actor": "pkg-mgr", "op": "authorize", "path": "usr/bin/tool", "sha256": "daa71a968e0a8e1c2037f41917f0cb2ca16c2573ffe30373006cf96bb8b25846", "ts": 1790535639.007}
+{"op": "consume", "path": "usr/bin/tool", "sha256": "daa71a968e0a8e1c2037f41917f0cb2ca16c2573ffe30373006cf96bb8b25846", "ts": 1790535639.008}
+{"actor": "pkg-mgr", "op": "authorize", "path": "usr/bin/tool", "sha256": "2a0a861cd6d5eb6a1dee208f9ab8fe6b606a3d87c7185cac0fa61f5a5d4607e0", "ts": 1790535639.028}
+{"op": "consume", "path": "usr/bin/tool", "sha256": "2a0a861cd6d5eb6a1dee208f9ab8fe6b606a3d87c7185cac0fa61f5a5d4607e0", "ts": 1790535639.03}
+{"actor": "pkg-mgr", "op": "authorize", "path": "usr/bin/tool", "sha256": "681799f0b183bd7fb977ec15330c6592590237fc118089bf64ea3643034ffc93", "ts": 1790535639.048}
+{"op": "consume", "path": "usr/bin/tool", "sha256": "681799f0b183bd7fb977ec15330c6592590237fc118089bf64ea3643034ffc93", "ts": 1790535639.049}
+{"actor": "pkg-mgr", "op": "authorize", "path": "usr/bin/tool", "sha256": "d726303b706f0b5335270c92c60f2d57cf6674b6212eb761858054b1f0852900", "ts": 1790535639.081}
+{"op": "consume", "path": "usr/bin/tool", "sha256": "d726303b706f0b5335270c92c60f2d57cf6674b6212eb761858054b1f0852900", "ts": 1790535639.082}
+{"actor": "pkg-mgr", "op": "authorize", "path": "usr/bin/tool", "sha256": "44b6d8eebf686780886392ae32dba1c0cbec968ae4496b2b834d107a626db05a", "ts": 1790535639.09}
+{"op": "consume", "path": "usr/bin/tool", "sha256": "44b6d8eebf686780886392ae32dba1c0cbec968ae4496b2b834d107a626db05a", "ts": 1790535639.091}
+{"actor": "pkg-mgr", "op": "authorize", "path": "usr/bin/tool", "sha256": "c801010a68e33edd127234057829e1ecff37fb491542f7a48134a22657ddc02b", "ts": 1790535639.092}
+{"op": "consume", "path": "usr/bin/tool", "sha256": "c801010a68e33edd127234057829e1ecff37fb491542f7a48134a22657ddc02b", "ts": 1790535639.093}
+{"actor": "pkg-mgr", "op": "authorize", "path": "usr/bin/tool", "sha256": "30f64e8e170fffecea6b886d2c00cb91915297dcabca7bb19f91fdfe7953b1d6", "ts": 1790535639.101}
+{"op": "consume", "path": "usr/bin/tool", "sha256": "30f64e8e170fffecea6b886d2c00cb91915297dcabca7bb19f91fdfe7953b1d6", "ts": 1790535639.102}
+{"actor": "pkg-mgr", "op": "authorize", "path": "usr/bin/tool", "sha256": "0d2ec71c1f44e48bb0cfca799ea58279bab7d7152f127505ee028514b1e2bc67", "ts": 1790535639.103}
+{"op": "consume", "path": "usr/bin/tool", "sha256": "0d2ec71c1f44e48bb0cfca799ea58279bab7d7152f127505ee028514b1e2bc67", "ts": 1790535639.104}
+{"actor": "pkg-mgr", "op": "authorize", "path": "usr/bin/tool", "sha256": "98b2e61786bb4e3c238e9d08b48a14bda1a5278497b1088cb1ad882935616525", "ts": 1790535639.122}
+{"op": "consume", "path": "usr/bin/tool", "sha256": "98b2e61786bb4e3c238e9d08b48a14bda1a5278497b1088cb1ad882935616525", "ts": 1790535639.123}
+{"actor": "pkg-mgr", "op": "authorize", "path": "usr/bin/tool", "sha256": "f25a19f81369a8ba079b973fb1d55d8364a4d39e39cb86e74eb501f14418ece5", "ts": 1790535639.127}
+{"op": "consume", "path": "usr/bin/tool", "sha256": "f25a19f81369a8ba079b973fb1d55d8364a4d39e39cb86e74eb501f14418ece5", "ts": 1790535639.128}
+{"actor": "pkg-mgr", "op": "authorize", "path": "usr/bin/tool", "sha256": "f1bc676bc1e02662ee0db14794a3aab4254b69e917654859ea1d0e669d4adf49", "ts": 1790535639.134}
+{"op": "consume", "path": "usr/bin/tool", "sha256": "f1bc676bc1e02662ee0db14794a3aab4254b69e917654859ea1d0e669d4adf49", "ts": 1790535639.135}
+{"actor": "pkg-mgr", "op": "authorize", "path": "usr/bin/tool", "sha256": "59c25e8e31bd90f2b733e4afcd56eee6af7e80b942113ba0d12bfb3ac757d9a2", "ts": 1790535639.173}
+{"op": "consume", "path": "usr/bin/tool", "sha256": "59c25e8e31bd90f2b733e4afcd56eee6af7e80b942113ba0d12bfb3ac757d9a2", "ts": 1790535639.175}
+{"actor": "pkg-mgr", "op": "authorize", "path": "usr/bin/tool", "sha256": "1bdcc563403fc250094aae6b46d61d88784e818913124485bfc2ce37dc695d4b", "ts": 1790535639.179}
+{"op": "consume", "path": "usr/bin/tool", "sha256": "1bdcc563403fc250094aae6b46d61d88784e818913124485bfc2ce37dc695d4b", "ts": 1790535639.18}
+{"actor": "pkg-mgr", "op": "authorize", "path": "usr/bin/tool", "sha256": "341c47c8ba7d2966e30becdbb7dc85d065467799187970f6d45d0f05ae7ec7da", "ts": 1790535639.19}
+{"op": "consume", "path": "usr/bin/tool", "sha256": "341c47c8ba7d2966e30becdbb7dc85d065467799187970f6d45d0f05ae7ec7da", "ts": 1790535639.191}
+{"actor": "pkg-mgr", "op": "authorize", "path": "usr/bin/tool", "sha256": "96d9c42e3d8aa74b77ad8158bbd79350b67b07cae2b7e803aef1b6457b1c79ea", "ts": 1790535639.192}
+{"op": "consume", "path": "usr/bin/tool", "sha256": "96d9c42e3d8aa74b77ad8158bbd79350b67b07cae2b7e803aef1b6457b1c79ea", "ts": 1790535639.193}
+{"actor": "pkg-mgr", "op": "authorize", "path": "usr/bin/tool", "sha256": "30523b815b603f322a319a7d10536a547c794390a9f32f9ae6e9496bed90a479", "ts": 1790535639.238}
+{"op": "consume", "path": "usr/bin/tool", "sha256": "30523b815b603f322a319a7d10536a547c794390a9f32f9ae6e9496bed90a479", "ts": 1790535639.239}

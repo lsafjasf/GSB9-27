@@ -1,0 +1,162 @@
+{"actor": "pkg-mgr", "event": "authorized_update", "method": "atomic_rename", "new_sha256": "6525b9f9aa6d48f7290d86495c0477f06561637c980e3c2252bb6cde4d898db2", "old_sha256": "dd37b18a1c2140781b0b4fc8759dbb5139b9aeb8f26bc046905ea6000a5e3c99", "path": "usr/bin/tool", "ts": 1790535638.854}
+{"event": "permission_changed", "new_mode": "0750", "old_mode": "0644", "path": "usr/bin/tool", "ts": 1790535638.855}
+{"actor": "pkg-mgr", "event": "authorized_update", "method": "atomic_rename", "new_sha256": "45eb5c31652c80b7832516e5d84294e94be0365bf64765d49399e85bdc74593d", "old_sha256": "6525b9f9aa6d48f7290d86495c0477f06561637c980e3c2252bb6cde4d898db2", "path": "usr/bin/tool", "ts": 1790535638.857}
+{"event": "excluded_replaced", "path": "var/log/app.log", "reason": "存活日志文件（持续追加）", "rule_hit": "R005-LOG-LIVE", "size": 0, "ts": 1790535638.858}
+{"event": "excluded_created", "path": "var/log/app.log.1", "reason": "日志轮转归档（含 .gz/.1 等）", "rule_hit": "R004-LOG-ROTATED", "size": 8, "ts": 1790535638.858}
+{"actor": "pkg-mgr", "event": "authorized_update", "method": "atomic_rename", "new_sha256": "a98707111d31fac7c891f37b5968b906e9dfd1be5ac8644ce044f8dfe9780587", "old_sha256": "45eb5c31652c80b7832516e5d84294e94be0365bf64765d49399e85bdc74593d", "path": "usr/bin/tool", "ts": 1790535638.859}
+{"actor": "pkg-mgr", "event": "authorized_update", "method": "atomic_rename", "new_sha256": "c61c4ee154f3ac9be60a0ade1b7b479c9a1ab01213825f69b4311253bf3a44d8", "old_sha256": "a98707111d31fac7c891f37b5968b906e9dfd1be5ac8644ce044f8dfe9780587", "path": "usr/bin/tool", "ts": 1790535638.86}
+{"event": "atomic_rewrite_same_content", "new_ino": 1812669, "old_ino": 1812652, "path": "etc/app.conf", "sha256": "ec2335cb771446cb7e4fb1e004c074c7cdbe81d88480a29158f4d5db26b17eeb", "ts": 1790535638.862}
+{"actor": "pkg-mgr", "event": "authorized_update", "method": "atomic_rename", "new_sha256": "534e8c0bd3c3b6443c1b862632b1d47ee80fd0325e207fc394a60cdf023ab738", "old_sha256": "e3a7a2c9c002b32d823a5139397f82c9c0af7c56ed5c0032a6d8c1fbe7a35181", "path": "usr/bin/tool", "ts": 1790535638.864}
+{"event": "permission_changed", "new_mode": "0750", "old_mode": "0644", "path": "usr/bin/tool", "ts": 1790535638.866}
+{"event": "excluded_replaced", "path": "var/log/app.log", "reason": "存活日志文件（持续追加）", "rule_hit": "R005-LOG-LIVE", "size": 0, "ts": 1790535638.869}
+{"event": "excluded_created", "path": "var/log/app.log.2", "reason": "日志轮转归档（含 .gz/.1 等）", "rule_hit": "R004-LOG-ROTATED", "size": 0, "ts": 1790535638.869}
+{"event": "permission_changed", "new_mode": "0755", "old_mode": "0750", "path": "usr/bin/tool", "ts": 1790535638.869}
+{"event": "permission_changed", "new_mode": "0750", "old_mode": "0755", "path": "usr/bin/tool", "ts": 1790535638.87}
+{"actor": "pkg-mgr", "event": "authorized_update", "method": "atomic_rename", "new_sha256": "1daad68c4de61440d07cc62efd488ec08d60f5a33ec5fb3ef2e9fc40cd57cb98", "old_sha256": "2750493c5f1455df3534a26548b4636bacc87ecabfd0f9237d518b040fa65fea", "path": "usr/bin/tool", "ts": 1790535638.871}
+{"event": "excluded_replaced", "path": "var/log/app.log", "reason": "存活日志文件（持续追加）", "rule_hit": "R005-LOG-LIVE", "size": 0, "ts": 1790535638.872}
+{"event": "excluded_created", "path": "var/log/app.log.3", "reason": "日志轮转归档（含 .gz/.1 等）", "rule_hit": "R004-LOG-ROTATED", "size": 0, "ts": 1790535638.872}
+{"actor": "pkg-mgr", "event": "authorized_update", "method": "atomic_rename", "new_sha256": "25c641eac11b416a58c924ab244eb7c5e5852df3bad09e1b9ce6f32711ee2a0e", "old_sha256": "1daad68c4de61440d07cc62efd488ec08d60f5a33ec5fb3ef2e9fc40cd57cb98", "path": "usr/bin/tool", "ts": 1790535638.873}
+{"event": "permission_changed", "new_mode": "0750", "old_mode": "0644", "path": "usr/bin/tool", "ts": 1790535638.874}
+{"event": "excluded_replaced", "path": "var/log/app.log", "reason": "存活日志文件（持续追加）", "rule_hit": "R005-LOG-LIVE", "size": 0, "ts": 1790535638.876}
+{"event": "excluded_created", "path": "var/log/app.log.4", "reason": "日志轮转归档（含 .gz/.1 等）", "rule_hit": "R004-LOG-ROTATED", "size": 0, "ts": 1790535638.876}
+{"event": "excluded_replaced", "path": "var/log/app.log", "reason": "存活日志文件（持续追加）", "rule_hit": "R005-LOG-LIVE", "size": 0, "ts": 1790535638.881}
+{"event": "excluded_created", "path": "var/log/app.log.6", "reason": "日志轮转归档（含 .gz/.1 等）", "rule_hit": "R004-LOG-ROTATED", "size": 0, "ts": 1790535638.881}
+{"event": "excluded_replaced", "path": "var/log/app.log", "reason": "存活日志文件（持续追加）", "rule_hit": "R005-LOG-LIVE", "size": 0, "ts": 1790535638.882}
+{"event": "excluded_created", "path": "var/log/app.log.7", "reason": "日志轮转归档（含 .gz/.1 等）", "rule_hit": "R004-LOG-ROTATED", "size": 0, "ts": 1790535638.882}
+{"actor": "pkg-mgr", "event": "authorized_update", "method": "atomic_rename", "new_sha256": "fe71781dfbcb44ead1ec101b0addf18a8d05657dae6221cebae9de8799b73598", "old_sha256": "57652253a720b49483460d2d35f3e116a581af3003b1235a9c50f933fb5c6ec2", "path": "usr/bin/tool", "ts": 1790535638.886}
+{"event": "atomic_rewrite_same_content", "new_ino": 1812671, "old_ino": 1812670, "path": "etc/app.conf", "sha256": "aeb2db9161ca3881f0dc7242605088f9f32d45af4930072b9b1976bbf4c1cd03", "ts": 1790535638.887}
+{"event": "permission_changed", "new_mode": "0750", "old_mode": "0644", "path": "usr/bin/tool", "ts": 1790535638.888}
+{"actor": "pkg-mgr", "event": "authorized_update", "method": "atomic_rename", "new_sha256": "e76e66f9e720e328ba9c513e099f8bc9bf0585a59cb33074cf94f38c5956c5a8", "old_sha256": "fe71781dfbcb44ead1ec101b0addf18a8d05657dae6221cebae9de8799b73598", "path": "usr/bin/tool", "ts": 1790535638.892}
+{"event": "excluded_replaced", "path": "var/log/app.log", "reason": "存活日志文件（持续追加）", "rule_hit": "R005-LOG-LIVE", "size": 0, "ts": 1790535638.894}
+{"event": "excluded_created", "path": "var/log/app.log.9", "reason": "日志轮转归档（含 .gz/.1 等）", "rule_hit": "R004-LOG-ROTATED", "size": 0, "ts": 1790535638.894}
+{"actor": "pkg-mgr", "event": "authorized_update", "method": "atomic_rename", "new_sha256": "eeb646c839bfa6d2b1ebe52a3fd51aea534ae467c48667a7446d4052d7f47305", "old_sha256": "e76e66f9e720e328ba9c513e099f8bc9bf0585a59cb33074cf94f38c5956c5a8", "path": "usr/bin/tool", "ts": 1790535638.895}
+{"event": "atomic_rewrite_same_content", "new_ino": 1812677, "old_ino": 1812671, "path": "etc/app.conf", "sha256": "aeb2db9161ca3881f0dc7242605088f9f32d45af4930072b9b1976bbf4c1cd03", "ts": 1790535638.896}
+{"event": "atomic_rewrite_same_content", "new_ino": 1812677, "old_ino": 1812671, "path": "etc/app.conf", "sha256": "d4093c12cfa84690278b90fbc9e293713c4992d0b9b496ac262c27e5feb083a0", "ts": 1790535638.902}
+{"event": "excluded_replaced", "path": "var/log/app.log", "reason": "存活日志文件（持续追加）", "rule_hit": "R005-LOG-LIVE", "size": 0, "ts": 1790535638.903}
+{"event": "excluded_created", "path": "var/log/app.log.11", "reason": "日志轮转归档（含 .gz/.1 等）", "rule_hit": "R004-LOG-ROTATED", "size": 0, "ts": 1790535638.903}
+{"event": "atomic_rewrite_same_content", "new_ino": 1812678, "old_ino": 1812677, "path": "etc/app.conf", "sha256": "d4093c12cfa84690278b90fbc9e293713c4992d0b9b496ac262c27e5feb083a0", "ts": 1790535638.904}
+{"event": "excluded_replaced", "path": "var/log/app.log", "reason": "存活日志文件（持续追加）", "rule_hit": "R005-LOG-LIVE", "size": 0, "ts": 1790535638.905}
+{"event": "excluded_created", "path": "var/log/app.log.12", "reason": "日志轮转归档（含 .gz/.1 等）", "rule_hit": "R004-LOG-ROTATED", "size": 0, "ts": 1790535638.905}
+{"event": "excluded_replaced", "path": "var/log/app.log", "reason": "存活日志文件（持续追加）", "rule_hit": "R005-LOG-LIVE", "size": 0, "ts": 1790535638.912}
+{"event": "excluded_created", "path": "var/log/app.log.14", "reason": "日志轮转归档（含 .gz/.1 等）", "rule_hit": "R004-LOG-ROTATED", "size": 0, "ts": 1790535638.912}
+{"event": "excluded_replaced", "path": "var/log/app.log", "reason": "存活日志文件（持续追加）", "rule_hit": "R005-LOG-LIVE", "size": 0, "ts": 1790535638.914}
+{"event": "excluded_created", "path": "var/log/app.log.15", "reason": "日志轮转归档（含 .gz/.1 等）", "rule_hit": "R004-LOG-ROTATED", "size": 0, "ts": 1790535638.914}
+{"event": "permission_changed", "new_mode": "0750", "old_mode": "0644", "path": "usr/bin/tool", "ts": 1790535638.92}
+{"event": "permission_changed", "new_mode": "0755", "old_mode": "0750", "path": "usr/bin/tool", "ts": 1790535638.921}
+{"event": "permission_changed", "new_mode": "0750", "old_mode": "0755", "path": "usr/bin/tool", "ts": 1790535638.923}
+{"event": "excluded_replaced", "path": "var/log/app.log", "reason": "存活日志文件（持续追加）", "rule_hit": "R005-LOG-LIVE", "size": 0, "ts": 1790535638.925}
+{"event": "excluded_created", "path": "var/log/app.log.17", "reason": "日志轮转归档（含 .gz/.1 等）", "rule_hit": "R004-LOG-ROTATED", "size": 0, "ts": 1790535638.925}
+{"event": "permission_changed", "new_mode": "0755", "old_mode": "0750", "path": "usr/bin/tool", "ts": 1790535638.927}
+{"event": "atomic_rewrite_same_content", "new_ino": 1812682, "old_ino": 1812683, "path": "etc/app.conf", "sha256": "aeb2db9161ca3881f0dc7242605088f9f32d45af4930072b9b1976bbf4c1cd03", "ts": 1790535638.931}
+{"event": "atomic_rewrite_same_content", "new_ino": 1812683, "old_ino": 1812682, "path": "etc/app.conf", "sha256": "aeb2db9161ca3881f0dc7242605088f9f32d45af4930072b9b1976bbf4c1cd03", "ts": 1790535638.933}
+{"actor": "pkg-mgr", "event": "authorized_update", "method": "atomic_rename", "new_sha256": "705c9fa0ec38dee13a9ab0d9d73bd0026aa7ecace43eeadf9198bb707b19d82c", "old_sha256": "2d120228013fdd89f5f47099265e8d6aaea6dcf18b8224aaa4120cd63ad6c7a8", "path": "usr/bin/tool", "ts": 1790535638.934}
+{"event": "permission_changed", "new_mode": "0750", "old_mode": "0644", "path": "usr/bin/tool", "ts": 1790535638.935}
+{"actor": "pkg-mgr", "event": "authorized_update", "method": "atomic_rename", "new_sha256": "b1cfa909ff95cf5ce17e6c765c1cede8c97cbc8f50e8c55b24f91f2b2a6cba3b", "old_sha256": "705c9fa0ec38dee13a9ab0d9d73bd0026aa7ecace43eeadf9198bb707b19d82c", "path": "usr/bin/tool", "ts": 1790535638.936}
+{"event": "permission_changed", "new_mode": "0750", "old_mode": "0644", "path": "usr/bin/tool", "ts": 1790535638.94}
+{"actor": "pkg-mgr", "event": "authorized_update", "method": "atomic_rename", "new_sha256": "0c580fdd0f225f40e073ca0de057adaabfcc1b85a0fe24bc05dde7b9ac6a6eac", "old_sha256": "ba94da958239a69fc267b4c58ad0f0334c70df933bc97c1a3125db07b667cd94", "path": "usr/bin/tool", "ts": 1790535638.941}
+{"actor": "pkg-mgr", "event": "authorized_update", "method": "atomic_rename", "new_sha256": "aa2d1688588ff84952c4fe25b5e55f3f98155545e257fc254590a76728b18c7a", "old_sha256": "0c580fdd0f225f40e073ca0de057adaabfcc1b85a0fe24bc05dde7b9ac6a6eac", "path": "usr/bin/tool", "ts": 1790535638.944}
+{"event": "excluded_replaced", "path": "var/log/app.log", "reason": "存活日志文件（持续追加）", "rule_hit": "R005-LOG-LIVE", "size": 0, "ts": 1790535638.945}
+{"event": "excluded_created", "path": "var/log/app.log.20", "reason": "日志轮转归档（含 .gz/.1 等）", "rule_hit": "R004-LOG-ROTATED", "size": 0, "ts": 1790535638.945}
+{"actor": "pkg-mgr", "event": "authorized_update", "method": "atomic_rename", "new_sha256": "1970276f2ce263e21a46890b71e79efaf2325932a7433d25928f0688f4aecff3", "old_sha256": "aa2d1688588ff84952c4fe25b5e55f3f98155545e257fc254590a76728b18c7a", "path": "usr/bin/tool", "ts": 1790535638.946}
+{"event": "atomic_rewrite_same_content", "new_ino": 1812685, "old_ino": 1812676, "path": "etc/app.conf", "sha256": "aeb2db9161ca3881f0dc7242605088f9f32d45af4930072b9b1976bbf4c1cd03", "ts": 1790535638.95}
+{"event": "permission_changed", "new_mode": "0750", "old_mode": "0644", "path": "usr/bin/tool", "ts": 1790535638.952}
+{"event": "excluded_replaced", "path": "var/log/app.log", "reason": "存活日志文件（持续追加）", "rule_hit": "R005-LOG-LIVE", "size": 0, "ts": 1790535638.955}
+{"event": "excluded_created", "path": "var/log/app.log.21", "reason": "日志轮转归档（含 .gz/.1 等）", "rule_hit": "R004-LOG-ROTATED", "size": 0, "ts": 1790535638.955}
+{"event": "excluded_replaced", "path": "var/log/app.log", "reason": "存活日志文件（持续追加）", "rule_hit": "R005-LOG-LIVE", "size": 0, "ts": 1790535638.966}
+{"event": "excluded_created", "path": "var/log/app.log.23", "reason": "日志轮转归档（含 .gz/.1 等）", "rule_hit": "R004-LOG-ROTATED", "size": 0, "ts": 1790535638.966}
+{"event": "atomic_rewrite_same_content", "new_ino": 1812688, "old_ino": 1812676, "path": "etc/app.conf", "sha256": "d4093c12cfa84690278b90fbc9e293713c4992d0b9b496ac262c27e5feb083a0", "ts": 1790535638.967}
+{"event": "permission_changed", "new_mode": "0755", "old_mode": "0750", "path": "usr/bin/tool", "ts": 1790535638.97}
+{"event": "atomic_rewrite_same_content", "new_ino": 1812676, "old_ino": 1812688, "path": "etc/app.conf", "sha256": "d4093c12cfa84690278b90fbc9e293713c4992d0b9b496ac262c27e5feb083a0", "ts": 1790535638.971}
+{"actor": "pkg-mgr", "event": "authorized_update", "method": "atomic_rename", "new_sha256": "4e0c7057657e2d3e93d34c56b48bcecab7dbf557b55e6c6a98081c7ebaa63133", "old_sha256": "1970276f2ce263e21a46890b71e79efaf2325932a7433d25928f0688f4aecff3", "path": "usr/bin/tool", "ts": 1790535638.975}
+{"actor": "pkg-mgr", "event": "authorized_update", "method": "atomic_rename", "new_sha256": "50c32a22a0f6acdf5ea7f5b9c36d62e89475e01e2c7aaf1cf1bbe5b60a73544c", "old_sha256": "4e0c7057657e2d3e93d34c56b48bcecab7dbf557b55e6c6a98081c7ebaa63133", "path": "usr/bin/tool", "ts": 1790535638.982}
+{"event": "atomic_rewrite_same_content", "new_ino": 1812689, "old_ino": 1812686, "path": "etc/app.conf", "sha256": "aeb2db9161ca3881f0dc7242605088f9f32d45af4930072b9b1976bbf4c1cd03", "ts": 1790535638.987}
+{"event": "excluded_replaced", "path": "var/log/app.log", "reason": "存活日志文件（持续追加）", "rule_hit": "R005-LOG-LIVE", "size": 0, "ts": 1790535638.989}
+{"event": "excluded_created", "path": "var/log/app.log.25", "reason": "日志轮转归档（含 .gz/.1 等）", "rule_hit": "R004-LOG-ROTATED", "size": 0, "ts": 1790535638.99}
+{"event": "excluded_replaced", "path": "var/log/app.log", "reason": "存活日志文件（持续追加）", "rule_hit": "R005-LOG-LIVE", "size": 0, "ts": 1790535638.996}
+{"event": "excluded_created", "path": "var/log/app.log.26", "reason": "日志轮转归档（含 .gz/.1 等）", "rule_hit": "R004-LOG-ROTATED", "size": 0, "ts": 1790535638.997}
+{"event": "excluded_replaced", "path": "var/log/app.log", "reason": "存活日志文件（持续追加）", "rule_hit": "R005-LOG-LIVE", "size": 0, "ts": 1790535638.998}
+{"event": "excluded_created", "path": "var/log/app.log.27", "reason": "日志轮转归档（含 .gz/.1 等）", "rule_hit": "R004-LOG-ROTATED", "size": 0, "ts": 1790535638.998}
+{"event": "excluded_replaced", "path": "var/log/app.log", "reason": "存活日志文件（持续追加）", "rule_hit": "R005-LOG-LIVE", "size": 0, "ts": 1790535639.0}
+{"event": "excluded_created", "path": "var/log/app.log.28", "reason": "日志轮转归档（含 .gz/.1 等）", "rule_hit": "R004-LOG-ROTATED", "size": 0, "ts": 1790535639.0}
+{"actor": "pkg-mgr", "event": "authorized_update", "method": "atomic_rename", "new_sha256": "daa71a968e0a8e1c2037f41917f0cb2ca16c2573ffe30373006cf96bb8b25846", "old_sha256": "50c32a22a0f6acdf5ea7f5b9c36d62e89475e01e2c7aaf1cf1bbe5b60a73544c", "path": "usr/bin/tool", "ts": 1790535639.008}
+{"event": "excluded_replaced", "path": "var/log/app.log", "reason": "存活日志文件（持续追加）", "rule_hit": "R005-LOG-LIVE", "size": 0, "ts": 1790535639.01}
+{"event": "excluded_created", "path": "var/log/app.log.30", "reason": "日志轮转归档（含 .gz/.1 等）", "rule_hit": "R004-LOG-ROTATED", "size": 0, "ts": 1790535639.01}
+{"event": "permission_changed", "new_mode": "0750", "old_mode": "0644", "path": "usr/bin/tool", "ts": 1790535639.012}
+{"event": "excluded_replaced", "path": "var/log/app.log", "reason": "存活日志文件（持续追加）", "rule_hit": "R005-LOG-LIVE", "size": 0, "ts": 1790535639.017}
+{"event": "excluded_created", "path": "var/log/app.log.31", "reason": "日志轮转归档（含 .gz/.1 等）", "rule_hit": "R004-LOG-ROTATED", "size": 0, "ts": 1790535639.017}
+{"event": "excluded_replaced", "path": "var/log/app.log", "reason": "存活日志文件（持续追加）", "rule_hit": "R005-LOG-LIVE", "size": 0, "ts": 1790535639.019}
+{"event": "excluded_created", "path": "var/log/app.log.32", "reason": "日志轮转归档（含 .gz/.1 等）", "rule_hit": "R004-LOG-ROTATED", "size": 0, "ts": 1790535639.019}
+{"event": "permission_changed", "new_mode": "0755", "old_mode": "0750", "path": "usr/bin/tool", "ts": 1790535639.02}
+{"event": "excluded_replaced", "path": "var/log/app.log", "reason": "存活日志文件（持续追加）", "rule_hit": "R005-LOG-LIVE", "size": 0, "ts": 1790535639.024}
+{"event": "excluded_created", "path": "var/log/app.log.33", "reason": "日志轮转归档（含 .gz/.1 等）", "rule_hit": "R004-LOG-ROTATED", "size": 0, "ts": 1790535639.025}
+{"event": "atomic_rewrite_same_content", "new_ino": 1812706, "old_ino": 1812709, "path": "etc/app.conf", "sha256": "aeb2db9161ca3881f0dc7242605088f9f32d45af4930072b9b1976bbf4c1cd03", "ts": 1790535639.027}
+{"actor": "pkg-mgr", "event": "authorized_update", "method": "atomic_rename", "new_sha256": "2a0a861cd6d5eb6a1dee208f9ab8fe6b606a3d87c7185cac0fa61f5a5d4607e0", "old_sha256": "daa71a968e0a8e1c2037f41917f0cb2ca16c2573ffe30373006cf96bb8b25846", "path": "usr/bin/tool", "ts": 1790535639.03}
+{"actor": "pkg-mgr", "event": "authorized_update", "method": "atomic_rename", "new_sha256": "681799f0b183bd7fb977ec15330c6592590237fc118089bf64ea3643034ffc93", "old_sha256": "c583e0aabc41cb29bec672129688c9515fa2757b84d8c030eb01423e3d3ef5b3", "path": "usr/bin/tool", "ts": 1790535639.049}
+{"event": "excluded_replaced", "path": "var/log/app.log", "reason": "存活日志文件（持续追加）", "rule_hit": "R005-LOG-LIVE", "size": 0, "ts": 1790535639.051}
+{"event": "excluded_created", "path": "var/log/app.log.37", "reason": "日志轮转归档（含 .gz/.1 等）", "rule_hit": "R004-LOG-ROTATED", "size": 0, "ts": 1790535639.052}
+{"event": "permission_changed", "new_mode": "0750", "old_mode": "0644", "path": "usr/bin/tool", "ts": 1790535639.057}
+{"event": "excluded_replaced", "path": "var/log/app.log", "reason": "存活日志文件（持续追加）", "rule_hit": "R005-LOG-LIVE", "size": 0, "ts": 1790535639.061}
+{"event": "excluded_created", "path": "var/log/app.log.39", "reason": "日志轮转归档（含 .gz/.1 等）", "rule_hit": "R004-LOG-ROTATED", "size": 0, "ts": 1790535639.062}
+{"event": "excluded_replaced", "path": "var/log/app.log", "reason": "存活日志文件（持续追加）", "rule_hit": "R005-LOG-LIVE", "size": 0, "ts": 1790535639.063}
+{"event": "excluded_created", "path": "var/log/app.log.40", "reason": "日志轮转归档（含 .gz/.1 等）", "rule_hit": "R004-LOG-ROTATED", "size": 0, "ts": 1790535639.063}
+{"event": "atomic_rewrite_same_content", "new_ino": 1812713, "old_ino": 1812710, "path": "etc/app.conf", "sha256": "d4093c12cfa84690278b90fbc9e293713c4992d0b9b496ac262c27e5feb083a0", "ts": 1790535639.069}
+{"event": "atomic_rewrite_same_content", "new_ino": 1812710, "old_ino": 1812713, "path": "etc/app.conf", "sha256": "d4093c12cfa84690278b90fbc9e293713c4992d0b9b496ac262c27e5feb083a0", "ts": 1790535639.077}
+{"event": "atomic_rewrite_same_content", "new_ino": 1812713, "old_ino": 1812710, "path": "etc/app.conf", "sha256": "d4093c12cfa84690278b90fbc9e293713c4992d0b9b496ac262c27e5feb083a0", "ts": 1790535639.078}
+{"actor": "pkg-mgr", "event": "authorized_update", "method": "atomic_rename", "new_sha256": "d726303b706f0b5335270c92c60f2d57cf6674b6212eb761858054b1f0852900", "old_sha256": "8fd6e73286a952493bc7153b56a9ff5ebdfc10ad0d377ef15f0e750ff4af17a0", "path": "usr/bin/tool", "ts": 1790535639.082}
+{"event": "atomic_rewrite_same_content", "new_ino": 1812706, "old_ino": 1812713, "path": "etc/app.conf", "sha256": "d4093c12cfa84690278b90fbc9e293713c4992d0b9b496ac262c27e5feb083a0", "ts": 1790535639.083}
+{"event": "excluded_replaced", "path": "var/log/app.log", "reason": "存活日志文件（持续追加）", "rule_hit": "R005-LOG-LIVE", "size": 0, "ts": 1790535639.085}
+{"event": "excluded_created", "path": "var/log/app.log.44", "reason": "日志轮转归档（含 .gz/.1 等）", "rule_hit": "R004-LOG-ROTATED", "size": 0, "ts": 1790535639.085}
+{"actor": "pkg-mgr", "event": "authorized_update", "method": "atomic_rename", "new_sha256": "44b6d8eebf686780886392ae32dba1c0cbec968ae4496b2b834d107a626db05a", "old_sha256": "d726303b706f0b5335270c92c60f2d57cf6674b6212eb761858054b1f0852900", "path": "usr/bin/tool", "ts": 1790535639.091}
+{"actor": "pkg-mgr", "event": "authorized_update", "method": "atomic_rename", "new_sha256": "c801010a68e33edd127234057829e1ecff37fb491542f7a48134a22657ddc02b", "old_sha256": "44b6d8eebf686780886392ae32dba1c0cbec968ae4496b2b834d107a626db05a", "path": "usr/bin/tool", "ts": 1790535639.093}
+{"event": "excluded_replaced", "path": "var/log/app.log", "reason": "存活日志文件（持续追加）", "rule_hit": "R005-LOG-LIVE", "size": 0, "ts": 1790535639.096}
+{"event": "excluded_created", "path": "var/log/app.log.45", "reason": "日志轮转归档（含 .gz/.1 等）", "rule_hit": "R004-LOG-ROTATED", "size": 0, "ts": 1790535639.096}
+{"event": "atomic_rewrite_same_content", "new_ino": 1812716, "old_ino": 1812714, "path": "etc/app.conf", "sha256": "aeb2db9161ca3881f0dc7242605088f9f32d45af4930072b9b1976bbf4c1cd03", "ts": 1790535639.099}
+{"event": "atomic_rewrite_same_content", "new_ino": 1812714, "old_ino": 1812716, "path": "etc/app.conf", "sha256": "aeb2db9161ca3881f0dc7242605088f9f32d45af4930072b9b1976bbf4c1cd03", "ts": 1790535639.1}
+{"actor": "pkg-mgr", "event": "authorized_update", "method": "atomic_rename", "new_sha256": "30f64e8e170fffecea6b886d2c00cb91915297dcabca7bb19f91fdfe7953b1d6", "old_sha256": "c801010a68e33edd127234057829e1ecff37fb491542f7a48134a22657ddc02b", "path": "usr/bin/tool", "ts": 1790535639.102}
+{"actor": "pkg-mgr", "event": "authorized_update", "method": "atomic_rename", "new_sha256": "0d2ec71c1f44e48bb0cfca799ea58279bab7d7152f127505ee028514b1e2bc67", "old_sha256": "30f64e8e170fffecea6b886d2c00cb91915297dcabca7bb19f91fdfe7953b1d6", "path": "usr/bin/tool", "ts": 1790535639.104}
+{"event": "atomic_rewrite_same_content", "new_ino": 1812716, "old_ino": 1812714, "path": "etc/app.conf", "sha256": "aeb2db9161ca3881f0dc7242605088f9f32d45af4930072b9b1976bbf4c1cd03", "ts": 1790535639.107}
+{"event": "permission_changed", "new_mode": "0750", "old_mode": "0644", "path": "usr/bin/tool", "ts": 1790535639.109}
+{"event": "permission_changed", "new_mode": "0755", "old_mode": "0750", "path": "usr/bin/tool", "ts": 1790535639.11}
+{"event": "permission_changed", "new_mode": "0750", "old_mode": "0755", "path": "usr/bin/tool", "ts": 1790535639.113}
+{"event": "permission_changed", "new_mode": "0755", "old_mode": "0750", "path": "usr/bin/tool", "ts": 1790535639.115}
+{"event": "excluded_replaced", "path": "var/log/app.log", "reason": "存活日志文件（持续追加）", "rule_hit": "R005-LOG-LIVE", "size": 0, "ts": 1790535639.118}
+{"event": "excluded_created", "path": "var/log/app.log.47", "reason": "日志轮转归档（含 .gz/.1 等）", "rule_hit": "R004-LOG-ROTATED", "size": 0, "ts": 1790535639.118}
+{"actor": "pkg-mgr", "event": "authorized_update", "method": "atomic_rename", "new_sha256": "98b2e61786bb4e3c238e9d08b48a14bda1a5278497b1088cb1ad882935616525", "old_sha256": "0d2ec71c1f44e48bb0cfca799ea58279bab7d7152f127505ee028514b1e2bc67", "path": "usr/bin/tool", "ts": 1790535639.123}
+{"event": "atomic_rewrite_same_content", "new_ino": 1812710, "old_ino": 1812716, "path": "etc/app.conf", "sha256": "aeb2db9161ca3881f0dc7242605088f9f32d45af4930072b9b1976bbf4c1cd03", "ts": 1790535639.126}
+{"actor": "pkg-mgr", "event": "authorized_update", "method": "atomic_rename", "new_sha256": "f25a19f81369a8ba079b973fb1d55d8364a4d39e39cb86e74eb501f14418ece5", "old_sha256": "98b2e61786bb4e3c238e9d08b48a14bda1a5278497b1088cb1ad882935616525", "path": "usr/bin/tool", "ts": 1790535639.128}
+{"event": "atomic_rewrite_same_content", "new_ino": 1812719, "old_ino": 1812710, "path": "etc/app.conf", "sha256": "aeb2db9161ca3881f0dc7242605088f9f32d45af4930072b9b1976bbf4c1cd03", "ts": 1790535639.129}
+{"event": "excluded_replaced", "path": "var/log/app.log", "reason": "存活日志文件（持续追加）", "rule_hit": "R005-LOG-LIVE", "size": 0, "ts": 1790535639.132}
+{"event": "excluded_created", "path": "var/log/app.log.50", "reason": "日志轮转归档（含 .gz/.1 等）", "rule_hit": "R004-LOG-ROTATED", "size": 0, "ts": 1790535639.132}
+{"actor": "pkg-mgr", "event": "authorized_update", "method": "atomic_rename", "new_sha256": "f1bc676bc1e02662ee0db14794a3aab4254b69e917654859ea1d0e669d4adf49", "old_sha256": "f25a19f81369a8ba079b973fb1d55d8364a4d39e39cb86e74eb501f14418ece5", "path": "usr/bin/tool", "ts": 1790535639.135}
+{"event": "excluded_replaced", "path": "var/log/app.log", "reason": "存活日志文件（持续追加）", "rule_hit": "R005-LOG-LIVE", "size": 0, "ts": 1790535639.139}
+{"event": "excluded_created", "path": "var/log/app.log.51", "reason": "日志轮转归档（含 .gz/.1 等）", "rule_hit": "R004-LOG-ROTATED", "size": 0, "ts": 1790535639.139}
+{"event": "atomic_rewrite_same_content", "new_ino": 1812721, "old_ino": 1812719, "path": "etc/app.conf", "sha256": "aeb2db9161ca3881f0dc7242605088f9f32d45af4930072b9b1976bbf4c1cd03", "ts": 1790535639.14}
+{"event": "permission_changed", "new_mode": "0750", "old_mode": "0644", "path": "usr/bin/tool", "ts": 1790535639.142}
+{"event": "atomic_rewrite_same_content", "new_ino": 1812719, "old_ino": 1812721, "path": "etc/app.conf", "sha256": "aeb2db9161ca3881f0dc7242605088f9f32d45af4930072b9b1976bbf4c1cd03", "ts": 1790535639.149}
+{"event": "atomic_rewrite_same_content", "new_ino": 1812721, "old_ino": 1812719, "path": "etc/app.conf", "sha256": "aeb2db9161ca3881f0dc7242605088f9f32d45af4930072b9b1976bbf4c1cd03", "ts": 1790535639.152}
+{"event": "permission_changed", "new_mode": "0755", "old_mode": "0750", "path": "usr/bin/tool", "ts": 1790535639.158}
+{"event": "excluded_replaced", "path": "var/log/app.log", "reason": "存活日志文件（持续追加）", "rule_hit": "R005-LOG-LIVE", "size": 0, "ts": 1790535639.171}
+{"event": "excluded_created", "path": "var/log/app.log.54", "reason": "日志轮转归档（含 .gz/.1 等）", "rule_hit": "R004-LOG-ROTATED", "size": 0, "ts": 1790535639.171}
+{"actor": "pkg-mgr", "event": "authorized_update", "method": "atomic_rename", "new_sha256": "59c25e8e31bd90f2b733e4afcd56eee6af7e80b942113ba0d12bfb3ac757d9a2", "old_sha256": "171f850f2399dd2682671fae735c6c77d93afc30cf9d667fb8357a7c8a1b433c", "path": "usr/bin/tool", "ts": 1790535639.175}
+{"actor": "pkg-mgr", "event": "authorized_update", "method": "atomic_rename", "new_sha256": "1bdcc563403fc250094aae6b46d61d88784e818913124485bfc2ce37dc695d4b", "old_sha256": "da349c9420600bf18a40b06c5d491283298bbda5f842394d3d9df49877991437", "path": "usr/bin/tool", "ts": 1790535639.18}
+{"event": "permission_changed", "new_mode": "0750", "old_mode": "0644", "path": "usr/bin/tool", "ts": 1790535639.182}
+{"event": "atomic_rewrite_same_content", "new_ino": 1812723, "old_ino": 1812721, "path": "etc/app.conf", "sha256": "aeb2db9161ca3881f0dc7242605088f9f32d45af4930072b9b1976bbf4c1cd03", "ts": 1790535639.187}
+{"event": "excluded_replaced", "path": "var/log/app.log", "reason": "存活日志文件（持续追加）", "rule_hit": "R005-LOG-LIVE", "size": 0, "ts": 1790535639.189}
+{"event": "excluded_created", "path": "var/log/app.log.55", "reason": "日志轮转归档（含 .gz/.1 等）", "rule_hit": "R004-LOG-ROTATED", "size": 0, "ts": 1790535639.19}
+{"actor": "pkg-mgr", "event": "authorized_update", "method": "atomic_rename", "new_sha256": "341c47c8ba7d2966e30becdbb7dc85d065467799187970f6d45d0f05ae7ec7da", "old_sha256": "1bdcc563403fc250094aae6b46d61d88784e818913124485bfc2ce37dc695d4b", "path": "usr/bin/tool", "ts": 1790535639.191}
+{"actor": "pkg-mgr", "event": "authorized_update", "method": "atomic_rename", "new_sha256": "96d9c42e3d8aa74b77ad8158bbd79350b67b07cae2b7e803aef1b6457b1c79ea", "old_sha256": "341c47c8ba7d2966e30becdbb7dc85d065467799187970f6d45d0f05ae7ec7da", "path": "usr/bin/tool", "ts": 1790535639.193}
+{"event": "atomic_rewrite_same_content", "new_ino": 1812725, "old_ino": 1812724, "path": "etc/app.conf", "sha256": "d4093c12cfa84690278b90fbc9e293713c4992d0b9b496ac262c27e5feb083a0", "ts": 1790535639.198}
+{"event": "atomic_rewrite_same_content", "new_ino": 1812724, "old_ino": 1812725, "path": "etc/app.conf", "sha256": "d4093c12cfa84690278b90fbc9e293713c4992d0b9b496ac262c27e5feb083a0", "ts": 1790535639.202}
+{"event": "permission_changed", "new_mode": "0750", "old_mode": "0644", "path": "usr/bin/tool", "ts": 1790535639.206}
+{"event": "excluded_replaced", "path": "var/log/app.log", "reason": "存活日志文件（持续追加）", "rule_hit": "R005-LOG-LIVE", "size": 0, "ts": 1790535639.223}
+{"event": "excluded_created", "path": "var/log/app.log.59", "reason": "日志轮转归档（含 .gz/.1 等）", "rule_hit": "R004-LOG-ROTATED", "size": 0, "ts": 1790535639.223}
+{"actor": "pkg-mgr", "event": "authorized_update", "method": "atomic_rename", "new_sha256": "30523b815b603f322a319a7d10536a547c794390a9f32f9ae6e9496bed90a479", "old_sha256": "91af4658a49a89ee633191e295abd76aa0ce0ee0a289257d53b2f73e40104093", "path": "usr/bin/tool", "ts": 1790535639.239}
+{"event": "permission_changed", "new_mode": "0750", "old_mode": "0644", "path": "usr/bin/tool", "ts": 1790535639.243}
+{"event": "permission_changed", "new_mode": "0755", "old_mode": "0750", "path": "usr/bin/tool", "ts": 1790535639.253}
+{"event": "excluded_replaced", "path": "var/log/app.log", "reason": "存活日志文件（持续追加）", "rule_hit": "R005-LOG-LIVE", "size": 0, "ts": 1790535639.263}
+{"event": "excluded_created", "path": "var/log/app.log.62", "reason": "日志轮转归档（含 .gz/.1 等）", "rule_hit": "R004-LOG-ROTATED", "size": 0, "ts": 1790535639.263}
+{"event": "permission_changed", "new_mode": "0750", "old_mode": "0755", "path": "usr/bin/tool", "ts": 1790535639.265}
+{"event": "permission_changed", "new_mode": "0755", "old_mode": "0750", "path": "usr/bin/tool", "ts": 1790535639.279}
+{"event": "excluded_replaced", "path": "var/log/app.log", "reason": "存活日志文件（持续追加）", "rule_hit": "R005-LOG-LIVE", "size": 0, "ts": 1790535639.283}
+{"event": "excluded_created", "path": "var/log/app.log.64", "reason": "日志轮转归档（含 .gz/.1 等）", "rule_hit": "R004-LOG-ROTATED", "size": 0, "ts": 1790535639.283}
+{"event": "atomic_rewrite_same_content", "new_ino": 1812731, "old_ino": 1812730, "path": "etc/app.conf", "sha256": "aeb2db9161ca3881f0dc7242605088f9f32d45af4930072b9b1976bbf4c1cd03", "ts": 1790535639.289}
