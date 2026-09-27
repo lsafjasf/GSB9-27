@@ -1,0 +1,51 @@
+{
+  "secrets_total": 17,
+  "leak_count": 0,
+  "leaks": [],
+  "digest_verifiable": {
+    "db_password": true,
+    "nested_api_key": true,
+    "array_token": true,
+    "renamed_pwd": true,
+    "camel_secret": true,
+    "jwt": true,
+    "bearer_raw": true,
+    "freetext_pwd": true,
+    "kv_token": true,
+    "email": true,
+    "mobile": true,
+    "idcard": true,
+    "bankcard": true,
+    "aws_akid": true,
+    "longline_secret": true,
+    "embedded_json_pwd": true,
+    "cred_user": true
+  },
+  "audit_covers_secret": {
+    "db_password": true,
+    "nested_api_key": true,
+    "array_token": true,
+    "renamed_pwd": true,
+    "camel_secret": true,
+    "jwt": true,
+    "bearer_raw": true,
+    "freetext_pwd": true,
+    "kv_token": true,
+    "email": true,
+    "mobile": true,
+    "idcard": true,
+    "bankcard": true,
+    "aws_akid": true,
+    "longline_secret": true,
+    "embedded_json_pwd": true,
+    "cred_user": true
+  },
+  "audit_record_count": 24,
+  "audit_wellformed": true,
+  "false_positives": {
+    "author": false,
+    "monkey_business": false,
+    "tokenize_count": false
+  },
+  "passed": true
+}

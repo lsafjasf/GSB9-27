@@ -1,0 +1,13 @@
+{
+  "lines": 20000,
+  "json_lines": 12000,
+  "text_lines": 8000,
+  "long_lines_1mb": 200,
+  "redactions": 40007,
+  "size_before_bytes": 212606643,
+  "size_after_bytes": 213637985,
+  "size_delta_pct": 0.49,
+  "elapsed_sec": 17.919,
+  "throughput_mb_per_sec": 11.3,
+  "lines_per_sec": 1116
+}
