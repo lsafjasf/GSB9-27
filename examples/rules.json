@@ -1,0 +1,30 @@
+{
+  "audit": {"warn_abs": 50, "warn_pct": 0.5},
+  "rules": [
+    {
+      "id": "ignore-updated-at",
+      "path": "/metadata/updated_at",
+      "reason": "精确路径：每次部署都变的时间戳"
+    },
+    {
+      "id": "ignore-build-seq",
+      "path": "/metadata/build_seq",
+      "reason": "精确路径：单调递增的构建序号"
+    },
+    {
+      "id": "ignore-server-comments",
+      "path": "/servers/*/comment",
+      "reason": "通配：任意一台服务器的备注字段"
+    },
+    {
+      "id": "ignore-any-timestamp",
+      "type": "iso8601",
+      "reason": "按类型：所有 ISO8601 时间戳的浮动"
+    },
+    {
+      "id": "ignore-retired-field",
+      "path": "/retired/field",
+      "reason": "演示用：该字段已不存在，应触发未命中告警"
+    }
+  ]
+}

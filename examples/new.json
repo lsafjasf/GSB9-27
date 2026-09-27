@@ -1,0 +1,30 @@
+{
+  "version": "1.5.0",
+  "metadata": {
+    "updated_at": "2026-09-28T08:30:00+08:00",
+    "build_seq": 1087,
+    "note": "release"
+  },
+  "servers": [
+    {
+      "host": "a.internal",
+      "port": 9090,
+      "comment": "primary (patched)"
+    },
+    {
+      "host": "b.internal",
+      "port": 9091,
+      "comment": "standby"
+    },
+    {
+      "host": "c.internal",
+      "port": 9092,
+      "comment": "canary"
+    }
+  ],
+  "features": {
+    "search": true,
+    "beta_ui": true,
+    "trial_expires": "2026-10-15"
+  }
+}
