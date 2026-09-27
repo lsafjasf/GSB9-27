@@ -1,0 +1,1155 @@
+{
+  "framework": "idempotency-checker",
+  "reports": [
+    {
+      "target": "IdempotentPaymentTarget",
+      "request": {
+        "idempotency_key": "chk-0001",
+        "action": "charge",
+        "amount": 100,
+        "currency": "CNY"
+      },
+      "overall_verdict": "TRULY_IDEMPOTENT",
+      "patterns": [
+        {
+          "pattern": "sequential_replay",
+          "verdict": "TRULY_IDEMPOTENT",
+          "rationale": "side effect applied exactly once (count=1) and all successful attempts returned identical values",
+          "evidence": {
+            "side_effect_count": 1,
+            "return_consistent": true,
+            "distinct_responses": [
+              {
+                "status": "ok",
+                "transaction_id": "txn-0001",
+                "idempotency_key": "chk-0001"
+              }
+            ],
+            "state_trace": [
+              {
+                "side_effect_count": 1,
+                "ledger": [
+                  {
+                    "transaction_id": "txn-0001",
+                    "idempotency_key": "chk-0001",
+                    "amount": 100,
+                    "currency": "CNY"
+                  }
+                ],
+                "notifications": [
+                  "sms: charged 100 CNY (txn-0001)"
+                ]
+              },
+              {
+                "side_effect_count": 1,
+                "ledger": [
+                  {
+                    "transaction_id": "txn-0001",
+                    "idempotency_key": "chk-0001",
+                    "amount": 100,
+                    "currency": "CNY"
+                  }
+                ],
+                "notifications": [
+                  "sms: charged 100 CNY (txn-0001)"
+                ]
+              },
+              {
+                "side_effect_count": 1,
+                "ledger": [
+                  {
+                    "transaction_id": "txn-0001",
+                    "idempotency_key": "chk-0001",
+                    "amount": 100,
+                    "currency": "CNY"
+                  }
+                ],
+                "notifications": [
+                  "sms: charged 100 CNY (txn-0001)"
+                ]
+              }
+            ],
+            "attempts": [
+              {
+                "index": 0,
+                "outcome": "ok",
+                "response": {
+                  "status": "ok",
+                  "transaction_id": "txn-0001",
+                  "idempotency_key": "chk-0001"
+                },
+                "error": null
+              },
+              {
+                "index": 1,
+                "outcome": "ok",
+                "response": {
+                  "status": "ok",
+                  "transaction_id": "txn-0001",
+                  "idempotency_key": "chk-0001"
+                },
+                "error": null
+              },
+              {
+                "index": 2,
+                "outcome": "ok",
+                "response": {
+                  "status": "ok",
+                  "transaction_id": "txn-0001",
+                  "idempotency_key": "chk-0001"
+                },
+                "error": null
+              }
+            ]
+          }
+        },
+        {
+          "pattern": "concurrent_replay",
+          "verdict": "TRULY_IDEMPOTENT",
+          "rationale": "side effect applied exactly once (count=1) and all successful attempts returned identical values",
+          "evidence": {
+            "side_effect_count": 1,
+            "return_consistent": true,
+            "distinct_responses": [
+              {
+                "status": "ok",
+                "transaction_id": "txn-0001",
+                "idempotency_key": "chk-0001"
+              }
+            ],
+            "state_trace": [
+              {
+                "side_effect_count": 1,
+                "ledger": [
+                  {
+                    "transaction_id": "txn-0001",
+                    "idempotency_key": "chk-0001",
+                    "amount": 100,
+                    "currency": "CNY"
+                  }
+                ],
+                "notifications": [
+                  "sms: charged 100 CNY (txn-0001)"
+                ]
+              },
+              {
+                "side_effect_count": 1,
+                "ledger": [
+                  {
+                    "transaction_id": "txn-0001",
+                    "idempotency_key": "chk-0001",
+                    "amount": 100,
+                    "currency": "CNY"
+                  }
+                ],
+                "notifications": [
+                  "sms: charged 100 CNY (txn-0001)"
+                ]
+              },
+              {
+                "side_effect_count": 1,
+                "ledger": [
+                  {
+                    "transaction_id": "txn-0001",
+                    "idempotency_key": "chk-0001",
+                    "amount": 100,
+                    "currency": "CNY"
+                  }
+                ],
+                "notifications": [
+                  "sms: charged 100 CNY (txn-0001)"
+                ]
+              },
+              {
+                "side_effect_count": 1,
+                "ledger": [
+                  {
+                    "transaction_id": "txn-0001",
+                    "idempotency_key": "chk-0001",
+                    "amount": 100,
+                    "currency": "CNY"
+                  }
+                ],
+                "notifications": [
+                  "sms: charged 100 CNY (txn-0001)"
+                ]
+              },
+              {
+                "side_effect_count": 1,
+                "ledger": [
+                  {
+                    "transaction_id": "txn-0001",
+                    "idempotency_key": "chk-0001",
+                    "amount": 100,
+                    "currency": "CNY"
+                  }
+                ],
+                "notifications": [
+                  "sms: charged 100 CNY (txn-0001)"
+                ]
+              }
+            ],
+            "attempts": [
+              {
+                "index": 0,
+                "outcome": "ok",
+                "response": {
+                  "status": "ok",
+                  "transaction_id": "txn-0001",
+                  "idempotency_key": "chk-0001"
+                },
+                "error": null
+              },
+              {
+                "index": 1,
+                "outcome": "ok",
+                "response": {
+                  "status": "ok",
+                  "transaction_id": "txn-0001",
+                  "idempotency_key": "chk-0001"
+                },
+                "error": null
+              },
+              {
+                "index": 2,
+                "outcome": "ok",
+                "response": {
+                  "status": "ok",
+                  "transaction_id": "txn-0001",
+                  "idempotency_key": "chk-0001"
+                },
+                "error": null
+              },
+              {
+                "index": 3,
+                "outcome": "ok",
+                "response": {
+                  "status": "ok",
+                  "transaction_id": "txn-0001",
+                  "idempotency_key": "chk-0001"
+                },
+                "error": null
+              },
+              {
+                "index": 4,
+                "outcome": "ok",
+                "response": {
+                  "status": "ok",
+                  "transaction_id": "txn-0001",
+                  "idempotency_key": "chk-0001"
+                },
+                "error": null
+              }
+            ]
+          }
+        },
+        {
+          "pattern": "timeout_then_retry",
+          "verdict": "TRULY_IDEMPOTENT",
+          "rationale": "side effect applied exactly once (count=1) and all successful attempts returned identical values",
+          "evidence": {
+            "side_effect_count": 1,
+            "return_consistent": true,
+            "distinct_responses": [
+              {
+                "status": "ok",
+                "transaction_id": "txn-0001",
+                "idempotency_key": "chk-0001"
+              }
+            ],
+            "state_trace": [
+              {
+                "side_effect_count": 1,
+                "ledger": [
+                  {
+                    "transaction_id": "txn-0001",
+                    "idempotency_key": "chk-0001",
+                    "amount": 100,
+                    "currency": "CNY"
+                  }
+                ],
+                "notifications": [
+                  "sms: charged 100 CNY (txn-0001)"
+                ]
+              },
+              {
+                "side_effect_count": 1,
+                "ledger": [
+                  {
+                    "transaction_id": "txn-0001",
+                    "idempotency_key": "chk-0001",
+                    "amount": 100,
+                    "currency": "CNY"
+                  }
+                ],
+                "notifications": [
+                  "sms: charged 100 CNY (txn-0001)"
+                ]
+              }
+            ],
+            "attempts": [
+              {
+                "index": 0,
+                "outcome": "timeout",
+                "response": null,
+                "error": "request chk-0001: processed but response lost (timeout)"
+              },
+              {
+                "index": 1,
+                "outcome": "ok",
+                "response": {
+                  "status": "ok",
+                  "transaction_id": "txn-0001",
+                  "idempotency_key": "chk-0001"
+                },
+                "error": null
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "target": "NonIdempotentPaymentTarget",
+      "request": {
+        "idempotency_key": "chk-0001",
+        "action": "charge",
+        "amount": 100,
+        "currency": "CNY"
+      },
+      "overall_verdict": "NOT_IDEMPOTENT",
+      "patterns": [
+        {
+          "pattern": "sequential_replay",
+          "verdict": "NOT_IDEMPOTENT",
+          "rationale": "side effect applied 3 times and return consistency=False: not idempotent",
+          "evidence": {
+            "side_effect_count": 3,
+            "return_consistent": false,
+            "distinct_responses": [
+              {
+                "status": "ok",
+                "transaction_id": "txn-0001",
+                "idempotency_key": "chk-0001"
+              },
+              {
+                "status": "ok",
+                "transaction_id": "txn-0002",
+                "idempotency_key": "chk-0001"
+              },
+              {
+                "status": "ok",
+                "transaction_id": "txn-0003",
+                "idempotency_key": "chk-0001"
+              }
+            ],
+            "state_trace": [
+              {
+                "side_effect_count": 1,
+                "ledger": [
+                  {
+                    "transaction_id": "txn-0001",
+                    "idempotency_key": "chk-0001",
+                    "amount": 100,
+                    "currency": "CNY"
+                  }
+                ],
+                "notifications": [
+                  "sms: charged 100 CNY (txn-0001)"
+                ]
+              },
+              {
+                "side_effect_count": 2,
+                "ledger": [
+                  {
+                    "transaction_id": "txn-0001",
+                    "idempotency_key": "chk-0001",
+                    "amount": 100,
+                    "currency": "CNY"
+                  },
+                  {
+                    "transaction_id": "txn-0002",
+                    "idempotency_key": "chk-0001",
+                    "amount": 100,
+                    "currency": "CNY"
+                  }
+                ],
+                "notifications": [
+                  "sms: charged 100 CNY (txn-0001)",
+                  "sms: charged 100 CNY (txn-0002)"
+                ]
+              },
+              {
+                "side_effect_count": 3,
+                "ledger": [
+                  {
+                    "transaction_id": "txn-0001",
+                    "idempotency_key": "chk-0001",
+                    "amount": 100,
+                    "currency": "CNY"
+                  },
+                  {
+                    "transaction_id": "txn-0002",
+                    "idempotency_key": "chk-0001",
+                    "amount": 100,
+                    "currency": "CNY"
+                  },
+                  {
+                    "transaction_id": "txn-0003",
+                    "idempotency_key": "chk-0001",
+                    "amount": 100,
+                    "currency": "CNY"
+                  }
+                ],
+                "notifications": [
+                  "sms: charged 100 CNY (txn-0001)",
+                  "sms: charged 100 CNY (txn-0002)",
+                  "sms: charged 100 CNY (txn-0003)"
+                ]
+              }
+            ],
+            "attempts": [
+              {
+                "index": 0,
+                "outcome": "ok",
+                "response": {
+                  "status": "ok",
+                  "transaction_id": "txn-0001",
+                  "idempotency_key": "chk-0001"
+                },
+                "error": null
+              },
+              {
+                "index": 1,
+                "outcome": "ok",
+                "response": {
+                  "status": "ok",
+                  "transaction_id": "txn-0002",
+                  "idempotency_key": "chk-0001"
+                },
+                "error": null
+              },
+              {
+                "index": 2,
+                "outcome": "ok",
+                "response": {
+                  "status": "ok",
+                  "transaction_id": "txn-0003",
+                  "idempotency_key": "chk-0001"
+                },
+                "error": null
+              }
+            ]
+          }
+        },
+        {
+          "pattern": "concurrent_replay",
+          "verdict": "NOT_IDEMPOTENT",
+          "rationale": "side effect applied 5 times and return consistency=False: not idempotent",
+          "evidence": {
+            "side_effect_count": 5,
+            "return_consistent": false,
+            "distinct_responses": [
+              {
+                "status": "ok",
+                "transaction_id": "txn-0005",
+                "idempotency_key": "chk-0001"
+              },
+              {
+                "status": "ok",
+                "transaction_id": "txn-0003",
+                "idempotency_key": "chk-0001"
+              },
+              {
+                "status": "ok",
+                "transaction_id": "txn-0004",
+                "idempotency_key": "chk-0001"
+              },
+              {
+                "status": "ok",
+                "transaction_id": "txn-0002",
+                "idempotency_key": "chk-0001"
+              },
+              {
+                "status": "ok",
+                "transaction_id": "txn-0001",
+                "idempotency_key": "chk-0001"
+              }
+            ],
+            "state_trace": [
+              {
+                "side_effect_count": 5,
+                "ledger": [
+                  {
+                    "transaction_id": "txn-0001",
+                    "idempotency_key": "chk-0001",
+                    "amount": 100,
+                    "currency": "CNY"
+                  },
+                  {
+                    "transaction_id": "txn-0002",
+                    "idempotency_key": "chk-0001",
+                    "amount": 100,
+                    "currency": "CNY"
+                  },
+                  {
+                    "transaction_id": "txn-0003",
+                    "idempotency_key": "chk-0001",
+                    "amount": 100,
+                    "currency": "CNY"
+                  },
+                  {
+                    "transaction_id": "txn-0004",
+                    "idempotency_key": "chk-0001",
+                    "amount": 100,
+                    "currency": "CNY"
+                  },
+                  {
+                    "transaction_id": "txn-0005",
+                    "idempotency_key": "chk-0001",
+                    "amount": 100,
+                    "currency": "CNY"
+                  }
+                ],
+                "notifications": [
+                  "sms: charged 100 CNY (txn-0001)",
+                  "sms: charged 100 CNY (txn-0002)",
+                  "sms: charged 100 CNY (txn-0003)",
+                  "sms: charged 100 CNY (txn-0004)",
+                  "sms: charged 100 CNY (txn-0005)"
+                ]
+              },
+              {
+                "side_effect_count": 3,
+                "ledger": [
+                  {
+                    "transaction_id": "txn-0001",
+                    "idempotency_key": "chk-0001",
+                    "amount": 100,
+                    "currency": "CNY"
+                  },
+                  {
+                    "transaction_id": "txn-0002",
+                    "idempotency_key": "chk-0001",
+                    "amount": 100,
+                    "currency": "CNY"
+                  },
+                  {
+                    "transaction_id": "txn-0003",
+                    "idempotency_key": "chk-0001",
+                    "amount": 100,
+                    "currency": "CNY"
+                  }
+                ],
+                "notifications": [
+                  "sms: charged 100 CNY (txn-0001)",
+                  "sms: charged 100 CNY (txn-0002)",
+                  "sms: charged 100 CNY (txn-0003)"
+                ]
+              },
+              {
+                "side_effect_count": 4,
+                "ledger": [
+                  {
+                    "transaction_id": "txn-0001",
+                    "idempotency_key": "chk-0001",
+                    "amount": 100,
+                    "currency": "CNY"
+                  },
+                  {
+                    "transaction_id": "txn-0002",
+                    "idempotency_key": "chk-0001",
+                    "amount": 100,
+                    "currency": "CNY"
+                  },
+                  {
+                    "transaction_id": "txn-0003",
+                    "idempotency_key": "chk-0001",
+                    "amount": 100,
+                    "currency": "CNY"
+                  },
+                  {
+                    "transaction_id": "txn-0004",
+                    "idempotency_key": "chk-0001",
+                    "amount": 100,
+                    "currency": "CNY"
+                  }
+                ],
+                "notifications": [
+                  "sms: charged 100 CNY (txn-0001)",
+                  "sms: charged 100 CNY (txn-0002)",
+                  "sms: charged 100 CNY (txn-0003)",
+                  "sms: charged 100 CNY (txn-0004)"
+                ]
+              },
+              {
+                "side_effect_count": 2,
+                "ledger": [
+                  {
+                    "transaction_id": "txn-0001",
+                    "idempotency_key": "chk-0001",
+                    "amount": 100,
+                    "currency": "CNY"
+                  },
+                  {
+                    "transaction_id": "txn-0002",
+                    "idempotency_key": "chk-0001",
+                    "amount": 100,
+                    "currency": "CNY"
+                  }
+                ],
+                "notifications": [
+                  "sms: charged 100 CNY (txn-0001)",
+                  "sms: charged 100 CNY (txn-0002)"
+                ]
+              },
+              {
+                "side_effect_count": 1,
+                "ledger": [
+                  {
+                    "transaction_id": "txn-0001",
+                    "idempotency_key": "chk-0001",
+                    "amount": 100,
+                    "currency": "CNY"
+                  }
+                ],
+                "notifications": [
+                  "sms: charged 100 CNY (txn-0001)"
+                ]
+              }
+            ],
+            "attempts": [
+              {
+                "index": 0,
+                "outcome": "ok",
+                "response": {
+                  "status": "ok",
+                  "transaction_id": "txn-0005",
+                  "idempotency_key": "chk-0001"
+                },
+                "error": null
+              },
+              {
+                "index": 1,
+                "outcome": "ok",
+                "response": {
+                  "status": "ok",
+                  "transaction_id": "txn-0003",
+                  "idempotency_key": "chk-0001"
+                },
+                "error": null
+              },
+              {
+                "index": 2,
+                "outcome": "ok",
+                "response": {
+                  "status": "ok",
+                  "transaction_id": "txn-0004",
+                  "idempotency_key": "chk-0001"
+                },
+                "error": null
+              },
+              {
+                "index": 3,
+                "outcome": "ok",
+                "response": {
+                  "status": "ok",
+                  "transaction_id": "txn-0002",
+                  "idempotency_key": "chk-0001"
+                },
+                "error": null
+              },
+              {
+                "index": 4,
+                "outcome": "ok",
+                "response": {
+                  "status": "ok",
+                  "transaction_id": "txn-0001",
+                  "idempotency_key": "chk-0001"
+                },
+                "error": null
+              }
+            ]
+          }
+        },
+        {
+          "pattern": "timeout_then_retry",
+          "verdict": "NOT_IDEMPOTENT",
+          "rationale": "side effect applied 2 times and return consistency=False: not idempotent",
+          "evidence": {
+            "side_effect_count": 2,
+            "return_consistent": false,
+            "distinct_responses": [
+              {
+                "status": "ok",
+                "transaction_id": "txn-0002",
+                "idempotency_key": "chk-0001"
+              }
+            ],
+            "state_trace": [
+              {
+                "side_effect_count": 1,
+                "ledger": [
+                  {
+                    "transaction_id": "txn-0001",
+                    "idempotency_key": "chk-0001",
+                    "amount": 100,
+                    "currency": "CNY"
+                  }
+                ],
+                "notifications": [
+                  "sms: charged 100 CNY (txn-0001)"
+                ]
+              },
+              {
+                "side_effect_count": 2,
+                "ledger": [
+                  {
+                    "transaction_id": "txn-0001",
+                    "idempotency_key": "chk-0001",
+                    "amount": 100,
+                    "currency": "CNY"
+                  },
+                  {
+                    "transaction_id": "txn-0002",
+                    "idempotency_key": "chk-0001",
+                    "amount": 100,
+                    "currency": "CNY"
+                  }
+                ],
+                "notifications": [
+                  "sms: charged 100 CNY (txn-0001)",
+                  "sms: charged 100 CNY (txn-0002)"
+                ]
+              }
+            ],
+            "attempts": [
+              {
+                "index": 0,
+                "outcome": "timeout",
+                "response": null,
+                "error": "request chk-0001: processed but response lost (timeout)"
+              },
+              {
+                "index": 1,
+                "outcome": "ok",
+                "response": {
+                  "status": "ok",
+                  "transaction_id": "txn-0002",
+                  "idempotency_key": "chk-0001"
+                },
+                "error": null
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "target": "FakeIdempotentPaymentTarget",
+      "request": {
+        "idempotency_key": "chk-0001",
+        "action": "charge",
+        "amount": 100,
+        "currency": "CNY"
+      },
+      "overall_verdict": "RETURN_CONSISTENT_BUT_SIDE_EFFECTS_REPEATED",
+      "patterns": [
+        {
+          "pattern": "sequential_replay",
+          "verdict": "RETURN_CONSISTENT_BUT_SIDE_EFFECTS_REPEATED",
+          "rationale": "return values are consistent, but the side effect was applied 3 times: the interface only pretends to be idempotent",
+          "evidence": {
+            "side_effect_count": 3,
+            "return_consistent": true,
+            "distinct_responses": [
+              {
+                "status": "ok",
+                "transaction_id": "txn-0001",
+                "idempotency_key": "chk-0001"
+              }
+            ],
+            "state_trace": [
+              {
+                "side_effect_count": 1,
+                "ledger": [
+                  {
+                    "transaction_id": "txn-0001",
+                    "idempotency_key": "chk-0001",
+                    "amount": 100,
+                    "currency": "CNY"
+                  }
+                ],
+                "notifications": [
+                  "sms: charged 100 CNY (txn-0001)"
+                ]
+              },
+              {
+                "side_effect_count": 2,
+                "ledger": [
+                  {
+                    "transaction_id": "txn-0001",
+                    "idempotency_key": "chk-0001",
+                    "amount": 100,
+                    "currency": "CNY"
+                  },
+                  {
+                    "transaction_id": "txn-0002",
+                    "idempotency_key": "chk-0001",
+                    "amount": 100,
+                    "currency": "CNY"
+                  }
+                ],
+                "notifications": [
+                  "sms: charged 100 CNY (txn-0001)",
+                  "sms: charged 100 CNY (txn-0002)"
+                ]
+              },
+              {
+                "side_effect_count": 3,
+                "ledger": [
+                  {
+                    "transaction_id": "txn-0001",
+                    "idempotency_key": "chk-0001",
+                    "amount": 100,
+                    "currency": "CNY"
+                  },
+                  {
+                    "transaction_id": "txn-0002",
+                    "idempotency_key": "chk-0001",
+                    "amount": 100,
+                    "currency": "CNY"
+                  },
+                  {
+                    "transaction_id": "txn-0003",
+                    "idempotency_key": "chk-0001",
+                    "amount": 100,
+                    "currency": "CNY"
+                  }
+                ],
+                "notifications": [
+                  "sms: charged 100 CNY (txn-0001)",
+                  "sms: charged 100 CNY (txn-0002)",
+                  "sms: charged 100 CNY (txn-0003)"
+                ]
+              }
+            ],
+            "attempts": [
+              {
+                "index": 0,
+                "outcome": "ok",
+                "response": {
+                  "status": "ok",
+                  "transaction_id": "txn-0001",
+                  "idempotency_key": "chk-0001"
+                },
+                "error": null
+              },
+              {
+                "index": 1,
+                "outcome": "ok",
+                "response": {
+                  "status": "ok",
+                  "transaction_id": "txn-0001",
+                  "idempotency_key": "chk-0001"
+                },
+                "error": null
+              },
+              {
+                "index": 2,
+                "outcome": "ok",
+                "response": {
+                  "status": "ok",
+                  "transaction_id": "txn-0001",
+                  "idempotency_key": "chk-0001"
+                },
+                "error": null
+              }
+            ]
+          }
+        },
+        {
+          "pattern": "concurrent_replay",
+          "verdict": "RETURN_CONSISTENT_BUT_SIDE_EFFECTS_REPEATED",
+          "rationale": "return values are consistent, but the side effect was applied 5 times: the interface only pretends to be idempotent",
+          "evidence": {
+            "side_effect_count": 5,
+            "return_consistent": true,
+            "distinct_responses": [
+              {
+                "status": "ok",
+                "transaction_id": "txn-0001",
+                "idempotency_key": "chk-0001"
+              }
+            ],
+            "state_trace": [
+              {
+                "side_effect_count": 2,
+                "ledger": [
+                  {
+                    "transaction_id": "txn-0001",
+                    "idempotency_key": "chk-0001",
+                    "amount": 100,
+                    "currency": "CNY"
+                  },
+                  {
+                    "transaction_id": "txn-0002",
+                    "idempotency_key": "chk-0001",
+                    "amount": 100,
+                    "currency": "CNY"
+                  }
+                ],
+                "notifications": [
+                  "sms: charged 100 CNY (txn-0001)",
+                  "sms: charged 100 CNY (txn-0002)"
+                ]
+              },
+              {
+                "side_effect_count": 3,
+                "ledger": [
+                  {
+                    "transaction_id": "txn-0001",
+                    "idempotency_key": "chk-0001",
+                    "amount": 100,
+                    "currency": "CNY"
+                  },
+                  {
+                    "transaction_id": "txn-0002",
+                    "idempotency_key": "chk-0001",
+                    "amount": 100,
+                    "currency": "CNY"
+                  },
+                  {
+                    "transaction_id": "txn-0003",
+                    "idempotency_key": "chk-0001",
+                    "amount": 100,
+                    "currency": "CNY"
+                  }
+                ],
+                "notifications": [
+                  "sms: charged 100 CNY (txn-0001)",
+                  "sms: charged 100 CNY (txn-0002)",
+                  "sms: charged 100 CNY (txn-0003)"
+                ]
+              },
+              {
+                "side_effect_count": 4,
+                "ledger": [
+                  {
+                    "transaction_id": "txn-0001",
+                    "idempotency_key": "chk-0001",
+                    "amount": 100,
+                    "currency": "CNY"
+                  },
+                  {
+                    "transaction_id": "txn-0002",
+                    "idempotency_key": "chk-0001",
+                    "amount": 100,
+                    "currency": "CNY"
+                  },
+                  {
+                    "transaction_id": "txn-0003",
+                    "idempotency_key": "chk-0001",
+                    "amount": 100,
+                    "currency": "CNY"
+                  },
+                  {
+                    "transaction_id": "txn-0004",
+                    "idempotency_key": "chk-0001",
+                    "amount": 100,
+                    "currency": "CNY"
+                  }
+                ],
+                "notifications": [
+                  "sms: charged 100 CNY (txn-0001)",
+                  "sms: charged 100 CNY (txn-0002)",
+                  "sms: charged 100 CNY (txn-0003)",
+                  "sms: charged 100 CNY (txn-0004)"
+                ]
+              },
+              {
+                "side_effect_count": 5,
+                "ledger": [
+                  {
+                    "transaction_id": "txn-0001",
+                    "idempotency_key": "chk-0001",
+                    "amount": 100,
+                    "currency": "CNY"
+                  },
+                  {
+                    "transaction_id": "txn-0002",
+                    "idempotency_key": "chk-0001",
+                    "amount": 100,
+                    "currency": "CNY"
+                  },
+                  {
+                    "transaction_id": "txn-0003",
+                    "idempotency_key": "chk-0001",
+                    "amount": 100,
+                    "currency": "CNY"
+                  },
+                  {
+                    "transaction_id": "txn-0004",
+                    "idempotency_key": "chk-0001",
+                    "amount": 100,
+                    "currency": "CNY"
+                  },
+                  {
+                    "transaction_id": "txn-0005",
+                    "idempotency_key": "chk-0001",
+                    "amount": 100,
+                    "currency": "CNY"
+                  }
+                ],
+                "notifications": [
+                  "sms: charged 100 CNY (txn-0001)",
+                  "sms: charged 100 CNY (txn-0002)",
+                  "sms: charged 100 CNY (txn-0003)",
+                  "sms: charged 100 CNY (txn-0004)",
+                  "sms: charged 100 CNY (txn-0005)"
+                ]
+              },
+              {
+                "side_effect_count": 1,
+                "ledger": [
+                  {
+                    "transaction_id": "txn-0001",
+                    "idempotency_key": "chk-0001",
+                    "amount": 100,
+                    "currency": "CNY"
+                  }
+                ],
+                "notifications": [
+                  "sms: charged 100 CNY (txn-0001)"
+                ]
+              }
+            ],
+            "attempts": [
+              {
+                "index": 0,
+                "outcome": "ok",
+                "response": {
+                  "status": "ok",
+                  "transaction_id": "txn-0001",
+                  "idempotency_key": "chk-0001"
+                },
+                "error": null
+              },
+              {
+                "index": 1,
+                "outcome": "ok",
+                "response": {
+                  "status": "ok",
+                  "transaction_id": "txn-0001",
+                  "idempotency_key": "chk-0001"
+                },
+                "error": null
+              },
+              {
+                "index": 2,
+                "outcome": "ok",
+                "response": {
+                  "status": "ok",
+                  "transaction_id": "txn-0001",
+                  "idempotency_key": "chk-0001"
+                },
+                "error": null
+              },
+              {
+                "index": 3,
+                "outcome": "ok",
+                "response": {
+                  "status": "ok",
+                  "transaction_id": "txn-0001",
+                  "idempotency_key": "chk-0001"
+                },
+                "error": null
+              },
+              {
+                "index": 4,
+                "outcome": "ok",
+                "response": {
+                  "status": "ok",
+                  "transaction_id": "txn-0001",
+                  "idempotency_key": "chk-0001"
+                },
+                "error": null
+              }
+            ]
+          }
+        },
+        {
+          "pattern": "timeout_then_retry",
+          "verdict": "RETURN_CONSISTENT_BUT_SIDE_EFFECTS_REPEATED",
+          "rationale": "return values are consistent, but the side effect was applied 2 times: the interface only pretends to be idempotent",
+          "evidence": {
+            "side_effect_count": 2,
+            "return_consistent": true,
+            "distinct_responses": [
+              {
+                "status": "ok",
+                "transaction_id": "txn-0001",
+                "idempotency_key": "chk-0001"
+              }
+            ],
+            "state_trace": [
+              {
+                "side_effect_count": 1,
+                "ledger": [
+                  {
+                    "transaction_id": "txn-0001",
+                    "idempotency_key": "chk-0001",
+                    "amount": 100,
+                    "currency": "CNY"
+                  }
+                ],
+                "notifications": [
+                  "sms: charged 100 CNY (txn-0001)"
+                ]
+              },
+              {
+                "side_effect_count": 2,
+                "ledger": [
+                  {
+                    "transaction_id": "txn-0001",
+                    "idempotency_key": "chk-0001",
+                    "amount": 100,
+                    "currency": "CNY"
+                  },
+                  {
+                    "transaction_id": "txn-0002",
+                    "idempotency_key": "chk-0001",
+                    "amount": 100,
+                    "currency": "CNY"
+                  }
+                ],
+                "notifications": [
+                  "sms: charged 100 CNY (txn-0001)",
+                  "sms: charged 100 CNY (txn-0002)"
+                ]
+              }
+            ],
+            "attempts": [
+              {
+                "index": 0,
+                "outcome": "timeout",
+                "response": null,
+                "error": "request chk-0001: processed but response lost (timeout)"
+              },
+              {
+                "index": 1,
+                "outcome": "ok",
+                "response": {
+                  "status": "ok",
+                  "transaction_id": "txn-0001",
+                  "idempotency_key": "chk-0001"
+                },
+                "error": null
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
