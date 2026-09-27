@@ -1,0 +1,7 @@
+KEEP   cache-new            KEEP_WITHIN_GRACE      age 30s < min_age 3600s (recently written)
+KEEP   export-9             KEEP_ARCHIVE_ACTIVE    archive task 'nightly-archive' in progress (lock age 120s)
+DELETE logs-2023-01         DELETE_ELIGIBLE        unreferenced; no active archive; age 864000s >= min_age 3600s
+DELETE logs-2023-02         DELETE_ELIGIBLE        unreferenced; no active archive; age 864000s >= min_age 3600s
+KEEP   report-q3            KEEP_REFERENCED        referenced by analytics-service
+
+plan: /tmp/tmp.eP8ZKqzwgh/journal/plan-20231114T221320-3160050-da234cd8.jsonl  (2 delete candidate(s), 3 kept)
