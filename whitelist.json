@@ -1,0 +1,21 @@
+{
+  "types": {
+    "demoapp.models.User": {
+      "constructor": "from_dict",
+      "fields": {"name": "str", "age": "int"}
+    },
+    "demoapp.models.Point": {
+      "fields": {"x": "number", "y": "number"}
+    },
+    "demoapp.models.TypedList": {
+      "fields": {"items": "any"}
+    },
+    "demoapp.models.Node": {
+      "fields": {"name": "str", "next": "any"}
+    }
+  },
+  "aliases": {
+    "User": "demoapp.models.User",
+    "Point": "demoapp.models.Point"
+  }
+}
