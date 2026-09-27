@@ -1,0 +1,24 @@
+{
+  "path": "/tmp/pidx/idx_4000000.bin",
+  "records": 4000000,
+  "queries": 100000,
+  "found": 90024,
+  "cache_pages": 128,
+  "cache_hits": 1207672,
+  "cache_misses": 896949,
+  "cache_hit_rate": 0.5738,
+  "rss_before_kb": 16784,
+  "rss_after_kb": 21308,
+  "rss_delta_kb": 4524,
+  "max_rss_kb": 25560,
+  "total_seconds": 2.542,
+  "queries_per_second": 39341.6,
+  "latency_us": {
+    "p50": 23.37,
+    "p90": 34.89,
+    "p99": 56.09,
+    "p99.9": 103.91,
+    "p100": 3047.28
+  },
+  "latency_mean_us": 25.28
+}
