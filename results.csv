@@ -1,0 +1,18 @@
+case,n,nnz,converged,iterations,wall_time_ms,eigenvalue,eig_rel_err,angle_deg,rel_residual,restarts,verify_escapes,message,note
+identity_I50,50,50,True,1,2.2,1.0000000000e+00,1.11e-16,,1.67e-16,0,0,converged: relative residual below tolerance,any vector is an eigenvector; angle N/A
+zero_50,50,0,True,1,0.0,0.0000000000e+00,0.00e+00,,0.00e+00,0,0,zero matrix: every vector is an eigenvector with eigenvalue 0,zero matrix; angle N/A
+diag_1..100,100,100,True,1689,45.8,1.0000000000e+02,1.42e-16,0.00e+00,9.90e-11,0,0,converged: relative residual below tolerance,
+diag_negative_dominant,4,4,True,25,0.4,-5.0000000000e+00,0.00e+00,0.00e+00,8.43e-11,0,0,converged: relative residual below tolerance,
+diag_scale_1e12,3,3,True,2,0.3,1.0000000000e+12,0.00e+00,0.00e+00,2.14e-13,0,0,converged: relative residual below tolerance,
+diag_scale_tiny,3,3,True,11,0.3,1.0000000000e-12,0.00e+00,0.00e+00,1.93e-11,0,0,converged: relative residual below tolerance,
+diag_scale_mixed,4,4,True,4,0.3,1.0000000000e+08,0.00e+00,0.00e+00,2.14e-13,0,0,converged: relative residual below tolerance,
+constructed_QQLT_gap0.5,60,3600,True,38,22.1,8.0000000000e+00,1.11e-16,0.00e+00,6.03e-13,0,0,converged: relative residual below tolerance,
+near_degenerate_gap0.01,30,900,True,1377,44.0,1.0000000000e+00,9.66e-15,5.63e-05,9.93e-09,0,0,converged: relative residual below tolerance,"lambda2/lambda1 = 0.990000; linear convergence, rate ~ (1-gap)^2 per iter on the residual"
+near_degenerate_gap0.001,30,900,True,11120,327.1,1.0000000000e+00,9.99e-14,5.72e-04,1.00e-08,0,0,converged: relative residual below tolerance,"lambda2/lambda1 = 0.999000; linear convergence, rate ~ (1-gap)^2 per iter on the residual"
+singular_diag,3,3,True,21,0.9,3.0000000000e+00,0.00e+00,0.00e+00,4.09e-11,0,0,converged: relative residual below tolerance,singular but dominant pair well defined
+nilpotent_J10,10,9,True,40,0.3,0.0000000000e+00,0.00e+00,,0.00e+00,3,0,repeated random starts all landed in the null space: the matrix appears nilpotent / zero-dominant; dominant eigenvalue is 0 (returned eigenvector is a genuine null vector),nilpotent: iteration hits the null space; lambda = 0
+orthogonal_start_noverify,3,3,True,1,0.0,1.0000000000e+00,0.00e+00,0.00e+00,0.00e+00,0,0,converged: relative residual below tolerance,"x0 = e3 is orthogonal to dominant e1: converges to the subdominant pair (1, e3); residual = 0, so the residual criterion alone cannot detect this"
+orthogonal_start_verify,3,3,True,10,0.8,3.0000000000e+00,0.00e+00,0.00e+00,7.46e-11,1,1,converged after the verify pass escaped a subdominant eigenpair (initial vector was orthogonal to the dominant eigenvector),"same start, verify pass on: escapes to the dominant pair"
+plus_minus_lambda,3,3,False,16000,31.0,-1.3939547242e+00,,,1.03e+00,4,0,residual stagnated across random restarts; likely eigenvalues of (nearly) equal magnitude with opposite signs or a tight cluster at the top of the spectrum -- plain power iteration cannot separate them,"|lambda1| = |lambda2|, opposite signs: no convergence, clear failure verdict expected"
+jacobi_crosscheck_n20,20,400,True,279,8.0,-5.8722714378e+00,2.12e-15,0.00e+00,9.97e-13,0,0,converged: relative residual below tolerance,reference: independent Jacobi eigensolver
+large_sparse_n5000,5000,104806,True,3404,18090.9,1.0060983176e+01,0.00e+00(2seeds),,9.97e-10,0,0,converged: relative residual below tolerance,no closed-form reference: eigenvalue cross-checked across two independent random seeds
