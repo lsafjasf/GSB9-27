@@ -1,0 +1,22 @@
+[OK ] fft->ifft round trip (n=1000, padded to 1024)  max_err=2.922e-14
+[OK ] all-zero x all-zero                        len=   799  rel_err=0.000e+00
+[OK ] single point x single point                len=     1  rel_err=0.000e+00
+[OK ] single point x long                        len=   999  rel_err=3.205e-14
+[OK ] impulse x sequence (identity)              len=    53  rel_err=7.019e-16
+[OK ] tiny values 1e-200 (underflow guard)       len=   127  rel_err=0.000e+00
+[OK ] huge values 1e150 (overflow guard)         len=   127  rel_err=1.510e-15
+[OK ] mixed magnitude 1e150 vs 1e-150            len=    65  rel_err=1.107e-15
+[OK ] per-sample magnitude spread 1e-100..1e100  len=   255  rel_err=4.050e-15
+[OK ] long sequence n=100001 (non-pow2)          len=100777  rel_err=3.611e-12
+
+error vs length (random uniform [-1,1], equal lengths):
+       n  fft_len  max_rel_err
+       8       16    2.965e-16
+      31       64    6.944e-16
+     100      256    3.750e-15
+     333     1024    2.350e-14
+    1000     2048    1.361e-14
+    3000     8192    4.803e-14
+   10000    32768    7.804e-13
+
+All tests passed.
