@@ -1,0 +1,74 @@
+{
+  "types": [
+    "feat",
+    "fix",
+    "docs",
+    "style",
+    "refactor",
+    "perf",
+    "test",
+    "chore",
+    "ci"
+  ],
+  "require_scope": false,
+  "require_changes": true,
+  "scopes": {
+    "api": [
+      "src/api/"
+    ],
+    "ui": [
+      "src/ui/",
+      "assets/"
+    ],
+    "core": [
+      "src/core/"
+    ],
+    "docs": [
+      "docs/"
+    ],
+    "ci": [
+      ".github/",
+      "ci/"
+    ],
+    "deps": [
+      "requirements.txt",
+      "requirements-dev.txt",
+      "package.json",
+      "package-lock.json"
+    ]
+  },
+  "shared_files": [
+    "README.md",
+    "LICENSE",
+    ".gitignore",
+    "CHANGELOG.md"
+  ],
+  "description": {
+    "max_length": 72,
+    "ascii_only": true
+  },
+  "exemptions": {
+    "merge": {
+      "enabled": true,
+      "subject_prefixes": [
+        "Merge "
+      ]
+    },
+    "revert": {
+      "enabled": true,
+      "subject_pattern": "^Revert \"",
+      "body_pattern": "This reverts commit [0-9a-f]+"
+    },
+    "bot": {
+      "enabled": true,
+      "author_email_patterns": [
+        "*\\[bot\\]@*",
+        "dependabot*@*",
+        "renovate*@*"
+      ],
+      "author_name_patterns": [
+        "*\\[bot\\]*"
+      ]
+    }
+  }
+}

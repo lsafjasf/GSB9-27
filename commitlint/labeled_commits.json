@@ -1,0 +1,183 @@
+{
+  "description": "真实提交抽样 + 人工标注。human_label: pass=人工判定合规, fail=人工判定违规。",
+  "commits": [
+    {
+      "id": "a1b2c3d",
+      "message": "feat(api): add pagination to user list endpoint",
+      "files": [
+        "src/api/users.py",
+        "src/api/pagination.py"
+      ],
+      "author_name": "Alice",
+      "author_email": "alice@example.com",
+      "human_label": "pass",
+      "note": "类型/范围/描述均合规，文件都在 api 范围内"
+    },
+    {
+      "id": "b2c3d4e",
+      "message": "fix(ui): correct button alignment on settings page",
+      "files": [
+        "src/ui/settings/Button.tsx",
+        "assets/settings.css"
+      ],
+      "author_name": "Bob",
+      "author_email": "bob@example.com",
+      "human_label": "pass",
+      "note": "ui 范围覆盖 src/ui/ 与 assets/"
+    },
+    {
+      "id": "c3d4e5f",
+      "message": "docs: update deployment guide",
+      "files": [
+        "docs/deploy.md",
+        "README.md"
+      ],
+      "author_name": "Carol",
+      "author_email": "carol@example.com",
+      "human_label": "pass",
+      "note": "无 scope 允许；README.md 属于 shared_files"
+    },
+    {
+      "id": "d4e5f6a",
+      "message": "feat(api): add endpoint but touches ui",
+      "files": [
+        "src/api/routes.py",
+        "src/ui/pages/Home.tsx"
+      ],
+      "author_name": "Dave",
+      "author_email": "dave@example.com",
+      "human_label": "fail",
+      "note": "声明 api 却改了 ui 文件，范围不一致"
+    },
+    {
+      "id": "e5f6a7b",
+      "message": "feat(api): this description is deliberately made far too long to ever pass the length limit",
+      "files": [
+        "src/api/long.py"
+      ],
+      "author_name": "Erin",
+      "author_email": "erin@example.com",
+      "human_label": "fail",
+      "note": "描述 80 字符，超过 72 上限"
+    },
+    {
+      "id": "f6a7b8c",
+      "message": "fix(core): 修复缓存失效问题",
+      "files": [
+        "src/core/cache.py"
+      ],
+      "author_name": "Frank",
+      "author_email": "frank@example.com",
+      "human_label": "fail",
+      "note": "描述含非 ASCII 字符，团队约定描述用英文"
+    },
+    {
+      "id": "a7b8c9d",
+      "message": "updated stuff",
+      "files": [
+        "src/core/util.py"
+      ],
+      "author_name": "Grace",
+      "author_email": "grace@example.com",
+      "human_label": "fail",
+      "note": "不符合 type(scope): description 结构"
+    },
+    {
+      "id": "b8c9d0e",
+      "message": "feat(billing): add invoice export",
+      "files": [
+        "src/api/billing.py"
+      ],
+      "author_name": "Heidi",
+      "author_email": "heidi@example.com",
+      "human_label": "fail",
+      "note": "billing 未在规则中声明，属于未知 scope"
+    },
+    {
+      "id": "c9d0e1f",
+      "message": "chore(deps): bump requests to 2.32.0",
+      "files": [],
+      "author_name": "Ivan",
+      "author_email": "ivan@example.com",
+      "human_label": "fail",
+      "note": "空提交，没有任何文件变更"
+    },
+    {
+      "id": "d0e1f2a",
+      "message": "Merge branch 'feature/login' into main",
+      "files": [],
+      "author_name": "Judy",
+      "author_email": "judy@example.com",
+      "human_label": "pass",
+      "note": "合并提交，走 merge 豁免"
+    },
+    {
+      "id": "e1f2a3b",
+      "message": "Revert \"feat(api): add pagination\"\n\nThis reverts commit a1b2c3d4e5f6.\n",
+      "files": [
+        "src/api/users.py"
+      ],
+      "author_name": "Ken",
+      "author_email": "ken@example.com",
+      "human_label": "pass",
+      "note": "回滚提交，走 revert 豁免"
+    },
+    {
+      "id": "f2a3b4c",
+      "message": "chore(deps): bump lodash from 4.17.20 to 4.17.21",
+      "files": [
+        "package.json",
+        "package-lock.json"
+      ],
+      "author_name": "dependabot[bot]",
+      "author_email": "dependabot[bot]@users.noreply.github.com",
+      "human_label": "pass",
+      "note": "机器人提交，走 bot 豁免（即使结构合规也记录豁免来源）"
+    },
+    {
+      "id": "a3b4c5d",
+      "message": "feat(api): add health check",
+      "files": [
+        "src/api/health.py"
+      ],
+      "author_name": "robot-lily",
+      "author_email": "lily@example.com",
+      "human_label": "pass",
+      "note": "名字像机器人但不匹配 bot 豁免模式，按普通提交检查且合规"
+    },
+    {
+      "id": "b4c5d6e",
+      "message": "test(core): add unit tests for scheduler",
+      "files": [
+        "src/core/scheduler.py",
+        "src/core/tests/test_scheduler.py"
+      ],
+      "author_name": "Mallory",
+      "author_email": "mallory@example.com",
+      "human_label": "pass",
+      "note": "test 类型 + core 范围，文件一致"
+    },
+    {
+      "id": "c5d6e7f",
+      "message": "feat(api):",
+      "files": [
+        "src/api/x.py"
+      ],
+      "author_name": "Ned",
+      "author_email": "ned@example.com",
+      "human_label": "fail",
+      "note": "缺少描述"
+    },
+    {
+      "id": "d6e7f8a",
+      "message": "ci: add nightly workflow",
+      "files": [
+        ".github/workflows/nightly.yml"
+      ],
+      "author_name": "Olga",
+      "author_email": "olga@example.com",
+      "human_label": "pass",
+      "note": "ci 类型无需 scope，文件落在 ci 目录"
+    }
+  ]
+}

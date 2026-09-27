@@ -1,0 +1,39 @@
+commitlint evaluate report
+========================
+
+[OK ] a1b2c3d  script=pass human=pass
+[OK ] b2c3d4e  script=pass human=pass
+[OK ] c3d4e5f  script=pass human=pass
+[OK ] d4e5f6a  script=fail human=fail
+       - file-out-of-scope: file 'src/ui/pages/Home.tsx' is outside declared scope 'api'
+[OK ] e5f6a7b  script=fail human=fail
+       - description-too-long: description is 80 chars, max is 72
+[OK ] f6a7b8c  script=fail human=fail
+       - non-ascii-description: description contains non-ASCII characters
+[OK ] a7b8c9d  script=fail human=fail
+       - bad-format: subject must look like 'type(scope): description', got 'updated stuff'
+[OK ] b8c9d0e  script=fail human=fail
+       - unknown-scope: scope 'billing' not declared in rules
+[OK ] c9d0e1f  script=fail human=fail
+       - empty-commit: commit changes no files
+[OK ] d0e1f2a  script=pass human=pass
+       exempt via merge: subject starts with 'Merge '
+[OK ] e1f2a3b  script=pass human=pass
+       exempt via revert: subject matches '^Revert "' and body matches 'This reverts commit [0-9a-f]+'
+[OK ] f2a3b4c  script=pass human=pass
+       exempt via bot: author email 'dependabot[bot]@users.noreply.github.com' matches 'dependabot*@*'
+[OK ] a3b4c5d  script=pass human=pass
+[OK ] b4c5d6e  script=pass human=pass
+[OK ] c5d6e7f  script=fail human=fail
+       - bad-format: subject must look like 'type(scope): description', got 'feat(api):'
+[OK ] d6e7f8a  script=pass human=pass
+
+confusion matrix (positive = 脚本判定违规)
+  命中 true-positive  (双方都判违规): 7
+  正确 true-negative  (双方都判通过): 9
+  误报 false-positive (脚本违规/人工通过): 0
+  漏报 false-negative (脚本通过/人工违规): 0
+  误报率 FP/(FP+TN): 0.0%
+  漏报率 FN/(FN+TP): 0.0%
+
+total: 16 commits, 16 consistent, 0 mismatch
