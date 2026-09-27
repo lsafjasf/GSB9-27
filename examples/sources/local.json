@@ -1,0 +1,4 @@
+{
+  "ssh": {"password_auth": true},
+  "password": {"min_length": 10}
+}

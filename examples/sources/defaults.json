@@ -1,0 +1,7 @@
+{
+  "ssh": {"password_auth": true, "permit_root_login": true},
+  "tls": {"min_version": "1.0"},
+  "session": {"timeout_minutes": 120},
+  "logging": {"audit_enabled": false},
+  "password": {"min_length": 8}
+}
