@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "description": "FIM exclusion rules. Every hit is recorded in audit.log; rules match the POSIX-style path relative to the watch root (or a path suffix / basename).",
+  "rules": [
+    {
+      "id": "R001-temp-files",
+      "category": "temp",
+      "description": "Temporary files and directories: editor swap/backup files, atomic-write temp files, /tmp-style scratch dirs.",
+      "regex": "(^|/)(tmp|temp|cache)(/|$)|(^|/)[.][^/]*[.]swp$|(^|/)[.][^/]*[.]swo$|~$|[.]bak$|(^|/)[#][^/]*[#]$|(^|/)[.]#"
+    },
+    {
+      "id": "R002-generated-artifacts",
+      "category": "generated",
+      "description": "Build outputs and generated artifacts: __pycache__/*.pyc, .pyo, dist/, build/, *.egg-info.",
+      "regex": "(^|/)__pycache__(/|$)|[.]py[co]$|(^|/)(dist|build)(/|$)|[.]egg-info(/|$)"
+    },
+    {
+      "id": "R003-log-rotation",
+      "category": "logs",
+      "description": "Application logs and logrotate-style rotated files (app.log, app.log.1, app.log.2026-09-28.gz, app.err).",
+      "regex": "(^|/)logs/|(^|/)[^/]*[.](log|err|out)([.-][0-9].*)?$"
+    }
+  ]
+}

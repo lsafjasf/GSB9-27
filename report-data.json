@@ -1,0 +1,171 @@
+{
+  "workdir": "/tmp/fim-repro-je0li94c",
+  "attacks": 3,
+  "benign_noise_events": 13,
+  "naive": {
+    "alerts": 15,
+    "tp": 0,
+    "fp": 15,
+    "fn": 3,
+    "fp_rate": 1.0,
+    "fn_rate": 1.0,
+    "fp_buckets": {
+      "temp": 4,
+      "perms": 2,
+      "generated": 3,
+      "legit-update": 2,
+      "logs": 3,
+      "legit-recreate": 1
+    },
+    "alert_list": [
+      [
+        "created",
+        "notes.txt.bak"
+      ],
+      [
+        "perms_changed",
+        "bin/tool.sh"
+      ],
+      [
+        "created",
+        "build/output.o"
+      ],
+      [
+        "created",
+        "etc/.hosts.swp"
+      ],
+      [
+        "content_changed",
+        "etc/app.conf"
+      ],
+      [
+        "created",
+        "src/__pycache__/mod.cpython-312.pyc"
+      ],
+      [
+        "created",
+        "tmp/scratch.txt"
+      ],
+      [
+        "created",
+        "var/app.log"
+      ],
+      [
+        "perms_changed",
+        "bin/tool.sh"
+      ],
+      [
+        "content_changed",
+        "etc/app.conf"
+      ],
+      [
+        "created",
+        "src/app.pyo"
+      ],
+      [
+        "created",
+        "tmp/scratch2.tmp"
+      ],
+      [
+        "created",
+        "var/app.err.2026-09-28.gz"
+      ],
+      [
+        "created",
+        "var/app.log.1.gz"
+      ],
+      [
+        "content_changed",
+        "var/state.cache"
+      ]
+    ],
+    "detected_attacks": [],
+    "missed_attacks": [
+      "etc/cron.d/job",
+      "etc/hosts",
+      "usr/bin/healthcheck"
+    ]
+  },
+  "fixed": {
+    "alerts": 3,
+    "tp": 3,
+    "fp": 0,
+    "fn": 0,
+    "fp_rate": 0.0,
+    "fn_rate": 0.0,
+    "audit_events": 22,
+    "audit_kinds": {
+      "rule_hit": 15,
+      "perms_changed": 2,
+      "admitted_update": 3,
+      "scan_info": 2
+    },
+    "rule_hits": [
+      [
+        "build/",
+        "R002-generated-artifacts"
+      ],
+      [
+        "tmp/",
+        "R001-temp-files"
+      ],
+      [
+        "notes.txt.bak",
+        "R001-temp-files"
+      ],
+      [
+        "etc/.hosts.swp",
+        "R001-temp-files"
+      ],
+      [
+        "src/__pycache__/",
+        "R002-generated-artifacts"
+      ],
+      [
+        "var/app.log",
+        "R003-log-rotation"
+      ],
+      [
+        "build/",
+        "R002-generated-artifacts"
+      ],
+      [
+        "tmp/",
+        "R001-temp-files"
+      ],
+      [
+        "notes.txt.bak",
+        "R001-temp-files"
+      ],
+      [
+        "etc/.hosts.swp",
+        "R001-temp-files"
+      ],
+      [
+        "src/__pycache__/",
+        "R002-generated-artifacts"
+      ],
+      [
+        "src/app.pyo",
+        "R002-generated-artifacts"
+      ],
+      [
+        "var/app.err.2026-09-28.gz",
+        "R003-log-rotation"
+      ],
+      [
+        "var/app.log",
+        "R003-log-rotation"
+      ],
+      [
+        "var/app.log.1.gz",
+        "R003-log-rotation"
+      ]
+    ],
+    "detected_attacks": [
+      "etc/cron.d/job",
+      "etc/hosts",
+      "usr/bin/healthcheck"
+    ]
+  }
+}
