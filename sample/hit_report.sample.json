@@ -1,0 +1,309 @@
+{
+  "status": "fail",
+  "total_rows": 5000,
+  "rule_count": 6,
+  "failed_count": 4,
+  "checks": [
+    {
+      "rule_id": "age_completeness",
+      "rule_type": "completeness",
+      "field": "age",
+      "status": "pass",
+      "severity": "error",
+      "total_rows": 5000,
+      "hit_count": 5,
+      "hit_ratio": 0.001,
+      "threshold": 0.001,
+      "samples": [
+        {
+          "row": 997,
+          "value": null,
+          "reason": "字段缺失"
+        },
+        {
+          "row": 1994,
+          "value": null,
+          "reason": "字段缺失"
+        },
+        {
+          "row": 2991,
+          "value": null,
+          "reason": "字段缺失"
+        },
+        {
+          "row": 3988,
+          "value": null,
+          "reason": "字段缺失"
+        },
+        {
+          "row": 4985,
+          "value": null,
+          "reason": "字段缺失"
+        }
+      ],
+      "explanation": "字段 age 缺失 5/5000 行（0.10%），阈值 0.10%",
+      "elapsed_ms": 0.882,
+      "details": {}
+    },
+    {
+      "rule_id": "id_unique",
+      "rule_type": "uniqueness",
+      "field": [
+        "id"
+      ],
+      "status": "fail",
+      "severity": "error",
+      "total_rows": 5000,
+      "hit_count": 5,
+      "hit_ratio": 0.001,
+      "threshold": 0.0,
+      "samples": [
+        {
+          "row": 991,
+          "value": {
+            "id": 990
+          },
+          "reason": "与第 990 行重复"
+        },
+        {
+          "row": 1982,
+          "value": {
+            "id": 1981
+          },
+          "reason": "与第 1981 行重复"
+        },
+        {
+          "row": 2973,
+          "value": {
+            "id": 2972
+          },
+          "reason": "与第 2972 行重复"
+        },
+        {
+          "row": 3964,
+          "value": {
+            "id": 3963
+          },
+          "reason": "与第 3963 行重复"
+        },
+        {
+          "row": 4955,
+          "value": {
+            "id": 4954
+          },
+          "reason": "与第 4954 行重复"
+        }
+      ],
+      "explanation": "键 ['id'] 重复 5/5000 行（0.10%），阈值 0.00%，唯一键 4995 个",
+      "elapsed_ms": 2.764,
+      "details": {
+        "unique_keys": 4995
+      }
+    },
+    {
+      "rule_id": "age_range",
+      "rule_type": "range",
+      "field": "age",
+      "status": "fail",
+      "severity": "error",
+      "total_rows": 5000,
+      "hit_count": 6,
+      "hit_ratio": 0.001201,
+      "threshold": 0.0,
+      "samples": [
+        {
+          "row": 0,
+          "value": 999,
+          "reason": "超出范围 [0, 120]"
+        },
+        {
+          "row": 983,
+          "value": 999,
+          "reason": "超出范围 [0, 120]"
+        },
+        {
+          "row": 1966,
+          "value": 999,
+          "reason": "超出范围 [0, 120]"
+        },
+        {
+          "row": 2949,
+          "value": 999,
+          "reason": "超出范围 [0, 120]"
+        },
+        {
+          "row": 3932,
+          "value": 999,
+          "reason": "超出范围 [0, 120]"
+        }
+      ],
+      "explanation": "字段 age 超范围 6/4995 行（0.12%），允许范围 [0, 120]，阈值 0.00%",
+      "elapsed_ms": 1.631,
+      "details": {
+        "evaluated_rows": 4995,
+        "skipped_missing": 5
+      }
+    },
+    {
+      "rule_id": "score_type",
+      "rule_type": "type_consistency",
+      "field": "score",
+      "status": "fail",
+      "severity": "warn",
+      "total_rows": 5000,
+      "hit_count": 6,
+      "hit_ratio": 0.0012,
+      "threshold": 0.001,
+      "samples": [
+        {
+          "row": 0,
+          "value": "N/A",
+          "reason": "实际类型 str，期望 number"
+        },
+        {
+          "row": 977,
+          "value": "N/A",
+          "reason": "实际类型 str，期望 number"
+        },
+        {
+          "row": 1954,
+          "value": "N/A",
+          "reason": "实际类型 str，期望 number"
+        },
+        {
+          "row": 2931,
+          "value": "N/A",
+          "reason": "实际类型 str，期望 number"
+        },
+        {
+          "row": 3908,
+          "value": "N/A",
+          "reason": "实际类型 str，期望 number"
+        }
+      ],
+      "explanation": "字段 score 类型不符 6/5000 行（0.12%），期望类型 number，阈值 0.10%",
+      "elapsed_ms": 1.221,
+      "details": {
+        "evaluated_rows": 5000,
+        "skipped_missing": 0
+      }
+    },
+    {
+      "rule_id": "channel_drift",
+      "rule_type": "drift",
+      "field": "channel",
+      "status": "fail",
+      "severity": "error",
+      "total_rows": 5000,
+      "hit_count": 3260,
+      "hit_ratio": 0.652,
+      "threshold": 0.25,
+      "samples": [
+        {
+          "row": 2,
+          "value": "api",
+          "reason": "落入漂移分箱 api：基线占比 14.84% → 当前 45.66%"
+        },
+        {
+          "row": 7,
+          "value": "app",
+          "reason": "落入漂移分箱 app：基线占比 49.78% → 当前 19.54%"
+        }
+      ],
+      "explanation": "字段 channel 分布漂移 PSI=0.6295（阈值 0.25）；漂移最大分箱 api：基线 14.84% → 当前 45.66%；命中（偏移>5% 的分箱）3260/5000 行（65.20%）",
+      "elapsed_ms": 1.667,
+      "details": {
+        "psi": 0.629457,
+        "baseline": "/home/administrator/gsb/uid318/A/config/../baselines/channel.baseline.json",
+        "baseline_created_at": "2026-09-27T21:35:13.028261+00:00",
+        "evaluated_rows": 5000,
+        "skipped_missing": 0,
+        "top_bins": [
+          {
+            "bin": "api",
+            "base_ratio": 0.1484,
+            "cur_ratio": 0.4566,
+            "psi_contribution": 0.346385
+          },
+          {
+            "bin": "app",
+            "base_ratio": 0.49775,
+            "cur_ratio": 0.1954,
+            "psi_contribution": 0.282712
+          },
+          {
+            "bin": "batch",
+            "base_ratio": 0.0524,
+            "cur_ratio": 0.0482,
+            "psi_contribution": 0.000351
+          },
+          {
+            "bin": "web",
+            "base_ratio": 0.30145,
+            "cur_ratio": 0.2998,
+            "psi_contribution": 9e-06
+          },
+          {
+            "bin": "__OTHER__",
+            "base_ratio": 0.0001,
+            "cur_ratio": 0.0001,
+            "psi_contribution": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "rule_id": "age_drift",
+      "rule_type": "drift",
+      "field": "age",
+      "status": "pass",
+      "severity": "warn",
+      "total_rows": 5000,
+      "hit_count": 0,
+      "hit_ratio": 0.0,
+      "threshold": 0.25,
+      "samples": [],
+      "explanation": "字段 age 分布漂移 PSI=0.0024（阈值 0.25）；漂移最大分箱 [-inf, 7.8)：基线 1.34% → 当前 1.06%；命中（偏移>5% 的分箱）0/4995 行（0.00%）",
+      "elapsed_ms": 1.899,
+      "details": {
+        "psi": 0.002434,
+        "baseline": "/home/administrator/gsb/uid318/A/config/../baselines/age.baseline.json",
+        "baseline_created_at": "2026-09-27T21:35:13.084213+00:00",
+        "evaluated_rows": 4995,
+        "skipped_missing": 5,
+        "top_bins": [
+          {
+            "bin": "[-inf, 7.8)",
+            "base_ratio": 0.01345,
+            "cur_ratio": 0.010611,
+            "psi_contribution": 0.000673
+          },
+          {
+            "bin": "[7.8, 15.6)",
+            "base_ratio": 0.0439,
+            "cur_ratio": 0.048649,
+            "psi_contribution": 0.000488
+          },
+          {
+            "bin": "[70.2, +inf)",
+            "base_ratio": 0.0013,
+            "cur_ratio": 0.002202,
+            "psi_contribution": 0.000476
+          },
+          {
+            "bin": "[31.2, 39)",
+            "base_ratio": 0.2292,
+            "cur_ratio": 0.222222,
+            "psi_contribution": 0.000216
+          },
+          {
+            "bin": "[23.4, 31.2)",
+            "base_ratio": 0.2219,
+            "cur_ratio": 0.227828,
+            "psi_contribution": 0.000156
+          }
+        ]
+      }
+    }
+  ]
+}

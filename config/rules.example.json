@@ -1,0 +1,52 @@
+{
+  "rules": [
+    {
+      "id": "age_completeness",
+      "type": "completeness",
+      "field": "age",
+      "max_missing_ratio": 0.001,
+      "severity": "error"
+    },
+    {
+      "id": "id_unique",
+      "type": "uniqueness",
+      "fields": ["id"],
+      "max_duplicate_ratio": 0.0,
+      "severity": "error"
+    },
+    {
+      "id": "age_range",
+      "type": "range",
+      "field": "age",
+      "min": 0,
+      "max": 120,
+      "max_violation_ratio": 0.0,
+      "severity": "error"
+    },
+    {
+      "id": "score_type",
+      "type": "type_consistency",
+      "field": "score",
+      "expected": "number",
+      "max_mismatch_ratio": 0.001,
+      "severity": "warn"
+    },
+    {
+      "id": "channel_drift",
+      "type": "drift",
+      "field": "channel",
+      "baseline": "../baselines/channel.baseline.json",
+      "psi_threshold": 0.25,
+      "bin_tolerance": 0.05,
+      "severity": "error"
+    },
+    {
+      "id": "age_drift",
+      "type": "drift",
+      "field": "age",
+      "baseline": "../baselines/age.baseline.json",
+      "psi_threshold": 0.25,
+      "severity": "warn"
+    }
+  ]
+}
