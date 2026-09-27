@@ -1,0 +1,469 @@
+{
+  "_说明": "对拍数据：expected.scores_frac 以 [分子, 分母] 表示“对数分的指数”，期望分数 = log(分子/分母)，与实现解耦且可手算复核。A: 平衡小样本(uniform先验, alpha=1, V=8, 各类特征总数=6, 平滑分母=14); B: 单类别训练集(V=3, 分母=7); C: 零特征训练集(词表为空, 退化为按先验分类); D: 类别不平衡(V=2, 各类平滑分母均为5)。",
+  "cases": [
+    {
+      "name": "A1_平衡样本_正常预测",
+      "alpha": 1.0,
+      "class_prior": "uniform",
+      "train": [
+        {
+          "doc": [
+            "buy",
+            "cheap",
+            "money"
+          ],
+          "label": "spam"
+        },
+        {
+          "doc": [
+            "cheap",
+            "money",
+            "deal"
+          ],
+          "label": "spam"
+        },
+        {
+          "doc": [
+            "meeting",
+            "project",
+            "team"
+          ],
+          "label": "ham"
+        },
+        {
+          "doc": [
+            "project",
+            "team",
+            "schedule"
+          ],
+          "label": "ham"
+        }
+      ],
+      "doc": [
+        "cheap",
+        "money"
+      ],
+      "expected": {
+        "label": "spam",
+        "scores_frac": {
+          "ham": [
+            1,
+            392
+          ],
+          "spam": [
+            9,
+            392
+          ]
+        },
+        "手算": "spam: 1/2 * (3/14) * (3/14) = 9/392; ham: 1/2 * (1/14) * (1/14) = 1/392"
+      }
+    },
+    {
+      "name": "A2_全是未见特征",
+      "alpha": 1.0,
+      "class_prior": "uniform",
+      "train": [
+        {
+          "doc": [
+            "buy",
+            "cheap",
+            "money"
+          ],
+          "label": "spam"
+        },
+        {
+          "doc": [
+            "cheap",
+            "money",
+            "deal"
+          ],
+          "label": "spam"
+        },
+        {
+          "doc": [
+            "meeting",
+            "project",
+            "team"
+          ],
+          "label": "ham"
+        },
+        {
+          "doc": [
+            "project",
+            "team",
+            "schedule"
+          ],
+          "label": "ham"
+        }
+      ],
+      "doc": [
+        "xxx",
+        "yyy"
+      ],
+      "expected": {
+        "label": "ham",
+        "scores_frac": {
+          "ham": [
+            1,
+            392
+          ],
+          "spam": [
+            1,
+            392
+          ]
+        },
+        "tie_note": "未见特征取平滑概率 1/14, 各类似然相等; uniform 先验下完全打平, 按类别名字典序取 ham",
+        "手算": "1/2 * (1/14)^2 = 1/392"
+      }
+    },
+    {
+      "name": "A3_空文档",
+      "alpha": 1.0,
+      "class_prior": "uniform",
+      "train": [
+        {
+          "doc": [
+            "buy",
+            "cheap",
+            "money"
+          ],
+          "label": "spam"
+        },
+        {
+          "doc": [
+            "cheap",
+            "money",
+            "deal"
+          ],
+          "label": "spam"
+        },
+        {
+          "doc": [
+            "meeting",
+            "project",
+            "team"
+          ],
+          "label": "ham"
+        },
+        {
+          "doc": [
+            "project",
+            "team",
+            "schedule"
+          ],
+          "label": "ham"
+        }
+      ],
+      "doc": [],
+      "expected": {
+        "label": "ham",
+        "scores_frac": {
+          "ham": [
+            1,
+            2
+          ],
+          "spam": [
+            1,
+            2
+          ]
+        },
+        "tie_note": "空文档特征似然为 log 1 = 0, 只剩先验; uniform 下相等, 字典序取 ham"
+      }
+    },
+    {
+      "name": "A4_词频字典形式文档",
+      "alpha": 1.0,
+      "class_prior": "uniform",
+      "train": [
+        {
+          "doc": [
+            "buy",
+            "cheap",
+            "money"
+          ],
+          "label": "spam"
+        },
+        {
+          "doc": [
+            "cheap",
+            "money",
+            "deal"
+          ],
+          "label": "spam"
+        },
+        {
+          "doc": [
+            "meeting",
+            "project",
+            "team"
+          ],
+          "label": "ham"
+        },
+        {
+          "doc": [
+            "project",
+            "team",
+            "schedule"
+          ],
+          "label": "ham"
+        }
+      ],
+      "doc": {
+        "cheap": 2,
+        "money": 1
+      },
+      "expected": {
+        "label": "spam",
+        "scores_frac": {
+          "ham": [
+            1,
+            5488
+          ],
+          "spam": [
+            27,
+            5488
+          ]
+        },
+        "手算": "spam: 1/2 * (3/14)^2 * (3/14) = 27/5488; ham: 1/2 * (1/14)^3 = 1/5488"
+      }
+    },
+    {
+      "name": "B1_单类别训练集",
+      "alpha": 1.0,
+      "class_prior": "empirical",
+      "train": [
+        {
+          "doc": [
+            "a",
+            "b"
+          ],
+          "label": "c1"
+        },
+        {
+          "doc": [
+            "b",
+            "c"
+          ],
+          "label": "c1"
+        }
+      ],
+      "doc": [
+        "a"
+      ],
+      "expected": {
+        "label": "c1",
+        "scores_frac": {
+          "c1": [
+            2,
+            7
+          ]
+        },
+        "手算": "先验 log 1 = 0; P(a|c1) = (1+1)/(4+3) = 2/7"
+      }
+    },
+    {
+      "name": "B2_单类别_未见特征",
+      "alpha": 1.0,
+      "class_prior": "empirical",
+      "train": [
+        {
+          "doc": [
+            "a",
+            "b"
+          ],
+          "label": "c1"
+        },
+        {
+          "doc": [
+            "b",
+            "c"
+          ],
+          "label": "c1"
+        }
+      ],
+      "doc": [
+        "zzz"
+      ],
+      "expected": {
+        "label": "c1",
+        "scores_frac": {
+          "c1": [
+            1,
+            7
+          ]
+        },
+        "手算": "未见特征平滑概率 = 1/7"
+      }
+    },
+    {
+      "name": "C1_零特征训练集_空文档",
+      "alpha": 1.0,
+      "class_prior": "empirical",
+      "train": [
+        {
+          "doc": [],
+          "label": "x"
+        },
+        {
+          "doc": [],
+          "label": "x"
+        },
+        {
+          "doc": [],
+          "label": "y"
+        }
+      ],
+      "doc": [],
+      "expected": {
+        "label": "x",
+        "scores_frac": {
+          "x": [
+            2,
+            3
+          ],
+          "y": [
+            1,
+            3
+          ]
+        },
+        "note": "词表为空时特征项记 log 1 = 0, 退化为按先验分类; 多数类 x 胜出"
+      }
+    },
+    {
+      "name": "C2_零特征训练集_预测含未知token",
+      "alpha": 1.0,
+      "class_prior": "uniform",
+      "train": [
+        {
+          "doc": [],
+          "label": "x"
+        },
+        {
+          "doc": [],
+          "label": "y"
+        }
+      ],
+      "doc": [
+        "anything"
+      ],
+      "expected": {
+        "label": "x",
+        "scores_frac": {
+          "x": [
+            1,
+            2
+          ],
+          "y": [
+            1,
+            2
+          ]
+        },
+        "note": "词表为空时没有可估计的特征概率, 任意 token 均记 0; uniform 先验打平, 字典序取 x"
+      }
+    },
+    {
+      "name": "D1_类别不平衡_经验先验",
+      "alpha": 1.0,
+      "class_prior": "empirical",
+      "train": [
+        {
+          "doc": [
+            "w"
+          ],
+          "label": "pos"
+        },
+        {
+          "doc": [
+            "w"
+          ],
+          "label": "pos"
+        },
+        {
+          "doc": [
+            "w"
+          ],
+          "label": "pos"
+        },
+        {
+          "doc": [
+            "z1",
+            "z2",
+            "z3"
+          ],
+          "label": "neg"
+        }
+      ],
+      "doc": [
+        "q"
+      ],
+      "expected": {
+        "label": "pos",
+        "scores_frac": {
+          "neg": [
+            1,
+            28
+          ],
+          "pos": [
+            3,
+            28
+          ]
+        },
+        "note": "未知 token 在两类平滑似然都为 1/7; 经验先验 3/4 vs 1/4 使多数类 pos 胜出",
+        "手算": "V=4, 各类 N=3, 平滑分母=7, 未知 token 似然 1/7; pos: 3/4*1/7=3/28; neg: 1/4*1/7=1/28"
+      },
+      "note": ""
+    },
+    {
+      "name": "D2_类别不平衡_uniform先验打平",
+      "alpha": 1.0,
+      "class_prior": "uniform",
+      "train": [
+        {
+          "doc": [
+            "w"
+          ],
+          "label": "pos"
+        },
+        {
+          "doc": [
+            "w"
+          ],
+          "label": "pos"
+        },
+        {
+          "doc": [
+            "w"
+          ],
+          "label": "pos"
+        },
+        {
+          "doc": [
+            "z1",
+            "z2",
+            "z3"
+          ],
+          "label": "neg"
+        }
+      ],
+      "doc": [
+        "q"
+      ],
+      "expected": {
+        "label": "neg",
+        "scores_frac": {
+          "neg": [
+            1,
+            14
+          ],
+          "pos": [
+            1,
+            14
+          ]
+        },
+        "tie_note": "同一份不平衡数据: uniform 先验 1/2 抹掉类别频次, 未知 token 似然又相等 => 打平, 字典序取 neg; 与 D1 对比展示先验的作用",
+        "手算": "uniform 先验 1/2 * 1/7 = 1/14"
+      },
+      "note": ""
+    }
+  ]
+}
