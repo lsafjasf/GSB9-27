@@ -1,0 +1,64 @@
+work done
+
+=== 1. child exits immediately (crash loop -> circuit -> manual reset) ===
+[09:40:00.637] start: supervising: ['/usr/bin/python3', '-c', 'import sys; sys.exit(1)']
+[09:40:00.637] spawn: attempt #1
+[09:40:00.653] exit: exited with code 1 after 0.016s
+[09:40:00.653] backoff: restarting in 0.200s
+[09:40:00.853] spawn: attempt #2
+[09:40:00.869] exit: exited with code 1 after 0.016s
+[09:40:00.869] backoff: restarting in 0.400s
+[09:40:01.269] spawn: attempt #3
+[09:40:01.282] exit: exited with code 1 after 0.013s
+[09:40:01.282] circuit-open: 3 consecutive fast crashes; auto-restart suspended, waiting for manual reset
+    ... circuit open, attempts frozen at 3 ...
+[09:40:01.783] reset: manual reset acknowledged, circuit closed
+[09:40:01.783] backoff: restarting in 0.800s
+[09:40:02.583] spawn: attempt #4
+[09:40:02.596] exit: exited with code 1 after 0.012s
+[09:40:02.596] backoff: restarting in 1.000s
+
+=== 2. child runs for a while, then crashes (no circuit) ===
+[09:40:03.596] start: supervising: ['/usr/bin/python3', '-c', 'import time,sys; time.sleep(0.8); sys.exit(1)']
+[09:40:03.596] spawn: attempt #1
+[09:40:04.408] exit: exited with code 1 after 0.812s
+[09:40:04.408] backoff: restarting in 0.200s
+[09:40:04.609] spawn: attempt #2
+[09:40:05.421] exit: exited with code 1 after 0.813s
+[09:40:05.421] backoff: restarting in 0.400s
+[09:40:05.821] spawn: attempt #3
+[09:40:05.828] exit: killed by signal 15 after 0.007s
+[09:40:05.828] backoff: restarting in 0.800s
+
+=== 3. child is killed by a signal ===
+[09:40:06.629] start: supervising: ['/usr/bin/python3', '-c', 'import os,signal,time; time.sleep(0.1); os.kill(os.getpid(), signal.SIGKILL)']
+[09:40:06.629] spawn: attempt #1
+[09:40:06.742] exit: killed by signal 9 after 0.113s
+[09:40:06.742] backoff: restarting in 0.200s
+[09:40:06.942] spawn: attempt #2
+[09:40:06.953] exit: killed by signal 15 after 0.011s
+[09:40:06.953] backoff: restarting in 0.400s
+
+=== 4. executable does not exist (start failure) ===
+[09:40:07.353] start: supervising: ['/nonexistent/not-a-real-binary']
+[09:40:07.353] spawn: attempt #1
+[09:40:07.354] exit: start failed: [Errno 2] No such file or directory: '/nonexistent/not-a-real-binary' after 0.000s
+[09:40:07.354] backoff: restarting in 0.200s
+[09:40:07.554] spawn: attempt #2
+[09:40:07.554] exit: start failed: [Errno 2] No such file or directory: '/nonexistent/not-a-real-binary' after 0.000s
+[09:40:07.554] backoff: restarting in 0.400s
+[09:40:07.954] spawn: attempt #3
+[09:40:07.955] exit: start failed: [Errno 2] No such file or directory: '/nonexistent/not-a-real-binary' after 0.000s
+[09:40:07.955] circuit-open: 3 consecutive fast crashes; auto-restart suspended, waiting for manual reset
+    ... circuit open, attempts frozen at 3 ...
+[09:40:08.459] reset: manual reset acknowledged, circuit closed
+[09:40:08.459] backoff: restarting in 0.800s
+[09:40:09.260] spawn: attempt #4
+[09:40:09.260] exit: start failed: [Errno 2] No such file or directory: '/nonexistent/not-a-real-binary' after 0.001s
+[09:40:09.260] backoff: restarting in 1.000s
+
+=== 5. child exits normally (code 0): no restart ===
+[09:40:10.261] start: supervising: ['/usr/bin/python3', '-c', "print('work done')"]
+[09:40:10.261] spawn: attempt #1
+[09:40:10.275] exit: exited with code 0 after 0.014s
+[09:40:10.275] done: normal exit (code 0), not restarting

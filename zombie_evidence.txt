@@ -1,0 +1,4 @@
+before:  zombies=0 children=0
+during:  peak zombies=0 peak children=1 (<=1 live child at a time, never a zombie)
+after:   zombies=0 children=0 attempts=300
+RESULT:  PASS - no zombie/process growth over 300 restarts
