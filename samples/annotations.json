@@ -1,0 +1,20 @@
+{
+  "description": "Human difficulty scores (1=trivial, 10=hardest to understand/modify safely), assigned by reading the code before the metric was computed. The check compares the RANKING, not the absolute scores.",
+  "scale": "1..10, higher = harder to maintain",
+  "functions": {
+    "f01_empty":               {"human": 1,  "note": "no behavior at all"},
+    "f02_expr_only":           {"human": 1,  "note": "single expression"},
+    "f03_long_straight":       {"human": 2,  "note": "41 lines but zero branches; tedious, not difficult. Line-count metrics misjudge this one."},
+    "f04_single_if":           {"human": 3,  "note": "one branch, two exits"},
+    "f07_loop_with_if":        {"human": 4,  "note": "loop + compound condition + early exit"},
+    "f08_short_circuit":       {"human": 5,  "note": "and/or precedence must be mentally simulated"},
+    "f05_if_elif_chain":       {"human": 5,  "note": "flat dispatch chain, easy to extend"},
+    "f06_guard_returns":       {"human": 5,  "note": "guard clauses, linear reading"},
+    "f11_nested_loops":        {"human": 6,  "note": "two loop levels, continue/else mixing"},
+    "f14_comprehension_heavy": {"human": 6,  "note": "nested comprehension, two filters on one clause"},
+    "f09_try_except":          {"human": 7,  "note": "three exception paths plus in-try branch"},
+    "f10_nested_ifs":          {"human": 8,  "note": "four nesting levels, must track context stack"},
+    "f12_match_dispatch":      {"human": 8,  "note": "six structural patterns with capture bindings"},
+    "f13_mixed_monster":       {"human": 10, "note": "loop+retry loop+exceptions+ternaries+multiple exits; state (errors/retries/results) interacts"}
+  }
+}
