@@ -1,0 +1,71 @@
+{
+  "structured": {
+    "total_secrets": 13,
+    "leaked": 0,
+    "detail": [
+      {
+        "secret": "password",
+        "leaked": false
+      },
+      {
+        "secret": "token",
+        "leaked": false
+      },
+      {
+        "secret": "api_key",
+        "leaked": false
+      },
+      {
+        "secret": "jwt",
+        "leaked": false
+      },
+      {
+        "secret": "bearer",
+        "leaked": false
+      },
+      {
+        "secret": "aws",
+        "leaked": false
+      },
+      {
+        "secret": "email",
+        "leaked": false
+      },
+      {
+        "secret": "phone",
+        "leaked": false
+      },
+      {
+        "secret": "idcard",
+        "leaked": false
+      },
+      {
+        "secret": "bankcard",
+        "leaked": false
+      },
+      {
+        "secret": "kv_password",
+        "leaked": false
+      },
+      {
+        "secret": "pem",
+        "leaked": false
+      },
+      {
+        "secret": "free_text_idcard",
+        "leaked": false
+      }
+    ]
+  },
+  "raw_line": {
+    "leaked_fields": [],
+    "leaked": 0
+  },
+  "digest_verifiability": {
+    "password": true,
+    "token": true,
+    "jwt": true,
+    "idcard": true
+  },
+  "conclusion": "PASS"
+}
