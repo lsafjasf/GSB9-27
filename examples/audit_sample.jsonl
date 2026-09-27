@@ -1,0 +1,3 @@
+{"event": "run_start", "now": 1700000000.0, "retention_seconds": 3600.0}
+{"blob_id": "dead_blob", "criteria": {"age_seconds": {"actual": 864000.0, "ok": true, "required": ">= 3600.0"}, "archive_completed": {"actual": true, "ok": true, "required": true}, "archive_in_progress": {"actual": false, "ok": true, "required": false}, "referenced": {"actual": false, "ok": true, "required": false}}, "deleted_at": 1790543488.9960475, "event": "deleted", "path": "/tmp/demo-data-uid319/dead_blob"}
+{"deleted": 1, "event": "run_end", "failed": 0, "skipped": 0}

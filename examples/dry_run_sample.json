@@ -1,0 +1,123 @@
+{
+  "candidates": [
+    {
+      "blob_id": "dead_blob",
+      "criteria": {
+        "age_seconds": {
+          "actual": 864000.0,
+          "ok": true,
+          "required": ">= 3600.0"
+        },
+        "archive_completed": {
+          "actual": true,
+          "ok": true,
+          "required": true
+        },
+        "archive_in_progress": {
+          "actual": false,
+          "ok": true,
+          "required": false
+        },
+        "referenced": {
+          "actual": false,
+          "ok": true,
+          "required": false
+        }
+      },
+      "eligible": true,
+      "path": "/tmp/demo-data-uid319/dead_blob"
+    }
+  ],
+  "data_dir": "/tmp/demo-data-uid319",
+  "excluded": [
+    {
+      "blob_id": "archiving_blob",
+      "criteria": {
+        "age_seconds": {
+          "actual": 864000.0,
+          "ok": true,
+          "required": ">= 3600.0"
+        },
+        "archive_completed": {
+          "actual": false,
+          "ok": false,
+          "required": true
+        },
+        "archive_in_progress": {
+          "actual": true,
+          "ok": false,
+          "required": false
+        },
+        "referenced": {
+          "actual": false,
+          "ok": true,
+          "required": false
+        }
+      },
+      "eligible": false,
+      "path": "/tmp/demo-data-uid319/archiving_blob"
+    },
+    {
+      "blob_id": "fresh_blob",
+      "criteria": {
+        "age_seconds": {
+          "actual": 100.0,
+          "ok": false,
+          "required": ">= 3600.0"
+        },
+        "archive_completed": {
+          "actual": false,
+          "ok": false,
+          "required": true
+        },
+        "archive_in_progress": {
+          "actual": false,
+          "ok": true,
+          "required": false
+        },
+        "referenced": {
+          "actual": false,
+          "ok": true,
+          "required": false
+        }
+      },
+      "eligible": false,
+      "path": "/tmp/demo-data-uid319/fresh_blob"
+    },
+    {
+      "blob_id": "ref_blob",
+      "criteria": {
+        "age_seconds": {
+          "actual": 864000.0,
+          "ok": true,
+          "required": ">= 3600.0"
+        },
+        "archive_completed": {
+          "actual": true,
+          "ok": true,
+          "required": true
+        },
+        "archive_in_progress": {
+          "actual": false,
+          "ok": true,
+          "required": false
+        },
+        "referenced": {
+          "actual": true,
+          "ok": false,
+          "required": false
+        }
+      },
+      "eligible": false,
+      "path": "/tmp/demo-data-uid319/ref_blob"
+    }
+  ],
+  "mode": "dry-run",
+  "now": 1700000000.0,
+  "retention_seconds": 3600.0,
+  "summary": {
+    "candidates": 1,
+    "excluded": 3,
+    "scanned": 4
+  }
+}
