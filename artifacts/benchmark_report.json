@@ -1,0 +1,75 @@
+{
+  "summary": {
+    "NOT_RUN": 1591,
+    "RAN_EMPTY": 632,
+    "RAN_WITH_OUTPUT": 26796,
+    "PAUSED": 149
+  },
+  "findings": {
+    "BATCH_GAP": 31,
+    "DUPLICATE_OUTPUT": 32,
+    "MISSED_RUN": 267,
+    "PAUSE_VIOLATION": 0,
+    "STUCK": 16,
+    "WATERMARK_REGRESSION": 6
+  },
+  "metrics": {
+    "confusion_matrix": {
+      "NOT_RUN": {
+        "NOT_RUN": 1591,
+        "RAN_EMPTY": 0,
+        "RAN_WITH_OUTPUT": 0
+      },
+      "RAN_EMPTY": {
+        "NOT_RUN": 0,
+        "RAN_EMPTY": 632,
+        "RAN_WITH_OUTPUT": 0
+      },
+      "RAN_WITH_OUTPUT": {
+        "NOT_RUN": 0,
+        "RAN_EMPTY": 0,
+        "RAN_WITH_OUTPUT": 26796
+      }
+    },
+    "per_state": {
+      "NOT_RUN": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "false_positive_rate": 0.0,
+        "support": 1591
+      },
+      "RAN_EMPTY": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "false_positive_rate": 0.0,
+        "support": 632
+      },
+      "RAN_WITH_OUTPUT": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "false_positive_rate": 0.0,
+        "support": 26796
+      }
+    },
+    "events": {
+      "missed_groups": {
+        "detected": 251,
+        "total": 251,
+        "false_alarms": 0,
+        "detection_rate": 1.0
+      },
+      "stuck": {
+        "detected": 16,
+        "total": 16,
+        "false_alarms": 0,
+        "detection_rate": 1.0
+      },
+      "duplicate": {
+        "detected": 32,
+        "total": 32,
+        "false_alarms": 0,
+        "detection_rate": 1.0
+      }
+    }
+  }
+}

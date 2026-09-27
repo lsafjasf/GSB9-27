@@ -1,0 +1,4956 @@
+{
+  "as_of": "2026-03-10T13:00:00Z",
+  "horizon_start": "2026-03-01T00:00:00Z",
+  "jobs": [
+    {
+      "job_id": "billing_hourly_sh",
+      "cron": "30 * * * *",
+      "timezone": "Asia/Shanghai",
+      "grace_minutes": 20,
+      "max_run_minutes": 25
+    },
+    {
+      "job_id": "settle_daily_ny",
+      "cron": "5 2 * * *",
+      "timezone": "America/New_York",
+      "grace_minutes": 60,
+      "max_run_minutes": 45
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "cron": "15 */6 * * *",
+      "timezone": "UTC",
+      "grace_minutes": 30,
+      "max_run_minutes": 40,
+      "pause_windows": [
+        {
+          "start": "2026-03-04T06:00:00Z",
+          "end": "2026-03-04T18:30:00Z"
+        }
+      ]
+    },
+    {
+      "job_id": "report_weekday",
+      "cron": "20 9 * * 1-5",
+      "timezone": "Asia/Shanghai",
+      "grace_minutes": 30,
+      "max_run_minutes": 30
+    }
+  ],
+  "batches": [
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1000,
+      "window_start": "2026-03-01T00:30:00Z",
+      "window_end": "2026-03-01T01:30:00Z",
+      "produced_at": "2026-03-01T00:37:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-01T01:29:59Z",
+      "checksum": "76eb4c1e"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1001,
+      "window_start": "2026-03-01T01:30:00Z",
+      "window_end": "2026-03-01T02:30:00Z",
+      "produced_at": "2026-03-01T01:38:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-01T02:29:59Z",
+      "checksum": "a69595cc"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1002,
+      "window_start": "2026-03-01T02:30:00Z",
+      "window_end": "2026-03-01T03:30:00Z",
+      "produced_at": "2026-03-01T02:39:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-01T03:29:59Z",
+      "checksum": "b4248e3a"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1003,
+      "window_start": "2026-03-01T03:30:00Z",
+      "window_end": "2026-03-01T04:30:00Z",
+      "produced_at": "2026-03-01T03:40:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-01T04:29:59Z",
+      "checksum": "de0e699c"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1004,
+      "window_start": "2026-03-01T04:30:00Z",
+      "window_end": "2026-03-01T05:30:00Z",
+      "produced_at": "2026-03-01T04:41:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-01T05:29:59Z",
+      "checksum": "81fe8be1"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1005,
+      "window_start": "2026-03-01T05:30:00Z",
+      "window_end": "2026-03-01T06:30:00Z",
+      "produced_at": "2026-03-01T05:37:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-01T06:29:59Z",
+      "checksum": "c4c537f5"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1006,
+      "window_start": "2026-03-01T06:30:00Z",
+      "window_end": "2026-03-01T07:30:00Z",
+      "produced_at": "2026-03-01T06:38:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-01T07:29:59Z",
+      "checksum": "f379aae4"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1007,
+      "window_start": "2026-03-01T07:30:00Z",
+      "window_end": "2026-03-01T08:30:00Z",
+      "produced_at": "2026-03-01T07:39:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-01T08:29:59Z",
+      "checksum": "95bad5fc"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1008,
+      "window_start": "2026-03-01T08:30:00Z",
+      "window_end": "2026-03-01T09:30:00Z",
+      "produced_at": "2026-03-01T08:40:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-01T09:29:59Z",
+      "checksum": "6b81b25e"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1009,
+      "window_start": "2026-03-01T09:30:00Z",
+      "window_end": "2026-03-01T10:30:00Z",
+      "produced_at": "2026-03-01T09:41:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-01T10:29:59Z",
+      "checksum": "9d8c6f56"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1010,
+      "window_start": "2026-03-01T10:30:00Z",
+      "window_end": "2026-03-01T11:30:00Z",
+      "produced_at": "2026-03-01T10:37:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-01T11:29:59Z",
+      "checksum": "7b97afe6"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1011,
+      "window_start": "2026-03-01T11:30:00Z",
+      "window_end": "2026-03-01T12:30:00Z",
+      "produced_at": "2026-03-01T11:38:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-01T12:29:59Z",
+      "checksum": "970eab28"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1012,
+      "window_start": "2026-03-01T12:30:00Z",
+      "window_end": "2026-03-01T13:30:00Z",
+      "produced_at": "2026-03-01T12:39:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-01T13:29:59Z",
+      "checksum": "e708a369"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1013,
+      "window_start": "2026-03-01T13:30:00Z",
+      "window_end": "2026-03-01T14:30:00Z",
+      "produced_at": "2026-03-01T13:40:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-01T14:29:59Z",
+      "checksum": "932a44b5"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1014,
+      "window_start": "2026-03-01T14:30:00Z",
+      "window_end": "2026-03-01T15:30:00Z",
+      "produced_at": "2026-03-01T14:41:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-01T15:29:59Z",
+      "checksum": "f03e4133"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1015,
+      "window_start": "2026-03-01T15:30:00Z",
+      "window_end": "2026-03-01T16:30:00Z",
+      "produced_at": "2026-03-01T15:37:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-01T16:29:59Z",
+      "checksum": "b9cd1bed"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1016,
+      "window_start": "2026-03-01T16:30:00Z",
+      "window_end": "2026-03-01T17:30:00Z",
+      "produced_at": "2026-03-01T16:38:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-01T17:29:59Z",
+      "checksum": "d869b7ce"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1017,
+      "window_start": "2026-03-01T17:30:00Z",
+      "window_end": "2026-03-01T18:30:00Z",
+      "produced_at": "2026-03-01T17:39:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-01T18:29:59Z",
+      "checksum": "7f24b04d"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1018,
+      "window_start": "2026-03-01T18:30:00Z",
+      "window_end": "2026-03-01T19:30:00Z",
+      "produced_at": "2026-03-01T18:40:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-01T19:29:59Z",
+      "checksum": "ec898e69"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1019,
+      "window_start": "2026-03-01T19:30:00Z",
+      "window_end": "2026-03-01T20:30:00Z",
+      "produced_at": "2026-03-01T19:41:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-01T20:29:59Z",
+      "checksum": "6ba44685"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1020,
+      "window_start": "2026-03-01T20:30:00Z",
+      "window_end": "2026-03-01T21:30:00Z",
+      "produced_at": "2026-03-01T20:37:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-01T21:29:59Z",
+      "checksum": "2027a082"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1021,
+      "window_start": "2026-03-01T21:30:00Z",
+      "window_end": "2026-03-01T22:30:00Z",
+      "produced_at": "2026-03-01T21:38:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-01T22:29:59Z",
+      "checksum": "f3066cee"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1022,
+      "window_start": "2026-03-01T22:30:00Z",
+      "window_end": "2026-03-01T23:30:00Z",
+      "produced_at": "2026-03-01T22:39:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-01T23:29:59Z",
+      "checksum": "f28b2f3e"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1023,
+      "window_start": "2026-03-01T23:30:00Z",
+      "window_end": "2026-03-02T00:30:00Z",
+      "produced_at": "2026-03-01T23:40:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-02T00:29:59Z",
+      "checksum": "c9ad8642"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1024,
+      "window_start": "2026-03-02T00:30:00Z",
+      "window_end": "2026-03-02T01:30:00Z",
+      "produced_at": "2026-03-02T00:41:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-02T01:29:59Z",
+      "checksum": "5f98275f"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1025,
+      "window_start": "2026-03-02T01:30:00Z",
+      "window_end": "2026-03-02T02:30:00Z",
+      "produced_at": "2026-03-02T01:37:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-02T02:29:59Z",
+      "checksum": "7a4ea74f"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1026,
+      "window_start": "2026-03-02T02:30:00Z",
+      "window_end": "2026-03-02T03:30:00Z",
+      "produced_at": "2026-03-02T02:38:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-02T03:29:59Z",
+      "checksum": "1165b3ca"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1027,
+      "window_start": "2026-03-02T03:30:00Z",
+      "window_end": "2026-03-02T04:30:00Z",
+      "produced_at": "2026-03-02T03:39:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-02T04:29:59Z",
+      "checksum": "cda2a3bf"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1028,
+      "window_start": "2026-03-02T04:30:00Z",
+      "window_end": "2026-03-02T05:30:00Z",
+      "produced_at": "2026-03-02T04:40:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-02T05:29:59Z",
+      "checksum": "33cd5b14"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1029,
+      "window_start": "2026-03-02T05:30:00Z",
+      "window_end": "2026-03-02T06:30:00Z",
+      "produced_at": "2026-03-02T05:41:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-02T06:29:59Z",
+      "checksum": "fdca4af2"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1030,
+      "window_start": "2026-03-02T06:30:00Z",
+      "window_end": "2026-03-02T07:30:00Z",
+      "produced_at": "2026-03-02T06:37:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-02T07:29:59Z",
+      "checksum": "a39a9fdf"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1031,
+      "window_start": "2026-03-02T07:30:00Z",
+      "window_end": "2026-03-02T08:30:00Z",
+      "produced_at": "2026-03-02T07:38:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-02T08:29:59Z",
+      "checksum": "8633078c"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1032,
+      "window_start": "2026-03-02T08:30:00Z",
+      "window_end": "2026-03-02T09:30:00Z",
+      "produced_at": "2026-03-02T08:39:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-02T09:29:59Z",
+      "checksum": "635e2487"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1033,
+      "window_start": "2026-03-02T09:30:00Z",
+      "window_end": "2026-03-02T10:30:00Z",
+      "produced_at": "2026-03-02T09:40:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-02T10:29:59Z",
+      "checksum": "32e68dfe"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1034,
+      "window_start": "2026-03-02T10:30:00Z",
+      "window_end": "2026-03-02T11:30:00Z",
+      "produced_at": "2026-03-02T10:41:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-02T11:29:59Z",
+      "checksum": "11486a8e"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1035,
+      "window_start": "2026-03-02T11:30:00Z",
+      "window_end": "2026-03-02T12:30:00Z",
+      "produced_at": "2026-03-02T11:37:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-02T12:29:59Z",
+      "checksum": "f860c961"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1036,
+      "window_start": "2026-03-02T12:30:00Z",
+      "window_end": "2026-03-02T13:30:00Z",
+      "produced_at": "2026-03-02T12:38:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-02T13:29:59Z",
+      "checksum": "973b16aa"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1037,
+      "window_start": "2026-03-02T13:30:00Z",
+      "window_end": "2026-03-02T14:30:00Z",
+      "produced_at": "2026-03-02T13:39:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-02T14:29:59Z",
+      "checksum": "57965fcb"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1038,
+      "window_start": "2026-03-02T14:30:00Z",
+      "window_end": "2026-03-02T15:30:00Z",
+      "produced_at": "2026-03-02T14:40:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-02T15:29:59Z",
+      "checksum": "9746ef0b"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1039,
+      "window_start": "2026-03-02T15:30:00Z",
+      "window_end": "2026-03-02T16:30:00Z",
+      "produced_at": "2026-03-02T15:41:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-02T16:29:59Z",
+      "checksum": "b281132a"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1040,
+      "window_start": "2026-03-02T16:30:00Z",
+      "window_end": "2026-03-02T17:30:00Z",
+      "produced_at": "2026-03-02T16:37:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-02T17:29:59Z",
+      "checksum": "37a83eca"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1041,
+      "window_start": "2026-03-02T17:30:00Z",
+      "window_end": "2026-03-02T18:30:00Z",
+      "produced_at": "2026-03-02T17:38:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-02T18:29:59Z",
+      "checksum": "19fd491c"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1042,
+      "window_start": "2026-03-02T18:30:00Z",
+      "window_end": "2026-03-02T19:30:00Z",
+      "produced_at": "2026-03-02T18:39:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-02T19:29:59Z",
+      "checksum": "17340476"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1043,
+      "window_start": "2026-03-02T19:30:00Z",
+      "window_end": "2026-03-02T20:30:00Z",
+      "produced_at": "2026-03-02T19:40:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-02T20:29:59Z",
+      "checksum": "4738b892"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1044,
+      "window_start": "2026-03-02T20:30:00Z",
+      "window_end": "2026-03-02T21:30:00Z",
+      "produced_at": "2026-03-02T20:41:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-02T21:29:59Z",
+      "checksum": "a7292de0"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1045,
+      "window_start": "2026-03-02T21:30:00Z",
+      "window_end": "2026-03-02T22:30:00Z",
+      "produced_at": "2026-03-02T21:37:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-02T22:29:59Z",
+      "checksum": "e0508a2b"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1046,
+      "window_start": "2026-03-02T22:30:00Z",
+      "window_end": "2026-03-02T23:30:00Z",
+      "produced_at": "2026-03-02T22:38:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-02T23:29:59Z",
+      "checksum": "fa4b2564"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1047,
+      "window_start": "2026-03-02T23:30:00Z",
+      "window_end": "2026-03-03T00:30:00Z",
+      "produced_at": "2026-03-02T23:39:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-03T00:29:59Z",
+      "checksum": "1b488a27"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1048,
+      "window_start": "2026-03-03T00:30:00Z",
+      "window_end": "2026-03-03T01:30:00Z",
+      "produced_at": "2026-03-03T00:40:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-03T01:29:59Z",
+      "checksum": "06963243"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1049,
+      "window_start": "2026-03-03T01:30:00Z",
+      "window_end": "2026-03-03T02:30:00Z",
+      "produced_at": "2026-03-03T01:41:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-03T02:29:59Z",
+      "checksum": "5d33feeb"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1050,
+      "window_start": "2026-03-03T03:30:00Z",
+      "window_end": "2026-03-03T04:30:00Z",
+      "produced_at": "2026-03-03T03:38:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-03T04:29:59Z",
+      "checksum": "141f5235"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1051,
+      "window_start": "2026-03-03T04:30:00Z",
+      "window_end": "2026-03-03T05:30:00Z",
+      "produced_at": "2026-03-03T04:39:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-03T05:29:59Z",
+      "checksum": "cc0752a9"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1052,
+      "window_start": "2026-03-03T05:30:00Z",
+      "window_end": "2026-03-03T06:30:00Z",
+      "produced_at": "2026-03-03T05:40:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-03T06:29:59Z",
+      "checksum": "e208096d"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1053,
+      "window_start": "2026-03-03T06:30:00Z",
+      "window_end": "2026-03-03T07:30:00Z",
+      "produced_at": "2026-03-03T06:41:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-03T07:29:59Z",
+      "checksum": "91baf14d"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1054,
+      "window_start": "2026-03-03T07:30:00Z",
+      "window_end": "2026-03-03T08:30:00Z",
+      "produced_at": "2026-03-03T07:37:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-03T08:29:59Z",
+      "checksum": "a0efb7db"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1055,
+      "window_start": "2026-03-03T08:30:00Z",
+      "window_end": "2026-03-03T09:30:00Z",
+      "produced_at": "2026-03-03T08:38:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-03T09:29:59Z",
+      "checksum": "3abb31e5"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1056,
+      "window_start": "2026-03-03T09:30:00Z",
+      "window_end": "2026-03-03T10:30:00Z",
+      "produced_at": "2026-03-03T09:39:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-03T10:29:59Z",
+      "checksum": "d70886ce"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1057,
+      "window_start": "2026-03-03T10:30:00Z",
+      "window_end": "2026-03-03T11:30:00Z",
+      "produced_at": "2026-03-03T10:40:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-03T11:29:59Z",
+      "checksum": "29b25185"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1058,
+      "window_start": "2026-03-03T11:30:00Z",
+      "window_end": "2026-03-03T12:30:00Z",
+      "produced_at": "2026-03-03T11:41:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-03T12:29:59Z",
+      "checksum": "ea9c38d0"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1059,
+      "window_start": "2026-03-03T12:30:00Z",
+      "window_end": "2026-03-03T13:30:00Z",
+      "produced_at": "2026-03-03T12:37:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-03T13:29:59Z",
+      "checksum": "c46534c7"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1060,
+      "window_start": "2026-03-03T13:30:00Z",
+      "window_end": "2026-03-03T14:30:00Z",
+      "produced_at": "2026-03-03T13:38:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-03T14:29:59Z",
+      "checksum": "aa941927"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1061,
+      "window_start": "2026-03-03T14:30:00Z",
+      "window_end": "2026-03-03T15:30:00Z",
+      "produced_at": "2026-03-03T14:39:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-03T15:29:59Z",
+      "checksum": "44b143a1"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1062,
+      "window_start": "2026-03-03T15:30:00Z",
+      "window_end": "2026-03-03T16:30:00Z",
+      "produced_at": "2026-03-03T15:40:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-03T16:29:59Z",
+      "checksum": "373b0750"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1063,
+      "window_start": "2026-03-03T16:30:00Z",
+      "window_end": "2026-03-03T17:30:00Z",
+      "produced_at": "2026-03-03T16:41:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-03T17:29:59Z",
+      "checksum": "a8982b54"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1064,
+      "window_start": "2026-03-03T17:30:00Z",
+      "window_end": "2026-03-03T18:30:00Z",
+      "produced_at": "2026-03-03T17:37:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-03T18:29:59Z",
+      "checksum": "db915b90"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1065,
+      "window_start": "2026-03-03T18:30:00Z",
+      "window_end": "2026-03-03T19:30:00Z",
+      "produced_at": "2026-03-03T18:38:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-03T19:29:59Z",
+      "checksum": "e3c051a8"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1066,
+      "window_start": "2026-03-03T19:30:00Z",
+      "window_end": "2026-03-03T20:30:00Z",
+      "produced_at": "2026-03-03T19:39:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-03T20:29:59Z",
+      "checksum": "00db7a21"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1067,
+      "window_start": "2026-03-03T20:30:00Z",
+      "window_end": "2026-03-03T21:30:00Z",
+      "produced_at": "2026-03-03T20:40:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-03T21:29:59Z",
+      "checksum": "c6701a4c"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1068,
+      "window_start": "2026-03-03T21:30:00Z",
+      "window_end": "2026-03-03T22:30:00Z",
+      "produced_at": "2026-03-03T21:41:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-03T22:29:59Z",
+      "checksum": "534e19ff"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1069,
+      "window_start": "2026-03-03T22:30:00Z",
+      "window_end": "2026-03-03T23:30:00Z",
+      "produced_at": "2026-03-03T22:37:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-03T23:29:59Z",
+      "checksum": "dd59f67f"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1070,
+      "window_start": "2026-03-03T23:30:00Z",
+      "window_end": "2026-03-04T00:30:00Z",
+      "produced_at": "2026-03-03T23:38:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-04T00:29:59Z",
+      "checksum": "d3cb60ee"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1071,
+      "window_start": "2026-03-04T00:30:00Z",
+      "window_end": "2026-03-04T01:30:00Z",
+      "produced_at": "2026-03-04T00:39:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-04T01:29:59Z",
+      "checksum": "a5cd57c9"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1072,
+      "window_start": "2026-03-04T01:30:00Z",
+      "window_end": "2026-03-04T02:30:00Z",
+      "produced_at": "2026-03-04T01:40:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-04T02:29:59Z",
+      "checksum": "a94e00c5"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1073,
+      "window_start": "2026-03-04T02:30:00Z",
+      "window_end": "2026-03-04T03:30:00Z",
+      "produced_at": "2026-03-04T02:41:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-04T03:29:59Z",
+      "checksum": "cdf7bfd6"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1074,
+      "window_start": "2026-03-04T03:30:00Z",
+      "window_end": "2026-03-04T04:30:00Z",
+      "produced_at": "2026-03-04T03:37:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-04T04:29:59Z",
+      "checksum": "6ac4a894"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1075,
+      "window_start": "2026-03-04T04:30:00Z",
+      "window_end": "2026-03-04T05:30:00Z",
+      "produced_at": "2026-03-04T04:38:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-04T05:29:59Z",
+      "checksum": "13e54357"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1076,
+      "window_start": "2026-03-04T06:30:00Z",
+      "window_end": "2026-03-04T07:30:00Z",
+      "produced_at": "2026-03-04T06:40:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-04T07:29:59Z",
+      "checksum": "e6b46270"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1077,
+      "window_start": "2026-03-04T07:30:00Z",
+      "window_end": "2026-03-04T08:30:00Z",
+      "produced_at": "2026-03-04T07:41:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-04T08:29:59Z",
+      "checksum": "7af8108d"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1078,
+      "window_start": "2026-03-04T08:30:00Z",
+      "window_end": "2026-03-04T09:30:00Z",
+      "produced_at": "2026-03-04T08:37:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-04T09:29:59Z",
+      "checksum": "04c98055"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1079,
+      "window_start": "2026-03-04T09:30:00Z",
+      "window_end": "2026-03-04T10:30:00Z",
+      "produced_at": "2026-03-04T09:38:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-04T10:29:59Z",
+      "checksum": "e1e46a4e"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1080,
+      "window_start": "2026-03-04T10:30:00Z",
+      "window_end": "2026-03-04T11:30:00Z",
+      "produced_at": "2026-03-04T10:39:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-04T11:29:59Z",
+      "checksum": "6ab8bfdd"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1081,
+      "window_start": "2026-03-04T11:30:00Z",
+      "window_end": "2026-03-04T12:30:00Z",
+      "produced_at": "2026-03-04T11:40:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-04T12:29:59Z",
+      "checksum": "2b889952"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1082,
+      "window_start": "2026-03-04T12:30:00Z",
+      "window_end": "2026-03-04T13:30:00Z",
+      "produced_at": "2026-03-04T12:41:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-04T13:29:59Z",
+      "checksum": "8271bcc5"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1083,
+      "window_start": "2026-03-04T13:30:00Z",
+      "window_end": "2026-03-04T14:30:00Z",
+      "produced_at": "2026-03-04T13:37:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-04T14:29:59Z",
+      "checksum": "1ddc0cea"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1084,
+      "window_start": "2026-03-04T14:30:00Z",
+      "window_end": "2026-03-04T15:30:00Z",
+      "produced_at": "2026-03-04T14:38:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-04T15:29:59Z",
+      "checksum": "366f4b43"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1085,
+      "window_start": "2026-03-04T15:30:00Z",
+      "window_end": "2026-03-04T16:30:00Z",
+      "produced_at": "2026-03-04T15:39:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-04T16:29:59Z",
+      "checksum": "2cdf4af5"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1086,
+      "window_start": "2026-03-04T16:30:00Z",
+      "window_end": "2026-03-04T17:30:00Z",
+      "produced_at": "2026-03-04T16:40:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-04T17:29:59Z",
+      "checksum": "1d3d7931"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1087,
+      "window_start": "2026-03-04T17:30:00Z",
+      "window_end": "2026-03-04T18:30:00Z",
+      "produced_at": "2026-03-04T17:41:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-04T18:29:59Z",
+      "checksum": "1a7ce013"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1088,
+      "window_start": "2026-03-04T18:30:00Z",
+      "window_end": "2026-03-04T19:30:00Z",
+      "produced_at": "2026-03-04T18:37:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-04T19:29:59Z",
+      "checksum": "4a79193c"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1089,
+      "window_start": "2026-03-04T19:30:00Z",
+      "window_end": "2026-03-04T20:30:00Z",
+      "produced_at": "2026-03-04T19:38:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-04T20:29:59Z",
+      "checksum": "3641a489"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1090,
+      "window_start": "2026-03-04T20:30:00Z",
+      "window_end": "2026-03-04T21:30:00Z",
+      "produced_at": "2026-03-04T20:39:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-04T21:29:59Z",
+      "checksum": "4bcfae98"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1091,
+      "window_start": "2026-03-04T21:30:00Z",
+      "window_end": "2026-03-04T22:30:00Z",
+      "produced_at": "2026-03-04T21:40:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-04T22:29:59Z",
+      "checksum": "5766b593"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1092,
+      "window_start": "2026-03-04T22:30:00Z",
+      "window_end": "2026-03-04T23:30:00Z",
+      "produced_at": "2026-03-04T22:41:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-04T23:29:59Z",
+      "checksum": "0272c7d8"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1093,
+      "window_start": "2026-03-04T23:30:00Z",
+      "window_end": "2026-03-05T00:30:00Z",
+      "produced_at": "2026-03-04T23:37:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-05T00:29:59Z",
+      "checksum": "d6d16d07"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1094,
+      "window_start": "2026-03-05T00:30:00Z",
+      "window_end": "2026-03-05T01:30:00Z",
+      "produced_at": "2026-03-05T00:38:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-05T01:29:59Z",
+      "checksum": "20aa8399"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1095,
+      "window_start": "2026-03-05T01:30:00Z",
+      "window_end": "2026-03-05T02:30:00Z",
+      "produced_at": "2026-03-05T01:39:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-05T02:29:59Z",
+      "checksum": "d6e3d211"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1096,
+      "window_start": "2026-03-05T02:30:00Z",
+      "window_end": "2026-03-05T03:30:00Z",
+      "produced_at": "2026-03-05T02:40:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-05T03:29:59Z",
+      "checksum": "3e3bc670"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1097,
+      "window_start": "2026-03-05T03:30:00Z",
+      "window_end": "2026-03-05T04:30:00Z",
+      "produced_at": "2026-03-05T03:41:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-05T04:29:59Z",
+      "checksum": "c21ef380"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1098,
+      "window_start": "2026-03-05T04:30:00Z",
+      "window_end": "2026-03-05T05:30:00Z",
+      "produced_at": "2026-03-05T04:37:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-05T05:29:59Z",
+      "checksum": "34cf80fa"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1099,
+      "window_start": "2026-03-05T05:30:00Z",
+      "window_end": "2026-03-05T06:30:00Z",
+      "produced_at": "2026-03-05T05:38:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-05T06:29:59Z",
+      "checksum": "c4003cf8"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1100,
+      "window_start": "2026-03-05T06:30:00Z",
+      "window_end": "2026-03-05T07:30:00Z",
+      "produced_at": "2026-03-05T06:39:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-05T07:29:59Z",
+      "checksum": "ac8c8fb6"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1101,
+      "window_start": "2026-03-05T07:30:00Z",
+      "window_end": "2026-03-05T08:30:00Z",
+      "produced_at": "2026-03-05T07:40:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-05T08:29:59Z",
+      "checksum": "7971f3d1"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1102,
+      "window_start": "2026-03-05T08:30:00Z",
+      "window_end": "2026-03-05T09:30:00Z",
+      "produced_at": "2026-03-05T08:41:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-05T09:29:59Z",
+      "checksum": "36f5e3f5"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1103,
+      "window_start": "2026-03-05T09:30:00Z",
+      "window_end": "2026-03-05T10:30:00Z",
+      "produced_at": "2026-03-05T09:37:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-05T10:29:59Z",
+      "checksum": "009ae7fa"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1104,
+      "window_start": "2026-03-05T10:30:00Z",
+      "window_end": "2026-03-05T11:30:00Z",
+      "produced_at": "2026-03-05T10:38:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-05T11:29:59Z",
+      "checksum": "1c317537"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1105,
+      "window_start": "2026-03-05T11:30:00Z",
+      "window_end": "2026-03-05T12:30:00Z",
+      "produced_at": "2026-03-05T11:39:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-05T12:29:59Z",
+      "checksum": "08e8d8f2"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1106,
+      "window_start": "2026-03-05T12:30:00Z",
+      "window_end": "2026-03-05T13:30:00Z",
+      "produced_at": "2026-03-05T12:40:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-05T13:29:59Z",
+      "checksum": "05890ad2"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1107,
+      "window_start": "2026-03-05T13:30:00Z",
+      "window_end": "2026-03-05T14:30:00Z",
+      "produced_at": "2026-03-05T13:41:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-05T14:29:59Z",
+      "checksum": "3bdde805"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1108,
+      "window_start": "2026-03-05T14:30:00Z",
+      "window_end": "2026-03-05T15:30:00Z",
+      "produced_at": "2026-03-05T14:37:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-05T15:29:59Z",
+      "checksum": "75814591"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1109,
+      "window_start": "2026-03-05T15:30:00Z",
+      "window_end": "2026-03-05T16:30:00Z",
+      "produced_at": "2026-03-05T15:38:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-05T16:29:59Z",
+      "checksum": "3dd2c2f8"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1110,
+      "window_start": "2026-03-05T16:30:00Z",
+      "window_end": "2026-03-05T17:30:00Z",
+      "produced_at": "2026-03-05T16:39:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-05T17:29:59Z",
+      "checksum": "1a7d840e"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1111,
+      "window_start": "2026-03-05T17:30:00Z",
+      "window_end": "2026-03-05T18:30:00Z",
+      "produced_at": "2026-03-05T17:40:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-05T18:29:59Z",
+      "checksum": "c0e27734"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1112,
+      "window_start": "2026-03-05T18:30:00Z",
+      "window_end": "2026-03-05T19:30:00Z",
+      "produced_at": "2026-03-05T18:41:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-05T19:29:59Z",
+      "checksum": "76ab98e6"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1113,
+      "window_start": "2026-03-05T19:30:00Z",
+      "window_end": "2026-03-05T20:30:00Z",
+      "produced_at": "2026-03-05T19:37:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-05T20:29:59Z",
+      "checksum": "b05cc953"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1114,
+      "window_start": "2026-03-05T20:30:00Z",
+      "window_end": "2026-03-05T21:30:00Z",
+      "produced_at": "2026-03-05T20:38:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-05T21:29:59Z",
+      "checksum": "4e470fe4"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1115,
+      "window_start": "2026-03-05T21:30:00Z",
+      "window_end": "2026-03-05T22:30:00Z",
+      "produced_at": "2026-03-05T21:39:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-05T22:29:59Z",
+      "checksum": "eaf63100"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1116,
+      "window_start": "2026-03-05T22:30:00Z",
+      "window_end": "2026-03-05T23:30:00Z",
+      "produced_at": "2026-03-05T22:40:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-05T23:29:59Z",
+      "checksum": "a4d0c9b8"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1117,
+      "window_start": "2026-03-05T23:30:00Z",
+      "window_end": "2026-03-06T00:30:00Z",
+      "produced_at": "2026-03-05T23:41:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-06T00:29:59Z",
+      "checksum": "242215b7"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1118,
+      "window_start": "2026-03-06T00:30:00Z",
+      "window_end": "2026-03-06T01:30:00Z",
+      "produced_at": "2026-03-06T00:37:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-06T01:29:59Z",
+      "checksum": "ea0eaf41"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1119,
+      "window_start": "2026-03-06T01:30:00Z",
+      "window_end": "2026-03-06T02:30:00Z",
+      "produced_at": "2026-03-06T01:38:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-06T02:29:59Z",
+      "checksum": "9f80b6d8"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1120,
+      "window_start": "2026-03-06T02:30:00Z",
+      "window_end": "2026-03-06T03:30:00Z",
+      "produced_at": "2026-03-06T02:39:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-06T03:29:59Z",
+      "checksum": "a53a6512"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1121,
+      "window_start": "2026-03-06T03:30:00Z",
+      "window_end": "2026-03-06T04:30:00Z",
+      "produced_at": "2026-03-06T03:40:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-06T04:29:59Z",
+      "checksum": "8908c085"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1122,
+      "window_start": "2026-03-06T04:30:00Z",
+      "window_end": "2026-03-06T05:30:00Z",
+      "produced_at": "2026-03-06T04:41:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-06T05:29:59Z",
+      "checksum": "c1d9de6d"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1123,
+      "window_start": "2026-03-06T05:30:00Z",
+      "window_end": "2026-03-06T06:30:00Z",
+      "produced_at": "2026-03-06T05:37:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-06T06:29:59Z",
+      "checksum": "8fcc969c"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1124,
+      "window_start": "2026-03-06T06:30:00Z",
+      "window_end": "2026-03-06T07:30:00Z",
+      "produced_at": "2026-03-06T06:38:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-06T07:29:59Z",
+      "checksum": "230c911c"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1125,
+      "window_start": "2026-03-06T07:30:00Z",
+      "window_end": "2026-03-06T08:30:00Z",
+      "produced_at": "2026-03-06T07:39:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-06T08:29:59Z",
+      "checksum": "ff088380"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1126,
+      "window_start": "2026-03-06T08:30:00Z",
+      "window_end": "2026-03-06T09:30:00Z",
+      "produced_at": "2026-03-06T08:40:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-06T09:29:59Z",
+      "checksum": "447836e5"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1127,
+      "window_start": "2026-03-06T09:30:00Z",
+      "window_end": "2026-03-06T10:30:00Z",
+      "produced_at": "2026-03-06T09:41:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-06T10:29:59Z",
+      "checksum": "023c29b8"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1128,
+      "window_start": "2026-03-06T10:30:00Z",
+      "window_end": "2026-03-06T11:30:00Z",
+      "produced_at": "2026-03-06T10:37:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-06T11:29:59Z",
+      "checksum": "bcc3c512"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1129,
+      "window_start": "2026-03-06T11:30:00Z",
+      "window_end": "2026-03-06T12:30:00Z",
+      "produced_at": "2026-03-06T11:38:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-06T12:29:59Z",
+      "checksum": "284f2ad4"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1130,
+      "window_start": "2026-03-06T12:30:00Z",
+      "window_end": "2026-03-06T13:30:00Z",
+      "produced_at": "2026-03-06T12:39:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-06T13:29:59Z",
+      "checksum": "3f841ceb"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1131,
+      "window_start": "2026-03-06T13:30:00Z",
+      "window_end": "2026-03-06T14:30:00Z",
+      "produced_at": "2026-03-06T13:40:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-06T14:29:59Z",
+      "checksum": "db3b64f0"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1132,
+      "window_start": "2026-03-06T14:30:00Z",
+      "window_end": "2026-03-06T15:30:00Z",
+      "produced_at": "2026-03-06T14:41:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-06T15:29:59Z",
+      "checksum": "bdebb9b9"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1133,
+      "window_start": "2026-03-06T15:30:00Z",
+      "window_end": "2026-03-06T16:30:00Z",
+      "produced_at": "2026-03-06T15:37:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-06T16:29:59Z",
+      "checksum": "82779bd8"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1134,
+      "window_start": "2026-03-06T16:30:00Z",
+      "window_end": "2026-03-06T17:30:00Z",
+      "produced_at": "2026-03-06T16:38:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-06T17:29:59Z",
+      "checksum": "6a250d0a"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1135,
+      "window_start": "2026-03-06T17:30:00Z",
+      "window_end": "2026-03-06T18:30:00Z",
+      "produced_at": "2026-03-06T17:39:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-06T18:29:59Z",
+      "checksum": "df98e3c2"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1136,
+      "window_start": "2026-03-06T18:30:00Z",
+      "window_end": "2026-03-06T19:30:00Z",
+      "produced_at": "2026-03-06T18:40:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-06T19:29:59Z",
+      "checksum": "9ebf1f2e"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1137,
+      "window_start": "2026-03-06T19:30:00Z",
+      "window_end": "2026-03-06T20:30:00Z",
+      "produced_at": "2026-03-06T19:41:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-06T20:29:59Z",
+      "checksum": "b9f1efbe"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1138,
+      "window_start": "2026-03-06T20:30:00Z",
+      "window_end": "2026-03-06T21:30:00Z",
+      "produced_at": "2026-03-06T20:37:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-06T21:29:59Z",
+      "checksum": "71c38ebb"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1139,
+      "window_start": "2026-03-06T21:30:00Z",
+      "window_end": "2026-03-06T22:30:00Z",
+      "produced_at": "2026-03-06T21:38:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-06T22:29:59Z",
+      "checksum": "0d246591"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1140,
+      "window_start": "2026-03-06T22:30:00Z",
+      "window_end": "2026-03-06T23:30:00Z",
+      "produced_at": "2026-03-06T22:39:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-06T23:29:59Z",
+      "checksum": "2288d755"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1141,
+      "window_start": "2026-03-06T23:30:00Z",
+      "window_end": "2026-03-07T00:30:00Z",
+      "produced_at": "2026-03-06T23:40:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-07T00:29:59Z",
+      "checksum": "c5779cfc"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1142,
+      "window_start": "2026-03-07T00:30:00Z",
+      "window_end": "2026-03-07T01:30:00Z",
+      "produced_at": "2026-03-07T00:41:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-07T01:29:59Z",
+      "checksum": "f57434e1"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1143,
+      "window_start": "2026-03-07T01:30:00Z",
+      "window_end": "2026-03-07T02:30:00Z",
+      "produced_at": "2026-03-07T01:37:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-07T02:29:59Z",
+      "checksum": "51c4b9b4"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1144,
+      "window_start": "2026-03-07T02:30:00Z",
+      "window_end": "2026-03-07T03:30:00Z",
+      "produced_at": "2026-03-07T02:38:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-07T03:29:59Z",
+      "checksum": "3f9cf89d"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1145,
+      "window_start": "2026-03-07T03:30:00Z",
+      "window_end": "2026-03-07T04:30:00Z",
+      "produced_at": "2026-03-07T03:39:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-07T04:29:59Z",
+      "checksum": "0df74387"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1146,
+      "window_start": "2026-03-07T04:30:00Z",
+      "window_end": "2026-03-07T05:30:00Z",
+      "produced_at": "2026-03-07T04:40:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-07T05:29:59Z",
+      "checksum": "7bd3091c"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1147,
+      "window_start": "2026-03-07T05:30:00Z",
+      "window_end": "2026-03-07T06:30:00Z",
+      "produced_at": "2026-03-07T05:41:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-07T06:29:59Z",
+      "checksum": "d200b0a1"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1148,
+      "window_start": "2026-03-07T06:30:00Z",
+      "window_end": "2026-03-07T07:30:00Z",
+      "produced_at": "2026-03-07T06:37:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-07T07:29:59Z",
+      "checksum": "2371c384"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1149,
+      "window_start": "2026-03-07T07:30:00Z",
+      "window_end": "2026-03-07T08:30:00Z",
+      "produced_at": "2026-03-07T07:38:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-07T08:29:59Z",
+      "checksum": "9507db26"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1150,
+      "window_start": "2026-03-07T08:30:00Z",
+      "window_end": "2026-03-07T09:30:00Z",
+      "produced_at": "2026-03-07T08:39:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-07T09:29:59Z",
+      "checksum": "fa1cb76d"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1151,
+      "window_start": "2026-03-07T09:30:00Z",
+      "window_end": "2026-03-07T10:30:00Z",
+      "produced_at": "2026-03-07T09:40:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-07T10:29:59Z",
+      "checksum": "3e3b28e5"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1152,
+      "window_start": "2026-03-07T10:30:00Z",
+      "window_end": "2026-03-07T11:30:00Z",
+      "produced_at": "2026-03-07T10:41:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-07T11:29:59Z",
+      "checksum": "251ad0ed"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1153,
+      "window_start": "2026-03-07T11:30:00Z",
+      "window_end": "2026-03-07T12:30:00Z",
+      "produced_at": "2026-03-07T11:37:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-07T12:29:59Z",
+      "checksum": "f1f719c4"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1154,
+      "window_start": "2026-03-07T12:30:00Z",
+      "window_end": "2026-03-07T13:30:00Z",
+      "produced_at": "2026-03-07T12:38:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-07T13:29:59Z",
+      "checksum": "165a5d26"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1155,
+      "window_start": "2026-03-07T13:30:00Z",
+      "window_end": "2026-03-07T14:30:00Z",
+      "produced_at": "2026-03-07T13:39:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-07T14:29:59Z",
+      "checksum": "31819a02"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1156,
+      "window_start": "2026-03-07T14:30:00Z",
+      "window_end": "2026-03-07T15:30:00Z",
+      "produced_at": "2026-03-07T14:40:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-07T15:29:59Z",
+      "checksum": "f1629261"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1157,
+      "window_start": "2026-03-07T15:30:00Z",
+      "window_end": "2026-03-07T16:30:00Z",
+      "produced_at": "2026-03-07T15:41:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-07T16:29:59Z",
+      "checksum": "ec2cf924"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1158,
+      "window_start": "2026-03-07T16:30:00Z",
+      "window_end": "2026-03-07T17:30:00Z",
+      "produced_at": "2026-03-07T16:37:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-07T17:29:59Z",
+      "checksum": "87b4b57d"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1159,
+      "window_start": "2026-03-07T17:30:00Z",
+      "window_end": "2026-03-07T18:30:00Z",
+      "produced_at": "2026-03-07T17:38:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-07T18:29:59Z",
+      "checksum": "fbfff531"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1160,
+      "window_start": "2026-03-07T18:30:00Z",
+      "window_end": "2026-03-07T19:30:00Z",
+      "produced_at": "2026-03-07T18:39:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-07T19:29:59Z",
+      "checksum": "5b0be7b6"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1161,
+      "window_start": "2026-03-07T19:30:00Z",
+      "window_end": "2026-03-07T20:30:00Z",
+      "produced_at": "2026-03-07T19:40:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-07T20:29:59Z",
+      "checksum": "2a137c7f"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1162,
+      "window_start": "2026-03-07T20:30:00Z",
+      "window_end": "2026-03-07T21:30:00Z",
+      "produced_at": "2026-03-07T20:41:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-07T21:29:59Z",
+      "checksum": "8eb8637f"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1163,
+      "window_start": "2026-03-07T21:30:00Z",
+      "window_end": "2026-03-07T22:30:00Z",
+      "produced_at": "2026-03-07T21:37:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-07T22:29:59Z",
+      "checksum": "dc651194"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1164,
+      "window_start": "2026-03-07T22:30:00Z",
+      "window_end": "2026-03-07T23:30:00Z",
+      "produced_at": "2026-03-07T22:38:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-07T23:29:59Z",
+      "checksum": "dcfdc311"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1165,
+      "window_start": "2026-03-07T23:30:00Z",
+      "window_end": "2026-03-08T00:30:00Z",
+      "produced_at": "2026-03-07T23:39:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-08T00:29:59Z",
+      "checksum": "4fa78fcc"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1166,
+      "window_start": "2026-03-08T00:30:00Z",
+      "window_end": "2026-03-08T01:30:00Z",
+      "produced_at": "2026-03-08T00:40:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-08T01:29:59Z",
+      "checksum": "f23612c8"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1167,
+      "window_start": "2026-03-08T01:30:00Z",
+      "window_end": "2026-03-08T02:30:00Z",
+      "produced_at": "2026-03-08T01:41:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-08T02:29:59Z",
+      "checksum": "eb9174ac"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1168,
+      "window_start": "2026-03-08T02:30:00Z",
+      "window_end": "2026-03-08T03:30:00Z",
+      "produced_at": "2026-03-08T02:37:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-08T03:29:59Z",
+      "checksum": "3df74998"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1169,
+      "window_start": "2026-03-08T03:30:00Z",
+      "window_end": "2026-03-08T04:30:00Z",
+      "produced_at": "2026-03-08T03:38:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-08T04:29:59Z",
+      "checksum": "c6af2bb9"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1170,
+      "window_start": "2026-03-08T04:30:00Z",
+      "window_end": "2026-03-08T05:30:00Z",
+      "produced_at": "2026-03-08T04:39:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-08T05:29:59Z",
+      "checksum": "b996cf54"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1171,
+      "window_start": "2026-03-08T05:30:00Z",
+      "window_end": "2026-03-08T06:30:00Z",
+      "produced_at": "2026-03-08T05:40:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-08T06:29:59Z",
+      "checksum": "62959331"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1172,
+      "window_start": "2026-03-08T06:30:00Z",
+      "window_end": "2026-03-08T07:30:00Z",
+      "produced_at": "2026-03-08T06:41:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-08T07:29:59Z",
+      "checksum": "92cf6488"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1173,
+      "window_start": "2026-03-08T07:30:00Z",
+      "window_end": "2026-03-08T08:30:00Z",
+      "produced_at": "2026-03-08T07:37:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-08T08:29:59Z",
+      "checksum": "2a3ed3fb"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1174,
+      "window_start": "2026-03-08T08:30:00Z",
+      "window_end": "2026-03-08T09:30:00Z",
+      "produced_at": "2026-03-08T08:38:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-08T09:29:59Z",
+      "checksum": "bc8e9221"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1175,
+      "window_start": "2026-03-08T09:30:00Z",
+      "window_end": "2026-03-08T10:30:00Z",
+      "produced_at": "2026-03-08T09:39:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-08T10:29:59Z",
+      "checksum": "ee57d075"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1176,
+      "window_start": "2026-03-08T10:30:00Z",
+      "window_end": "2026-03-08T11:30:00Z",
+      "produced_at": "2026-03-08T10:40:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-08T11:29:59Z",
+      "checksum": "bc8c4c59"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1177,
+      "window_start": "2026-03-08T11:30:00Z",
+      "window_end": "2026-03-08T12:30:00Z",
+      "produced_at": "2026-03-08T11:41:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-08T12:29:59Z",
+      "checksum": "775e7d7e"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1178,
+      "window_start": "2026-03-08T12:30:00Z",
+      "window_end": "2026-03-08T13:30:00Z",
+      "produced_at": "2026-03-08T12:37:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-08T13:29:59Z",
+      "checksum": "2ddddbb4"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1179,
+      "window_start": "2026-03-08T13:30:00Z",
+      "window_end": "2026-03-08T14:30:00Z",
+      "produced_at": "2026-03-08T13:38:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-08T14:29:59Z",
+      "checksum": "70fe2e34"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1180,
+      "window_start": "2026-03-08T14:30:00Z",
+      "window_end": "2026-03-08T15:30:00Z",
+      "produced_at": "2026-03-08T14:39:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-08T15:29:59Z",
+      "checksum": "2a57c79d"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1181,
+      "window_start": "2026-03-08T15:30:00Z",
+      "window_end": "2026-03-08T16:30:00Z",
+      "produced_at": "2026-03-08T15:40:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-08T16:29:59Z",
+      "checksum": "af6720fe"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1182,
+      "window_start": "2026-03-08T16:30:00Z",
+      "window_end": "2026-03-08T17:30:00Z",
+      "produced_at": "2026-03-08T16:41:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-08T17:29:59Z",
+      "checksum": "0d0b7642"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1183,
+      "window_start": "2026-03-08T17:30:00Z",
+      "window_end": "2026-03-08T18:30:00Z",
+      "produced_at": "2026-03-08T17:37:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-08T18:29:59Z",
+      "checksum": "4feb5d66"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1184,
+      "window_start": "2026-03-08T18:30:00Z",
+      "window_end": "2026-03-08T19:30:00Z",
+      "produced_at": "2026-03-08T18:38:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-08T19:29:59Z",
+      "checksum": "b0672708"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1185,
+      "window_start": "2026-03-08T19:30:00Z",
+      "window_end": "2026-03-08T20:30:00Z",
+      "produced_at": "2026-03-08T19:39:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-08T20:29:59Z",
+      "checksum": "c0d93a46"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1186,
+      "window_start": "2026-03-08T20:30:00Z",
+      "window_end": "2026-03-08T21:30:00Z",
+      "produced_at": "2026-03-08T20:40:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-08T21:29:59Z",
+      "checksum": "f1636a42"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1187,
+      "window_start": "2026-03-08T21:30:00Z",
+      "window_end": "2026-03-08T22:30:00Z",
+      "produced_at": "2026-03-08T21:41:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-08T22:29:59Z",
+      "checksum": "46814639"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1188,
+      "window_start": "2026-03-08T22:30:00Z",
+      "window_end": "2026-03-08T23:30:00Z",
+      "produced_at": "2026-03-08T22:37:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-08T23:29:59Z",
+      "checksum": "cf4e2495"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1189,
+      "window_start": "2026-03-08T23:30:00Z",
+      "window_end": "2026-03-09T00:30:00Z",
+      "produced_at": "2026-03-08T23:38:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-09T00:29:59Z",
+      "checksum": "98f9a865"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1190,
+      "window_start": "2026-03-09T00:30:00Z",
+      "window_end": "2026-03-09T01:30:00Z",
+      "produced_at": "2026-03-09T00:39:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-09T01:29:59Z",
+      "checksum": "bfae4e2c"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1191,
+      "window_start": "2026-03-09T01:30:00Z",
+      "window_end": "2026-03-09T02:30:00Z",
+      "produced_at": "2026-03-09T01:40:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-09T02:29:59Z",
+      "checksum": "122fd950"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1192,
+      "window_start": "2026-03-09T02:30:00Z",
+      "window_end": "2026-03-09T03:30:00Z",
+      "produced_at": "2026-03-09T02:41:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-09T03:29:59Z",
+      "checksum": "438e1950"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1193,
+      "window_start": "2026-03-09T03:30:00Z",
+      "window_end": "2026-03-09T04:30:00Z",
+      "produced_at": "2026-03-09T03:37:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-09T04:29:59Z",
+      "checksum": "60820266"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1194,
+      "window_start": "2026-03-09T04:30:00Z",
+      "window_end": "2026-03-09T05:30:00Z",
+      "produced_at": "2026-03-09T04:38:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-09T05:29:59Z",
+      "checksum": "9a60bee2"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1195,
+      "window_start": "2026-03-09T05:30:00Z",
+      "window_end": "2026-03-09T06:30:00Z",
+      "produced_at": "2026-03-09T05:39:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-09T06:29:59Z",
+      "checksum": "b16ab73e"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1196,
+      "window_start": "2026-03-09T06:30:00Z",
+      "window_end": "2026-03-09T07:30:00Z",
+      "produced_at": "2026-03-09T06:40:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-09T07:29:59Z",
+      "checksum": "7fdb58c0"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1197,
+      "window_start": "2026-03-09T07:30:00Z",
+      "window_end": "2026-03-09T08:30:00Z",
+      "produced_at": "2026-03-09T07:41:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-09T08:29:59Z",
+      "checksum": "0293b559"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1198,
+      "window_start": "2026-03-09T08:30:00Z",
+      "window_end": "2026-03-09T09:30:00Z",
+      "produced_at": "2026-03-09T08:37:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-09T09:29:59Z",
+      "checksum": "3edeb74e"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1199,
+      "window_start": "2026-03-09T09:30:00Z",
+      "window_end": "2026-03-09T10:30:00Z",
+      "produced_at": "2026-03-09T09:38:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-09T10:29:59Z",
+      "checksum": "d0082442"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1200,
+      "window_start": "2026-03-09T10:30:00Z",
+      "window_end": "2026-03-09T11:30:00Z",
+      "produced_at": "2026-03-09T10:39:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-09T11:29:59Z",
+      "checksum": "9550cdb7"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1201,
+      "window_start": "2026-03-09T11:30:00Z",
+      "window_end": "2026-03-09T12:30:00Z",
+      "produced_at": "2026-03-09T11:40:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-09T12:29:59Z",
+      "checksum": "a25905ca"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1202,
+      "window_start": "2026-03-09T12:30:00Z",
+      "window_end": "2026-03-09T13:30:00Z",
+      "produced_at": "2026-03-09T12:41:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-09T13:29:59Z",
+      "checksum": "061b2b21"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1203,
+      "window_start": "2026-03-09T13:30:00Z",
+      "window_end": "2026-03-09T14:30:00Z",
+      "produced_at": "2026-03-09T13:37:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-09T14:29:59Z",
+      "checksum": "615cbf2f"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1204,
+      "window_start": "2026-03-09T14:30:00Z",
+      "window_end": "2026-03-09T15:30:00Z",
+      "produced_at": "2026-03-09T14:38:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-09T15:29:59Z",
+      "checksum": "76ccadf8"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1205,
+      "window_start": "2026-03-09T15:30:00Z",
+      "window_end": "2026-03-09T16:30:00Z",
+      "produced_at": "2026-03-09T15:39:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-09T16:29:59Z",
+      "checksum": "ee140a4f"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1206,
+      "window_start": "2026-03-09T16:30:00Z",
+      "window_end": "2026-03-09T17:30:00Z",
+      "produced_at": "2026-03-09T16:40:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-09T17:29:59Z",
+      "checksum": "98e81b70"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1207,
+      "window_start": "2026-03-09T17:30:00Z",
+      "window_end": "2026-03-09T18:30:00Z",
+      "produced_at": "2026-03-09T17:41:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-09T18:29:59Z",
+      "checksum": "11cdd227"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1208,
+      "window_start": "2026-03-09T18:30:00Z",
+      "window_end": "2026-03-09T19:30:00Z",
+      "produced_at": "2026-03-09T18:37:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-09T19:29:59Z",
+      "checksum": "87692d0e"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1209,
+      "window_start": "2026-03-09T19:30:00Z",
+      "window_end": "2026-03-09T20:30:00Z",
+      "produced_at": "2026-03-09T19:38:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-09T20:29:59Z",
+      "checksum": "8c1cbc82"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1210,
+      "window_start": "2026-03-09T20:30:00Z",
+      "window_end": "2026-03-09T21:30:00Z",
+      "produced_at": "2026-03-09T20:39:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-09T21:29:59Z",
+      "checksum": "35b6b197"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1211,
+      "window_start": "2026-03-09T21:30:00Z",
+      "window_end": "2026-03-09T22:30:00Z",
+      "produced_at": "2026-03-09T21:40:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-09T22:29:59Z",
+      "checksum": "ada9b33f"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1212,
+      "window_start": "2026-03-09T22:30:00Z",
+      "window_end": "2026-03-09T23:30:00Z",
+      "produced_at": "2026-03-09T22:41:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-09T23:29:59Z",
+      "checksum": "385edec5"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1213,
+      "window_start": "2026-03-09T23:30:00Z",
+      "window_end": "2026-03-10T00:30:00Z",
+      "produced_at": "2026-03-09T23:37:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-10T00:29:59Z",
+      "checksum": "9cb2fb38"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1214,
+      "window_start": "2026-03-10T00:30:00Z",
+      "window_end": "2026-03-10T01:30:00Z",
+      "produced_at": "2026-03-10T00:38:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-10T01:29:59Z",
+      "checksum": "bc626b06"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1215,
+      "window_start": "2026-03-10T01:30:00Z",
+      "window_end": "2026-03-10T02:30:00Z",
+      "produced_at": "2026-03-10T01:39:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-10T02:29:59Z",
+      "checksum": "f4ecd19d"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1216,
+      "window_start": "2026-03-10T02:30:00Z",
+      "window_end": "2026-03-10T03:30:00Z",
+      "produced_at": "2026-03-10T02:40:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-10T03:29:59Z",
+      "checksum": "45f91ff4"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1217,
+      "window_start": "2026-03-10T03:30:00Z",
+      "window_end": "2026-03-10T04:30:00Z",
+      "produced_at": "2026-03-10T03:41:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-10T04:29:59Z",
+      "checksum": "60d56654"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1218,
+      "window_start": "2026-03-10T04:30:00Z",
+      "window_end": "2026-03-10T05:30:00Z",
+      "produced_at": "2026-03-10T04:37:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-10T05:29:59Z",
+      "checksum": "5f40da39"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1219,
+      "window_start": "2026-03-10T05:30:00Z",
+      "window_end": "2026-03-10T06:30:00Z",
+      "produced_at": "2026-03-10T05:38:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-10T06:29:59Z",
+      "checksum": "f70226fc"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1220,
+      "window_start": "2026-03-10T06:30:00Z",
+      "window_end": "2026-03-10T07:30:00Z",
+      "produced_at": "2026-03-10T06:39:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-10T07:29:59Z",
+      "checksum": "a5b5ddbd"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1221,
+      "window_start": "2026-03-10T07:30:00Z",
+      "window_end": "2026-03-10T08:30:00Z",
+      "produced_at": "2026-03-10T07:40:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-10T08:29:59Z",
+      "checksum": "a6859056"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1222,
+      "window_start": "2026-03-10T08:30:00Z",
+      "window_end": "2026-03-10T09:30:00Z",
+      "produced_at": "2026-03-10T08:41:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-10T09:29:59Z",
+      "checksum": "37f63f16"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1223,
+      "window_start": "2026-03-10T09:30:00Z",
+      "window_end": "2026-03-10T10:30:00Z",
+      "produced_at": "2026-03-10T09:37:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-10T10:29:59Z",
+      "checksum": "00fe2ceb"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1224,
+      "window_start": "2026-03-10T10:30:00Z",
+      "window_end": "2026-03-10T11:30:00Z",
+      "produced_at": "2026-03-10T10:38:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-10T11:29:59Z",
+      "checksum": "d273c8bb"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1225,
+      "window_start": "2026-03-10T11:30:00Z",
+      "window_end": "2026-03-10T12:30:00Z",
+      "produced_at": "2026-03-10T11:39:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-10T12:29:59Z",
+      "checksum": "0acd1b81"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "batch_no": 1226,
+      "window_start": "2026-03-10T12:30:00Z",
+      "window_end": "2026-03-10T13:30:00Z",
+      "produced_at": "2026-03-10T12:40:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-10T13:29:59Z",
+      "checksum": "91d29026"
+    },
+    {
+      "job_id": "settle_daily_ny",
+      "batch_no": 200,
+      "window_start": "2026-03-01T07:05:00Z",
+      "window_end": "2026-03-02T07:05:00Z",
+      "produced_at": "2026-03-01T07:12:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-02T07:04:59Z",
+      "checksum": "d425b732"
+    },
+    {
+      "job_id": "settle_daily_ny",
+      "batch_no": 201,
+      "window_start": "2026-03-02T07:05:00Z",
+      "window_end": "2026-03-03T07:05:00Z",
+      "produced_at": "2026-03-02T07:13:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-03T07:04:59Z",
+      "checksum": "0ec9af29"
+    },
+    {
+      "job_id": "settle_daily_ny",
+      "batch_no": 202,
+      "window_start": "2026-03-03T07:05:00Z",
+      "window_end": "2026-03-04T07:05:00Z",
+      "produced_at": "2026-03-03T07:14:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-04T07:04:59Z",
+      "checksum": "a0de951c"
+    },
+    {
+      "job_id": "settle_daily_ny",
+      "batch_no": 203,
+      "window_start": "2026-03-04T07:05:00Z",
+      "window_end": "2026-03-05T07:05:00Z",
+      "produced_at": "2026-03-04T07:15:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-05T07:04:59Z",
+      "checksum": "06a4f301"
+    },
+    {
+      "job_id": "settle_daily_ny",
+      "batch_no": 204,
+      "window_start": "2026-03-05T07:05:00Z",
+      "window_end": "2026-03-06T07:05:00Z",
+      "produced_at": "2026-03-05T07:16:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-06T07:04:59Z",
+      "checksum": "3f7072d8"
+    },
+    {
+      "job_id": "settle_daily_ny",
+      "batch_no": 205,
+      "window_start": "2026-03-06T07:05:00Z",
+      "window_end": "2026-03-07T07:05:00Z",
+      "produced_at": "2026-03-06T07:12:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-07T07:04:59Z",
+      "checksum": "351c9912"
+    },
+    {
+      "job_id": "settle_daily_ny",
+      "batch_no": 206,
+      "window_start": "2026-03-07T07:05:00Z",
+      "window_end": "2026-03-09T06:05:00Z",
+      "produced_at": "2026-03-07T07:13:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-09T06:04:59Z",
+      "checksum": "46e43ae0"
+    },
+    {
+      "job_id": "settle_daily_ny",
+      "batch_no": 207,
+      "window_start": "2026-03-09T06:05:00Z",
+      "window_end": "2026-03-10T06:05:00Z",
+      "produced_at": "2026-03-09T06:14:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-10T06:04:59Z",
+      "checksum": "cca130a8"
+    },
+    {
+      "job_id": "settle_daily_ny",
+      "batch_no": 208,
+      "window_start": "2026-03-10T06:05:00Z",
+      "window_end": "2026-03-11T06:05:00Z",
+      "produced_at": "2026-03-10T06:15:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-11T06:04:59Z",
+      "checksum": "b5d35026"
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "batch_no": 1,
+      "window_start": "2026-03-01T00:15:00Z",
+      "window_end": "2026-03-01T06:15:00Z",
+      "produced_at": "2026-03-01T00:22:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-01T06:14:59Z",
+      "checksum": "691241a9"
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "batch_no": 2,
+      "window_start": "2026-03-01T06:15:00Z",
+      "window_end": "2026-03-01T12:15:00Z",
+      "produced_at": "2026-03-01T06:23:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-01T12:14:59Z",
+      "checksum": "9f597153"
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "batch_no": 3,
+      "window_start": "2026-03-01T12:15:00Z",
+      "window_end": "2026-03-01T18:15:00Z",
+      "produced_at": "2026-03-01T12:24:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-01T18:14:59Z",
+      "checksum": "d51d2f1d"
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "batch_no": 4,
+      "window_start": "2026-03-01T18:15:00Z",
+      "window_end": "2026-03-02T00:15:00Z",
+      "produced_at": "2026-03-01T18:25:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-02T00:14:59Z",
+      "checksum": "11a2f427"
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "batch_no": 5,
+      "window_start": "2026-03-02T00:15:00Z",
+      "window_end": "2026-03-02T06:15:00Z",
+      "produced_at": "2026-03-02T00:26:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-02T06:14:59Z",
+      "checksum": "b0a9521f"
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "batch_no": 6,
+      "window_start": "2026-03-02T06:15:00Z",
+      "window_end": "2026-03-02T12:15:00Z",
+      "produced_at": "2026-03-02T06:22:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-02T12:14:59Z",
+      "checksum": "ab50e1b8"
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "batch_no": 7,
+      "window_start": "2026-03-02T12:15:00Z",
+      "window_end": "2026-03-02T18:15:00Z",
+      "produced_at": "2026-03-02T12:23:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-02T18:14:59Z",
+      "checksum": "00ee02e3"
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "batch_no": 8,
+      "window_start": "2026-03-02T18:15:00Z",
+      "window_end": "2026-03-03T00:15:00Z",
+      "produced_at": "2026-03-02T18:24:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-03T00:14:59Z",
+      "checksum": "bce51554"
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "batch_no": 9,
+      "window_start": "2026-03-03T00:15:00Z",
+      "window_end": "2026-03-03T06:15:00Z",
+      "produced_at": "2026-03-03T00:25:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-03T06:14:59Z",
+      "checksum": "4015e7a9"
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "batch_no": 908,
+      "window_start": "2026-03-03T00:15:00Z",
+      "window_end": "2026-03-03T06:15:00Z",
+      "produced_at": "2026-03-03T02:27:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-03T06:14:59Z",
+      "checksum": "fac3910c"
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "batch_no": 10,
+      "window_start": "2026-03-03T06:15:00Z",
+      "window_end": "2026-03-03T12:15:00Z",
+      "produced_at": "2026-03-03T06:26:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-03T12:14:59Z",
+      "checksum": "75b03b04"
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "batch_no": 11,
+      "window_start": "2026-03-03T12:15:00Z",
+      "window_end": "2026-03-03T18:15:00Z",
+      "produced_at": "2026-03-03T12:22:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-03T18:14:59Z",
+      "checksum": "43c39b8e"
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "batch_no": 12,
+      "window_start": "2026-03-03T18:15:00Z",
+      "window_end": "2026-03-04T00:15:00Z",
+      "produced_at": "2026-03-03T18:23:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-04T00:14:59Z",
+      "checksum": "022089ae"
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "batch_no": 13,
+      "window_start": "2026-03-04T00:15:00Z",
+      "window_end": "2026-03-04T06:15:00Z",
+      "produced_at": "2026-03-04T00:24:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-04T06:14:59Z",
+      "checksum": "fc4a0bca"
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "batch_no": 14,
+      "window_start": "2026-03-05T00:15:00Z",
+      "window_end": "2026-03-05T06:15:00Z",
+      "produced_at": "2026-03-05T00:23:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-05T06:14:59Z",
+      "checksum": "93d7561f"
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "batch_no": 15,
+      "window_start": "2026-03-05T06:15:00Z",
+      "window_end": "2026-03-05T12:15:00Z",
+      "produced_at": "2026-03-05T06:24:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-05T12:14:59Z",
+      "checksum": "98c2e964"
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "batch_no": 16,
+      "window_start": "2026-03-05T12:15:00Z",
+      "window_end": "2026-03-05T18:15:00Z",
+      "produced_at": "2026-03-05T12:25:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-05T18:14:59Z",
+      "checksum": "0afcf636"
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "batch_no": 17,
+      "window_start": "2026-03-05T18:15:00Z",
+      "window_end": "2026-03-06T00:15:00Z",
+      "produced_at": "2026-03-05T18:26:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-06T00:14:59Z",
+      "checksum": "f5e23007"
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "batch_no": 18,
+      "window_start": "2026-03-06T00:15:00Z",
+      "window_end": "2026-03-06T06:15:00Z",
+      "produced_at": "2026-03-06T00:22:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-06T06:14:59Z",
+      "checksum": "1779838c"
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "batch_no": 19,
+      "window_start": "2026-03-06T06:15:00Z",
+      "window_end": "2026-03-06T12:15:00Z",
+      "produced_at": "2026-03-06T06:23:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-06T12:14:59Z",
+      "checksum": "c40f45ba"
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "batch_no": 20,
+      "window_start": "2026-03-06T12:15:00Z",
+      "window_end": "2026-03-06T18:15:00Z",
+      "produced_at": "2026-03-06T12:24:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-06T18:14:59Z",
+      "checksum": "4770782d"
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "batch_no": 21,
+      "window_start": "2026-03-06T18:15:00Z",
+      "window_end": "2026-03-07T00:15:00Z",
+      "produced_at": "2026-03-06T18:25:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-07T00:14:59Z",
+      "checksum": "57830473"
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "batch_no": 22,
+      "window_start": "2026-03-07T00:15:00Z",
+      "window_end": "2026-03-07T06:15:00Z",
+      "produced_at": "2026-03-07T00:26:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-07T06:14:59Z",
+      "checksum": "39a15020"
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "batch_no": 23,
+      "window_start": "2026-03-07T06:15:00Z",
+      "window_end": "2026-03-07T12:15:00Z",
+      "produced_at": "2026-03-07T06:22:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-07T12:14:59Z",
+      "checksum": "914b531f"
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "batch_no": 24,
+      "window_start": "2026-03-07T12:15:00Z",
+      "window_end": "2026-03-07T18:15:00Z",
+      "produced_at": "2026-03-07T12:23:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-07T18:14:59Z",
+      "checksum": "5dcaa944"
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "batch_no": 25,
+      "window_start": "2026-03-07T18:15:00Z",
+      "window_end": "2026-03-08T00:15:00Z",
+      "produced_at": "2026-03-07T18:24:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-08T00:14:59Z",
+      "checksum": "b4ae2b65"
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "batch_no": 26,
+      "window_start": "2026-03-08T00:15:00Z",
+      "window_end": "2026-03-08T06:15:00Z",
+      "produced_at": "2026-03-08T00:25:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-08T06:14:59Z",
+      "checksum": "f87ce434"
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "batch_no": 27,
+      "window_start": "2026-03-08T06:15:00Z",
+      "window_end": "2026-03-08T12:15:00Z",
+      "produced_at": "2026-03-08T06:26:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-08T12:14:59Z",
+      "checksum": "4009512a"
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "batch_no": 28,
+      "window_start": "2026-03-08T12:15:00Z",
+      "window_end": "2026-03-08T18:15:00Z",
+      "produced_at": "2026-03-08T12:22:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-08T18:14:59Z",
+      "checksum": "e3f86de2"
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "batch_no": 800,
+      "window_start": "2026-03-04T09:00:00Z",
+      "window_end": "2026-03-04T09:12:00Z",
+      "produced_at": "2026-03-04T09:11:00Z",
+      "row_count": 53,
+      "watermark": "2026-03-04T09:11:50Z",
+      "checksum": "pause-violation"
+    },
+    {
+      "job_id": "report_weekday",
+      "batch_no": 50,
+      "window_start": "2026-03-02T01:20:00Z",
+      "window_end": "2026-03-03T01:20:00Z",
+      "produced_at": "2026-03-02T01:27:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-03T01:19:59Z",
+      "checksum": "068565f1"
+    },
+    {
+      "job_id": "report_weekday",
+      "batch_no": 51,
+      "window_start": "2026-03-03T01:20:00Z",
+      "window_end": "2026-03-04T01:20:00Z",
+      "produced_at": "2026-03-03T01:28:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-04T01:19:59Z",
+      "checksum": "04332e99"
+    },
+    {
+      "job_id": "report_weekday",
+      "batch_no": 52,
+      "window_start": "2026-03-05T01:20:00Z",
+      "window_end": "2026-03-06T01:20:00Z",
+      "produced_at": "2026-03-05T01:30:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-06T01:19:59Z",
+      "checksum": "bf637c45"
+    },
+    {
+      "job_id": "report_weekday",
+      "batch_no": 53,
+      "window_start": "2026-03-06T01:20:00Z",
+      "window_end": "2026-03-09T01:20:00Z",
+      "produced_at": "2026-03-06T01:31:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-09T01:19:59Z",
+      "checksum": "1e6a8b83"
+    },
+    {
+      "job_id": "report_weekday",
+      "batch_no": 54,
+      "window_start": "2026-03-09T01:20:00Z",
+      "window_end": "2026-03-10T01:20:00Z",
+      "produced_at": "2026-03-09T01:27:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-10T01:19:59Z",
+      "checksum": "99b86dc7"
+    },
+    {
+      "job_id": "report_weekday",
+      "batch_no": 55,
+      "window_start": "2026-03-10T01:20:00Z",
+      "window_end": "2026-03-11T01:20:00Z",
+      "produced_at": "2026-03-10T01:28:00Z",
+      "row_count": 120,
+      "watermark": "2026-03-11T01:19:59Z",
+      "checksum": "28da6981"
+    }
+  ],
+  "run_records": [
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-01T00:31:00Z",
+      "finished_at": "2026-03-01T00:37:00Z",
+      "status": "success",
+      "window_start": "2026-03-01T00:30:00Z",
+      "window_end": "2026-03-01T01:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-01T01:31:00Z",
+      "finished_at": "2026-03-01T01:38:00Z",
+      "status": "success",
+      "window_start": "2026-03-01T01:30:00Z",
+      "window_end": "2026-03-01T02:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-01T02:31:00Z",
+      "finished_at": "2026-03-01T02:39:00Z",
+      "status": "success",
+      "window_start": "2026-03-01T02:30:00Z",
+      "window_end": "2026-03-01T03:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-01T03:31:00Z",
+      "finished_at": "2026-03-01T03:40:00Z",
+      "status": "success",
+      "window_start": "2026-03-01T03:30:00Z",
+      "window_end": "2026-03-01T04:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-01T04:31:00Z",
+      "finished_at": "2026-03-01T04:41:00Z",
+      "status": "success",
+      "window_start": "2026-03-01T04:30:00Z",
+      "window_end": "2026-03-01T05:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-01T05:31:00Z",
+      "finished_at": "2026-03-01T05:37:00Z",
+      "status": "success",
+      "window_start": "2026-03-01T05:30:00Z",
+      "window_end": "2026-03-01T06:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-01T06:31:00Z",
+      "finished_at": "2026-03-01T06:38:00Z",
+      "status": "success",
+      "window_start": "2026-03-01T06:30:00Z",
+      "window_end": "2026-03-01T07:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-01T07:31:00Z",
+      "finished_at": "2026-03-01T07:39:00Z",
+      "status": "success",
+      "window_start": "2026-03-01T07:30:00Z",
+      "window_end": "2026-03-01T08:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-01T08:31:00Z",
+      "finished_at": "2026-03-01T08:40:00Z",
+      "status": "success",
+      "window_start": "2026-03-01T08:30:00Z",
+      "window_end": "2026-03-01T09:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-01T09:31:00Z",
+      "finished_at": "2026-03-01T09:41:00Z",
+      "status": "success",
+      "window_start": "2026-03-01T09:30:00Z",
+      "window_end": "2026-03-01T10:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-01T10:31:00Z",
+      "finished_at": "2026-03-01T10:37:00Z",
+      "status": "success",
+      "window_start": "2026-03-01T10:30:00Z",
+      "window_end": "2026-03-01T11:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-01T11:31:00Z",
+      "finished_at": "2026-03-01T11:38:00Z",
+      "status": "success",
+      "window_start": "2026-03-01T11:30:00Z",
+      "window_end": "2026-03-01T12:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-01T12:31:00Z",
+      "finished_at": "2026-03-01T12:39:00Z",
+      "status": "success",
+      "window_start": "2026-03-01T12:30:00Z",
+      "window_end": "2026-03-01T13:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-01T13:31:00Z",
+      "finished_at": "2026-03-01T13:40:00Z",
+      "status": "success",
+      "window_start": "2026-03-01T13:30:00Z",
+      "window_end": "2026-03-01T14:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-01T14:31:00Z",
+      "finished_at": "2026-03-01T14:41:00Z",
+      "status": "success",
+      "window_start": "2026-03-01T14:30:00Z",
+      "window_end": "2026-03-01T15:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-01T15:31:00Z",
+      "finished_at": "2026-03-01T15:37:00Z",
+      "status": "success",
+      "window_start": "2026-03-01T15:30:00Z",
+      "window_end": "2026-03-01T16:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-01T16:31:00Z",
+      "finished_at": "2026-03-01T16:38:00Z",
+      "status": "success",
+      "window_start": "2026-03-01T16:30:00Z",
+      "window_end": "2026-03-01T17:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-01T17:31:00Z",
+      "finished_at": "2026-03-01T17:39:00Z",
+      "status": "success",
+      "window_start": "2026-03-01T17:30:00Z",
+      "window_end": "2026-03-01T18:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-01T18:31:00Z",
+      "finished_at": "2026-03-01T18:40:00Z",
+      "status": "success",
+      "window_start": "2026-03-01T18:30:00Z",
+      "window_end": "2026-03-01T19:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-01T19:31:00Z",
+      "finished_at": "2026-03-01T19:41:00Z",
+      "status": "success",
+      "window_start": "2026-03-01T19:30:00Z",
+      "window_end": "2026-03-01T20:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-01T20:31:00Z",
+      "finished_at": "2026-03-01T20:37:00Z",
+      "status": "success",
+      "window_start": "2026-03-01T20:30:00Z",
+      "window_end": "2026-03-01T21:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-01T21:31:00Z",
+      "finished_at": "2026-03-01T21:38:00Z",
+      "status": "success",
+      "window_start": "2026-03-01T21:30:00Z",
+      "window_end": "2026-03-01T22:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-01T22:31:00Z",
+      "finished_at": "2026-03-01T22:39:00Z",
+      "status": "success",
+      "window_start": "2026-03-01T22:30:00Z",
+      "window_end": "2026-03-01T23:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-01T23:31:00Z",
+      "finished_at": "2026-03-01T23:40:00Z",
+      "status": "success",
+      "window_start": "2026-03-01T23:30:00Z",
+      "window_end": "2026-03-02T00:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-02T00:31:00Z",
+      "finished_at": "2026-03-02T00:41:00Z",
+      "status": "success",
+      "window_start": "2026-03-02T00:30:00Z",
+      "window_end": "2026-03-02T01:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-02T01:31:00Z",
+      "finished_at": "2026-03-02T01:37:00Z",
+      "status": "success",
+      "window_start": "2026-03-02T01:30:00Z",
+      "window_end": "2026-03-02T02:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-02T02:31:00Z",
+      "finished_at": "2026-03-02T02:38:00Z",
+      "status": "success",
+      "window_start": "2026-03-02T02:30:00Z",
+      "window_end": "2026-03-02T03:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-02T03:31:00Z",
+      "finished_at": "2026-03-02T03:39:00Z",
+      "status": "success",
+      "window_start": "2026-03-02T03:30:00Z",
+      "window_end": "2026-03-02T04:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-02T04:31:00Z",
+      "finished_at": "2026-03-02T04:40:00Z",
+      "status": "success",
+      "window_start": "2026-03-02T04:30:00Z",
+      "window_end": "2026-03-02T05:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-02T05:31:00Z",
+      "finished_at": "2026-03-02T05:41:00Z",
+      "status": "success",
+      "window_start": "2026-03-02T05:30:00Z",
+      "window_end": "2026-03-02T06:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-02T06:31:00Z",
+      "finished_at": "2026-03-02T06:37:00Z",
+      "status": "success",
+      "window_start": "2026-03-02T06:30:00Z",
+      "window_end": "2026-03-02T07:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-02T07:31:00Z",
+      "finished_at": "2026-03-02T07:38:00Z",
+      "status": "success",
+      "window_start": "2026-03-02T07:30:00Z",
+      "window_end": "2026-03-02T08:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-02T08:31:00Z",
+      "finished_at": "2026-03-02T08:39:00Z",
+      "status": "success",
+      "window_start": "2026-03-02T08:30:00Z",
+      "window_end": "2026-03-02T09:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-02T09:31:00Z",
+      "finished_at": "2026-03-02T09:40:00Z",
+      "status": "success",
+      "window_start": "2026-03-02T09:30:00Z",
+      "window_end": "2026-03-02T10:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-02T10:31:00Z",
+      "finished_at": "2026-03-02T10:41:00Z",
+      "status": "success",
+      "window_start": "2026-03-02T10:30:00Z",
+      "window_end": "2026-03-02T11:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-02T11:31:00Z",
+      "finished_at": "2026-03-02T11:37:00Z",
+      "status": "success",
+      "window_start": "2026-03-02T11:30:00Z",
+      "window_end": "2026-03-02T12:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-02T12:31:00Z",
+      "finished_at": "2026-03-02T12:38:00Z",
+      "status": "success",
+      "window_start": "2026-03-02T12:30:00Z",
+      "window_end": "2026-03-02T13:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-02T13:31:00Z",
+      "finished_at": "2026-03-02T13:39:00Z",
+      "status": "success",
+      "window_start": "2026-03-02T13:30:00Z",
+      "window_end": "2026-03-02T14:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-02T14:31:00Z",
+      "finished_at": "2026-03-02T14:40:00Z",
+      "status": "success",
+      "window_start": "2026-03-02T14:30:00Z",
+      "window_end": "2026-03-02T15:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-02T15:31:00Z",
+      "finished_at": "2026-03-02T15:41:00Z",
+      "status": "success",
+      "window_start": "2026-03-02T15:30:00Z",
+      "window_end": "2026-03-02T16:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-02T16:31:00Z",
+      "finished_at": "2026-03-02T16:37:00Z",
+      "status": "success",
+      "window_start": "2026-03-02T16:30:00Z",
+      "window_end": "2026-03-02T17:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-02T17:31:00Z",
+      "finished_at": "2026-03-02T17:38:00Z",
+      "status": "success",
+      "window_start": "2026-03-02T17:30:00Z",
+      "window_end": "2026-03-02T18:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-02T18:31:00Z",
+      "finished_at": "2026-03-02T18:39:00Z",
+      "status": "success",
+      "window_start": "2026-03-02T18:30:00Z",
+      "window_end": "2026-03-02T19:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-02T19:31:00Z",
+      "finished_at": "2026-03-02T19:40:00Z",
+      "status": "success",
+      "window_start": "2026-03-02T19:30:00Z",
+      "window_end": "2026-03-02T20:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-02T20:31:00Z",
+      "finished_at": "2026-03-02T20:41:00Z",
+      "status": "success",
+      "window_start": "2026-03-02T20:30:00Z",
+      "window_end": "2026-03-02T21:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-02T21:31:00Z",
+      "finished_at": "2026-03-02T21:37:00Z",
+      "status": "success",
+      "window_start": "2026-03-02T21:30:00Z",
+      "window_end": "2026-03-02T22:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-02T22:31:00Z",
+      "finished_at": "2026-03-02T22:38:00Z",
+      "status": "success",
+      "window_start": "2026-03-02T22:30:00Z",
+      "window_end": "2026-03-02T23:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-02T23:31:00Z",
+      "finished_at": "2026-03-02T23:39:00Z",
+      "status": "success",
+      "window_start": "2026-03-02T23:30:00Z",
+      "window_end": "2026-03-03T00:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-03T00:31:00Z",
+      "finished_at": "2026-03-03T00:40:00Z",
+      "status": "success",
+      "window_start": "2026-03-03T00:30:00Z",
+      "window_end": "2026-03-03T01:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-03T01:31:00Z",
+      "finished_at": "2026-03-03T01:41:00Z",
+      "status": "success",
+      "window_start": "2026-03-03T01:30:00Z",
+      "window_end": "2026-03-03T02:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-03T03:31:00Z",
+      "finished_at": "2026-03-03T03:38:00Z",
+      "status": "success",
+      "window_start": "2026-03-03T03:30:00Z",
+      "window_end": "2026-03-03T04:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-03T04:31:00Z",
+      "finished_at": "2026-03-03T04:39:00Z",
+      "status": "success",
+      "window_start": "2026-03-03T04:30:00Z",
+      "window_end": "2026-03-03T05:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-03T05:31:00Z",
+      "finished_at": "2026-03-03T05:40:00Z",
+      "status": "success",
+      "window_start": "2026-03-03T05:30:00Z",
+      "window_end": "2026-03-03T06:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-03T06:31:00Z",
+      "finished_at": "2026-03-03T06:41:00Z",
+      "status": "success",
+      "window_start": "2026-03-03T06:30:00Z",
+      "window_end": "2026-03-03T07:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-03T07:31:00Z",
+      "finished_at": "2026-03-03T07:37:00Z",
+      "status": "success",
+      "window_start": "2026-03-03T07:30:00Z",
+      "window_end": "2026-03-03T08:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-03T08:31:00Z",
+      "finished_at": "2026-03-03T08:38:00Z",
+      "status": "success",
+      "window_start": "2026-03-03T08:30:00Z",
+      "window_end": "2026-03-03T09:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-03T09:31:00Z",
+      "finished_at": "2026-03-03T09:39:00Z",
+      "status": "success",
+      "window_start": "2026-03-03T09:30:00Z",
+      "window_end": "2026-03-03T10:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-03T10:31:00Z",
+      "finished_at": "2026-03-03T10:40:00Z",
+      "status": "success",
+      "window_start": "2026-03-03T10:30:00Z",
+      "window_end": "2026-03-03T11:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-03T11:31:00Z",
+      "finished_at": "2026-03-03T11:41:00Z",
+      "status": "success",
+      "window_start": "2026-03-03T11:30:00Z",
+      "window_end": "2026-03-03T12:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-03T12:31:00Z",
+      "finished_at": "2026-03-03T12:37:00Z",
+      "status": "success",
+      "window_start": "2026-03-03T12:30:00Z",
+      "window_end": "2026-03-03T13:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-03T13:31:00Z",
+      "finished_at": "2026-03-03T13:38:00Z",
+      "status": "success",
+      "window_start": "2026-03-03T13:30:00Z",
+      "window_end": "2026-03-03T14:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-03T14:31:00Z",
+      "finished_at": "2026-03-03T14:39:00Z",
+      "status": "success",
+      "window_start": "2026-03-03T14:30:00Z",
+      "window_end": "2026-03-03T15:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-03T15:31:00Z",
+      "finished_at": "2026-03-03T15:40:00Z",
+      "status": "success",
+      "window_start": "2026-03-03T15:30:00Z",
+      "window_end": "2026-03-03T16:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-03T16:31:00Z",
+      "finished_at": "2026-03-03T16:41:00Z",
+      "status": "success",
+      "window_start": "2026-03-03T16:30:00Z",
+      "window_end": "2026-03-03T17:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-03T17:31:00Z",
+      "finished_at": "2026-03-03T17:37:00Z",
+      "status": "success",
+      "window_start": "2026-03-03T17:30:00Z",
+      "window_end": "2026-03-03T18:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-03T18:31:00Z",
+      "finished_at": "2026-03-03T18:38:00Z",
+      "status": "success",
+      "window_start": "2026-03-03T18:30:00Z",
+      "window_end": "2026-03-03T19:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-03T19:31:00Z",
+      "finished_at": "2026-03-03T19:39:00Z",
+      "status": "success",
+      "window_start": "2026-03-03T19:30:00Z",
+      "window_end": "2026-03-03T20:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-03T20:31:00Z",
+      "finished_at": "2026-03-03T20:40:00Z",
+      "status": "success",
+      "window_start": "2026-03-03T20:30:00Z",
+      "window_end": "2026-03-03T21:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-03T21:31:00Z",
+      "finished_at": "2026-03-03T21:41:00Z",
+      "status": "success",
+      "window_start": "2026-03-03T21:30:00Z",
+      "window_end": "2026-03-03T22:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-03T22:31:00Z",
+      "finished_at": "2026-03-03T22:37:00Z",
+      "status": "success",
+      "window_start": "2026-03-03T22:30:00Z",
+      "window_end": "2026-03-03T23:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-03T23:31:00Z",
+      "finished_at": "2026-03-03T23:38:00Z",
+      "status": "success",
+      "window_start": "2026-03-03T23:30:00Z",
+      "window_end": "2026-03-04T00:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-04T00:31:00Z",
+      "finished_at": "2026-03-04T00:39:00Z",
+      "status": "success",
+      "window_start": "2026-03-04T00:30:00Z",
+      "window_end": "2026-03-04T01:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-04T01:31:00Z",
+      "finished_at": "2026-03-04T01:40:00Z",
+      "status": "success",
+      "window_start": "2026-03-04T01:30:00Z",
+      "window_end": "2026-03-04T02:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-04T02:31:00Z",
+      "finished_at": "2026-03-04T02:41:00Z",
+      "status": "success",
+      "window_start": "2026-03-04T02:30:00Z",
+      "window_end": "2026-03-04T03:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-04T03:31:00Z",
+      "finished_at": "2026-03-04T03:37:00Z",
+      "status": "success",
+      "window_start": "2026-03-04T03:30:00Z",
+      "window_end": "2026-03-04T04:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-04T04:31:00Z",
+      "finished_at": "2026-03-04T04:38:00Z",
+      "status": "success",
+      "window_start": "2026-03-04T04:30:00Z",
+      "window_end": "2026-03-04T05:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-04T05:31:00Z",
+      "finished_at": "2026-03-04T05:39:00Z",
+      "status": "success",
+      "window_start": "2026-03-04T05:30:00Z",
+      "window_end": "2026-03-04T06:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-04T06:31:00Z",
+      "finished_at": "2026-03-04T06:40:00Z",
+      "status": "success",
+      "window_start": "2026-03-04T06:30:00Z",
+      "window_end": "2026-03-04T07:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-04T07:31:00Z",
+      "finished_at": "2026-03-04T07:41:00Z",
+      "status": "success",
+      "window_start": "2026-03-04T07:30:00Z",
+      "window_end": "2026-03-04T08:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-04T08:31:00Z",
+      "finished_at": "2026-03-04T08:37:00Z",
+      "status": "success",
+      "window_start": "2026-03-04T08:30:00Z",
+      "window_end": "2026-03-04T09:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-04T09:31:00Z",
+      "finished_at": "2026-03-04T09:38:00Z",
+      "status": "success",
+      "window_start": "2026-03-04T09:30:00Z",
+      "window_end": "2026-03-04T10:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-04T10:31:00Z",
+      "finished_at": "2026-03-04T10:39:00Z",
+      "status": "success",
+      "window_start": "2026-03-04T10:30:00Z",
+      "window_end": "2026-03-04T11:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-04T11:31:00Z",
+      "finished_at": "2026-03-04T11:40:00Z",
+      "status": "success",
+      "window_start": "2026-03-04T11:30:00Z",
+      "window_end": "2026-03-04T12:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-04T12:31:00Z",
+      "finished_at": "2026-03-04T12:41:00Z",
+      "status": "success",
+      "window_start": "2026-03-04T12:30:00Z",
+      "window_end": "2026-03-04T13:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-04T13:31:00Z",
+      "finished_at": "2026-03-04T13:37:00Z",
+      "status": "success",
+      "window_start": "2026-03-04T13:30:00Z",
+      "window_end": "2026-03-04T14:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-04T14:31:00Z",
+      "finished_at": "2026-03-04T14:38:00Z",
+      "status": "success",
+      "window_start": "2026-03-04T14:30:00Z",
+      "window_end": "2026-03-04T15:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-04T15:31:00Z",
+      "finished_at": "2026-03-04T15:39:00Z",
+      "status": "success",
+      "window_start": "2026-03-04T15:30:00Z",
+      "window_end": "2026-03-04T16:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-04T16:31:00Z",
+      "finished_at": "2026-03-04T16:40:00Z",
+      "status": "success",
+      "window_start": "2026-03-04T16:30:00Z",
+      "window_end": "2026-03-04T17:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-04T17:31:00Z",
+      "finished_at": "2026-03-04T17:41:00Z",
+      "status": "success",
+      "window_start": "2026-03-04T17:30:00Z",
+      "window_end": "2026-03-04T18:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-04T18:31:00Z",
+      "finished_at": "2026-03-04T18:37:00Z",
+      "status": "success",
+      "window_start": "2026-03-04T18:30:00Z",
+      "window_end": "2026-03-04T19:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-04T19:31:00Z",
+      "finished_at": "2026-03-04T19:38:00Z",
+      "status": "success",
+      "window_start": "2026-03-04T19:30:00Z",
+      "window_end": "2026-03-04T20:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-04T20:31:00Z",
+      "finished_at": "2026-03-04T20:39:00Z",
+      "status": "success",
+      "window_start": "2026-03-04T20:30:00Z",
+      "window_end": "2026-03-04T21:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-04T21:31:00Z",
+      "finished_at": "2026-03-04T21:40:00Z",
+      "status": "success",
+      "window_start": "2026-03-04T21:30:00Z",
+      "window_end": "2026-03-04T22:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-04T22:31:00Z",
+      "finished_at": "2026-03-04T22:41:00Z",
+      "status": "success",
+      "window_start": "2026-03-04T22:30:00Z",
+      "window_end": "2026-03-04T23:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-04T23:31:00Z",
+      "finished_at": "2026-03-04T23:37:00Z",
+      "status": "success",
+      "window_start": "2026-03-04T23:30:00Z",
+      "window_end": "2026-03-05T00:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-05T00:31:00Z",
+      "finished_at": "2026-03-05T00:38:00Z",
+      "status": "success",
+      "window_start": "2026-03-05T00:30:00Z",
+      "window_end": "2026-03-05T01:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-05T01:31:00Z",
+      "finished_at": "2026-03-05T01:39:00Z",
+      "status": "success",
+      "window_start": "2026-03-05T01:30:00Z",
+      "window_end": "2026-03-05T02:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-05T02:31:00Z",
+      "finished_at": "2026-03-05T02:40:00Z",
+      "status": "success",
+      "window_start": "2026-03-05T02:30:00Z",
+      "window_end": "2026-03-05T03:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-05T03:31:00Z",
+      "finished_at": "2026-03-05T03:41:00Z",
+      "status": "success",
+      "window_start": "2026-03-05T03:30:00Z",
+      "window_end": "2026-03-05T04:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-05T04:31:00Z",
+      "finished_at": "2026-03-05T04:37:00Z",
+      "status": "success",
+      "window_start": "2026-03-05T04:30:00Z",
+      "window_end": "2026-03-05T05:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-05T05:31:00Z",
+      "finished_at": "2026-03-05T05:38:00Z",
+      "status": "success",
+      "window_start": "2026-03-05T05:30:00Z",
+      "window_end": "2026-03-05T06:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-05T06:31:00Z",
+      "finished_at": "2026-03-05T06:39:00Z",
+      "status": "success",
+      "window_start": "2026-03-05T06:30:00Z",
+      "window_end": "2026-03-05T07:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-05T07:31:00Z",
+      "finished_at": "2026-03-05T07:40:00Z",
+      "status": "success",
+      "window_start": "2026-03-05T07:30:00Z",
+      "window_end": "2026-03-05T08:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-05T08:31:00Z",
+      "finished_at": "2026-03-05T08:41:00Z",
+      "status": "success",
+      "window_start": "2026-03-05T08:30:00Z",
+      "window_end": "2026-03-05T09:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-05T09:31:00Z",
+      "finished_at": "2026-03-05T09:37:00Z",
+      "status": "success",
+      "window_start": "2026-03-05T09:30:00Z",
+      "window_end": "2026-03-05T10:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-05T10:31:00Z",
+      "finished_at": "2026-03-05T10:38:00Z",
+      "status": "success",
+      "window_start": "2026-03-05T10:30:00Z",
+      "window_end": "2026-03-05T11:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-05T11:31:00Z",
+      "finished_at": "2026-03-05T11:39:00Z",
+      "status": "success",
+      "window_start": "2026-03-05T11:30:00Z",
+      "window_end": "2026-03-05T12:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-05T12:31:00Z",
+      "finished_at": "2026-03-05T12:40:00Z",
+      "status": "success",
+      "window_start": "2026-03-05T12:30:00Z",
+      "window_end": "2026-03-05T13:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-05T13:31:00Z",
+      "finished_at": "2026-03-05T13:41:00Z",
+      "status": "success",
+      "window_start": "2026-03-05T13:30:00Z",
+      "window_end": "2026-03-05T14:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-05T14:31:00Z",
+      "finished_at": "2026-03-05T14:37:00Z",
+      "status": "success",
+      "window_start": "2026-03-05T14:30:00Z",
+      "window_end": "2026-03-05T15:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-05T15:31:00Z",
+      "finished_at": "2026-03-05T15:38:00Z",
+      "status": "success",
+      "window_start": "2026-03-05T15:30:00Z",
+      "window_end": "2026-03-05T16:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-05T16:31:00Z",
+      "finished_at": "2026-03-05T16:39:00Z",
+      "status": "success",
+      "window_start": "2026-03-05T16:30:00Z",
+      "window_end": "2026-03-05T17:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-05T17:31:00Z",
+      "finished_at": "2026-03-05T17:40:00Z",
+      "status": "success",
+      "window_start": "2026-03-05T17:30:00Z",
+      "window_end": "2026-03-05T18:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-05T18:31:00Z",
+      "finished_at": "2026-03-05T18:41:00Z",
+      "status": "success",
+      "window_start": "2026-03-05T18:30:00Z",
+      "window_end": "2026-03-05T19:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-05T19:31:00Z",
+      "finished_at": "2026-03-05T19:37:00Z",
+      "status": "success",
+      "window_start": "2026-03-05T19:30:00Z",
+      "window_end": "2026-03-05T20:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-05T20:31:00Z",
+      "finished_at": "2026-03-05T20:38:00Z",
+      "status": "success",
+      "window_start": "2026-03-05T20:30:00Z",
+      "window_end": "2026-03-05T21:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-05T21:31:00Z",
+      "finished_at": "2026-03-05T21:39:00Z",
+      "status": "success",
+      "window_start": "2026-03-05T21:30:00Z",
+      "window_end": "2026-03-05T22:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-05T22:31:00Z",
+      "finished_at": "2026-03-05T22:40:00Z",
+      "status": "success",
+      "window_start": "2026-03-05T22:30:00Z",
+      "window_end": "2026-03-05T23:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-05T23:31:00Z",
+      "finished_at": "2026-03-05T23:41:00Z",
+      "status": "success",
+      "window_start": "2026-03-05T23:30:00Z",
+      "window_end": "2026-03-06T00:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-06T00:31:00Z",
+      "finished_at": "2026-03-06T00:37:00Z",
+      "status": "success",
+      "window_start": "2026-03-06T00:30:00Z",
+      "window_end": "2026-03-06T01:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-06T01:31:00Z",
+      "finished_at": "2026-03-06T01:38:00Z",
+      "status": "success",
+      "window_start": "2026-03-06T01:30:00Z",
+      "window_end": "2026-03-06T02:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-06T02:31:00Z",
+      "finished_at": "2026-03-06T02:39:00Z",
+      "status": "success",
+      "window_start": "2026-03-06T02:30:00Z",
+      "window_end": "2026-03-06T03:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-06T03:31:00Z",
+      "finished_at": "2026-03-06T03:40:00Z",
+      "status": "success",
+      "window_start": "2026-03-06T03:30:00Z",
+      "window_end": "2026-03-06T04:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-06T04:31:00Z",
+      "finished_at": "2026-03-06T04:41:00Z",
+      "status": "success",
+      "window_start": "2026-03-06T04:30:00Z",
+      "window_end": "2026-03-06T05:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-06T05:31:00Z",
+      "finished_at": "2026-03-06T05:37:00Z",
+      "status": "success",
+      "window_start": "2026-03-06T05:30:00Z",
+      "window_end": "2026-03-06T06:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-06T06:31:00Z",
+      "finished_at": "2026-03-06T06:38:00Z",
+      "status": "success",
+      "window_start": "2026-03-06T06:30:00Z",
+      "window_end": "2026-03-06T07:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-06T07:31:00Z",
+      "finished_at": "2026-03-06T07:39:00Z",
+      "status": "success",
+      "window_start": "2026-03-06T07:30:00Z",
+      "window_end": "2026-03-06T08:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-06T08:31:00Z",
+      "finished_at": "2026-03-06T08:40:00Z",
+      "status": "success",
+      "window_start": "2026-03-06T08:30:00Z",
+      "window_end": "2026-03-06T09:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-06T09:31:00Z",
+      "finished_at": "2026-03-06T09:41:00Z",
+      "status": "success",
+      "window_start": "2026-03-06T09:30:00Z",
+      "window_end": "2026-03-06T10:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-06T10:31:00Z",
+      "finished_at": "2026-03-06T10:37:00Z",
+      "status": "success",
+      "window_start": "2026-03-06T10:30:00Z",
+      "window_end": "2026-03-06T11:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-06T11:31:00Z",
+      "finished_at": "2026-03-06T11:38:00Z",
+      "status": "success",
+      "window_start": "2026-03-06T11:30:00Z",
+      "window_end": "2026-03-06T12:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-06T12:31:00Z",
+      "finished_at": "2026-03-06T12:39:00Z",
+      "status": "success",
+      "window_start": "2026-03-06T12:30:00Z",
+      "window_end": "2026-03-06T13:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-06T13:31:00Z",
+      "finished_at": "2026-03-06T13:40:00Z",
+      "status": "success",
+      "window_start": "2026-03-06T13:30:00Z",
+      "window_end": "2026-03-06T14:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-06T14:31:00Z",
+      "finished_at": "2026-03-06T14:41:00Z",
+      "status": "success",
+      "window_start": "2026-03-06T14:30:00Z",
+      "window_end": "2026-03-06T15:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-06T15:31:00Z",
+      "finished_at": "2026-03-06T15:37:00Z",
+      "status": "success",
+      "window_start": "2026-03-06T15:30:00Z",
+      "window_end": "2026-03-06T16:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-06T16:31:00Z",
+      "finished_at": "2026-03-06T16:38:00Z",
+      "status": "success",
+      "window_start": "2026-03-06T16:30:00Z",
+      "window_end": "2026-03-06T17:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-06T17:31:00Z",
+      "finished_at": "2026-03-06T17:39:00Z",
+      "status": "success",
+      "window_start": "2026-03-06T17:30:00Z",
+      "window_end": "2026-03-06T18:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-06T18:31:00Z",
+      "finished_at": "2026-03-06T18:40:00Z",
+      "status": "success",
+      "window_start": "2026-03-06T18:30:00Z",
+      "window_end": "2026-03-06T19:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-06T19:31:00Z",
+      "finished_at": "2026-03-06T19:41:00Z",
+      "status": "success",
+      "window_start": "2026-03-06T19:30:00Z",
+      "window_end": "2026-03-06T20:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-06T20:31:00Z",
+      "finished_at": "2026-03-06T20:37:00Z",
+      "status": "success",
+      "window_start": "2026-03-06T20:30:00Z",
+      "window_end": "2026-03-06T21:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-06T21:31:00Z",
+      "finished_at": "2026-03-06T21:38:00Z",
+      "status": "success",
+      "window_start": "2026-03-06T21:30:00Z",
+      "window_end": "2026-03-06T22:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-06T22:31:00Z",
+      "finished_at": "2026-03-06T22:39:00Z",
+      "status": "success",
+      "window_start": "2026-03-06T22:30:00Z",
+      "window_end": "2026-03-06T23:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-06T23:31:00Z",
+      "finished_at": "2026-03-06T23:40:00Z",
+      "status": "success",
+      "window_start": "2026-03-06T23:30:00Z",
+      "window_end": "2026-03-07T00:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-07T00:31:00Z",
+      "finished_at": "2026-03-07T00:41:00Z",
+      "status": "success",
+      "window_start": "2026-03-07T00:30:00Z",
+      "window_end": "2026-03-07T01:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-07T01:31:00Z",
+      "finished_at": "2026-03-07T01:37:00Z",
+      "status": "success",
+      "window_start": "2026-03-07T01:30:00Z",
+      "window_end": "2026-03-07T02:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-07T02:31:00Z",
+      "finished_at": "2026-03-07T02:38:00Z",
+      "status": "success",
+      "window_start": "2026-03-07T02:30:00Z",
+      "window_end": "2026-03-07T03:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-07T03:31:00Z",
+      "finished_at": "2026-03-07T03:39:00Z",
+      "status": "success",
+      "window_start": "2026-03-07T03:30:00Z",
+      "window_end": "2026-03-07T04:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-07T04:31:00Z",
+      "finished_at": "2026-03-07T04:40:00Z",
+      "status": "success",
+      "window_start": "2026-03-07T04:30:00Z",
+      "window_end": "2026-03-07T05:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-07T05:31:00Z",
+      "finished_at": "2026-03-07T05:41:00Z",
+      "status": "success",
+      "window_start": "2026-03-07T05:30:00Z",
+      "window_end": "2026-03-07T06:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-07T06:31:00Z",
+      "finished_at": "2026-03-07T06:37:00Z",
+      "status": "success",
+      "window_start": "2026-03-07T06:30:00Z",
+      "window_end": "2026-03-07T07:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-07T07:31:00Z",
+      "finished_at": "2026-03-07T07:38:00Z",
+      "status": "success",
+      "window_start": "2026-03-07T07:30:00Z",
+      "window_end": "2026-03-07T08:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-07T08:31:00Z",
+      "finished_at": "2026-03-07T08:39:00Z",
+      "status": "success",
+      "window_start": "2026-03-07T08:30:00Z",
+      "window_end": "2026-03-07T09:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-07T09:31:00Z",
+      "finished_at": "2026-03-07T09:40:00Z",
+      "status": "success",
+      "window_start": "2026-03-07T09:30:00Z",
+      "window_end": "2026-03-07T10:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-07T10:31:00Z",
+      "finished_at": "2026-03-07T10:41:00Z",
+      "status": "success",
+      "window_start": "2026-03-07T10:30:00Z",
+      "window_end": "2026-03-07T11:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-07T11:31:00Z",
+      "finished_at": "2026-03-07T11:37:00Z",
+      "status": "success",
+      "window_start": "2026-03-07T11:30:00Z",
+      "window_end": "2026-03-07T12:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-07T12:31:00Z",
+      "finished_at": "2026-03-07T12:38:00Z",
+      "status": "success",
+      "window_start": "2026-03-07T12:30:00Z",
+      "window_end": "2026-03-07T13:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-07T13:31:00Z",
+      "finished_at": "2026-03-07T13:39:00Z",
+      "status": "success",
+      "window_start": "2026-03-07T13:30:00Z",
+      "window_end": "2026-03-07T14:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-07T14:31:00Z",
+      "finished_at": "2026-03-07T14:40:00Z",
+      "status": "success",
+      "window_start": "2026-03-07T14:30:00Z",
+      "window_end": "2026-03-07T15:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-07T15:31:00Z",
+      "finished_at": "2026-03-07T15:41:00Z",
+      "status": "success",
+      "window_start": "2026-03-07T15:30:00Z",
+      "window_end": "2026-03-07T16:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-07T16:31:00Z",
+      "finished_at": "2026-03-07T16:37:00Z",
+      "status": "success",
+      "window_start": "2026-03-07T16:30:00Z",
+      "window_end": "2026-03-07T17:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-07T17:31:00Z",
+      "finished_at": "2026-03-07T17:38:00Z",
+      "status": "success",
+      "window_start": "2026-03-07T17:30:00Z",
+      "window_end": "2026-03-07T18:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-07T18:31:00Z",
+      "finished_at": "2026-03-07T18:39:00Z",
+      "status": "success",
+      "window_start": "2026-03-07T18:30:00Z",
+      "window_end": "2026-03-07T19:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-07T19:31:00Z",
+      "finished_at": "2026-03-07T19:40:00Z",
+      "status": "success",
+      "window_start": "2026-03-07T19:30:00Z",
+      "window_end": "2026-03-07T20:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-07T20:31:00Z",
+      "finished_at": "2026-03-07T20:41:00Z",
+      "status": "success",
+      "window_start": "2026-03-07T20:30:00Z",
+      "window_end": "2026-03-07T21:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-07T21:31:00Z",
+      "finished_at": "2026-03-07T21:37:00Z",
+      "status": "success",
+      "window_start": "2026-03-07T21:30:00Z",
+      "window_end": "2026-03-07T22:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-07T22:31:00Z",
+      "finished_at": "2026-03-07T22:38:00Z",
+      "status": "success",
+      "window_start": "2026-03-07T22:30:00Z",
+      "window_end": "2026-03-07T23:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-07T23:31:00Z",
+      "finished_at": "2026-03-07T23:39:00Z",
+      "status": "success",
+      "window_start": "2026-03-07T23:30:00Z",
+      "window_end": "2026-03-08T00:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-08T00:31:00Z",
+      "finished_at": "2026-03-08T00:40:00Z",
+      "status": "success",
+      "window_start": "2026-03-08T00:30:00Z",
+      "window_end": "2026-03-08T01:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-08T01:31:00Z",
+      "finished_at": "2026-03-08T01:41:00Z",
+      "status": "success",
+      "window_start": "2026-03-08T01:30:00Z",
+      "window_end": "2026-03-08T02:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-08T02:31:00Z",
+      "finished_at": "2026-03-08T02:37:00Z",
+      "status": "success",
+      "window_start": "2026-03-08T02:30:00Z",
+      "window_end": "2026-03-08T03:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-08T03:31:00Z",
+      "finished_at": "2026-03-08T03:38:00Z",
+      "status": "success",
+      "window_start": "2026-03-08T03:30:00Z",
+      "window_end": "2026-03-08T04:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-08T04:31:00Z",
+      "finished_at": "2026-03-08T04:39:00Z",
+      "status": "success",
+      "window_start": "2026-03-08T04:30:00Z",
+      "window_end": "2026-03-08T05:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-08T05:31:00Z",
+      "finished_at": "2026-03-08T05:40:00Z",
+      "status": "success",
+      "window_start": "2026-03-08T05:30:00Z",
+      "window_end": "2026-03-08T06:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-08T06:31:00Z",
+      "finished_at": "2026-03-08T06:41:00Z",
+      "status": "success",
+      "window_start": "2026-03-08T06:30:00Z",
+      "window_end": "2026-03-08T07:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-08T07:31:00Z",
+      "finished_at": "2026-03-08T07:37:00Z",
+      "status": "success",
+      "window_start": "2026-03-08T07:30:00Z",
+      "window_end": "2026-03-08T08:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-08T08:31:00Z",
+      "finished_at": "2026-03-08T08:38:00Z",
+      "status": "success",
+      "window_start": "2026-03-08T08:30:00Z",
+      "window_end": "2026-03-08T09:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-08T09:31:00Z",
+      "finished_at": "2026-03-08T09:39:00Z",
+      "status": "success",
+      "window_start": "2026-03-08T09:30:00Z",
+      "window_end": "2026-03-08T10:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-08T10:31:00Z",
+      "finished_at": "2026-03-08T10:40:00Z",
+      "status": "success",
+      "window_start": "2026-03-08T10:30:00Z",
+      "window_end": "2026-03-08T11:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-08T11:31:00Z",
+      "finished_at": "2026-03-08T11:41:00Z",
+      "status": "success",
+      "window_start": "2026-03-08T11:30:00Z",
+      "window_end": "2026-03-08T12:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-08T12:31:00Z",
+      "finished_at": "2026-03-08T12:37:00Z",
+      "status": "success",
+      "window_start": "2026-03-08T12:30:00Z",
+      "window_end": "2026-03-08T13:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-08T13:31:00Z",
+      "finished_at": "2026-03-08T13:38:00Z",
+      "status": "success",
+      "window_start": "2026-03-08T13:30:00Z",
+      "window_end": "2026-03-08T14:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-08T14:31:00Z",
+      "finished_at": "2026-03-08T14:39:00Z",
+      "status": "success",
+      "window_start": "2026-03-08T14:30:00Z",
+      "window_end": "2026-03-08T15:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-08T15:31:00Z",
+      "finished_at": "2026-03-08T15:40:00Z",
+      "status": "success",
+      "window_start": "2026-03-08T15:30:00Z",
+      "window_end": "2026-03-08T16:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-08T16:31:00Z",
+      "finished_at": "2026-03-08T16:41:00Z",
+      "status": "success",
+      "window_start": "2026-03-08T16:30:00Z",
+      "window_end": "2026-03-08T17:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-08T17:31:00Z",
+      "finished_at": "2026-03-08T17:37:00Z",
+      "status": "success",
+      "window_start": "2026-03-08T17:30:00Z",
+      "window_end": "2026-03-08T18:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-08T18:31:00Z",
+      "finished_at": "2026-03-08T18:38:00Z",
+      "status": "success",
+      "window_start": "2026-03-08T18:30:00Z",
+      "window_end": "2026-03-08T19:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-08T19:31:00Z",
+      "finished_at": "2026-03-08T19:39:00Z",
+      "status": "success",
+      "window_start": "2026-03-08T19:30:00Z",
+      "window_end": "2026-03-08T20:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-08T20:31:00Z",
+      "finished_at": "2026-03-08T20:40:00Z",
+      "status": "success",
+      "window_start": "2026-03-08T20:30:00Z",
+      "window_end": "2026-03-08T21:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-08T21:31:00Z",
+      "finished_at": "2026-03-08T21:41:00Z",
+      "status": "success",
+      "window_start": "2026-03-08T21:30:00Z",
+      "window_end": "2026-03-08T22:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-08T22:31:00Z",
+      "finished_at": "2026-03-08T22:37:00Z",
+      "status": "success",
+      "window_start": "2026-03-08T22:30:00Z",
+      "window_end": "2026-03-08T23:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-08T23:31:00Z",
+      "finished_at": "2026-03-08T23:38:00Z",
+      "status": "success",
+      "window_start": "2026-03-08T23:30:00Z",
+      "window_end": "2026-03-09T00:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-09T00:31:00Z",
+      "finished_at": "2026-03-09T00:39:00Z",
+      "status": "success",
+      "window_start": "2026-03-09T00:30:00Z",
+      "window_end": "2026-03-09T01:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-09T01:31:00Z",
+      "finished_at": "2026-03-09T01:40:00Z",
+      "status": "success",
+      "window_start": "2026-03-09T01:30:00Z",
+      "window_end": "2026-03-09T02:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-09T02:31:00Z",
+      "finished_at": "2026-03-09T02:41:00Z",
+      "status": "success",
+      "window_start": "2026-03-09T02:30:00Z",
+      "window_end": "2026-03-09T03:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-09T03:31:00Z",
+      "finished_at": "2026-03-09T03:37:00Z",
+      "status": "success",
+      "window_start": "2026-03-09T03:30:00Z",
+      "window_end": "2026-03-09T04:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-09T04:31:00Z",
+      "finished_at": "2026-03-09T04:38:00Z",
+      "status": "success",
+      "window_start": "2026-03-09T04:30:00Z",
+      "window_end": "2026-03-09T05:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-09T05:31:00Z",
+      "finished_at": "2026-03-09T05:39:00Z",
+      "status": "success",
+      "window_start": "2026-03-09T05:30:00Z",
+      "window_end": "2026-03-09T06:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-09T06:31:00Z",
+      "finished_at": "2026-03-09T06:40:00Z",
+      "status": "success",
+      "window_start": "2026-03-09T06:30:00Z",
+      "window_end": "2026-03-09T07:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-09T07:31:00Z",
+      "finished_at": "2026-03-09T07:41:00Z",
+      "status": "success",
+      "window_start": "2026-03-09T07:30:00Z",
+      "window_end": "2026-03-09T08:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-09T08:31:00Z",
+      "finished_at": "2026-03-09T08:37:00Z",
+      "status": "success",
+      "window_start": "2026-03-09T08:30:00Z",
+      "window_end": "2026-03-09T09:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-09T09:31:00Z",
+      "finished_at": "2026-03-09T09:38:00Z",
+      "status": "success",
+      "window_start": "2026-03-09T09:30:00Z",
+      "window_end": "2026-03-09T10:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-09T10:31:00Z",
+      "finished_at": "2026-03-09T10:39:00Z",
+      "status": "success",
+      "window_start": "2026-03-09T10:30:00Z",
+      "window_end": "2026-03-09T11:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-09T11:31:00Z",
+      "finished_at": "2026-03-09T11:40:00Z",
+      "status": "success",
+      "window_start": "2026-03-09T11:30:00Z",
+      "window_end": "2026-03-09T12:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-09T12:31:00Z",
+      "finished_at": "2026-03-09T12:41:00Z",
+      "status": "success",
+      "window_start": "2026-03-09T12:30:00Z",
+      "window_end": "2026-03-09T13:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-09T13:31:00Z",
+      "finished_at": "2026-03-09T13:37:00Z",
+      "status": "success",
+      "window_start": "2026-03-09T13:30:00Z",
+      "window_end": "2026-03-09T14:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-09T14:31:00Z",
+      "finished_at": "2026-03-09T14:38:00Z",
+      "status": "success",
+      "window_start": "2026-03-09T14:30:00Z",
+      "window_end": "2026-03-09T15:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-09T15:31:00Z",
+      "finished_at": "2026-03-09T15:39:00Z",
+      "status": "success",
+      "window_start": "2026-03-09T15:30:00Z",
+      "window_end": "2026-03-09T16:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-09T16:31:00Z",
+      "finished_at": "2026-03-09T16:40:00Z",
+      "status": "success",
+      "window_start": "2026-03-09T16:30:00Z",
+      "window_end": "2026-03-09T17:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-09T17:31:00Z",
+      "finished_at": "2026-03-09T17:41:00Z",
+      "status": "success",
+      "window_start": "2026-03-09T17:30:00Z",
+      "window_end": "2026-03-09T18:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-09T18:31:00Z",
+      "finished_at": "2026-03-09T18:37:00Z",
+      "status": "success",
+      "window_start": "2026-03-09T18:30:00Z",
+      "window_end": "2026-03-09T19:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-09T19:31:00Z",
+      "finished_at": "2026-03-09T19:38:00Z",
+      "status": "success",
+      "window_start": "2026-03-09T19:30:00Z",
+      "window_end": "2026-03-09T20:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-09T20:31:00Z",
+      "finished_at": "2026-03-09T20:39:00Z",
+      "status": "success",
+      "window_start": "2026-03-09T20:30:00Z",
+      "window_end": "2026-03-09T21:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-09T21:31:00Z",
+      "finished_at": "2026-03-09T21:40:00Z",
+      "status": "success",
+      "window_start": "2026-03-09T21:30:00Z",
+      "window_end": "2026-03-09T22:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-09T22:31:00Z",
+      "finished_at": "2026-03-09T22:41:00Z",
+      "status": "success",
+      "window_start": "2026-03-09T22:30:00Z",
+      "window_end": "2026-03-09T23:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-09T23:31:00Z",
+      "finished_at": "2026-03-09T23:37:00Z",
+      "status": "success",
+      "window_start": "2026-03-09T23:30:00Z",
+      "window_end": "2026-03-10T00:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-10T00:31:00Z",
+      "finished_at": "2026-03-10T00:38:00Z",
+      "status": "success",
+      "window_start": "2026-03-10T00:30:00Z",
+      "window_end": "2026-03-10T01:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-10T01:31:00Z",
+      "finished_at": "2026-03-10T01:39:00Z",
+      "status": "success",
+      "window_start": "2026-03-10T01:30:00Z",
+      "window_end": "2026-03-10T02:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-10T02:31:00Z",
+      "finished_at": "2026-03-10T02:40:00Z",
+      "status": "success",
+      "window_start": "2026-03-10T02:30:00Z",
+      "window_end": "2026-03-10T03:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-10T03:31:00Z",
+      "finished_at": "2026-03-10T03:41:00Z",
+      "status": "success",
+      "window_start": "2026-03-10T03:30:00Z",
+      "window_end": "2026-03-10T04:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-10T04:31:00Z",
+      "finished_at": "2026-03-10T04:37:00Z",
+      "status": "success",
+      "window_start": "2026-03-10T04:30:00Z",
+      "window_end": "2026-03-10T05:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-10T05:31:00Z",
+      "finished_at": "2026-03-10T05:38:00Z",
+      "status": "success",
+      "window_start": "2026-03-10T05:30:00Z",
+      "window_end": "2026-03-10T06:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-10T06:31:00Z",
+      "finished_at": "2026-03-10T06:39:00Z",
+      "status": "success",
+      "window_start": "2026-03-10T06:30:00Z",
+      "window_end": "2026-03-10T07:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-10T07:31:00Z",
+      "finished_at": "2026-03-10T07:40:00Z",
+      "status": "success",
+      "window_start": "2026-03-10T07:30:00Z",
+      "window_end": "2026-03-10T08:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-10T08:31:00Z",
+      "finished_at": "2026-03-10T08:41:00Z",
+      "status": "success",
+      "window_start": "2026-03-10T08:30:00Z",
+      "window_end": "2026-03-10T09:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-10T09:31:00Z",
+      "finished_at": "2026-03-10T09:37:00Z",
+      "status": "success",
+      "window_start": "2026-03-10T09:30:00Z",
+      "window_end": "2026-03-10T10:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-10T10:31:00Z",
+      "finished_at": "2026-03-10T10:38:00Z",
+      "status": "success",
+      "window_start": "2026-03-10T10:30:00Z",
+      "window_end": "2026-03-10T11:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-10T11:31:00Z",
+      "finished_at": "2026-03-10T11:39:00Z",
+      "status": "success",
+      "window_start": "2026-03-10T11:30:00Z",
+      "window_end": "2026-03-10T12:30:00Z"
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "started_at": "2026-03-10T12:31:00Z",
+      "finished_at": "2026-03-10T12:40:00Z",
+      "status": "success",
+      "window_start": "2026-03-10T12:30:00Z",
+      "window_end": "2026-03-10T13:30:00Z"
+    },
+    {
+      "job_id": "settle_daily_ny",
+      "started_at": "2026-03-01T07:06:00Z",
+      "finished_at": "2026-03-01T07:12:00Z",
+      "status": "success",
+      "window_start": "2026-03-01T07:05:00Z",
+      "window_end": "2026-03-02T07:05:00Z"
+    },
+    {
+      "job_id": "settle_daily_ny",
+      "started_at": "2026-03-02T07:06:00Z",
+      "finished_at": "2026-03-02T07:13:00Z",
+      "status": "success",
+      "window_start": "2026-03-02T07:05:00Z",
+      "window_end": "2026-03-03T07:05:00Z"
+    },
+    {
+      "job_id": "settle_daily_ny",
+      "started_at": "2026-03-03T07:06:00Z",
+      "finished_at": "2026-03-03T07:14:00Z",
+      "status": "success",
+      "window_start": "2026-03-03T07:05:00Z",
+      "window_end": "2026-03-04T07:05:00Z"
+    },
+    {
+      "job_id": "settle_daily_ny",
+      "started_at": "2026-03-04T07:06:00Z",
+      "finished_at": "2026-03-04T07:15:00Z",
+      "status": "success",
+      "window_start": "2026-03-04T07:05:00Z",
+      "window_end": "2026-03-05T07:05:00Z"
+    },
+    {
+      "job_id": "settle_daily_ny",
+      "started_at": "2026-03-05T07:06:00Z",
+      "finished_at": "2026-03-05T07:16:00Z",
+      "status": "success",
+      "window_start": "2026-03-05T07:05:00Z",
+      "window_end": "2026-03-06T07:05:00Z"
+    },
+    {
+      "job_id": "settle_daily_ny",
+      "started_at": "2026-03-06T07:06:00Z",
+      "finished_at": "2026-03-06T07:12:00Z",
+      "status": "success",
+      "window_start": "2026-03-06T07:05:00Z",
+      "window_end": "2026-03-07T07:05:00Z"
+    },
+    {
+      "job_id": "settle_daily_ny",
+      "started_at": "2026-03-07T07:06:00Z",
+      "finished_at": "2026-03-07T07:13:00Z",
+      "status": "success",
+      "window_start": "2026-03-07T07:05:00Z",
+      "window_end": "2026-03-09T06:05:00Z"
+    },
+    {
+      "job_id": "settle_daily_ny",
+      "started_at": "2026-03-09T06:06:00Z",
+      "finished_at": "2026-03-09T06:14:00Z",
+      "status": "success",
+      "window_start": "2026-03-09T06:05:00Z",
+      "window_end": "2026-03-10T06:05:00Z"
+    },
+    {
+      "job_id": "settle_daily_ny",
+      "started_at": "2026-03-10T06:06:00Z",
+      "finished_at": "2026-03-10T06:15:00Z",
+      "status": "success",
+      "window_start": "2026-03-10T06:05:00Z",
+      "window_end": "2026-03-11T06:05:00Z"
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "started_at": "2026-03-01T00:16:00Z",
+      "finished_at": "2026-03-01T00:22:00Z",
+      "status": "success",
+      "window_start": "2026-03-01T00:15:00Z",
+      "window_end": "2026-03-01T06:15:00Z"
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "started_at": "2026-03-01T06:16:00Z",
+      "finished_at": "2026-03-01T06:23:00Z",
+      "status": "success",
+      "window_start": "2026-03-01T06:15:00Z",
+      "window_end": "2026-03-01T12:15:00Z"
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "started_at": "2026-03-01T12:16:00Z",
+      "finished_at": "2026-03-01T12:24:00Z",
+      "status": "success",
+      "window_start": "2026-03-01T12:15:00Z",
+      "window_end": "2026-03-01T18:15:00Z"
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "started_at": "2026-03-01T18:16:00Z",
+      "finished_at": "2026-03-01T18:25:00Z",
+      "status": "success",
+      "window_start": "2026-03-01T18:15:00Z",
+      "window_end": "2026-03-02T00:15:00Z"
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "started_at": "2026-03-02T00:16:00Z",
+      "finished_at": "2026-03-02T00:26:00Z",
+      "status": "success",
+      "window_start": "2026-03-02T00:15:00Z",
+      "window_end": "2026-03-02T06:15:00Z"
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "started_at": "2026-03-02T06:16:00Z",
+      "finished_at": "2026-03-02T06:22:00Z",
+      "status": "success",
+      "window_start": "2026-03-02T06:15:00Z",
+      "window_end": "2026-03-02T12:15:00Z"
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "started_at": "2026-03-02T12:16:00Z",
+      "finished_at": "2026-03-02T12:23:00Z",
+      "status": "success",
+      "window_start": "2026-03-02T12:15:00Z",
+      "window_end": "2026-03-02T18:15:00Z"
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "started_at": "2026-03-02T18:16:00Z",
+      "finished_at": "2026-03-02T18:24:00Z",
+      "status": "success",
+      "window_start": "2026-03-02T18:15:00Z",
+      "window_end": "2026-03-03T00:15:00Z"
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "started_at": "2026-03-03T00:16:00Z",
+      "finished_at": "2026-03-03T00:25:00Z",
+      "status": "success",
+      "window_start": "2026-03-03T00:15:00Z",
+      "window_end": "2026-03-03T06:15:00Z"
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "started_at": "2026-03-03T06:16:00Z",
+      "finished_at": "2026-03-03T06:26:00Z",
+      "status": "success",
+      "window_start": "2026-03-03T06:15:00Z",
+      "window_end": "2026-03-03T12:15:00Z"
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "started_at": "2026-03-03T12:16:00Z",
+      "finished_at": "2026-03-03T12:22:00Z",
+      "status": "success",
+      "window_start": "2026-03-03T12:15:00Z",
+      "window_end": "2026-03-03T18:15:00Z"
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "started_at": "2026-03-03T18:16:00Z",
+      "finished_at": "2026-03-03T18:23:00Z",
+      "status": "success",
+      "window_start": "2026-03-03T18:15:00Z",
+      "window_end": "2026-03-04T00:15:00Z"
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "started_at": "2026-03-04T00:16:00Z",
+      "finished_at": "2026-03-04T00:24:00Z",
+      "status": "success",
+      "window_start": "2026-03-04T00:15:00Z",
+      "window_end": "2026-03-04T06:15:00Z"
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "started_at": "2026-03-05T00:16:00Z",
+      "finished_at": "2026-03-05T00:23:00Z",
+      "status": "success",
+      "window_start": "2026-03-05T00:15:00Z",
+      "window_end": "2026-03-05T06:15:00Z"
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "started_at": "2026-03-05T06:16:00Z",
+      "finished_at": "2026-03-05T06:24:00Z",
+      "status": "success",
+      "window_start": "2026-03-05T06:15:00Z",
+      "window_end": "2026-03-05T12:15:00Z"
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "started_at": "2026-03-05T12:16:00Z",
+      "finished_at": "2026-03-05T12:25:00Z",
+      "status": "success",
+      "window_start": "2026-03-05T12:15:00Z",
+      "window_end": "2026-03-05T18:15:00Z"
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "started_at": "2026-03-05T18:16:00Z",
+      "finished_at": "2026-03-05T18:26:00Z",
+      "status": "success",
+      "window_start": "2026-03-05T18:15:00Z",
+      "window_end": "2026-03-06T00:15:00Z"
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "started_at": "2026-03-06T00:16:00Z",
+      "finished_at": "2026-03-06T00:22:00Z",
+      "status": "success",
+      "window_start": "2026-03-06T00:15:00Z",
+      "window_end": "2026-03-06T06:15:00Z"
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "started_at": "2026-03-06T06:16:00Z",
+      "finished_at": "2026-03-06T06:23:00Z",
+      "status": "success",
+      "window_start": "2026-03-06T06:15:00Z",
+      "window_end": "2026-03-06T12:15:00Z"
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "started_at": "2026-03-06T12:16:00Z",
+      "finished_at": "2026-03-06T12:24:00Z",
+      "status": "success",
+      "window_start": "2026-03-06T12:15:00Z",
+      "window_end": "2026-03-06T18:15:00Z"
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "started_at": "2026-03-06T18:16:00Z",
+      "finished_at": "2026-03-06T18:25:00Z",
+      "status": "success",
+      "window_start": "2026-03-06T18:15:00Z",
+      "window_end": "2026-03-07T00:15:00Z"
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "started_at": "2026-03-07T00:16:00Z",
+      "finished_at": "2026-03-07T00:26:00Z",
+      "status": "success",
+      "window_start": "2026-03-07T00:15:00Z",
+      "window_end": "2026-03-07T06:15:00Z"
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "started_at": "2026-03-07T06:16:00Z",
+      "finished_at": "2026-03-07T06:22:00Z",
+      "status": "success",
+      "window_start": "2026-03-07T06:15:00Z",
+      "window_end": "2026-03-07T12:15:00Z"
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "started_at": "2026-03-07T12:16:00Z",
+      "finished_at": "2026-03-07T12:23:00Z",
+      "status": "success",
+      "window_start": "2026-03-07T12:15:00Z",
+      "window_end": "2026-03-07T18:15:00Z"
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "started_at": "2026-03-07T18:16:00Z",
+      "finished_at": "2026-03-07T18:24:00Z",
+      "status": "success",
+      "window_start": "2026-03-07T18:15:00Z",
+      "window_end": "2026-03-08T00:15:00Z"
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "started_at": "2026-03-08T00:16:00Z",
+      "finished_at": "2026-03-08T00:25:00Z",
+      "status": "success",
+      "window_start": "2026-03-08T00:15:00Z",
+      "window_end": "2026-03-08T06:15:00Z"
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "started_at": "2026-03-08T06:16:00Z",
+      "finished_at": "2026-03-08T06:26:00Z",
+      "status": "success",
+      "window_start": "2026-03-08T06:15:00Z",
+      "window_end": "2026-03-08T12:15:00Z"
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "started_at": "2026-03-08T12:16:00Z",
+      "finished_at": "2026-03-08T12:22:00Z",
+      "status": "success",
+      "window_start": "2026-03-08T12:15:00Z",
+      "window_end": "2026-03-08T18:15:00Z"
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "started_at": "2026-03-08T18:17:00Z",
+      "finished_at": null,
+      "status": "running",
+      "window_start": "2026-03-08T18:15:00Z",
+      "window_end": "2026-03-09T00:15:00Z"
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "started_at": "2026-03-04T09:05:00Z",
+      "finished_at": "2026-03-04T09:11:00Z",
+      "status": "success",
+      "window_start": null,
+      "window_end": null
+    },
+    {
+      "job_id": "report_weekday",
+      "started_at": "2026-03-02T01:21:00Z",
+      "finished_at": "2026-03-02T01:27:00Z",
+      "status": "success",
+      "window_start": "2026-03-02T01:20:00Z",
+      "window_end": "2026-03-03T01:20:00Z"
+    },
+    {
+      "job_id": "report_weekday",
+      "started_at": "2026-03-03T01:21:00Z",
+      "finished_at": "2026-03-03T01:28:00Z",
+      "status": "success",
+      "window_start": "2026-03-03T01:20:00Z",
+      "window_end": "2026-03-04T01:20:00Z"
+    },
+    {
+      "job_id": "report_weekday",
+      "started_at": "2026-03-04T01:21:00Z",
+      "finished_at": "2026-03-04T01:29:00Z",
+      "status": "success",
+      "window_start": "2026-03-04T01:20:00Z",
+      "window_end": "2026-03-05T01:20:00Z"
+    },
+    {
+      "job_id": "report_weekday",
+      "started_at": "2026-03-05T01:21:00Z",
+      "finished_at": "2026-03-05T01:30:00Z",
+      "status": "success",
+      "window_start": "2026-03-05T01:20:00Z",
+      "window_end": "2026-03-06T01:20:00Z"
+    },
+    {
+      "job_id": "report_weekday",
+      "started_at": "2026-03-06T01:21:00Z",
+      "finished_at": "2026-03-06T01:31:00Z",
+      "status": "success",
+      "window_start": "2026-03-06T01:20:00Z",
+      "window_end": "2026-03-09T01:20:00Z"
+    },
+    {
+      "job_id": "report_weekday",
+      "started_at": "2026-03-09T01:21:00Z",
+      "finished_at": "2026-03-09T01:27:00Z",
+      "status": "success",
+      "window_start": "2026-03-09T01:20:00Z",
+      "window_end": "2026-03-10T01:20:00Z"
+    },
+    {
+      "job_id": "report_weekday",
+      "started_at": "2026-03-10T01:21:00Z",
+      "finished_at": "2026-03-10T01:28:00Z",
+      "status": "success",
+      "window_start": "2026-03-10T01:20:00Z",
+      "window_end": "2026-03-11T01:20:00Z"
+    }
+  ]
+}

@@ -1,0 +1,6092 @@
+{
+  "as_of": "2026-03-10T13:00:00Z",
+  "horizon_start": "2026-03-01T00:00:00Z",
+  "jobs": [
+    {
+      "job_id": "billing_hourly_sh",
+      "cron": "30 * * * *",
+      "timezone": "Asia/Shanghai",
+      "due_slots": 229,
+      "states": {
+        "NOT_RUN": 1,
+        "RAN_EMPTY": 1,
+        "RAN_WITH_OUTPUT": 227,
+        "PAUSED": 0
+      }
+    },
+    {
+      "job_id": "settle_daily_ny",
+      "cron": "5 2 * * *",
+      "timezone": "America/New_York",
+      "due_slots": 9,
+      "states": {
+        "NOT_RUN": 0,
+        "RAN_EMPTY": 0,
+        "RAN_WITH_OUTPUT": 9,
+        "PAUSED": 0
+      }
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "cron": "15 */6 * * *",
+      "timezone": "UTC",
+      "due_slots": 36,
+      "states": {
+        "NOT_RUN": 8,
+        "RAN_EMPTY": 0,
+        "RAN_WITH_OUTPUT": 28,
+        "PAUSED": 3
+      }
+    },
+    {
+      "job_id": "report_weekday",
+      "cron": "20 9 * * 1-5",
+      "timezone": "Asia/Shanghai",
+      "due_slots": 7,
+      "states": {
+        "NOT_RUN": 0,
+        "RAN_EMPTY": 1,
+        "RAN_WITH_OUTPUT": 6,
+        "PAUSED": 0
+      }
+    }
+  ],
+  "slot_verdicts": [
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-01T00:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1000
+        ],
+        "produced_at": [
+          "2026-03-01T00:37:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-01T01:29:59Z",
+        "latency_seconds": [
+          420
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-01T01:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1001
+        ],
+        "produced_at": [
+          "2026-03-01T01:38:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-01T02:29:59Z",
+        "latency_seconds": [
+          480
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-01T02:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1002
+        ],
+        "produced_at": [
+          "2026-03-01T02:39:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-01T03:29:59Z",
+        "latency_seconds": [
+          540
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-01T03:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1003
+        ],
+        "produced_at": [
+          "2026-03-01T03:40:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-01T04:29:59Z",
+        "latency_seconds": [
+          600
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-01T04:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1004
+        ],
+        "produced_at": [
+          "2026-03-01T04:41:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-01T05:29:59Z",
+        "latency_seconds": [
+          660
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-01T05:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1005
+        ],
+        "produced_at": [
+          "2026-03-01T05:37:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-01T06:29:59Z",
+        "latency_seconds": [
+          420
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-01T06:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1006
+        ],
+        "produced_at": [
+          "2026-03-01T06:38:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-01T07:29:59Z",
+        "latency_seconds": [
+          480
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-01T07:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1007
+        ],
+        "produced_at": [
+          "2026-03-01T07:39:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-01T08:29:59Z",
+        "latency_seconds": [
+          540
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-01T08:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1008
+        ],
+        "produced_at": [
+          "2026-03-01T08:40:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-01T09:29:59Z",
+        "latency_seconds": [
+          600
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-01T09:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1009
+        ],
+        "produced_at": [
+          "2026-03-01T09:41:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-01T10:29:59Z",
+        "latency_seconds": [
+          660
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-01T10:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1010
+        ],
+        "produced_at": [
+          "2026-03-01T10:37:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-01T11:29:59Z",
+        "latency_seconds": [
+          420
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-01T11:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1011
+        ],
+        "produced_at": [
+          "2026-03-01T11:38:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-01T12:29:59Z",
+        "latency_seconds": [
+          480
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-01T12:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1012
+        ],
+        "produced_at": [
+          "2026-03-01T12:39:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-01T13:29:59Z",
+        "latency_seconds": [
+          540
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-01T13:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1013
+        ],
+        "produced_at": [
+          "2026-03-01T13:40:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-01T14:29:59Z",
+        "latency_seconds": [
+          600
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-01T14:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1014
+        ],
+        "produced_at": [
+          "2026-03-01T14:41:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-01T15:29:59Z",
+        "latency_seconds": [
+          660
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-01T15:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1015
+        ],
+        "produced_at": [
+          "2026-03-01T15:37:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-01T16:29:59Z",
+        "latency_seconds": [
+          420
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-01T16:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1016
+        ],
+        "produced_at": [
+          "2026-03-01T16:38:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-01T17:29:59Z",
+        "latency_seconds": [
+          480
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-01T17:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1017
+        ],
+        "produced_at": [
+          "2026-03-01T17:39:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-01T18:29:59Z",
+        "latency_seconds": [
+          540
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-01T18:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1018
+        ],
+        "produced_at": [
+          "2026-03-01T18:40:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-01T19:29:59Z",
+        "latency_seconds": [
+          600
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-01T19:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1019
+        ],
+        "produced_at": [
+          "2026-03-01T19:41:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-01T20:29:59Z",
+        "latency_seconds": [
+          660
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-01T20:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1020
+        ],
+        "produced_at": [
+          "2026-03-01T20:37:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-01T21:29:59Z",
+        "latency_seconds": [
+          420
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-01T21:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1021
+        ],
+        "produced_at": [
+          "2026-03-01T21:38:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-01T22:29:59Z",
+        "latency_seconds": [
+          480
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-01T22:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1022
+        ],
+        "produced_at": [
+          "2026-03-01T22:39:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-01T23:29:59Z",
+        "latency_seconds": [
+          540
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-01T23:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1023
+        ],
+        "produced_at": [
+          "2026-03-01T23:40:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-02T00:29:59Z",
+        "latency_seconds": [
+          600
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-02T00:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1024
+        ],
+        "produced_at": [
+          "2026-03-02T00:41:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-02T01:29:59Z",
+        "latency_seconds": [
+          660
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-02T01:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1025
+        ],
+        "produced_at": [
+          "2026-03-02T01:37:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-02T02:29:59Z",
+        "latency_seconds": [
+          420
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-02T02:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1026
+        ],
+        "produced_at": [
+          "2026-03-02T02:38:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-02T03:29:59Z",
+        "latency_seconds": [
+          480
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-02T03:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1027
+        ],
+        "produced_at": [
+          "2026-03-02T03:39:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-02T04:29:59Z",
+        "latency_seconds": [
+          540
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-02T04:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1028
+        ],
+        "produced_at": [
+          "2026-03-02T04:40:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-02T05:29:59Z",
+        "latency_seconds": [
+          600
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-02T05:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1029
+        ],
+        "produced_at": [
+          "2026-03-02T05:41:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-02T06:29:59Z",
+        "latency_seconds": [
+          660
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-02T06:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1030
+        ],
+        "produced_at": [
+          "2026-03-02T06:37:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-02T07:29:59Z",
+        "latency_seconds": [
+          420
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-02T07:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1031
+        ],
+        "produced_at": [
+          "2026-03-02T07:38:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-02T08:29:59Z",
+        "latency_seconds": [
+          480
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-02T08:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1032
+        ],
+        "produced_at": [
+          "2026-03-02T08:39:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-02T09:29:59Z",
+        "latency_seconds": [
+          540
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-02T09:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1033
+        ],
+        "produced_at": [
+          "2026-03-02T09:40:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-02T10:29:59Z",
+        "latency_seconds": [
+          600
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-02T10:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1034
+        ],
+        "produced_at": [
+          "2026-03-02T10:41:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-02T11:29:59Z",
+        "latency_seconds": [
+          660
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-02T11:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1035
+        ],
+        "produced_at": [
+          "2026-03-02T11:37:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-02T12:29:59Z",
+        "latency_seconds": [
+          420
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-02T12:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1036
+        ],
+        "produced_at": [
+          "2026-03-02T12:38:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-02T13:29:59Z",
+        "latency_seconds": [
+          480
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-02T13:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1037
+        ],
+        "produced_at": [
+          "2026-03-02T13:39:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-02T14:29:59Z",
+        "latency_seconds": [
+          540
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-02T14:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1038
+        ],
+        "produced_at": [
+          "2026-03-02T14:40:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-02T15:29:59Z",
+        "latency_seconds": [
+          600
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-02T15:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1039
+        ],
+        "produced_at": [
+          "2026-03-02T15:41:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-02T16:29:59Z",
+        "latency_seconds": [
+          660
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-02T16:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1040
+        ],
+        "produced_at": [
+          "2026-03-02T16:37:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-02T17:29:59Z",
+        "latency_seconds": [
+          420
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-02T17:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1041
+        ],
+        "produced_at": [
+          "2026-03-02T17:38:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-02T18:29:59Z",
+        "latency_seconds": [
+          480
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-02T18:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1042
+        ],
+        "produced_at": [
+          "2026-03-02T18:39:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-02T19:29:59Z",
+        "latency_seconds": [
+          540
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-02T19:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1043
+        ],
+        "produced_at": [
+          "2026-03-02T19:40:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-02T20:29:59Z",
+        "latency_seconds": [
+          600
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-02T20:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1044
+        ],
+        "produced_at": [
+          "2026-03-02T20:41:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-02T21:29:59Z",
+        "latency_seconds": [
+          660
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-02T21:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1045
+        ],
+        "produced_at": [
+          "2026-03-02T21:37:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-02T22:29:59Z",
+        "latency_seconds": [
+          420
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-02T22:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1046
+        ],
+        "produced_at": [
+          "2026-03-02T22:38:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-02T23:29:59Z",
+        "latency_seconds": [
+          480
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-02T23:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1047
+        ],
+        "produced_at": [
+          "2026-03-02T23:39:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-03T00:29:59Z",
+        "latency_seconds": [
+          540
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-03T00:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1048
+        ],
+        "produced_at": [
+          "2026-03-03T00:40:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-03T01:29:59Z",
+        "latency_seconds": [
+          600
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-03T01:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1049
+        ],
+        "produced_at": [
+          "2026-03-03T01:41:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-03T02:29:59Z",
+        "latency_seconds": [
+          660
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-03T02:30:00Z",
+      "state": "NOT_RUN",
+      "confidence": "high",
+      "evidence": {
+        "missing_evidence": [
+          "no_batch_output",
+          "no_success_run_record",
+          "watermark_not_advanced"
+        ],
+        "started_records": 0,
+        "stale_running": false,
+        "grace_deadline": "2026-03-03T02:50:00Z",
+        "basis": "超过宽限期无批次、无成功执行记录，且水位未推进（基于产出反推，不看进程存活）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-03T03:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1050
+        ],
+        "produced_at": [
+          "2026-03-03T03:38:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-03T04:29:59Z",
+        "latency_seconds": [
+          480
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-03T04:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1051
+        ],
+        "produced_at": [
+          "2026-03-03T04:39:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-03T05:29:59Z",
+        "latency_seconds": [
+          540
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-03T05:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1052
+        ],
+        "produced_at": [
+          "2026-03-03T05:40:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-03T06:29:59Z",
+        "latency_seconds": [
+          600
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-03T06:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1053
+        ],
+        "produced_at": [
+          "2026-03-03T06:41:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-03T07:29:59Z",
+        "latency_seconds": [
+          660
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-03T07:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1054
+        ],
+        "produced_at": [
+          "2026-03-03T07:37:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-03T08:29:59Z",
+        "latency_seconds": [
+          420
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-03T08:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1055
+        ],
+        "produced_at": [
+          "2026-03-03T08:38:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-03T09:29:59Z",
+        "latency_seconds": [
+          480
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-03T09:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1056
+        ],
+        "produced_at": [
+          "2026-03-03T09:39:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-03T10:29:59Z",
+        "latency_seconds": [
+          540
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-03T10:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1057
+        ],
+        "produced_at": [
+          "2026-03-03T10:40:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-03T11:29:59Z",
+        "latency_seconds": [
+          600
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-03T11:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1058
+        ],
+        "produced_at": [
+          "2026-03-03T11:41:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-03T12:29:59Z",
+        "latency_seconds": [
+          660
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-03T12:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1059
+        ],
+        "produced_at": [
+          "2026-03-03T12:37:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-03T13:29:59Z",
+        "latency_seconds": [
+          420
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-03T13:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1060
+        ],
+        "produced_at": [
+          "2026-03-03T13:38:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-03T14:29:59Z",
+        "latency_seconds": [
+          480
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-03T14:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1061
+        ],
+        "produced_at": [
+          "2026-03-03T14:39:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-03T15:29:59Z",
+        "latency_seconds": [
+          540
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-03T15:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1062
+        ],
+        "produced_at": [
+          "2026-03-03T15:40:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-03T16:29:59Z",
+        "latency_seconds": [
+          600
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-03T16:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1063
+        ],
+        "produced_at": [
+          "2026-03-03T16:41:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-03T17:29:59Z",
+        "latency_seconds": [
+          660
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-03T17:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1064
+        ],
+        "produced_at": [
+          "2026-03-03T17:37:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-03T18:29:59Z",
+        "latency_seconds": [
+          420
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-03T18:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1065
+        ],
+        "produced_at": [
+          "2026-03-03T18:38:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-03T19:29:59Z",
+        "latency_seconds": [
+          480
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-03T19:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1066
+        ],
+        "produced_at": [
+          "2026-03-03T19:39:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-03T20:29:59Z",
+        "latency_seconds": [
+          540
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-03T20:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1067
+        ],
+        "produced_at": [
+          "2026-03-03T20:40:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-03T21:29:59Z",
+        "latency_seconds": [
+          600
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-03T21:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1068
+        ],
+        "produced_at": [
+          "2026-03-03T21:41:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-03T22:29:59Z",
+        "latency_seconds": [
+          660
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-03T22:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1069
+        ],
+        "produced_at": [
+          "2026-03-03T22:37:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-03T23:29:59Z",
+        "latency_seconds": [
+          420
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-03T23:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1070
+        ],
+        "produced_at": [
+          "2026-03-03T23:38:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-04T00:29:59Z",
+        "latency_seconds": [
+          480
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-04T00:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1071
+        ],
+        "produced_at": [
+          "2026-03-04T00:39:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-04T01:29:59Z",
+        "latency_seconds": [
+          540
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-04T01:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1072
+        ],
+        "produced_at": [
+          "2026-03-04T01:40:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-04T02:29:59Z",
+        "latency_seconds": [
+          600
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-04T02:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1073
+        ],
+        "produced_at": [
+          "2026-03-04T02:41:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-04T03:29:59Z",
+        "latency_seconds": [
+          660
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-04T03:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1074
+        ],
+        "produced_at": [
+          "2026-03-04T03:37:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-04T04:29:59Z",
+        "latency_seconds": [
+          420
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-04T04:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1075
+        ],
+        "produced_at": [
+          "2026-03-04T04:38:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-04T05:29:59Z",
+        "latency_seconds": [
+          480
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-04T05:30:00Z",
+      "state": "RAN_EMPTY",
+      "confidence": "medium",
+      "evidence": {
+        "run_started_at": "2026-03-04T05:31:00Z",
+        "run_finished_at": "2026-03-04T05:39:00Z",
+        "basis": "无批次产出但存在 status=success 的执行记录，判定为跑了但产出为空（0 行不写批次表）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-04T06:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1076
+        ],
+        "produced_at": [
+          "2026-03-04T06:40:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-04T07:29:59Z",
+        "latency_seconds": [
+          600
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-04T07:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1077
+        ],
+        "produced_at": [
+          "2026-03-04T07:41:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-04T08:29:59Z",
+        "latency_seconds": [
+          660
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-04T08:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1078
+        ],
+        "produced_at": [
+          "2026-03-04T08:37:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-04T09:29:59Z",
+        "latency_seconds": [
+          420
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-04T09:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1079
+        ],
+        "produced_at": [
+          "2026-03-04T09:38:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-04T10:29:59Z",
+        "latency_seconds": [
+          480
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-04T10:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1080
+        ],
+        "produced_at": [
+          "2026-03-04T10:39:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-04T11:29:59Z",
+        "latency_seconds": [
+          540
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-04T11:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1081
+        ],
+        "produced_at": [
+          "2026-03-04T11:40:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-04T12:29:59Z",
+        "latency_seconds": [
+          600
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-04T12:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1082
+        ],
+        "produced_at": [
+          "2026-03-04T12:41:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-04T13:29:59Z",
+        "latency_seconds": [
+          660
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-04T13:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1083
+        ],
+        "produced_at": [
+          "2026-03-04T13:37:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-04T14:29:59Z",
+        "latency_seconds": [
+          420
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-04T14:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1084
+        ],
+        "produced_at": [
+          "2026-03-04T14:38:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-04T15:29:59Z",
+        "latency_seconds": [
+          480
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-04T15:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1085
+        ],
+        "produced_at": [
+          "2026-03-04T15:39:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-04T16:29:59Z",
+        "latency_seconds": [
+          540
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-04T16:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1086
+        ],
+        "produced_at": [
+          "2026-03-04T16:40:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-04T17:29:59Z",
+        "latency_seconds": [
+          600
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-04T17:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1087
+        ],
+        "produced_at": [
+          "2026-03-04T17:41:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-04T18:29:59Z",
+        "latency_seconds": [
+          660
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-04T18:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1088
+        ],
+        "produced_at": [
+          "2026-03-04T18:37:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-04T19:29:59Z",
+        "latency_seconds": [
+          420
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-04T19:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1089
+        ],
+        "produced_at": [
+          "2026-03-04T19:38:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-04T20:29:59Z",
+        "latency_seconds": [
+          480
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-04T20:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1090
+        ],
+        "produced_at": [
+          "2026-03-04T20:39:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-04T21:29:59Z",
+        "latency_seconds": [
+          540
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-04T21:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1091
+        ],
+        "produced_at": [
+          "2026-03-04T21:40:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-04T22:29:59Z",
+        "latency_seconds": [
+          600
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-04T22:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1092
+        ],
+        "produced_at": [
+          "2026-03-04T22:41:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-04T23:29:59Z",
+        "latency_seconds": [
+          660
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-04T23:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1093
+        ],
+        "produced_at": [
+          "2026-03-04T23:37:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-05T00:29:59Z",
+        "latency_seconds": [
+          420
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-05T00:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1094
+        ],
+        "produced_at": [
+          "2026-03-05T00:38:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-05T01:29:59Z",
+        "latency_seconds": [
+          480
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-05T01:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1095
+        ],
+        "produced_at": [
+          "2026-03-05T01:39:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-05T02:29:59Z",
+        "latency_seconds": [
+          540
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-05T02:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1096
+        ],
+        "produced_at": [
+          "2026-03-05T02:40:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-05T03:29:59Z",
+        "latency_seconds": [
+          600
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-05T03:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1097
+        ],
+        "produced_at": [
+          "2026-03-05T03:41:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-05T04:29:59Z",
+        "latency_seconds": [
+          660
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-05T04:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1098
+        ],
+        "produced_at": [
+          "2026-03-05T04:37:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-05T05:29:59Z",
+        "latency_seconds": [
+          420
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-05T05:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1099
+        ],
+        "produced_at": [
+          "2026-03-05T05:38:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-05T06:29:59Z",
+        "latency_seconds": [
+          480
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-05T06:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1100
+        ],
+        "produced_at": [
+          "2026-03-05T06:39:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-05T07:29:59Z",
+        "latency_seconds": [
+          540
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-05T07:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1101
+        ],
+        "produced_at": [
+          "2026-03-05T07:40:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-05T08:29:59Z",
+        "latency_seconds": [
+          600
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-05T08:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1102
+        ],
+        "produced_at": [
+          "2026-03-05T08:41:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-05T09:29:59Z",
+        "latency_seconds": [
+          660
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-05T09:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1103
+        ],
+        "produced_at": [
+          "2026-03-05T09:37:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-05T10:29:59Z",
+        "latency_seconds": [
+          420
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-05T10:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1104
+        ],
+        "produced_at": [
+          "2026-03-05T10:38:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-05T11:29:59Z",
+        "latency_seconds": [
+          480
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-05T11:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1105
+        ],
+        "produced_at": [
+          "2026-03-05T11:39:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-05T12:29:59Z",
+        "latency_seconds": [
+          540
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-05T12:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1106
+        ],
+        "produced_at": [
+          "2026-03-05T12:40:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-05T13:29:59Z",
+        "latency_seconds": [
+          600
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-05T13:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1107
+        ],
+        "produced_at": [
+          "2026-03-05T13:41:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-05T14:29:59Z",
+        "latency_seconds": [
+          660
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-05T14:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1108
+        ],
+        "produced_at": [
+          "2026-03-05T14:37:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-05T15:29:59Z",
+        "latency_seconds": [
+          420
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-05T15:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1109
+        ],
+        "produced_at": [
+          "2026-03-05T15:38:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-05T16:29:59Z",
+        "latency_seconds": [
+          480
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-05T16:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1110
+        ],
+        "produced_at": [
+          "2026-03-05T16:39:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-05T17:29:59Z",
+        "latency_seconds": [
+          540
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-05T17:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1111
+        ],
+        "produced_at": [
+          "2026-03-05T17:40:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-05T18:29:59Z",
+        "latency_seconds": [
+          600
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-05T18:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1112
+        ],
+        "produced_at": [
+          "2026-03-05T18:41:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-05T19:29:59Z",
+        "latency_seconds": [
+          660
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-05T19:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1113
+        ],
+        "produced_at": [
+          "2026-03-05T19:37:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-05T20:29:59Z",
+        "latency_seconds": [
+          420
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-05T20:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1114
+        ],
+        "produced_at": [
+          "2026-03-05T20:38:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-05T21:29:59Z",
+        "latency_seconds": [
+          480
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-05T21:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1115
+        ],
+        "produced_at": [
+          "2026-03-05T21:39:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-05T22:29:59Z",
+        "latency_seconds": [
+          540
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-05T22:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1116
+        ],
+        "produced_at": [
+          "2026-03-05T22:40:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-05T23:29:59Z",
+        "latency_seconds": [
+          600
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-05T23:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1117
+        ],
+        "produced_at": [
+          "2026-03-05T23:41:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-06T00:29:59Z",
+        "latency_seconds": [
+          660
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-06T00:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1118
+        ],
+        "produced_at": [
+          "2026-03-06T00:37:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-06T01:29:59Z",
+        "latency_seconds": [
+          420
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-06T01:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1119
+        ],
+        "produced_at": [
+          "2026-03-06T01:38:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-06T02:29:59Z",
+        "latency_seconds": [
+          480
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-06T02:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1120
+        ],
+        "produced_at": [
+          "2026-03-06T02:39:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-06T03:29:59Z",
+        "latency_seconds": [
+          540
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-06T03:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1121
+        ],
+        "produced_at": [
+          "2026-03-06T03:40:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-06T04:29:59Z",
+        "latency_seconds": [
+          600
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-06T04:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1122
+        ],
+        "produced_at": [
+          "2026-03-06T04:41:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-06T05:29:59Z",
+        "latency_seconds": [
+          660
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-06T05:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1123
+        ],
+        "produced_at": [
+          "2026-03-06T05:37:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-06T06:29:59Z",
+        "latency_seconds": [
+          420
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-06T06:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1124
+        ],
+        "produced_at": [
+          "2026-03-06T06:38:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-06T07:29:59Z",
+        "latency_seconds": [
+          480
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-06T07:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1125
+        ],
+        "produced_at": [
+          "2026-03-06T07:39:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-06T08:29:59Z",
+        "latency_seconds": [
+          540
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-06T08:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1126
+        ],
+        "produced_at": [
+          "2026-03-06T08:40:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-06T09:29:59Z",
+        "latency_seconds": [
+          600
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-06T09:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1127
+        ],
+        "produced_at": [
+          "2026-03-06T09:41:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-06T10:29:59Z",
+        "latency_seconds": [
+          660
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-06T10:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1128
+        ],
+        "produced_at": [
+          "2026-03-06T10:37:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-06T11:29:59Z",
+        "latency_seconds": [
+          420
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-06T11:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1129
+        ],
+        "produced_at": [
+          "2026-03-06T11:38:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-06T12:29:59Z",
+        "latency_seconds": [
+          480
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-06T12:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1130
+        ],
+        "produced_at": [
+          "2026-03-06T12:39:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-06T13:29:59Z",
+        "latency_seconds": [
+          540
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-06T13:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1131
+        ],
+        "produced_at": [
+          "2026-03-06T13:40:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-06T14:29:59Z",
+        "latency_seconds": [
+          600
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-06T14:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1132
+        ],
+        "produced_at": [
+          "2026-03-06T14:41:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-06T15:29:59Z",
+        "latency_seconds": [
+          660
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-06T15:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1133
+        ],
+        "produced_at": [
+          "2026-03-06T15:37:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-06T16:29:59Z",
+        "latency_seconds": [
+          420
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-06T16:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1134
+        ],
+        "produced_at": [
+          "2026-03-06T16:38:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-06T17:29:59Z",
+        "latency_seconds": [
+          480
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-06T17:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1135
+        ],
+        "produced_at": [
+          "2026-03-06T17:39:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-06T18:29:59Z",
+        "latency_seconds": [
+          540
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-06T18:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1136
+        ],
+        "produced_at": [
+          "2026-03-06T18:40:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-06T19:29:59Z",
+        "latency_seconds": [
+          600
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-06T19:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1137
+        ],
+        "produced_at": [
+          "2026-03-06T19:41:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-06T20:29:59Z",
+        "latency_seconds": [
+          660
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-06T20:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1138
+        ],
+        "produced_at": [
+          "2026-03-06T20:37:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-06T21:29:59Z",
+        "latency_seconds": [
+          420
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-06T21:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1139
+        ],
+        "produced_at": [
+          "2026-03-06T21:38:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-06T22:29:59Z",
+        "latency_seconds": [
+          480
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-06T22:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1140
+        ],
+        "produced_at": [
+          "2026-03-06T22:39:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-06T23:29:59Z",
+        "latency_seconds": [
+          540
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-06T23:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1141
+        ],
+        "produced_at": [
+          "2026-03-06T23:40:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-07T00:29:59Z",
+        "latency_seconds": [
+          600
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-07T00:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1142
+        ],
+        "produced_at": [
+          "2026-03-07T00:41:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-07T01:29:59Z",
+        "latency_seconds": [
+          660
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-07T01:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1143
+        ],
+        "produced_at": [
+          "2026-03-07T01:37:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-07T02:29:59Z",
+        "latency_seconds": [
+          420
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-07T02:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1144
+        ],
+        "produced_at": [
+          "2026-03-07T02:38:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-07T03:29:59Z",
+        "latency_seconds": [
+          480
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-07T03:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1145
+        ],
+        "produced_at": [
+          "2026-03-07T03:39:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-07T04:29:59Z",
+        "latency_seconds": [
+          540
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-07T04:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1146
+        ],
+        "produced_at": [
+          "2026-03-07T04:40:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-07T05:29:59Z",
+        "latency_seconds": [
+          600
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-07T05:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1147
+        ],
+        "produced_at": [
+          "2026-03-07T05:41:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-07T06:29:59Z",
+        "latency_seconds": [
+          660
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-07T06:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1148
+        ],
+        "produced_at": [
+          "2026-03-07T06:37:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-07T07:29:59Z",
+        "latency_seconds": [
+          420
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-07T07:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1149
+        ],
+        "produced_at": [
+          "2026-03-07T07:38:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-07T08:29:59Z",
+        "latency_seconds": [
+          480
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-07T08:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1150
+        ],
+        "produced_at": [
+          "2026-03-07T08:39:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-07T09:29:59Z",
+        "latency_seconds": [
+          540
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-07T09:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1151
+        ],
+        "produced_at": [
+          "2026-03-07T09:40:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-07T10:29:59Z",
+        "latency_seconds": [
+          600
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-07T10:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1152
+        ],
+        "produced_at": [
+          "2026-03-07T10:41:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-07T11:29:59Z",
+        "latency_seconds": [
+          660
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-07T11:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1153
+        ],
+        "produced_at": [
+          "2026-03-07T11:37:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-07T12:29:59Z",
+        "latency_seconds": [
+          420
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-07T12:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1154
+        ],
+        "produced_at": [
+          "2026-03-07T12:38:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-07T13:29:59Z",
+        "latency_seconds": [
+          480
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-07T13:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1155
+        ],
+        "produced_at": [
+          "2026-03-07T13:39:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-07T14:29:59Z",
+        "latency_seconds": [
+          540
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-07T14:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1156
+        ],
+        "produced_at": [
+          "2026-03-07T14:40:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-07T15:29:59Z",
+        "latency_seconds": [
+          600
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-07T15:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1157
+        ],
+        "produced_at": [
+          "2026-03-07T15:41:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-07T16:29:59Z",
+        "latency_seconds": [
+          660
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-07T16:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1158
+        ],
+        "produced_at": [
+          "2026-03-07T16:37:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-07T17:29:59Z",
+        "latency_seconds": [
+          420
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-07T17:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1159
+        ],
+        "produced_at": [
+          "2026-03-07T17:38:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-07T18:29:59Z",
+        "latency_seconds": [
+          480
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-07T18:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1160
+        ],
+        "produced_at": [
+          "2026-03-07T18:39:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-07T19:29:59Z",
+        "latency_seconds": [
+          540
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-07T19:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1161
+        ],
+        "produced_at": [
+          "2026-03-07T19:40:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-07T20:29:59Z",
+        "latency_seconds": [
+          600
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-07T20:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1162
+        ],
+        "produced_at": [
+          "2026-03-07T20:41:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-07T21:29:59Z",
+        "latency_seconds": [
+          660
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-07T21:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1163
+        ],
+        "produced_at": [
+          "2026-03-07T21:37:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-07T22:29:59Z",
+        "latency_seconds": [
+          420
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-07T22:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1164
+        ],
+        "produced_at": [
+          "2026-03-07T22:38:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-07T23:29:59Z",
+        "latency_seconds": [
+          480
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-07T23:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1165
+        ],
+        "produced_at": [
+          "2026-03-07T23:39:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-08T00:29:59Z",
+        "latency_seconds": [
+          540
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-08T00:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1166
+        ],
+        "produced_at": [
+          "2026-03-08T00:40:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-08T01:29:59Z",
+        "latency_seconds": [
+          600
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-08T01:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1167
+        ],
+        "produced_at": [
+          "2026-03-08T01:41:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-08T02:29:59Z",
+        "latency_seconds": [
+          660
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-08T02:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1168
+        ],
+        "produced_at": [
+          "2026-03-08T02:37:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-08T03:29:59Z",
+        "latency_seconds": [
+          420
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-08T03:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1169
+        ],
+        "produced_at": [
+          "2026-03-08T03:38:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-08T04:29:59Z",
+        "latency_seconds": [
+          480
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-08T04:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1170
+        ],
+        "produced_at": [
+          "2026-03-08T04:39:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-08T05:29:59Z",
+        "latency_seconds": [
+          540
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-08T05:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1171
+        ],
+        "produced_at": [
+          "2026-03-08T05:40:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-08T06:29:59Z",
+        "latency_seconds": [
+          600
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-08T06:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1172
+        ],
+        "produced_at": [
+          "2026-03-08T06:41:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-08T07:29:59Z",
+        "latency_seconds": [
+          660
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-08T07:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1173
+        ],
+        "produced_at": [
+          "2026-03-08T07:37:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-08T08:29:59Z",
+        "latency_seconds": [
+          420
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-08T08:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1174
+        ],
+        "produced_at": [
+          "2026-03-08T08:38:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-08T09:29:59Z",
+        "latency_seconds": [
+          480
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-08T09:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1175
+        ],
+        "produced_at": [
+          "2026-03-08T09:39:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-08T10:29:59Z",
+        "latency_seconds": [
+          540
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-08T10:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1176
+        ],
+        "produced_at": [
+          "2026-03-08T10:40:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-08T11:29:59Z",
+        "latency_seconds": [
+          600
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-08T11:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1177
+        ],
+        "produced_at": [
+          "2026-03-08T11:41:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-08T12:29:59Z",
+        "latency_seconds": [
+          660
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-08T12:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1178
+        ],
+        "produced_at": [
+          "2026-03-08T12:37:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-08T13:29:59Z",
+        "latency_seconds": [
+          420
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-08T13:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1179
+        ],
+        "produced_at": [
+          "2026-03-08T13:38:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-08T14:29:59Z",
+        "latency_seconds": [
+          480
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-08T14:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1180
+        ],
+        "produced_at": [
+          "2026-03-08T14:39:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-08T15:29:59Z",
+        "latency_seconds": [
+          540
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-08T15:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1181
+        ],
+        "produced_at": [
+          "2026-03-08T15:40:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-08T16:29:59Z",
+        "latency_seconds": [
+          600
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-08T16:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1182
+        ],
+        "produced_at": [
+          "2026-03-08T16:41:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-08T17:29:59Z",
+        "latency_seconds": [
+          660
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-08T17:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1183
+        ],
+        "produced_at": [
+          "2026-03-08T17:37:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-08T18:29:59Z",
+        "latency_seconds": [
+          420
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-08T18:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1184
+        ],
+        "produced_at": [
+          "2026-03-08T18:38:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-08T19:29:59Z",
+        "latency_seconds": [
+          480
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-08T19:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1185
+        ],
+        "produced_at": [
+          "2026-03-08T19:39:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-08T20:29:59Z",
+        "latency_seconds": [
+          540
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-08T20:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1186
+        ],
+        "produced_at": [
+          "2026-03-08T20:40:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-08T21:29:59Z",
+        "latency_seconds": [
+          600
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-08T21:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1187
+        ],
+        "produced_at": [
+          "2026-03-08T21:41:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-08T22:29:59Z",
+        "latency_seconds": [
+          660
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-08T22:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1188
+        ],
+        "produced_at": [
+          "2026-03-08T22:37:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-08T23:29:59Z",
+        "latency_seconds": [
+          420
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-08T23:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1189
+        ],
+        "produced_at": [
+          "2026-03-08T23:38:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-09T00:29:59Z",
+        "latency_seconds": [
+          480
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-09T00:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1190
+        ],
+        "produced_at": [
+          "2026-03-09T00:39:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-09T01:29:59Z",
+        "latency_seconds": [
+          540
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-09T01:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1191
+        ],
+        "produced_at": [
+          "2026-03-09T01:40:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-09T02:29:59Z",
+        "latency_seconds": [
+          600
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-09T02:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1192
+        ],
+        "produced_at": [
+          "2026-03-09T02:41:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-09T03:29:59Z",
+        "latency_seconds": [
+          660
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-09T03:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1193
+        ],
+        "produced_at": [
+          "2026-03-09T03:37:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-09T04:29:59Z",
+        "latency_seconds": [
+          420
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-09T04:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1194
+        ],
+        "produced_at": [
+          "2026-03-09T04:38:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-09T05:29:59Z",
+        "latency_seconds": [
+          480
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-09T05:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1195
+        ],
+        "produced_at": [
+          "2026-03-09T05:39:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-09T06:29:59Z",
+        "latency_seconds": [
+          540
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-09T06:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1196
+        ],
+        "produced_at": [
+          "2026-03-09T06:40:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-09T07:29:59Z",
+        "latency_seconds": [
+          600
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-09T07:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1197
+        ],
+        "produced_at": [
+          "2026-03-09T07:41:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-09T08:29:59Z",
+        "latency_seconds": [
+          660
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-09T08:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1198
+        ],
+        "produced_at": [
+          "2026-03-09T08:37:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-09T09:29:59Z",
+        "latency_seconds": [
+          420
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-09T09:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1199
+        ],
+        "produced_at": [
+          "2026-03-09T09:38:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-09T10:29:59Z",
+        "latency_seconds": [
+          480
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-09T10:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1200
+        ],
+        "produced_at": [
+          "2026-03-09T10:39:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-09T11:29:59Z",
+        "latency_seconds": [
+          540
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-09T11:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1201
+        ],
+        "produced_at": [
+          "2026-03-09T11:40:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-09T12:29:59Z",
+        "latency_seconds": [
+          600
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-09T12:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1202
+        ],
+        "produced_at": [
+          "2026-03-09T12:41:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-09T13:29:59Z",
+        "latency_seconds": [
+          660
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-09T13:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1203
+        ],
+        "produced_at": [
+          "2026-03-09T13:37:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-09T14:29:59Z",
+        "latency_seconds": [
+          420
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-09T14:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1204
+        ],
+        "produced_at": [
+          "2026-03-09T14:38:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-09T15:29:59Z",
+        "latency_seconds": [
+          480
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-09T15:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1205
+        ],
+        "produced_at": [
+          "2026-03-09T15:39:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-09T16:29:59Z",
+        "latency_seconds": [
+          540
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-09T16:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1206
+        ],
+        "produced_at": [
+          "2026-03-09T16:40:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-09T17:29:59Z",
+        "latency_seconds": [
+          600
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-09T17:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1207
+        ],
+        "produced_at": [
+          "2026-03-09T17:41:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-09T18:29:59Z",
+        "latency_seconds": [
+          660
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-09T18:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1208
+        ],
+        "produced_at": [
+          "2026-03-09T18:37:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-09T19:29:59Z",
+        "latency_seconds": [
+          420
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-09T19:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1209
+        ],
+        "produced_at": [
+          "2026-03-09T19:38:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-09T20:29:59Z",
+        "latency_seconds": [
+          480
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-09T20:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1210
+        ],
+        "produced_at": [
+          "2026-03-09T20:39:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-09T21:29:59Z",
+        "latency_seconds": [
+          540
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-09T21:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1211
+        ],
+        "produced_at": [
+          "2026-03-09T21:40:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-09T22:29:59Z",
+        "latency_seconds": [
+          600
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-09T22:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1212
+        ],
+        "produced_at": [
+          "2026-03-09T22:41:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-09T23:29:59Z",
+        "latency_seconds": [
+          660
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-09T23:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1213
+        ],
+        "produced_at": [
+          "2026-03-09T23:37:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-10T00:29:59Z",
+        "latency_seconds": [
+          420
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-10T00:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1214
+        ],
+        "produced_at": [
+          "2026-03-10T00:38:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-10T01:29:59Z",
+        "latency_seconds": [
+          480
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-10T01:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1215
+        ],
+        "produced_at": [
+          "2026-03-10T01:39:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-10T02:29:59Z",
+        "latency_seconds": [
+          540
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-10T02:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1216
+        ],
+        "produced_at": [
+          "2026-03-10T02:40:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-10T03:29:59Z",
+        "latency_seconds": [
+          600
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-10T03:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1217
+        ],
+        "produced_at": [
+          "2026-03-10T03:41:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-10T04:29:59Z",
+        "latency_seconds": [
+          660
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-10T04:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1218
+        ],
+        "produced_at": [
+          "2026-03-10T04:37:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-10T05:29:59Z",
+        "latency_seconds": [
+          420
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-10T05:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1219
+        ],
+        "produced_at": [
+          "2026-03-10T05:38:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-10T06:29:59Z",
+        "latency_seconds": [
+          480
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-10T06:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1220
+        ],
+        "produced_at": [
+          "2026-03-10T06:39:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-10T07:29:59Z",
+        "latency_seconds": [
+          540
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-10T07:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1221
+        ],
+        "produced_at": [
+          "2026-03-10T07:40:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-10T08:29:59Z",
+        "latency_seconds": [
+          600
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-10T08:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1222
+        ],
+        "produced_at": [
+          "2026-03-10T08:41:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-10T09:29:59Z",
+        "latency_seconds": [
+          660
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-10T09:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1223
+        ],
+        "produced_at": [
+          "2026-03-10T09:37:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-10T10:29:59Z",
+        "latency_seconds": [
+          420
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-10T10:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1224
+        ],
+        "produced_at": [
+          "2026-03-10T10:38:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-10T11:29:59Z",
+        "latency_seconds": [
+          480
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-10T11:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1225
+        ],
+        "produced_at": [
+          "2026-03-10T11:39:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-10T12:29:59Z",
+        "latency_seconds": [
+          540
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "billing_hourly_sh",
+      "slot_at": "2026-03-10T12:30:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1226
+        ],
+        "produced_at": [
+          "2026-03-10T12:40:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-10T13:29:59Z",
+        "latency_seconds": [
+          600
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "settle_daily_ny",
+      "slot_at": "2026-03-01T07:05:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          200
+        ],
+        "produced_at": [
+          "2026-03-01T07:12:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-02T07:04:59Z",
+        "latency_seconds": [
+          420
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "settle_daily_ny",
+      "slot_at": "2026-03-02T07:05:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          201
+        ],
+        "produced_at": [
+          "2026-03-02T07:13:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-03T07:04:59Z",
+        "latency_seconds": [
+          480
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "settle_daily_ny",
+      "slot_at": "2026-03-03T07:05:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          202
+        ],
+        "produced_at": [
+          "2026-03-03T07:14:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-04T07:04:59Z",
+        "latency_seconds": [
+          540
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "settle_daily_ny",
+      "slot_at": "2026-03-04T07:05:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          203
+        ],
+        "produced_at": [
+          "2026-03-04T07:15:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-05T07:04:59Z",
+        "latency_seconds": [
+          600
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "settle_daily_ny",
+      "slot_at": "2026-03-05T07:05:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          204
+        ],
+        "produced_at": [
+          "2026-03-05T07:16:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-06T07:04:59Z",
+        "latency_seconds": [
+          660
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "settle_daily_ny",
+      "slot_at": "2026-03-06T07:05:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          205
+        ],
+        "produced_at": [
+          "2026-03-06T07:12:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-07T07:04:59Z",
+        "latency_seconds": [
+          420
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "settle_daily_ny",
+      "slot_at": "2026-03-07T07:05:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          206
+        ],
+        "produced_at": [
+          "2026-03-07T07:13:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-09T06:04:59Z",
+        "latency_seconds": [
+          480
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "settle_daily_ny",
+      "slot_at": "2026-03-09T06:05:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          207
+        ],
+        "produced_at": [
+          "2026-03-09T06:14:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-10T06:04:59Z",
+        "latency_seconds": [
+          540
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "settle_daily_ny",
+      "slot_at": "2026-03-10T06:05:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          208
+        ],
+        "produced_at": [
+          "2026-03-10T06:15:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-11T06:04:59Z",
+        "latency_seconds": [
+          600
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "slot_at": "2026-03-01T00:15:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          1
+        ],
+        "produced_at": [
+          "2026-03-01T00:22:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-01T06:14:59Z",
+        "latency_seconds": [
+          420
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "slot_at": "2026-03-01T06:15:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          2
+        ],
+        "produced_at": [
+          "2026-03-01T06:23:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-01T12:14:59Z",
+        "latency_seconds": [
+          480
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "slot_at": "2026-03-01T12:15:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          3
+        ],
+        "produced_at": [
+          "2026-03-01T12:24:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-01T18:14:59Z",
+        "latency_seconds": [
+          540
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "slot_at": "2026-03-01T18:15:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          4
+        ],
+        "produced_at": [
+          "2026-03-01T18:25:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-02T00:14:59Z",
+        "latency_seconds": [
+          600
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "slot_at": "2026-03-02T00:15:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          5
+        ],
+        "produced_at": [
+          "2026-03-02T00:26:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-02T06:14:59Z",
+        "latency_seconds": [
+          660
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "slot_at": "2026-03-02T06:15:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          6
+        ],
+        "produced_at": [
+          "2026-03-02T06:22:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-02T12:14:59Z",
+        "latency_seconds": [
+          420
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "slot_at": "2026-03-02T12:15:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          7
+        ],
+        "produced_at": [
+          "2026-03-02T12:23:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-02T18:14:59Z",
+        "latency_seconds": [
+          480
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "slot_at": "2026-03-02T18:15:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          8
+        ],
+        "produced_at": [
+          "2026-03-02T18:24:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-03T00:14:59Z",
+        "latency_seconds": [
+          540
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "slot_at": "2026-03-03T00:15:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          9,
+          908
+        ],
+        "produced_at": [
+          "2026-03-03T00:25:00Z",
+          "2026-03-03T02:27:00Z"
+        ],
+        "row_count": 240,
+        "watermark": "2026-03-03T06:14:59Z",
+        "latency_seconds": [
+          600,
+          7920
+        ],
+        "duplicate_batches": true,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "slot_at": "2026-03-03T06:15:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          10
+        ],
+        "produced_at": [
+          "2026-03-03T06:26:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-03T12:14:59Z",
+        "latency_seconds": [
+          660
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "slot_at": "2026-03-03T12:15:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          11
+        ],
+        "produced_at": [
+          "2026-03-03T12:22:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-03T18:14:59Z",
+        "latency_seconds": [
+          420
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "slot_at": "2026-03-03T18:15:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          12
+        ],
+        "produced_at": [
+          "2026-03-03T18:23:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-04T00:14:59Z",
+        "latency_seconds": [
+          480
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "slot_at": "2026-03-04T00:15:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          13
+        ],
+        "produced_at": [
+          "2026-03-04T00:24:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-04T06:14:59Z",
+        "latency_seconds": [
+          540
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "slot_at": "2026-03-04T06:15:00Z",
+      "state": "PAUSED",
+      "confidence": "high",
+      "evidence": {
+        "pause_window": [
+          "2026-03-04T06:00:00Z",
+          "2026-03-04T18:30:00Z"
+        ],
+        "basis": "计划点位于人为暂停窗口，不参与漏跑考核"
+      }
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "slot_at": "2026-03-04T12:15:00Z",
+      "state": "PAUSED",
+      "confidence": "high",
+      "evidence": {
+        "pause_window": [
+          "2026-03-04T06:00:00Z",
+          "2026-03-04T18:30:00Z"
+        ],
+        "basis": "计划点位于人为暂停窗口，不参与漏跑考核"
+      }
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "slot_at": "2026-03-04T18:15:00Z",
+      "state": "PAUSED",
+      "confidence": "high",
+      "evidence": {
+        "pause_window": [
+          "2026-03-04T06:00:00Z",
+          "2026-03-04T18:30:00Z"
+        ],
+        "basis": "计划点位于人为暂停窗口，不参与漏跑考核"
+      }
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "slot_at": "2026-03-05T00:15:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          14
+        ],
+        "produced_at": [
+          "2026-03-05T00:23:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-05T06:14:59Z",
+        "latency_seconds": [
+          480
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "slot_at": "2026-03-05T06:15:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          15
+        ],
+        "produced_at": [
+          "2026-03-05T06:24:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-05T12:14:59Z",
+        "latency_seconds": [
+          540
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "slot_at": "2026-03-05T12:15:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          16
+        ],
+        "produced_at": [
+          "2026-03-05T12:25:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-05T18:14:59Z",
+        "latency_seconds": [
+          600
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "slot_at": "2026-03-05T18:15:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          17
+        ],
+        "produced_at": [
+          "2026-03-05T18:26:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-06T00:14:59Z",
+        "latency_seconds": [
+          660
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "slot_at": "2026-03-06T00:15:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          18
+        ],
+        "produced_at": [
+          "2026-03-06T00:22:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-06T06:14:59Z",
+        "latency_seconds": [
+          420
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "slot_at": "2026-03-06T06:15:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          19
+        ],
+        "produced_at": [
+          "2026-03-06T06:23:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-06T12:14:59Z",
+        "latency_seconds": [
+          480
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "slot_at": "2026-03-06T12:15:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          20
+        ],
+        "produced_at": [
+          "2026-03-06T12:24:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-06T18:14:59Z",
+        "latency_seconds": [
+          540
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "slot_at": "2026-03-06T18:15:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          21
+        ],
+        "produced_at": [
+          "2026-03-06T18:25:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-07T00:14:59Z",
+        "latency_seconds": [
+          600
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "slot_at": "2026-03-07T00:15:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          22
+        ],
+        "produced_at": [
+          "2026-03-07T00:26:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-07T06:14:59Z",
+        "latency_seconds": [
+          660
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "slot_at": "2026-03-07T06:15:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          23
+        ],
+        "produced_at": [
+          "2026-03-07T06:22:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-07T12:14:59Z",
+        "latency_seconds": [
+          420
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "slot_at": "2026-03-07T12:15:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          24
+        ],
+        "produced_at": [
+          "2026-03-07T12:23:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-07T18:14:59Z",
+        "latency_seconds": [
+          480
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "slot_at": "2026-03-07T18:15:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          25
+        ],
+        "produced_at": [
+          "2026-03-07T18:24:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-08T00:14:59Z",
+        "latency_seconds": [
+          540
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "slot_at": "2026-03-08T00:15:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          26
+        ],
+        "produced_at": [
+          "2026-03-08T00:25:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-08T06:14:59Z",
+        "latency_seconds": [
+          600
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "slot_at": "2026-03-08T06:15:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          27
+        ],
+        "produced_at": [
+          "2026-03-08T06:26:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-08T12:14:59Z",
+        "latency_seconds": [
+          660
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "slot_at": "2026-03-08T12:15:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          28
+        ],
+        "produced_at": [
+          "2026-03-08T12:22:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-08T18:14:59Z",
+        "latency_seconds": [
+          420
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "slot_at": "2026-03-08T18:15:00Z",
+      "state": "NOT_RUN",
+      "confidence": "high",
+      "evidence": {
+        "missing_evidence": [
+          "no_batch_output",
+          "no_success_run_record",
+          "watermark_not_advanced",
+          "stale_running_record"
+        ],
+        "started_records": 1,
+        "stale_running": true,
+        "grace_deadline": "2026-03-08T18:45:00Z",
+        "basis": "超过宽限期无批次、无成功执行记录，且水位未推进（基于产出反推，不看进程存活）"
+      }
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "slot_at": "2026-03-09T00:15:00Z",
+      "state": "NOT_RUN",
+      "confidence": "high",
+      "evidence": {
+        "missing_evidence": [
+          "no_batch_output",
+          "no_success_run_record",
+          "watermark_not_advanced"
+        ],
+        "started_records": 0,
+        "stale_running": false,
+        "grace_deadline": "2026-03-09T00:45:00Z",
+        "basis": "超过宽限期无批次、无成功执行记录，且水位未推进（基于产出反推，不看进程存活）"
+      }
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "slot_at": "2026-03-09T06:15:00Z",
+      "state": "NOT_RUN",
+      "confidence": "high",
+      "evidence": {
+        "missing_evidence": [
+          "no_batch_output",
+          "no_success_run_record",
+          "watermark_not_advanced"
+        ],
+        "started_records": 0,
+        "stale_running": false,
+        "grace_deadline": "2026-03-09T06:45:00Z",
+        "basis": "超过宽限期无批次、无成功执行记录，且水位未推进（基于产出反推，不看进程存活）"
+      }
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "slot_at": "2026-03-09T12:15:00Z",
+      "state": "NOT_RUN",
+      "confidence": "high",
+      "evidence": {
+        "missing_evidence": [
+          "no_batch_output",
+          "no_success_run_record",
+          "watermark_not_advanced"
+        ],
+        "started_records": 0,
+        "stale_running": false,
+        "grace_deadline": "2026-03-09T12:45:00Z",
+        "basis": "超过宽限期无批次、无成功执行记录，且水位未推进（基于产出反推，不看进程存活）"
+      }
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "slot_at": "2026-03-09T18:15:00Z",
+      "state": "NOT_RUN",
+      "confidence": "high",
+      "evidence": {
+        "missing_evidence": [
+          "no_batch_output",
+          "no_success_run_record",
+          "watermark_not_advanced"
+        ],
+        "started_records": 0,
+        "stale_running": false,
+        "grace_deadline": "2026-03-09T18:45:00Z",
+        "basis": "超过宽限期无批次、无成功执行记录，且水位未推进（基于产出反推，不看进程存活）"
+      }
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "slot_at": "2026-03-10T00:15:00Z",
+      "state": "NOT_RUN",
+      "confidence": "high",
+      "evidence": {
+        "missing_evidence": [
+          "no_batch_output",
+          "no_success_run_record",
+          "watermark_not_advanced"
+        ],
+        "started_records": 0,
+        "stale_running": false,
+        "grace_deadline": "2026-03-10T00:45:00Z",
+        "basis": "超过宽限期无批次、无成功执行记录，且水位未推进（基于产出反推，不看进程存活）"
+      }
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "slot_at": "2026-03-10T06:15:00Z",
+      "state": "NOT_RUN",
+      "confidence": "high",
+      "evidence": {
+        "missing_evidence": [
+          "no_batch_output",
+          "no_success_run_record",
+          "watermark_not_advanced"
+        ],
+        "started_records": 0,
+        "stale_running": false,
+        "grace_deadline": "2026-03-10T06:45:00Z",
+        "basis": "超过宽限期无批次、无成功执行记录，且水位未推进（基于产出反推，不看进程存活）"
+      }
+    },
+    {
+      "job_id": "etx_6h_utc",
+      "slot_at": "2026-03-10T12:15:00Z",
+      "state": "NOT_RUN",
+      "confidence": "high",
+      "evidence": {
+        "missing_evidence": [
+          "no_batch_output",
+          "no_success_run_record",
+          "watermark_not_advanced"
+        ],
+        "started_records": 0,
+        "stale_running": false,
+        "grace_deadline": "2026-03-10T12:45:00Z",
+        "basis": "超过宽限期无批次、无成功执行记录，且水位未推进（基于产出反推，不看进程存活）"
+      }
+    },
+    {
+      "job_id": "report_weekday",
+      "slot_at": "2026-03-02T01:20:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          50
+        ],
+        "produced_at": [
+          "2026-03-02T01:27:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-03T01:19:59Z",
+        "latency_seconds": [
+          420
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "report_weekday",
+      "slot_at": "2026-03-03T01:20:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          51
+        ],
+        "produced_at": [
+          "2026-03-03T01:28:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-04T01:19:59Z",
+        "latency_seconds": [
+          480
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "report_weekday",
+      "slot_at": "2026-03-04T01:20:00Z",
+      "state": "RAN_EMPTY",
+      "confidence": "medium",
+      "evidence": {
+        "run_started_at": "2026-03-04T01:21:00Z",
+        "run_finished_at": "2026-03-04T01:29:00Z",
+        "basis": "无批次产出但存在 status=success 的执行记录，判定为跑了但产出为空（0 行不写批次表）"
+      }
+    },
+    {
+      "job_id": "report_weekday",
+      "slot_at": "2026-03-05T01:20:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          52
+        ],
+        "produced_at": [
+          "2026-03-05T01:30:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-06T01:19:59Z",
+        "latency_seconds": [
+          600
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "report_weekday",
+      "slot_at": "2026-03-06T01:20:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          53
+        ],
+        "produced_at": [
+          "2026-03-06T01:31:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-09T01:19:59Z",
+        "latency_seconds": [
+          660
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "report_weekday",
+      "slot_at": "2026-03-09T01:20:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          54
+        ],
+        "produced_at": [
+          "2026-03-09T01:27:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-10T01:19:59Z",
+        "latency_seconds": [
+          420
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    },
+    {
+      "job_id": "report_weekday",
+      "slot_at": "2026-03-10T01:20:00Z",
+      "state": "RAN_WITH_OUTPUT",
+      "confidence": "high",
+      "evidence": {
+        "batch_nos": [
+          55
+        ],
+        "produced_at": [
+          "2026-03-10T01:28:00Z"
+        ],
+        "row_count": 120,
+        "watermark": "2026-03-11T01:19:59Z",
+        "latency_seconds": [
+          480
+        ],
+        "duplicate_batches": false,
+        "basis": "存在归属本窗口的批次产出（按窗口右端点对齐）"
+      }
+    }
+  ],
+  "findings": [
+    {
+      "type": "MISSED_RUN",
+      "job_id": "billing_hourly_sh",
+      "severity": "critical",
+      "evidence": {
+        "slots": [
+          "2026-03-03T02:30:00Z"
+        ],
+        "count": 1,
+        "first_slot": "2026-03-03T02:30:00Z",
+        "last_slot": "2026-03-03T02:30:00Z",
+        "evidence_types": [
+          "no_batch_output",
+          "no_success_run_record",
+          "watermark_not_advanced"
+        ],
+        "basis": "到点后超过宽限期仍无批次产出；无对应窗口的成功执行记录；水位未推进"
+      }
+    },
+    {
+      "type": "PAUSE_VIOLATION",
+      "job_id": "etx_6h_utc",
+      "severity": "warning",
+      "evidence": {
+        "batch_no": 800,
+        "window_end": "2026-03-04T09:12:00Z",
+        "produced_at": "2026-03-04T09:11:00Z",
+        "row_count": 53,
+        "basis": "产出动作发生在人为暂停区间内（批次窗口擦边不算）"
+      }
+    },
+    {
+      "type": "BATCH_GAP",
+      "job_id": "etx_6h_utc",
+      "severity": "info",
+      "evidence": {
+        "batch_no": 800,
+        "prev_batch_no": 28,
+        "window_end": "2026-03-04T09:12:00Z",
+        "paused": true,
+        "basis": "批次号不连续（暂停期间可解释，否则需人工确认漏批）"
+      }
+    },
+    {
+      "type": "BATCH_GAP",
+      "job_id": "etx_6h_utc",
+      "severity": "warning",
+      "evidence": {
+        "batch_no": 908,
+        "prev_batch_no": 800,
+        "window_end": "2026-03-03T06:15:00Z",
+        "paused": false,
+        "basis": "批次号不连续（暂停期间可解释，否则需人工确认漏批）"
+      }
+    },
+    {
+      "type": "DUPLICATE_OUTPUT",
+      "job_id": "etx_6h_utc",
+      "severity": "critical",
+      "evidence": {
+        "slot": "2026-03-03T00:15:00Z",
+        "batch_nos": [
+          9,
+          908
+        ],
+        "produced_at": [
+          "2026-03-03T00:25:00Z",
+          "2026-03-03T02:27:00Z"
+        ],
+        "row_counts": [
+          120,
+          120
+        ],
+        "signals": [
+          "same_window_multiple_batches",
+          "identical_watermark"
+        ],
+        "basis": "同一计划窗口出现多份产出，典型于补偿执行重放"
+      }
+    },
+    {
+      "type": "MISSED_RUN",
+      "job_id": "etx_6h_utc",
+      "severity": "critical",
+      "evidence": {
+        "slots": [
+          "2026-03-08T18:15:00Z",
+          "2026-03-09T00:15:00Z",
+          "2026-03-09T06:15:00Z",
+          "2026-03-09T12:15:00Z",
+          "2026-03-09T18:15:00Z",
+          "2026-03-10T00:15:00Z",
+          "2026-03-10T06:15:00Z",
+          "2026-03-10T12:15:00Z"
+        ],
+        "count": 8,
+        "first_slot": "2026-03-08T18:15:00Z",
+        "last_slot": "2026-03-10T12:15:00Z",
+        "evidence_types": [
+          "no_batch_output",
+          "no_success_run_record",
+          "stale_running_record",
+          "watermark_not_advanced"
+        ],
+        "basis": "到点后超过宽限期仍无批次产出；无对应窗口的成功执行记录；水位未推进"
+      }
+    },
+    {
+      "type": "STUCK",
+      "job_id": "etx_6h_utc",
+      "severity": "critical",
+      "evidence": {
+        "started_at": "2026-03-08T18:17:00Z",
+        "stuck_minutes": 2563,
+        "max_run_minutes": 40,
+        "window_end": "2026-03-09T00:15:00Z",
+        "basis": "执行记录停留在 running 超过最大时长，其后计划窗口均无产出/无成功记录"
+      }
+    },
+    {
+      "type": "PAUSE_VIOLATION",
+      "job_id": "etx_6h_utc",
+      "severity": "warning",
+      "evidence": {
+        "started_at": "2026-03-04T09:05:00Z",
+        "pause_window": [
+          "2026-03-04T06:00:00Z",
+          "2026-03-04T18:30:00Z"
+        ],
+        "basis": "人为暂停窗口内存在成功执行记录"
+      }
+    }
+  ],
+  "state_totals": {
+    "NOT_RUN": 9,
+    "RAN_EMPTY": 2,
+    "RAN_WITH_OUTPUT": 270,
+    "PAUSED": 3
+  },
+  "finding_totals": {
+    "BATCH_GAP": 2,
+    "DUPLICATE_OUTPUT": 1,
+    "MISSED_RUN": 2,
+    "PAUSE_VIOLATION": 2,
+    "STUCK": 1,
+    "WATERMARK_REGRESSION": 0
+  }
+}
