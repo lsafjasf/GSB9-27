@@ -1,0 +1,23 @@
+{
+  "default_policy": "deny",
+  "types": {
+    "app_types.Vector": {
+      "constructors": ["__init__", "from_pair"]
+    },
+    "app_types.User": {
+      "constructors": ["__init__"]
+    },
+    "builtins.tuple": {
+      "constructors": ["__init__"]
+    }
+  },
+  "aliases": {
+    "vector": "app_types.Vector",
+    "user": "app_types.User"
+  },
+  "limits": {
+    "max_depth": 64,
+    "max_nodes": 10000,
+    "max_bytes": 1048576
+  }
+}
