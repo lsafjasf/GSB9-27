@@ -1,0 +1,2306 @@
+[
+ {
+  "label": "missing-config",
+  "message": "FileNotFoundError: [Errno 2] No such file or directory: '/etc/app/conf-92855225.yaml'\n  File \"/app/boot.py\", line 327, in load_config\n    open(path)\n  File \"/app/boot.py\", line 327, in main\n    load_config()"
+ },
+ {
+  "label": "assert-status-500",
+  "message": "AssertionError: expected status 200 but got 500 for POST /orders\n  context: attempt=83304196 elapsed=67399s trace=32015ceb-5008-0998-e9c9-7aaeacc9f355"
+ },
+ {
+  "label": "query-timeout",
+  "message": "TimeoutError: SQL query exceeded deadline of 7710ms\n  File \"/app/dao/report.py\", line 381, in run_report\n    cur.execute(SQL)\n  File \"/app/dao/report.py\", line 381, in <module>\n    run_report()  # obj at 0x59146c0c9497"
+ },
+ {
+  "label": "assert-status-500",
+  "message": "AssertionError: expected status 200 but got 500 for POST /orders (request_id=req-42174006, took 57311ms, at 2026-09-21 16:59:50)"
+ },
+ {
+  "label": "assert-status-500",
+  "message": "AssertionError: expected status 200 but got 500 for POST /orders\n  context: attempt=57717854 elapsed=67593s trace=3855efc4-176f-831e-1e91-5e71b2b6597f"
+ },
+ {
+  "label": "query-timeout",
+  "message": "TimeoutError: SQL query exceeded deadline of 68275ms\n  File \"/app/dao/report.py\", line 392, in run_report\n    cur.execute(SQL)\n  File \"/app/dao/report.py\", line 392, in <module>\n    run_report()  # obj at 0xee97b781328d"
+ },
+ {
+  "label": "npe-user-null",
+  "message": "java.lang.NullPointerException: Cannot invoke \"String.length()\" because \"user\" is null\n\tat com.shop.UserService.getProfile(UserService.java:364)\n\tat com.shop.UserController.profile(UserController.java:364)\n\tat com.shop.Main.main(Main.java:364)\n\t... trace_id=72f66b0b-9f6e-a424-8cd8-02bf4e811907"
+ },
+ {
+  "label": "assert-list-diff",
+  "message": "AssertionError: lists differ: [1, 2, 3] != [1, 2, 4]\nFirst differing element 2: 3 != 4 (case #57767949, seed=57767949)"
+ },
+ {
+  "label": "npe-user-null",
+  "message": "java.lang.NullPointerException: Cannot invoke \"String.length()\" because \"user\" is null\n\tat com.shop.UserService.getProfile(UserService.java:145)\n\tat com.shop.UserController.profile(UserController.java:145)\n\tat com.shop.Main.main(Main.java:145)\n\t... trace_id=ae7f1819-7f38-d8b4-1eac-8e78dfe1f78d"
+ },
+ {
+  "label": "redis-conn-refused",
+  "message": "ConnectionRefusedError: [Errno 111] Connection refused: redis://10.0.0.9:6379 (attempt 3, waited 13506ms, pid=45329924)"
+ },
+ {
+  "label": "oom-heap",
+  "message": "java.lang.OutOfMemoryError: Java heap space\n\tat java.util.Arrays.copyOf(Arrays.java:321)\n\tat com.shop.ReportBuilder.build(ReportBuilder.java:321)\n\tat com.shop.Job.run(Job.java:321)  # alloc at 0xe48a37cbaf30, used 26557ms"
+ },
+ {
+  "label": "redis-conn-refused",
+  "message": "ConnectionRefusedError: [Errno 111] Connection refused: redis://10.0.0.9:6379 (attempt 3, waited 67364ms, pid=41184882)"
+ },
+ {
+  "label": "keyerror-price",
+  "message": "Traceback (most recent call last):\n  File \"/app/tests/test_order.py\", line 305, in test_create\n    create_order(items)\n  File \"/app/svc/order.py\", line 305, in create_order\n    total = sum(i[\"price\"] for i in items)\nKeyError: 'price'  [request_id=req-63721593, took 85769ms]"
+ },
+ {
+  "label": "missing-config",
+  "message": "FileNotFoundError: [Errno 2] No such file or directory: '/etc/app/conf-40496971.yaml'\n  File \"/app/boot.py\", line 215, in load_config\n    open(path)\n  File \"/app/boot.py\", line 215, in main\n    load_config()"
+ },
+ {
+  "label": "typeerror-concat",
+  "message": "TypeError: can only concatenate str (not \"int\") to str\n  File \"/app/util/fmt.py\", line 336, in render\n    return prefix + count\n  File \"/app/api/view.py\", line 336, in get\n    render(c)  [trace_id=6d56420d-451a-d50e-bb65-cb02c6eaffcf]"
+ },
+ {
+  "label": "keyerror-price",
+  "message": "Traceback (most recent call last):\n  File \"/app/jobs/retry.py\", line 220, in <module>\n    create_order(payload)\n  File \"/app/svc/order.py\", line 220, in create_order\n    total = sum(i[\"price\"] for i in items)\nKeyError: 'price'  [request_id=req-49207473, took 16523ms]"
+ },
+ {
+  "label": "oom-heap",
+  "message": "java.lang.OutOfMemoryError: Java heap space\n\tat java.util.Arrays.copyOf(Arrays.java:308)\n\tat com.shop.ReportBuilder.build(ReportBuilder.java:308)\n\tat com.shop.Job.run(Job.java:308)  # alloc at 0xbd45f16787ca, used 37796ms"
+ },
+ {
+  "label": "query-timeout",
+  "message": "TimeoutError: SQL query exceeded deadline of 18147ms\n  File \"/app/dao/report.py\", line 182, in run_report\n    cur.execute(SQL)\n  File \"/app/dao/report.py\", line 182, in <module>\n    run_report()  # obj at 0xc2e7173bca46"
+ },
+ {
+  "label": "log-permission",
+  "message": "PermissionError: [Errno 13] Permission denied: '/var/log/app/30880580.log' (uid=1000, obj 0x4c8ec8df92d3)"
+ },
+ {
+  "label": "npe-user-null",
+  "message": "java.lang.NullPointerException: Cannot invoke \"String.length()\" because \"user\" is null\n\tat com.shop.UserService.getProfile(UserService.java:43)\n\tat com.shop.UserController.profile(UserController.java:43)\n\tat com.shop.Main.main(Main.java:43)\n\t... trace_id=c06f294c-5fe5-849e-15ef-1021fff938b3"
+ },
+ {
+  "label": "keyerror-price",
+  "message": "Traceback (most recent call last):\n  File \"/app/jobs/retry.py\", line 50, in <module>\n    create_order(payload)\n  File \"/app/svc/order.py\", line 50, in create_order\n    total = sum(i[\"price\"] for i in items)\nKeyError: 'price'  [request_id=req-92206826, took 24366ms]"
+ },
+ {
+  "label": "decode-utf8",
+  "message": "UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 12: invalid start byte\n  File \"/app/io/loader.py\", line 116, in load\n    raw.decode(\"utf-8\")  (file=/tmp/blob-20715412.bin, read 66078ms)"
+ },
+ {
+  "label": "oom-heap",
+  "message": "java.lang.OutOfMemoryError: Java heap space\n\tat java.util.Arrays.copyOf(Arrays.java:328)\n\tat com.shop.ReportBuilder.build(ReportBuilder.java:328)\n\tat com.shop.Job.run(Job.java:328)  # alloc at 0x53a0713d63f4, used 45257ms"
+ },
+ {
+  "label": "npe-user-null",
+  "message": "java.lang.NullPointerException: Cannot invoke \"String.length()\" because \"user\" is null\n\tat com.shop.UserService.getProfile(UserService.java:44)\n\tat com.shop.UserController.profile(UserController.java:44)\n\tat com.shop.Main.main(Main.java:44)\n\t... trace_id=cfeab0bd-19d9-bd4b-4a72-a415b4595530"
+ },
+ {
+  "label": "typeerror-concat",
+  "message": "TypeError: can only concatenate str (not \"int\") to str\n  File \"/app/util/fmt.py\", line 192, in render\n    return prefix + count\n  File \"/app/api/view.py\", line 192, in get\n    render(c)  [trace_id=0d1a7049-b298-6334-9815-c1c4d028978e]"
+ },
+ {
+  "label": "redis-conn-refused",
+  "message": "ConnectionRefusedError: [Errno 111] Connection refused: redis://10.0.0.9:6379 (attempt 3, waited 11820ms, pid=56845335)"
+ },
+ {
+  "label": "assert-status-404",
+  "message": "AssertionError: expected status 200 but got 404 for GET /users/69073566 (took 9659ms)"
+ },
+ {
+  "label": "assert-status-404",
+  "message": "AssertionError: expected status 200 but got 404 for GET /users/69097831 (took 53490ms)"
+ },
+ {
+  "label": "assert-status-500",
+  "message": "AssertionError: expected status 200 but got 500 for POST /orders\n  context: attempt=76875318 elapsed=17224s trace=9d6a0f6b-2e19-0873-5f86-032c568f6e71"
+ },
+ {
+  "label": "typeerror-concat",
+  "message": "TypeError: can only concatenate str (not \"int\") to str\n  File \"/app/util/fmt.py\", line 391, in render\n    return prefix + count\n  File \"/app/api/view.py\", line 391, in get\n    render(c)  [trace_id=44bf98e9-5e53-d270-71a8-c67a8ab5f6fe]"
+ },
+ {
+  "label": "assert-list-diff",
+  "message": "AssertionError: lists differ: [1, 2, 3] != [1, 2, 4]\nFirst differing element 2: 3 != 4 (case #39983547, seed=39983547)"
+ },
+ {
+  "label": "assert-list-diff",
+  "message": "AssertionError: lists differ: [1, 2, 3] != [1, 2, 4]\nFirst differing element 2: 3 != 4 (case #95167763, seed=95167763)"
+ },
+ {
+  "label": "oom-heap",
+  "message": "java.lang.OutOfMemoryError: Java heap space\n\tat java.util.Arrays.copyOf(Arrays.java:288)\n\tat com.shop.ReportBuilder.build(ReportBuilder.java:288)\n\tat com.shop.Job.run(Job.java:288)  # alloc at 0x25b2ebbe4341, used 5492ms"
+ },
+ {
+  "label": "typeerror-concat",
+  "message": "TypeError: can only concatenate str (not \"int\") to str\n  File \"/app/util/fmt.py\", line 201, in render\n    return prefix + count\n  File \"/app/api/view.py\", line 201, in get\n    render(c)  [trace_id=63019d63-3ca8-cf5c-df69-505d8ab2b65c]"
+ },
+ {
+  "label": "assert-status-404",
+  "message": "AssertionError: expected status 200 but got 404 for GET /users/33188710 (took 62898ms)"
+ },
+ {
+  "label": "npe-user-null",
+  "message": "java.lang.NullPointerException: Cannot invoke \"String.length()\" because \"user\" is null\n\tat com.shop.UserService.getProfile(UserService.java:215)\n\tat com.shop.UserController.profile(UserController.java:215)\n\tat com.shop.Main.main(Main.java:215)\n\t... trace_id=bd9b3db2-648c-ae24-5107-ba23abf0bace"
+ },
+ {
+  "label": "missing-config",
+  "message": "FileNotFoundError: [Errno 2] No such file or directory: '/etc/app/conf-11616565.yaml'\n  File \"/app/boot.py\", line 227, in load_config\n    open(path)\n  File \"/app/boot.py\", line 227, in main\n    load_config()"
+ },
+ {
+  "label": "query-timeout",
+  "message": "TimeoutError: SQL query exceeded deadline of 33600ms\n  File \"/app/dao/report.py\", line 388, in run_report\n    cur.execute(SQL)\n  File \"/app/dao/report.py\", line 388, in <module>\n    run_report()  # obj at 0xcb9a9190ebc1"
+ },
+ {
+  "label": "typeerror-concat",
+  "message": "TypeError: can only concatenate str (not \"int\") to str\n  File \"/app/util/fmt.py\", line 224, in render\n    return prefix + count\n  File \"/app/api/view.py\", line 224, in get\n    render(c)  [trace_id=400c01fd-a931-6c8f-4982-355af2185c41]"
+ },
+ {
+  "label": "assert-status-404",
+  "message": "AssertionError: expected status 200 but got 404 for GET /users/9736325 (took 48181ms)"
+ },
+ {
+  "label": "assert-list-diff",
+  "message": "AssertionError: lists differ: [1, 2, 3] != [1, 2, 4]\nFirst differing element 2: 3 != 4 (case #70463524, seed=70463524)"
+ },
+ {
+  "label": "query-timeout",
+  "message": "TimeoutError: SQL query exceeded deadline of 36783ms\n  File \"/app/dao/report.py\", line 212, in run_report\n    cur.execute(SQL)\n  File \"/app/dao/report.py\", line 212, in <module>\n    run_report()  # obj at 0xa274c29954b6"
+ },
+ {
+  "label": "decode-utf8",
+  "message": "UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 12: invalid start byte\n  File \"/app/io/loader.py\", line 356, in load\n    raw.decode(\"utf-8\")  (file=/tmp/blob-71317248.bin, read 88511ms)"
+ },
+ {
+  "label": "assert-status-404",
+  "message": "AssertionError: expected status 200 but got 404 for GET /users/69740925 (took 35372ms)"
+ },
+ {
+  "label": "keyerror-price",
+  "message": "Traceback (most recent call last):\n  File \"/app/tests/test_order.py\", line 225, in test_create\n    create_order(items)\n  File \"/app/svc/order.py\", line 225, in create_order\n    total = sum(i[\"price\"] for i in items)\nKeyError: 'price'  [request_id=req-36327158, took 86936ms]"
+ },
+ {
+  "label": "log-permission",
+  "message": "PermissionError: [Errno 13] Permission denied: '/var/log/app/12347540.log' (uid=1000, obj 0xbeed61fa8aa5)"
+ },
+ {
+  "label": "assert-status-500",
+  "message": "AssertionError: expected status 200 but got 500 for POST /orders (request_id=req-98088469, took 11490ms, at 2026-09-17 06:28:13)"
+ },
+ {
+  "label": "assert-list-diff",
+  "message": "AssertionError: lists differ: [1, 2, 3] != [1, 2, 4]\nFirst differing element 2: 3 != 4 (case #70252794, seed=70252794)"
+ },
+ {
+  "label": "assert-status-404",
+  "message": "AssertionError: expected status 200 but got 404 for GET /users/21047512 (took 13226ms)"
+ },
+ {
+  "label": "decode-utf8",
+  "message": "UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 12: invalid start byte\n  File \"/app/io/loader.py\", line 288, in load\n    raw.decode(\"utf-8\")  (file=/tmp/blob-39336683.bin, read 39418ms)"
+ },
+ {
+  "label": "redis-conn-refused",
+  "message": "ConnectionRefusedError: [Errno 111] Connection refused: redis://10.0.0.9:6379 (attempt 3, waited 7584ms, pid=81882628)"
+ },
+ {
+  "label": "log-permission",
+  "message": "PermissionError: [Errno 13] Permission denied: '/var/log/app/77557871.log' (uid=1000, obj 0xbff761f7fb70)"
+ },
+ {
+  "label": "assert-list-diff",
+  "message": "AssertionError: lists differ: [1, 2, 3] != [1, 2, 4]\nFirst differing element 2: 3 != 4 (case #93021564, seed=93021564)"
+ },
+ {
+  "label": "log-permission",
+  "message": "PermissionError: [Errno 13] Permission denied: '/var/log/app/80305501.log' (uid=1000, obj 0x9cee6445a2fa)"
+ },
+ {
+  "label": "oom-heap",
+  "message": "java.lang.OutOfMemoryError: Java heap space\n\tat java.util.Arrays.copyOf(Arrays.java:254)\n\tat com.shop.ReportBuilder.build(ReportBuilder.java:254)\n\tat com.shop.Job.run(Job.java:254)  # alloc at 0x85b7bd5c2a4f, used 19935ms"
+ },
+ {
+  "label": "oom-heap",
+  "message": "java.lang.OutOfMemoryError: Java heap space\n\tat java.util.Arrays.copyOf(Arrays.java:215)\n\tat com.shop.ReportBuilder.build(ReportBuilder.java:215)\n\tat com.shop.Job.run(Job.java:215)  # alloc at 0x303dc9b9bc7e, used 12171ms"
+ },
+ {
+  "label": "assert-list-diff",
+  "message": "AssertionError: lists differ: [1, 2, 3] != [1, 2, 4]\nFirst differing element 2: 3 != 4 (case #24520617, seed=24520617)"
+ },
+ {
+  "label": "missing-config",
+  "message": "FileNotFoundError: [Errno 2] No such file or directory: '/etc/app/conf-40024396.yaml'\n  File \"/app/boot.py\", line 335, in load_config\n    open(path)\n  File \"/app/boot.py\", line 335, in main\n    load_config()"
+ },
+ {
+  "label": "assert-status-404",
+  "message": "AssertionError: expected status 200 but got 404 for GET /users/72417106 (took 46845ms)"
+ },
+ {
+  "label": "typeerror-concat",
+  "message": "TypeError: can only concatenate str (not \"int\") to str\n  File \"/app/util/fmt.py\", line 61, in render\n    return prefix + count\n  File \"/app/api/view.py\", line 61, in get\n    render(c)  [trace_id=24e09ca0-f43f-ae6d-7dd3-f9b4112bc19f]"
+ },
+ {
+  "label": "assert-list-diff",
+  "message": "AssertionError: lists differ: [1, 2, 3] != [1, 2, 4]\nFirst differing element 2: 3 != 4 (case #53549461, seed=53549461)"
+ },
+ {
+  "label": "npe-user-null",
+  "message": "java.lang.NullPointerException: Cannot invoke \"String.length()\" because \"user\" is null\n\tat com.shop.UserService.getProfile(UserService.java:97)\n\tat com.shop.UserController.profile(UserController.java:97)\n\tat com.shop.Main.main(Main.java:97)\n\t... trace_id=7b19c32a-f523-5c11-6acb-eea3eedb248d"
+ },
+ {
+  "label": "assert-status-404",
+  "message": "AssertionError: expected status 200 but got 404 for GET /users/77719343 (took 83210ms)"
+ },
+ {
+  "label": "log-permission",
+  "message": "PermissionError: [Errno 13] Permission denied: '/var/log/app/67180276.log' (uid=1000, obj 0x2e67df523e48)"
+ },
+ {
+  "label": "assert-status-404",
+  "message": "AssertionError: expected status 200 but got 404 for GET /users/88322924 (took 7403ms)"
+ },
+ {
+  "label": "log-permission",
+  "message": "PermissionError: [Errno 13] Permission denied: '/var/log/app/53285294.log' (uid=1000, obj 0x2b4e3dcca71)"
+ },
+ {
+  "label": "redis-conn-refused",
+  "message": "ConnectionRefusedError: [Errno 111] Connection refused: redis://10.0.0.9:6379 (attempt 3, waited 77943ms, pid=69074610)"
+ },
+ {
+  "label": "missing-config",
+  "message": "FileNotFoundError: [Errno 2] No such file or directory: '/etc/app/conf-54749675.yaml'\n  File \"/app/boot.py\", line 207, in load_config\n    open(path)\n  File \"/app/boot.py\", line 207, in main\n    load_config()"
+ },
+ {
+  "label": "typeerror-concat",
+  "message": "TypeError: can only concatenate str (not \"int\") to str\n  File \"/app/util/fmt.py\", line 218, in render\n    return prefix + count\n  File \"/app/api/view.py\", line 218, in get\n    render(c)  [trace_id=557ad5ec-a538-fe5a-0e6c-56639231744d]"
+ },
+ {
+  "label": "assert-list-diff",
+  "message": "AssertionError: lists differ: [1, 2, 3] != [1, 2, 4]\nFirst differing element 2: 3 != 4 (case #65106136, seed=65106136)"
+ },
+ {
+  "label": "missing-config",
+  "message": "FileNotFoundError: [Errno 2] No such file or directory: '/etc/app/conf-25430059.yaml'\n  File \"/app/boot.py\", line 218, in load_config\n    open(path)\n  File \"/app/boot.py\", line 218, in main\n    load_config()"
+ },
+ {
+  "label": "typeerror-concat",
+  "message": "TypeError: can only concatenate str (not \"int\") to str\n  File \"/app/util/fmt.py\", line 319, in render\n    return prefix + count\n  File \"/app/api/view.py\", line 319, in get\n    render(c)  [trace_id=a74145c4-1886-6b40-771b-305fb173e614]"
+ },
+ {
+  "label": "typeerror-concat",
+  "message": "TypeError: can only concatenate str (not \"int\") to str\n  File \"/app/util/fmt.py\", line 362, in render\n    return prefix + count\n  File \"/app/api/view.py\", line 362, in get\n    render(c)  [trace_id=c2e097f7-80d5-caf7-6e2d-c3a50bde6c66]"
+ },
+ {
+  "label": "decode-utf8",
+  "message": "UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 12: invalid start byte\n  File \"/app/io/loader.py\", line 129, in load\n    raw.decode(\"utf-8\")  (file=/tmp/blob-42962799.bin, read 77082ms)"
+ },
+ {
+  "label": "missing-config",
+  "message": "FileNotFoundError: [Errno 2] No such file or directory: '/etc/app/conf-69039276.yaml'\n  File \"/app/boot.py\", line 44, in load_config\n    open(path)\n  File \"/app/boot.py\", line 44, in main\n    load_config()"
+ },
+ {
+  "label": "assert-status-404",
+  "message": "AssertionError: expected status 200 but got 404 for GET /users/86870596 (took 83714ms)"
+ },
+ {
+  "label": "assert-status-404",
+  "message": "AssertionError: expected status 200 but got 404 for GET /users/18574940 (took 88636ms)"
+ },
+ {
+  "label": "assert-list-diff",
+  "message": "AssertionError: lists differ: [1, 2, 3] != [1, 2, 4]\nFirst differing element 2: 3 != 4 (case #75077792, seed=75077792)"
+ },
+ {
+  "label": "redis-conn-refused",
+  "message": "ConnectionRefusedError: [Errno 111] Connection refused: redis://10.0.0.9:6379 (attempt 3, waited 55560ms, pid=43549690)"
+ },
+ {
+  "label": "decode-utf8",
+  "message": "UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 12: invalid start byte\n  File \"/app/io/loader.py\", line 201, in load\n    raw.decode(\"utf-8\")  (file=/tmp/blob-12185865.bin, read 20623ms)"
+ },
+ {
+  "label": "keyerror-price",
+  "message": "Traceback (most recent call last):\n  File \"/app/jobs/retry.py\", line 343, in <module>\n    create_order(payload)\n  File \"/app/svc/order.py\", line 343, in create_order\n    total = sum(i[\"price\"] for i in items)\nKeyError: 'price'  [request_id=req-75971800, took 82235ms]"
+ },
+ {
+  "label": "assert-status-500",
+  "message": "AssertionError: expected status 200 but got 500 for POST /orders (request_id=req-65878061, took 46950ms, at 2026-09-16 14:01:35)"
+ },
+ {
+  "label": "typeerror-concat",
+  "message": "TypeError: can only concatenate str (not \"int\") to str\n  File \"/app/util/fmt.py\", line 127, in render\n    return prefix + count\n  File \"/app/api/view.py\", line 127, in get\n    render(c)  [trace_id=691fbafe-da7b-ac96-be7f-6dc1cf021674]"
+ },
+ {
+  "label": "missing-config",
+  "message": "FileNotFoundError: [Errno 2] No such file or directory: '/etc/app/conf-29696563.yaml'\n  File \"/app/boot.py\", line 263, in load_config\n    open(path)\n  File \"/app/boot.py\", line 263, in main\n    load_config()"
+ },
+ {
+  "label": "assert-status-500",
+  "message": "AssertionError: expected status 200 but got 500 for POST /orders (request_id=req-55745442, took 23677ms, at 2026-09-20 22:04:13)"
+ },
+ {
+  "label": "assert-status-500",
+  "message": "AssertionError: expected status 200 but got 500 for POST /orders\n  context: attempt=95568179 elapsed=88124s trace=5e8343a4-884f-6a8c-6885-cb7b9e246feb"
+ },
+ {
+  "label": "log-permission",
+  "message": "PermissionError: [Errno 13] Permission denied: '/var/log/app/23776714.log' (uid=1000, obj 0xa2ca3b398abe)"
+ },
+ {
+  "label": "npe-user-null",
+  "message": "java.lang.NullPointerException: Cannot invoke \"String.length()\" because \"user\" is null\n\tat com.shop.UserService.getProfile(UserService.java:272)\n\tat com.shop.UserController.profile(UserController.java:272)\n\tat com.shop.Main.main(Main.java:272)\n\t... trace_id=5c3d50c5-7885-d9b4-aa1a-963f718f62df"
+ },
+ {
+  "label": "oom-heap",
+  "message": "java.lang.OutOfMemoryError: Java heap space\n\tat java.util.Arrays.copyOf(Arrays.java:247)\n\tat com.shop.ReportBuilder.build(ReportBuilder.java:247)\n\tat com.shop.Job.run(Job.java:247)  # alloc at 0x9ace130aaee2, used 54872ms"
+ },
+ {
+  "label": "typeerror-concat",
+  "message": "TypeError: can only concatenate str (not \"int\") to str\n  File \"/app/util/fmt.py\", line 330, in render\n    return prefix + count\n  File \"/app/api/view.py\", line 330, in get\n    render(c)  [trace_id=470c7897-ed53-0d3c-0d5b-402cd216a03a]"
+ },
+ {
+  "label": "redis-conn-refused",
+  "message": "ConnectionRefusedError: [Errno 111] Connection refused: redis://10.0.0.9:6379 (attempt 3, waited 78778ms, pid=11553562)"
+ },
+ {
+  "label": "typeerror-concat",
+  "message": "TypeError: can only concatenate str (not \"int\") to str\n  File \"/app/util/fmt.py\", line 144, in render\n    return prefix + count\n  File \"/app/api/view.py\", line 144, in get\n    render(c)  [trace_id=97bd5f94-421c-7042-6d5d-7e36afa9967e]"
+ },
+ {
+  "label": "decode-utf8",
+  "message": "UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 12: invalid start byte\n  File \"/app/io/loader.py\", line 47, in load\n    raw.decode(\"utf-8\")  (file=/tmp/blob-52830277.bin, read 17015ms)"
+ },
+ {
+  "label": "log-permission",
+  "message": "PermissionError: [Errno 13] Permission denied: '/var/log/app/71701040.log' (uid=1000, obj 0x8ba1f3c59e3a)"
+ },
+ {
+  "label": "assert-status-404",
+  "message": "AssertionError: expected status 200 but got 404 for GET /users/5138430 (took 60066ms)"
+ },
+ {
+  "label": "oom-heap",
+  "message": "java.lang.OutOfMemoryError: Java heap space\n\tat java.util.Arrays.copyOf(Arrays.java:340)\n\tat com.shop.ReportBuilder.build(ReportBuilder.java:340)\n\tat com.shop.Job.run(Job.java:340)  # alloc at 0x82faadcb1cc7, used 9316ms"
+ },
+ {
+  "label": "log-permission",
+  "message": "PermissionError: [Errno 13] Permission denied: '/var/log/app/80042175.log' (uid=1000, obj 0x493bf84033f5)"
+ },
+ {
+  "label": "typeerror-concat",
+  "message": "TypeError: can only concatenate str (not \"int\") to str\n  File \"/app/util/fmt.py\", line 194, in render\n    return prefix + count\n  File \"/app/api/view.py\", line 194, in get\n    render(c)  [trace_id=c084e932-c3e2-d1cc-24da-c6bfcb1c5c50]"
+ },
+ {
+  "label": "npe-user-null",
+  "message": "java.lang.NullPointerException: Cannot invoke \"String.length()\" because \"user\" is null\n\tat com.shop.UserService.getProfile(UserService.java:378)\n\tat com.shop.UserController.profile(UserController.java:378)\n\tat com.shop.Main.main(Main.java:378)\n\t... trace_id=e0ef3276-3ad2-6e0b-3179-658fd049fe64"
+ },
+ {
+  "label": "query-timeout",
+  "message": "TimeoutError: SQL query exceeded deadline of 26193ms\n  File \"/app/dao/report.py\", line 98, in run_report\n    cur.execute(SQL)\n  File \"/app/dao/report.py\", line 98, in <module>\n    run_report()  # obj at 0xb05f54d51967"
+ },
+ {
+  "label": "typeerror-concat",
+  "message": "TypeError: can only concatenate str (not \"int\") to str\n  File \"/app/util/fmt.py\", line 44, in render\n    return prefix + count\n  File \"/app/api/view.py\", line 44, in get\n    render(c)  [trace_id=0b4cd826-cfd2-e509-6f2f-8a0f694fa8dc]"
+ },
+ {
+  "label": "decode-utf8",
+  "message": "UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 12: invalid start byte\n  File \"/app/io/loader.py\", line 158, in load\n    raw.decode(\"utf-8\")  (file=/tmp/blob-69092665.bin, read 1392ms)"
+ },
+ {
+  "label": "npe-user-null",
+  "message": "java.lang.NullPointerException: Cannot invoke \"String.length()\" because \"user\" is null\n\tat com.shop.UserService.getProfile(UserService.java:131)\n\tat com.shop.UserController.profile(UserController.java:131)\n\tat com.shop.Main.main(Main.java:131)\n\t... trace_id=5b576ac8-eb63-d176-3a18-90791fea4cd4"
+ },
+ {
+  "label": "assert-status-500",
+  "message": "AssertionError: expected status 200 but got 500 for POST /orders (request_id=req-10472368, took 31258ms, at 2026-09-24 19:12:40)"
+ },
+ {
+  "label": "assert-status-404",
+  "message": "AssertionError: expected status 200 but got 404 for GET /users/84737719 (took 3927ms)"
+ },
+ {
+  "label": "log-permission",
+  "message": "PermissionError: [Errno 13] Permission denied: '/var/log/app/50818406.log' (uid=1000, obj 0xab6598022efd)"
+ },
+ {
+  "label": "keyerror-price",
+  "message": "Traceback (most recent call last):\n  File \"/app/tests/test_order.py\", line 143, in test_create\n    create_order(items)\n  File \"/app/svc/order.py\", line 143, in create_order\n    total = sum(i[\"price\"] for i in items)\nKeyError: 'price'  [request_id=req-62112502, took 3815ms]"
+ },
+ {
+  "label": "redis-conn-refused",
+  "message": "ConnectionRefusedError: [Errno 111] Connection refused: redis://10.0.0.9:6379 (attempt 3, waited 56548ms, pid=67893470)"
+ },
+ {
+  "label": "assert-status-500",
+  "message": "AssertionError: expected status 200 but got 500 for POST /orders (request_id=req-17014909, took 22534ms, at 2026-09-24 01:32:29)"
+ },
+ {
+  "label": "keyerror-price",
+  "message": "Traceback (most recent call last):\n  File \"/app/tests/test_order.py\", line 361, in test_create\n    create_order(items)\n  File \"/app/svc/order.py\", line 361, in create_order\n    total = sum(i[\"price\"] for i in items)\nKeyError: 'price'  [request_id=req-54590044, took 86956ms]"
+ },
+ {
+  "label": "typeerror-concat",
+  "message": "TypeError: can only concatenate str (not \"int\") to str\n  File \"/app/util/fmt.py\", line 25, in render\n    return prefix + count\n  File \"/app/api/view.py\", line 25, in get\n    render(c)  [trace_id=46399c93-784c-0aa9-c02b-666b1369c272]"
+ },
+ {
+  "label": "keyerror-price",
+  "message": "Traceback (most recent call last):\n  File \"/app/jobs/retry.py\", line 33, in <module>\n    create_order(payload)\n  File \"/app/svc/order.py\", line 33, in create_order\n    total = sum(i[\"price\"] for i in items)\nKeyError: 'price'  [request_id=req-43396017, took 84009ms]"
+ },
+ {
+  "label": "assert-list-diff",
+  "message": "AssertionError: lists differ: [1, 2, 3] != [1, 2, 4]\nFirst differing element 2: 3 != 4 (case #78956504, seed=78956504)"
+ },
+ {
+  "label": "redis-conn-refused",
+  "message": "ConnectionRefusedError: [Errno 111] Connection refused: redis://10.0.0.9:6379 (attempt 3, waited 57370ms, pid=62038185)"
+ },
+ {
+  "label": "log-permission",
+  "message": "PermissionError: [Errno 13] Permission denied: '/var/log/app/51436135.log' (uid=1000, obj 0xb65131adefcf)"
+ },
+ {
+  "label": "query-timeout",
+  "message": "TimeoutError: SQL query exceeded deadline of 69993ms\n  File \"/app/dao/report.py\", line 22, in run_report\n    cur.execute(SQL)\n  File \"/app/dao/report.py\", line 22, in <module>\n    run_report()  # obj at 0x8a6328932009"
+ },
+ {
+  "label": "decode-utf8",
+  "message": "UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 12: invalid start byte\n  File \"/app/io/loader.py\", line 97, in load\n    raw.decode(\"utf-8\")  (file=/tmp/blob-34236724.bin, read 64712ms)"
+ },
+ {
+  "label": "query-timeout",
+  "message": "TimeoutError: SQL query exceeded deadline of 59401ms\n  File \"/app/dao/report.py\", line 45, in run_report\n    cur.execute(SQL)\n  File \"/app/dao/report.py\", line 45, in <module>\n    run_report()  # obj at 0x68f5a23ae1d2"
+ },
+ {
+  "label": "assert-list-diff",
+  "message": "AssertionError: lists differ: [1, 2, 3] != [1, 2, 4]\nFirst differing element 2: 3 != 4 (case #2184870, seed=2184870)"
+ },
+ {
+  "label": "redis-conn-refused",
+  "message": "ConnectionRefusedError: [Errno 111] Connection refused: redis://10.0.0.9:6379 (attempt 3, waited 47403ms, pid=7957934)"
+ },
+ {
+  "label": "redis-conn-refused",
+  "message": "ConnectionRefusedError: [Errno 111] Connection refused: redis://10.0.0.9:6379 (attempt 3, waited 15037ms, pid=57244543)"
+ },
+ {
+  "label": "redis-conn-refused",
+  "message": "ConnectionRefusedError: [Errno 111] Connection refused: redis://10.0.0.9:6379 (attempt 3, waited 17609ms, pid=25527886)"
+ },
+ {
+  "label": "assert-status-500",
+  "message": "AssertionError: expected status 200 but got 500 for POST /orders (request_id=req-30442828, took 38144ms, at 2026-09-08 15:18:25)"
+ },
+ {
+  "label": "assert-status-404",
+  "message": "AssertionError: expected status 200 but got 404 for GET /users/65312803 (took 13871ms)"
+ },
+ {
+  "label": "decode-utf8",
+  "message": "UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 12: invalid start byte\n  File \"/app/io/loader.py\", line 293, in load\n    raw.decode(\"utf-8\")  (file=/tmp/blob-98077403.bin, read 46772ms)"
+ },
+ {
+  "label": "typeerror-concat",
+  "message": "TypeError: can only concatenate str (not \"int\") to str\n  File \"/app/util/fmt.py\", line 106, in render\n    return prefix + count\n  File \"/app/api/view.py\", line 106, in get\n    render(c)  [trace_id=845aa461-753c-61d1-5862-ad298859c64a]"
+ },
+ {
+  "label": "npe-user-null",
+  "message": "java.lang.NullPointerException: Cannot invoke \"String.length()\" because \"user\" is null\n\tat com.shop.UserService.getProfile(UserService.java:181)\n\tat com.shop.UserController.profile(UserController.java:181)\n\tat com.shop.Main.main(Main.java:181)\n\t... trace_id=51332d8d-db63-0841-bdda-5353df21f3a0"
+ },
+ {
+  "label": "query-timeout",
+  "message": "TimeoutError: SQL query exceeded deadline of 62597ms\n  File \"/app/dao/report.py\", line 178, in run_report\n    cur.execute(SQL)\n  File \"/app/dao/report.py\", line 178, in <module>\n    run_report()  # obj at 0xb69d6e9baec7"
+ },
+ {
+  "label": "redis-conn-refused",
+  "message": "ConnectionRefusedError: [Errno 111] Connection refused: redis://10.0.0.9:6379 (attempt 3, waited 51691ms, pid=60233934)"
+ },
+ {
+  "label": "keyerror-price",
+  "message": "Traceback (most recent call last):\n  File \"/app/tests/test_order.py\", line 133, in test_create\n    create_order(items)\n  File \"/app/svc/order.py\", line 133, in create_order\n    total = sum(i[\"price\"] for i in items)\nKeyError: 'price'  [request_id=req-29522457, took 13186ms]"
+ },
+ {
+  "label": "keyerror-price",
+  "message": "Traceback (most recent call last):\n  File \"/app/tests/test_order.py\", line 221, in test_create\n    create_order(items)\n  File \"/app/svc/order.py\", line 221, in create_order\n    total = sum(i[\"price\"] for i in items)\nKeyError: 'price'  [request_id=req-24001843, took 81787ms]"
+ },
+ {
+  "label": "redis-conn-refused",
+  "message": "ConnectionRefusedError: [Errno 111] Connection refused: redis://10.0.0.9:6379 (attempt 3, waited 80228ms, pid=46070092)"
+ },
+ {
+  "label": "assert-list-diff",
+  "message": "AssertionError: lists differ: [1, 2, 3] != [1, 2, 4]\nFirst differing element 2: 3 != 4 (case #91256346, seed=91256346)"
+ },
+ {
+  "label": "npe-user-null",
+  "message": "java.lang.NullPointerException: Cannot invoke \"String.length()\" because \"user\" is null\n\tat com.shop.UserService.getProfile(UserService.java:153)\n\tat com.shop.UserController.profile(UserController.java:153)\n\tat com.shop.Main.main(Main.java:153)\n\t... trace_id=e636b745-bbec-5e0a-3bc1-519bc4724797"
+ },
+ {
+  "label": "missing-config",
+  "message": "FileNotFoundError: [Errno 2] No such file or directory: '/etc/app/conf-12967396.yaml'\n  File \"/app/boot.py\", line 205, in load_config\n    open(path)\n  File \"/app/boot.py\", line 205, in main\n    load_config()"
+ },
+ {
+  "label": "log-permission",
+  "message": "PermissionError: [Errno 13] Permission denied: '/var/log/app/82492460.log' (uid=1000, obj 0x85baf6e701c5)"
+ },
+ {
+  "label": "assert-status-500",
+  "message": "AssertionError: expected status 200 but got 500 for POST /orders (request_id=req-47162050, took 49043ms, at 2026-09-22 02:23:36)"
+ },
+ {
+  "label": "redis-conn-refused",
+  "message": "ConnectionRefusedError: [Errno 111] Connection refused: redis://10.0.0.9:6379 (attempt 3, waited 62489ms, pid=91721831)"
+ },
+ {
+  "label": "redis-conn-refused",
+  "message": "ConnectionRefusedError: [Errno 111] Connection refused: redis://10.0.0.9:6379 (attempt 3, waited 63283ms, pid=28968978)"
+ },
+ {
+  "label": "query-timeout",
+  "message": "TimeoutError: SQL query exceeded deadline of 24675ms\n  File \"/app/dao/report.py\", line 312, in run_report\n    cur.execute(SQL)\n  File \"/app/dao/report.py\", line 312, in <module>\n    run_report()  # obj at 0x984a68581fb0"
+ },
+ {
+  "label": "oom-heap",
+  "message": "java.lang.OutOfMemoryError: Java heap space\n\tat java.util.Arrays.copyOf(Arrays.java:319)\n\tat com.shop.ReportBuilder.build(ReportBuilder.java:319)\n\tat com.shop.Job.run(Job.java:319)  # alloc at 0x69992260b3e2, used 44664ms"
+ },
+ {
+  "label": "missing-config",
+  "message": "FileNotFoundError: [Errno 2] No such file or directory: '/etc/app/conf-37338572.yaml'\n  File \"/app/boot.py\", line 367, in load_config\n    open(path)\n  File \"/app/boot.py\", line 367, in main\n    load_config()"
+ },
+ {
+  "label": "oom-heap",
+  "message": "java.lang.OutOfMemoryError: Java heap space\n\tat java.util.Arrays.copyOf(Arrays.java:322)\n\tat com.shop.ReportBuilder.build(ReportBuilder.java:322)\n\tat com.shop.Job.run(Job.java:322)  # alloc at 0x8662ceec7b37, used 34422ms"
+ },
+ {
+  "label": "assert-list-diff",
+  "message": "AssertionError: lists differ: [1, 2, 3] != [1, 2, 4]\nFirst differing element 2: 3 != 4 (case #31114278, seed=31114278)"
+ },
+ {
+  "label": "decode-utf8",
+  "message": "UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 12: invalid start byte\n  File \"/app/io/loader.py\", line 32, in load\n    raw.decode(\"utf-8\")  (file=/tmp/blob-43805885.bin, read 87530ms)"
+ },
+ {
+  "label": "typeerror-concat",
+  "message": "TypeError: can only concatenate str (not \"int\") to str\n  File \"/app/util/fmt.py\", line 241, in render\n    return prefix + count\n  File \"/app/api/view.py\", line 241, in get\n    render(c)  [trace_id=84c4be54-cb71-b4fc-566e-3d107a0c65a8]"
+ },
+ {
+  "label": "assert-status-404",
+  "message": "AssertionError: expected status 200 but got 404 for GET /users/72169960 (took 70240ms)"
+ },
+ {
+  "label": "redis-conn-refused",
+  "message": "ConnectionRefusedError: [Errno 111] Connection refused: redis://10.0.0.9:6379 (attempt 3, waited 14305ms, pid=64370351)"
+ },
+ {
+  "label": "decode-utf8",
+  "message": "UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 12: invalid start byte\n  File \"/app/io/loader.py\", line 15, in load\n    raw.decode(\"utf-8\")  (file=/tmp/blob-92329633.bin, read 84696ms)"
+ },
+ {
+  "label": "decode-utf8",
+  "message": "UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 12: invalid start byte\n  File \"/app/io/loader.py\", line 195, in load\n    raw.decode(\"utf-8\")  (file=/tmp/blob-35169757.bin, read 20897ms)"
+ },
+ {
+  "label": "assert-status-500",
+  "message": "AssertionError: expected status 200 but got 500 for POST /orders (request_id=req-30378708, took 39990ms, at 2026-09-17 14:17:56)"
+ },
+ {
+  "label": "missing-config",
+  "message": "FileNotFoundError: [Errno 2] No such file or directory: '/etc/app/conf-57869073.yaml'\n  File \"/app/boot.py\", line 97, in load_config\n    open(path)\n  File \"/app/boot.py\", line 97, in main\n    load_config()"
+ },
+ {
+  "label": "decode-utf8",
+  "message": "UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 12: invalid start byte\n  File \"/app/io/loader.py\", line 131, in load\n    raw.decode(\"utf-8\")  (file=/tmp/blob-18313837.bin, read 70112ms)"
+ },
+ {
+  "label": "npe-user-null",
+  "message": "java.lang.NullPointerException: Cannot invoke \"String.length()\" because \"user\" is null\n\tat com.shop.UserService.getProfile(UserService.java:219)\n\tat com.shop.UserController.profile(UserController.java:219)\n\tat com.shop.Main.main(Main.java:219)\n\t... trace_id=c2a87d49-dc6a-12e1-9db2-bdfbfd9bac23"
+ },
+ {
+  "label": "keyerror-price",
+  "message": "Traceback (most recent call last):\n  File \"/app/jobs/retry.py\", line 355, in <module>\n    create_order(payload)\n  File \"/app/svc/order.py\", line 355, in create_order\n    total = sum(i[\"price\"] for i in items)\nKeyError: 'price'  [request_id=req-68035103, took 77469ms]"
+ },
+ {
+  "label": "decode-utf8",
+  "message": "UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 12: invalid start byte\n  File \"/app/io/loader.py\", line 316, in load\n    raw.decode(\"utf-8\")  (file=/tmp/blob-63527835.bin, read 29941ms)"
+ },
+ {
+  "label": "assert-list-diff",
+  "message": "AssertionError: lists differ: [1, 2, 3] != [1, 2, 4]\nFirst differing element 2: 3 != 4 (case #98558687, seed=98558687)"
+ },
+ {
+  "label": "assert-list-diff",
+  "message": "AssertionError: lists differ: [1, 2, 3] != [1, 2, 4]\nFirst differing element 2: 3 != 4 (case #10730771, seed=10730771)"
+ },
+ {
+  "label": "missing-config",
+  "message": "FileNotFoundError: [Errno 2] No such file or directory: '/etc/app/conf-91667727.yaml'\n  File \"/app/boot.py\", line 56, in load_config\n    open(path)\n  File \"/app/boot.py\", line 56, in main\n    load_config()"
+ },
+ {
+  "label": "typeerror-concat",
+  "message": "TypeError: can only concatenate str (not \"int\") to str\n  File \"/app/util/fmt.py\", line 132, in render\n    return prefix + count\n  File \"/app/api/view.py\", line 132, in get\n    render(c)  [trace_id=ce688591-dd0e-83b3-a435-57a13ced3bad]"
+ },
+ {
+  "label": "oom-heap",
+  "message": "java.lang.OutOfMemoryError: Java heap space\n\tat java.util.Arrays.copyOf(Arrays.java:254)\n\tat com.shop.ReportBuilder.build(ReportBuilder.java:254)\n\tat com.shop.Job.run(Job.java:254)  # alloc at 0xcd8caf30d86c, used 85358ms"
+ },
+ {
+  "label": "decode-utf8",
+  "message": "UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 12: invalid start byte\n  File \"/app/io/loader.py\", line 355, in load\n    raw.decode(\"utf-8\")  (file=/tmp/blob-1669664.bin, read 29695ms)"
+ },
+ {
+  "label": "decode-utf8",
+  "message": "UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 12: invalid start byte\n  File \"/app/io/loader.py\", line 91, in load\n    raw.decode(\"utf-8\")  (file=/tmp/blob-37454744.bin, read 86572ms)"
+ },
+ {
+  "label": "assert-status-500",
+  "message": "AssertionError: expected status 200 but got 500 for POST /orders (request_id=req-38470660, took 76675ms, at 2026-09-25 14:33:48)"
+ },
+ {
+  "label": "decode-utf8",
+  "message": "UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 12: invalid start byte\n  File \"/app/io/loader.py\", line 119, in load\n    raw.decode(\"utf-8\")  (file=/tmp/blob-29060868.bin, read 17413ms)"
+ },
+ {
+  "label": "assert-status-500",
+  "message": "AssertionError: expected status 200 but got 500 for POST /orders\n  context: attempt=60215897 elapsed=30090s trace=cb36a930-874e-b8ff-e6bf-17b94ae9353f"
+ },
+ {
+  "label": "assert-status-404",
+  "message": "AssertionError: expected status 200 but got 404 for GET /users/6521761 (took 29184ms)"
+ },
+ {
+  "label": "assert-status-500",
+  "message": "AssertionError: expected status 200 but got 500 for POST /orders\n  context: attempt=46762382 elapsed=5180s trace=6a651370-31c8-052b-0236-075ab745feda"
+ },
+ {
+  "label": "log-permission",
+  "message": "PermissionError: [Errno 13] Permission denied: '/var/log/app/20168295.log' (uid=1000, obj 0x96e1206262c9)"
+ },
+ {
+  "label": "redis-conn-refused",
+  "message": "ConnectionRefusedError: [Errno 111] Connection refused: redis://10.0.0.9:6379 (attempt 3, waited 48011ms, pid=18529451)"
+ },
+ {
+  "label": "oom-heap",
+  "message": "java.lang.OutOfMemoryError: Java heap space\n\tat java.util.Arrays.copyOf(Arrays.java:141)\n\tat com.shop.ReportBuilder.build(ReportBuilder.java:141)\n\tat com.shop.Job.run(Job.java:141)  # alloc at 0xd15d0026fe73, used 3766ms"
+ },
+ {
+  "label": "assert-list-diff",
+  "message": "AssertionError: lists differ: [1, 2, 3] != [1, 2, 4]\nFirst differing element 2: 3 != 4 (case #28508263, seed=28508263)"
+ },
+ {
+  "label": "log-permission",
+  "message": "PermissionError: [Errno 13] Permission denied: '/var/log/app/92262372.log' (uid=1000, obj 0xbca68a0115)"
+ },
+ {
+  "label": "oom-heap",
+  "message": "java.lang.OutOfMemoryError: Java heap space\n\tat java.util.Arrays.copyOf(Arrays.java:97)\n\tat com.shop.ReportBuilder.build(ReportBuilder.java:97)\n\tat com.shop.Job.run(Job.java:97)  # alloc at 0x831e21a6c45b, used 78492ms"
+ },
+ {
+  "label": "query-timeout",
+  "message": "TimeoutError: SQL query exceeded deadline of 50580ms\n  File \"/app/dao/report.py\", line 122, in run_report\n    cur.execute(SQL)\n  File \"/app/dao/report.py\", line 122, in <module>\n    run_report()  # obj at 0x8303f679d46d"
+ },
+ {
+  "label": "assert-list-diff",
+  "message": "AssertionError: lists differ: [1, 2, 3] != [1, 2, 4]\nFirst differing element 2: 3 != 4 (case #73614705, seed=73614705)"
+ },
+ {
+  "label": "npe-user-null",
+  "message": "java.lang.NullPointerException: Cannot invoke \"String.length()\" because \"user\" is null\n\tat com.shop.UserService.getProfile(UserService.java:186)\n\tat com.shop.UserController.profile(UserController.java:186)\n\tat com.shop.Main.main(Main.java:186)\n\t... trace_id=edb8de40-d6ba-8873-b916-7f8557127fac"
+ },
+ {
+  "label": "keyerror-price",
+  "message": "Traceback (most recent call last):\n  File \"/app/jobs/retry.py\", line 380, in <module>\n    create_order(payload)\n  File \"/app/svc/order.py\", line 380, in create_order\n    total = sum(i[\"price\"] for i in items)\nKeyError: 'price'  [request_id=req-57624452, took 2142ms]"
+ },
+ {
+  "label": "assert-status-404",
+  "message": "AssertionError: expected status 200 but got 404 for GET /users/55217976 (took 19057ms)"
+ },
+ {
+  "label": "assert-status-404",
+  "message": "AssertionError: expected status 200 but got 404 for GET /users/77524008 (took 43596ms)"
+ },
+ {
+  "label": "log-permission",
+  "message": "PermissionError: [Errno 13] Permission denied: '/var/log/app/22218904.log' (uid=1000, obj 0x1bfb40557bca)"
+ },
+ {
+  "label": "assert-list-diff",
+  "message": "AssertionError: lists differ: [1, 2, 3] != [1, 2, 4]\nFirst differing element 2: 3 != 4 (case #31889173, seed=31889173)"
+ },
+ {
+  "label": "decode-utf8",
+  "message": "UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 12: invalid start byte\n  File \"/app/io/loader.py\", line 107, in load\n    raw.decode(\"utf-8\")  (file=/tmp/blob-69647836.bin, read 36796ms)"
+ },
+ {
+  "label": "keyerror-price",
+  "message": "Traceback (most recent call last):\n  File \"/app/jobs/retry.py\", line 351, in <module>\n    create_order(payload)\n  File \"/app/svc/order.py\", line 351, in create_order\n    total = sum(i[\"price\"] for i in items)\nKeyError: 'price'  [request_id=req-20003389, took 29640ms]"
+ },
+ {
+  "label": "kafka-lag",
+  "message": "KafkaError: consumer lag 987654 exceeds threshold (group=g-88810733)"
+ },
+ {
+  "label": "keyerror-price",
+  "message": "Traceback (most recent call last):\n  File \"/app/jobs/retry.py\", line 134, in <module>\n    create_order(payload)\n  File \"/app/svc/order.py\", line 134, in create_order\n    total = sum(i[\"price\"] for i in items)\nKeyError: 'price'  [request_id=req-62545765, took 84866ms]"
+ },
+ {
+  "label": "oom-heap",
+  "message": "java.lang.OutOfMemoryError: Java heap space\n\tat java.util.Arrays.copyOf(Arrays.java:143)\n\tat com.shop.ReportBuilder.build(ReportBuilder.java:143)\n\tat com.shop.Job.run(Job.java:143)  # alloc at 0x62a012a59d1e, used 47073ms"
+ },
+ {
+  "label": "assert-status-404",
+  "message": "AssertionError: expected status 200 but got 404 for GET /users/62118328 (took 62012ms)"
+ },
+ {
+  "label": "query-timeout",
+  "message": "TimeoutError: SQL query exceeded deadline of 46093ms\n  File \"/app/dao/report.py\", line 91, in run_report\n    cur.execute(SQL)\n  File \"/app/dao/report.py\", line 91, in <module>\n    run_report()  # obj at 0x6f5e9b5eff9a"
+ },
+ {
+  "label": "missing-config",
+  "message": "FileNotFoundError: [Errno 2] No such file or directory: '/etc/app/conf-81983950.yaml'\n  File \"/app/boot.py\", line 147, in load_config\n    open(path)\n  File \"/app/boot.py\", line 147, in main\n    load_config()"
+ },
+ {
+  "label": "npe-user-null",
+  "message": "java.lang.NullPointerException: Cannot invoke \"String.length()\" because \"user\" is null\n\tat com.shop.UserService.getProfile(UserService.java:369)\n\tat com.shop.UserController.profile(UserController.java:369)\n\tat com.shop.Main.main(Main.java:369)\n\t... trace_id=8139f3b5-dfaa-796f-b5d8-e34957b0c728"
+ },
+ {
+  "label": "assert-list-diff",
+  "message": "AssertionError: lists differ: [1, 2, 3] != [1, 2, 4]\nFirst differing element 2: 3 != 4 (case #34526638, seed=34526638)"
+ },
+ {
+  "label": "assert-status-500",
+  "message": "AssertionError: expected status 200 but got 500 for POST /orders\n  context: attempt=86460136 elapsed=88518s trace=8fecce18-621f-3d8d-0722-6a827e3c7d89"
+ },
+ {
+  "label": "keyerror-price",
+  "message": "Traceback (most recent call last):\n  File \"/app/jobs/retry.py\", line 347, in <module>\n    create_order(payload)\n  File \"/app/svc/order.py\", line 347, in create_order\n    total = sum(i[\"price\"] for i in items)\nKeyError: 'price'  [request_id=req-8476473, took 35982ms]"
+ },
+ {
+  "label": "assert-status-500",
+  "message": "AssertionError: expected status 200 but got 500 for POST /orders\n  context: attempt=56031626 elapsed=31434s trace=ec60ace1-8d05-3e6c-cba3-5893350ee905"
+ },
+ {
+  "label": "decode-utf8",
+  "message": "UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 12: invalid start byte\n  File \"/app/io/loader.py\", line 133, in load\n    raw.decode(\"utf-8\")  (file=/tmp/blob-18664616.bin, read 78155ms)"
+ },
+ {
+  "label": "keyerror-price",
+  "message": "Traceback (most recent call last):\n  File \"/app/jobs/retry.py\", line 303, in <module>\n    create_order(payload)\n  File \"/app/svc/order.py\", line 303, in create_order\n    total = sum(i[\"price\"] for i in items)\nKeyError: 'price'  [request_id=req-42024794, took 77582ms]"
+ },
+ {
+  "label": "ssl-expired",
+  "message": "ssl.SSLCertVerificationError: certificate has expired (notAfter=2026-08-01, host=pay.example.com, req 96096989)"
+ },
+ {
+  "label": "decode-utf8",
+  "message": "UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 12: invalid start byte\n  File \"/app/io/loader.py\", line 22, in load\n    raw.decode(\"utf-8\")  (file=/tmp/blob-99949720.bin, read 46641ms)"
+ },
+ {
+  "label": "npe-user-null",
+  "message": "java.lang.NullPointerException: Cannot invoke \"String.length()\" because \"user\" is null\n\tat com.shop.UserService.getProfile(UserService.java:293)\n\tat com.shop.UserController.profile(UserController.java:293)\n\tat com.shop.Main.main(Main.java:293)\n\t... trace_id=0978eb89-50e7-c7f2-4e2d-c3a832de0275"
+ },
+ {
+  "label": "missing-config",
+  "message": "FileNotFoundError: [Errno 2] No such file or directory: '/etc/app/conf-5119652.yaml'\n  File \"/app/boot.py\", line 35, in load_config\n    open(path)\n  File \"/app/boot.py\", line 35, in main\n    load_config()"
+ },
+ {
+  "label": "assert-status-404",
+  "message": "AssertionError: expected status 200 but got 404 for GET /users/77092756 (took 84972ms)"
+ },
+ {
+  "label": "decode-utf8",
+  "message": "UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 12: invalid start byte\n  File \"/app/io/loader.py\", line 271, in load\n    raw.decode(\"utf-8\")  (file=/tmp/blob-17087893.bin, read 71652ms)"
+ },
+ {
+  "label": "oom-heap",
+  "message": "java.lang.OutOfMemoryError: Java heap space\n\tat java.util.Arrays.copyOf(Arrays.java:357)\n\tat com.shop.ReportBuilder.build(ReportBuilder.java:357)\n\tat com.shop.Job.run(Job.java:357)  # alloc at 0x86f85f51607a, used 71478ms"
+ },
+ {
+  "label": "missing-config",
+  "message": "FileNotFoundError: [Errno 2] No such file or directory: '/etc/app/conf-71480424.yaml'\n  File \"/app/boot.py\", line 397, in load_config\n    open(path)\n  File \"/app/boot.py\", line 397, in main\n    load_config()"
+ },
+ {
+  "label": "assert-status-500",
+  "message": "AssertionError: expected status 200 but got 500 for POST /orders (request_id=req-34887005, took 51550ms, at 2026-09-04 00:43:57)"
+ },
+ {
+  "label": "redis-conn-refused",
+  "message": "ConnectionRefusedError: [Errno 111] Connection refused: redis://10.0.0.9:6379 (attempt 3, waited 31822ms, pid=38015055)"
+ },
+ {
+  "label": "keyerror-price",
+  "message": "Traceback (most recent call last):\n  File \"/app/jobs/retry.py\", line 330, in <module>\n    create_order(payload)\n  File \"/app/svc/order.py\", line 330, in create_order\n    total = sum(i[\"price\"] for i in items)\nKeyError: 'price'  [request_id=req-13907659, took 65741ms]"
+ },
+ {
+  "label": "missing-config",
+  "message": "FileNotFoundError: [Errno 2] No such file or directory: '/etc/app/conf-95824522.yaml'\n  File \"/app/boot.py\", line 335, in load_config\n    open(path)\n  File \"/app/boot.py\", line 335, in main\n    load_config()"
+ },
+ {
+  "label": "missing-config",
+  "message": "FileNotFoundError: [Errno 2] No such file or directory: '/etc/app/conf-60345766.yaml'\n  File \"/app/boot.py\", line 340, in load_config\n    open(path)\n  File \"/app/boot.py\", line 340, in main\n    load_config()"
+ },
+ {
+  "label": "keyerror-price",
+  "message": "Traceback (most recent call last):\n  File \"/app/tests/test_order.py\", line 325, in test_create\n    create_order(items)\n  File \"/app/svc/order.py\", line 325, in create_order\n    total = sum(i[\"price\"] for i in items)\nKeyError: 'price'  [request_id=req-71903449, took 81701ms]"
+ },
+ {
+  "label": "assert-list-diff",
+  "message": "AssertionError: lists differ: [1, 2, 3] != [1, 2, 4]\nFirst differing element 2: 3 != 4 (case #22779861, seed=22779861)"
+ },
+ {
+  "label": "oom-heap",
+  "message": "java.lang.OutOfMemoryError: Java heap space\n\tat java.util.Arrays.copyOf(Arrays.java:21)\n\tat com.shop.ReportBuilder.build(ReportBuilder.java:21)\n\tat com.shop.Job.run(Job.java:21)  # alloc at 0x77a624d0c8c0, used 72179ms"
+ },
+ {
+  "label": "keyerror-price",
+  "message": "Traceback (most recent call last):\n  File \"/app/tests/test_order.py\", line 365, in test_create\n    create_order(items)\n  File \"/app/svc/order.py\", line 365, in create_order\n    total = sum(i[\"price\"] for i in items)\nKeyError: 'price'  [request_id=req-97255483, took 55981ms]"
+ },
+ {
+  "label": "typeerror-concat",
+  "message": "TypeError: can only concatenate str (not \"int\") to str\n  File \"/app/util/fmt.py\", line 167, in render\n    return prefix + count\n  File \"/app/api/view.py\", line 167, in get\n    render(c)  [trace_id=294f87cb-fd8d-a760-4624-65117c43fecc]"
+ },
+ {
+  "label": "assert-status-404",
+  "message": "AssertionError: expected status 200 but got 404 for GET /users/68891390 (took 37142ms)"
+ },
+ {
+  "label": "json-schema",
+  "message": "jsonschema.ValidationError: 'amount' is a required property (doc 3d951766-3e3c-557a-9742-ac3683787a52)"
+ },
+ {
+  "label": "assert-status-500",
+  "message": "AssertionError: expected status 200 but got 500 for POST /orders (request_id=req-96061330, took 38977ms, at 2026-09-28 06:03:29)"
+ },
+ {
+  "label": "typeerror-concat",
+  "message": "TypeError: can only concatenate str (not \"int\") to str\n  File \"/app/util/fmt.py\", line 83, in render\n    return prefix + count\n  File \"/app/api/view.py\", line 83, in get\n    render(c)  [trace_id=e9c44193-d787-3886-7a26-b4ec57383783]"
+ },
+ {
+  "label": "redis-conn-refused",
+  "message": "ConnectionRefusedError: [Errno 111] Connection refused: redis://10.0.0.9:6379 (attempt 3, waited 46711ms, pid=87476750)"
+ },
+ {
+  "label": "log-permission",
+  "message": "PermissionError: [Errno 13] Permission denied: '/var/log/app/52604194.log' (uid=1000, obj 0xbdb0bcaf9665)"
+ },
+ {
+  "label": "redis-conn-refused",
+  "message": "ConnectionRefusedError: [Errno 111] Connection refused: redis://10.0.0.9:6379 (attempt 3, waited 4713ms, pid=69875414)"
+ },
+ {
+  "label": "redis-conn-refused",
+  "message": "ConnectionRefusedError: [Errno 111] Connection refused: redis://10.0.0.9:6379 (attempt 3, waited 56137ms, pid=34474529)"
+ },
+ {
+  "label": "missing-config",
+  "message": "FileNotFoundError: [Errno 2] No such file or directory: '/etc/app/conf-21540744.yaml'\n  File \"/app/boot.py\", line 249, in load_config\n    open(path)\n  File \"/app/boot.py\", line 249, in main\n    load_config()"
+ },
+ {
+  "label": "keyerror-price",
+  "message": "Traceback (most recent call last):\n  File \"/app/tests/test_order.py\", line 154, in test_create\n    create_order(items)\n  File \"/app/svc/order.py\", line 154, in create_order\n    total = sum(i[\"price\"] for i in items)\nKeyError: 'price'  [request_id=req-90056140, took 68211ms]"
+ },
+ {
+  "label": "decode-utf8",
+  "message": "UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 12: invalid start byte\n  File \"/app/io/loader.py\", line 304, in load\n    raw.decode(\"utf-8\")  (file=/tmp/blob-66636312.bin, read 66141ms)"
+ },
+ {
+  "label": "typeerror-concat",
+  "message": "TypeError: can only concatenate str (not \"int\") to str\n  File \"/app/util/fmt.py\", line 172, in render\n    return prefix + count\n  File \"/app/api/view.py\", line 172, in get\n    render(c)  [trace_id=61065a1b-b0f9-42ca-0796-8256616f657c]"
+ },
+ {
+  "label": "decode-utf8",
+  "message": "UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 12: invalid start byte\n  File \"/app/io/loader.py\", line 296, in load\n    raw.decode(\"utf-8\")  (file=/tmp/blob-62851745.bin, read 33663ms)"
+ },
+ {
+  "label": "assert-status-500",
+  "message": "AssertionError: expected status 200 but got 500 for POST /orders (request_id=req-5965929, took 55406ms, at 2026-09-24 10:01:02)"
+ },
+ {
+  "label": "redis-conn-refused",
+  "message": "ConnectionRefusedError: [Errno 111] Connection refused: redis://10.0.0.9:6379 (attempt 3, waited 3206ms, pid=55017780)"
+ },
+ {
+  "label": "typeerror-concat",
+  "message": "TypeError: can only concatenate str (not \"int\") to str\n  File \"/app/util/fmt.py\", line 205, in render\n    return prefix + count\n  File \"/app/api/view.py\", line 205, in get\n    render(c)  [trace_id=56ac302e-2ca0-c28a-635f-b6274067d070]"
+ },
+ {
+  "label": "oom-heap",
+  "message": "java.lang.OutOfMemoryError: Java heap space\n\tat java.util.Arrays.copyOf(Arrays.java:371)\n\tat com.shop.ReportBuilder.build(ReportBuilder.java:371)\n\tat com.shop.Job.run(Job.java:371)  # alloc at 0x751f2dab9686, used 44624ms"
+ },
+ {
+  "label": "npe-user-null",
+  "message": "java.lang.NullPointerException: Cannot invoke \"String.length()\" because \"user\" is null\n\tat com.shop.UserService.getProfile(UserService.java:141)\n\tat com.shop.UserController.profile(UserController.java:141)\n\tat com.shop.Main.main(Main.java:141)\n\t... trace_id=afe44af3-f251-0a7b-0f37-a9a319089e67"
+ },
+ {
+  "label": "assert-list-diff",
+  "message": "AssertionError: lists differ: [1, 2, 3] != [1, 2, 4]\nFirst differing element 2: 3 != 4 (case #22413484, seed=22413484)"
+ },
+ {
+  "label": "decode-utf8",
+  "message": "UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 12: invalid start byte\n  File \"/app/io/loader.py\", line 318, in load\n    raw.decode(\"utf-8\")  (file=/tmp/blob-23698863.bin, read 84696ms)"
+ },
+ {
+  "label": "keyerror-price",
+  "message": "Traceback (most recent call last):\n  File \"/app/jobs/retry.py\", line 353, in <module>\n    create_order(payload)\n  File \"/app/svc/order.py\", line 353, in create_order\n    total = sum(i[\"price\"] for i in items)\nKeyError: 'price'  [request_id=req-49635502, took 88757ms]"
+ },
+ {
+  "label": "redis-conn-refused",
+  "message": "ConnectionRefusedError: [Errno 111] Connection refused: redis://10.0.0.9:6379 (attempt 3, waited 14205ms, pid=89148938)"
+ },
+ {
+  "label": "decode-utf8",
+  "message": "UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 12: invalid start byte\n  File \"/app/io/loader.py\", line 370, in load\n    raw.decode(\"utf-8\")  (file=/tmp/blob-61517984.bin, read 45429ms)"
+ },
+ {
+  "label": "keyerror-price",
+  "message": "Traceback (most recent call last):\n  File \"/app/tests/test_order.py\", line 299, in test_create\n    create_order(items)\n  File \"/app/svc/order.py\", line 299, in create_order\n    total = sum(i[\"price\"] for i in items)\nKeyError: 'price'  [request_id=req-21239860, took 72386ms]"
+ },
+ {
+  "label": "typeerror-concat",
+  "message": "TypeError: can only concatenate str (not \"int\") to str\n  File \"/app/util/fmt.py\", line 89, in render\n    return prefix + count\n  File \"/app/api/view.py\", line 89, in get\n    render(c)  [trace_id=f5b64c99-1a29-3f3e-d170-39611f80b521]"
+ },
+ {
+  "label": "oom-heap",
+  "message": "java.lang.OutOfMemoryError: Java heap space\n\tat java.util.Arrays.copyOf(Arrays.java:127)\n\tat com.shop.ReportBuilder.build(ReportBuilder.java:127)\n\tat com.shop.Job.run(Job.java:127)  # alloc at 0xcc18153269c3, used 27577ms"
+ },
+ {
+  "label": "oom-heap",
+  "message": "java.lang.OutOfMemoryError: Java heap space\n\tat java.util.Arrays.copyOf(Arrays.java:347)\n\tat com.shop.ReportBuilder.build(ReportBuilder.java:347)\n\tat com.shop.Job.run(Job.java:347)  # alloc at 0x487e5fb025a4, used 35710ms"
+ },
+ {
+  "label": "assert-status-500",
+  "message": "AssertionError: expected status 200 but got 500 for POST /orders (request_id=req-15456093, took 56077ms, at 2026-09-06 09:39:50)"
+ },
+ {
+  "label": "typeerror-concat",
+  "message": "TypeError: can only concatenate str (not \"int\") to str\n  File \"/app/util/fmt.py\", line 98, in render\n    return prefix + count\n  File \"/app/api/view.py\", line 98, in get\n    render(c)  [trace_id=86d05c61-617b-ec3c-3cad-efc8efe9f06c]"
+ },
+ {
+  "label": "missing-config",
+  "message": "FileNotFoundError: [Errno 2] No such file or directory: '/etc/app/conf-21114126.yaml'\n  File \"/app/boot.py\", line 292, in load_config\n    open(path)\n  File \"/app/boot.py\", line 292, in main\n    load_config()"
+ },
+ {
+  "label": "missing-config",
+  "message": "FileNotFoundError: [Errno 2] No such file or directory: '/etc/app/conf-48858292.yaml'\n  File \"/app/boot.py\", line 163, in load_config\n    open(path)\n  File \"/app/boot.py\", line 163, in main\n    load_config()"
+ },
+ {
+  "label": "missing-config",
+  "message": "FileNotFoundError: [Errno 2] No such file or directory: '/etc/app/conf-74077973.yaml'\n  File \"/app/boot.py\", line 51, in load_config\n    open(path)\n  File \"/app/boot.py\", line 51, in main\n    load_config()"
+ },
+ {
+  "label": "assert-status-500",
+  "message": "AssertionError: expected status 200 but got 500 for POST /orders (request_id=req-27486446, took 31716ms, at 2026-09-22 18:22:12)"
+ },
+ {
+  "label": "oom-heap",
+  "message": "java.lang.OutOfMemoryError: Java heap space\n\tat java.util.Arrays.copyOf(Arrays.java:201)\n\tat com.shop.ReportBuilder.build(ReportBuilder.java:201)\n\tat com.shop.Job.run(Job.java:201)  # alloc at 0xf31a1f1d4094, used 64965ms"
+ },
+ {
+  "label": "assert-list-diff",
+  "message": "AssertionError: lists differ: [1, 2, 3] != [1, 2, 4]\nFirst differing element 2: 3 != 4 (case #58898954, seed=58898954)"
+ },
+ {
+  "label": "decode-utf8",
+  "message": "UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 12: invalid start byte\n  File \"/app/io/loader.py\", line 13, in load\n    raw.decode(\"utf-8\")  (file=/tmp/blob-1888851.bin, read 45095ms)"
+ },
+ {
+  "label": "npe-user-null",
+  "message": "java.lang.NullPointerException: Cannot invoke \"String.length()\" because \"user\" is null\n\tat com.shop.UserService.getProfile(UserService.java:167)\n\tat com.shop.UserController.profile(UserController.java:167)\n\tat com.shop.Main.main(Main.java:167)\n\t... trace_id=70c1fc97-83cb-cf8f-7fe6-5528ff8e0221"
+ },
+ {
+  "label": "missing-config",
+  "message": "FileNotFoundError: [Errno 2] No such file or directory: '/etc/app/conf-13336416.yaml'\n  File \"/app/boot.py\", line 184, in load_config\n    open(path)\n  File \"/app/boot.py\", line 184, in main\n    load_config()"
+ },
+ {
+  "label": "redis-conn-refused",
+  "message": "ConnectionRefusedError: [Errno 111] Connection refused: redis://10.0.0.9:6379 (attempt 3, waited 70952ms, pid=55620770)"
+ },
+ {
+  "label": "assert-list-diff",
+  "message": "AssertionError: lists differ: [1, 2, 3] != [1, 2, 4]\nFirst differing element 2: 3 != 4 (case #80297744, seed=80297744)"
+ },
+ {
+  "label": "redis-conn-refused",
+  "message": "ConnectionRefusedError: [Errno 111] Connection refused: redis://10.0.0.9:6379 (attempt 3, waited 192ms, pid=39126463)"
+ },
+ {
+  "label": "redis-conn-refused",
+  "message": "ConnectionRefusedError: [Errno 111] Connection refused: redis://10.0.0.9:6379 (attempt 3, waited 77209ms, pid=99760419)"
+ },
+ {
+  "label": "keyerror-price",
+  "message": "Traceback (most recent call last):\n  File \"/app/jobs/retry.py\", line 259, in <module>\n    create_order(payload)\n  File \"/app/svc/order.py\", line 259, in create_order\n    total = sum(i[\"price\"] for i in items)\nKeyError: 'price'  [request_id=req-71382329, took 77349ms]"
+ },
+ {
+  "label": "assert-status-404",
+  "message": "AssertionError: expected status 200 but got 404 for GET /users/68867417 (took 61763ms)"
+ },
+ {
+  "label": "log-permission",
+  "message": "PermissionError: [Errno 13] Permission denied: '/var/log/app/75056359.log' (uid=1000, obj 0x1e9b339b2f7a)"
+ },
+ {
+  "label": "assert-status-404",
+  "message": "AssertionError: expected status 200 but got 404 for GET /users/71827839 (took 30487ms)"
+ },
+ {
+  "label": "decode-utf8",
+  "message": "UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 12: invalid start byte\n  File \"/app/io/loader.py\", line 92, in load\n    raw.decode(\"utf-8\")  (file=/tmp/blob-99079060.bin, read 21306ms)"
+ },
+ {
+  "label": "assert-status-500",
+  "message": "AssertionError: expected status 200 but got 500 for POST /orders (request_id=req-57213618, took 27557ms, at 2026-09-01 14:23:48)"
+ },
+ {
+  "label": "typeerror-concat",
+  "message": "TypeError: can only concatenate str (not \"int\") to str\n  File \"/app/util/fmt.py\", line 268, in render\n    return prefix + count\n  File \"/app/api/view.py\", line 268, in get\n    render(c)  [trace_id=d47538ba-5c53-39ea-45f7-da4d0bce30b0]"
+ },
+ {
+  "label": "typeerror-concat",
+  "message": "TypeError: can only concatenate str (not \"int\") to str\n  File \"/app/util/fmt.py\", line 161, in render\n    return prefix + count\n  File \"/app/api/view.py\", line 161, in get\n    render(c)  [trace_id=5452d4fe-1493-089f-c355-f15f551e6724]"
+ },
+ {
+  "label": "query-timeout",
+  "message": "TimeoutError: SQL query exceeded deadline of 66887ms\n  File \"/app/dao/report.py\", line 218, in run_report\n    cur.execute(SQL)\n  File \"/app/dao/report.py\", line 218, in <module>\n    run_report()  # obj at 0xf7785e95a4ec"
+ },
+ {
+  "label": "query-timeout",
+  "message": "TimeoutError: SQL query exceeded deadline of 12877ms\n  File \"/app/dao/report.py\", line 360, in run_report\n    cur.execute(SQL)\n  File \"/app/dao/report.py\", line 360, in <module>\n    run_report()  # obj at 0x206e7f28b02"
+ },
+ {
+  "label": "assert-list-diff",
+  "message": "AssertionError: lists differ: [1, 2, 3] != [1, 2, 4]\nFirst differing element 2: 3 != 4 (case #5018434, seed=5018434)"
+ },
+ {
+  "label": "redis-conn-refused",
+  "message": "ConnectionRefusedError: [Errno 111] Connection refused: redis://10.0.0.9:6379 (attempt 3, waited 62369ms, pid=79106330)"
+ },
+ {
+  "label": "log-permission",
+  "message": "PermissionError: [Errno 13] Permission denied: '/var/log/app/16974222.log' (uid=1000, obj 0xc89e10702d6e)"
+ },
+ {
+  "label": "assert-list-diff",
+  "message": "AssertionError: lists differ: [1, 2, 3] != [1, 2, 4]\nFirst differing element 2: 3 != 4 (case #1239953, seed=1239953)"
+ },
+ {
+  "label": "query-timeout",
+  "message": "TimeoutError: SQL query exceeded deadline of 42621ms\n  File \"/app/dao/report.py\", line 161, in run_report\n    cur.execute(SQL)\n  File \"/app/dao/report.py\", line 161, in <module>\n    run_report()  # obj at 0xd2246eea6161"
+ },
+ {
+  "label": "oom-heap",
+  "message": "java.lang.OutOfMemoryError: Java heap space\n\tat java.util.Arrays.copyOf(Arrays.java:321)\n\tat com.shop.ReportBuilder.build(ReportBuilder.java:321)\n\tat com.shop.Job.run(Job.java:321)  # alloc at 0x3feb07452f96, used 29396ms"
+ },
+ {
+  "label": "assert-list-diff",
+  "message": "AssertionError: lists differ: [1, 2, 3] != [1, 2, 4]\nFirst differing element 2: 3 != 4 (case #56297862, seed=56297862)"
+ },
+ {
+  "label": "keyerror-price",
+  "message": "Traceback (most recent call last):\n  File \"/app/tests/test_order.py\", line 244, in test_create\n    create_order(items)\n  File \"/app/svc/order.py\", line 244, in create_order\n    total = sum(i[\"price\"] for i in items)\nKeyError: 'price'  [request_id=req-74288748, took 77198ms]"
+ },
+ {
+  "label": "redis-conn-refused",
+  "message": "ConnectionRefusedError: [Errno 111] Connection refused: redis://10.0.0.9:6379 (attempt 3, waited 26238ms, pid=42242188)"
+ },
+ {
+  "label": "query-timeout",
+  "message": "TimeoutError: SQL query exceeded deadline of 64716ms\n  File \"/app/dao/report.py\", line 396, in run_report\n    cur.execute(SQL)\n  File \"/app/dao/report.py\", line 396, in <module>\n    run_report()  # obj at 0x958aa83fac10"
+ },
+ {
+  "label": "missing-config",
+  "message": "FileNotFoundError: [Errno 2] No such file or directory: '/etc/app/conf-55053125.yaml'\n  File \"/app/boot.py\", line 234, in load_config\n    open(path)\n  File \"/app/boot.py\", line 234, in main\n    load_config()"
+ },
+ {
+  "label": "decode-utf8",
+  "message": "UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 12: invalid start byte\n  File \"/app/io/loader.py\", line 332, in load\n    raw.decode(\"utf-8\")  (file=/tmp/blob-14163264.bin, read 37044ms)"
+ },
+ {
+  "label": "missing-config",
+  "message": "FileNotFoundError: [Errno 2] No such file or directory: '/etc/app/conf-46452184.yaml'\n  File \"/app/boot.py\", line 60, in load_config\n    open(path)\n  File \"/app/boot.py\", line 60, in main\n    load_config()"
+ },
+ {
+  "label": "assert-list-diff",
+  "message": "AssertionError: lists differ: [1, 2, 3] != [1, 2, 4]\nFirst differing element 2: 3 != 4 (case #64004992, seed=64004992)"
+ },
+ {
+  "label": "npe-user-null",
+  "message": "java.lang.NullPointerException: Cannot invoke \"String.length()\" because \"user\" is null\n\tat com.shop.UserService.getProfile(UserService.java:179)\n\tat com.shop.UserController.profile(UserController.java:179)\n\tat com.shop.Main.main(Main.java:179)\n\t... trace_id=393797f3-5d54-3890-00df-1fd025534e68"
+ },
+ {
+  "label": "decode-utf8",
+  "message": "UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 12: invalid start byte\n  File \"/app/io/loader.py\", line 273, in load\n    raw.decode(\"utf-8\")  (file=/tmp/blob-41225758.bin, read 73923ms)"
+ },
+ {
+  "label": "typeerror-concat",
+  "message": "TypeError: can only concatenate str (not \"int\") to str\n  File \"/app/util/fmt.py\", line 322, in render\n    return prefix + count\n  File \"/app/api/view.py\", line 322, in get\n    render(c)  [trace_id=deac2e2b-bea5-b609-bfce-20189fec4544]"
+ },
+ {
+  "label": "assert-status-500",
+  "message": "AssertionError: expected status 200 but got 500 for POST /orders (request_id=req-91855269, took 37684ms, at 2026-09-22 14:42:41)"
+ },
+ {
+  "label": "redis-conn-refused",
+  "message": "ConnectionRefusedError: [Errno 111] Connection refused: redis://10.0.0.9:6379 (attempt 3, waited 38787ms, pid=44946805)"
+ },
+ {
+  "label": "missing-config",
+  "message": "FileNotFoundError: [Errno 2] No such file or directory: '/etc/app/conf-17068751.yaml'\n  File \"/app/boot.py\", line 47, in load_config\n    open(path)\n  File \"/app/boot.py\", line 47, in main\n    load_config()"
+ },
+ {
+  "label": "missing-config",
+  "message": "FileNotFoundError: [Errno 2] No such file or directory: '/etc/app/conf-74198459.yaml'\n  File \"/app/boot.py\", line 338, in load_config\n    open(path)\n  File \"/app/boot.py\", line 338, in main\n    load_config()"
+ },
+ {
+  "label": "assert-status-404",
+  "message": "AssertionError: expected status 200 but got 404 for GET /users/61983387 (took 41998ms)"
+ },
+ {
+  "label": "assert-list-diff",
+  "message": "AssertionError: lists differ: [1, 2, 3] != [1, 2, 4]\nFirst differing element 2: 3 != 4 (case #83025137, seed=83025137)"
+ },
+ {
+  "label": "npe-user-null",
+  "message": "java.lang.NullPointerException: Cannot invoke \"String.length()\" because \"user\" is null\n\tat com.shop.UserService.getProfile(UserService.java:202)\n\tat com.shop.UserController.profile(UserController.java:202)\n\tat com.shop.Main.main(Main.java:202)\n\t... trace_id=8f6ba9b4-cf27-7e7d-a403-ed6c832d525a"
+ },
+ {
+  "label": "query-timeout",
+  "message": "TimeoutError: SQL query exceeded deadline of 33155ms\n  File \"/app/dao/report.py\", line 336, in run_report\n    cur.execute(SQL)\n  File \"/app/dao/report.py\", line 336, in <module>\n    run_report()  # obj at 0x19b8992d954b"
+ },
+ {
+  "label": "redis-conn-refused",
+  "message": "ConnectionRefusedError: [Errno 111] Connection refused: redis://10.0.0.9:6379 (attempt 3, waited 2145ms, pid=93690132)"
+ },
+ {
+  "label": "oom-heap",
+  "message": "java.lang.OutOfMemoryError: Java heap space\n\tat java.util.Arrays.copyOf(Arrays.java:91)\n\tat com.shop.ReportBuilder.build(ReportBuilder.java:91)\n\tat com.shop.Job.run(Job.java:91)  # alloc at 0x8d39a9b3c5bc, used 73529ms"
+ },
+ {
+  "label": "missing-config",
+  "message": "FileNotFoundError: [Errno 2] No such file or directory: '/etc/app/conf-38891783.yaml'\n  File \"/app/boot.py\", line 95, in load_config\n    open(path)\n  File \"/app/boot.py\", line 95, in main\n    load_config()"
+ },
+ {
+  "label": "missing-config",
+  "message": "FileNotFoundError: [Errno 2] No such file or directory: '/etc/app/conf-60522917.yaml'\n  File \"/app/boot.py\", line 119, in load_config\n    open(path)\n  File \"/app/boot.py\", line 119, in main\n    load_config()"
+ },
+ {
+  "label": "query-timeout",
+  "message": "TimeoutError: SQL query exceeded deadline of 89453ms\n  File \"/app/dao/report.py\", line 240, in run_report\n    cur.execute(SQL)\n  File \"/app/dao/report.py\", line 240, in <module>\n    run_report()  # obj at 0xf7b462cca08e"
+ },
+ {
+  "label": "log-permission",
+  "message": "PermissionError: [Errno 13] Permission denied: '/var/log/app/25687638.log' (uid=1000, obj 0x498997f123e2)"
+ },
+ {
+  "label": "missing-config",
+  "message": "FileNotFoundError: [Errno 2] No such file or directory: '/etc/app/conf-47707027.yaml'\n  File \"/app/boot.py\", line 303, in load_config\n    open(path)\n  File \"/app/boot.py\", line 303, in main\n    load_config()"
+ },
+ {
+  "label": "redis-conn-refused",
+  "message": "ConnectionRefusedError: [Errno 111] Connection refused: redis://10.0.0.9:6379 (attempt 3, waited 75654ms, pid=54063710)"
+ },
+ {
+  "label": "assert-list-diff",
+  "message": "AssertionError: lists differ: [1, 2, 3] != [1, 2, 4]\nFirst differing element 2: 3 != 4 (case #77735035, seed=77735035)"
+ },
+ {
+  "label": "query-timeout",
+  "message": "TimeoutError: SQL query exceeded deadline of 35011ms\n  File \"/app/dao/report.py\", line 72, in run_report\n    cur.execute(SQL)\n  File \"/app/dao/report.py\", line 72, in <module>\n    run_report()  # obj at 0x9a4014b8f94d"
+ },
+ {
+  "label": "assert-status-500",
+  "message": "AssertionError: expected status 200 but got 500 for POST /orders (request_id=req-63021216, took 41420ms, at 2026-09-06 19:11:29)"
+ },
+ {
+  "label": "log-permission",
+  "message": "PermissionError: [Errno 13] Permission denied: '/var/log/app/1501063.log' (uid=1000, obj 0x7a4494e9ed51)"
+ },
+ {
+  "label": "oom-heap",
+  "message": "java.lang.OutOfMemoryError: Java heap space\n\tat java.util.Arrays.copyOf(Arrays.java:364)\n\tat com.shop.ReportBuilder.build(ReportBuilder.java:364)\n\tat com.shop.Job.run(Job.java:364)  # alloc at 0x3f71165afd23, used 24568ms"
+ },
+ {
+  "label": "missing-config",
+  "message": "FileNotFoundError: [Errno 2] No such file or directory: '/etc/app/conf-8546014.yaml'\n  File \"/app/boot.py\", line 152, in load_config\n    open(path)\n  File \"/app/boot.py\", line 152, in main\n    load_config()"
+ },
+ {
+  "label": "keyerror-price",
+  "message": "Traceback (most recent call last):\n  File \"/app/tests/test_order.py\", line 255, in test_create\n    create_order(items)\n  File \"/app/svc/order.py\", line 255, in create_order\n    total = sum(i[\"price\"] for i in items)\nKeyError: 'price'  [request_id=req-64554074, took 84921ms]"
+ },
+ {
+  "label": "assert-status-500",
+  "message": "AssertionError: expected status 200 but got 500 for POST /orders (request_id=req-67521041, took 44266ms, at 2026-09-09 03:36:09)"
+ },
+ {
+  "label": "decode-utf8",
+  "message": "UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 12: invalid start byte\n  File \"/app/io/loader.py\", line 197, in load\n    raw.decode(\"utf-8\")  (file=/tmp/blob-81657705.bin, read 18483ms)"
+ },
+ {
+  "label": "log-permission",
+  "message": "PermissionError: [Errno 13] Permission denied: '/var/log/app/14496400.log' (uid=1000, obj 0x174c4a4bbe22)"
+ },
+ {
+  "label": "assert-status-500",
+  "message": "AssertionError: expected status 200 but got 500 for POST /orders (request_id=req-9898020, took 64432ms, at 2026-09-22 08:06:45)"
+ },
+ {
+  "label": "oom-heap",
+  "message": "java.lang.OutOfMemoryError: Java heap space\n\tat java.util.Arrays.copyOf(Arrays.java:225)\n\tat com.shop.ReportBuilder.build(ReportBuilder.java:225)\n\tat com.shop.Job.run(Job.java:225)  # alloc at 0xe65b89246ec7, used 36881ms"
+ },
+ {
+  "label": "keyerror-price",
+  "message": "Traceback (most recent call last):\n  File \"/app/tests/test_order.py\", line 239, in test_create\n    create_order(items)\n  File \"/app/svc/order.py\", line 239, in create_order\n    total = sum(i[\"price\"] for i in items)\nKeyError: 'price'  [request_id=req-82888302, took 65446ms]"
+ },
+ {
+  "label": "keyerror-price",
+  "message": "Traceback (most recent call last):\n  File \"/app/tests/test_order.py\", line 291, in test_create\n    create_order(items)\n  File \"/app/svc/order.py\", line 291, in create_order\n    total = sum(i[\"price\"] for i in items)\nKeyError: 'price'  [request_id=req-74432695, took 62815ms]"
+ },
+ {
+  "label": "redis-conn-refused",
+  "message": "ConnectionRefusedError: [Errno 111] Connection refused: redis://10.0.0.9:6379 (attempt 3, waited 51896ms, pid=6950146)"
+ },
+ {
+  "label": "missing-config",
+  "message": "FileNotFoundError: [Errno 2] No such file or directory: '/etc/app/conf-10390678.yaml'\n  File \"/app/boot.py\", line 169, in load_config\n    open(path)\n  File \"/app/boot.py\", line 169, in main\n    load_config()"
+ },
+ {
+  "label": "redis-conn-refused",
+  "message": "ConnectionRefusedError: [Errno 111] Connection refused: redis://10.0.0.9:6379 (attempt 3, waited 80789ms, pid=10860901)"
+ },
+ {
+  "label": "query-timeout",
+  "message": "TimeoutError: SQL query exceeded deadline of 15189ms\n  File \"/app/dao/report.py\", line 289, in run_report\n    cur.execute(SQL)\n  File \"/app/dao/report.py\", line 289, in <module>\n    run_report()  # obj at 0x99a5793c39af"
+ },
+ {
+  "label": "assert-status-404",
+  "message": "AssertionError: expected status 200 but got 404 for GET /users/36246749 (took 60561ms)"
+ },
+ {
+  "label": "oom-heap",
+  "message": "java.lang.OutOfMemoryError: Java heap space\n\tat java.util.Arrays.copyOf(Arrays.java:245)\n\tat com.shop.ReportBuilder.build(ReportBuilder.java:245)\n\tat com.shop.Job.run(Job.java:245)  # alloc at 0xd774e7d68624, used 15825ms"
+ },
+ {
+  "label": "keyerror-price",
+  "message": "Traceback (most recent call last):\n  File \"/app/tests/test_order.py\", line 164, in test_create\n    create_order(items)\n  File \"/app/svc/order.py\", line 164, in create_order\n    total = sum(i[\"price\"] for i in items)\nKeyError: 'price'  [request_id=req-55604755, took 80347ms]"
+ },
+ {
+  "label": "npe-user-null",
+  "message": "java.lang.NullPointerException: Cannot invoke \"String.length()\" because \"user\" is null\n\tat com.shop.UserService.getProfile(UserService.java:193)\n\tat com.shop.UserController.profile(UserController.java:193)\n\tat com.shop.Main.main(Main.java:193)\n\t... trace_id=2d710c53-cd30-defb-2509-05c2fa1aed19"
+ },
+ {
+  "label": "keyerror-price",
+  "message": "Traceback (most recent call last):\n  File \"/app/jobs/retry.py\", line 263, in <module>\n    create_order(payload)\n  File \"/app/svc/order.py\", line 263, in create_order\n    total = sum(i[\"price\"] for i in items)\nKeyError: 'price'  [request_id=req-80387583, took 15657ms]"
+ },
+ {
+  "label": "decode-utf8",
+  "message": "UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 12: invalid start byte\n  File \"/app/io/loader.py\", line 360, in load\n    raw.decode(\"utf-8\")  (file=/tmp/blob-21964058.bin, read 8200ms)"
+ },
+ {
+  "label": "typeerror-concat",
+  "message": "TypeError: can only concatenate str (not \"int\") to str\n  File \"/app/util/fmt.py\", line 400, in render\n    return prefix + count\n  File \"/app/api/view.py\", line 400, in get\n    render(c)  [trace_id=14212ec5-6a63-fb26-b8a6-e47e0a5c7335]"
+ },
+ {
+  "label": "query-timeout",
+  "message": "TimeoutError: SQL query exceeded deadline of 42276ms\n  File \"/app/dao/report.py\", line 346, in run_report\n    cur.execute(SQL)\n  File \"/app/dao/report.py\", line 346, in <module>\n    run_report()  # obj at 0x8dd350cb882c"
+ },
+ {
+  "label": "missing-config",
+  "message": "FileNotFoundError: [Errno 2] No such file or directory: '/etc/app/conf-98248896.yaml'\n  File \"/app/boot.py\", line 289, in load_config\n    open(path)\n  File \"/app/boot.py\", line 289, in main\n    load_config()"
+ },
+ {
+  "label": "keyerror-price",
+  "message": "Traceback (most recent call last):\n  File \"/app/jobs/retry.py\", line 234, in <module>\n    create_order(payload)\n  File \"/app/svc/order.py\", line 234, in create_order\n    total = sum(i[\"price\"] for i in items)\nKeyError: 'price'  [request_id=req-44306401, took 14003ms]"
+ },
+ {
+  "label": "assert-status-500",
+  "message": "AssertionError: expected status 200 but got 500 for POST /orders (request_id=req-479190, took 68736ms, at 2026-09-15 10:44:26)"
+ },
+ {
+  "label": "assert-status-500",
+  "message": "AssertionError: expected status 200 but got 500 for POST /orders\n  context: attempt=91128691 elapsed=14558s trace=db734111-ad9c-1def-bfd8-81bfe73f0e6d"
+ },
+ {
+  "label": "redis-conn-refused",
+  "message": "ConnectionRefusedError: [Errno 111] Connection refused: redis://10.0.0.9:6379 (attempt 3, waited 47388ms, pid=75778971)"
+ },
+ {
+  "label": "log-permission",
+  "message": "PermissionError: [Errno 13] Permission denied: '/var/log/app/81444403.log' (uid=1000, obj 0xc771f99a8be5)"
+ },
+ {
+  "label": "assert-list-diff",
+  "message": "AssertionError: lists differ: [1, 2, 3] != [1, 2, 4]\nFirst differing element 2: 3 != 4 (case #87762377, seed=87762377)"
+ },
+ {
+  "label": "oom-heap",
+  "message": "java.lang.OutOfMemoryError: Java heap space\n\tat java.util.Arrays.copyOf(Arrays.java:221)\n\tat com.shop.ReportBuilder.build(ReportBuilder.java:221)\n\tat com.shop.Job.run(Job.java:221)  # alloc at 0xaed846e6e7d9, used 48997ms"
+ },
+ {
+  "label": "oom-heap",
+  "message": "java.lang.OutOfMemoryError: Java heap space\n\tat java.util.Arrays.copyOf(Arrays.java:168)\n\tat com.shop.ReportBuilder.build(ReportBuilder.java:168)\n\tat com.shop.Job.run(Job.java:168)  # alloc at 0xd6cf9de3ae3f, used 67323ms"
+ },
+ {
+  "label": "redis-conn-refused",
+  "message": "ConnectionRefusedError: [Errno 111] Connection refused: redis://10.0.0.9:6379 (attempt 3, waited 65159ms, pid=83121360)"
+ },
+ {
+  "label": "keyerror-price",
+  "message": "Traceback (most recent call last):\n  File \"/app/tests/test_order.py\", line 128, in test_create\n    create_order(items)\n  File \"/app/svc/order.py\", line 128, in create_order\n    total = sum(i[\"price\"] for i in items)\nKeyError: 'price'  [request_id=req-72165564, took 31415ms]"
+ },
+ {
+  "label": "keyerror-price",
+  "message": "Traceback (most recent call last):\n  File \"/app/jobs/retry.py\", line 214, in <module>\n    create_order(payload)\n  File \"/app/svc/order.py\", line 214, in create_order\n    total = sum(i[\"price\"] for i in items)\nKeyError: 'price'  [request_id=req-28291399, took 37428ms]"
+ },
+ {
+  "label": "dns-resolution",
+  "message": "socket.gaierror: [Errno -2] Name or service not known: api.internal (took 40547ms)"
+ },
+ {
+  "label": "assert-status-404",
+  "message": "AssertionError: expected status 200 but got 404 for GET /users/23633417 (took 72751ms)"
+ },
+ {
+  "label": "missing-config",
+  "message": "FileNotFoundError: [Errno 2] No such file or directory: '/etc/app/conf-46475891.yaml'\n  File \"/app/boot.py\", line 243, in load_config\n    open(path)\n  File \"/app/boot.py\", line 243, in main\n    load_config()"
+ },
+ {
+  "label": "decode-utf8",
+  "message": "UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 12: invalid start byte\n  File \"/app/io/loader.py\", line 341, in load\n    raw.decode(\"utf-8\")  (file=/tmp/blob-30472976.bin, read 65583ms)"
+ },
+ {
+  "label": "query-timeout",
+  "message": "TimeoutError: SQL query exceeded deadline of 75323ms\n  File \"/app/dao/report.py\", line 51, in run_report\n    cur.execute(SQL)\n  File \"/app/dao/report.py\", line 51, in <module>\n    run_report()  # obj at 0x2171714c09e9"
+ },
+ {
+  "label": "assert-list-diff",
+  "message": "AssertionError: lists differ: [1, 2, 3] != [1, 2, 4]\nFirst differing element 2: 3 != 4 (case #79533911, seed=79533911)"
+ },
+ {
+  "label": "decode-utf8",
+  "message": "UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 12: invalid start byte\n  File \"/app/io/loader.py\", line 168, in load\n    raw.decode(\"utf-8\")  (file=/tmp/blob-44710398.bin, read 64953ms)"
+ },
+ {
+  "label": "log-permission",
+  "message": "PermissionError: [Errno 13] Permission denied: '/var/log/app/20937651.log' (uid=1000, obj 0x89f862dabc06)"
+ },
+ {
+  "label": "typeerror-concat",
+  "message": "TypeError: can only concatenate str (not \"int\") to str\n  File \"/app/util/fmt.py\", line 328, in render\n    return prefix + count\n  File \"/app/api/view.py\", line 328, in get\n    render(c)  [trace_id=3330b5a7-232b-f26d-f8ce-b75a6e8594d4]"
+ },
+ {
+  "label": "decode-utf8",
+  "message": "UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 12: invalid start byte\n  File \"/app/io/loader.py\", line 324, in load\n    raw.decode(\"utf-8\")  (file=/tmp/blob-28716024.bin, read 61008ms)"
+ },
+ {
+  "label": "assert-status-500",
+  "message": "AssertionError: expected status 200 but got 500 for POST /orders (request_id=req-88742917, took 28838ms, at 2026-09-25 10:38:35)"
+ },
+ {
+  "label": "log-permission",
+  "message": "PermissionError: [Errno 13] Permission denied: '/var/log/app/78180189.log' (uid=1000, obj 0x8f83607583b9)"
+ },
+ {
+  "label": "query-timeout",
+  "message": "TimeoutError: SQL query exceeded deadline of 49668ms\n  File \"/app/dao/report.py\", line 123, in run_report\n    cur.execute(SQL)\n  File \"/app/dao/report.py\", line 123, in <module>\n    run_report()  # obj at 0x8e596cd4d2da"
+ },
+ {
+  "label": "decode-utf8",
+  "message": "UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 12: invalid start byte\n  File \"/app/io/loader.py\", line 79, in load\n    raw.decode(\"utf-8\")  (file=/tmp/blob-28056393.bin, read 34989ms)"
+ },
+ {
+  "label": "missing-config",
+  "message": "FileNotFoundError: [Errno 2] No such file or directory: '/etc/app/conf-61288546.yaml'\n  File \"/app/boot.py\", line 11, in load_config\n    open(path)\n  File \"/app/boot.py\", line 11, in main\n    load_config()"
+ },
+ {
+  "label": "redis-conn-refused",
+  "message": "ConnectionRefusedError: [Errno 111] Connection refused: redis://10.0.0.9:6379 (attempt 3, waited 65295ms, pid=60225001)"
+ },
+ {
+  "label": "missing-config",
+  "message": "FileNotFoundError: [Errno 2] No such file or directory: '/etc/app/conf-23743301.yaml'\n  File \"/app/boot.py\", line 75, in load_config\n    open(path)\n  File \"/app/boot.py\", line 75, in main\n    load_config()"
+ },
+ {
+  "label": "keyerror-price",
+  "message": "Traceback (most recent call last):\n  File \"/app/jobs/retry.py\", line 275, in <module>\n    create_order(payload)\n  File \"/app/svc/order.py\", line 275, in create_order\n    total = sum(i[\"price\"] for i in items)\nKeyError: 'price'  [request_id=req-28399551, took 2526ms]"
+ },
+ {
+  "label": "oom-heap",
+  "message": "java.lang.OutOfMemoryError: Java heap space\n\tat java.util.Arrays.copyOf(Arrays.java:169)\n\tat com.shop.ReportBuilder.build(ReportBuilder.java:169)\n\tat com.shop.Job.run(Job.java:169)  # alloc at 0x7f7ad4ee8cc5, used 57755ms"
+ },
+ {
+  "label": "oom-heap",
+  "message": "java.lang.OutOfMemoryError: Java heap space\n\tat java.util.Arrays.copyOf(Arrays.java:354)\n\tat com.shop.ReportBuilder.build(ReportBuilder.java:354)\n\tat com.shop.Job.run(Job.java:354)  # alloc at 0xa7a848f079dc, used 72354ms"
+ },
+ {
+  "label": "npe-user-null",
+  "message": "java.lang.NullPointerException: Cannot invoke \"String.length()\" because \"user\" is null\n\tat com.shop.UserService.getProfile(UserService.java:32)\n\tat com.shop.UserController.profile(UserController.java:32)\n\tat com.shop.Main.main(Main.java:32)\n\t... trace_id=0ae8c5ab-0d84-4c5f-4549-2bcb8e0f0af5"
+ },
+ {
+  "label": "query-timeout",
+  "message": "TimeoutError: SQL query exceeded deadline of 32773ms\n  File \"/app/dao/report.py\", line 63, in run_report\n    cur.execute(SQL)\n  File \"/app/dao/report.py\", line 63, in <module>\n    run_report()  # obj at 0x4c73e808df3e"
+ },
+ {
+  "label": "assert-list-diff",
+  "message": "AssertionError: lists differ: [1, 2, 3] != [1, 2, 4]\nFirst differing element 2: 3 != 4 (case #41681106, seed=41681106)"
+ },
+ {
+  "label": "missing-config",
+  "message": "FileNotFoundError: [Errno 2] No such file or directory: '/etc/app/conf-28221691.yaml'\n  File \"/app/boot.py\", line 334, in load_config\n    open(path)\n  File \"/app/boot.py\", line 334, in main\n    load_config()"
+ },
+ {
+  "label": "typeerror-concat",
+  "message": "TypeError: can only concatenate str (not \"int\") to str\n  File \"/app/util/fmt.py\", line 181, in render\n    return prefix + count\n  File \"/app/api/view.py\", line 181, in get\n    render(c)  [trace_id=834c3fdd-a2e6-7ddf-2e56-20e852c623ff]"
+ },
+ {
+  "label": "typeerror-concat",
+  "message": "TypeError: can only concatenate str (not \"int\") to str\n  File \"/app/util/fmt.py\", line 258, in render\n    return prefix + count\n  File \"/app/api/view.py\", line 258, in get\n    render(c)  [trace_id=aafd8886-9a3a-caa3-e521-43221ffd61ad]"
+ },
+ {
+  "label": "decode-utf8",
+  "message": "UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 12: invalid start byte\n  File \"/app/io/loader.py\", line 176, in load\n    raw.decode(\"utf-8\")  (file=/tmp/blob-83833269.bin, read 59468ms)"
+ },
+ {
+  "label": "query-timeout",
+  "message": "TimeoutError: SQL query exceeded deadline of 73030ms\n  File \"/app/dao/report.py\", line 18, in run_report\n    cur.execute(SQL)\n  File \"/app/dao/report.py\", line 18, in <module>\n    run_report()  # obj at 0x9a3a0e8c53db"
+ },
+ {
+  "label": "redis-conn-refused",
+  "message": "ConnectionRefusedError: [Errno 111] Connection refused: redis://10.0.0.9:6379 (attempt 3, waited 62134ms, pid=62090991)"
+ },
+ {
+  "label": "keyerror-price",
+  "message": "Traceback (most recent call last):\n  File \"/app/jobs/retry.py\", line 300, in <module>\n    create_order(payload)\n  File \"/app/svc/order.py\", line 300, in create_order\n    total = sum(i[\"price\"] for i in items)\nKeyError: 'price'  [request_id=req-30134912, took 42459ms]"
+ },
+ {
+  "label": "decode-utf8",
+  "message": "UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 12: invalid start byte\n  File \"/app/io/loader.py\", line 260, in load\n    raw.decode(\"utf-8\")  (file=/tmp/blob-16515074.bin, read 76868ms)"
+ },
+ {
+  "label": "index-out-of-range",
+  "message": "IndexError: list index out of range\n  File \"/app/rank.py\", line 349, in top\n    return xs[10]"
+ },
+ {
+  "label": "decode-utf8",
+  "message": "UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 12: invalid start byte\n  File \"/app/io/loader.py\", line 373, in load\n    raw.decode(\"utf-8\")  (file=/tmp/blob-34237176.bin, read 79344ms)"
+ },
+ {
+  "label": "log-permission",
+  "message": "PermissionError: [Errno 13] Permission denied: '/var/log/app/56152659.log' (uid=1000, obj 0xa808fd3740b2)"
+ },
+ {
+  "label": "assert-status-500",
+  "message": "AssertionError: expected status 200 but got 500 for POST /orders (request_id=req-56137601, took 9418ms, at 2026-09-28 15:47:40)"
+ },
+ {
+  "label": "assert-status-500",
+  "message": "AssertionError: expected status 200 but got 500 for POST /orders (request_id=req-91209495, took 20783ms, at 2026-09-15 09:24:54)"
+ },
+ {
+  "label": "typeerror-concat",
+  "message": "TypeError: can only concatenate str (not \"int\") to str\n  File \"/app/util/fmt.py\", line 146, in render\n    return prefix + count\n  File \"/app/api/view.py\", line 146, in get\n    render(c)  [trace_id=fcec2b0d-0baf-7b89-8059-794b817a247f]"
+ },
+ {
+  "label": "assert-list-diff",
+  "message": "AssertionError: lists differ: [1, 2, 3] != [1, 2, 4]\nFirst differing element 2: 3 != 4 (case #11671592, seed=11671592)"
+ },
+ {
+  "label": "assert-list-diff",
+  "message": "AssertionError: lists differ: [1, 2, 3] != [1, 2, 4]\nFirst differing element 2: 3 != 4 (case #31367417, seed=31367417)"
+ },
+ {
+  "label": "missing-config",
+  "message": "FileNotFoundError: [Errno 2] No such file or directory: '/etc/app/conf-53981667.yaml'\n  File \"/app/boot.py\", line 83, in load_config\n    open(path)\n  File \"/app/boot.py\", line 83, in main\n    load_config()"
+ },
+ {
+  "label": "oom-heap",
+  "message": "java.lang.OutOfMemoryError: Java heap space\n\tat java.util.Arrays.copyOf(Arrays.java:242)\n\tat com.shop.ReportBuilder.build(ReportBuilder.java:242)\n\tat com.shop.Job.run(Job.java:242)  # alloc at 0x3a22883cb348, used 62110ms"
+ },
+ {
+  "label": "redis-conn-refused",
+  "message": "ConnectionRefusedError: [Errno 111] Connection refused: redis://10.0.0.9:6379 (attempt 3, waited 3078ms, pid=53017621)"
+ },
+ {
+  "label": "missing-config",
+  "message": "FileNotFoundError: [Errno 2] No such file or directory: '/etc/app/conf-79789345.yaml'\n  File \"/app/boot.py\", line 73, in load_config\n    open(path)\n  File \"/app/boot.py\", line 73, in main\n    load_config()"
+ },
+ {
+  "label": "missing-config",
+  "message": "FileNotFoundError: [Errno 2] No such file or directory: '/etc/app/conf-88563463.yaml'\n  File \"/app/boot.py\", line 231, in load_config\n    open(path)\n  File \"/app/boot.py\", line 231, in main\n    load_config()"
+ },
+ {
+  "label": "log-permission",
+  "message": "PermissionError: [Errno 13] Permission denied: '/var/log/app/3931742.log' (uid=1000, obj 0x6ffc1d2b78dd)"
+ },
+ {
+  "label": "assert-status-500",
+  "message": "AssertionError: expected status 200 but got 500 for POST /orders\n  context: attempt=71121790 elapsed=26775s trace=9c989de0-019f-570d-1c46-3379c616c257"
+ },
+ {
+  "label": "redis-conn-refused",
+  "message": "ConnectionRefusedError: [Errno 111] Connection refused: redis://10.0.0.9:6379 (attempt 3, waited 22305ms, pid=53768010)"
+ },
+ {
+  "label": "missing-config",
+  "message": "FileNotFoundError: [Errno 2] No such file or directory: '/etc/app/conf-51571401.yaml'\n  File \"/app/boot.py\", line 121, in load_config\n    open(path)\n  File \"/app/boot.py\", line 121, in main\n    load_config()"
+ },
+ {
+  "label": "assert-status-404",
+  "message": "AssertionError: expected status 200 but got 404 for GET /users/52024486 (took 59523ms)"
+ },
+ {
+  "label": "assert-status-500",
+  "message": "AssertionError: expected status 200 but got 500 for POST /orders (request_id=req-93981693, took 58683ms, at 2026-09-26 04:34:52)"
+ },
+ {
+  "label": "redis-conn-refused",
+  "message": "ConnectionRefusedError: [Errno 111] Connection refused: redis://10.0.0.9:6379 (attempt 3, waited 44236ms, pid=30717086)"
+ },
+ {
+  "label": "assert-status-404",
+  "message": "AssertionError: expected status 200 but got 404 for GET /users/79007733 (took 902ms)"
+ },
+ {
+  "label": "typeerror-concat",
+  "message": "TypeError: can only concatenate str (not \"int\") to str\n  File \"/app/util/fmt.py\", line 341, in render\n    return prefix + count\n  File \"/app/api/view.py\", line 341, in get\n    render(c)  [trace_id=32c960d3-6aa8-d0d7-6950-25924b5db221]"
+ },
+ {
+  "label": "typeerror-concat",
+  "message": "TypeError: can only concatenate str (not \"int\") to str\n  File \"/app/util/fmt.py\", line 325, in render\n    return prefix + count\n  File \"/app/api/view.py\", line 325, in get\n    render(c)  [trace_id=e4970f3c-5211-6011-37d3-a57c1dee2b86]"
+ },
+ {
+  "label": "assert-list-diff",
+  "message": "AssertionError: lists differ: [1, 2, 3] != [1, 2, 4]\nFirst differing element 2: 3 != 4 (case #677928, seed=677928)"
+ },
+ {
+  "label": "oom-heap",
+  "message": "java.lang.OutOfMemoryError: Java heap space\n\tat java.util.Arrays.copyOf(Arrays.java:138)\n\tat com.shop.ReportBuilder.build(ReportBuilder.java:138)\n\tat com.shop.Job.run(Job.java:138)  # alloc at 0x2fb56e338278, used 43677ms"
+ },
+ {
+  "label": "log-permission",
+  "message": "PermissionError: [Errno 13] Permission denied: '/var/log/app/31405602.log' (uid=1000, obj 0xef7292b82a63)"
+ },
+ {
+  "label": "missing-config",
+  "message": "FileNotFoundError: [Errno 2] No such file or directory: '/etc/app/conf-2031159.yaml'\n  File \"/app/boot.py\", line 91, in load_config\n    open(path)\n  File \"/app/boot.py\", line 91, in main\n    load_config()"
+ },
+ {
+  "label": "log-permission",
+  "message": "PermissionError: [Errno 13] Permission denied: '/var/log/app/35322794.log' (uid=1000, obj 0xc75c0fcb77e3)"
+ },
+ {
+  "label": "oom-heap",
+  "message": "java.lang.OutOfMemoryError: Java heap space\n\tat java.util.Arrays.copyOf(Arrays.java:230)\n\tat com.shop.ReportBuilder.build(ReportBuilder.java:230)\n\tat com.shop.Job.run(Job.java:230)  # alloc at 0xd18f7f26426b, used 6469ms"
+ },
+ {
+  "label": "query-timeout",
+  "message": "TimeoutError: SQL query exceeded deadline of 1958ms\n  File \"/app/dao/report.py\", line 289, in run_report\n    cur.execute(SQL)\n  File \"/app/dao/report.py\", line 289, in <module>\n    run_report()  # obj at 0x9b08772b5c7c"
+ },
+ {
+  "label": "log-permission",
+  "message": "PermissionError: [Errno 13] Permission denied: '/var/log/app/53648993.log' (uid=1000, obj 0xe9144bff9eee)"
+ },
+ {
+  "label": "keyerror-price",
+  "message": "Traceback (most recent call last):\n  File \"/app/tests/test_order.py\", line 364, in test_create\n    create_order(items)\n  File \"/app/svc/order.py\", line 364, in create_order\n    total = sum(i[\"price\"] for i in items)\nKeyError: 'price'  [request_id=req-31963419, took 34375ms]"
+ },
+ {
+  "label": "missing-config",
+  "message": "FileNotFoundError: [Errno 2] No such file or directory: '/etc/app/conf-74217190.yaml'\n  File \"/app/boot.py\", line 209, in load_config\n    open(path)\n  File \"/app/boot.py\", line 209, in main\n    load_config()"
+ },
+ {
+  "label": "npe-user-null",
+  "message": "java.lang.NullPointerException: Cannot invoke \"String.length()\" because \"user\" is null\n\tat com.shop.UserService.getProfile(UserService.java:374)\n\tat com.shop.UserController.profile(UserController.java:374)\n\tat com.shop.Main.main(Main.java:374)\n\t... trace_id=cffbf7a9-aead-8845-0a75-f42fcbeb6459"
+ },
+ {
+  "label": "assert-list-diff",
+  "message": "AssertionError: lists differ: [1, 2, 3] != [1, 2, 4]\nFirst differing element 2: 3 != 4 (case #92897185, seed=92897185)"
+ },
+ {
+  "label": "query-timeout",
+  "message": "TimeoutError: SQL query exceeded deadline of 3970ms\n  File \"/app/dao/report.py\", line 396, in run_report\n    cur.execute(SQL)\n  File \"/app/dao/report.py\", line 396, in <module>\n    run_report()  # obj at 0x5d384e477760"
+ },
+ {
+  "label": "assert-status-404",
+  "message": "AssertionError: expected status 200 but got 404 for GET /users/42984591 (took 85002ms)"
+ },
+ {
+  "label": "query-timeout",
+  "message": "TimeoutError: SQL query exceeded deadline of 40230ms\n  File \"/app/dao/report.py\", line 396, in run_report\n    cur.execute(SQL)\n  File \"/app/dao/report.py\", line 396, in <module>\n    run_report()  # obj at 0x9573d1ee545"
+ },
+ {
+  "label": "log-permission",
+  "message": "PermissionError: [Errno 13] Permission denied: '/var/log/app/78984619.log' (uid=1000, obj 0x88cee2fdad4)"
+ },
+ {
+  "label": "missing-config",
+  "message": "FileNotFoundError: [Errno 2] No such file or directory: '/etc/app/conf-15478838.yaml'\n  File \"/app/boot.py\", line 332, in load_config\n    open(path)\n  File \"/app/boot.py\", line 332, in main\n    load_config()"
+ },
+ {
+  "label": "query-timeout",
+  "message": "TimeoutError: SQL query exceeded deadline of 54452ms\n  File \"/app/dao/report.py\", line 26, in run_report\n    cur.execute(SQL)\n  File \"/app/dao/report.py\", line 26, in <module>\n    run_report()  # obj at 0x9b0fc96acd7d"
+ },
+ {
+  "label": "query-timeout",
+  "message": "TimeoutError: SQL query exceeded deadline of 61271ms\n  File \"/app/dao/report.py\", line 201, in run_report\n    cur.execute(SQL)\n  File \"/app/dao/report.py\", line 201, in <module>\n    run_report()  # obj at 0xfd73226f9677"
+ },
+ {
+  "label": "query-timeout",
+  "message": "TimeoutError: SQL query exceeded deadline of 82528ms\n  File \"/app/dao/report.py\", line 241, in run_report\n    cur.execute(SQL)\n  File \"/app/dao/report.py\", line 241, in <module>\n    run_report()  # obj at 0xa7dc1ffd2a4e"
+ },
+ {
+  "label": "query-timeout",
+  "message": "TimeoutError: SQL query exceeded deadline of 81689ms\n  File \"/app/dao/report.py\", line 40, in run_report\n    cur.execute(SQL)\n  File \"/app/dao/report.py\", line 40, in <module>\n    run_report()  # obj at 0x65125acf7d30"
+ },
+ {
+  "label": "typeerror-concat",
+  "message": "TypeError: can only concatenate str (not \"int\") to str\n  File \"/app/util/fmt.py\", line 224, in render\n    return prefix + count\n  File \"/app/api/view.py\", line 224, in get\n    render(c)  [trace_id=09a03141-465c-0e16-6293-3f8fbf117b20]"
+ },
+ {
+  "label": "assert-status-404",
+  "message": "AssertionError: expected status 200 but got 404 for GET /users/93411730 (took 258ms)"
+ },
+ {
+  "label": "redis-conn-refused",
+  "message": "ConnectionRefusedError: [Errno 111] Connection refused: redis://10.0.0.9:6379 (attempt 3, waited 61724ms, pid=533709)"
+ },
+ {
+  "label": "keyerror-price",
+  "message": "Traceback (most recent call last):\n  File \"/app/tests/test_order.py\", line 277, in test_create\n    create_order(items)\n  File \"/app/svc/order.py\", line 277, in create_order\n    total = sum(i[\"price\"] for i in items)\nKeyError: 'price'  [request_id=req-87805874, took 55226ms]"
+ },
+ {
+  "label": "log-permission",
+  "message": "PermissionError: [Errno 13] Permission denied: '/var/log/app/51860199.log' (uid=1000, obj 0x80bc45ace56a)"
+ },
+ {
+  "label": "oom-heap",
+  "message": "java.lang.OutOfMemoryError: Java heap space\n\tat java.util.Arrays.copyOf(Arrays.java:323)\n\tat com.shop.ReportBuilder.build(ReportBuilder.java:323)\n\tat com.shop.Job.run(Job.java:323)  # alloc at 0x1b16f7b384d5, used 63348ms"
+ },
+ {
+  "label": "decode-utf8",
+  "message": "UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 12: invalid start byte\n  File \"/app/io/loader.py\", line 374, in load\n    raw.decode(\"utf-8\")  (file=/tmp/blob-84831658.bin, read 1924ms)"
+ },
+ {
+  "label": "typeerror-concat",
+  "message": "TypeError: can only concatenate str (not \"int\") to str\n  File \"/app/util/fmt.py\", line 23, in render\n    return prefix + count\n  File \"/app/api/view.py\", line 23, in get\n    render(c)  [trace_id=a9399bf0-1b60-96e1-a419-b488af1b87bc]"
+ },
+ {
+  "label": "decode-utf8",
+  "message": "UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 12: invalid start byte\n  File \"/app/io/loader.py\", line 107, in load\n    raw.decode(\"utf-8\")  (file=/tmp/blob-47085383.bin, read 37898ms)"
+ },
+ {
+  "label": "assert-status-404",
+  "message": "AssertionError: expected status 200 but got 404 for GET /users/35183786 (took 364ms)"
+ },
+ {
+  "label": "query-timeout",
+  "message": "TimeoutError: SQL query exceeded deadline of 38772ms\n  File \"/app/dao/report.py\", line 336, in run_report\n    cur.execute(SQL)\n  File \"/app/dao/report.py\", line 336, in <module>\n    run_report()  # obj at 0xbf4a3a148afe"
+ },
+ {
+  "label": "oom-heap",
+  "message": "java.lang.OutOfMemoryError: Java heap space\n\tat java.util.Arrays.copyOf(Arrays.java:321)\n\tat com.shop.ReportBuilder.build(ReportBuilder.java:321)\n\tat com.shop.Job.run(Job.java:321)  # alloc at 0x84da7836773b, used 6721ms"
+ },
+ {
+  "label": "typeerror-concat",
+  "message": "TypeError: can only concatenate str (not \"int\") to str\n  File \"/app/util/fmt.py\", line 18, in render\n    return prefix + count\n  File \"/app/api/view.py\", line 18, in get\n    render(c)  [trace_id=7930d908-5fd3-4733-44d8-ccf9fb261d7c]"
+ },
+ {
+  "label": "assert-status-404",
+  "message": "AssertionError: expected status 200 but got 404 for GET /users/85037333 (took 77575ms)"
+ },
+ {
+  "label": "assert-status-500",
+  "message": "AssertionError: expected status 200 but got 500 for POST /orders\n  context: attempt=81678955 elapsed=25042s trace=ff7796e1-135a-e5cb-cb00-4e04f24bc369"
+ },
+ {
+  "label": "oom-heap",
+  "message": "java.lang.OutOfMemoryError: Java heap space\n\tat java.util.Arrays.copyOf(Arrays.java:327)\n\tat com.shop.ReportBuilder.build(ReportBuilder.java:327)\n\tat com.shop.Job.run(Job.java:327)  # alloc at 0x39ef6247e2b6, used 88448ms"
+ },
+ {
+  "label": "decode-utf8",
+  "message": "UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 12: invalid start byte\n  File \"/app/io/loader.py\", line 311, in load\n    raw.decode(\"utf-8\")  (file=/tmp/blob-84417228.bin, read 54347ms)"
+ },
+ {
+  "label": "redis-conn-refused",
+  "message": "ConnectionRefusedError: [Errno 111] Connection refused: redis://10.0.0.9:6379 (attempt 3, waited 89227ms, pid=9807855)"
+ },
+ {
+  "label": "redis-conn-refused",
+  "message": "ConnectionRefusedError: [Errno 111] Connection refused: redis://10.0.0.9:6379 (attempt 3, waited 16576ms, pid=3274287)"
+ },
+ {
+  "label": "decode-utf8",
+  "message": "UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 12: invalid start byte\n  File \"/app/io/loader.py\", line 120, in load\n    raw.decode(\"utf-8\")  (file=/tmp/blob-84100077.bin, read 18187ms)"
+ },
+ {
+  "label": "log-permission",
+  "message": "PermissionError: [Errno 13] Permission denied: '/var/log/app/14349630.log' (uid=1000, obj 0x1284d134d908)"
+ },
+ {
+  "label": "keyerror-price",
+  "message": "Traceback (most recent call last):\n  File \"/app/tests/test_order.py\", line 240, in test_create\n    create_order(items)\n  File \"/app/svc/order.py\", line 240, in create_order\n    total = sum(i[\"price\"] for i in items)\nKeyError: 'price'  [request_id=req-62817747, took 19832ms]"
+ },
+ {
+  "label": "assert-status-500",
+  "message": "AssertionError: expected status 200 but got 500 for POST /orders (request_id=req-17885412, took 29514ms, at 2026-09-20 09:20:42)"
+ },
+ {
+  "label": "keyerror-price",
+  "message": "Traceback (most recent call last):\n  File \"/app/tests/test_order.py\", line 231, in test_create\n    create_order(items)\n  File \"/app/svc/order.py\", line 231, in create_order\n    total = sum(i[\"price\"] for i in items)\nKeyError: 'price'  [request_id=req-75859683, took 49102ms]"
+ },
+ {
+  "label": "decode-utf8",
+  "message": "UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 12: invalid start byte\n  File \"/app/io/loader.py\", line 127, in load\n    raw.decode(\"utf-8\")  (file=/tmp/blob-84300237.bin, read 30344ms)"
+ },
+ {
+  "label": "assert-status-404",
+  "message": "AssertionError: expected status 200 but got 404 for GET /users/71006749 (took 57763ms)"
+ },
+ {
+  "label": "log-permission",
+  "message": "PermissionError: [Errno 13] Permission denied: '/var/log/app/24841658.log' (uid=1000, obj 0x36f8fc88f225)"
+ },
+ {
+  "label": "npe-user-null",
+  "message": "java.lang.NullPointerException: Cannot invoke \"String.length()\" because \"user\" is null\n\tat com.shop.UserService.getProfile(UserService.java:118)\n\tat com.shop.UserController.profile(UserController.java:118)\n\tat com.shop.Main.main(Main.java:118)\n\t... trace_id=49e9c183-1b04-cf6a-f93a-d0436e69bea8"
+ },
+ {
+  "label": "oom-heap",
+  "message": "java.lang.OutOfMemoryError: Java heap space\n\tat java.util.Arrays.copyOf(Arrays.java:220)\n\tat com.shop.ReportBuilder.build(ReportBuilder.java:220)\n\tat com.shop.Job.run(Job.java:220)  # alloc at 0x6e8fb5ddc3d4, used 46527ms"
+ },
+ {
+  "label": "keyerror-price",
+  "message": "Traceback (most recent call last):\n  File \"/app/jobs/retry.py\", line 85, in <module>\n    create_order(payload)\n  File \"/app/svc/order.py\", line 85, in create_order\n    total = sum(i[\"price\"] for i in items)\nKeyError: 'price'  [request_id=req-60468060, took 17891ms]"
+ },
+ {
+  "label": "assert-list-diff",
+  "message": "AssertionError: lists differ: [1, 2, 3] != [1, 2, 4]\nFirst differing element 2: 3 != 4 (case #55972814, seed=55972814)"
+ },
+ {
+  "label": "redis-conn-refused",
+  "message": "ConnectionRefusedError: [Errno 111] Connection refused: redis://10.0.0.9:6379 (attempt 3, waited 86562ms, pid=33056828)"
+ },
+ {
+  "label": "missing-config",
+  "message": "FileNotFoundError: [Errno 2] No such file or directory: '/etc/app/conf-17028898.yaml'\n  File \"/app/boot.py\", line 152, in load_config\n    open(path)\n  File \"/app/boot.py\", line 152, in main\n    load_config()"
+ },
+ {
+  "label": "assert-list-diff",
+  "message": "AssertionError: lists differ: [1, 2, 3] != [1, 2, 4]\nFirst differing element 2: 3 != 4 (case #19895879, seed=19895879)"
+ },
+ {
+  "label": "assert-status-404",
+  "message": "AssertionError: expected status 200 but got 404 for GET /users/86464068 (took 85964ms)"
+ },
+ {
+  "label": "keyerror-price",
+  "message": "Traceback (most recent call last):\n  File \"/app/jobs/retry.py\", line 64, in <module>\n    create_order(payload)\n  File \"/app/svc/order.py\", line 64, in create_order\n    total = sum(i[\"price\"] for i in items)\nKeyError: 'price'  [request_id=req-98057642, took 78903ms]"
+ },
+ {
+  "label": "missing-config",
+  "message": "FileNotFoundError: [Errno 2] No such file or directory: '/etc/app/conf-68295975.yaml'\n  File \"/app/boot.py\", line 365, in load_config\n    open(path)\n  File \"/app/boot.py\", line 365, in main\n    load_config()"
+ },
+ {
+  "label": "typeerror-concat",
+  "message": "TypeError: can only concatenate str (not \"int\") to str\n  File \"/app/util/fmt.py\", line 249, in render\n    return prefix + count\n  File \"/app/api/view.py\", line 249, in get\n    render(c)  [trace_id=b4b298b7-f197-b9e0-e0e3-245407bf2a8b]"
+ },
+ {
+  "label": "missing-config",
+  "message": "FileNotFoundError: [Errno 2] No such file or directory: '/etc/app/conf-81163131.yaml'\n  File \"/app/boot.py\", line 393, in load_config\n    open(path)\n  File \"/app/boot.py\", line 393, in main\n    load_config()"
+ },
+ {
+  "label": "missing-config",
+  "message": "FileNotFoundError: [Errno 2] No such file or directory: '/etc/app/conf-70798058.yaml'\n  File \"/app/boot.py\", line 396, in load_config\n    open(path)\n  File \"/app/boot.py\", line 396, in main\n    load_config()"
+ },
+ {
+  "label": "decode-utf8",
+  "message": "UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 12: invalid start byte\n  File \"/app/io/loader.py\", line 275, in load\n    raw.decode(\"utf-8\")  (file=/tmp/blob-12709514.bin, read 64016ms)"
+ },
+ {
+  "label": "keyerror-price",
+  "message": "Traceback (most recent call last):\n  File \"/app/tests/test_order.py\", line 307, in test_create\n    create_order(items)\n  File \"/app/svc/order.py\", line 307, in create_order\n    total = sum(i[\"price\"] for i in items)\nKeyError: 'price'  [request_id=req-87800784, took 12823ms]"
+ },
+ {
+  "label": "query-timeout",
+  "message": "TimeoutError: SQL query exceeded deadline of 80499ms\n  File \"/app/dao/report.py\", line 148, in run_report\n    cur.execute(SQL)\n  File \"/app/dao/report.py\", line 148, in <module>\n    run_report()  # obj at 0x3e11377ab8e"
+ },
+ {
+  "label": "log-permission",
+  "message": "PermissionError: [Errno 13] Permission denied: '/var/log/app/40779350.log' (uid=1000, obj 0x28243ef0c7a5)"
+ },
+ {
+  "label": "oom-heap",
+  "message": "java.lang.OutOfMemoryError: Java heap space\n\tat java.util.Arrays.copyOf(Arrays.java:68)\n\tat com.shop.ReportBuilder.build(ReportBuilder.java:68)\n\tat com.shop.Job.run(Job.java:68)  # alloc at 0x4031c72d2a6f, used 69715ms"
+ },
+ {
+  "label": "redis-conn-refused",
+  "message": "ConnectionRefusedError: [Errno 111] Connection refused: redis://10.0.0.9:6379 (attempt 3, waited 66603ms, pid=26913629)"
+ },
+ {
+  "label": "keyerror-price",
+  "message": "Traceback (most recent call last):\n  File \"/app/jobs/retry.py\", line 307, in <module>\n    create_order(payload)\n  File \"/app/svc/order.py\", line 307, in create_order\n    total = sum(i[\"price\"] for i in items)\nKeyError: 'price'  [request_id=req-83372594, took 34405ms]"
+ },
+ {
+  "label": "npe-user-null",
+  "message": "java.lang.NullPointerException: Cannot invoke \"String.length()\" because \"user\" is null\n\tat com.shop.UserService.getProfile(UserService.java:157)\n\tat com.shop.UserController.profile(UserController.java:157)\n\tat com.shop.Main.main(Main.java:157)\n\t... trace_id=c0fffc09-5c7a-2742-fce6-6dfaf86eb190"
+ },
+ {
+  "label": "redis-conn-refused",
+  "message": "ConnectionRefusedError: [Errno 111] Connection refused: redis://10.0.0.9:6379 (attempt 3, waited 62116ms, pid=16335355)"
+ },
+ {
+  "label": "missing-config",
+  "message": "FileNotFoundError: [Errno 2] No such file or directory: '/etc/app/conf-67766481.yaml'\n  File \"/app/boot.py\", line 41, in load_config\n    open(path)\n  File \"/app/boot.py\", line 41, in main\n    load_config()"
+ },
+ {
+  "label": "npe-user-null",
+  "message": "java.lang.NullPointerException: Cannot invoke \"String.length()\" because \"user\" is null\n\tat com.shop.UserService.getProfile(UserService.java:176)\n\tat com.shop.UserController.profile(UserController.java:176)\n\tat com.shop.Main.main(Main.java:176)\n\t... trace_id=a3f7f83a-2351-daec-9385-8381c62036f4"
+ },
+ {
+  "label": "typeerror-concat",
+  "message": "TypeError: can only concatenate str (not \"int\") to str\n  File \"/app/util/fmt.py\", line 343, in render\n    return prefix + count\n  File \"/app/api/view.py\", line 343, in get\n    render(c)  [trace_id=d00b783b-29b1-6352-70a6-94ff30d9be7f]"
+ },
+ {
+  "label": "typeerror-concat",
+  "message": "TypeError: can only concatenate str (not \"int\") to str\n  File \"/app/util/fmt.py\", line 329, in render\n    return prefix + count\n  File \"/app/api/view.py\", line 329, in get\n    render(c)  [trace_id=f6a975f2-8e18-4da1-c6a6-f1f6befce2fc]"
+ },
+ {
+  "label": "keyerror-price",
+  "message": "Traceback (most recent call last):\n  File \"/app/tests/test_order.py\", line 219, in test_create\n    create_order(items)\n  File \"/app/svc/order.py\", line 219, in create_order\n    total = sum(i[\"price\"] for i in items)\nKeyError: 'price'  [request_id=req-95941287, took 69507ms]"
+ },
+ {
+  "label": "assert-status-500",
+  "message": "AssertionError: expected status 200 but got 500 for POST /orders\n  context: attempt=61245134 elapsed=35135s trace=ab1c8ab0-306e-641a-4511-5d0b63fa3fea"
+ },
+ {
+  "label": "decode-utf8",
+  "message": "UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 12: invalid start byte\n  File \"/app/io/loader.py\", line 144, in load\n    raw.decode(\"utf-8\")  (file=/tmp/blob-43164530.bin, read 17635ms)"
+ },
+ {
+  "label": "oom-heap",
+  "message": "java.lang.OutOfMemoryError: Java heap space\n\tat java.util.Arrays.copyOf(Arrays.java:73)\n\tat com.shop.ReportBuilder.build(ReportBuilder.java:73)\n\tat com.shop.Job.run(Job.java:73)  # alloc at 0xeb56d52fa2ad, used 28348ms"
+ },
+ {
+  "label": "oom-heap",
+  "message": "java.lang.OutOfMemoryError: Java heap space\n\tat java.util.Arrays.copyOf(Arrays.java:42)\n\tat com.shop.ReportBuilder.build(ReportBuilder.java:42)\n\tat com.shop.Job.run(Job.java:42)  # alloc at 0xaeb0c3e255eb, used 79376ms"
+ },
+ {
+  "label": "assert-list-diff",
+  "message": "AssertionError: lists differ: [1, 2, 3] != [1, 2, 4]\nFirst differing element 2: 3 != 4 (case #77573653, seed=77573653)"
+ },
+ {
+  "label": "missing-config",
+  "message": "FileNotFoundError: [Errno 2] No such file or directory: '/etc/app/conf-62517960.yaml'\n  File \"/app/boot.py\", line 373, in load_config\n    open(path)\n  File \"/app/boot.py\", line 373, in main\n    load_config()"
+ },
+ {
+  "label": "keyerror-price",
+  "message": "Traceback (most recent call last):\n  File \"/app/tests/test_order.py\", line 22, in test_create\n    create_order(items)\n  File \"/app/svc/order.py\", line 22, in create_order\n    total = sum(i[\"price\"] for i in items)\nKeyError: 'price'  [request_id=req-36295801, took 72511ms]"
+ },
+ {
+  "label": "keyerror-price",
+  "message": "Traceback (most recent call last):\n  File \"/app/tests/test_order.py\", line 178, in test_create\n    create_order(items)\n  File \"/app/svc/order.py\", line 178, in create_order\n    total = sum(i[\"price\"] for i in items)\nKeyError: 'price'  [request_id=req-94833659, took 15845ms]"
+ },
+ {
+  "label": "assert-status-404",
+  "message": "AssertionError: expected status 200 but got 404 for GET /users/22574684 (took 37455ms)"
+ },
+ {
+  "label": "assert-status-404",
+  "message": "AssertionError: expected status 200 but got 404 for GET /users/84457983 (took 51608ms)"
+ },
+ {
+  "label": "redis-conn-refused",
+  "message": "ConnectionRefusedError: [Errno 111] Connection refused: redis://10.0.0.9:6379 (attempt 3, waited 74725ms, pid=68916781)"
+ },
+ {
+  "label": "keyerror-price",
+  "message": "Traceback (most recent call last):\n  File \"/app/jobs/retry.py\", line 314, in <module>\n    create_order(payload)\n  File \"/app/svc/order.py\", line 314, in create_order\n    total = sum(i[\"price\"] for i in items)\nKeyError: 'price'  [request_id=req-28651304, took 43329ms]"
+ },
+ {
+  "label": "npe-user-null",
+  "message": "java.lang.NullPointerException: Cannot invoke \"String.length()\" because \"user\" is null\n\tat com.shop.UserService.getProfile(UserService.java:284)\n\tat com.shop.UserController.profile(UserController.java:284)\n\tat com.shop.Main.main(Main.java:284)\n\t... trace_id=3979a552-fb80-5d59-6c54-e2ad464e5278"
+ },
+ {
+  "label": "assert-status-404",
+  "message": "AssertionError: expected status 200 but got 404 for GET /users/51243240 (took 36388ms)"
+ },
+ {
+  "label": "redis-conn-refused",
+  "message": "ConnectionRefusedError: [Errno 111] Connection refused: redis://10.0.0.9:6379 (attempt 3, waited 75993ms, pid=56196331)"
+ },
+ {
+  "label": "assert-list-diff",
+  "message": "AssertionError: lists differ: [1, 2, 3] != [1, 2, 4]\nFirst differing element 2: 3 != 4 (case #27630209, seed=27630209)"
+ },
+ {
+  "label": "log-permission",
+  "message": "PermissionError: [Errno 13] Permission denied: '/var/log/app/95675474.log' (uid=1000, obj 0xca37f5ac0c5)"
+ },
+ {
+  "label": "log-permission",
+  "message": "PermissionError: [Errno 13] Permission denied: '/var/log/app/66564510.log' (uid=1000, obj 0xdc2b09adf223)"
+ },
+ {
+  "label": "redis-conn-refused",
+  "message": "ConnectionRefusedError: [Errno 111] Connection refused: redis://10.0.0.9:6379 (attempt 3, waited 60109ms, pid=15040812)"
+ },
+ {
+  "label": "missing-config",
+  "message": "FileNotFoundError: [Errno 2] No such file or directory: '/etc/app/conf-65769196.yaml'\n  File \"/app/boot.py\", line 389, in load_config\n    open(path)\n  File \"/app/boot.py\", line 389, in main\n    load_config()"
+ },
+ {
+  "label": "decode-utf8",
+  "message": "UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 12: invalid start byte\n  File \"/app/io/loader.py\", line 208, in load\n    raw.decode(\"utf-8\")  (file=/tmp/blob-43394626.bin, read 22957ms)"
+ },
+ {
+  "label": "redis-conn-refused",
+  "message": "ConnectionRefusedError: [Errno 111] Connection refused: redis://10.0.0.9:6379 (attempt 3, waited 88635ms, pid=22343110)"
+ },
+ {
+  "label": "assert-list-diff",
+  "message": "AssertionError: lists differ: [1, 2, 3] != [1, 2, 4]\nFirst differing element 2: 3 != 4 (case #87663183, seed=87663183)"
+ },
+ {
+  "label": "keyerror-price",
+  "message": "Traceback (most recent call last):\n  File \"/app/jobs/retry.py\", line 119, in <module>\n    create_order(payload)\n  File \"/app/svc/order.py\", line 119, in create_order\n    total = sum(i[\"price\"] for i in items)\nKeyError: 'price'  [request_id=req-92450549, took 4188ms]"
+ },
+ {
+  "label": "missing-config",
+  "message": "FileNotFoundError: [Errno 2] No such file or directory: '/etc/app/conf-49907630.yaml'\n  File \"/app/boot.py\", line 26, in load_config\n    open(path)\n  File \"/app/boot.py\", line 26, in main\n    load_config()"
+ },
+ {
+  "label": "redis-conn-refused",
+  "message": "ConnectionRefusedError: [Errno 111] Connection refused: redis://10.0.0.9:6379 (attempt 3, waited 56672ms, pid=46886460)"
+ },
+ {
+  "label": "missing-config",
+  "message": "FileNotFoundError: [Errno 2] No such file or directory: '/etc/app/conf-28938436.yaml'\n  File \"/app/boot.py\", line 316, in load_config\n    open(path)\n  File \"/app/boot.py\", line 316, in main\n    load_config()"
+ },
+ {
+  "label": "oom-heap",
+  "message": "java.lang.OutOfMemoryError: Java heap space\n\tat java.util.Arrays.copyOf(Arrays.java:201)\n\tat com.shop.ReportBuilder.build(ReportBuilder.java:201)\n\tat com.shop.Job.run(Job.java:201)  # alloc at 0xd1cf6d7bb43e, used 52082ms"
+ },
+ {
+  "label": "assert-status-500",
+  "message": "AssertionError: expected status 200 but got 500 for POST /orders\n  context: attempt=46500857 elapsed=18804s trace=beaf5ef1-dc0b-f016-b3d5-f3756947e344"
+ },
+ {
+  "label": "decode-utf8",
+  "message": "UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 12: invalid start byte\n  File \"/app/io/loader.py\", line 339, in load\n    raw.decode(\"utf-8\")  (file=/tmp/blob-91456962.bin, read 48289ms)"
+ },
+ {
+  "label": "assert-status-404",
+  "message": "AssertionError: expected status 200 but got 404 for GET /users/28221802 (took 32060ms)"
+ },
+ {
+  "label": "assert-status-500",
+  "message": "AssertionError: expected status 200 but got 500 for POST /orders (request_id=req-11267371, took 41347ms, at 2026-09-10 08:45:58)"
+ },
+ {
+  "label": "decode-utf8",
+  "message": "UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 12: invalid start byte\n  File \"/app/io/loader.py\", line 375, in load\n    raw.decode(\"utf-8\")  (file=/tmp/blob-80165418.bin, read 33266ms)"
+ },
+ {
+  "label": "query-timeout",
+  "message": "TimeoutError: SQL query exceeded deadline of 28561ms\n  File \"/app/dao/report.py\", line 118, in run_report\n    cur.execute(SQL)\n  File \"/app/dao/report.py\", line 118, in <module>\n    run_report()  # obj at 0x7b4ee974b982"
+ },
+ {
+  "label": "redis-conn-refused",
+  "message": "ConnectionRefusedError: [Errno 111] Connection refused: redis://10.0.0.9:6379 (attempt 3, waited 2417ms, pid=58888293)"
+ },
+ {
+  "label": "assert-status-404",
+  "message": "AssertionError: expected status 200 but got 404 for GET /users/28311454 (took 54387ms)"
+ },
+ {
+  "label": "missing-config",
+  "message": "FileNotFoundError: [Errno 2] No such file or directory: '/etc/app/conf-33429538.yaml'\n  File \"/app/boot.py\", line 358, in load_config\n    open(path)\n  File \"/app/boot.py\", line 358, in main\n    load_config()"
+ },
+ {
+  "label": "assert-status-404",
+  "message": "AssertionError: expected status 200 but got 404 for GET /users/22021839 (took 33143ms)"
+ },
+ {
+  "label": "log-permission",
+  "message": "PermissionError: [Errno 13] Permission denied: '/var/log/app/73551333.log' (uid=1000, obj 0xff5510503b4e)"
+ },
+ {
+  "label": "oom-heap",
+  "message": "java.lang.OutOfMemoryError: Java heap space\n\tat java.util.Arrays.copyOf(Arrays.java:249)\n\tat com.shop.ReportBuilder.build(ReportBuilder.java:249)\n\tat com.shop.Job.run(Job.java:249)  # alloc at 0x995d3a33e6a5, used 64054ms"
+ },
+ {
+  "label": "assert-list-diff",
+  "message": "AssertionError: lists differ: [1, 2, 3] != [1, 2, 4]\nFirst differing element 2: 3 != 4 (case #9789520, seed=9789520)"
+ },
+ {
+  "label": "query-timeout",
+  "message": "TimeoutError: SQL query exceeded deadline of 14366ms\n  File \"/app/dao/report.py\", line 57, in run_report\n    cur.execute(SQL)\n  File \"/app/dao/report.py\", line 57, in <module>\n    run_report()  # obj at 0x7030e7a29b95"
+ },
+ {
+  "label": "missing-config",
+  "message": "FileNotFoundError: [Errno 2] No such file or directory: '/etc/app/conf-53858389.yaml'\n  File \"/app/boot.py\", line 292, in load_config\n    open(path)\n  File \"/app/boot.py\", line 292, in main\n    load_config()"
+ },
+ {
+  "label": "log-permission",
+  "message": "PermissionError: [Errno 13] Permission denied: '/var/log/app/29629400.log' (uid=1000, obj 0xaf69785d3a22)"
+ },
+ {
+  "label": "query-timeout",
+  "message": "TimeoutError: SQL query exceeded deadline of 12040ms\n  File \"/app/dao/report.py\", line 342, in run_report\n    cur.execute(SQL)\n  File \"/app/dao/report.py\", line 342, in <module>\n    run_report()  # obj at 0xa9af0063b25"
+ },
+ {
+  "label": "decode-utf8",
+  "message": "UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 12: invalid start byte\n  File \"/app/io/loader.py\", line 192, in load\n    raw.decode(\"utf-8\")  (file=/tmp/blob-87403980.bin, read 76757ms)"
+ },
+ {
+  "label": "redis-conn-refused",
+  "message": "ConnectionRefusedError: [Errno 111] Connection refused: redis://10.0.0.9:6379 (attempt 3, waited 75726ms, pid=24259262)"
+ },
+ {
+  "label": "keyerror-price",
+  "message": "Traceback (most recent call last):\n  File \"/app/jobs/retry.py\", line 364, in <module>\n    create_order(payload)\n  File \"/app/svc/order.py\", line 364, in create_order\n    total = sum(i[\"price\"] for i in items)\nKeyError: 'price'  [request_id=req-15373810, took 28781ms]"
+ },
+ {
+  "label": "assert-list-diff",
+  "message": "AssertionError: lists differ: [1, 2, 3] != [1, 2, 4]\nFirst differing element 2: 3 != 4 (case #30507876, seed=30507876)"
+ },
+ {
+  "label": "npe-user-null",
+  "message": "java.lang.NullPointerException: Cannot invoke \"String.length()\" because \"user\" is null\n\tat com.shop.UserService.getProfile(UserService.java:288)\n\tat com.shop.UserController.profile(UserController.java:288)\n\tat com.shop.Main.main(Main.java:288)\n\t... trace_id=466559fd-2c36-b8f4-803c-2ee7286fb015"
+ },
+ {
+  "label": "log-permission",
+  "message": "PermissionError: [Errno 13] Permission denied: '/var/log/app/7868664.log' (uid=1000, obj 0xf8a24c9d51b4)"
+ },
+ {
+  "label": "keyerror-price",
+  "message": "Traceback (most recent call last):\n  File \"/app/jobs/retry.py\", line 268, in <module>\n    create_order(payload)\n  File \"/app/svc/order.py\", line 268, in create_order\n    total = sum(i[\"price\"] for i in items)\nKeyError: 'price'  [request_id=req-92586096, took 64301ms]"
+ },
+ {
+  "label": "assert-list-diff",
+  "message": "AssertionError: lists differ: [1, 2, 3] != [1, 2, 4]\nFirst differing element 2: 3 != 4 (case #41670957, seed=41670957)"
+ },
+ {
+  "label": "keyerror-price",
+  "message": "Traceback (most recent call last):\n  File \"/app/tests/test_order.py\", line 29, in test_create\n    create_order(items)\n  File \"/app/svc/order.py\", line 29, in create_order\n    total = sum(i[\"price\"] for i in items)\nKeyError: 'price'  [request_id=req-52206342, took 78216ms]"
+ },
+ {
+  "label": "npe-user-null",
+  "message": "java.lang.NullPointerException: Cannot invoke \"String.length()\" because \"user\" is null\n\tat com.shop.UserService.getProfile(UserService.java:147)\n\tat com.shop.UserController.profile(UserController.java:147)\n\tat com.shop.Main.main(Main.java:147)\n\t... trace_id=06af54e9-5628-a9ce-608c-35caa47835f6"
+ },
+ {
+  "label": "redis-conn-refused",
+  "message": "ConnectionRefusedError: [Errno 111] Connection refused: redis://10.0.0.9:6379 (attempt 3, waited 60887ms, pid=28770746)"
+ },
+ {
+  "label": "assert-list-diff",
+  "message": "AssertionError: lists differ: [1, 2, 3] != [1, 2, 4]\nFirst differing element 2: 3 != 4 (case #97278137, seed=97278137)"
+ },
+ {
+  "label": "query-timeout",
+  "message": "TimeoutError: SQL query exceeded deadline of 24957ms\n  File \"/app/dao/report.py\", line 104, in run_report\n    cur.execute(SQL)\n  File \"/app/dao/report.py\", line 104, in <module>\n    run_report()  # obj at 0x61b47b1692e1"
+ },
+ {
+  "label": "assert-list-diff",
+  "message": "AssertionError: lists differ: [1, 2, 3] != [1, 2, 4]\nFirst differing element 2: 3 != 4 (case #74944581, seed=74944581)"
+ },
+ {
+  "label": "npe-user-null",
+  "message": "java.lang.NullPointerException: Cannot invoke \"String.length()\" because \"user\" is null\n\tat com.shop.UserService.getProfile(UserService.java:249)\n\tat com.shop.UserController.profile(UserController.java:249)\n\tat com.shop.Main.main(Main.java:249)\n\t... trace_id=3676f73a-bc38-610d-1e16-af92ee95031e"
+ },
+ {
+  "label": "npe-user-null",
+  "message": "java.lang.NullPointerException: Cannot invoke \"String.length()\" because \"user\" is null\n\tat com.shop.UserService.getProfile(UserService.java:115)\n\tat com.shop.UserController.profile(UserController.java:115)\n\tat com.shop.Main.main(Main.java:115)\n\t... trace_id=95a68449-7475-d334-b525-3f5fef3fe430"
+ },
+ {
+  "label": "decode-utf8",
+  "message": "UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 12: invalid start byte\n  File \"/app/io/loader.py\", line 169, in load\n    raw.decode(\"utf-8\")  (file=/tmp/blob-33117010.bin, read 61963ms)"
+ },
+ {
+  "label": "redis-conn-refused",
+  "message": "ConnectionRefusedError: [Errno 111] Connection refused: redis://10.0.0.9:6379 (attempt 3, waited 79304ms, pid=55285226)"
+ },
+ {
+  "label": "grpc-unavailable",
+  "message": "grpc.RpcError: StatusCode.UNAVAILABLE: upstream connect error (deadline 25109ms, 0x4b0ae48cb72f)"
+ },
+ {
+  "label": "assert-status-404",
+  "message": "AssertionError: expected status 200 but got 404 for GET /users/72307166 (took 87208ms)"
+ },
+ {
+  "label": "log-permission",
+  "message": "PermissionError: [Errno 13] Permission denied: '/var/log/app/32611291.log' (uid=1000, obj 0xef9c2cca6626)"
+ },
+ {
+  "label": "log-permission",
+  "message": "PermissionError: [Errno 13] Permission denied: '/var/log/app/80893829.log' (uid=1000, obj 0x43a846e83e0d)"
+ },
+ {
+  "label": "assert-status-404",
+  "message": "AssertionError: expected status 200 but got 404 for GET /users/52947369 (took 6871ms)"
+ },
+ {
+  "label": "log-permission",
+  "message": "PermissionError: [Errno 13] Permission denied: '/var/log/app/49989653.log' (uid=1000, obj 0x22ae3b9a02cf)"
+ },
+ {
+  "label": "decode-utf8",
+  "message": "UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 12: invalid start byte\n  File \"/app/io/loader.py\", line 224, in load\n    raw.decode(\"utf-8\")  (file=/tmp/blob-73753074.bin, read 32653ms)"
+ },
+ {
+  "label": "assert-list-diff",
+  "message": "AssertionError: lists differ: [1, 2, 3] != [1, 2, 4]\nFirst differing element 2: 3 != 4 (case #10064133, seed=10064133)"
+ },
+ {
+  "label": "assert-list-diff",
+  "message": "AssertionError: lists differ: [1, 2, 3] != [1, 2, 4]\nFirst differing element 2: 3 != 4 (case #65776586, seed=65776586)"
+ },
+ {
+  "label": "assert-status-404",
+  "message": "AssertionError: expected status 200 but got 404 for GET /users/45539689 (took 48198ms)"
+ },
+ {
+  "label": "redis-conn-refused",
+  "message": "ConnectionRefusedError: [Errno 111] Connection refused: redis://10.0.0.9:6379 (attempt 3, waited 72618ms, pid=17369396)"
+ },
+ {
+  "label": "typeerror-concat",
+  "message": "TypeError: can only concatenate str (not \"int\") to str\n  File \"/app/util/fmt.py\", line 287, in render\n    return prefix + count\n  File \"/app/api/view.py\", line 287, in get\n    render(c)  [trace_id=d54f1e14-a74d-2947-e946-90a12e5f57e1]"
+ },
+ {
+  "label": "assert-status-500",
+  "message": "AssertionError: expected status 200 but got 500 for POST /orders (request_id=req-83317094, took 1401ms, at 2026-09-11 02:32:22)"
+ },
+ {
+  "label": "query-timeout",
+  "message": "TimeoutError: SQL query exceeded deadline of 41767ms\n  File \"/app/dao/report.py\", line 48, in run_report\n    cur.execute(SQL)\n  File \"/app/dao/report.py\", line 48, in <module>\n    run_report()  # obj at 0xf1586c5f521a"
+ },
+ {
+  "label": "missing-config",
+  "message": "FileNotFoundError: [Errno 2] No such file or directory: '/etc/app/conf-84496017.yaml'\n  File \"/app/boot.py\", line 375, in load_config\n    open(path)\n  File \"/app/boot.py\", line 375, in main\n    load_config()"
+ },
+ {
+  "label": "assert-status-404",
+  "message": "AssertionError: expected status 200 but got 404 for GET /users/61662258 (took 22612ms)"
+ },
+ {
+  "label": "assert-status-500",
+  "message": "AssertionError: expected status 200 but got 500 for POST /orders (request_id=req-10099734, took 51334ms, at 2026-09-21 21:45:21)"
+ },
+ {
+  "label": "decode-utf8",
+  "message": "UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 12: invalid start byte\n  File \"/app/io/loader.py\", line 51, in load\n    raw.decode(\"utf-8\")  (file=/tmp/blob-10701201.bin, read 34803ms)"
+ },
+ {
+  "label": "assert-list-diff",
+  "message": "AssertionError: lists differ: [1, 2, 3] != [1, 2, 4]\nFirst differing element 2: 3 != 4 (case #44916042, seed=44916042)"
+ },
+ {
+  "label": "missing-config",
+  "message": "FileNotFoundError: [Errno 2] No such file or directory: '/etc/app/conf-90395752.yaml'\n  File \"/app/boot.py\", line 306, in load_config\n    open(path)\n  File \"/app/boot.py\", line 306, in main\n    load_config()"
+ },
+ {
+  "label": "typeerror-concat",
+  "message": "TypeError: can only concatenate str (not \"int\") to str\n  File \"/app/util/fmt.py\", line 225, in render\n    return prefix + count\n  File \"/app/api/view.py\", line 225, in get\n    render(c)  [trace_id=59883b4c-f4da-cffc-55f8-7fd4092de447]"
+ },
+ {
+  "label": "assert-empty-body",
+  "message": "AssertionError: expected non-empty body but got '' for GET /health (took 18390ms)"
+ },
+ {
+  "label": "assert-list-diff",
+  "message": "AssertionError: lists differ: [1, 2, 3] != [1, 2, 4]\nFirst differing element 2: 3 != 4 (case #51134330, seed=51134330)"
+ },
+ {
+  "label": "decode-utf8",
+  "message": "UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 12: invalid start byte\n  File \"/app/io/loader.py\", line 49, in load\n    raw.decode(\"utf-8\")  (file=/tmp/blob-51253793.bin, read 6357ms)"
+ },
+ {
+  "label": "decode-utf8",
+  "message": "UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 12: invalid start byte\n  File \"/app/io/loader.py\", line 277, in load\n    raw.decode(\"utf-8\")  (file=/tmp/blob-56948074.bin, read 42226ms)"
+ },
+ {
+  "label": "typeerror-concat",
+  "message": "TypeError: can only concatenate str (not \"int\") to str\n  File \"/app/util/fmt.py\", line 82, in render\n    return prefix + count\n  File \"/app/api/view.py\", line 82, in get\n    render(c)  [trace_id=dfdd2311-d918-ddb4-984e-07bc96df3911]"
+ },
+ {
+  "label": "decode-utf8",
+  "message": "UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 12: invalid start byte\n  File \"/app/io/loader.py\", line 383, in load\n    raw.decode(\"utf-8\")  (file=/tmp/blob-99167345.bin, read 62196ms)"
+ },
+ {
+  "label": "redis-conn-refused",
+  "message": "ConnectionRefusedError: [Errno 111] Connection refused: redis://10.0.0.9:6379 (attempt 3, waited 29446ms, pid=57335854)"
+ },
+ {
+  "label": "log-permission",
+  "message": "PermissionError: [Errno 13] Permission denied: '/var/log/app/64195318.log' (uid=1000, obj 0xe9f97e4c64ec)"
+ },
+ {
+  "label": "missing-config",
+  "message": "FileNotFoundError: [Errno 2] No such file or directory: '/etc/app/conf-18924607.yaml'\n  File \"/app/boot.py\", line 195, in load_config\n    open(path)\n  File \"/app/boot.py\", line 195, in main\n    load_config()"
+ },
+ {
+  "label": "log-permission",
+  "message": "PermissionError: [Errno 13] Permission denied: '/var/log/app/65037613.log' (uid=1000, obj 0x48d9d3c452d2)"
+ },
+ {
+  "label": "log-permission",
+  "message": "PermissionError: [Errno 13] Permission denied: '/var/log/app/7705972.log' (uid=1000, obj 0xf46d0aefee56)"
+ },
+ {
+  "label": "assert-status-404",
+  "message": "AssertionError: expected status 200 but got 404 for GET /users/88470357 (took 51216ms)"
+ },
+ {
+  "label": "assert-status-500",
+  "message": "AssertionError: expected status 200 but got 500 for POST /orders (request_id=req-89655082, took 52049ms, at 2026-09-03 14:27:54)"
+ },
+ {
+  "label": "missing-config",
+  "message": "FileNotFoundError: [Errno 2] No such file or directory: '/etc/app/conf-87274482.yaml'\n  File \"/app/boot.py\", line 206, in load_config\n    open(path)\n  File \"/app/boot.py\", line 206, in main\n    load_config()"
+ },
+ {
+  "label": "oom-heap",
+  "message": "java.lang.OutOfMemoryError: Java heap space\n\tat java.util.Arrays.copyOf(Arrays.java:253)\n\tat com.shop.ReportBuilder.build(ReportBuilder.java:253)\n\tat com.shop.Job.run(Job.java:253)  # alloc at 0x9d6d76ac3f1d, used 66736ms"
+ },
+ {
+  "label": "oom-heap",
+  "message": "java.lang.OutOfMemoryError: Java heap space\n\tat java.util.Arrays.copyOf(Arrays.java:281)\n\tat com.shop.ReportBuilder.build(ReportBuilder.java:281)\n\tat com.shop.Job.run(Job.java:281)  # alloc at 0x92b95fb285c7, used 25109ms"
+ },
+ {
+  "label": "assert-status-500",
+  "message": "AssertionError: expected status 200 but got 500 for POST /orders\n  context: attempt=39171780 elapsed=17523s trace=aa19798b-5b74-c712-9966-cd8a2598bdf6"
+ },
+ {
+  "label": "disk-full",
+  "message": "OSError: [Errno 28] No space left on device: '/data/shard-85273788.db'"
+ },
+ {
+  "label": "assert-list-diff",
+  "message": "AssertionError: lists differ: [1, 2, 3] != [1, 2, 4]\nFirst differing element 2: 3 != 4 (case #64119680, seed=64119680)"
+ },
+ {
+  "label": "missing-config",
+  "message": "FileNotFoundError: [Errno 2] No such file or directory: '/etc/app/conf-35916984.yaml'\n  File \"/app/boot.py\", line 384, in load_config\n    open(path)\n  File \"/app/boot.py\", line 384, in main\n    load_config()"
+ },
+ {
+  "label": "assert-list-diff",
+  "message": "AssertionError: lists differ: [1, 2, 3] != [1, 2, 4]\nFirst differing element 2: 3 != 4 (case #61875907, seed=61875907)"
+ },
+ {
+  "label": "assert-status-404",
+  "message": "AssertionError: expected status 200 but got 404 for GET /users/4205562 (took 26332ms)"
+ },
+ {
+  "label": "typeerror-concat",
+  "message": "TypeError: can only concatenate str (not \"int\") to str\n  File \"/app/util/fmt.py\", line 86, in render\n    return prefix + count\n  File \"/app/api/view.py\", line 86, in get\n    render(c)  [trace_id=14351828-0e41-846c-55b2-b2e80f06662b]"
+ },
+ {
+  "label": "query-timeout",
+  "message": "TimeoutError: SQL query exceeded deadline of 26925ms\n  File \"/app/dao/report.py\", line 182, in run_report\n    cur.execute(SQL)\n  File \"/app/dao/report.py\", line 182, in <module>\n    run_report()  # obj at 0x6a8534464da"
+ },
+ {
+  "label": "keyerror-price",
+  "message": "Traceback (most recent call last):\n  File \"/app/jobs/retry.py\", line 394, in <module>\n    create_order(payload)\n  File \"/app/svc/order.py\", line 394, in create_order\n    total = sum(i[\"price\"] for i in items)\nKeyError: 'price'  [request_id=req-28501908, took 29663ms]"
+ }
+]
