@@ -1,0 +1,2002 @@
+[
+ {
+  "id": "F-00160",
+  "text": "Traceback (most recent call last):\n  File \"tests/test_checkout.py\", line 214, in test_currency\n    self.assertEqual(order.currency, 'CNY')\nAssertionError: 'USD' != 'CNY' [case 39283299, took 2956ms]",
+  "label": "assert-currency"
+ },
+ {
+  "id": "F-00105",
+  "text": "Traceback (most recent call last):\n  File \"tests/test_checkout.py\", line 791, in test_total\n    self.assertEqual(order.total, expected)\nAssertionError: Decimal('99.90') != Decimal('9.99') [case 19497820, run at 2026-04-11T19:37:19Z, took 5522ms]",
+  "label": "assert-total-price"
+ },
+ {
+  "id": "F-00250",
+  "text": "Traceback (most recent call last):\n  File \"worker/resize.py\", line 540, in run\n    img = Image.open(src)\nMemoryError: cannot allocate buffer for image <Image object at 0x95f74cb5e052> job=66022340 tmp=/tmp/70sjsmmjki8f elapsed 14.51s",
+  "label": "oom-image-resize"
+ },
+ {
+  "id": "F-00139",
+  "text": "Traceback (most recent call last):\n  File \"tests/test_checkout.py\", line 632, in test_currency\n    self.assertEqual(order.currency, 'CNY')\nAssertionError: 'USD' != 'CNY' [case 58654291, took 3892ms]",
+  "label": "assert-currency"
+ },
+ {
+  "id": "F-00028",
+  "text": "Traceback (most recent call last):\n  File \"app/services/order.py\", line 828, in create_order\n    conn = pool.acquire(timeout=5)\n  File \"app/db/pool.py\", line 597, in acquire\n    raise TimeoutError('pool exhausted')\nTimeoutError: connection to db 10.0.0.8:12608 timed out after 848ms (request ORD-6302739798, trace f406af6f-ec76-4788-6715-26d47b5d6f0f)",
+  "label": "db-connection-timeout"
+ },
+ {
+  "id": "F-00055",
+  "text": "Traceback (most recent call last):\n  File \"app/services/order.py\", line 719, in create_order\n    conn = pool.acquire(timeout=5)\n  File \"app/db/pool.py\", line 556, in acquire\n    raise ConnectionRefusedError('dial failed')\nConnectionRefusedError: connect to db 10.0.0.8:23473 refused (request ORD-2278804838, trace d1cbf499-7f9a-58cf-0dcc-fa09051ad826)",
+  "label": "db-connection-refused"
+ },
+ {
+  "id": "F-00300",
+  "text": "requests.exceptions.HTTPError: 502 Bad Gateway for https://api.internal:43004/v1/pay (upstream took 1074ms, req ORD-2284557789, ts 2026-02-19T16:46:21Z, token 4ea11608af4df576d5904e41d50ddf61)",
+  "label": "http-502-upstream"
+ },
+ {
+  "id": "F-00006",
+  "text": "Traceback (most recent call last):\n  File \"app/services/order.py\", line 818, in create_order\n    conn = pool.acquire(timeout=5)\n  File \"app/db/pool.py\", line 362, in acquire\n    raise TimeoutError('pool exhausted')\nTimeoutError: connection to db 10.0.0.8:52330 timed out after 1913ms (request ORD-6064609278, trace 7e0ffdf3-e723-a214-8bf9-7718a298a1b9)",
+  "label": "db-connection-timeout"
+ },
+ {
+  "id": "F-00018",
+  "text": "Traceback (most recent call last):\n  File \"app/services/order.py\", line 863, in create_order\n    conn = pool.acquire(timeout=5)\n  File \"app/db/pool.py\", line 630, in acquire\n    raise TimeoutError('pool exhausted')\nTimeoutError: connection to db 10.0.0.8:9151 timed out after 7484ms (request ORD-2299561812, trace e49d2682-7f13-cf89-a19a-0ef707ab135d)",
+  "label": "db-connection-timeout"
+ },
+ {
+  "id": "F-00165",
+  "text": "java.lang.NullPointerException: Cannot invoke \"User.getProfile()\" because \"user\" is null\n\tat com.shop.UserService.render(UserService.java:664)\n\tat com.shop.Web.handle(Web.java:52)\nrequestId=7cb4f68b-dc49-3f13-c83e-2da5fa87432b elapsed=0.68s session=bc0e2cd5652718db7581676f5fa43528",
+  "label": "npe-user-profile"
+ },
+ {
+  "id": "F-00102",
+  "text": "Traceback (most recent call last):\n  File \"tests/test_checkout.py\", line 412, in test_total\n    self.assertEqual(order.total, expected)\nAssertionError: Decimal('99.90') != Decimal('9.99') [case 38353210, run at 2026-06-12T02:10:39Z, took 3483ms]",
+  "label": "assert-total-price"
+ },
+ {
+  "id": "F-00350",
+  "text": "lint failure: E501 line too long (132 > 120) in report #12099684, scan took 28.07s",
+  "label": "flake8-lint-only"
+ },
+ {
+  "id": "F-00379",
+  "text": "RuntimeError: worker crashed, dump at 0x250f27097692, uptime 28.93s, seq 61675841",
+  "label": "generic-crash-no-stack"
+ },
+ {
+  "id": "F-00337",
+  "text": "lint failure: E501 line too long (132 > 120) in report #78679042, scan took 9.97s",
+  "label": "flake8-lint-only"
+ },
+ {
+  "id": "F-00181",
+  "text": "java.lang.NullPointerException: Cannot invoke \"User.getProfile()\" because \"user\" is null\n\tat com.shop.UserService.render(UserService.java:491)\n\tat com.shop.Web.handle(Web.java:676)\nrequestId=c4c84d78-b144-3046-b7ba-51a1f53378d0 elapsed=4.62s session=a74ba8a3e6a52fe90752ccd13b926ba2",
+  "label": "npe-user-profile"
+ },
+ {
+  "id": "F-00035",
+  "text": "Traceback (most recent call last):\n  File \"app/services/order.py\", line 789, in create_order\n    conn = pool.acquire(timeout=5)\n  File \"app/db/pool.py\", line 430, in acquire\n    raise TimeoutError('pool exhausted')\nTimeoutError: connection to db 10.0.0.8:60209 timed out after 512ms (request ORD-4916825735, trace 0b666ffd-282e-2371-dd77-173b565e45ce)",
+  "label": "db-connection-timeout"
+ },
+ {
+  "id": "F-00216",
+  "text": "Traceback (most recent call last):\n  File \"app/config.py\", line 886, in load\n    return cfg['feature_flags']\nKeyError: 'feature_flags' (pid 88917866, started 2026-01-01T15:54:24Z)",
+  "label": "keyerror-config"
+ },
+ {
+  "id": "F-00306",
+  "text": "requests.exceptions.HTTPError: 502 Bad Gateway for https://api.internal:29668/v1/pay (upstream took 453ms, req ORD-6425855039, ts 2026-04-25T09:26:43Z, token a433060a0daeb9c4333b346b4aae1074)",
+  "label": "http-502-upstream"
+ },
+ {
+  "id": "F-00372",
+  "text": "RuntimeError: worker crashed, dump at 0x8b490dcc4800, uptime 20.36s, seq 32998023",
+  "label": "generic-crash-no-stack"
+ },
+ {
+  "id": "F-00019",
+  "text": "Traceback (most recent call last):\n  File \"app/services/order.py\", line 292, in create_order\n    conn = pool.acquire(timeout=5)\n  File \"app/db/pool.py\", line 430, in acquire\n    raise TimeoutError('pool exhausted')\nTimeoutError: connection to db 10.0.0.8:40695 timed out after 8494ms (request ORD-3755527175, trace aacd0fdc-9a4a-aa7c-6ac7-f22cadfbfb2a)",
+  "label": "db-connection-timeout"
+ },
+ {
+  "id": "F-00144",
+  "text": "Traceback (most recent call last):\n  File \"tests/test_checkout.py\", line 289, in test_currency\n    self.assertEqual(order.currency, 'CNY')\nAssertionError: 'USD' != 'CNY' [case 43040792, took 948ms]",
+  "label": "assert-currency"
+ },
+ {
+  "id": "F-00228",
+  "text": "Traceback (most recent call last):\n  File \"app/config.py\", line 433, in load\n    return cfg['feature_flags']\nKeyError: 'feature_flags' (pid 66677963, started 2026-08-17T07:26:32Z)",
+  "label": "keyerror-config"
+ },
+ {
+  "id": "F-00238",
+  "text": "Traceback (most recent call last):\n  File \"app/config.py\", line 23, in load\n    return cfg['feature_flags']\nKeyError: 'feature_flags' (pid 92208647, started 2026-10-05T04:53:00Z)",
+  "label": "keyerror-config"
+ },
+ {
+  "id": "F-00175",
+  "text": "java.lang.NullPointerException: Cannot invoke \"User.getProfile()\" because \"user\" is null\n\tat com.shop.UserService.render(UserService.java:616)\n\tat com.shop.Web.handle(Web.java:720)\nrequestId=78678a05-245a-0e99-cab8-796ae0ec35db elapsed=15.84s session=5b32c7fd66c833e8b5b5225c906c50ad",
+  "label": "npe-user-profile"
+ },
+ {
+  "id": "F-00371",
+  "text": "RuntimeError: worker crashed, dump at 0xbc3b74a96e2, uptime 4.48s, seq 47142601",
+  "label": "generic-crash-no-stack"
+ },
+ {
+  "id": "F-00149",
+  "text": "Traceback (most recent call last):\n  File \"tests/test_checkout.py\", line 391, in test_currency\n    self.assertEqual(order.currency, 'CNY')\nAssertionError: 'USD' != 'CNY' [case 68054602, took 3823ms]",
+  "label": "assert-currency"
+ },
+ {
+  "id": "F-00184",
+  "text": "java.lang.NullPointerException: Cannot invoke \"User.getProfile()\" because \"user\" is null\n\tat com.shop.UserService.render(UserService.java:488)\n\tat com.shop.Web.handle(Web.java:640)\nrequestId=ec67340a-e827-e7f9-2500-bf6cbe67b24d elapsed=11.21s session=ddf6ce82a704c6782fecad98058ed23a",
+  "label": "npe-user-profile"
+ },
+ {
+  "id": "F-00167",
+  "text": "java.lang.NullPointerException: Cannot invoke \"User.getProfile()\" because \"user\" is null\n\tat com.shop.UserService.render(UserService.java:775)\n\tat com.shop.Web.handle(Web.java:70)\nrequestId=852bf180-4379-b650-4e08-0dee26f7da56 elapsed=13.51s session=0d8b951b1947c3ef3816d06fc3e291ea",
+  "label": "npe-user-profile"
+ },
+ {
+  "id": "F-00251",
+  "text": "Traceback (most recent call last):\n  File \"worker/resize.py\", line 260, in run\n    img = Image.open(src)\nMemoryError: cannot allocate buffer for image <Image object at 0x9a59d7deccd9> job=71805629 tmp=/tmp/m1eat5y3w9e6 elapsed 9.51s",
+  "label": "oom-image-resize"
+ },
+ {
+  "id": "F-00108",
+  "text": "Traceback (most recent call last):\n  File \"tests/test_checkout.py\", line 604, in test_total\n    self.assertEqual(order.total, expected)\nAssertionError: Decimal('99.90') != Decimal('9.99') [case 18134971, run at 2026-03-14T20:15:24Z, took 3975ms]",
+  "label": "assert-total-price"
+ },
+ {
+  "id": "F-00370",
+  "text": "RuntimeError: worker crashed, dump at 0x7cd389580b2c, uptime 1.20s, seq 20767650",
+  "label": "generic-crash-no-stack"
+ },
+ {
+  "id": "F-00083",
+  "text": "Traceback (most recent call last):\n  File \"tests/test_checkout.py\", line 731, in test_total\n    self.assertEqual(order.total, expected)\nAssertionError: Decimal('99.90') != Decimal('9.99') [case 52544961, run at 2026-05-22T02:44:05Z, took 408ms]",
+  "label": "assert-total-price"
+ },
+ {
+  "id": "F-00087",
+  "text": "Traceback (most recent call last):\n  File \"tests/test_checkout.py\", line 38, in test_total\n    self.assertEqual(order.total, expected)\nAssertionError: Decimal('99.90') != Decimal('9.99') [case 11758143, run at 2026-04-10T15:32:45Z, took 4672ms]",
+  "label": "assert-total-price"
+ },
+ {
+  "id": "F-00235",
+  "text": "Traceback (most recent call last):\n  File \"app/config.py\", line 118, in load\n    return cfg['feature_flags']\nKeyError: 'feature_flags' (pid 10693976, started 2026-06-16T06:10:52Z)",
+  "label": "keyerror-config"
+ },
+ {
+  "id": "F-00147",
+  "text": "Traceback (most recent call last):\n  File \"tests/test_checkout.py\", line 436, in test_currency\n    self.assertEqual(order.currency, 'CNY')\nAssertionError: 'USD' != 'CNY' [case 13628045, took 2862ms]",
+  "label": "assert-currency"
+ },
+ {
+  "id": "F-00001",
+  "text": "Traceback (most recent call last):\n  File \"app/services/order.py\", line 187, in create_order\n    conn = pool.acquire(timeout=5)\n  File \"app/db/pool.py\", line 648, in acquire\n    raise TimeoutError('pool exhausted')\nTimeoutError: connection to db 10.0.0.8:14659 timed out after 946ms (request ORD-7500645889, trace a12809ec-9696-f06d-49d2-55eaf6d1d816)",
+  "label": "db-connection-timeout"
+ },
+ {
+  "id": "F-00356",
+  "text": "lint failure: E501 line too long (132 > 120) in report #36084127, scan took 29.28s",
+  "label": "flake8-lint-only"
+ },
+ {
+  "id": "F-00064",
+  "text": "Traceback (most recent call last):\n  File \"app/services/order.py\", line 406, in create_order\n    conn = pool.acquire(timeout=5)\n  File \"app/db/pool.py\", line 252, in acquire\n    raise ConnectionRefusedError('dial failed')\nConnectionRefusedError: connect to db 10.0.0.8:54108 refused (request ORD-1144398828, trace 9b8618e4-cc51-1757-5fbd-1cfd3b9312ce)",
+  "label": "db-connection-refused"
+ },
+ {
+  "id": "F-00237",
+  "text": "Traceback (most recent call last):\n  File \"app/config.py\", line 653, in load\n    return cfg['feature_flags']\nKeyError: 'feature_flags' (pid 71330437, started 2026-10-24T03:47:46Z)",
+  "label": "keyerror-config"
+ },
+ {
+  "id": "F-00271",
+  "text": "Traceback (most recent call last):\n  File \"worker/resize.py\", line 230, in run\n    img = Image.open(src)\nMemoryError: cannot allocate buffer for image <Image object at 0x399ff24bdc7c> job=91365567 tmp=/tmp/vpa3yjkasibh elapsed 27.30s",
+  "label": "oom-image-resize"
+ },
+ {
+  "id": "F-00198",
+  "text": "java.lang.NullPointerException: Cannot invoke \"User.getProfile()\" because \"user\" is null\n\tat com.shop.UserService.render(UserService.java:686)\n\tat com.shop.Web.handle(Web.java:84)\nrequestId=3f11b897-3b76-4028-8e56-487b44479f57 elapsed=3.11s session=bdccfd640fa73d5d053f53e887bf2d4d",
+  "label": "npe-user-profile"
+ },
+ {
+  "id": "F-00195",
+  "text": "java.lang.NullPointerException: Cannot invoke \"User.getProfile()\" because \"user\" is null\n\tat com.shop.UserService.render(UserService.java:602)\n\tat com.shop.Web.handle(Web.java:876)\nrequestId=25a00c1f-20a3-eeee-f0fc-0a0168d4e6ae elapsed=22.77s session=5921721980adcb309d96f4fb5d0e86bc",
+  "label": "npe-user-profile"
+ },
+ {
+  "id": "F-00241",
+  "text": "Traceback (most recent call last):\n  File \"worker/resize.py\", line 682, in run\n    img = Image.open(src)\nMemoryError: cannot allocate buffer for image <Image object at 0xfae66ed85f3c> job=20442933 tmp=/tmp/9k6s4cvcp9lx elapsed 4.22s",
+  "label": "oom-image-resize"
+ },
+ {
+  "id": "F-00332",
+  "text": "lint failure: E501 line too long (132 > 120) in report #58550326, scan took 17.59s",
+  "label": "flake8-lint-only"
+ },
+ {
+  "id": "F-00298",
+  "text": "requests.exceptions.HTTPError: 502 Bad Gateway for https://api.internal:42257/v1/pay (upstream took 5803ms, req ORD-5065060415, ts 2026-02-12T14:11:34Z, token c9b370fa4760c076569bc73963c5977d)",
+  "label": "http-502-upstream"
+ },
+ {
+  "id": "F-00393",
+  "text": "RuntimeError: worker crashed, dump at 0xa7af004d0aa4, uptime 18.30s, seq 73729250",
+  "label": "generic-crash-no-stack"
+ },
+ {
+  "id": "F-00331",
+  "text": "lint failure: E501 line too long (132 > 120) in report #51326257, scan took 29.89s",
+  "label": "flake8-lint-only"
+ },
+ {
+  "id": "F-00091",
+  "text": "Traceback (most recent call last):\n  File \"tests/test_checkout.py\", line 202, in test_total\n    self.assertEqual(order.total, expected)\nAssertionError: Decimal('99.90') != Decimal('9.99') [case 81605201, run at 2026-07-18T08:19:38Z, took 2941ms]",
+  "label": "assert-total-price"
+ },
+ {
+  "id": "F-00166",
+  "text": "java.lang.NullPointerException: Cannot invoke \"User.getProfile()\" because \"user\" is null\n\tat com.shop.UserService.render(UserService.java:707)\n\tat com.shop.Web.handle(Web.java:879)\nrequestId=f9d70481-78d5-3aba-bef8-07b975bb137f elapsed=2.29s session=cd117010cc06543fdea4dea6f39d043c",
+  "label": "npe-user-profile"
+ },
+ {
+  "id": "F-00296",
+  "text": "requests.exceptions.HTTPError: 502 Bad Gateway for https://api.internal:32611/v1/pay (upstream took 8570ms, req ORD-1380223557, ts 2026-07-26T06:31:46Z, token 901e8b00f6e01bc54318b86e144225af)",
+  "label": "http-502-upstream"
+ },
+ {
+  "id": "F-00231",
+  "text": "Traceback (most recent call last):\n  File \"app/config.py\", line 572, in load\n    return cfg['feature_flags']\nKeyError: 'feature_flags' (pid 81959992, started 2026-01-01T14:43:11Z)",
+  "label": "keyerror-config"
+ },
+ {
+  "id": "F-00205",
+  "text": "Traceback (most recent call last):\n  File \"app/config.py\", line 569, in load\n    return cfg['feature_flags']\nKeyError: 'feature_flags' (pid 83853808, started 2026-07-18T08:07:39Z)",
+  "label": "keyerror-config"
+ },
+ {
+  "id": "F-00023",
+  "text": "Traceback (most recent call last):\n  File \"app/services/order.py\", line 650, in create_order\n    conn = pool.acquire(timeout=5)\n  File \"app/db/pool.py\", line 595, in acquire\n    raise TimeoutError('pool exhausted')\nTimeoutError: connection to db 10.0.0.8:46592 timed out after 5743ms (request ORD-3947835045, trace e7916ea5-df3b-501b-ce75-ecc88c240cee)",
+  "label": "db-connection-timeout"
+ },
+ {
+  "id": "F-00185",
+  "text": "java.lang.NullPointerException: Cannot invoke \"User.getProfile()\" because \"user\" is null\n\tat com.shop.UserService.render(UserService.java:479)\n\tat com.shop.Web.handle(Web.java:830)\nrequestId=4679a225-16d2-a50f-8a9f-2dcc8dc1edd1 elapsed=28.07s session=8c7ee81bcac38f17262e1c7016586106",
+  "label": "npe-user-profile"
+ },
+ {
+  "id": "F-00282",
+  "text": "requests.exceptions.HTTPError: 502 Bad Gateway for https://api.internal:58654/v1/pay (upstream took 7102ms, req ORD-4059901927, ts 2026-09-01T06:02:56Z, token 56c0f64ac3777d8e76b620323995fa06)",
+  "label": "http-502-upstream"
+ },
+ {
+  "id": "F-00022",
+  "text": "Traceback (most recent call last):\n  File \"app/services/order.py\", line 460, in create_order\n    conn = pool.acquire(timeout=5)\n  File \"app/db/pool.py\", line 115, in acquire\n    raise TimeoutError('pool exhausted')\nTimeoutError: connection to db 10.0.0.8:38722 timed out after 6528ms (request ORD-5022597266, trace 128d2ebd-f7e7-5e1a-4d4c-fc8ec0b37ff6)",
+  "label": "db-connection-timeout"
+ },
+ {
+  "id": "F-00352",
+  "text": "lint failure: E501 line too long (132 > 120) in report #94042584, scan took 8.94s",
+  "label": "flake8-lint-only"
+ },
+ {
+  "id": "F-00093",
+  "text": "Traceback (most recent call last):\n  File \"tests/test_checkout.py\", line 677, in test_total\n    self.assertEqual(order.total, expected)\nAssertionError: Decimal('99.90') != Decimal('9.99') [case 74532141, run at 2026-06-22T23:21:53Z, took 5865ms]",
+  "label": "assert-total-price"
+ },
+ {
+  "id": "F-00171",
+  "text": "java.lang.NullPointerException: Cannot invoke \"User.getProfile()\" because \"user\" is null\n\tat com.shop.UserService.render(UserService.java:798)\n\tat com.shop.Web.handle(Web.java:882)\nrequestId=07e232da-d3c9-b93e-a5e7-575b62e5bf85 elapsed=5.24s session=5388a2fa307a8b5d7149e5ecd8f7a461",
+  "label": "npe-user-profile"
+ },
+ {
+  "id": "F-00017",
+  "text": "Traceback (most recent call last):\n  File \"app/services/order.py\", line 517, in create_order\n    conn = pool.acquire(timeout=5)\n  File \"app/db/pool.py\", line 401, in acquire\n    raise TimeoutError('pool exhausted')\nTimeoutError: connection to db 10.0.0.8:58779 timed out after 5512ms (request ORD-4132406048, trace ee601a3b-ed20-1b17-cad8-b375cd891004)",
+  "label": "db-connection-timeout"
+ },
+ {
+  "id": "F-00161",
+  "text": "java.lang.NullPointerException: Cannot invoke \"User.getProfile()\" because \"user\" is null\n\tat com.shop.UserService.render(UserService.java:259)\n\tat com.shop.Web.handle(Web.java:182)\nrequestId=40521db1-4cc7-8da7-8f37-a7f36c627b16 elapsed=29.87s session=815803ffb43290cdef526f937f5b8979",
+  "label": "npe-user-profile"
+ },
+ {
+  "id": "F-00234",
+  "text": "Traceback (most recent call last):\n  File \"app/config.py\", line 715, in load\n    return cfg['feature_flags']\nKeyError: 'feature_flags' (pid 34613947, started 2026-03-19T07:07:45Z)",
+  "label": "keyerror-config"
+ },
+ {
+  "id": "F-00117",
+  "text": "Traceback (most recent call last):\n  File \"tests/test_checkout.py\", line 555, in test_total\n    self.assertEqual(order.total, expected)\nAssertionError: Decimal('99.90') != Decimal('9.99') [case 64299540, run at 2026-12-21T21:11:47Z, took 7250ms]",
+  "label": "assert-total-price"
+ },
+ {
+  "id": "F-00317",
+  "text": "requests.exceptions.HTTPError: 502 Bad Gateway for https://api.internal:46644/v1/pay (upstream took 2450ms, req ORD-5804808236, ts 2026-12-28T14:59:19Z, token 4faa496cf0830942cdf524e213d63103)",
+  "label": "http-502-upstream"
+ },
+ {
+  "id": "F-00126",
+  "text": "Traceback (most recent call last):\n  File \"tests/test_checkout.py\", line 440, in test_currency\n    self.assertEqual(order.currency, 'CNY')\nAssertionError: 'USD' != 'CNY' [case 10291952, took 5470ms]",
+  "label": "assert-currency"
+ },
+ {
+  "id": "F-00053",
+  "text": "Traceback (most recent call last):\n  File \"app/services/order.py\", line 544, in create_order\n    conn = pool.acquire(timeout=5)\n  File \"app/db/pool.py\", line 401, in acquire\n    raise ConnectionRefusedError('dial failed')\nConnectionRefusedError: connect to db 10.0.0.8:32271 refused (request ORD-2771274154, trace 703213c1-9312-0e89-597a-129a3289a41b)",
+  "label": "db-connection-refused"
+ },
+ {
+  "id": "F-00164",
+  "text": "java.lang.NullPointerException: Cannot invoke \"User.getProfile()\" because \"user\" is null\n\tat com.shop.UserService.render(UserService.java:419)\n\tat com.shop.Web.handle(Web.java:384)\nrequestId=a525b0e2-ef5b-133c-f24b-4ad663371e21 elapsed=7.94s session=83f2d0ba0b184271b5703beeb1f19c95",
+  "label": "npe-user-profile"
+ },
+ {
+  "id": "F-00107",
+  "text": "Traceback (most recent call last):\n  File \"tests/test_checkout.py\", line 583, in test_total\n    self.assertEqual(order.total, expected)\nAssertionError: Decimal('99.90') != Decimal('9.99') [case 97910860, run at 2026-04-10T01:43:52Z, took 3524ms]",
+  "label": "assert-total-price"
+ },
+ {
+  "id": "F-00215",
+  "text": "Traceback (most recent call last):\n  File \"app/config.py\", line 26, in load\n    return cfg['feature_flags']\nKeyError: 'feature_flags' (pid 74630822, started 2026-08-12T20:28:45Z)",
+  "label": "keyerror-config"
+ },
+ {
+  "id": "F-00364",
+  "text": "RuntimeError: worker crashed, dump at 0xc465957593f0, uptime 14.18s, seq 07522465",
+  "label": "generic-crash-no-stack"
+ },
+ {
+  "id": "F-00389",
+  "text": "RuntimeError: worker crashed, dump at 0x143ec473ed78, uptime 20.17s, seq 81769783",
+  "label": "generic-crash-no-stack"
+ },
+ {
+  "id": "F-00179",
+  "text": "java.lang.NullPointerException: Cannot invoke \"User.getProfile()\" because \"user\" is null\n\tat com.shop.UserService.render(UserService.java:482)\n\tat com.shop.Web.handle(Web.java:452)\nrequestId=154e95b6-203d-a040-b781-d10707b73b1c elapsed=10.14s session=fa6c560a993b99975639e44db1f2ca6c",
+  "label": "npe-user-profile"
+ },
+ {
+  "id": "F-00314",
+  "text": "requests.exceptions.HTTPError: 502 Bad Gateway for https://api.internal:20132/v1/pay (upstream took 978ms, req ORD-6500385317, ts 2026-12-21T01:13:14Z, token 8d96ac62c4b5e89052464075fc926a05)",
+  "label": "http-502-upstream"
+ },
+ {
+  "id": "F-00280",
+  "text": "Traceback (most recent call last):\n  File \"worker/resize.py\", line 863, in run\n    img = Image.open(src)\nMemoryError: cannot allocate buffer for image <Image object at 0x487f665e6d2d> job=51658876 tmp=/tmp/lcycfn7e1bi1 elapsed 29.32s",
+  "label": "oom-image-resize"
+ },
+ {
+  "id": "F-00118",
+  "text": "Traceback (most recent call last):\n  File \"tests/test_checkout.py\", line 402, in test_total\n    self.assertEqual(order.total, expected)\nAssertionError: Decimal('99.90') != Decimal('9.99') [case 83658145, run at 2026-01-09T05:14:01Z, took 7942ms]",
+  "label": "assert-total-price"
+ },
+ {
+  "id": "F-00207",
+  "text": "Traceback (most recent call last):\n  File \"app/config.py\", line 828, in load\n    return cfg['feature_flags']\nKeyError: 'feature_flags' (pid 71289097, started 2026-06-05T09:38:12Z)",
+  "label": "keyerror-config"
+ },
+ {
+  "id": "F-00269",
+  "text": "Traceback (most recent call last):\n  File \"worker/resize.py\", line 456, in run\n    img = Image.open(src)\nMemoryError: cannot allocate buffer for image <Image object at 0xdf009fd1c9d7> job=36338936 tmp=/tmp/5c0imwg9u6fu elapsed 4.78s",
+  "label": "oom-image-resize"
+ },
+ {
+  "id": "F-00324",
+  "text": "lint failure: E501 line too long (132 > 120) in report #77362049, scan took 29.36s",
+  "label": "flake8-lint-only"
+ },
+ {
+  "id": "F-00059",
+  "text": "Traceback (most recent call last):\n  File \"app/services/order.py\", line 868, in create_order\n    conn = pool.acquire(timeout=5)\n  File \"app/db/pool.py\", line 196, in acquire\n    raise ConnectionRefusedError('dial failed')\nConnectionRefusedError: connect to db 10.0.0.8:4190 refused (request ORD-2948343879, trace eb56ed0e-3329-386a-d488-2addfa2c19b4)",
+  "label": "db-connection-refused"
+ },
+ {
+  "id": "F-00127",
+  "text": "Traceback (most recent call last):\n  File \"tests/test_checkout.py\", line 648, in test_currency\n    self.assertEqual(order.currency, 'CNY')\nAssertionError: 'USD' != 'CNY' [case 91810362, took 3520ms]",
+  "label": "assert-currency"
+ },
+ {
+  "id": "F-00174",
+  "text": "java.lang.NullPointerException: Cannot invoke \"User.getProfile()\" because \"user\" is null\n\tat com.shop.UserService.render(UserService.java:89)\n\tat com.shop.Web.handle(Web.java:420)\nrequestId=9d4cd5a4-36d8-7499-6a3c-25f6e0070cc0 elapsed=9.10s session=44ce38c80d80e1b501aee419b5099998",
+  "label": "npe-user-profile"
+ },
+ {
+  "id": "F-00156",
+  "text": "Traceback (most recent call last):\n  File \"tests/test_checkout.py\", line 487, in test_currency\n    self.assertEqual(order.currency, 'CNY')\nAssertionError: 'USD' != 'CNY' [case 92920936, took 7016ms]",
+  "label": "assert-currency"
+ },
+ {
+  "id": "F-00106",
+  "text": "Traceback (most recent call last):\n  File \"tests/test_checkout.py\", line 721, in test_total\n    self.assertEqual(order.total, expected)\nAssertionError: Decimal('99.90') != Decimal('9.99') [case 68590047, run at 2026-05-23T10:12:50Z, took 2127ms]",
+  "label": "assert-total-price"
+ },
+ {
+  "id": "F-00170",
+  "text": "java.lang.NullPointerException: Cannot invoke \"User.getProfile()\" because \"user\" is null\n\tat com.shop.UserService.render(UserService.java:516)\n\tat com.shop.Web.handle(Web.java:570)\nrequestId=123b5b06-e6f9-05e1-85df-b5756d7148f5 elapsed=12.35s session=c3a9708d8538fc1120b09c4a055f9036",
+  "label": "npe-user-profile"
+ },
+ {
+  "id": "F-00224",
+  "text": "Traceback (most recent call last):\n  File \"app/config.py\", line 125, in load\n    return cfg['feature_flags']\nKeyError: 'feature_flags' (pid 98841290, started 2026-07-22T14:31:26Z)",
+  "label": "keyerror-config"
+ },
+ {
+  "id": "F-00088",
+  "text": "Traceback (most recent call last):\n  File \"tests/test_checkout.py\", line 168, in test_total\n    self.assertEqual(order.total, expected)\nAssertionError: Decimal('99.90') != Decimal('9.99') [case 07963841, run at 2026-05-23T22:04:14Z, took 4617ms]",
+  "label": "assert-total-price"
+ },
+ {
+  "id": "F-00135",
+  "text": "Traceback (most recent call last):\n  File \"tests/test_checkout.py\", line 409, in test_currency\n    self.assertEqual(order.currency, 'CNY')\nAssertionError: 'USD' != 'CNY' [case 78223061, took 8493ms]",
+  "label": "assert-currency"
+ },
+ {
+  "id": "F-00246",
+  "text": "Traceback (most recent call last):\n  File \"worker/resize.py\", line 343, in run\n    img = Image.open(src)\nMemoryError: cannot allocate buffer for image <Image object at 0x2be860da812d> job=73531626 tmp=/tmp/jhmk1qmqfbdo elapsed 7.39s",
+  "label": "oom-image-resize"
+ },
+ {
+  "id": "F-00027",
+  "text": "Traceback (most recent call last):\n  File \"app/services/order.py\", line 821, in create_order\n    conn = pool.acquire(timeout=5)\n  File \"app/db/pool.py\", line 405, in acquire\n    raise TimeoutError('pool exhausted')\nTimeoutError: connection to db 10.0.0.8:37264 timed out after 4983ms (request ORD-1221889224, trace 11f8125a-bf17-55b5-4bc1-4a2aa873898b)",
+  "label": "db-connection-timeout"
+ },
+ {
+  "id": "F-00196",
+  "text": "java.lang.NullPointerException: Cannot invoke \"User.getProfile()\" because \"user\" is null\n\tat com.shop.UserService.render(UserService.java:353)\n\tat com.shop.Web.handle(Web.java:602)\nrequestId=1ccc9ed2-1ea2-e716-6986-70cdef32ce55 elapsed=22.15s session=4c8a84e4a623ab9a6beab07d3467cc40",
+  "label": "npe-user-profile"
+ },
+ {
+  "id": "F-00073",
+  "text": "Traceback (most recent call last):\n  File \"app/services/order.py\", line 444, in create_order\n    conn = pool.acquire(timeout=5)\n  File \"app/db/pool.py\", line 49, in acquire\n    raise ConnectionRefusedError('dial failed')\nConnectionRefusedError: connect to db 10.0.0.8:59667 refused (request ORD-4043145866, trace 30b24e90-5652-72e2-c2ad-d07aa49f0e5e)",
+  "label": "db-connection-refused"
+ },
+ {
+  "id": "F-00254",
+  "text": "Traceback (most recent call last):\n  File \"worker/resize.py\", line 686, in run\n    img = Image.open(src)\nMemoryError: cannot allocate buffer for image <Image object at 0x60fd0b705153> job=76460707 tmp=/tmp/ue2bysmvc178 elapsed 9.79s",
+  "label": "oom-image-resize"
+ },
+ {
+  "id": "F-00109",
+  "text": "Traceback (most recent call last):\n  File \"tests/test_checkout.py\", line 771, in test_total\n    self.assertEqual(order.total, expected)\nAssertionError: Decimal('99.90') != Decimal('9.99') [case 29710571, run at 2026-05-19T21:18:20Z, took 2978ms]",
+  "label": "assert-total-price"
+ },
+ {
+  "id": "F-00394",
+  "text": "RuntimeError: worker crashed, dump at 0x999a49093a40, uptime 8.90s, seq 58417854",
+  "label": "generic-crash-no-stack"
+ },
+ {
+  "id": "F-00265",
+  "text": "Traceback (most recent call last):\n  File \"worker/resize.py\", line 596, in run\n    img = Image.open(src)\nMemoryError: cannot allocate buffer for image <Image object at 0x37af6cbf9aaf> job=89965084 tmp=/tmp/g5atl9yqveom elapsed 29.51s",
+  "label": "oom-image-resize"
+ },
+ {
+  "id": "F-00330",
+  "text": "lint failure: E501 line too long (132 > 120) in report #26874085, scan took 12.67s",
+  "label": "flake8-lint-only"
+ },
+ {
+  "id": "F-00399",
+  "text": "RuntimeError: worker crashed, dump at 0xafcf3436ecac, uptime 14.81s, seq 53781638",
+  "label": "generic-crash-no-stack"
+ },
+ {
+  "id": "F-00076",
+  "text": "Traceback (most recent call last):\n  File \"app/services/order.py\", line 775, in create_order\n    conn = pool.acquire(timeout=5)\n  File \"app/db/pool.py\", line 889, in acquire\n    raise ConnectionRefusedError('dial failed')\nConnectionRefusedError: connect to db 10.0.0.8:51671 refused (request ORD-0244486835, trace e3c066ea-96b5-b180-55a8-da0dce928f2a)",
+  "label": "db-connection-refused"
+ },
+ {
+  "id": "F-00154",
+  "text": "Traceback (most recent call last):\n  File \"tests/test_checkout.py\", line 334, in test_currency\n    self.assertEqual(order.currency, 'CNY')\nAssertionError: 'USD' != 'CNY' [case 58787171, took 4458ms]",
+  "label": "assert-currency"
+ },
+ {
+  "id": "F-00376",
+  "text": "RuntimeError: worker crashed, dump at 0xd9d57a4d199a, uptime 25.06s, seq 09172844",
+  "label": "generic-crash-no-stack"
+ },
+ {
+  "id": "F-00086",
+  "text": "Traceback (most recent call last):\n  File \"tests/test_checkout.py\", line 441, in test_total\n    self.assertEqual(order.total, expected)\nAssertionError: Decimal('99.90') != Decimal('9.99') [case 97166868, run at 2026-05-09T05:51:29Z, took 3587ms]",
+  "label": "assert-total-price"
+ },
+ {
+  "id": "F-00044",
+  "text": "Traceback (most recent call last):\n  File \"app/services/order.py\", line 221, in create_order\n    conn = pool.acquire(timeout=5)\n  File \"app/db/pool.py\", line 496, in acquire\n    raise ConnectionRefusedError('dial failed')\nConnectionRefusedError: connect to db 10.0.0.8:43812 refused (request ORD-0900680255, trace b82b29d8-9a48-72a1-a484-098cf8d3e3b8)",
+  "label": "db-connection-refused"
+ },
+ {
+  "id": "F-00065",
+  "text": "Traceback (most recent call last):\n  File \"app/services/order.py\", line 671, in create_order\n    conn = pool.acquire(timeout=5)\n  File \"app/db/pool.py\", line 403, in acquire\n    raise ConnectionRefusedError('dial failed')\nConnectionRefusedError: connect to db 10.0.0.8:64540 refused (request ORD-3780828761, trace 8d0e82e8-e497-5211-6011-1dee37d3c4e6)",
+  "label": "db-connection-refused"
+ },
+ {
+  "id": "F-00348",
+  "text": "lint failure: E501 line too long (132 > 120) in report #78609467, scan took 8.80s",
+  "label": "flake8-lint-only"
+ },
+ {
+  "id": "F-00248",
+  "text": "Traceback (most recent call last):\n  File \"worker/resize.py\", line 264, in run\n    img = Image.open(src)\nMemoryError: cannot allocate buffer for image <Image object at 0x12a7982794> job=70151078 tmp=/tmp/pdnfjhmp3i53 elapsed 9.45s",
+  "label": "oom-image-resize"
+ },
+ {
+  "id": "F-00074",
+  "text": "Traceback (most recent call last):\n  File \"app/services/order.py\", line 310, in create_order\n    conn = pool.acquire(timeout=5)\n  File \"app/db/pool.py\", line 577, in acquire\n    raise ConnectionRefusedError('dial failed')\nConnectionRefusedError: connect to db 10.0.0.8:53592 refused (request ORD-6117317416, trace 32108fef-1290-911c-310a-9496dd584169)",
+  "label": "db-connection-refused"
+ },
+ {
+  "id": "F-00266",
+  "text": "Traceback (most recent call last):\n  File \"worker/resize.py\", line 783, in run\n    img = Image.open(src)\nMemoryError: cannot allocate buffer for image <Image object at 0xb1a52934ce1c> job=98018054 tmp=/tmp/uimiiwkka933 elapsed 7.61s",
+  "label": "oom-image-resize"
+ },
+ {
+  "id": "F-00233",
+  "text": "Traceback (most recent call last):\n  File \"app/config.py\", line 115, in load\n    return cfg['feature_flags']\nKeyError: 'feature_flags' (pid 95050331, started 2026-07-18T12:54:06Z)",
+  "label": "keyerror-config"
+ },
+ {
+  "id": "F-00122",
+  "text": "Traceback (most recent call last):\n  File \"tests/test_checkout.py\", line 26, in test_currency\n    self.assertEqual(order.currency, 'CNY')\nAssertionError: 'USD' != 'CNY' [case 91408360, took 1428ms]",
+  "label": "assert-currency"
+ },
+ {
+  "id": "F-00243",
+  "text": "Traceback (most recent call last):\n  File \"worker/resize.py\", line 127, in run\n    img = Image.open(src)\nMemoryError: cannot allocate buffer for image <Image object at 0xb6d3b0d6ed81> job=96331708 tmp=/tmp/iv6485ffwlh5 elapsed 18.45s",
+  "label": "oom-image-resize"
+ },
+ {
+  "id": "F-00110",
+  "text": "Traceback (most recent call last):\n  File \"tests/test_checkout.py\", line 111, in test_total\n    self.assertEqual(order.total, expected)\nAssertionError: Decimal('99.90') != Decimal('9.99') [case 44281349, run at 2026-01-16T16:54:25Z, took 661ms]",
+  "label": "assert-total-price"
+ },
+ {
+  "id": "F-00357",
+  "text": "lint failure: E501 line too long (132 > 120) in report #65829215, scan took 24.33s",
+  "label": "flake8-lint-only"
+ },
+ {
+  "id": "F-00036",
+  "text": "Traceback (most recent call last):\n  File \"app/services/order.py\", line 831, in create_order\n    conn = pool.acquire(timeout=5)\n  File \"app/db/pool.py\", line 46, in acquire\n    raise TimeoutError('pool exhausted')\nTimeoutError: connection to db 10.0.0.8:19174 timed out after 4420ms (request ORD-7297381041, trace 9fdab41e-1696-c7fc-4732-b2ea0969ac1a)",
+  "label": "db-connection-timeout"
+ },
+ {
+  "id": "F-00025",
+  "text": "Traceback (most recent call last):\n  File \"app/services/order.py\", line 606, in create_order\n    conn = pool.acquire(timeout=5)\n  File \"app/db/pool.py\", line 306, in acquire\n    raise TimeoutError('pool exhausted')\nTimeoutError: connection to db 10.0.0.8:48715 timed out after 5254ms (request ORD-0866643556, trace 8ac78d75-1fa4-6d57-3982-caaad7b38caf)",
+  "label": "db-connection-timeout"
+ },
+ {
+  "id": "F-00100",
+  "text": "Traceback (most recent call last):\n  File \"tests/test_checkout.py\", line 291, in test_total\n    self.assertEqual(order.total, expected)\nAssertionError: Decimal('99.90') != Decimal('9.99') [case 35905297, run at 2026-02-09T21:49:10Z, took 7147ms]",
+  "label": "assert-total-price"
+ },
+ {
+  "id": "F-00339",
+  "text": "lint failure: E501 line too long (132 > 120) in report #81126818, scan took 3.04s",
+  "label": "flake8-lint-only"
+ },
+ {
+  "id": "F-00225",
+  "text": "Traceback (most recent call last):\n  File \"app/config.py\", line 669, in load\n    return cfg['feature_flags']\nKeyError: 'feature_flags' (pid 32356238, started 2026-07-28T02:44:19Z)",
+  "label": "keyerror-config"
+ },
+ {
+  "id": "F-00263",
+  "text": "Traceback (most recent call last):\n  File \"worker/resize.py\", line 123, in run\n    img = Image.open(src)\nMemoryError: cannot allocate buffer for image <Image object at 0xba737069604b> job=22878202 tmp=/tmp/4fxazqxaqj7c elapsed 9.15s",
+  "label": "oom-image-resize"
+ },
+ {
+  "id": "F-00202",
+  "text": "Traceback (most recent call last):\n  File \"app/config.py\", line 192, in load\n    return cfg['feature_flags']\nKeyError: 'feature_flags' (pid 46506358, started 2026-10-25T20:07:44Z)",
+  "label": "keyerror-config"
+ },
+ {
+  "id": "F-00347",
+  "text": "lint failure: E501 line too long (132 > 120) in report #10858145, scan took 21.40s",
+  "label": "flake8-lint-only"
+ },
+ {
+  "id": "F-00353",
+  "text": "lint failure: E501 line too long (132 > 120) in report #81043780, scan took 7.49s",
+  "label": "flake8-lint-only"
+ },
+ {
+  "id": "F-00223",
+  "text": "Traceback (most recent call last):\n  File \"app/config.py\", line 532, in load\n    return cfg['feature_flags']\nKeyError: 'feature_flags' (pid 56896235, started 2026-03-01T11:13:15Z)",
+  "label": "keyerror-config"
+ },
+ {
+  "id": "F-00398",
+  "text": "RuntimeError: worker crashed, dump at 0x8624dfe289d2, uptime 5.18s, seq 37350173",
+  "label": "generic-crash-no-stack"
+ },
+ {
+  "id": "F-00129",
+  "text": "Traceback (most recent call last):\n  File \"tests/test_checkout.py\", line 749, in test_currency\n    self.assertEqual(order.currency, 'CNY')\nAssertionError: 'USD' != 'CNY' [case 52007199, took 419ms]",
+  "label": "assert-currency"
+ },
+ {
+  "id": "F-00063",
+  "text": "Traceback (most recent call last):\n  File \"app/services/order.py\", line 370, in create_order\n    conn = pool.acquire(timeout=5)\n  File \"app/db/pool.py\", line 240, in acquire\n    raise ConnectionRefusedError('dial failed')\nConnectionRefusedError: connect to db 10.0.0.8:2016 refused (request ORD-7509581104, trace 633489ee-9815-d028-c1c4-294f054721b5)",
+  "label": "db-connection-refused"
+ },
+ {
+  "id": "F-00211",
+  "text": "Traceback (most recent call last):\n  File \"app/config.py\", line 370, in load\n    return cfg['feature_flags']\nKeyError: 'feature_flags' (pid 79546785, started 2026-07-10T19:21:12Z)",
+  "label": "keyerror-config"
+ },
+ {
+  "id": "F-00291",
+  "text": "requests.exceptions.HTTPError: 502 Bad Gateway for https://api.internal:49598/v1/pay (upstream took 6293ms, req ORD-8399991492, ts 2026-07-23T20:04:03Z, token 2ea493a7af6f9fbc6ba68e42bb361306)",
+  "label": "http-502-upstream"
+ },
+ {
+  "id": "F-00101",
+  "text": "Traceback (most recent call last):\n  File \"tests/test_checkout.py\", line 269, in test_total\n    self.assertEqual(order.total, expected)\nAssertionError: Decimal('99.90') != Decimal('9.99') [case 95268860, run at 2026-10-11T01:52:57Z, took 1688ms]",
+  "label": "assert-total-price"
+ },
+ {
+  "id": "F-00204",
+  "text": "Traceback (most recent call last):\n  File \"app/config.py\", line 754, in load\n    return cfg['feature_flags']\nKeyError: 'feature_flags' (pid 06787581, started 2026-02-20T13:13:54Z)",
+  "label": "keyerror-config"
+ },
+ {
+  "id": "F-00081",
+  "text": "Traceback (most recent call last):\n  File \"tests/test_checkout.py\", line 106, in test_total\n    self.assertEqual(order.total, expected)\nAssertionError: Decimal('99.90') != Decimal('9.99') [case 16191034, run at 2026-01-20T03:44:41Z, took 3253ms]",
+  "label": "assert-total-price"
+ },
+ {
+  "id": "F-00322",
+  "text": "lint failure: E501 line too long (132 > 120) in report #24920211, scan took 24.21s",
+  "label": "flake8-lint-only"
+ },
+ {
+  "id": "F-00177",
+  "text": "java.lang.NullPointerException: Cannot invoke \"User.getProfile()\" because \"user\" is null\n\tat com.shop.UserService.render(UserService.java:229)\n\tat com.shop.Web.handle(Web.java:356)\nrequestId=b46f82c3-e223-ed5f-f767-760db978d119 elapsed=15.66s session=888ebe28053af4618831b9acfbe7d8e4",
+  "label": "npe-user-profile"
+ },
+ {
+  "id": "F-00385",
+  "text": "RuntimeError: worker crashed, dump at 0x67b1314bc2f0, uptime 16.74s, seq 85996287",
+  "label": "generic-crash-no-stack"
+ },
+ {
+  "id": "F-00067",
+  "text": "Traceback (most recent call last):\n  File \"app/services/order.py\", line 229, in create_order\n    conn = pool.acquire(timeout=5)\n  File \"app/db/pool.py\", line 486, in acquire\n    raise ConnectionRefusedError('dial failed')\nConnectionRefusedError: connect to db 10.0.0.8:41221 refused (request ORD-1259205313, trace c44579ad-68fd-5b48-96ad-f3ac792b539a)",
+  "label": "db-connection-refused"
+ },
+ {
+  "id": "F-00010",
+  "text": "Traceback (most recent call last):\n  File \"app/services/order.py\", line 443, in create_order\n    conn = pool.acquire(timeout=5)\n  File \"app/db/pool.py\", line 291, in acquire\n    raise TimeoutError('pool exhausted')\nTimeoutError: connection to db 10.0.0.8:59053 timed out after 5573ms (request ORD-3813445378, trace 89294224-fa56-c085-3979-5d59fb804d8a)",
+  "label": "db-connection-timeout"
+ },
+ {
+  "id": "F-00369",
+  "text": "RuntimeError: worker crashed, dump at 0x14ab36e1e845, uptime 10.77s, seq 56469305",
+  "label": "generic-crash-no-stack"
+ },
+ {
+  "id": "F-00383",
+  "text": "RuntimeError: worker crashed, dump at 0x9d7d8e9fc41a, uptime 4.15s, seq 30929189",
+  "label": "generic-crash-no-stack"
+ },
+ {
+  "id": "F-00123",
+  "text": "Traceback (most recent call last):\n  File \"tests/test_checkout.py\", line 128, in test_currency\n    self.assertEqual(order.currency, 'CNY')\nAssertionError: 'USD' != 'CNY' [case 05368464, took 1095ms]",
+  "label": "assert-currency"
+ },
+ {
+  "id": "F-00095",
+  "text": "Traceback (most recent call last):\n  File \"tests/test_checkout.py\", line 79, in test_total\n    self.assertEqual(order.total, expected)\nAssertionError: Decimal('99.90') != Decimal('9.99') [case 94563407, run at 2026-06-03T13:36:48Z, took 2703ms]",
+  "label": "assert-total-price"
+ },
+ {
+  "id": "F-00070",
+  "text": "Traceback (most recent call last):\n  File \"app/services/order.py\", line 439, in create_order\n    conn = pool.acquire(timeout=5)\n  File \"app/db/pool.py\", line 814, in acquire\n    raise ConnectionRefusedError('dial failed')\nConnectionRefusedError: connect to db 10.0.0.8:5504 refused (request ORD-2417304588, trace 26ffe8f2-d8ba-e3ab-ca2b-3fc68ca75c4a)",
+  "label": "db-connection-refused"
+ },
+ {
+  "id": "F-00015",
+  "text": "Traceback (most recent call last):\n  File \"app/services/order.py\", line 209, in create_order\n    conn = pool.acquire(timeout=5)\n  File \"app/db/pool.py\", line 654, in acquire\n    raise TimeoutError('pool exhausted')\nTimeoutError: connection to db 10.0.0.8:32166 timed out after 1278ms (request ORD-8996712230, trace 03f2f6dd-181f-3d9e-bafe-99efbacd3824)",
+  "label": "db-connection-timeout"
+ },
+ {
+  "id": "F-00355",
+  "text": "lint failure: E501 line too long (132 > 120) in report #20351844, scan took 14.34s",
+  "label": "flake8-lint-only"
+ },
+ {
+  "id": "F-00262",
+  "text": "Traceback (most recent call last):\n  File \"worker/resize.py\", line 102, in run\n    img = Image.open(src)\nMemoryError: cannot allocate buffer for image <Image object at 0xa6a9d18dc919> job=38133904 tmp=/tmp/fktbya9q9z49 elapsed 24.79s",
+  "label": "oom-image-resize"
+ },
+ {
+  "id": "F-00049",
+  "text": "Traceback (most recent call last):\n  File \"app/services/order.py\", line 708, in create_order\n    conn = pool.acquire(timeout=5)\n  File \"app/db/pool.py\", line 359, in acquire\n    raise ConnectionRefusedError('dial failed')\nConnectionRefusedError: connect to db 10.0.0.8:16872 refused (request ORD-2415873996, trace f11f07f7-d9e7-bd5d-a404-932333a1a289)",
+  "label": "db-connection-refused"
+ },
+ {
+  "id": "F-00227",
+  "text": "Traceback (most recent call last):\n  File \"app/config.py\", line 741, in load\n    return cfg['feature_flags']\nKeyError: 'feature_flags' (pid 92173332, started 2026-02-02T06:53:02Z)",
+  "label": "keyerror-config"
+ },
+ {
+  "id": "F-00366",
+  "text": "RuntimeError: worker crashed, dump at 0x53d02d0123f1, uptime 12.61s, seq 28608780",
+  "label": "generic-crash-no-stack"
+ },
+ {
+  "id": "F-00240",
+  "text": "Traceback (most recent call last):\n  File \"app/config.py\", line 551, in load\n    return cfg['feature_flags']\nKeyError: 'feature_flags' (pid 51304036, started 2026-04-04T10:41:14Z)",
+  "label": "keyerror-config"
+ },
+ {
+  "id": "F-00142",
+  "text": "Traceback (most recent call last):\n  File \"tests/test_checkout.py\", line 717, in test_currency\n    self.assertEqual(order.currency, 'CNY')\nAssertionError: 'USD' != 'CNY' [case 91761967, took 1238ms]",
+  "label": "assert-currency"
+ },
+ {
+  "id": "F-00159",
+  "text": "Traceback (most recent call last):\n  File \"tests/test_checkout.py\", line 529, in test_currency\n    self.assertEqual(order.currency, 'CNY')\nAssertionError: 'USD' != 'CNY' [case 57749890, took 5792ms]",
+  "label": "assert-currency"
+ },
+ {
+  "id": "F-00245",
+  "text": "Traceback (most recent call last):\n  File \"worker/resize.py\", line 672, in run\n    img = Image.open(src)\nMemoryError: cannot allocate buffer for image <Image object at 0x31003e3b4037> job=80472029 tmp=/tmp/oxxo6mr8u00u elapsed 26.86s",
+  "label": "oom-image-resize"
+ },
+ {
+  "id": "F-00009",
+  "text": "Traceback (most recent call last):\n  File \"app/services/order.py\", line 225, in create_order\n    conn = pool.acquire(timeout=5)\n  File \"app/db/pool.py\", line 524, in acquire\n    raise TimeoutError('pool exhausted')\nTimeoutError: connection to db 10.0.0.8:38165 timed out after 8561ms (request ORD-3198776692, trace 04adcd59-06af-5628-a9ce-a478608ca2d6)",
+  "label": "db-connection-timeout"
+ },
+ {
+  "id": "F-00309",
+  "text": "requests.exceptions.HTTPError: 502 Bad Gateway for https://api.internal:3567/v1/pay (upstream took 6640ms, req ORD-9785810986, ts 2026-10-21T19:11:49Z, token 26644606ad7f32c5c1da6cbf26ac87c0)",
+  "label": "http-502-upstream"
+ },
+ {
+  "id": "F-00344",
+  "text": "lint failure: E501 line too long (132 > 120) in report #28604901, scan took 15.58s",
+  "label": "flake8-lint-only"
+ },
+ {
+  "id": "F-00039",
+  "text": "Traceback (most recent call last):\n  File \"app/services/order.py\", line 654, in create_order\n    conn = pool.acquire(timeout=5)\n  File \"app/db/pool.py\", line 340, in acquire\n    raise TimeoutError('pool exhausted')\nTimeoutError: connection to db 10.0.0.8:13000 timed out after 449ms (request ORD-1672273538, trace c3d02bc9-fc8a-830f-13f6-cc5b0ffd0e98)",
+  "label": "db-connection-timeout"
+ },
+ {
+  "id": "F-00092",
+  "text": "Traceback (most recent call last):\n  File \"tests/test_checkout.py\", line 413, in test_total\n    self.assertEqual(order.total, expected)\nAssertionError: Decimal('99.90') != Decimal('9.99') [case 69154637, run at 2026-03-16T19:05:45Z, took 8993ms]",
+  "label": "assert-total-price"
+ },
+ {
+  "id": "F-00157",
+  "text": "Traceback (most recent call last):\n  File \"tests/test_checkout.py\", line 644, in test_currency\n    self.assertEqual(order.currency, 'CNY')\nAssertionError: 'USD' != 'CNY' [case 40685925, took 4ms]",
+  "label": "assert-currency"
+ },
+ {
+  "id": "F-00308",
+  "text": "requests.exceptions.HTTPError: 502 Bad Gateway for https://api.internal:30794/v1/pay (upstream took 73ms, req ORD-1122824151, ts 2026-10-17T11:51:31Z, token 96ca7d3c7d229d76c065a5a31369de09)",
+  "label": "http-502-upstream"
+ },
+ {
+  "id": "F-00312",
+  "text": "requests.exceptions.HTTPError: 502 Bad Gateway for https://api.internal:51384/v1/pay (upstream took 1971ms, req ORD-1036407164, ts 2026-03-05T03:13:30Z, token bcd06a9b1ab7a62c5b21bc00f6de6176)",
+  "label": "http-502-upstream"
+ },
+ {
+  "id": "F-00077",
+  "text": "Traceback (most recent call last):\n  File \"app/services/order.py\", line 504, in create_order\n    conn = pool.acquire(timeout=5)\n  File \"app/db/pool.py\", line 105, in acquire\n    raise ConnectionRefusedError('dial failed')\nConnectionRefusedError: connect to db 10.0.0.8:29385 refused (request ORD-9876749795, trace 0aaecc99-8d55-43e2-2592-d85838b11a85)",
+  "label": "db-connection-refused"
+ },
+ {
+  "id": "F-00057",
+  "text": "Traceback (most recent call last):\n  File \"app/services/order.py\", line 60, in create_order\n    conn = pool.acquire(timeout=5)\n  File \"app/db/pool.py\", line 450, in acquire\n    raise ConnectionRefusedError('dial failed')\nConnectionRefusedError: connect to db 10.0.0.8:33574 refused (request ORD-6264635375, trace 0157025f-fb5a-6530-7897-8c2222ba4ebd)",
+  "label": "db-connection-refused"
+ },
+ {
+  "id": "F-00045",
+  "text": "Traceback (most recent call last):\n  File \"app/services/order.py\", line 189, in create_order\n    conn = pool.acquire(timeout=5)\n  File \"app/db/pool.py\", line 651, in acquire\n    raise ConnectionRefusedError('dial failed')\nConnectionRefusedError: connect to db 10.0.0.8:53570 refused (request ORD-6831785675, trace 70cf08d6-7bcf-7b90-3e2e-56fd7f5e9582)",
+  "label": "db-connection-refused"
+ },
+ {
+  "id": "F-00030",
+  "text": "Traceback (most recent call last):\n  File \"app/services/order.py\", line 214, in create_order\n    conn = pool.acquire(timeout=5)\n  File \"app/db/pool.py\", line 143, in acquire\n    raise TimeoutError('pool exhausted')\nTimeoutError: connection to db 10.0.0.8:6082 timed out after 762ms (request ORD-2222013343, trace 6e5f2f03-0c72-023f-ef66-3144619adfed)",
+  "label": "db-connection-timeout"
+ },
+ {
+  "id": "F-00230",
+  "text": "Traceback (most recent call last):\n  File \"app/config.py\", line 615, in load\n    return cfg['feature_flags']\nKeyError: 'feature_flags' (pid 63176348, started 2026-08-07T10:16:20Z)",
+  "label": "keyerror-config"
+ },
+ {
+  "id": "F-00226",
+  "text": "Traceback (most recent call last):\n  File \"app/config.py\", line 58, in load\n    return cfg['feature_flags']\nKeyError: 'feature_flags' (pid 24190243, started 2026-08-13T13:03:16Z)",
+  "label": "keyerror-config"
+ },
+ {
+  "id": "F-00258",
+  "text": "Traceback (most recent call last):\n  File \"worker/resize.py\", line 549, in run\n    img = Image.open(src)\nMemoryError: cannot allocate buffer for image <Image object at 0x3e131dee3be1> job=15665333 tmp=/tmp/e0cq7swxriw5 elapsed 9.94s",
+  "label": "oom-image-resize"
+ },
+ {
+  "id": "F-00345",
+  "text": "lint failure: E501 line too long (132 > 120) in report #35636519, scan took 4.46s",
+  "label": "flake8-lint-only"
+ },
+ {
+  "id": "F-00060",
+  "text": "Traceback (most recent call last):\n  File \"app/services/order.py\", line 431, in create_order\n    conn = pool.acquire(timeout=5)\n  File \"app/db/pool.py\", line 286, in acquire\n    raise ConnectionRefusedError('dial failed')\nConnectionRefusedError: connect to db 10.0.0.8:4305 refused (request ORD-6843658375, trace 151e40a4-ecda-6b12-050b-09fd469a1e50)",
+  "label": "db-connection-refused"
+ },
+ {
+  "id": "F-00094",
+  "text": "Traceback (most recent call last):\n  File \"tests/test_checkout.py\", line 687, in test_total\n    self.assertEqual(order.total, expected)\nAssertionError: Decimal('99.90') != Decimal('9.99') [case 68598631, run at 2026-09-13T19:03:56Z, took 5871ms]",
+  "label": "assert-total-price"
+ },
+ {
+  "id": "F-00236",
+  "text": "Traceback (most recent call last):\n  File \"app/config.py\", line 438, in load\n    return cfg['feature_flags']\nKeyError: 'feature_flags' (pid 46268426, started 2026-03-12T00:15:42Z)",
+  "label": "keyerror-config"
+ },
+ {
+  "id": "F-00297",
+  "text": "requests.exceptions.HTTPError: 502 Bad Gateway for https://api.internal:50603/v1/pay (upstream took 1549ms, req ORD-7643227572, ts 2026-11-24T10:53:27Z, token 8a0f41d04f2e802e6bf6498cb94285a2)",
+  "label": "http-502-upstream"
+ },
+ {
+  "id": "F-00279",
+  "text": "Traceback (most recent call last):\n  File \"worker/resize.py\", line 190, in run\n    img = Image.open(src)\nMemoryError: cannot allocate buffer for image <Image object at 0xf16ee7cec053> job=31227352 tmp=/tmp/0h15zrehmcnr elapsed 3.78s",
+  "label": "oom-image-resize"
+ },
+ {
+  "id": "F-00131",
+  "text": "Traceback (most recent call last):\n  File \"tests/test_checkout.py\", line 125, in test_currency\n    self.assertEqual(order.currency, 'CNY')\nAssertionError: 'USD' != 'CNY' [case 33757446, took 1708ms]",
+  "label": "assert-currency"
+ },
+ {
+  "id": "F-00201",
+  "text": "Traceback (most recent call last):\n  File \"app/config.py\", line 821, in load\n    return cfg['feature_flags']\nKeyError: 'feature_flags' (pid 91702325, started 2026-03-13T00:09:44Z)",
+  "label": "keyerror-config"
+ },
+ {
+  "id": "F-00061",
+  "text": "Traceback (most recent call last):\n  File \"app/services/order.py\", line 203, in create_order\n    conn = pool.acquire(timeout=5)\n  File \"app/db/pool.py\", line 806, in acquire\n    raise ConnectionRefusedError('dial failed')\nConnectionRefusedError: connect to db 10.0.0.8:27949 refused (request ORD-1994365625, trace b6765e9f-a741-1886-6b40-b173771b9455)",
+  "label": "db-connection-refused"
+ },
+ {
+  "id": "F-00302",
+  "text": "requests.exceptions.HTTPError: 502 Bad Gateway for https://api.internal:46337/v1/pay (upstream took 7839ms, req ORD-3680498253, ts 2026-01-16T06:24:50Z, token 73165db28263927d76c993bc2eb25546)",
+  "label": "http-502-upstream"
+ },
+ {
+  "id": "F-00316",
+  "text": "requests.exceptions.HTTPError: 502 Bad Gateway for https://api.internal:1334/v1/pay (upstream took 6541ms, req ORD-1664898253, ts 2026-02-25T00:30:30Z, token accf3a7a66a8206aa473ddc707ba0c14)",
+  "label": "http-502-upstream"
+ },
+ {
+  "id": "F-00384",
+  "text": "RuntimeError: worker crashed, dump at 0x60c688800c76, uptime 11.36s, seq 65253954",
+  "label": "generic-crash-no-stack"
+ },
+ {
+  "id": "F-00396",
+  "text": "RuntimeError: worker crashed, dump at 0x102bedbd12cc, uptime 18.22s, seq 56180929",
+  "label": "generic-crash-no-stack"
+ },
+ {
+  "id": "F-00155",
+  "text": "Traceback (most recent call last):\n  File \"tests/test_checkout.py\", line 50, in test_currency\n    self.assertEqual(order.currency, 'CNY')\nAssertionError: 'USD' != 'CNY' [case 98298479, took 4101ms]",
+  "label": "assert-currency"
+ },
+ {
+  "id": "F-00305",
+  "text": "requests.exceptions.HTTPError: 502 Bad Gateway for https://api.internal:56984/v1/pay (upstream took 960ms, req ORD-7104925842, ts 2026-08-17T19:03:30Z, token 94dc021261657c92514f48238ba8ba42)",
+  "label": "http-502-upstream"
+ },
+ {
+  "id": "F-00321",
+  "text": "lint failure: E501 line too long (132 > 120) in report #32960151, scan took 13.13s",
+  "label": "flake8-lint-only"
+ },
+ {
+  "id": "F-00365",
+  "text": "RuntimeError: worker crashed, dump at 0xa729db00b29f, uptime 28.44s, seq 60729850",
+  "label": "generic-crash-no-stack"
+ },
+ {
+  "id": "F-00380",
+  "text": "RuntimeError: worker crashed, dump at 0x4b87d3889bc3, uptime 9.38s, seq 90057481",
+  "label": "generic-crash-no-stack"
+ },
+ {
+  "id": "F-00151",
+  "text": "Traceback (most recent call last):\n  File \"tests/test_checkout.py\", line 55, in test_currency\n    self.assertEqual(order.currency, 'CNY')\nAssertionError: 'USD' != 'CNY' [case 15231239, took 2073ms]",
+  "label": "assert-currency"
+ },
+ {
+  "id": "F-00016",
+  "text": "Traceback (most recent call last):\n  File \"app/services/order.py\", line 428, in create_order\n    conn = pool.acquire(timeout=5)\n  File \"app/db/pool.py\", line 642, in acquire\n    raise TimeoutError('pool exhausted')\nTimeoutError: connection to db 10.0.0.8:53115 timed out after 8528ms (request ORD-0128652202, trace 642233b7-d53a-1d3f-5e83-6a8c884fed6f)",
+  "label": "db-connection-timeout"
+ },
+ {
+  "id": "F-00278",
+  "text": "Traceback (most recent call last):\n  File \"worker/resize.py\", line 429, in run\n    img = Image.open(src)\nMemoryError: cannot allocate buffer for image <Image object at 0xd588eb117bba> job=70489320 tmp=/tmp/j4i8i8mbjz7h elapsed 8.59s",
+  "label": "oom-image-resize"
+ },
+ {
+  "id": "F-00289",
+  "text": "requests.exceptions.HTTPError: 502 Bad Gateway for https://api.internal:12543/v1/pay (upstream took 702ms, req ORD-5015756669, ts 2026-11-03T05:41:21Z, token ed21967e890f2c63bcae99702016e216)",
+  "label": "http-502-upstream"
+ },
+ {
+  "id": "F-00284",
+  "text": "requests.exceptions.HTTPError: 502 Bad Gateway for https://api.internal:45703/v1/pay (upstream took 7279ms, req ORD-4994480623, ts 2026-05-05T08:18:44Z, token 09e0175f89f569604195ec5cdc79e6e7)",
+  "label": "http-502-upstream"
+ },
+ {
+  "id": "F-00099",
+  "text": "Traceback (most recent call last):\n  File \"tests/test_checkout.py\", line 789, in test_total\n    self.assertEqual(order.total, expected)\nAssertionError: Decimal('99.90') != Decimal('9.99') [case 62608043, run at 2026-09-24T23:09:42Z, took 8472ms]",
+  "label": "assert-total-price"
+ },
+ {
+  "id": "F-00150",
+  "text": "Traceback (most recent call last):\n  File \"tests/test_checkout.py\", line 348, in test_currency\n    self.assertEqual(order.currency, 'CNY')\nAssertionError: 'USD' != 'CNY' [case 84963470, took 7803ms]",
+  "label": "assert-currency"
+ },
+ {
+  "id": "F-00275",
+  "text": "Traceback (most recent call last):\n  File \"worker/resize.py\", line 564, in run\n    img = Image.open(src)\nMemoryError: cannot allocate buffer for image <Image object at 0x41cd330985a6> job=82441881 tmp=/tmp/72qo2dur9b6h elapsed 17.72s",
+  "label": "oom-image-resize"
+ },
+ {
+  "id": "F-00143",
+  "text": "Traceback (most recent call last):\n  File \"tests/test_checkout.py\", line 776, in test_currency\n    self.assertEqual(order.currency, 'CNY')\nAssertionError: 'USD' != 'CNY' [case 47651097, took 327ms]",
+  "label": "assert-currency"
+ },
+ {
+  "id": "F-00029",
+  "text": "Traceback (most recent call last):\n  File \"app/services/order.py\", line 868, in create_order\n    conn = pool.acquire(timeout=5)\n  File \"app/db/pool.py\", line 748, in acquire\n    raise TimeoutError('pool exhausted')\nTimeoutError: connection to db 10.0.0.8:22103 timed out after 8281ms (request ORD-4935368627, trace fed46b76-794f-7b02-617e-23bf52779d02)",
+  "label": "db-connection-timeout"
+ },
+ {
+  "id": "F-00012",
+  "text": "Traceback (most recent call last):\n  File \"app/services/order.py\", line 247, in create_order\n    conn = pool.acquire(timeout=5)\n  File \"app/db/pool.py\", line 60, in acquire\n    raise TimeoutError('pool exhausted')\nTimeoutError: connection to db 10.0.0.8:40323 timed out after 5708ms (request ORD-0794164756, trace b745feda-075a-f28f-2a88-fdcae3e2f703)",
+  "label": "db-connection-timeout"
+ },
+ {
+  "id": "F-00069",
+  "text": "Traceback (most recent call last):\n  File \"app/services/order.py\", line 87, in create_order\n    conn = pool.acquire(timeout=5)\n  File \"app/db/pool.py\", line 67, in acquire\n    raise ConnectionRefusedError('dial failed')\nConnectionRefusedError: connect to db 10.0.0.8:9789 refused (request ORD-0770006508, trace c071344c-6c51-1a61-b56b-2b2692dce084)",
+  "label": "db-connection-refused"
+ },
+ {
+  "id": "F-00373",
+  "text": "RuntimeError: worker crashed, dump at 0x563f0478cea9, uptime 20.84s, seq 44265612",
+  "label": "generic-crash-no-stack"
+ },
+ {
+  "id": "F-00222",
+  "text": "Traceback (most recent call last):\n  File \"app/config.py\", line 457, in load\n    return cfg['feature_flags']\nKeyError: 'feature_flags' (pid 43060100, started 2026-03-17T00:25:59Z)",
+  "label": "keyerror-config"
+ },
+ {
+  "id": "F-00294",
+  "text": "requests.exceptions.HTTPError: 502 Bad Gateway for https://api.internal:22215/v1/pay (upstream took 2256ms, req ORD-7251712992, ts 2026-05-21T17:02:55Z, token d55d831e26af2736995277cd643a4d56)",
+  "label": "http-502-upstream"
+ },
+ {
+  "id": "F-00197",
+  "text": "java.lang.NullPointerException: Cannot invoke \"User.getProfile()\" because \"user\" is null\n\tat com.shop.UserService.render(UserService.java:171)\n\tat com.shop.Web.handle(Web.java:593)\nrequestId=ea621180-7daf-26bf-5cf1-99aa66235f9a elapsed=9.46s session=acf127119f30d1563ee4b57b97de5038",
+  "label": "npe-user-profile"
+ },
+ {
+  "id": "F-00377",
+  "text": "RuntimeError: worker crashed, dump at 0x358f8acdcd9c, uptime 17.44s, seq 70466955",
+  "label": "generic-crash-no-stack"
+ },
+ {
+  "id": "F-00173",
+  "text": "java.lang.NullPointerException: Cannot invoke \"User.getProfile()\" because \"user\" is null\n\tat com.shop.UserService.render(UserService.java:52)\n\tat com.shop.Web.handle(Web.java:337)\nrequestId=5351a45e-3078-ff8f-872a-5227766235f9 elapsed=10.31s session=a7ffb3662a63bfa8b23b00ff8af63d7e",
+  "label": "npe-user-profile"
+ },
+ {
+  "id": "F-00004",
+  "text": "Traceback (most recent call last):\n  File \"app/services/order.py\", line 570, in create_order\n    conn = pool.acquire(timeout=5)\n  File \"app/db/pool.py\", line 707, in acquire\n    raise TimeoutError('pool exhausted')\nTimeoutError: connection to db 10.0.0.8:45116 timed out after 8553ms (request ORD-2616372780, trace 3c4bdac9-4544-a9cb-c9ad-c4e66baa5e04)",
+  "label": "db-connection-timeout"
+ },
+ {
+  "id": "F-00193",
+  "text": "java.lang.NullPointerException: Cannot invoke \"User.getProfile()\" because \"user\" is null\n\tat com.shop.UserService.render(UserService.java:66)\n\tat com.shop.Web.handle(Web.java:708)\nrequestId=2777604e-b8f4-2ab0-f18c-9c58cf316afe elapsed=5.96s session=41e3a122c5af30b28729a80681a74e73",
+  "label": "npe-user-profile"
+ },
+ {
+  "id": "F-00252",
+  "text": "Traceback (most recent call last):\n  File \"worker/resize.py\", line 885, in run\n    img = Image.open(src)\nMemoryError: cannot allocate buffer for image <Image object at 0x1e2283a313c6> job=89710872 tmp=/tmp/zu0xys98bzck elapsed 11.59s",
+  "label": "oom-image-resize"
+ },
+ {
+  "id": "F-00136",
+  "text": "Traceback (most recent call last):\n  File \"tests/test_checkout.py\", line 389, in test_currency\n    self.assertEqual(order.currency, 'CNY')\nAssertionError: 'USD' != 'CNY' [case 89287869, took 1177ms]",
+  "label": "assert-currency"
+ },
+ {
+  "id": "F-00359",
+  "text": "lint failure: E501 line too long (132 > 120) in report #63316342, scan took 22.51s",
+  "label": "flake8-lint-only"
+ },
+ {
+  "id": "F-00079",
+  "text": "Traceback (most recent call last):\n  File \"app/services/order.py\", line 50, in create_order\n    conn = pool.acquire(timeout=5)\n  File \"app/db/pool.py\", line 25, in acquire\n    raise ConnectionRefusedError('dial failed')\nConnectionRefusedError: connect to db 10.0.0.8:19718 refused (request ORD-9798002938, trace ff745d43-68d3-4061-bb6a-c4804ec0b1c7)",
+  "label": "db-connection-refused"
+ },
+ {
+  "id": "F-00103",
+  "text": "Traceback (most recent call last):\n  File \"tests/test_checkout.py\", line 223, in test_total\n    self.assertEqual(order.total, expected)\nAssertionError: Decimal('99.90') != Decimal('9.99') [case 39972270, run at 2026-09-26T06:18:59Z, took 7716ms]",
+  "label": "assert-total-price"
+ },
+ {
+  "id": "F-00078",
+  "text": "Traceback (most recent call last):\n  File \"app/services/order.py\", line 194, in create_order\n    conn = pool.acquire(timeout=5)\n  File \"app/db/pool.py\", line 712, in acquire\n    raise ConnectionRefusedError('dial failed')\nConnectionRefusedError: connect to db 10.0.0.8:28734 refused (request ORD-0840076860, trace dab8c2dd-fdbb-2557-e725-74d2bfb80aa9)",
+  "label": "db-connection-refused"
+ },
+ {
+  "id": "F-00206",
+  "text": "Traceback (most recent call last):\n  File \"app/config.py\", line 429, in load\n    return cfg['feature_flags']\nKeyError: 'feature_flags' (pid 68936121, started 2026-04-21T22:41:23Z)",
+  "label": "keyerror-config"
+ },
+ {
+  "id": "F-00386",
+  "text": "RuntimeError: worker crashed, dump at 0x452f25da20a0, uptime 18.53s, seq 15419083",
+  "label": "generic-crash-no-stack"
+ },
+ {
+  "id": "F-00307",
+  "text": "requests.exceptions.HTTPError: 502 Bad Gateway for https://api.internal:19210/v1/pay (upstream took 5472ms, req ORD-4512000592, ts 2026-12-08T17:29:47Z, token 9f51580f3b2a53bea252f5706e4d3c9a)",
+  "label": "http-502-upstream"
+ },
+ {
+  "id": "F-00098",
+  "text": "Traceback (most recent call last):\n  File \"tests/test_checkout.py\", line 573, in test_total\n    self.assertEqual(order.total, expected)\nAssertionError: Decimal('99.90') != Decimal('9.99') [case 38163382, run at 2026-09-28T09:35:27Z, took 5828ms]",
+  "label": "assert-total-price"
+ },
+ {
+  "id": "F-00050",
+  "text": "Traceback (most recent call last):\n  File \"app/services/order.py\", line 488, in create_order\n    conn = pool.acquire(timeout=5)\n  File \"app/db/pool.py\", line 205, in acquire\n    raise ConnectionRefusedError('dial failed')\nConnectionRefusedError: connect to db 10.0.0.8:35014 refused (request ORD-5422237308, trace b675aeef-dfd6-a85f-3633-e5d581e1f2b2)",
+  "label": "db-connection-refused"
+ },
+ {
+  "id": "F-00111",
+  "text": "Traceback (most recent call last):\n  File \"tests/test_checkout.py\", line 225, in test_total\n    self.assertEqual(order.total, expected)\nAssertionError: Decimal('99.90') != Decimal('9.99') [case 50093688, run at 2026-06-02T23:12:25Z, took 2802ms]",
+  "label": "assert-total-price"
+ },
+ {
+  "id": "F-00244",
+  "text": "Traceback (most recent call last):\n  File \"worker/resize.py\", line 73, in run\n    img = Image.open(src)\nMemoryError: cannot allocate buffer for image <Image object at 0x3d4838a75c1a> job=26452465 tmp=/tmp/kspb63xayvx8 elapsed 12.25s",
+  "label": "oom-image-resize"
+ },
+ {
+  "id": "F-00374",
+  "text": "RuntimeError: worker crashed, dump at 0x6805cba99ed8, uptime 5.94s, seq 04555650",
+  "label": "generic-crash-no-stack"
+ },
+ {
+  "id": "F-00051",
+  "text": "Traceback (most recent call last):\n  File \"app/services/order.py\", line 255, in create_order\n    conn = pool.acquire(timeout=5)\n  File \"app/db/pool.py\", line 662, in acquire\n    raise ConnectionRefusedError('dial failed')\nConnectionRefusedError: connect to db 10.0.0.8:4771 refused (request ORD-9564681123, trace 5e2dc6a2-0ecf-88ca-303f-28f974d8a4f1)",
+  "label": "db-connection-refused"
+ },
+ {
+  "id": "F-00367",
+  "text": "RuntimeError: worker crashed, dump at 0x9a7d2dc2d67e, uptime 1.52s, seq 06601065",
+  "label": "generic-crash-no-stack"
+ },
+ {
+  "id": "F-00232",
+  "text": "Traceback (most recent call last):\n  File \"app/config.py\", line 872, in load\n    return cfg['feature_flags']\nKeyError: 'feature_flags' (pid 95160886, started 2026-05-26T00:01:41Z)",
+  "label": "keyerror-config"
+ },
+ {
+  "id": "F-00020",
+  "text": "Traceback (most recent call last):\n  File \"app/services/order.py\", line 77, in create_order\n    conn = pool.acquire(timeout=5)\n  File \"app/db/pool.py\", line 755, in acquire\n    raise TimeoutError('pool exhausted')\nTimeoutError: connection to db 10.0.0.8:60984 timed out after 4396ms (request ORD-3538005214, trace 35cf4b53-3e9d-9c04-5464-94f9bc999f2a)",
+  "label": "db-connection-timeout"
+ },
+ {
+  "id": "F-00315",
+  "text": "requests.exceptions.HTTPError: 502 Bad Gateway for https://api.internal:13953/v1/pay (upstream took 7847ms, req ORD-6531156295, ts 2026-05-06T14:09:50Z, token 57d620a1d26b57887310333eb249ef99)",
+  "label": "http-502-upstream"
+ },
+ {
+  "id": "F-00323",
+  "text": "lint failure: E501 line too long (132 > 120) in report #99535750, scan took 29.31s",
+  "label": "flake8-lint-only"
+ },
+ {
+  "id": "F-00056",
+  "text": "Traceback (most recent call last):\n  File \"app/services/order.py\", line 93, in create_order\n    conn = pool.acquire(timeout=5)\n  File \"app/db/pool.py\", line 795, in acquire\n    raise ConnectionRefusedError('dial failed')\nConnectionRefusedError: connect to db 10.0.0.8:39654 refused (request ORD-7426520957, trace 94f9343d-14c4-f5b5-3687-cc41fb4cc103)",
+  "label": "db-connection-refused"
+ },
+ {
+  "id": "F-00360",
+  "text": "lint failure: E501 line too long (132 > 120) in report #53655425, scan took 7.85s",
+  "label": "flake8-lint-only"
+ },
+ {
+  "id": "F-00210",
+  "text": "Traceback (most recent call last):\n  File \"app/config.py\", line 27, in load\n    return cfg['feature_flags']\nKeyError: 'feature_flags' (pid 14156655, started 2026-03-24T14:51:27Z)",
+  "label": "keyerror-config"
+ },
+ {
+  "id": "F-00119",
+  "text": "Traceback (most recent call last):\n  File \"tests/test_checkout.py\", line 779, in test_total\n    self.assertEqual(order.total, expected)\nAssertionError: Decimal('99.90') != Decimal('9.99') [case 30376469, run at 2026-07-09T16:36:55Z, took 8702ms]",
+  "label": "assert-total-price"
+ },
+ {
+  "id": "F-00276",
+  "text": "Traceback (most recent call last):\n  File \"worker/resize.py\", line 302, in run\n    img = Image.open(src)\nMemoryError: cannot allocate buffer for image <Image object at 0x1654b845733f> job=83917976 tmp=/tmp/8kimvtstx703 elapsed 11.18s",
+  "label": "oom-image-resize"
+ },
+ {
+  "id": "F-00292",
+  "text": "requests.exceptions.HTTPError: 502 Bad Gateway for https://api.internal:52270/v1/pay (upstream took 5136ms, req ORD-9349684973, ts 2026-02-14T22:23:39Z, token 5f84ae679d1e8d1ac82c72515fa86bf8)",
+  "label": "http-502-upstream"
+ },
+ {
+  "id": "F-00220",
+  "text": "Traceback (most recent call last):\n  File \"app/config.py\", line 52, in load\n    return cfg['feature_flags']\nKeyError: 'feature_flags' (pid 23194572, started 2026-03-16T11:15:49Z)",
+  "label": "keyerror-config"
+ },
+ {
+  "id": "F-00327",
+  "text": "lint failure: E501 line too long (132 > 120) in report #43728003, scan took 12.76s",
+  "label": "flake8-lint-only"
+ },
+ {
+  "id": "F-00281",
+  "text": "requests.exceptions.HTTPError: 502 Bad Gateway for https://api.internal:32656/v1/pay (upstream took 7402ms, req ORD-1350283342, ts 2026-04-13T10:52:15Z, token a487387c24f9adbc8be4358dee1e04e7)",
+  "label": "http-502-upstream"
+ },
+ {
+  "id": "F-00277",
+  "text": "Traceback (most recent call last):\n  File \"worker/resize.py\", line 823, in run\n    img = Image.open(src)\nMemoryError: cannot allocate buffer for image <Image object at 0x71fb26678d18> job=00434830 tmp=/tmp/wg9snowp0uw6 elapsed 14.93s",
+  "label": "oom-image-resize"
+ },
+ {
+  "id": "F-00209",
+  "text": "Traceback (most recent call last):\n  File \"app/config.py\", line 583, in load\n    return cfg['feature_flags']\nKeyError: 'feature_flags' (pid 80704216, started 2026-04-10T22:35:24Z)",
+  "label": "keyerror-config"
+ },
+ {
+  "id": "F-00268",
+  "text": "Traceback (most recent call last):\n  File \"worker/resize.py\", line 36, in run\n    img = Image.open(src)\nMemoryError: cannot allocate buffer for image <Image object at 0x8c46e5d3f5de> job=76845069 tmp=/tmp/sr9gplk7s7zp elapsed 18.82s",
+  "label": "oom-image-resize"
+ },
+ {
+  "id": "F-00286",
+  "text": "requests.exceptions.HTTPError: 502 Bad Gateway for https://api.internal:48958/v1/pay (upstream took 2886ms, req ORD-1580134869, ts 2026-06-01T18:47:44Z, token 0fe6149981628986bdc5c18870086ac0)",
+  "label": "http-502-upstream"
+ },
+ {
+  "id": "F-00115",
+  "text": "Traceback (most recent call last):\n  File \"tests/test_checkout.py\", line 109, in test_total\n    self.assertEqual(order.total, expected)\nAssertionError: Decimal('99.90') != Decimal('9.99') [case 68296240, run at 2026-04-19T08:21:32Z, took 285ms]",
+  "label": "assert-total-price"
+ },
+ {
+  "id": "F-00120",
+  "text": "Traceback (most recent call last):\n  File \"tests/test_checkout.py\", line 629, in test_total\n    self.assertEqual(order.total, expected)\nAssertionError: Decimal('99.90') != Decimal('9.99') [case 95499331, run at 2026-09-24T11:01:12Z, took 8815ms]",
+  "label": "assert-total-price"
+ },
+ {
+  "id": "F-00132",
+  "text": "Traceback (most recent call last):\n  File \"tests/test_checkout.py\", line 896, in test_currency\n    self.assertEqual(order.currency, 'CNY')\nAssertionError: 'USD' != 'CNY' [case 33388310, took 3777ms]",
+  "label": "assert-currency"
+ },
+ {
+  "id": "F-00011",
+  "text": "Traceback (most recent call last):\n  File \"app/services/order.py\", line 74, in create_order\n    conn = pool.acquire(timeout=5)\n  File \"app/db/pool.py\", line 820, in acquire\n    raise TimeoutError('pool exhausted')\nTimeoutError: connection to db 10.0.0.8:35354 timed out after 8325ms (request ORD-0115337543, trace ce846b69-c06f-5fe5-849e-fff915ef097d)",
+  "label": "db-connection-timeout"
+ },
+ {
+  "id": "F-00042",
+  "text": "Traceback (most recent call last):\n  File \"app/services/order.py\", line 581, in create_order\n    conn = pool.acquire(timeout=5)\n  File \"app/db/pool.py\", line 117, in acquire\n    raise ConnectionRefusedError('dial failed')\nConnectionRefusedError: connect to db 10.0.0.8:3124 refused (request ORD-2461616361, trace 13ccb0d3-a130-4fd8-5f70-e6886d1ae129)",
+  "label": "db-connection-refused"
+ },
+ {
+  "id": "F-00062",
+  "text": "Traceback (most recent call last):\n  File \"app/services/order.py\", line 260, in create_order\n    conn = pool.acquire(timeout=5)\n  File \"app/db/pool.py\", line 790, in acquire\n    raise ConnectionRefusedError('dial failed')\nConnectionRefusedError: connect to db 10.0.0.8:12402 refused (request ORD-0788770382, trace 56633779-0320-8d7a-ade9-584db8bac550)",
+  "label": "db-connection-refused"
+ },
+ {
+  "id": "F-00033",
+  "text": "Traceback (most recent call last):\n  File \"app/services/order.py\", line 726, in create_order\n    conn = pool.acquire(timeout=5)\n  File \"app/db/pool.py\", line 340, in acquire\n    raise TimeoutError('pool exhausted')\nTimeoutError: connection to db 10.0.0.8:44110 timed out after 7800ms (request ORD-9950677004, trace fa46ff0b-5ea6-7745-373d-1e36cc305413)",
+  "label": "db-connection-timeout"
+ },
+ {
+  "id": "F-00391",
+  "text": "RuntimeError: worker crashed, dump at 0x1b20f5d6fe1e, uptime 6.95s, seq 00603961",
+  "label": "generic-crash-no-stack"
+ },
+ {
+  "id": "F-00037",
+  "text": "Traceback (most recent call last):\n  File \"app/services/order.py\", line 535, in create_order\n    conn = pool.acquire(timeout=5)\n  File \"app/db/pool.py\", line 869, in acquire\n    raise TimeoutError('pool exhausted')\nTimeoutError: connection to db 10.0.0.8:60972 timed out after 2197ms (request ORD-6133808473, trace b4cb6553-a326-475e-1030-3b6925815646)",
+  "label": "db-connection-timeout"
+ },
+ {
+  "id": "F-00229",
+  "text": "Traceback (most recent call last):\n  File \"app/config.py\", line 229, in load\n    return cfg['feature_flags']\nKeyError: 'feature_flags' (pid 24588292, started 2026-05-08T10:36:25Z)",
+  "label": "keyerror-config"
+ },
+ {
+  "id": "F-00068",
+  "text": "Traceback (most recent call last):\n  File \"app/services/order.py\", line 334, in create_order\n    conn = pool.acquire(timeout=5)\n  File \"app/db/pool.py\", line 883, in acquire\n    raise ConnectionRefusedError('dial failed')\nConnectionRefusedError: connect to db 10.0.0.8:35175 refused (request ORD-1421273759, trace 872ba07b-8d84-43aa-0395-01fd58130b8a)",
+  "label": "db-connection-refused"
+ },
+ {
+  "id": "F-00335",
+  "text": "lint failure: E501 line too long (132 > 120) in report #21452571, scan took 13.40s",
+  "label": "flake8-lint-only"
+ },
+ {
+  "id": "F-00311",
+  "text": "requests.exceptions.HTTPError: 502 Bad Gateway for https://api.internal:62081/v1/pay (upstream took 6863ms, req ORD-9848731905, ts 2026-04-20T03:03:28Z, token e06426588eda8290f3c721d91f48c2cb)",
+  "label": "http-502-upstream"
+ },
+ {
+  "id": "F-00397",
+  "text": "RuntimeError: worker crashed, dump at 0x7b5aa4f2693, uptime 27.06s, seq 00358511",
+  "label": "generic-crash-no-stack"
+ },
+ {
+  "id": "F-00318",
+  "text": "requests.exceptions.HTTPError: 502 Bad Gateway for https://api.internal:10451/v1/pay (upstream took 6952ms, req ORD-0739596347, ts 2026-06-12T03:27:57Z, token 65e96368a2fa9fe8318fd432d14ebff1)",
+  "label": "http-502-upstream"
+ },
+ {
+  "id": "F-00313",
+  "text": "requests.exceptions.HTTPError: 502 Bad Gateway for https://api.internal:54931/v1/pay (upstream took 6956ms, req ORD-7730564212, ts 2026-03-16T22:39:01Z, token 64c4895f95aa1b63a02191a09d75ad91)",
+  "label": "http-502-upstream"
+ },
+ {
+  "id": "F-00168",
+  "text": "java.lang.NullPointerException: Cannot invoke \"User.getProfile()\" because \"user\" is null\n\tat com.shop.UserService.render(UserService.java:555)\n\tat com.shop.Web.handle(Web.java:491)\nrequestId=c975b7a0-e448-1194-8b06-0e7d587e4d9e elapsed=14.58s session=21a8b3bc2f8f7c0d4f3ddfb6f9c0ae42",
+  "label": "npe-user-profile"
+ },
+ {
+  "id": "F-00310",
+  "text": "requests.exceptions.HTTPError: 502 Bad Gateway for https://api.internal:43744/v1/pay (upstream took 6073ms, req ORD-9357976683, ts 2026-05-09T03:01:01Z, token b161ed1c9302d75b6bf14810117f936c)",
+  "label": "http-502-upstream"
+ },
+ {
+  "id": "F-00363",
+  "text": "RuntimeError: worker crashed, dump at 0x1150b2d76b18, uptime 15.08s, seq 36448697",
+  "label": "generic-crash-no-stack"
+ },
+ {
+  "id": "F-00084",
+  "text": "Traceback (most recent call last):\n  File \"tests/test_checkout.py\", line 132, in test_total\n    self.assertEqual(order.total, expected)\nAssertionError: Decimal('99.90') != Decimal('9.99') [case 35046410, run at 2026-09-08T18:56:24Z, took 5499ms]",
+  "label": "assert-total-price"
+ },
+ {
+  "id": "F-00267",
+  "text": "Traceback (most recent call last):\n  File \"worker/resize.py\", line 353, in run\n    img = Image.open(src)\nMemoryError: cannot allocate buffer for image <Image object at 0x2f82e27b7a3e> job=52866182 tmp=/tmp/o9429hns1rpw elapsed 22.77s",
+  "label": "oom-image-resize"
+ },
+ {
+  "id": "F-00247",
+  "text": "Traceback (most recent call last):\n  File \"worker/resize.py\", line 705, in run\n    img = Image.open(src)\nMemoryError: cannot allocate buffer for image <Image object at 0x10e48b9e0915> job=68003459 tmp=/tmp/kmyce6ncd9og elapsed 26.96s",
+  "label": "oom-image-resize"
+ },
+ {
+  "id": "F-00071",
+  "text": "Traceback (most recent call last):\n  File \"app/services/order.py\", line 434, in create_order\n    conn = pool.acquire(timeout=5)\n  File \"app/db/pool.py\", line 612, in acquire\n    raise ConnectionRefusedError('dial failed')\nConnectionRefusedError: connect to db 10.0.0.8:24389 refused (request ORD-0867313801, trace 4f4aabe3-c32c-d643-c3bc-a0fe201f53bf)",
+  "label": "db-connection-refused"
+ },
+ {
+  "id": "F-00358",
+  "text": "lint failure: E501 line too long (132 > 120) in report #40255244, scan took 26.27s",
+  "label": "flake8-lint-only"
+ },
+ {
+  "id": "F-00328",
+  "text": "lint failure: E501 line too long (132 > 120) in report #64519196, scan took 20.05s",
+  "label": "flake8-lint-only"
+ },
+ {
+  "id": "F-00274",
+  "text": "Traceback (most recent call last):\n  File \"worker/resize.py\", line 46, in run\n    img = Image.open(src)\nMemoryError: cannot allocate buffer for image <Image object at 0x3cc1fd71e9cf> job=48194665 tmp=/tmp/zm4njbdebrwr elapsed 3.52s",
+  "label": "oom-image-resize"
+ },
+ {
+  "id": "F-00260",
+  "text": "Traceback (most recent call last):\n  File \"worker/resize.py\", line 585, in run\n    img = Image.open(src)\nMemoryError: cannot allocate buffer for image <Image object at 0x686f461ce25> job=01827636 tmp=/tmp/6pgwhk3kg71h elapsed 16.74s",
+  "label": "oom-image-resize"
+ },
+ {
+  "id": "F-00375",
+  "text": "RuntimeError: worker crashed, dump at 0x7328de75250a, uptime 7.44s, seq 68211135",
+  "label": "generic-crash-no-stack"
+ },
+ {
+  "id": "F-00351",
+  "text": "lint failure: E501 line too long (132 > 120) in report #86324239, scan took 16.51s",
+  "label": "flake8-lint-only"
+ },
+ {
+  "id": "F-00387",
+  "text": "RuntimeError: worker crashed, dump at 0x4913ff001bdc, uptime 20.92s, seq 55436082",
+  "label": "generic-crash-no-stack"
+ },
+ {
+  "id": "F-00096",
+  "text": "Traceback (most recent call last):\n  File \"tests/test_checkout.py\", line 118, in test_total\n    self.assertEqual(order.total, expected)\nAssertionError: Decimal('99.90') != Decimal('9.99') [case 69341952, run at 2026-08-07T11:38:14Z, took 3700ms]",
+  "label": "assert-total-price"
+ },
+ {
+  "id": "F-00190",
+  "text": "java.lang.NullPointerException: Cannot invoke \"User.getProfile()\" because \"user\" is null\n\tat com.shop.UserService.render(UserService.java:69)\n\tat com.shop.Web.handle(Web.java:591)\nrequestId=0ee76dff-3e99-3910-0f4f-6a873db4db7d elapsed=16.21s session=fd6108fc46dd5f82f30654ae5e515508",
+  "label": "npe-user-profile"
+ },
+ {
+  "id": "F-00005",
+  "text": "Traceback (most recent call last):\n  File \"app/services/order.py\", line 133, in create_order\n    conn = pool.acquire(timeout=5)\n  File \"app/db/pool.py\", line 197, in acquire\n    raise TimeoutError('pool exhausted')\nTimeoutError: connection to db 10.0.0.8:43815 timed out after 389ms (request ORD-9872373343, trace d2b7f719-4d81-8d34-a945-0e9d9a105955)",
+  "label": "db-connection-timeout"
+ },
+ {
+  "id": "F-00138",
+  "text": "Traceback (most recent call last):\n  File \"tests/test_checkout.py\", line 497, in test_currency\n    self.assertEqual(order.currency, 'CNY')\nAssertionError: 'USD' != 'CNY' [case 88563031, took 5258ms]",
+  "label": "assert-currency"
+ },
+ {
+  "id": "F-00392",
+  "text": "RuntimeError: worker crashed, dump at 0xec2be18cde8c, uptime 5.17s, seq 89582455",
+  "label": "generic-crash-no-stack"
+ },
+ {
+  "id": "F-00194",
+  "text": "java.lang.NullPointerException: Cannot invoke \"User.getProfile()\" because \"user\" is null\n\tat com.shop.UserService.render(UserService.java:637)\n\tat com.shop.Web.handle(Web.java:714)\nrequestId=bc3180d1-7a0e-d980-fd11-f03839b47510 elapsed=3.60s session=c99e9a1afbb8a0900f841dbe1c614516",
+  "label": "npe-user-profile"
+ },
+ {
+  "id": "F-00239",
+  "text": "Traceback (most recent call last):\n  File \"app/config.py\", line 408, in load\n    return cfg['feature_flags']\nKeyError: 'feature_flags' (pid 43727389, started 2026-11-05T23:18:14Z)",
+  "label": "keyerror-config"
+ },
+ {
+  "id": "F-00182",
+  "text": "java.lang.NullPointerException: Cannot invoke \"User.getProfile()\" because \"user\" is null\n\tat com.shop.UserService.render(UserService.java:38)\n\tat com.shop.Web.handle(Web.java:204)\nrequestId=0fd1303f-85f8-0168-9461-49250ef1b948 elapsed=28.10s session=53a8a8f7a3e8aa51912940a73b2e4715",
+  "label": "npe-user-profile"
+ },
+ {
+  "id": "F-00047",
+  "text": "Traceback (most recent call last):\n  File \"app/services/order.py\", line 887, in create_order\n    conn = pool.acquire(timeout=5)\n  File \"app/db/pool.py\", line 94, in acquire\n    raise ConnectionRefusedError('dial failed')\nConnectionRefusedError: connect to db 10.0.0.8:43662 refused (request ORD-8754589050, trace 206262c9-96e1-3372-aa84-3a600d8de200)",
+  "label": "db-connection-refused"
+ },
+ {
+  "id": "F-00178",
+  "text": "java.lang.NullPointerException: Cannot invoke \"User.getProfile()\" because \"user\" is null\n\tat com.shop.UserService.render(UserService.java:313)\n\tat com.shop.Web.handle(Web.java:279)\nrequestId=71985c59-6471-5765-5dcf-a077aaaa59a3 elapsed=8.71s session=842b96170e7926c8edc51db4b0e3baf5",
+  "label": "npe-user-profile"
+ },
+ {
+  "id": "F-00221",
+  "text": "Traceback (most recent call last):\n  File \"app/config.py\", line 36, in load\n    return cfg['feature_flags']\nKeyError: 'feature_flags' (pid 70734685, started 2026-01-20T16:09:04Z)",
+  "label": "keyerror-config"
+ },
+ {
+  "id": "F-00163",
+  "text": "java.lang.NullPointerException: Cannot invoke \"User.getProfile()\" because \"user\" is null\n\tat com.shop.UserService.render(UserService.java:677)\n\tat com.shop.Web.handle(Web.java:586)\nrequestId=9a6b32c4-ba3b-063a-daf3-f637624d8603 elapsed=6.19s session=5d8ff02ed825b47b1fa551eb2a0f172e",
+  "label": "npe-user-profile"
+ },
+ {
+  "id": "F-00341",
+  "text": "lint failure: E501 line too long (132 > 120) in report #88486655, scan took 6.18s",
+  "label": "flake8-lint-only"
+ },
+ {
+  "id": "F-00346",
+  "text": "lint failure: E501 line too long (132 > 120) in report #42759691, scan took 13.80s",
+  "label": "flake8-lint-only"
+ },
+ {
+  "id": "F-00336",
+  "text": "lint failure: E501 line too long (132 > 120) in report #04831910, scan took 8.05s",
+  "label": "flake8-lint-only"
+ },
+ {
+  "id": "F-00133",
+  "text": "Traceback (most recent call last):\n  File \"tests/test_checkout.py\", line 580, in test_currency\n    self.assertEqual(order.currency, 'CNY')\nAssertionError: 'USD' != 'CNY' [case 95832611, took 4799ms]",
+  "label": "assert-currency"
+ },
+ {
+  "id": "F-00257",
+  "text": "Traceback (most recent call last):\n  File \"worker/resize.py\", line 343, in run\n    img = Image.open(src)\nMemoryError: cannot allocate buffer for image <Image object at 0xfa193679482d> job=18013354 tmp=/tmp/leuyjzj9x1u3 elapsed 2.46s",
+  "label": "oom-image-resize"
+ },
+ {
+  "id": "F-00242",
+  "text": "Traceback (most recent call last):\n  File \"worker/resize.py\", line 467, in run\n    img = Image.open(src)\nMemoryError: cannot allocate buffer for image <Image object at 0x25e6c2536e03> job=31029295 tmp=/tmp/0vor3vch9pfe elapsed 20.27s",
+  "label": "oom-image-resize"
+ },
+ {
+  "id": "F-00361",
+  "text": "RuntimeError: worker crashed, dump at 0x6cbc9d9cb937, uptime 12.72s, seq 66822772",
+  "label": "generic-crash-no-stack"
+ },
+ {
+  "id": "F-00287",
+  "text": "requests.exceptions.HTTPError: 502 Bad Gateway for https://api.internal:5666/v1/pay (upstream took 845ms, req ORD-6878822855, ts 2026-05-05T06:30:29Z, token 7e3f45d901920a641762c722f0404adb)",
+  "label": "http-502-upstream"
+ },
+ {
+  "id": "F-00146",
+  "text": "Traceback (most recent call last):\n  File \"tests/test_checkout.py\", line 838, in test_currency\n    self.assertEqual(order.currency, 'CNY')\nAssertionError: 'USD' != 'CNY' [case 65367490, took 653ms]",
+  "label": "assert-currency"
+ },
+ {
+  "id": "F-00169",
+  "text": "java.lang.NullPointerException: Cannot invoke \"User.getProfile()\" because \"user\" is null\n\tat com.shop.UserService.render(UserService.java:28)\n\tat com.shop.Web.handle(Web.java:483)\nrequestId=04680845-0ca0-e8b0-3a3c-449188666678 elapsed=2.74s session=0891a72a521f7b0f482e6b0dc619d81a",
+  "label": "npe-user-profile"
+ },
+ {
+  "id": "F-00329",
+  "text": "lint failure: E501 line too long (132 > 120) in report #96447372, scan took 25.69s",
+  "label": "flake8-lint-only"
+ },
+ {
+  "id": "F-00176",
+  "text": "java.lang.NullPointerException: Cannot invoke \"User.getProfile()\" because \"user\" is null\n\tat com.shop.UserService.render(UserService.java:568)\n\tat com.shop.Web.handle(Web.java:170)\nrequestId=4465bb49-4832-3ea2-6aad-104e97c56ccc elapsed=23.68s session=55765179905d7fff6f130d4b163b457c",
+  "label": "npe-user-profile"
+ },
+ {
+  "id": "F-00121",
+  "text": "Traceback (most recent call last):\n  File \"tests/test_checkout.py\", line 766, in test_currency\n    self.assertEqual(order.currency, 'CNY')\nAssertionError: 'USD' != 'CNY' [case 30764024, took 4429ms]",
+  "label": "assert-currency"
+ },
+ {
+  "id": "F-00162",
+  "text": "java.lang.NullPointerException: Cannot invoke \"User.getProfile()\" because \"user\" is null\n\tat com.shop.UserService.render(UserService.java:30)\n\tat com.shop.Web.handle(Web.java:495)\nrequestId=930feb34-1cf7-716a-2f3f-ee45684a3e31 elapsed=25.86s session=87ca0dfa40fa5b45586c7bb2ff986f32",
+  "label": "npe-user-profile"
+ },
+ {
+  "id": "F-00253",
+  "text": "Traceback (most recent call last):\n  File \"worker/resize.py\", line 590, in run\n    img = Image.open(src)\nMemoryError: cannot allocate buffer for image <Image object at 0xabb8316409d> job=30111397 tmp=/tmp/w37dzxcj36si elapsed 21.35s",
+  "label": "oom-image-resize"
+ },
+ {
+  "id": "F-00320",
+  "text": "requests.exceptions.HTTPError: 502 Bad Gateway for https://api.internal:10613/v1/pay (upstream took 8446ms, req ORD-6547222538, ts 2026-09-07T14:36:21Z, token c27ba5f44b35c649acb48b47fdf664ec)",
+  "label": "http-502-upstream"
+ },
+ {
+  "id": "F-00031",
+  "text": "Traceback (most recent call last):\n  File \"app/services/order.py\", line 199, in create_order\n    conn = pool.acquire(timeout=5)\n  File \"app/db/pool.py\", line 56, in acquire\n    raise TimeoutError('pool exhausted')\nTimeoutError: connection to db 10.0.0.8:64230 timed out after 7030ms (request ORD-7013411258, trace 09570b26-c0d3-503e-9135-0fb67bbb1cc7)",
+  "label": "db-connection-timeout"
+ },
+ {
+  "id": "F-00021",
+  "text": "Traceback (most recent call last):\n  File \"app/services/order.py\", line 633, in create_order\n    conn = pool.acquire(timeout=5)\n  File \"app/db/pool.py\", line 875, in acquire\n    raise TimeoutError('pool exhausted')\nTimeoutError: connection to db 10.0.0.8:29128 timed out after 7802ms (request ORD-3071838980, trace 6614ab01-7f03-ea6a-1d4f-9a89f2101c72)",
+  "label": "db-connection-timeout"
+ },
+ {
+  "id": "F-00256",
+  "text": "Traceback (most recent call last):\n  File \"worker/resize.py\", line 709, in run\n    img = Image.open(src)\nMemoryError: cannot allocate buffer for image <Image object at 0x70aa6dcb0848> job=53195288 tmp=/tmp/mykakqhxo7p1 elapsed 17.18s",
+  "label": "oom-image-resize"
+ },
+ {
+  "id": "F-00112",
+  "text": "Traceback (most recent call last):\n  File \"tests/test_checkout.py\", line 176, in test_total\n    self.assertEqual(order.total, expected)\nAssertionError: Decimal('99.90') != Decimal('9.99') [case 69766923, run at 2026-06-07T16:31:16Z, took 6139ms]",
+  "label": "assert-total-price"
+ },
+ {
+  "id": "F-00218",
+  "text": "Traceback (most recent call last):\n  File \"app/config.py\", line 287, in load\n    return cfg['feature_flags']\nKeyError: 'feature_flags' (pid 02666179, started 2026-04-16T08:50:06Z)",
+  "label": "keyerror-config"
+ },
+ {
+  "id": "F-00186",
+  "text": "java.lang.NullPointerException: Cannot invoke \"User.getProfile()\" because \"user\" is null\n\tat com.shop.UserService.render(UserService.java:161)\n\tat com.shop.Web.handle(Web.java:659)\nrequestId=b7b81f33-7c3a-8e59-5c0d-b3b29da9939c elapsed=2.79s session=dfd9de9128f2548e0fc5d3719fce8768",
+  "label": "npe-user-profile"
+ },
+ {
+  "id": "F-00288",
+  "text": "requests.exceptions.HTTPError: 502 Bad Gateway for https://api.internal:24967/v1/pay (upstream took 4584ms, req ORD-1384515759, ts 2026-03-15T16:37:40Z, token 4e73aa39f034355a16a8a95b6c4259ea)",
+  "label": "http-502-upstream"
+ },
+ {
+  "id": "F-00104",
+  "text": "Traceback (most recent call last):\n  File \"tests/test_checkout.py\", line 598, in test_total\n    self.assertEqual(order.total, expected)\nAssertionError: Decimal('99.90') != Decimal('9.99') [case 29894291, run at 2026-02-11T04:21:32Z, took 35ms]",
+  "label": "assert-total-price"
+ },
+ {
+  "id": "F-00137",
+  "text": "Traceback (most recent call last):\n  File \"tests/test_checkout.py\", line 765, in test_currency\n    self.assertEqual(order.currency, 'CNY')\nAssertionError: 'USD' != 'CNY' [case 51464759, took 5315ms]",
+  "label": "assert-currency"
+ },
+ {
+  "id": "F-00058",
+  "text": "Traceback (most recent call last):\n  File \"app/services/order.py\", line 782, in create_order\n    conn = pool.acquire(timeout=5)\n  File \"app/db/pool.py\", line 49, in acquire\n    raise ConnectionRefusedError('dial failed')\nConnectionRefusedError: connect to db 10.0.0.8:43302 refused (request ORD-4587521335, trace e35f7789-75a4-e7d6-d774-56d81fac53cd)",
+  "label": "db-connection-refused"
+ },
+ {
+  "id": "F-00043",
+  "text": "Traceback (most recent call last):\n  File \"app/services/order.py\", line 277, in create_order\n    conn = pool.acquire(timeout=5)\n  File \"app/db/pool.py\", line 880, in acquire\n    raise ConnectionRefusedError('dial failed')\nConnectionRefusedError: connect to db 10.0.0.8:61637 refused (request ORD-5455171499, trace fd6424a3-07e7-7913-e3dc-561602b488ac)",
+  "label": "db-connection-refused"
+ },
+ {
+  "id": "F-00200",
+  "text": "java.lang.NullPointerException: Cannot invoke \"User.getProfile()\" because \"user\" is null\n\tat com.shop.UserService.render(UserService.java:781)\n\tat com.shop.Web.handle(Web.java:346)\nrequestId=3271bf83-d82b-d154-b040-5c6843f73898 elapsed=12.34s session=43fef26d67c4b0996379a47388a22c60",
+  "label": "npe-user-profile"
+ },
+ {
+  "id": "F-00153",
+  "text": "Traceback (most recent call last):\n  File \"tests/test_checkout.py\", line 878, in test_currency\n    self.assertEqual(order.currency, 'CNY')\nAssertionError: 'USD' != 'CNY' [case 36500249, took 5986ms]",
+  "label": "assert-currency"
+ },
+ {
+  "id": "F-00141",
+  "text": "Traceback (most recent call last):\n  File \"tests/test_checkout.py\", line 793, in test_currency\n    self.assertEqual(order.currency, 'CNY')\nAssertionError: 'USD' != 'CNY' [case 92661458, took 1106ms]",
+  "label": "assert-currency"
+ },
+ {
+  "id": "F-00255",
+  "text": "Traceback (most recent call last):\n  File \"worker/resize.py\", line 172, in run\n    img = Image.open(src)\nMemoryError: cannot allocate buffer for image <Image object at 0xf4a98b198c01> job=16620066 tmp=/tmp/nk5fmsqcypa6 elapsed 23.23s",
+  "label": "oom-image-resize"
+ },
+ {
+  "id": "F-00113",
+  "text": "Traceback (most recent call last):\n  File \"tests/test_checkout.py\", line 767, in test_total\n    self.assertEqual(order.total, expected)\nAssertionError: Decimal('99.90') != Decimal('9.99') [case 61144807, run at 2026-02-18T14:17:34Z, took 3048ms]",
+  "label": "assert-total-price"
+ },
+ {
+  "id": "F-00334",
+  "text": "lint failure: E501 line too long (132 > 120) in report #70898648, scan took 1.99s",
+  "label": "flake8-lint-only"
+ },
+ {
+  "id": "F-00208",
+  "text": "Traceback (most recent call last):\n  File \"app/config.py\", line 20, in load\n    return cfg['feature_flags']\nKeyError: 'feature_flags' (pid 16832612, started 2026-03-24T00:39:03Z)",
+  "label": "keyerror-config"
+ },
+ {
+  "id": "F-00349",
+  "text": "lint failure: E501 line too long (132 > 120) in report #05446696, scan took 28.36s",
+  "label": "flake8-lint-only"
+ },
+ {
+  "id": "F-00148",
+  "text": "Traceback (most recent call last):\n  File \"tests/test_checkout.py\", line 168, in test_currency\n    self.assertEqual(order.currency, 'CNY')\nAssertionError: 'USD' != 'CNY' [case 38285954, took 5107ms]",
+  "label": "assert-currency"
+ },
+ {
+  "id": "F-00041",
+  "text": "Traceback (most recent call last):\n  File \"app/services/order.py\", line 692, in create_order\n    conn = pool.acquire(timeout=5)\n  File \"app/db/pool.py\", line 187, in acquire\n    raise ConnectionRefusedError('dial failed')\nConnectionRefusedError: connect to db 10.0.0.8:4819 refused (request ORD-6325910397, trace 12ef368b-b5f0-46ec-2633-38580cc55509)",
+  "label": "db-connection-refused"
+ },
+ {
+  "id": "F-00319",
+  "text": "requests.exceptions.HTTPError: 502 Bad Gateway for https://api.internal:19931/v1/pay (upstream took 1760ms, req ORD-2827295982, ts 2026-07-21T21:16:10Z, token 1ec0d30e3433d6e9ee9fd9fb65921ec5)",
+  "label": "http-502-upstream"
+ },
+ {
+  "id": "F-00381",
+  "text": "RuntimeError: worker crashed, dump at 0xd2a0eb2ec2dc, uptime 23.74s, seq 17190568",
+  "label": "generic-crash-no-stack"
+ },
+ {
+  "id": "F-00325",
+  "text": "lint failure: E501 line too long (132 > 120) in report #81746660, scan took 0.09s",
+  "label": "flake8-lint-only"
+ },
+ {
+  "id": "F-00203",
+  "text": "Traceback (most recent call last):\n  File \"app/config.py\", line 230, in load\n    return cfg['feature_flags']\nKeyError: 'feature_flags' (pid 14041727, started 2026-08-05T15:49:52Z)",
+  "label": "keyerror-config"
+ },
+ {
+  "id": "F-00270",
+  "text": "Traceback (most recent call last):\n  File \"worker/resize.py\", line 507, in run\n    img = Image.open(src)\nMemoryError: cannot allocate buffer for image <Image object at 0xa83cf57cdc4> job=75912884 tmp=/tmp/2hpcvita253e elapsed 26.55s",
+  "label": "oom-image-resize"
+ },
+ {
+  "id": "F-00382",
+  "text": "RuntimeError: worker crashed, dump at 0x6984ddbde5b3, uptime 18.44s, seq 70062696",
+  "label": "generic-crash-no-stack"
+ },
+ {
+  "id": "F-00145",
+  "text": "Traceback (most recent call last):\n  File \"tests/test_checkout.py\", line 414, in test_currency\n    self.assertEqual(order.currency, 'CNY')\nAssertionError: 'USD' != 'CNY' [case 70279872, took 4219ms]",
+  "label": "assert-currency"
+ },
+ {
+  "id": "F-00219",
+  "text": "Traceback (most recent call last):\n  File \"app/config.py\", line 56, in load\n    return cfg['feature_flags']\nKeyError: 'feature_flags' (pid 87516106, started 2026-05-22T16:12:26Z)",
+  "label": "keyerror-config"
+ },
+ {
+  "id": "F-00378",
+  "text": "RuntimeError: worker crashed, dump at 0x58f975dba228, uptime 8.04s, seq 44482389",
+  "label": "generic-crash-no-stack"
+ },
+ {
+  "id": "F-00128",
+  "text": "Traceback (most recent call last):\n  File \"tests/test_checkout.py\", line 409, in test_currency\n    self.assertEqual(order.currency, 'CNY')\nAssertionError: 'USD' != 'CNY' [case 18225589, took 812ms]",
+  "label": "assert-currency"
+ },
+ {
+  "id": "F-00199",
+  "text": "java.lang.NullPointerException: Cannot invoke \"User.getProfile()\" because \"user\" is null\n\tat com.shop.UserService.render(UserService.java:166)\n\tat com.shop.Web.handle(Web.java:636)\nrequestId=c1ee4dcd-a9db-47df-b9ca-dcebc2e00ff2 elapsed=2.53s session=5a334900aabff3ad42725e0cae32f4dd",
+  "label": "npe-user-profile"
+ },
+ {
+  "id": "F-00134",
+  "text": "Traceback (most recent call last):\n  File \"tests/test_checkout.py\", line 382, in test_currency\n    self.assertEqual(order.currency, 'CNY')\nAssertionError: 'USD' != 'CNY' [case 59393208, took 2374ms]",
+  "label": "assert-currency"
+ },
+ {
+  "id": "F-00343",
+  "text": "lint failure: E501 line too long (132 > 120) in report #49231265, scan took 24.61s",
+  "label": "flake8-lint-only"
+ },
+ {
+  "id": "F-00172",
+  "text": "java.lang.NullPointerException: Cannot invoke \"User.getProfile()\" because \"user\" is null\n\tat com.shop.UserService.render(UserService.java:877)\n\tat com.shop.Web.handle(Web.java:135)\nrequestId=e13dfb9a-3438-d35c-fbd3-89bcc963b672 elapsed=4.19s session=21f80f53abcad0c1a3c5f664a3d745cb",
+  "label": "npe-user-profile"
+ },
+ {
+  "id": "F-00217",
+  "text": "Traceback (most recent call last):\n  File \"app/config.py\", line 811, in load\n    return cfg['feature_flags']\nKeyError: 'feature_flags' (pid 20911345, started 2026-12-28T01:27:11Z)",
+  "label": "keyerror-config"
+ },
+ {
+  "id": "F-00400",
+  "text": "RuntimeError: worker crashed, dump at 0x37af32def73d, uptime 29.06s, seq 11846181",
+  "label": "generic-crash-no-stack"
+ },
+ {
+  "id": "F-00340",
+  "text": "lint failure: E501 line too long (132 > 120) in report #59388984, scan took 11.54s",
+  "label": "flake8-lint-only"
+ },
+ {
+  "id": "F-00007",
+  "text": "Traceback (most recent call last):\n  File \"app/services/order.py\", line 858, in create_order\n    conn = pool.acquire(timeout=5)\n  File \"app/db/pool.py\", line 225, in acquire\n    raise TimeoutError('pool exhausted')\nTimeoutError: connection to db 10.0.0.8:19737 timed out after 5119ms (request ORD-7327300841, trace 21813dd4-c03f-a102-9ef3-71d7b9591692)",
+  "label": "db-connection-timeout"
+ },
+ {
+  "id": "F-00014",
+  "text": "Traceback (most recent call last):\n  File \"app/services/order.py\", line 691, in create_order\n    conn = pool.acquire(timeout=5)\n  File \"app/db/pool.py\", line 415, in acquire\n    raise TimeoutError('pool exhausted')\nTimeoutError: connection to db 10.0.0.8:47812 timed out after 6738ms (request ORD-8662519187, trace 070ac163-a93e-ca24-3852-459de5795f3a)",
+  "label": "db-connection-timeout"
+ },
+ {
+  "id": "F-00368",
+  "text": "RuntimeError: worker crashed, dump at 0x656962f6ff8c, uptime 0.76s, seq 76969833",
+  "label": "generic-crash-no-stack"
+ },
+ {
+  "id": "F-00152",
+  "text": "Traceback (most recent call last):\n  File \"tests/test_checkout.py\", line 666, in test_currency\n    self.assertEqual(order.currency, 'CNY')\nAssertionError: 'USD' != 'CNY' [case 76749646, took 7836ms]",
+  "label": "assert-currency"
+ },
+ {
+  "id": "F-00075",
+  "text": "Traceback (most recent call last):\n  File \"app/services/order.py\", line 611, in create_order\n    conn = pool.acquire(timeout=5)\n  File \"app/db/pool.py\", line 750, in acquire\n    raise ConnectionRefusedError('dial failed')\nConnectionRefusedError: connect to db 10.0.0.8:45870 refused (request ORD-5217710528, trace e4277b90-8604-f87a-5bbb-a759104cc881)",
+  "label": "db-connection-refused"
+ },
+ {
+  "id": "F-00082",
+  "text": "Traceback (most recent call last):\n  File \"tests/test_checkout.py\", line 72, in test_total\n    self.assertEqual(order.total, expected)\nAssertionError: Decimal('99.90') != Decimal('9.99') [case 49875526, run at 2026-12-01T15:49:49Z, took 429ms]",
+  "label": "assert-total-price"
+ },
+ {
+  "id": "F-00354",
+  "text": "lint failure: E501 line too long (132 > 120) in report #58434966, scan took 26.07s",
+  "label": "flake8-lint-only"
+ },
+ {
+  "id": "F-00273",
+  "text": "Traceback (most recent call last):\n  File \"worker/resize.py\", line 108, in run\n    img = Image.open(src)\nMemoryError: cannot allocate buffer for image <Image object at 0x4ad25fa04e2b> job=07450880 tmp=/tmp/u78b81xbnep4 elapsed 24.90s",
+  "label": "oom-image-resize"
+ },
+ {
+  "id": "F-00183",
+  "text": "java.lang.NullPointerException: Cannot invoke \"User.getProfile()\" because \"user\" is null\n\tat com.shop.UserService.render(UserService.java:27)\n\tat com.shop.Web.handle(Web.java:718)\nrequestId=b44ddef1-f288-71f3-a0d6-ffe32dd7246f elapsed=28.47s session=b31236147d9a1436509c818f6383805e",
+  "label": "npe-user-profile"
+ },
+ {
+  "id": "F-00303",
+  "text": "requests.exceptions.HTTPError: 502 Bad Gateway for https://api.internal:7026/v1/pay (upstream took 6988ms, req ORD-0844817592, ts 2026-09-24T06:33:02Z, token bac462270d272a046fe5c42588a7b8e0)",
+  "label": "http-502-upstream"
+ },
+ {
+  "id": "F-00293",
+  "text": "requests.exceptions.HTTPError: 502 Bad Gateway for https://api.internal:8672/v1/pay (upstream took 6860ms, req ORD-8671594068, ts 2026-12-24T10:29:44Z, token 54196489327936288f8f7c3f5a025742)",
+  "label": "http-502-upstream"
+ },
+ {
+  "id": "F-00040",
+  "text": "Traceback (most recent call last):\n  File \"app/services/order.py\", line 512, in create_order\n    conn = pool.acquire(timeout=5)\n  File \"app/db/pool.py\", line 833, in acquire\n    raise TimeoutError('pool exhausted')\nTimeoutError: connection to db 10.0.0.8:49575 timed out after 8585ms (request ORD-6130374149, trace 8016e0b0-a164-9a51-bbce-b93c27d007b9)",
+  "label": "db-connection-timeout"
+ },
+ {
+  "id": "F-00264",
+  "text": "Traceback (most recent call last):\n  File \"worker/resize.py\", line 219, in run\n    img = Image.open(src)\nMemoryError: cannot allocate buffer for image <Image object at 0x992ab219dd2d> job=45663248 tmp=/tmp/3qv28dfezomm elapsed 1.40s",
+  "label": "oom-image-resize"
+ },
+ {
+  "id": "F-00388",
+  "text": "RuntimeError: worker crashed, dump at 0x5e66473bc0b3, uptime 14.63s, seq 64572647",
+  "label": "generic-crash-no-stack"
+ },
+ {
+  "id": "F-00038",
+  "text": "Traceback (most recent call last):\n  File \"app/services/order.py\", line 346, in create_order\n    conn = pool.acquire(timeout=5)\n  File \"app/db/pool.py\", line 717, in acquire\n    raise TimeoutError('pool exhausted')\nTimeoutError: connection to db 10.0.0.8:64599 timed out after 8721ms (request ORD-7025245171, trace cf7850d8-36d0-66dd-aa09-ca7eafd6172a)",
+  "label": "db-connection-timeout"
+ },
+ {
+  "id": "F-00116",
+  "text": "Traceback (most recent call last):\n  File \"tests/test_checkout.py\", line 787, in test_total\n    self.assertEqual(order.total, expected)\nAssertionError: Decimal('99.90') != Decimal('9.99') [case 14548510, run at 2026-07-16T17:49:39Z, took 3481ms]",
+  "label": "assert-total-price"
+ },
+ {
+  "id": "F-00008",
+  "text": "Traceback (most recent call last):\n  File \"app/services/order.py\", line 600, in create_order\n    conn = pool.acquire(timeout=5)\n  File \"app/db/pool.py\", line 802, in acquire\n    raise TimeoutError('pool exhausted')\nTimeoutError: connection to db 10.0.0.8:34689 timed out after 7607ms (request ORD-9970621472, trace 535b4521-d3c3-37c6-a3f7-daec23514e05)",
+  "label": "db-connection-timeout"
+ },
+ {
+  "id": "F-00326",
+  "text": "lint failure: E501 line too long (132 > 120) in report #42754598, scan took 22.62s",
+  "label": "flake8-lint-only"
+ },
+ {
+  "id": "F-00003",
+  "text": "Traceback (most recent call last):\n  File \"app/services/order.py\", line 112, in create_order\n    conn = pool.acquire(timeout=5)\n  File \"app/db/pool.py\", line 802, in acquire\n    raise TimeoutError('pool exhausted')\nTimeoutError: connection to db 10.0.0.8:36336 timed out after 6931ms (request ORD-6314937112, trace f4f0c3a0-e688-6f4a-a9eb-7a05b2998f8c)",
+  "label": "db-connection-timeout"
+ },
+ {
+  "id": "F-00212",
+  "text": "Traceback (most recent call last):\n  File \"app/config.py\", line 558, in load\n    return cfg['feature_flags']\nKeyError: 'feature_flags' (pid 93632722, started 2026-07-16T05:06:43Z)",
+  "label": "keyerror-config"
+ },
+ {
+  "id": "F-00054",
+  "text": "Traceback (most recent call last):\n  File \"app/services/order.py\", line 209, in create_order\n    conn = pool.acquire(timeout=5)\n  File \"app/db/pool.py\", line 596, in acquire\n    raise ConnectionRefusedError('dial failed')\nConnectionRefusedError: connect to db 10.0.0.8:24774 refused (request ORD-4632466952, trace 91db220d-5eb1-cc9a-6b91-fada99230014)",
+  "label": "db-connection-refused"
+ },
+ {
+  "id": "F-00072",
+  "text": "Traceback (most recent call last):\n  File \"app/services/order.py\", line 80, in create_order\n    conn = pool.acquire(timeout=5)\n  File \"app/db/pool.py\", line 663, in acquire\n    raise ConnectionRefusedError('dial failed')\nConnectionRefusedError: connect to db 10.0.0.8:11673 refused (request ORD-8864490015, trace 4e8545f3-59cb-eeb3-a88f-0ad05ccc701e)",
+  "label": "db-connection-refused"
+ },
+ {
+  "id": "F-00189",
+  "text": "java.lang.NullPointerException: Cannot invoke \"User.getProfile()\" because \"user\" is null\n\tat com.shop.UserService.render(UserService.java:438)\n\tat com.shop.Web.handle(Web.java:443)\nrequestId=bdbd4d0b-a270-6431-4d8e-ed3b2e54ff7f elapsed=26.60s session=57ac06517dc093a5e57d8f93cd0f7dbf",
+  "label": "npe-user-profile"
+ },
+ {
+  "id": "F-00188",
+  "text": "java.lang.NullPointerException: Cannot invoke \"User.getProfile()\" because \"user\" is null\n\tat com.shop.UserService.render(UserService.java:846)\n\tat com.shop.Web.handle(Web.java:558)\nrequestId=8704324b-45b8-c7a0-4ff9-d30a78ee3f65 elapsed=26.32s session=d343f042dcdcde610cf64f723f509d3b",
+  "label": "npe-user-profile"
+ },
+ {
+  "id": "F-00272",
+  "text": "Traceback (most recent call last):\n  File \"worker/resize.py\", line 828, in run\n    img = Image.open(src)\nMemoryError: cannot allocate buffer for image <Image object at 0xa62d957698bc> job=14605465 tmp=/tmp/jsmpu5clu4mv elapsed 18.51s",
+  "label": "oom-image-resize"
+ },
+ {
+  "id": "F-00187",
+  "text": "java.lang.NullPointerException: Cannot invoke \"User.getProfile()\" because \"user\" is null\n\tat com.shop.UserService.render(UserService.java:560)\n\tat com.shop.Web.handle(Web.java:592)\nrequestId=683a059c-6521-ae9c-e70e-eeb750a5120e elapsed=14.09s session=c891e46ffc5497f13d0311438215cf5a",
+  "label": "npe-user-profile"
+ },
+ {
+  "id": "F-00342",
+  "text": "lint failure: E501 line too long (132 > 120) in report #82665617, scan took 16.66s",
+  "label": "flake8-lint-only"
+ },
+ {
+  "id": "F-00283",
+  "text": "requests.exceptions.HTTPError: 502 Bad Gateway for https://api.internal:59311/v1/pay (upstream took 830ms, req ORD-6077264352, ts 2026-11-22T00:14:53Z, token 2def1d7e5c25248a69b0598a10872554)",
+  "label": "http-502-upstream"
+ },
+ {
+  "id": "F-00080",
+  "text": "Traceback (most recent call last):\n  File \"app/services/order.py\", line 69, in create_order\n    conn = pool.acquire(timeout=5)\n  File \"app/db/pool.py\", line 465, in acquire\n    raise ConnectionRefusedError('dial failed')\nConnectionRefusedError: connect to db 10.0.0.8:16515 refused (request ORD-0284461121, trace 5f1977aa-5569-f0e3-f232-21d8da3e1419)",
+  "label": "db-connection-refused"
+ },
+ {
+  "id": "F-00395",
+  "text": "RuntimeError: worker crashed, dump at 0x57396cfddd0, uptime 2.63s, seq 23391881",
+  "label": "generic-crash-no-stack"
+ },
+ {
+  "id": "F-00333",
+  "text": "lint failure: E501 line too long (132 > 120) in report #38759134, scan took 22.08s",
+  "label": "flake8-lint-only"
+ },
+ {
+  "id": "F-00180",
+  "text": "java.lang.NullPointerException: Cannot invoke \"User.getProfile()\" because \"user\" is null\n\tat com.shop.UserService.render(UserService.java:816)\n\tat com.shop.Web.handle(Web.java:872)\nrequestId=86fdd312-1ea4-21a1-e1ba-23083fba301d elapsed=19.31s session=53b0cd4d590fbb7486f133657d9e4d9e",
+  "label": "npe-user-profile"
+ },
+ {
+  "id": "F-00214",
+  "text": "Traceback (most recent call last):\n  File \"app/config.py\", line 28, in load\n    return cfg['feature_flags']\nKeyError: 'feature_flags' (pid 77729354, started 2026-11-09T11:00:29Z)",
+  "label": "keyerror-config"
+ },
+ {
+  "id": "F-00390",
+  "text": "RuntimeError: worker crashed, dump at 0x319cb3dc098a, uptime 5.98s, seq 74364281",
+  "label": "generic-crash-no-stack"
+ },
+ {
+  "id": "F-00032",
+  "text": "Traceback (most recent call last):\n  File \"app/services/order.py\", line 452, in create_order\n    conn = pool.acquire(timeout=5)\n  File \"app/db/pool.py\", line 32, in acquire\n    raise TimeoutError('pool exhausted')\nTimeoutError: connection to db 10.0.0.8:37394 timed out after 8586ms (request ORD-2775566811, trace f679d46d-8303-7326-df45-0ce374560f7d)",
+  "label": "db-connection-timeout"
+ },
+ {
+  "id": "F-00125",
+  "text": "Traceback (most recent call last):\n  File \"tests/test_checkout.py\", line 884, in test_currency\n    self.assertEqual(order.currency, 'CNY')\nAssertionError: 'USD' != 'CNY' [case 45672104, took 8173ms]",
+  "label": "assert-currency"
+ },
+ {
+  "id": "F-00034",
+  "text": "Traceback (most recent call last):\n  File \"app/services/order.py\", line 420, in create_order\n    conn = pool.acquire(timeout=5)\n  File \"app/db/pool.py\", line 614, in acquire\n    raise TimeoutError('pool exhausted')\nTimeoutError: connection to db 10.0.0.8:28053 timed out after 2233ms (request ORD-1510133765, trace 8e59d5c8-8315-9139-323c-8cf8f557a848)",
+  "label": "db-connection-timeout"
+ },
+ {
+  "id": "F-00048",
+  "text": "Traceback (most recent call last):\n  File \"app/services/order.py\", line 131, in create_order\n    conn = pool.acquire(timeout=5)\n  File \"app/db/pool.py\", line 293, in acquire\n    raise ConnectionRefusedError('dial failed')\nConnectionRefusedError: connect to db 10.0.0.8:18344 refused (request ORD-4208896174, trace 266ecc7d-4067-d296-ee41-1b4b9a460ea2)",
+  "label": "db-connection-refused"
+ },
+ {
+  "id": "F-00046",
+  "text": "Traceback (most recent call last):\n  File \"app/services/order.py\", line 491, in create_order\n    conn = pool.acquire(timeout=5)\n  File \"app/db/pool.py\", line 711, in acquire\n    raise ConnectionRefusedError('dial failed')\nConnectionRefusedError: connect to db 10.0.0.8:51211 refused (request ORD-4376379708, trace d8f498a9-53ba-387e-ff0e-65b57a0fd9a3)",
+  "label": "db-connection-refused"
+ },
+ {
+  "id": "F-00085",
+  "text": "Traceback (most recent call last):\n  File \"tests/test_checkout.py\", line 517, in test_total\n    self.assertEqual(order.total, expected)\nAssertionError: Decimal('99.90') != Decimal('9.99') [case 80421515, run at 2026-02-06T08:08:10Z, took 2183ms]",
+  "label": "assert-total-price"
+ },
+ {
+  "id": "F-00261",
+  "text": "Traceback (most recent call last):\n  File \"worker/resize.py\", line 139, in run\n    img = Image.open(src)\nMemoryError: cannot allocate buffer for image <Image object at 0x17a1a96d8e0c> job=02191650 tmp=/tmp/3o1x4uu18onn elapsed 4.12s",
+  "label": "oom-image-resize"
+ },
+ {
+  "id": "F-00090",
+  "text": "Traceback (most recent call last):\n  File \"tests/test_checkout.py\", line 357, in test_total\n    self.assertEqual(order.total, expected)\nAssertionError: Decimal('99.90') != Decimal('9.99') [case 31932953, run at 2026-05-22T07:33:31Z, took 1002ms]",
+  "label": "assert-total-price"
+ },
+ {
+  "id": "F-00114",
+  "text": "Traceback (most recent call last):\n  File \"tests/test_checkout.py\", line 723, in test_total\n    self.assertEqual(order.total, expected)\nAssertionError: Decimal('99.90') != Decimal('9.99') [case 68459408, run at 2026-11-24T17:54:06Z, took 5765ms]",
+  "label": "assert-total-price"
+ },
+ {
+  "id": "F-00362",
+  "text": "RuntimeError: worker crashed, dump at 0x6e8984ceb7de, uptime 26.47s, seq 26735527",
+  "label": "generic-crash-no-stack"
+ },
+ {
+  "id": "F-00089",
+  "text": "Traceback (most recent call last):\n  File \"tests/test_checkout.py\", line 704, in test_total\n    self.assertEqual(order.total, expected)\nAssertionError: Decimal('99.90') != Decimal('9.99') [case 15092505, run at 2026-03-09T06:41:22Z, took 4178ms]",
+  "label": "assert-total-price"
+ },
+ {
+  "id": "F-00013",
+  "text": "Traceback (most recent call last):\n  File \"app/services/order.py\", line 58, in create_order\n    conn = pool.acquire(timeout=5)\n  File \"app/db/pool.py\", line 848, in acquire\n    raise TimeoutError('pool exhausted')\nTimeoutError: connection to db 10.0.0.8:60373 timed out after 1603ms (request ORD-8565113246, trace 5e7224c8-cadc-9a73-b052-56a989d20bab)",
+  "label": "db-connection-timeout"
+ },
+ {
+  "id": "F-00026",
+  "text": "Traceback (most recent call last):\n  File \"app/services/order.py\", line 644, in create_order\n    conn = pool.acquire(timeout=5)\n  File \"app/db/pool.py\", line 519, in acquire\n    raise TimeoutError('pool exhausted')\nTimeoutError: connection to db 10.0.0.8:7252 timed out after 4469ms (request ORD-1726015560, trace 55ab3f4e-011d-9ea3-e7ed-701ed00a62f2)",
+  "label": "db-connection-timeout"
+ },
+ {
+  "id": "F-00130",
+  "text": "Traceback (most recent call last):\n  File \"tests/test_checkout.py\", line 163, in test_currency\n    self.assertEqual(order.currency, 'CNY')\nAssertionError: 'USD' != 'CNY' [case 28915498, took 329ms]",
+  "label": "assert-currency"
+ },
+ {
+  "id": "F-00002",
+  "text": "Traceback (most recent call last):\n  File \"app/services/order.py\", line 29, in create_order\n    conn = pool.acquire(timeout=5)\n  File \"app/db/pool.py\", line 238, in acquire\n    raise TimeoutError('pool exhausted')\nTimeoutError: connection to db 10.0.0.8:14356 timed out after 3479ms (request ORD-5058136362, trace 6f661cb6-d658-dd23-423a-65ea0504d7a5)",
+  "label": "db-connection-timeout"
+ },
+ {
+  "id": "F-00285",
+  "text": "requests.exceptions.HTTPError: 502 Bad Gateway for https://api.internal:43067/v1/pay (upstream took 3738ms, req ORD-0617769304, ts 2026-05-05T17:29:04Z, token b549b3c4c0fb484dc0c24045dbd5f27b)",
+  "label": "http-502-upstream"
+ },
+ {
+  "id": "F-00295",
+  "text": "requests.exceptions.HTTPError: 502 Bad Gateway for https://api.internal:1565/v1/pay (upstream took 8127ms, req ORD-4740820242, ts 2026-04-25T03:39:49Z, token 25cbf4108084888f234d01e3a94eb066)",
+  "label": "http-502-upstream"
+ },
+ {
+  "id": "F-00259",
+  "text": "Traceback (most recent call last):\n  File \"worker/resize.py\", line 44, in run\n    img = Image.open(src)\nMemoryError: cannot allocate buffer for image <Image object at 0x9f2fabe48a61> job=70690229 tmp=/tmp/jhrsuutkp1ur elapsed 12.89s",
+  "label": "oom-image-resize"
+ },
+ {
+  "id": "F-00338",
+  "text": "lint failure: E501 line too long (132 > 120) in report #06695372, scan took 23.50s",
+  "label": "flake8-lint-only"
+ },
+ {
+  "id": "F-00024",
+  "text": "Traceback (most recent call last):\n  File \"app/services/order.py\", line 490, in create_order\n    conn = pool.acquire(timeout=5)\n  File \"app/db/pool.py\", line 204, in acquire\n    raise TimeoutError('pool exhausted')\nTimeoutError: connection to db 10.0.0.8:9828 timed out after 3877ms (request ORD-0198587205, trace 6fb9ff0b-8d60-74fa-9122-a9921e080b0c)",
+  "label": "db-connection-timeout"
+ },
+ {
+  "id": "F-00299",
+  "text": "requests.exceptions.HTTPError: 502 Bad Gateway for https://api.internal:61879/v1/pay (upstream took 1029ms, req ORD-7158359791, ts 2026-08-20T06:44:02Z, token e8970d06150a964a7e973e6b745e7d19)",
+  "label": "http-502-upstream"
+ },
+ {
+  "id": "F-00213",
+  "text": "Traceback (most recent call last):\n  File \"app/config.py\", line 33, in load\n    return cfg['feature_flags']\nKeyError: 'feature_flags' (pid 75838284, started 2026-10-08T12:16:43Z)",
+  "label": "keyerror-config"
+ },
+ {
+  "id": "F-00158",
+  "text": "Traceback (most recent call last):\n  File \"tests/test_checkout.py\", line 557, in test_currency\n    self.assertEqual(order.currency, 'CNY')\nAssertionError: 'USD' != 'CNY' [case 94004794, took 550ms]",
+  "label": "assert-currency"
+ },
+ {
+  "id": "F-00052",
+  "text": "Traceback (most recent call last):\n  File \"app/services/order.py\", line 262, in create_order\n    conn = pool.acquire(timeout=5)\n  File \"app/db/pool.py\", line 98, in acquire\n    raise ConnectionRefusedError('dial failed')\nConnectionRefusedError: connect to db 10.0.0.8:63264 refused (request ORD-1333124270, trace 83d92533-f939-3028-ba83-8161bed5da68)",
+  "label": "db-connection-refused"
+ },
+ {
+  "id": "F-00140",
+  "text": "Traceback (most recent call last):\n  File \"tests/test_checkout.py\", line 898, in test_currency\n    self.assertEqual(order.currency, 'CNY')\nAssertionError: 'USD' != 'CNY' [case 64870249, took 3521ms]",
+  "label": "assert-currency"
+ },
+ {
+  "id": "F-00191",
+  "text": "java.lang.NullPointerException: Cannot invoke \"User.getProfile()\" because \"user\" is null\n\tat com.shop.UserService.render(UserService.java:432)\n\tat com.shop.Web.handle(Web.java:477)\nrequestId=da1cca08-900d-f992-99e1-39818ae8fda5 elapsed=27.82s session=3e4672b20e35cc5f64ad0b96beca25ad",
+  "label": "npe-user-profile"
+ },
+ {
+  "id": "F-00066",
+  "text": "Traceback (most recent call last):\n  File \"app/services/order.py\", line 616, in create_order\n    conn = pool.acquire(timeout=5)\n  File \"app/db/pool.py\", line 274, in acquire\n    raise ConnectionRefusedError('dial failed')\nConnectionRefusedError: connect to db 10.0.0.8:29762 refused (request ORD-0202415487, trace c700f1d7-bbe3-1351-434c-06b9af03214e)",
+  "label": "db-connection-refused"
+ },
+ {
+  "id": "F-00304",
+  "text": "requests.exceptions.HTTPError: 502 Bad Gateway for https://api.internal:56556/v1/pay (upstream took 3559ms, req ORD-7400939341, ts 2026-06-07T05:06:04Z, token 4addfd907b0fdbc562a27534dba4490f)",
+  "label": "http-502-upstream"
+ },
+ {
+  "id": "F-00097",
+  "text": "Traceback (most recent call last):\n  File \"tests/test_checkout.py\", line 10, in test_total\n    self.assertEqual(order.total, expected)\nAssertionError: Decimal('99.90') != Decimal('9.99') [case 83374227, run at 2026-04-26T06:16:09Z, took 2679ms]",
+  "label": "assert-total-price"
+ },
+ {
+  "id": "F-00124",
+  "text": "Traceback (most recent call last):\n  File \"tests/test_checkout.py\", line 487, in test_currency\n    self.assertEqual(order.currency, 'CNY')\nAssertionError: 'USD' != 'CNY' [case 34037479, took 4774ms]",
+  "label": "assert-currency"
+ },
+ {
+  "id": "F-00301",
+  "text": "requests.exceptions.HTTPError: 502 Bad Gateway for https://api.internal:30007/v1/pay (upstream took 690ms, req ORD-3999261750, ts 2026-04-17T11:53:04Z, token 9391030c55dd9bd0b1803159683e905c)",
+  "label": "http-502-upstream"
+ },
+ {
+  "id": "F-00290",
+  "text": "requests.exceptions.HTTPError: 502 Bad Gateway for https://api.internal:7554/v1/pay (upstream took 5464ms, req ORD-8981212692, ts 2026-04-15T02:57:00Z, token 264d1fcc85b798e65fa876c957851cb7)",
+  "label": "http-502-upstream"
+ },
+ {
+  "id": "F-00249",
+  "text": "Traceback (most recent call last):\n  File \"worker/resize.py\", line 283, in run\n    img = Image.open(src)\nMemoryError: cannot allocate buffer for image <Image object at 0xc3e62420d06a> job=08830507 tmp=/tmp/bbqksovp0f6h elapsed 28.12s",
+  "label": "oom-image-resize"
+ },
+ {
+  "id": "F-00192",
+  "text": "java.lang.NullPointerException: Cannot invoke \"User.getProfile()\" because \"user\" is null\n\tat com.shop.UserService.render(UserService.java:592)\n\tat com.shop.Web.handle(Web.java:88)\nrequestId=acd2377e-a0cb-575d-abae-f7f0c080940f elapsed=10.38s session=3d0c9e366ff1fbc5db37903a2245cd7b",
+  "label": "npe-user-profile"
+ }
+]
