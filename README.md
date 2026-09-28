@@ -7,13 +7,15 @@
 
 - `forecast.py` — 库源码（模型、自动拟合、预测区间、滚动回测）
 - `backtest.py` — 回测脚本：多场景 × 多参数配置的误差与覆盖率对比
-- `test_forecast.py` — 自测（unittest，14 个用例）
+- `grid_counts.py` — 统计默认/细网格实际评估的候选组合数与耗时比
+- `test_forecast.py` — 自测（unittest，19 个用例）
 
 ## 运行命令
 
 ```bash
 python3 -m unittest test_forecast -v   # 自测
 python3 backtest.py                    # 回测 + 覆盖率报告
+python3 grid_counts.py                 # 网格候选数与耗时比（真实数字来源）
 ```
 
 ## 快速上手
@@ -60,13 +62,16 @@ h 各自的误差标准差**，用拟合好的参数在训练序列内部做一�
 | `season_length` | `None` | 季节周期（如月度周期取 12）；`None` 表示无季节成分 |
 | `confidence` | `0.95` | 预测区间置信水平，z 值由 `statistics.NormalDist` 计算 |
 | `seasonal` | `"auto"` | 季节类型：`auto` / `add` / `mul` |
-| `grid` | `DEFAULT_GRID` | 平滑参数候选值，默认 8 个值 `(0.05..0.9)` |
+| `grid` | `DEFAULT_GRID` | 平滑参数候选值，默认每参数 8 个值 `(0.05..0.9)`；细网格 `FINE_GRID` 为 13 个值 |
 | `fixed_params` | `None` | 指定 `(alpha, beta, gamma)` 跳过网格搜索（用于对比/复现） |
 
 **默认参数选择依据**（见下方回测数据）：
 
-- 默认网格 vs 细网格：误差与覆盖率几乎相同（RMSE 2.215 vs 2.199），但
-  候选数 512 vs 4394，默认网格快约 8 倍，故选粗网格为默认。
+- 默认网格 vs 细网格：误差与覆盖率几乎相同（RMSE 2.215 vs 2.199）。
+  自动路径对每个候选网格（大小 g）评估 `g + g² + 2g³` 个组合（SES g 个、
+  Holt g² 个、加法/乘法 Holt-Winters 各 g³ 个），由 `grid_counts.py` 实测：
+  默认 1096 个 vs 细网格 4576 个（4.18 倍），实测网格搜索耗时也约为 4 倍
+  （计时随机器波动，以候选数为准），故选粗网格为默认。
 - 自动拟合 vs 固定经典参数 `(0.3, 0.1, 0.1)`：自动拟合在平稳场景 RMSE
   明显更优（2.215 vs 2.909）；固定参数仅在趋势突变场景更好（自适应
   更快），但该场景会触发告警，故不作为默认。
@@ -82,7 +87,8 @@ h 各自的误差标准差**，用拟合好的参数在训练序列内部做一�
 | `n < 2 * season_length` | 丢弃季节成分，附 warning |
 | `n < 6` | 不用趋势成分（仅 SES） |
 | 趋势/水平突变 | 最近 1/4 窗口的一步误差均值 > 历史 2.5 倍时发出 structural-change 告警 |
-| 乘法季节不可行（含非正值） | 自动回退加法季节，附 warning |
+| 乘法季节不可行（初始两季含非正值） | `seasonal="auto"` 时直接跳过乘法候选（无警告，加法仍参与比较）；显式 `seasonal="mul"`（含 `fixed_params`）时回退加法并附 warning |
+| 乘法拟合中途不可行（季节指数变 0） | 仅显式 `seasonal="mul"` 可达：回退加法并附 warning（auto 路径该候选已在搜索中被跳过） |
 
 ## 回测与覆盖率数据（`python3 backtest.py`，horizon=8，95% 区间）
 

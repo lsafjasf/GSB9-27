@@ -15,7 +15,10 @@ Degradation rules (always surfaced via Forecast.warnings):
   - n == 1 or constant series -> flat forecast, zero-width interval
   - n < 4                     -> mean forecast, sqrt(h) interval
   - n < 2 * season_length     -> seasonal component dropped
+  - explicit seasonal="mul" on non-positive data -> additive with a warning
   - recent one-step errors >> historical -> structural-change warning
+Under seasonal="auto", infeasible multiplicative candidates are simply
+skipped during the grid search (no warning); additive is compared normally.
 """
 
 from __future__ import annotations
@@ -33,9 +36,11 @@ __all__ = [
     "FINE_GRID",
 ]
 
-# Default grid: 8 values per parameter -> up to 8^3 = 512 candidates.
+# Default grid: 8 values per parameter. The auto seasonal path evaluates
+# g + g^2 + 2*g^3 = 1096 combinations (run grid_counts.py).
 DEFAULT_GRID = (0.05, 0.1, 0.2, 0.3, 0.4, 0.5, 0.7, 0.9)
-# Fine grid: 13 values per parameter -> up to 13^3 = 2197 candidates.
+# Fine grid: 13 values per parameter. The auto seasonal path evaluates
+# g + g^2 + 2*g^3 = 4576 combinations (run grid_counts.py).
 FINE_GRID = (0.02, 0.05, 0.1, 0.15, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 0.98)
 
 MIN_FOR_MEAN = 4   # below this: fall back to the sample mean
@@ -139,6 +144,13 @@ def _fit_model(y, model, alpha, beta, gamma, season_length):
     return _fit_hw(y, season_length, alpha, beta, gamma, model.split("-")[1])
 
 
+def _hw_mul_feasible(y, m):
+    """Whether multiplicative Holt-Winters can be initialised: seasonal
+    indices are ratios, so the first two seasons must be strictly positive."""
+    level = mean(y[:m])
+    return level != 0 and all(v > 0 for v in y[: 2 * m])
+
+
 def _select(y, season_length, seasonal, grid):
     """Grid search minimising one-step-ahead SSE. Returns (model, a, b, g)."""
     n = len(y)
@@ -234,7 +246,8 @@ def forecast(series, horizon, season_length=None, confidence=0.95,
     season_length : seasonal period (e.g. 12 for monthly-in-year); None = no
                     seasonal component
     confidence    : nominal prediction-interval level, e.g. 0.95
-    seasonal      : "auto" | "add" | "mul" (only used when season_length set)
+    seasonal      : "auto" | "add" | "mul"; used for the grid search and to
+                    pick the Holt-Winters kind when fixed_params is given
     grid          : candidate values for alpha/beta/gamma
     fixed_params  : optional (alpha, beta, gamma) to skip the grid search
     """
@@ -280,10 +293,24 @@ def forecast(series, horizon, season_length=None, confidence=0.95,
         )
         season_length = None
 
+    # Multiplicative seasonality needs strictly positive values. Under
+    # seasonal="auto" the grid search simply skips infeasible multiplicative
+    # fits; but when the user explicitly requests "mul", surface the request
+    # being downgraded instead of silently selecting another component.
+    if (season_length and seasonal == "mul"
+            and not _hw_mul_feasible(y, season_length)):
+        warnings.append(
+            "multiplicative seasonality infeasible (non-positive values): "
+            "fell back to additive"
+        )
+        seasonal = "add"
+
     # --- model selection / fitting ---------------------------------------
     if fixed_params is not None:
         a, b, g = (float(p) for p in fixed_params)
-        if season_length:
+        if season_length and seasonal == "mul":
+            model = "hw-mul"
+        elif season_length:
             model = "hw-add"
         elif n >= MIN_FOR_TREND:
             model = "holt"
@@ -293,11 +320,11 @@ def forecast(series, horizon, season_length=None, confidence=0.95,
         model, a, b, g = _select(y, season_length, seasonal, grid)
 
     fit = _fit_model(y, model, a, b, g, season_length)
-    if fit is None:  # multiplicative infeasible on this data
+    if fit is None:  # multiplicative infeasible mid-fit: explicit mul only
         model = "hw-add"
         fit = _fit_model(y, model, a, b, g, season_length)
-        warnings.append("multiplicative seasonality infeasible (non-positive "
-                        "values): fell back to additive")
+        warnings.append("multiplicative seasonality infeasible during fit: "
+                        "fell back to additive")
     _, level, trend, seas, residuals = fit
 
     values = _point_forecast(model, level, trend, seas, season_length, horizon)

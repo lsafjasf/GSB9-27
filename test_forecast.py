@@ -92,6 +92,56 @@ class TestStructuralChange(unittest.TestCase):
         self.assertFalse(any("structural change" in w for w in fc.warnings))
 
 
+class TestSeasonalKindFallback(unittest.TestCase):
+    def _non_positive_series(self):
+        y = trend_seasonal(n=48, seed=5)
+        y[5] = 0.0  # non-positive value inside the first two seasons
+        return y
+
+    def test_explicit_mul_grid_falls_back_with_warning(self):
+        y = self._non_positive_series()
+        fc = forecast(y, horizon=6, season_length=12, seasonal="mul")
+        self.assertNotEqual(fc.model, "hw-mul")
+        self.assertTrue(any("fell back to additive" in w for w in fc.warnings))
+
+    def test_explicit_mul_fixed_params_falls_back_with_warning(self):
+        y = self._non_positive_series()
+        fc = forecast(y, horizon=6, season_length=12, seasonal="mul",
+                      fixed_params=(0.3, 0.1, 0.1))
+        self.assertEqual(fc.model, "hw-add")
+        self.assertTrue(any("non-positive values" in w for w in fc.warnings))
+
+    def test_auto_silently_skips_infeasible_mul(self):
+        y = self._non_positive_series()
+        fc = forecast(y, horizon=6, season_length=12)  # seasonal="auto"
+        self.assertNotEqual(fc.model, "hw-mul")
+        self.assertFalse(any("fell back" in w for w in fc.warnings))
+
+    def test_fixed_mul_honored_on_positive_data(self):
+        y = trend_seasonal(n=60, seed=6)
+        fc = forecast(y, horizon=4, season_length=12, seasonal="mul",
+                      fixed_params=(0.5, 0.1, 0.2))
+        self.assertEqual(fc.model, "hw-mul")
+        self.assertEqual(fc.params["gamma"], 0.2)
+        self.assertFalse(fc.warnings)
+
+    def test_mul_infeasible_during_fit_falls_back(self):
+        # First two seasons are strictly positive, so the upfront feasibility
+        # check passes; an exact zero at t=2m drives a seasonal index to 0
+        # under gamma=1, so _fit_hw returns None mid-fit (at t=3m).
+        m = 12
+        y = [10.0 + 0.1 * (i % m) for i in range(2 * m)]
+        y += [0.0]
+        y += [10.0 + 0.1 * ((i - (2 * m + 1)) % m)
+              for i in range(2 * m + 1, 3 * m + 1)]
+        self.assertEqual(len(y), 3 * m + 1)
+        fc = forecast(y, horizon=4, season_length=m, seasonal="mul",
+                      fixed_params=(0.5, 0.1, 1.0))
+        self.assertEqual(fc.model, "hw-add")
+        self.assertTrue(any("during fit" in w for w in fc.warnings))
+        self.assertEqual(len(fc.values), 4)
+
+
 class TestCoverage(unittest.TestCase):
     """Empirical interval coverage from a rolling-origin backtest should be
     close to the nominal 95% level on well-behaved data."""
