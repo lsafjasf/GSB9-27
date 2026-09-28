@@ -28,12 +28,16 @@ NDJSON：每条记录是一行 UTF-8 JSON 值，以 `\n` 分隔（兼容 `\r\n`�
 所有 `ParserError` 子类（`ParseError` / `RecordTooLargeError` / `TruncatedInputError`）携带：
 
 - `record_index`：出错记录是第几条（0 起，即出错前已成功产出的记录数）；
-- `byte_offset`：该记录首字节在整个输入流中的绝对偏移（0 起）。
+- `line_no`：出错记录所在的行号（1 起，空行也计数）；
+- `byte_offset`：**出错字节本身**在整个输入流中的绝对偏移（0 起）。
+  JSON 错误按 `JSONDecodeError.pos` 把字符位置换算成 UTF-8 字节偏移，
+  编码错误按 `UnicodeDecodeError.start` 定位到首个非法字节；
+  记录级错误（超限 / 截断）定位到该记录的首字节。
 
 ## 运行命令
 
 ```bash
-python3 -m unittest test_stream_parser -v   # 15 个自测（等价性/边界/错误定位/内存上界）
+python3 -m unittest test_stream_parser -v   # 17 个自测（等价性/边界/错误定位/内存上界）
 python3 bench.py                            # 内存峰值与吞吐基准
 ```
 
@@ -42,7 +46,8 @@ python3 bench.py                            # 内存峰值与吞吐基准
 - 分块等价性：块大小 1..256 全枚举 + 200 组随机分块（含空块），与 `parse_all` 逐条相同；
 - 记录跨多个块（逐字节喂入 10 KB 记录）、单条记录超缓冲上限（报错且缓冲仍有界）、
   空块、末尾不完整记录（`finish` 报 `TruncatedInputError`，已产出记录不丢）、
-  上游中断（`abort` 丢弃残留）、错误定位（第几条 / 第几字节）、CRLF 与空行。
+  上游中断（`abort` 丢弃残留）、错误定位（第几条 / 第几行 / 出错字节精确偏移，
+  含多字节字符前的字节换算）、CRLF 与空行。
 
 ## 实测数据（Python 3.12，20 万条记录 / 52 MB 输入）
 

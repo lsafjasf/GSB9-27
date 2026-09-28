@@ -139,7 +139,7 @@ class BoundaryTest(unittest.TestCase):
 
 
 class ErrorLocationTest(unittest.TestCase):
-    """错误必须报出第几条记录、第几个字节。"""
+    """错误必须报出第几条记录、第几行、出错字节是第几个字节。"""
 
     def test_json_error_position(self):
         good1 = b'{"a": 1}\n'
@@ -150,7 +150,35 @@ class ErrorLocationTest(unittest.TestCase):
             parse_all(data)
         err = ctx.exception
         self.assertEqual(2, err.record_index)
-        self.assertEqual(len(good1) + len(good2), err.byte_offset)
+        self.assertEqual(3, err.line_no)
+        # 出错字节是 'oops' 的 'o'：记录起始 18 + 行内偏移 6 = 24
+        self.assertEqual(len(good1) + len(good2) + 6, err.byte_offset)
+        self.assertEqual(24, err.byte_offset)
+
+    def test_error_byte_offset_is_exact_byte(self):
+        # 出错字节本身：'✓' 不是合法 JSON 值；它前面有多字节字符，
+        # 验证 byte_offset 按字节（而非字符）精确换算
+        data = '{"ok": "中文"}\n{"bad": ✓}\n'.encode("utf-8")
+        record_start = len('{"ok": "中文"}\n'.encode("utf-8"))  # 17
+        with self.assertRaises(ParseError) as ctx:
+            parse_all(data)
+        err = ctx.exception
+        self.assertEqual(1, err.record_index)
+        self.assertEqual(2, err.line_no)
+        self.assertEqual(record_start + len('{"bad": '.encode("utf-8")),
+                         err.byte_offset)
+        self.assertEqual(25, err.byte_offset)  # 精确值：17 + 8
+        self.assertNotEqual(record_start, err.byte_offset)  # 不是记录起始字节
+
+    def test_utf8_error_byte_offset_is_exact_byte(self):
+        # 首个非法字节 \xff 在记录内下标 7 处
+        data = b'{"a": 1}\n{"x": "\xff"}\n'
+        with self.assertRaises(ParseError) as ctx:
+            parse_all(data)
+        err = ctx.exception
+        self.assertEqual(1, err.record_index)
+        self.assertEqual(2, err.line_no)
+        self.assertEqual(9 + 7, err.byte_offset)
 
     def test_json_error_position_with_chunking(self):
         data = b'{"a": 1}\nBAD\n{"c": 3}\n'
@@ -159,6 +187,7 @@ class ErrorLocationTest(unittest.TestCase):
             for i in range(0, len(data), 3):
                 parser.feed(data[i:i + 3])
         self.assertEqual(1, ctx.exception.record_index)
+        self.assertEqual(2, ctx.exception.line_no)
         self.assertEqual(9, ctx.exception.byte_offset)
 
     def test_invalid_utf8_position(self):
@@ -166,6 +195,7 @@ class ErrorLocationTest(unittest.TestCase):
         with self.assertRaises(ParseError) as ctx:
             parse_all(data)
         self.assertEqual(1, ctx.exception.record_index)
+        self.assertEqual(2, ctx.exception.line_no)
         self.assertEqual(9, ctx.exception.byte_offset)
 
 
