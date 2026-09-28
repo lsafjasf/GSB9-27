@@ -125,6 +125,9 @@ class _Inflight:
         self.error = None
 
 
+_RECOMPUTE_CONFLICT = object()
+
+
 class ReportCache:
     """按数据版本失效 + single-flight 合并重算的报表缓存。"""
 
@@ -217,26 +220,30 @@ class ReportCache:
                     raise holder.error
                 continue  # 领导者已写入新值，回到循环重新判定新鲜度
 
-            try:
-                value = self._recompute(name)
-            except Exception as exc:
-                with self._lock:
-                    self._inflight.pop(name, None)
-                    self._failed[name] = (
-                        self._time_fn(),
-                        tuple(self._registry.version(d) for d in self._deps[name]),
-                    )
-                    holder.error = exc
-                    holder.event.set()
-                    entry = self._entries.get(name)
-                if entry is not None:
-                    self._record_stale_serve(entry, name)
-                    return entry.value
-                raise
-            with self._lock:
-                self._inflight.pop(name, None)
-                holder.event.set()
-            return value
+            while True:
+                try:
+                    value = self._recompute(name)
+                except Exception as exc:
+                    with self._lock:
+                        self._inflight.pop(name, None)
+                        self._failed[name] = (
+                            self._time_fn(),
+                            tuple(self._registry.version(d) for d in self._deps[name]),
+                        )
+                        holder.error = exc
+                        holder.event.set()
+                        entry = self._entries.get(name)
+                    if entry is not None:
+                        self._record_stale_serve(entry, name)
+                        return entry.value
+                    raise
+                if value is not _RECOMPUTE_CONFLICT:
+                    with self._lock:
+                        self._inflight.pop(name, None)
+                        holder.event.set()
+                    return value
+                # 重算窗口内依赖被写入：结果按旧数据算出，丢弃并立即重试，
+                # 绝不把陈旧值盖上新版本号写回（跟随者继续等待下一轮结果）。
 
     def _in_failure_cooldown(self, name):
         """同一数据版本刚重算失败且仍在冷却期内时，直接回退旧值，避免失败风暴。"""
@@ -258,14 +265,23 @@ class ReportCache:
         else:
             since = None
         self.metrics.record_recompute()
+        # 在进入慢速重算「之前」快照依赖版本。版本号在重算结束后才读取会导致：
+        # 重算窗口内的写入让按旧数据算出的值被盖上最新版本号，之后永久陈旧命中。
+        versions = {dep: self._registry.version(dep) for dep in self._deps[name]}
         try:
             value = compute_fn(self._registry)
         except Exception:
             self.metrics.record_recompute_failure()
             raise
         now = self._time_fn()
-        versions = {dep: self._registry.version(dep) for dep in self._deps[name]}
+        # 版本校验与写回必须在同一临界区：确认窗口内无写入后才提交，
+        # 否则在「读版本」与「写条目」之间仍可能夹入新的写入。
         with self._lock:
+            current = {
+                dep: self._registry.version(dep) for dep in self._deps[name]
+            }
+            if current != versions:
+                return _RECOMPUTE_CONFLICT
             self._entries[name] = _Entry(value, versions, now)
             self._failed.pop(name, None)
         if since is not None:

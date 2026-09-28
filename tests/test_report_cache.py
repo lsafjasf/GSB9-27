@@ -127,6 +127,59 @@ class ReportCacheTest(unittest.TestCase):
 
 
 class ConcurrencyTest(unittest.TestCase):
+    def test_write_during_recompute_is_not_cached_under_new_version(self):
+        """低速重算期间依赖被写入：旧值绝不能盖上新版本号长期命中。"""
+        registry = DataRegistry()
+        registry.set("orders", [1, 2, 3])
+        cache = ReportCache(registry)
+        compute_started = threading.Event()
+        release_compute = threading.Event()
+        calls = {"n": 0}
+
+        def slow_compute(reg):
+            calls["n"] += 1
+            total = sum(reg.get("orders"))  # 进入重算后先按当前数据取值
+            if calls["n"] == 2:  # 只让「失效后的重算」变慢
+                compute_started.set()
+                self.assertTrue(release_compute.wait(timeout=5))
+            return total
+
+        cache.register("r", ["orders"], slow_compute)
+        self.assertEqual(cache.get("r"), 6)
+
+        # 失效后触发低速重算，并在重算进行中写入新版本
+        registry.set("orders", [10, 20])
+        reader_done = threading.Event()
+        reader_result = {}
+
+        def reader():
+            reader_result["value"] = cache.get("r")
+            reader_done.set()
+
+        thread = threading.Thread(target=reader)
+        thread.start()
+        self.assertTrue(compute_started.wait(timeout=5))
+        registry.set("orders", [100])  # 重算期间落进来的底层写入
+        release_compute.set()
+        self.assertTrue(reader_done.wait(timeout=5))
+        thread.join(timeout=5)
+
+        self.assertEqual(
+            reader_result["value"], 100,
+            "重算期间数据已变更，必须放弃与旧数据对应的结果并重试刷新",
+        )
+        # 修复前：条目会被打成最新版本号却存着旧值，之后每次读取都陈旧命中
+        self.assertEqual(cache.get("r"), 100)
+        snap = cache.metrics.snapshot()
+        self.assertEqual(snap["recomputes"], 3, "首次构建 + 冲突重算 + 重试各一次")
+        hits_before = snap["hits"]
+        for _ in range(5):
+            self.assertEqual(cache.get("r"), 100)
+        self.assertEqual(
+            cache.metrics.snapshot()["hits"], hits_before + 5,
+            "新版本条目应正常命中，而不是存着陈旧值反复骗过校验",
+        )
+
     def test_hot_key_concurrent_misses_collapse_to_one_recompute(self):
         registry = DataRegistry()
         registry.set("orders", [1, 2, 3])
