@@ -31,6 +31,14 @@ def make_v1_doc():
     }
 
 
+# 三类原缺陷的"行为契约"（repro_tests.py）在修复引擎上的固化：
+# 同一份用例在旧引擎上为红（python3 run_repro.py legacy），
+# 在修复引擎上必须持续为绿。此处把修复引擎版本纳入常规回归套件。
+from repro_tests import FixedAdapter, build_case
+
+ReproContractOnFixed = build_case(FixedAdapter(), "fixed")
+
+
 def make_v2_doc():
     return {
         "version": 2,

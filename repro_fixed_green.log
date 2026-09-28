@@ -1,0 +1,18 @@
+test_1_cross_two_versions_unknown_fields_must_survive (repro_tests.ReproOnFixed.test_1_cross_two_versions_unknown_fields_must_survive)
+跨两个版本升级（v1 -> v3）：未知字段不得静默消失。 ... ok
+test_2_renamed_field_missing_must_raise_not_default (repro_tests.ReproOnFixed.test_2_renamed_field_missing_must_raise_not_default)
+改名字段（nick -> nickname）：缺失必须报错而非默认值掩盖。 ... ok
+test_2b_renamed_field_present_carries_value (repro_tests.ReproOnFixed.test_2b_renamed_field_present_carries_value)
+改名字段存在时：值随改名链带走且旧名不残留。 ... ok
+test_3_nested_added_field_default_must_be_marked (repro_tests.ReproOnFixed.test_3_nested_added_field_default_must_be_marked)
+嵌套新增字段：默认值可以填，但必须可被识别为"非真实数据"。 ... ok
+test_3b_nested_required_field_without_fill_must_raise (repro_tests.ReproOnFixed.test_3b_nested_required_field_without_fill_must_raise)
+嵌套新增的 REQUIRED 字段（settings.timezone）：未提供必须报错。 ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.000s
+
+OK
+== 复现契约运行于【修复引擎】（预期：全绿） ==
+结果：5 条通过 / 0 条失败，与预期一致 ✓
+

@@ -1,0 +1,54 @@
+test_1_cross_two_versions_unknown_fields_must_survive (repro_tests.ReproOnLegacy.test_1_cross_two_versions_unknown_fields_must_survive)
+跨两个版本升级（v1 -> v3）：未知字段不得静默消失。 ... FAIL
+test_2_renamed_field_missing_must_raise_not_default (repro_tests.ReproOnLegacy.test_2_renamed_field_missing_must_raise_not_default)
+改名字段（nick -> nickname）：缺失必须报错而非默认值掩盖。 ... FAIL
+test_2b_renamed_field_present_carries_value (repro_tests.ReproOnLegacy.test_2b_renamed_field_present_carries_value)
+改名字段存在时：值随改名链带走且旧名不残留。 ... ok
+test_3_nested_added_field_default_must_be_marked (repro_tests.ReproOnLegacy.test_3_nested_added_field_default_must_be_marked)
+嵌套新增字段：默认值可以填，但必须可被识别为"非真实数据"。 ... FAIL
+test_3b_nested_required_field_without_fill_must_raise (repro_tests.ReproOnLegacy.test_3b_nested_required_field_without_fill_must_raise)
+嵌套新增的 REQUIRED 字段（settings.timezone）：未提供必须报错。 ... FAIL
+
+======================================================================
+FAIL: test_1_cross_two_versions_unknown_fields_must_survive (repro_tests.ReproOnLegacy.test_1_cross_two_versions_unknown_fields_must_survive)
+跨两个版本升级（v1 -> v3）：未知字段不得静默消失。
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/administrator/gsb/uid253/A/repro_tests.py", line 82, in test_1_cross_two_versions_unknown_fields_must_survive
+    self.assertIn("custom_field", migrated)
+AssertionError: 'custom_field' not found in {'version': 3, 'name': 'alice', 'nickname': 'al', 'contact_email': None, 'tags': [], 'settings': {'theme': 'dark', 'language': 'en', 'timezone': 'UTC'}}
+
+======================================================================
+FAIL: test_2_renamed_field_missing_must_raise_not_default (repro_tests.ReproOnLegacy.test_2_renamed_field_missing_must_raise_not_default)
+改名字段（nick -> nickname）：缺失必须报错而非默认值掩盖。
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/administrator/gsb/uid253/A/repro_tests.py", line 103, in test_2_renamed_field_missing_must_raise_not_default
+    self.assertNotEqual(migrated.get("nickname"), "",
+AssertionError: '' == '' : 改名字段缺失被静默默认值 '' 掩盖
+
+======================================================================
+FAIL: test_3_nested_added_field_default_must_be_marked (repro_tests.ReproOnLegacy.test_3_nested_added_field_default_must_be_marked)
+嵌套新增字段：默认值可以填，但必须可被识别为"非真实数据"。
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/administrator/gsb/uid253/A/repro_tests.py", line 122, in test_3_nested_added_field_default_must_be_marked
+    self.assertIn("__meta__", migrated)
+AssertionError: '__meta__' not found in {'version': 3, 'name': 'alice', 'nickname': 'al', 'contact_email': None, 'tags': [], 'settings': {'theme': 'dark', 'language': 'en', 'timezone': 'UTC'}}
+
+======================================================================
+FAIL: test_3b_nested_required_field_without_fill_must_raise (repro_tests.ReproOnLegacy.test_3b_nested_required_field_without_fill_must_raise)
+嵌套新增的 REQUIRED 字段（settings.timezone）：未提供必须报错。
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/administrator/gsb/uid253/A/repro_tests.py", line 140, in test_3b_nested_required_field_without_fill_must_raise
+    self.fail("REQUIRED 嵌套字段缺失未报错，被静默填成 %r"
+AssertionError: REQUIRED 嵌套字段缺失未报错，被静默填成 'UTC'
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.001s
+
+FAILED (failures=4)
+== 复现契约运行于【旧引擎】（预期：全红（证明用例抓得住原缺陷）） ==
+结果：1 条通过 / 4 条失败，与预期一致 ✓
+
