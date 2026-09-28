@@ -12,7 +12,8 @@ import tempfile
 import unittest
 
 from session_state import (STATE_VERSION, STEPS, EffectGateway,
-                           SessionEngine, StateVersionError, SimulatedCrash)
+                           SessionEngine, StateCorruptError,
+                           StateVersionError, SimulatedCrash)
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 RUNNER = os.path.join(HERE, "runner.py")
@@ -128,6 +129,78 @@ class FixedEngineTest(unittest.TestCase):
         with open(state_path, encoding="utf-8") as fh:
             state = json.load(fh)
         self.assertEqual(state["actions"][ACTION]["status"], "done")
+
+    def test_malformed_state_shape_rebuilds_from_journal(self):
+        # Valid JSON that is structurally incomplete used to sail past the
+        # shape check and then blow up as a KeyError at action-record write
+        # time.  Each variant must instead be treated as corrupt and rebuilt
+        # from the journal, without re-executing already-applied effects.
+        malformed_states = [
+            {},
+            {"version": STATE_VERSION, "session_id": SESSION},
+            {"version": STATE_VERSION, "session_id": SESSION,
+             "actions": None},
+            {"version": STATE_VERSION, "session_id": SESSION,
+             "actions": []},
+            {"version": STATE_VERSION, "session_id": SESSION,
+             "actions": {ACTION: {"status": "pending"}}},
+            {"version": STATE_VERSION, "session_id": SESSION,
+             "actions": {ACTION: {"status": "weird", "steps": {}}}},
+            {"version": STATE_VERSION, "session_id": SESSION,
+             "actions": {ACTION: {"status": "pending",
+                                  "steps": {"notify": {"status": "done"}}}}},
+        ]
+        state_path = os.path.join(self.workdir, f"state-{SESSION}.json")
+        for malformed in malformed_states:
+            with self.subTest(malformed=malformed):
+                self._tmp.cleanup()
+                self._tmp = tempfile.TemporaryDirectory()
+                workdir = self._tmp.name
+                # Journal already shows the notify effect for this action.
+                EffectGateway(workdir).apply(
+                    f"{SESSION}:{ACTION}:notify", "notify",
+                    {"session": SESSION, "action": ACTION})
+                with open(os.path.join(
+                        workdir, f"state-{SESSION}.json"),
+                        "w", encoding="utf-8") as fh:
+                    json.dump(malformed, fh)
+
+                state = SessionEngine(workdir, SESSION).run_action(ACTION)
+                self.assertEqual(
+                    effects_by_kind(workdir),
+                    {"notify": 1, "deduct_quota": 1})
+                self.assertEqual(
+                    state["actions"][ACTION]["status"], "done")
+
+    def test_corrupt_rebuild_recovers_all_session_actions(self):
+        # Two actions complete, a third interrupted after its first effect;
+        # corrupting the state and resuming action 3 must rebuild records for
+        # *all* actions of the session, not only the requested one.
+        engine = SessionEngine(self.workdir, SESSION)
+        engine.run_action("a-1")
+        engine.run_action("a-2")
+        with self.assertRaises(SimulatedCrash):
+            engine.run_action(
+                "a-3",
+                crash_hook=lambda step: (_ for _ in ()).throw(
+                    SimulatedCrash(step)))
+
+        state_path = os.path.join(self.workdir, f"state-{SESSION}.json")
+        with open(state_path, "r+", encoding="utf-8") as fh:
+            fh.truncate(os.path.getsize(state_path) // 2)
+
+        state = SessionEngine(self.workdir, SESSION).run_action("a-3")
+
+        # Sibling actions survived the rebuild; no effect was re-executed.
+        self.assertEqual(
+            {aid: action["status"]
+             for aid, action in state["actions"].items()},
+            {"a-1": "done", "a-2": "done", "a-3": "done"})
+        self.assertEqual(effects_by_kind(self.workdir),
+                         {"notify": 3, "deduct_quota": 3})
+        with open(state_path, encoding="utf-8") as fh:
+            persisted = json.load(fh)
+        self.assertEqual(set(persisted["actions"]), {"a-1", "a-2", "a-3"})
 
     def test_version_mismatch_refuses_to_run(self):
         state_path = os.path.join(self.workdir, f"state-{SESSION}.json")

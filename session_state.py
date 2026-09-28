@@ -16,11 +16,17 @@ Partial writes
     directory, fsync, os.replace(), then fsync the directory.  A crash can
     therefore only leave either the old or the new state -- never a torn
     file.  If the state file is nevertheless found corrupt (disk damage,
-    manual truncation), the engine does NOT guess: it rebuilds the state for
-    the requested action from the effect journal.  Because keys are
-    deterministic, the journal can be queried for exactly the keys this
-    action would have used; steps whose key is already applied are marked
-    done, the rest stay pending.  No step is ever re-executed blindly.
+    manual truncation, or structurally invalid action records), the engine
+    does NOT guess: it rebuilds the state from the effect journal.  Because
+    keys are deterministic and carry the session id as a prefix, the journal
+    can be scanned for *every* action of this session, not just the requested
+    one: for each discovered action (and the requested one, even if it has no
+    effects yet), steps whose key is already applied are marked done and the
+    rest stay pending.  Rebuilding one action therefore never drops sibling
+    actions when the state is written back.  An action that never produced an
+    effect leaves no journal trace, but re-running it is still safe: keys are
+    deterministic and the gateway dedupes.  No step is ever re-executed
+    blindly.
 
 Version mismatch
     The state file carries a "version" field.  A mismatch raises
@@ -37,9 +43,12 @@ STATE_VERSION = 1
 # Steps of an action, executed in order.  Each produces one external effect.
 STEPS = ("notify", "deduct_quota")
 
+_ACTION_STATUSES = frozenset({"pending", "done"})
+_STEP_STATUSES = frozenset({"in_progress", "done"})
+
 
 class StateCorruptError(Exception):
-    """State file exists but is not valid JSON / not an object."""
+    """State file exists but is unreadable or fails structural validation."""
 
 
 class StateVersionError(Exception):
@@ -142,21 +151,84 @@ class SessionEngine:
         if state["version"] != STATE_VERSION:
             raise StateVersionError(
                 f"state version {state['version']!r} != {STATE_VERSION}")
+        if not self._is_well_formed(state):
+            raise StateCorruptError(
+                f"state file {self.state_path} has unexpected shape")
         return state
 
-    def _rebuild_from_journal(self, action_id):
-        """Rebuild state for one action from the effect journal.
+    def _is_well_formed(self, state):
+        """Structural validation of the whole state envelope, actions
+        included.
+
+        Valid JSON is not enough: a hand-truncated or merged file may be a
+        well-formed object while missing the ``actions`` map or carrying
+        malformed action/step records, which would otherwise surface later as
+        an opaque KeyError while writing records.
+        """
+        if not isinstance(state, dict):
+            return False
+        if state.get("version") != STATE_VERSION:
+            return False
+        if not isinstance(state.get("session_id"), str):
+            return False
+        actions = state.get("actions")
+        if not isinstance(actions, dict):
+            return False
+        for action_id, action in actions.items():
+            if not isinstance(action_id, str) or not isinstance(action, dict):
+                return False
+            if action.get("status") not in _ACTION_STATUSES:
+                return False
+            steps = action.get("steps")
+            if not isinstance(steps, dict):
+                return False
+            for step_name, rec in steps.items():
+                if not isinstance(step_name, str) or not isinstance(rec, dict):
+                    return False
+                if rec.get("status") not in _STEP_STATUSES:
+                    return False
+                if not isinstance(rec.get("idempotency_key"), str):
+                    return False
+        return True
+
+    def _rebuild_from_journal(self, requested_action_id):
+        """Rebuild state for *all* actions of this session from the effect
+        journal.
 
         Safe because idempotency keys are deterministic: we can ask the
-        gateway exactly which keys this action would have used.
+        gateway exactly which keys each action would have used.  Keys are
+        prefixed with the session id, so sibling actions are recovered too
+        and a rebuild triggered for one action never erases their records.
         """
         state = self._fresh_state()
-        steps = {}
-        for step in STEPS:
-            key = self._key(action_id, step)
-            if key in self.gateway.applied_keys():
-                steps[step] = {"status": "done", "idempotency_key": key}
-        state["actions"][action_id] = {"status": "pending", "steps": steps}
+        applied = self.gateway.applied_keys()
+        prefix = f"{self.session_id}:"
+
+        # Every applied key tells us the action that produced it:
+        # <session_id>:<action_id>:<step>.  Splitting off the final segment
+        # from the right is unambiguous because <step> is always last, even
+        # if action ids themselves contain ':'.
+        action_ids = set()
+        for key in applied:
+            if key.startswith(prefix):
+                remainder = key[len(prefix):]
+                action_id, sep, step = remainder.rpartition(":")
+                if sep and step in STEPS:
+                    action_ids.add(action_id)
+        action_ids.add(requested_action_id)
+
+        for action_id in action_ids:
+            steps = {}
+            for step in STEPS:
+                key = self._key(action_id, step)
+                if key in applied:
+                    steps[step] = {"status": "done",
+                                   "idempotency_key": key}
+            all_done = all(self._key(action_id, step) in applied
+                           for step in STEPS)
+            state["actions"][action_id] = {
+                "status": "done" if all_done else "pending",
+                "steps": steps}
         return state
 
     # -- action execution --------------------------------------------------

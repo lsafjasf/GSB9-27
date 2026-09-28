@@ -27,11 +27,17 @@ gateway could not dedupe it → duplicate external side effect.
 - **Partial writes**: state is written atomically — temp file in the same
   directory, `fsync`, `os.replace`, `fsync` the directory — so a crash
   yields either the old or the new state, never a torn file. If the state
-  file is nevertheless corrupt (disk damage, truncation), the engine does
-  not guess: it rebuilds the requested action's state from the effect
-  journal. Because keys are deterministic, the journal can be probed for
-  exactly the keys this action would have used; applied steps are marked
-  done, the rest stay pending. Nothing is re-executed blindly.
+  file is nevertheless corrupt (disk damage, truncation, valid JSON with a
+  broken envelope — missing `actions`, malformed action/step records), the
+  engine does not guess: the whole envelope is shape-validated on load, and
+  any structural failure is treated as corruption and rebuilt from the
+  effect journal. Because keys are deterministic and prefixed with the
+  session id, the journal is scanned for **every** action of the session,
+  not just the requested one (plus the requested one even if it has no
+  effects yet): applied steps are marked done, the rest stay pending.
+  Rebuilding for one action therefore never erases sibling actions when the
+  state is written back. An action with no journal trace has produced no
+  effects, so re-running it is still safe. Nothing is re-executed blindly.
 - **Version mismatch**: the state carries a `version` field; a mismatch
   raises `StateVersionError` and the engine refuses to run (no silent
   migration, no re-execution).
@@ -65,4 +71,10 @@ python3 runner.py fixed /tmp/demo2 s-1 a-1  # resumes; each effect exactly once
 - `test_in_process_simulated_crash` — same scenario without a subprocess
 - `test_corrupt_state_file_recovers_from_journal` — truncated state file,
   rebuilt from journal, no duplicate effects
+- `test_malformed_state_shape_rebuilds_from_journal` — valid JSON with
+  missing/broken action structure is rejected by shape validation and
+  rebuilt from the journal (no KeyError at record-write time)
+- `test_corrupt_rebuild_recovers_all_session_actions` — multiple actions in
+  one session, corrupt state, resume one action: all actions rebuilt, no
+  duplicates
 - `test_version_mismatch_refuses_to_run` — `StateVersionError`, zero effects
