@@ -16,15 +16,43 @@ def bench_solo_write(cap, n, payload):
 
 
 def bench_solo_read(cap, n, payload):
+    """Delivery throughput of one reader while a writer keeps producing.
+
+    Only read() calls that return an actual record are counted; None polls
+    and OverrunError skips are not. Records are self-checking, so a torn
+    read fails the run instead of inflating the count.
+    """
     buf = RingBuffer(cap)
-    for i in range(cap):
-        buf.write(payload)
+    stop = threading.Event()
+
+    def writer():
+        i = 0
+        while not stop.is_set():
+            i += 1
+            buf.write((i, payload, i))
+
+    wt = threading.Thread(target=writer)
     r = buf.reader()
+    wt.start()
+    got = 0
+    overruns = 0
     t0 = time.perf_counter()
-    for _ in range(n):
-        r.read()
+    while got < n:
+        try:
+            item = r.read()
+        except OverrunError:
+            overruns += 1
+            continue
+        if item is None:
+            continue
+        seq, rec = item
+        assert rec[0] == rec[2] == seq, f"torn record at seq {seq}: {rec!r}"
+        got += 1
     dt = time.perf_counter() - t0
-    return n / dt
+    stop.set()
+    wt.join()
+    assert got == n, f"only {got} of {n} reads returned a record"
+    return got / dt, overruns
 
 
 def bench_concurrent(cap, duration, n_readers, payload):
@@ -78,11 +106,12 @@ def bench_concurrent(cap, duration, n_readers, payload):
 def main():
     small = b"x" * 32
     big = b"y" * 1024
-    print("== Single-threaded (no contention), 10M ops ==")
+    print("== Solo write: 10M ops; read: 2M records actually delivered ==")
     for name, p in (("32B", small), ("1KB", big)):
         w = bench_solo_write(1024, 10_000_000, p)
-        rr = bench_solo_read(1024, 10_000_000, p)
-        print(f"  payload={name:>4}  write {w:>12,.0f} rec/s   read {rr:>12,.0f} rec/s")
+        rr, ovr = bench_solo_read(1024, 2_000_000, p)
+        print(f"  payload={name:>4}  write {w:>12,.0f} rec/s   "
+              f"read {rr:>12,.0f} rec/s (records actually delivered, overruns {ovr})")
 
     print()
     print("== Concurrent, readers keep up (no overrun): 2 s, cap=2^22, 32B ==")

@@ -89,26 +89,39 @@ class TestOverwriteSemantics(unittest.TestCase):
         n = 500
         for i in range(1, n + 1):
             buf.write(make_record(i))
-        # Every reader independently consumes the same sequence range.
+        # n > cap, so every reader necessarily loses records to overrun;
+        # each must report the exact lost ranges instead of hiding them.
         results = []
         for r in readers:
             seen = []
+            lost = 0
+            expected_next = 1
             while True:
                 try:
                     item = r.read()
                 except OverrunError as e:
-                    # All readers started before any write: no overrun here
-                    # because n < cap is false; handle generally.
-                    seen.extend(range(e.lost_from, e.lost_to + 1))
+                    # The lost range must start exactly where the cursor was;
+                    # count it as lost, never as seen.
+                    self.assertEqual(e.lost_from, expected_next)
+                    self.assertGreaterEqual(e.lost_to, e.lost_from)
+                    lost += e.lost_to - e.lost_from + 1
+                    expected_next = e.lost_to + 1
                     continue
                 if item is None:
                     break
                 seq, rec = item
                 self.assertTrue(check_record(seq, rec))
+                self.assertEqual(seq, expected_next)
                 seen.append(seq)
+                expected_next = seq + 1
+            # Seen records plus reported losses must account for 1..n exactly.
+            self.assertEqual(expected_next, n + 1)
+            self.assertEqual(len(seen) + lost, n)
+            self.assertEqual(lost, n - cap)
             results.append(seen)
+        # All readers are independent cursors over the same data: identical views.
         for seen in results:
-            self.assertEqual(seen, list(range(1, n + 1)))
+            self.assertEqual(seen, results[0])
 
 
 class TestConcurrency(unittest.TestCase):
