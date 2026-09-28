@@ -37,10 +37,10 @@ def load_keys(path: str, as_json: bool) -> list[str]:
         return [line.rstrip("\n") for line in handle if line.strip("\n")]
 
 
-def analyze(keys: list[str], locale: str):
+def analyze(keys: list[str], locale: str, strip_marks):
     groups: dict[str, list[str]] = defaultdict(list)
     for key in keys:
-        groups[normalize_key(key, locale=locale)].append(key)
+        groups[normalize_key(key, locale=locale, strip_marks=strip_marks)].append(key)
     collisions = {canon: members for canon, members in groups.items()
                   if len(set(members)) > 1}
     return groups, collisions
@@ -51,16 +51,24 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--keys", required=True, help="旧键列表文件（每行一个，或 JSON 数组）")
     parser.add_argument("--json", action="store_true", help="输入文件为 JSON 字符串数组")
     parser.add_argument("--locale", default="root", choices=SUPPORTED_LOCALES)
+    parser.add_argument(
+        "--strip-marks",
+        default=None,
+        metavar="POLICY",
+        help="去记号策略：latin（仅拉丁去音符）、all（旧的无条件去记号，"
+             "会合并 が/か，不推荐）；缺省不剥离任何记号。",
+    )
     parser.add_argument("--report", help="冲突报告输出路径（默认打印到 stdout）")
     parser.add_argument("--map", dest="map_path", help="旧键 -> 新规范键 JSON 映射输出路径")
     args = parser.parse_args(argv)
 
     keys = load_keys(args.keys, args.json)
-    groups, collisions = analyze(keys, args.locale)
+    groups, collisions = analyze(keys, args.locale, args.strip_marks)
     merge_map = {key: canon for canon, members in groups.items() for key in members}
 
     lines = [
         f"区域: {args.locale}",
+        f"去记号策略: {args.strip_marks if args.strip_marks is not None else 'off（默认）'}",
         f"旧键总数(含重复): {len(keys)}",
         f"去重后旧键数: {len(set(keys))}",
         f"新等价类数: {len(groups)}",

@@ -1,15 +1,17 @@
 """区域可配置的键比较（字典查找 / 去重场景）。
 
 公开接口：
-    normalize_key(key, locale="root")
-    keys_equal(a, b, locale="root")
-    KeyNormalizer(locale="root")
+    normalize_key(key, locale="root", strip_marks=None)
+    keys_equal(a, b, locale="root", strip_marks=None)
+    KeyNormalizer(locale="root", strip_marks=None)
 
 只依赖 Python 3 标准库（unicodedata）。
 """
 
 from .normalizer import (
     DEFAULT_LOCALE,
+    DEFAULT_STRIP_MARKS,
+    MARK_STRIP_PRESETS,
     SUPPORTED_LOCALES,
     KeyNormalizer,
     keys_equal,
@@ -18,6 +20,8 @@ from .normalizer import (
 
 __all__ = [
     "DEFAULT_LOCALE",
+    "DEFAULT_STRIP_MARKS",
+    "MARK_STRIP_PRESETS",
     "SUPPORTED_LOCALES",
     "KeyNormalizer",
     "keys_equal",

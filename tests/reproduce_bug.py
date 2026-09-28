@@ -43,9 +43,18 @@ CASES = [
         ["\u00e9", "e\u0301"],  # é(U+00E9) vs e + U+0301
     ),
     (
-        "带变音符号（café 的各种写法，含去音符形式）",
-        ["caf\u00e9", "cafe\u0301", "CAF\u00c9", "Caf\u00c9", "cafe"],
+        "带变音符号（café 的各种编码写法；不含去音符形式 cafe）",
+        ["caf\u00e9", "cafe\u0301", "CAF\u00c9", "Caf\u00c9"],
     ),
+]
+
+# ---- 题意范围之外：肉眼就不同的键，任何正确实现都不得合并 --------------------
+# 旧实现只做 lower，恰好不会合并这些对；但“无条件删除全部组合记号(Mn)”
+# 的修法会把它们错误去重（日文浊音符、拉丁变音符号在 NFD 后都是 Mn）。
+OUT_OF_SCOPE_PAIRS = [
+    ("日文浊音", "\u304c", "\u304b"),          # が vs か
+    ("日文半浊音", "\u3071", "\u306f"),        # ぱ vs は
+    ("拉丁变音符号", "caf\u00e9", "cafe"),     # café vs cafe
 ]
 
 
@@ -69,6 +78,13 @@ def main() -> int:
         partitions = len({old_normalize(v) for v in variants})
         print(f"  旧实现把这一组拆成了 {partitions} 个不同的键")
         print()
+
+    print("[题意范围之外：这些对必须保持不同]")
+    for label, a, b in OUT_OF_SCOPE_PAIRS:
+        same = old_equal(a, b)
+        flag = "OK  保持不同" if not same else "BAD 被合并"
+        print(f"  {flag}（{label}）：{a!r} vs {b!r}")
+    print()
 
     if bug_reproduced:
         print("问题已复现：仅做 lower() 会把全角、组合/预组合字符、")
