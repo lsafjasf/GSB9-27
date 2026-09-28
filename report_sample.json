@@ -1,0 +1,716 @@
+[
+  {
+    "sut": "idempotent-payment",
+    "category": "IDEMPOTENT",
+    "reasons": [
+      "side effects applied exactly once across all replays: {'counter': 1, 'write': 1, 'notify': 1}",
+      "all 14 calls returned an identical response",
+      "state changed 1 time(s) across 14 calls"
+    ],
+    "evidence": {
+      "effect_counts_total": {
+        "counter": 1,
+        "write": 1,
+        "notify": 1
+      },
+      "effect_counts_per_pattern": {
+        "sequential_replay": {
+          "before": {},
+          "after": {
+            "counter": 1,
+            "write": 1,
+            "notify": 1
+          }
+        },
+        "concurrent_replay": {
+          "before": {
+            "counter": 1,
+            "write": 1,
+            "notify": 1
+          },
+          "after": {
+            "counter": 1,
+            "write": 1,
+            "notify": 1
+          }
+        },
+        "timeout_retry": {
+          "before": {
+            "counter": 1,
+            "write": 1,
+            "notify": 1
+          },
+          "after": {
+            "counter": 1,
+            "write": 1,
+            "notify": 1
+          }
+        }
+      },
+      "calls_total": 14,
+      "calls_with_errors": 0,
+      "distinct_responses": 1,
+      "state_changes": 1,
+      "state_trajectory": [
+        {
+          "pattern": "sequential_replay",
+          "call": 0,
+          "delivered": true,
+          "state_changed": true,
+          "effects_delta": 3,
+          "response": {
+            "receipt_id": "rcpt-order-42-pay",
+            "amount": 100,
+            "status": "ok"
+          },
+          "error": null
+        },
+        {
+          "pattern": "sequential_replay",
+          "call": 1,
+          "delivered": true,
+          "state_changed": false,
+          "effects_delta": 0,
+          "response": {
+            "receipt_id": "rcpt-order-42-pay",
+            "amount": 100,
+            "status": "ok"
+          },
+          "error": null
+        },
+        {
+          "pattern": "sequential_replay",
+          "call": 2,
+          "delivered": true,
+          "state_changed": false,
+          "effects_delta": 0,
+          "response": {
+            "receipt_id": "rcpt-order-42-pay",
+            "amount": 100,
+            "status": "ok"
+          },
+          "error": null
+        },
+        {
+          "pattern": "concurrent_replay",
+          "call": 0,
+          "delivered": true,
+          "state_changed": false,
+          "effects_delta": 0,
+          "response": {
+            "receipt_id": "rcpt-order-42-pay",
+            "amount": 100,
+            "status": "ok"
+          },
+          "error": null
+        },
+        {
+          "pattern": "concurrent_replay",
+          "call": 1,
+          "delivered": true,
+          "state_changed": false,
+          "effects_delta": 0,
+          "response": {
+            "receipt_id": "rcpt-order-42-pay",
+            "amount": 100,
+            "status": "ok"
+          },
+          "error": null
+        },
+        {
+          "pattern": "concurrent_replay",
+          "call": 2,
+          "delivered": true,
+          "state_changed": false,
+          "effects_delta": 0,
+          "response": {
+            "receipt_id": "rcpt-order-42-pay",
+            "amount": 100,
+            "status": "ok"
+          },
+          "error": null
+        },
+        {
+          "pattern": "concurrent_replay",
+          "call": 3,
+          "delivered": true,
+          "state_changed": false,
+          "effects_delta": 0,
+          "response": {
+            "receipt_id": "rcpt-order-42-pay",
+            "amount": 100,
+            "status": "ok"
+          },
+          "error": null
+        },
+        {
+          "pattern": "concurrent_replay",
+          "call": 4,
+          "delivered": true,
+          "state_changed": false,
+          "effects_delta": 0,
+          "response": {
+            "receipt_id": "rcpt-order-42-pay",
+            "amount": 100,
+            "status": "ok"
+          },
+          "error": null
+        },
+        {
+          "pattern": "concurrent_replay",
+          "call": 5,
+          "delivered": true,
+          "state_changed": false,
+          "effects_delta": 0,
+          "response": {
+            "receipt_id": "rcpt-order-42-pay",
+            "amount": 100,
+            "status": "ok"
+          },
+          "error": null
+        },
+        {
+          "pattern": "concurrent_replay",
+          "call": 6,
+          "delivered": true,
+          "state_changed": false,
+          "effects_delta": 0,
+          "response": {
+            "receipt_id": "rcpt-order-42-pay",
+            "amount": 100,
+            "status": "ok"
+          },
+          "error": null
+        },
+        {
+          "pattern": "concurrent_replay",
+          "call": 7,
+          "delivered": true,
+          "state_changed": false,
+          "effects_delta": 0,
+          "response": {
+            "receipt_id": "rcpt-order-42-pay",
+            "amount": 100,
+            "status": "ok"
+          },
+          "error": null
+        },
+        {
+          "pattern": "timeout_retry",
+          "call": 0,
+          "delivered": false,
+          "state_changed": false,
+          "effects_delta": 0,
+          "response": {
+            "receipt_id": "rcpt-order-42-pay",
+            "amount": 100,
+            "status": "ok"
+          },
+          "error": null
+        },
+        {
+          "pattern": "timeout_retry",
+          "call": 1,
+          "delivered": false,
+          "state_changed": false,
+          "effects_delta": 0,
+          "response": {
+            "receipt_id": "rcpt-order-42-pay",
+            "amount": 100,
+            "status": "ok"
+          },
+          "error": null
+        },
+        {
+          "pattern": "timeout_retry",
+          "call": 2,
+          "delivered": true,
+          "state_changed": false,
+          "effects_delta": 0,
+          "response": {
+            "receipt_id": "rcpt-order-42-pay",
+            "amount": 100,
+            "status": "ok"
+          },
+          "error": null
+        }
+      ]
+    }
+  },
+  {
+    "sut": "non-idempotent-payment",
+    "category": "NOT_IDEMPOTENT",
+    "reasons": [
+      "side effects repeated for one logical request: {'counter': 14, 'write': 14, 'notify': 14}",
+      "responses diverged (14 distinct values)",
+      "state kept changing (14 changes across 14 calls)"
+    ],
+    "evidence": {
+      "effect_counts_total": {
+        "counter": 14,
+        "write": 14,
+        "notify": 14
+      },
+      "effect_counts_per_pattern": {
+        "sequential_replay": {
+          "before": {},
+          "after": {
+            "counter": 3,
+            "write": 3,
+            "notify": 3
+          }
+        },
+        "concurrent_replay": {
+          "before": {
+            "counter": 3,
+            "write": 3,
+            "notify": 3
+          },
+          "after": {
+            "counter": 11,
+            "write": 11,
+            "notify": 11
+          }
+        },
+        "timeout_retry": {
+          "before": {
+            "counter": 11,
+            "write": 11,
+            "notify": 11
+          },
+          "after": {
+            "counter": 14,
+            "write": 14,
+            "notify": 14
+          }
+        }
+      },
+      "calls_total": 14,
+      "calls_with_errors": 0,
+      "distinct_responses": 14,
+      "state_changes": 14,
+      "state_trajectory": [
+        {
+          "pattern": "sequential_replay",
+          "call": 0,
+          "delivered": true,
+          "state_changed": true,
+          "effects_delta": 3,
+          "response": {
+            "receipt_id": "rcpt-1",
+            "amount": 100,
+            "status": "ok"
+          },
+          "error": null
+        },
+        {
+          "pattern": "sequential_replay",
+          "call": 1,
+          "delivered": true,
+          "state_changed": true,
+          "effects_delta": 3,
+          "response": {
+            "receipt_id": "rcpt-2",
+            "amount": 100,
+            "status": "ok"
+          },
+          "error": null
+        },
+        {
+          "pattern": "sequential_replay",
+          "call": 2,
+          "delivered": true,
+          "state_changed": true,
+          "effects_delta": 3,
+          "response": {
+            "receipt_id": "rcpt-3",
+            "amount": 100,
+            "status": "ok"
+          },
+          "error": null
+        },
+        {
+          "pattern": "concurrent_replay",
+          "call": 0,
+          "delivered": true,
+          "state_changed": true,
+          "effects_delta": 3,
+          "response": {
+            "receipt_id": "rcpt-5",
+            "amount": 100,
+            "status": "ok"
+          },
+          "error": null
+        },
+        {
+          "pattern": "concurrent_replay",
+          "call": 1,
+          "delivered": true,
+          "state_changed": true,
+          "effects_delta": 3,
+          "response": {
+            "receipt_id": "rcpt-6",
+            "amount": 100,
+            "status": "ok"
+          },
+          "error": null
+        },
+        {
+          "pattern": "concurrent_replay",
+          "call": 2,
+          "delivered": true,
+          "state_changed": true,
+          "effects_delta": 3,
+          "response": {
+            "receipt_id": "rcpt-7",
+            "amount": 100,
+            "status": "ok"
+          },
+          "error": null
+        },
+        {
+          "pattern": "concurrent_replay",
+          "call": 3,
+          "delivered": true,
+          "state_changed": true,
+          "effects_delta": 3,
+          "response": {
+            "receipt_id": "rcpt-8",
+            "amount": 100,
+            "status": "ok"
+          },
+          "error": null
+        },
+        {
+          "pattern": "concurrent_replay",
+          "call": 4,
+          "delivered": true,
+          "state_changed": true,
+          "effects_delta": 3,
+          "response": {
+            "receipt_id": "rcpt-9",
+            "amount": 100,
+            "status": "ok"
+          },
+          "error": null
+        },
+        {
+          "pattern": "concurrent_replay",
+          "call": 5,
+          "delivered": true,
+          "state_changed": true,
+          "effects_delta": 3,
+          "response": {
+            "receipt_id": "rcpt-10",
+            "amount": 100,
+            "status": "ok"
+          },
+          "error": null
+        },
+        {
+          "pattern": "concurrent_replay",
+          "call": 6,
+          "delivered": true,
+          "state_changed": true,
+          "effects_delta": 3,
+          "response": {
+            "receipt_id": "rcpt-11",
+            "amount": 100,
+            "status": "ok"
+          },
+          "error": null
+        },
+        {
+          "pattern": "concurrent_replay",
+          "call": 7,
+          "delivered": true,
+          "state_changed": true,
+          "effects_delta": 3,
+          "response": {
+            "receipt_id": "rcpt-4",
+            "amount": 100,
+            "status": "ok"
+          },
+          "error": null
+        },
+        {
+          "pattern": "timeout_retry",
+          "call": 0,
+          "delivered": false,
+          "state_changed": true,
+          "effects_delta": 3,
+          "response": {
+            "receipt_id": "rcpt-12",
+            "amount": 100,
+            "status": "ok"
+          },
+          "error": null
+        },
+        {
+          "pattern": "timeout_retry",
+          "call": 1,
+          "delivered": false,
+          "state_changed": true,
+          "effects_delta": 3,
+          "response": {
+            "receipt_id": "rcpt-13",
+            "amount": 100,
+            "status": "ok"
+          },
+          "error": null
+        },
+        {
+          "pattern": "timeout_retry",
+          "call": 2,
+          "delivered": true,
+          "state_changed": true,
+          "effects_delta": 3,
+          "response": {
+            "receipt_id": "rcpt-14",
+            "amount": 100,
+            "status": "ok"
+          },
+          "error": null
+        }
+      ]
+    }
+  },
+  {
+    "sut": "fake-idempotent-payment",
+    "category": "RETURN_CONSISTENT_BUT_EFFECTS_REPEATED",
+    "reasons": [
+      "side effects repeated for one logical request: {'counter': 14, 'write': 14, 'notify': 14}",
+      "all 14 calls returned an identical response",
+      "state kept changing (14 changes across 14 calls)"
+    ],
+    "evidence": {
+      "effect_counts_total": {
+        "counter": 14,
+        "write": 14,
+        "notify": 14
+      },
+      "effect_counts_per_pattern": {
+        "sequential_replay": {
+          "before": {},
+          "after": {
+            "counter": 3,
+            "write": 3,
+            "notify": 3
+          }
+        },
+        "concurrent_replay": {
+          "before": {
+            "counter": 3,
+            "write": 3,
+            "notify": 3
+          },
+          "after": {
+            "counter": 11,
+            "write": 11,
+            "notify": 11
+          }
+        },
+        "timeout_retry": {
+          "before": {
+            "counter": 11,
+            "write": 11,
+            "notify": 11
+          },
+          "after": {
+            "counter": 14,
+            "write": 14,
+            "notify": 14
+          }
+        }
+      },
+      "calls_total": 14,
+      "calls_with_errors": 0,
+      "distinct_responses": 1,
+      "state_changes": 14,
+      "state_trajectory": [
+        {
+          "pattern": "sequential_replay",
+          "call": 0,
+          "delivered": true,
+          "state_changed": true,
+          "effects_delta": 3,
+          "response": {
+            "receipt_id": "rcpt-order-42-pay",
+            "amount": 100,
+            "status": "ok"
+          },
+          "error": null
+        },
+        {
+          "pattern": "sequential_replay",
+          "call": 1,
+          "delivered": true,
+          "state_changed": true,
+          "effects_delta": 3,
+          "response": {
+            "receipt_id": "rcpt-order-42-pay",
+            "amount": 100,
+            "status": "ok"
+          },
+          "error": null
+        },
+        {
+          "pattern": "sequential_replay",
+          "call": 2,
+          "delivered": true,
+          "state_changed": true,
+          "effects_delta": 3,
+          "response": {
+            "receipt_id": "rcpt-order-42-pay",
+            "amount": 100,
+            "status": "ok"
+          },
+          "error": null
+        },
+        {
+          "pattern": "concurrent_replay",
+          "call": 0,
+          "delivered": true,
+          "state_changed": true,
+          "effects_delta": 3,
+          "response": {
+            "receipt_id": "rcpt-order-42-pay",
+            "amount": 100,
+            "status": "ok"
+          },
+          "error": null
+        },
+        {
+          "pattern": "concurrent_replay",
+          "call": 1,
+          "delivered": true,
+          "state_changed": true,
+          "effects_delta": 3,
+          "response": {
+            "receipt_id": "rcpt-order-42-pay",
+            "amount": 100,
+            "status": "ok"
+          },
+          "error": null
+        },
+        {
+          "pattern": "concurrent_replay",
+          "call": 2,
+          "delivered": true,
+          "state_changed": true,
+          "effects_delta": 3,
+          "response": {
+            "receipt_id": "rcpt-order-42-pay",
+            "amount": 100,
+            "status": "ok"
+          },
+          "error": null
+        },
+        {
+          "pattern": "concurrent_replay",
+          "call": 3,
+          "delivered": true,
+          "state_changed": true,
+          "effects_delta": 3,
+          "response": {
+            "receipt_id": "rcpt-order-42-pay",
+            "amount": 100,
+            "status": "ok"
+          },
+          "error": null
+        },
+        {
+          "pattern": "concurrent_replay",
+          "call": 4,
+          "delivered": true,
+          "state_changed": true,
+          "effects_delta": 3,
+          "response": {
+            "receipt_id": "rcpt-order-42-pay",
+            "amount": 100,
+            "status": "ok"
+          },
+          "error": null
+        },
+        {
+          "pattern": "concurrent_replay",
+          "call": 5,
+          "delivered": true,
+          "state_changed": true,
+          "effects_delta": 3,
+          "response": {
+            "receipt_id": "rcpt-order-42-pay",
+            "amount": 100,
+            "status": "ok"
+          },
+          "error": null
+        },
+        {
+          "pattern": "concurrent_replay",
+          "call": 6,
+          "delivered": true,
+          "state_changed": true,
+          "effects_delta": 3,
+          "response": {
+            "receipt_id": "rcpt-order-42-pay",
+            "amount": 100,
+            "status": "ok"
+          },
+          "error": null
+        },
+        {
+          "pattern": "concurrent_replay",
+          "call": 7,
+          "delivered": true,
+          "state_changed": true,
+          "effects_delta": 3,
+          "response": {
+            "receipt_id": "rcpt-order-42-pay",
+            "amount": 100,
+            "status": "ok"
+          },
+          "error": null
+        },
+        {
+          "pattern": "timeout_retry",
+          "call": 0,
+          "delivered": false,
+          "state_changed": true,
+          "effects_delta": 3,
+          "response": {
+            "receipt_id": "rcpt-order-42-pay",
+            "amount": 100,
+            "status": "ok"
+          },
+          "error": null
+        },
+        {
+          "pattern": "timeout_retry",
+          "call": 1,
+          "delivered": false,
+          "state_changed": true,
+          "effects_delta": 3,
+          "response": {
+            "receipt_id": "rcpt-order-42-pay",
+            "amount": 100,
+            "status": "ok"
+          },
+          "error": null
+        },
+        {
+          "pattern": "timeout_retry",
+          "call": 2,
+          "delivered": true,
+          "state_changed": true,
+          "effects_delta": 3,
+          "response": {
+            "receipt_id": "rcpt-order-42-pay",
+            "amount": 100,
+            "status": "ok"
+          },
+          "error": null
+        }
+      ]
+    }
+  }
+]

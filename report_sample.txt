@@ -1,0 +1,101 @@
+========================================================================
+Idempotency report for: idempotent-payment
+========================================================================
+VERDICT: IDEMPOTENT
+
+Reasons:
+  - side effects applied exactly once across all replays: {'counter': 1, 'write': 1, 'notify': 1}
+  - all 14 calls returned an identical response
+  - state changed 1 time(s) across 14 calls
+
+Evidence summary:
+  total calls           : 14
+  calls with errors     : 0
+  distinct responses    : 1
+  state changes         : 1
+  effect counts (total) : {'counter': 1, 'write': 1, 'notify': 1}
+
+State-change trajectory:
+  pattern             call  delivered  state_changed  effects_delta response/error
+  sequential_replay   0     True       True           3             {"amount": 100, "receipt_id": "rcpt-order-42-pay", "statu...
+  sequential_replay   1     True       False          0             {"amount": 100, "receipt_id": "rcpt-order-42-pay", "statu...
+  sequential_replay   2     True       False          0             {"amount": 100, "receipt_id": "rcpt-order-42-pay", "statu...
+  concurrent_replay   0     True       False          0             {"amount": 100, "receipt_id": "rcpt-order-42-pay", "statu...
+  concurrent_replay   1     True       False          0             {"amount": 100, "receipt_id": "rcpt-order-42-pay", "statu...
+  concurrent_replay   2     True       False          0             {"amount": 100, "receipt_id": "rcpt-order-42-pay", "statu...
+  concurrent_replay   3     True       False          0             {"amount": 100, "receipt_id": "rcpt-order-42-pay", "statu...
+  concurrent_replay   4     True       False          0             {"amount": 100, "receipt_id": "rcpt-order-42-pay", "statu...
+  concurrent_replay   5     True       False          0             {"amount": 100, "receipt_id": "rcpt-order-42-pay", "statu...
+  concurrent_replay   6     True       False          0             {"amount": 100, "receipt_id": "rcpt-order-42-pay", "statu...
+  concurrent_replay   7     True       False          0             {"amount": 100, "receipt_id": "rcpt-order-42-pay", "statu...
+  timeout_retry       0     False      False          0             {"amount": 100, "receipt_id": "rcpt-order-42-pay", "statu...
+  timeout_retry       1     False      False          0             {"amount": 100, "receipt_id": "rcpt-order-42-pay", "statu...
+  timeout_retry       2     True       False          0             {"amount": 100, "receipt_id": "rcpt-order-42-pay", "statu...
+
+========================================================================
+Idempotency report for: non-idempotent-payment
+========================================================================
+VERDICT: NOT_IDEMPOTENT
+
+Reasons:
+  - side effects repeated for one logical request: {'counter': 14, 'write': 14, 'notify': 14}
+  - responses diverged (14 distinct values)
+  - state kept changing (14 changes across 14 calls)
+
+Evidence summary:
+  total calls           : 14
+  calls with errors     : 0
+  distinct responses    : 14
+  state changes         : 14
+  effect counts (total) : {'counter': 14, 'write': 14, 'notify': 14}
+
+State-change trajectory:
+  pattern             call  delivered  state_changed  effects_delta response/error
+  sequential_replay   0     True       True           3             {"amount": 100, "receipt_id": "rcpt-1", "status": "ok"}
+  sequential_replay   1     True       True           3             {"amount": 100, "receipt_id": "rcpt-2", "status": "ok"}
+  sequential_replay   2     True       True           3             {"amount": 100, "receipt_id": "rcpt-3", "status": "ok"}
+  concurrent_replay   0     True       True           3             {"amount": 100, "receipt_id": "rcpt-5", "status": "ok"}
+  concurrent_replay   1     True       True           3             {"amount": 100, "receipt_id": "rcpt-6", "status": "ok"}
+  concurrent_replay   2     True       True           3             {"amount": 100, "receipt_id": "rcpt-7", "status": "ok"}
+  concurrent_replay   3     True       True           3             {"amount": 100, "receipt_id": "rcpt-8", "status": "ok"}
+  concurrent_replay   4     True       True           3             {"amount": 100, "receipt_id": "rcpt-9", "status": "ok"}
+  concurrent_replay   5     True       True           3             {"amount": 100, "receipt_id": "rcpt-10", "status": "ok"}
+  concurrent_replay   6     True       True           3             {"amount": 100, "receipt_id": "rcpt-11", "status": "ok"}
+  concurrent_replay   7     True       True           3             {"amount": 100, "receipt_id": "rcpt-4", "status": "ok"}
+  timeout_retry       0     False      True           3             {"amount": 100, "receipt_id": "rcpt-12", "status": "ok"}
+  timeout_retry       1     False      True           3             {"amount": 100, "receipt_id": "rcpt-13", "status": "ok"}
+  timeout_retry       2     True       True           3             {"amount": 100, "receipt_id": "rcpt-14", "status": "ok"}
+
+========================================================================
+Idempotency report for: fake-idempotent-payment
+========================================================================
+VERDICT: RETURN_CONSISTENT_BUT_EFFECTS_REPEATED
+
+Reasons:
+  - side effects repeated for one logical request: {'counter': 14, 'write': 14, 'notify': 14}
+  - all 14 calls returned an identical response
+  - state kept changing (14 changes across 14 calls)
+
+Evidence summary:
+  total calls           : 14
+  calls with errors     : 0
+  distinct responses    : 1
+  state changes         : 14
+  effect counts (total) : {'counter': 14, 'write': 14, 'notify': 14}
+
+State-change trajectory:
+  pattern             call  delivered  state_changed  effects_delta response/error
+  sequential_replay   0     True       True           3             {"amount": 100, "receipt_id": "rcpt-order-42-pay", "statu...
+  sequential_replay   1     True       True           3             {"amount": 100, "receipt_id": "rcpt-order-42-pay", "statu...
+  sequential_replay   2     True       True           3             {"amount": 100, "receipt_id": "rcpt-order-42-pay", "statu...
+  concurrent_replay   0     True       True           3             {"amount": 100, "receipt_id": "rcpt-order-42-pay", "statu...
+  concurrent_replay   1     True       True           3             {"amount": 100, "receipt_id": "rcpt-order-42-pay", "statu...
+  concurrent_replay   2     True       True           3             {"amount": 100, "receipt_id": "rcpt-order-42-pay", "statu...
+  concurrent_replay   3     True       True           3             {"amount": 100, "receipt_id": "rcpt-order-42-pay", "statu...
+  concurrent_replay   4     True       True           3             {"amount": 100, "receipt_id": "rcpt-order-42-pay", "statu...
+  concurrent_replay   5     True       True           3             {"amount": 100, "receipt_id": "rcpt-order-42-pay", "statu...
+  concurrent_replay   6     True       True           3             {"amount": 100, "receipt_id": "rcpt-order-42-pay", "statu...
+  concurrent_replay   7     True       True           3             {"amount": 100, "receipt_id": "rcpt-order-42-pay", "statu...
+  timeout_retry       0     False      True           3             {"amount": 100, "receipt_id": "rcpt-order-42-pay", "statu...
+  timeout_retry       1     False      True           3             {"amount": 100, "receipt_id": "rcpt-order-42-pay", "statu...
+  timeout_retry       2     True       True           3             {"amount": 100, "receipt_id": "rcpt-order-42-pay", "statu...
