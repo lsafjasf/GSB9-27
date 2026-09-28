@@ -4,6 +4,8 @@
 - DataRegistry 为每份底层数据维护单调递增版本号与最后变更时间。
 - ReportCache 的每个缓存条目记录构建时的依赖版本快照；
   读取时逐依赖比对版本，只失效受影响的报表，绝不全量清空。
+- 依赖版本在重算开始前快照；写回时在同一临界区复核版本，
+  重算期间若有底层写入则丢弃本次结果并重算，杜绝“新版本戳封存旧值”。
 - 同一报表的并发未命中通过 single-flight 合并为一次重算。
 - 重算失败时保留并返回旧值（stale fallback），不放大故障。
 - 时间通过 time_fn 注入，测试可用假时钟。
@@ -250,27 +252,37 @@ class ReportCache:
         return self._time_fn() - failed_at < self._failure_cooldown
 
     def _recompute(self, name):
-        with self._lock:
-            compute_fn = self._computes[name]
-            old_entry = self._entries.get(name)
-        if old_entry is not None:
-            since = self._stale_since(old_entry, name)
-        else:
-            since = None
-        self.metrics.record_recompute()
-        try:
-            value = compute_fn(self._registry)
-        except Exception:
-            self.metrics.record_recompute_failure()
-            raise
-        now = self._time_fn()
-        versions = {dep: self._registry.version(dep) for dep in self._deps[name]}
-        with self._lock:
-            self._entries[name] = _Entry(value, versions, now)
-            self._failed.pop(name, None)
-        if since is not None:
-            self.metrics.record_refresh_lag(now - since)
-        return value
+        deps = self._deps[name]
+        while True:
+            with self._lock:
+                compute_fn = self._computes[name]
+                old_entry = self._entries.get(name)
+                # 在重算开始前快照依赖版本：compute 的结果只对该快照负责。
+                versions = {dep: self._registry.version(dep) for dep in deps}
+            if old_entry is not None:
+                since = self._stale_since(old_entry, name)
+            else:
+                since = None
+            self.metrics.record_recompute()
+            try:
+                value = compute_fn(self._registry)
+            except Exception:
+                self.metrics.record_recompute_failure()
+                raise
+            now = self._time_fn()
+            # 版本复核与写回必须在同一临界区：要么无写入、原子封存，
+            # 要么检测到漂移、丢弃结果并重算，不会留下“新戳号 + 旧值”。
+            with self._lock:
+                moved = any(
+                    self._registry.version(dep) != versions[dep] for dep in deps
+                )
+                if not moved:
+                    self._entries[name] = _Entry(value, versions, now)
+                    self._failed.pop(name, None)
+            if not moved:
+                if since is not None:
+                    self.metrics.record_refresh_lag(now - since)
+                return value
 
     def _record_stale_serve(self, entry, name):
         since = self._stale_since(entry, name)

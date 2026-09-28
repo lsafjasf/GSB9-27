@@ -243,6 +243,54 @@ class ConcurrencyTest(unittest.TestCase):
         self.assertEqual(results, [1] * 8, "所有并发读者都应拿到旧值而非异常")
         self.assertEqual(cache.metrics.snapshot()["recompute_failures"], 1)
 
+    def test_write_during_recompute_does_not_seal_stale_value(self):
+        """低速重算期间落进来的底层写入，不得让条目被新版本号封存旧值。"""
+        registry = DataRegistry()
+        registry.set("orders", [1, 2, 3])
+        cache = ReportCache(registry)
+        compute_started = threading.Event()
+        release_compute = threading.Event()
+        release_compute.set()  # 首次构建立即放行
+        compute_calls = []
+
+        def compute(reg):
+            # 模拟低速查询：进入重算瞬间读取的数据即为本次结果的依据
+            snapshot = sum(reg.get("orders"))
+            compute_calls.append(1)
+            compute_started.set()
+            release_compute.wait(timeout=5)
+            return snapshot
+
+        cache.register("r", ["orders"], compute)
+        self.assertEqual(cache.get("r"), 6)
+
+        # 让下一次重算阻塞在 compute 内部，制造“低速重算”窗口
+        release_compute.clear()
+        done = threading.Event()
+        holder = {}
+
+        def reader():
+            holder["value"] = cache.get("r")
+            done.set()
+
+        registry.set("orders", [10])  # 使缓存陈旧，触发重算
+        t = threading.Thread(target=reader)
+        t.start()
+        self.assertTrue(compute_started.wait(timeout=5))
+        # 重算已按 [10] 取值但尚未结束，此时底层又写入 [100]
+        time.sleep(0.1)
+        registry.set("orders", [100])
+        release_compute.set()
+        self.assertTrue(done.wait(timeout=5))
+
+        # 发起重算的读者最终拿到的必须是新数据，而不是被封存的旧结果
+        self.assertEqual(holder["value"], 100)
+        # 之后的每次读取都必须命中 [100]，陈旧结果不得长期存活
+        for _ in range(5):
+            self.assertEqual(cache.get("r"), 100)
+        self.assertEqual(len(compute_calls), 3,
+                         "首次构建 + 被作废的中途重算 + 按最新版本的重新重算")
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)
