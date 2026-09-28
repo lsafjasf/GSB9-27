@@ -108,6 +108,19 @@ class _Ctx:
     def __init__(self, clock):
         self.clock = clock
         self.events = []
+        # Per-run failure counters, keyed by Step identity. A fresh _Ctx is
+        # created for every run, so each run gets independent statistics
+        # state and re-running the same plan cannot leak attempts across
+        # runs (the Step spec objects stay immutable).
+        self._fail_counts = {}
+
+    def should_fail(self, step):
+        """True while this run has not yet used up step.fail_times."""
+        used = self._fail_counts.get(id(step), 0)
+        if used < step.fail_times:
+            self._fail_counts[id(step)] = used + 1
+            return True
+        return False
 
     def record(self, path, status, start, end):
         self.events.append(Event(path, status, start, end))
@@ -143,7 +156,7 @@ def evaluate(node, budget, ctx, path, policy):
         if run_for < node.duration:
             ctx.record(path, TIMEOUT, start, end)
             return TIMEOUT
-        if node._should_fail():
+        if ctx.should_fail(node):
             ctx.record(path, FAILED, start, end)
             return FAILED
         ctx.record(path, OK, start, end)

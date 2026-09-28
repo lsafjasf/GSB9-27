@@ -154,6 +154,48 @@ class TestLegacyBug(unittest.TestCase):
         self.assertLessEqual(rep.elapsed, rep.budget)
 
 
+class TestRerunningSamePlan(unittest.TestCase):
+    """Failure statistics are per-run state, not per-Step-object: running the
+    SAME plan twice in a row must not let the first run consume the second
+    run's failures."""
+
+    @staticmethod
+    def build():
+        return Seq("pipeline",
+                   Step("fetch", 80),
+                   Retry("retry", Step("flaky", 60, fail_times=2), attempts=3),
+                   Par("fanout", Step("slow", 90), Step("fast", 70)))
+
+    def test_same_plan_twice_gives_identical_results(self):
+        pipe = self.build()
+        _, first = run_pipeline(pipe, 100)
+        _, second = run_pipeline(pipe, 100)  # same plan object, run again
+        self.assertEqual(first.status, second.status)
+        self.assertEqual(first.elapsed, second.elapsed)
+        self.assertEqual(first.events, second.events)
+        self.assertEqual(second.status, TIMEOUT)
+        self.assertEqual(second.elapsed, 100)
+
+    def test_same_plan_twice_legacy_engine(self):
+        pipe = self.build()
+        _, first = run_legacy(pipe, 100)
+        _, second = run_legacy(pipe, 100)
+        self.assertEqual(first.status, second.status)
+        self.assertEqual(first.elapsed, second.elapsed)
+        self.assertEqual(first.events, second.events)
+        self.assertEqual(second.elapsed, 350)
+
+    def test_alternating_engines_on_same_plan(self):
+        # bench.py runs legacy then fixed on one plan; order must not matter.
+        pipe = self.build()
+        _, legacy = run_legacy(pipe, 100)
+        _, fixed = run_pipeline(pipe, 100)
+        _, fixed_again = run_pipeline(pipe, 100)
+        self.assertEqual(fixed.events, fixed_again.events)
+        self.assertEqual(legacy.elapsed, 350)
+        self.assertEqual(fixed.elapsed, 100)
+
+
 # ------------------------------------------------------------ random pipelines
 
 def random_pipeline(rng, depth=0, _counter=[0]):

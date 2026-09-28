@@ -3,20 +3,18 @@
 
 class Step:
     """Leaf unit of work. `duration` is how long it needs on the clock.
-    `fail_times` makes the first N attempts fail (to exercise retries)."""
+    `fail_times` makes the first N attempts fail (to exercise retries).
+
+    The spec is immutable: the per-run "attempts so far" counter lives in
+    the run context (see `_Ctx` in engine.py), never on the Step itself,
+    so the same plan can be run any number of times with identical
+    results."""
 
     def __init__(self, name, duration, fail_times=0):
         assert duration >= 0
         self.name = name
         self.duration = duration
         self.fail_times = fail_times
-        self._failures_left = fail_times
-
-    def _should_fail(self):
-        if self._failures_left > 0:
-            self._failures_left -= 1
-            return True
-        return False
 
 
 class Seq:
