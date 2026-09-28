@@ -21,7 +21,9 @@
 | 场景 | 规则 | 实现 |
 |---|---|---|
 | 条件变量等待 | `Condition.wait()` 期间线程已释放底层锁，语义上是"等通知"而非"等锁"，不登记等待边；被唤醒后对底层锁的重新获取同样不登记 | 线程进入 wait 时标记 `cond_waiter` 并清除其持有者记录，期间一切边登记被抑制（`enter_cond_wait` / `exit_cond_wait`） |
-| 可重入锁 | 同一线程重复 acquire 自己持有的 RLock 不会阻塞，不产生等待边，也绝不产生自环 | `TrackedRLock` 识别 `_owner == 当前线程` 直接放行；图中 waiter == holder 的边一律不登记 |
+| 可重入锁 | 同一线程重复 acquire 自己持有的 RLock 不会阻塞，不产生等待边，也绝不产生自环 | `TrackedRLock` 识别 `_owner == 当前线程` 直接放行，根本不向等待图登记 |
+
+注意：**"同线程重复获取绝不产生自环"只对 RLock 成立。** 普通 `Lock` 不可重入，持锁线程在未释放时再次以阻塞方式 `acquire()` 同一把锁会永久等待自己释放——这是一个 `waiter == holder` 的自环（自锁 / self-deadlock），属于真实死锁，检测库会登记这条自环边并报告为单线程死锁环。因此等待图允许 `waiter == holder` 的边，环枚举也把长度为 1 的自环计入。
 | 超时锁 | `acquire(timeout=...)` 的等待边标记 `expires_at`，**整条边不参与成环**——它迟早自行断开，含超时边的"环"必然不是死锁 | 环检测快照直接过滤 `has_timeout` 的边 |
 | 非阻塞获取 | `acquire(blocking=False)` 不存在等待，不登记边 | 立即返回，失败也不留边 |
 
@@ -30,7 +32,7 @@
 ## 文件
 
 - `deadlock_detector.py` — 库（`TrackedLock` / `TrackedRLock` / `TrackedCondition` / `detector`），`__main__` 内置两线程死锁演示
-- `test_deadlock_detector.py` — 构造场景自测（7 个用例）
+- `test_deadlock_detector.py` — 构造场景自测（8 个用例）
 
 ## 运行命令
 
@@ -71,6 +73,7 @@ detector.start_monitor(interval=1.0)
 | `test_condition_wait_is_not_deadlock` | 条件变量等待 + 唤醒后重取锁被阻塞 → 均不误判 |
 | `test_timeout_lock_breaks_cycle` | 环上一条边是超时等待 → 不报死锁，超时后各方正常推进 |
 | `test_reentrant_lock_no_self_cycle` | 同线程三重 acquire RLock → 不产生自环 |
+| `test_plain_lock_self_deadlock_detected` | 同一线程持锁后再次阻塞 acquire 普通 Lock → 检出自环自锁 |
 | `test_multiple_cycles_reported_and_sorted` | 两个独立死锁环 → 分别报告、互不串线、按阻塞时长降序 |
 
 ## 已知边界

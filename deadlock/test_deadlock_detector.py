@@ -52,20 +52,26 @@ class DeadlockDetectionTest(unittest.TestCase):
         errors = []
 
         def t1():
-            lock_a.acquire()
-            a_held.set()
-            b_held.wait(5)
-            lock_b.acquire()   # 等 T2 持有的 B
-            lock_b.release()
-            quiet_release(lock_a)
+            try:
+                lock_a.acquire()
+                a_held.set()
+                b_held.wait(5)
+                lock_b.acquire()   # 等 T2 持有的 B
+                lock_b.release()
+                quiet_release(lock_a)
+            except Exception as exc:  # 工作线程异常必须冒泡为测试失败
+                errors.append(("t1", repr(exc)))
 
         def t2():
-            lock_b.acquire()
-            b_held.set()
-            a_held.wait(5)
-            lock_a.acquire()   # 等 T1 持有的 A
-            lock_a.release()
-            quiet_release(lock_b)
+            try:
+                lock_b.acquire()
+                b_held.set()
+                a_held.wait(5)
+                lock_a.acquire()   # 等 T1 持有的 A
+                lock_a.release()
+                quiet_release(lock_b)
+            except Exception as exc:
+                errors.append(("t2", repr(exc)))
 
         th1 = threading.Thread(target=t1, name="worker-1")
         th2 = threading.Thread(target=t2, name="worker-2")
@@ -98,7 +104,7 @@ class DeadlockDetectionTest(unittest.TestCase):
             th1.join(5)
             th2.join(5)
         self.assertFalse(th1.is_alive() or th2.is_alive())
-        self.assertEqual(errors, [])
+        self.assertEqual(errors, [], "两个工作线程都不应抛出异常")
 
     # ---------- 场景 2: 三线程死锁 -> 必须检出完整三环 ----------
 
@@ -205,9 +211,12 @@ class DeadlockDetectionTest(unittest.TestCase):
         th1.start()
         th2.start()
         # 窗口 1: consumer 在 cond.wait 中, producer 尚未拿锁
-        self.assertTrue(wait_until(
-            lambda: "consumer" in
-            {threading.current_thread().name for _ in [0]} or True))
+        def consumer_in_cond_wait():
+            with detector._mu:
+                return th1.ident in detector._cond_waiters
+
+        self.assertTrue(wait_until(consumer_in_cond_wait),
+                        "consumer 必须确实进入 Condition.wait 状态")
         time.sleep(0.2)
         self.assertEqual(detector.detect(), [],
                          "条件变量等待期间不应报死锁")
@@ -275,6 +284,44 @@ class DeadlockDetectionTest(unittest.TestCase):
         rlock.release()
         rlock.release()
         rlock.release()
+
+    # ---------- 场景 8: 普通锁同线程二次获取 -> 自锁, 必须检出自环 ----------
+
+    def test_plain_lock_self_deadlock_detected(self):
+        lock = TrackedLock("self-lock")
+        acquired_once = threading.Event()
+
+        def worker():
+            lock.acquire()                  # 首次获取成功
+            acquired_once.set()
+            lock.acquire()                  # Lock 不可重入: 等待自己 -> 自锁
+            lock.release()
+
+        th = threading.Thread(target=worker, name="self-locker")
+        th.start()
+        try:
+            self.assertTrue(acquired_once.wait(5))
+            # 自环等待边 (waiter == holder) 必须被登记
+            self.assertTrue(wait_until(lambda: len(detector._snapshot()[0]) == 1))
+            time.sleep(0.2)  # 让阻塞时长可观测
+            reports = detector.detect()
+            self.assertEqual(len(reports), 1,
+                             "同线程二次获取不可重入 Lock 应检出自锁")
+            report = reports[0]
+            self.assertEqual(report.thread_names, ["self-locker"])
+            waiter_name, lock_name, holder_name, waited = report.waits[0]
+            self.assertEqual(waiter_name, "self-locker")
+            self.assertEqual(holder_name, "self-locker",
+                             "自锁环的等待者与持有者应为同一线程")
+            self.assertEqual(lock_name, "self-lock")
+            self.assertGreater(waited, 0.1)
+            self.assertEqual(len(report.holds), 1)
+            print("\n" + report.format())
+        finally:
+            # worker 永远等不到自己释放, 由主线程代为释放以解开自锁
+            lock.release()
+            th.join(5)
+        self.assertFalse(th.is_alive())
 
     # ---------- 场景 7: 多个独立等待环 -> 分别报告并按阻塞时长排序 ----------
 

@@ -11,6 +11,9 @@ deadlock_detector - 纯标准库的进程内死锁检测库.
        等待期间不登记任何等待边, 唤醒时对底层锁的重新获取也不登记.
     2. 可重入锁 (RLock): 同一线程重复 acquire 自己持有的锁不产生等待边,
        也绝不产生自环.
+       注意: 该规则只适用于 RLock. 对不可重入的普通 Lock, 同一线程在
+       未释放时再次 acquire 会自锁 (self-deadlock): 这是真实的自等待死锁,
+       必须登记 waiter == holder 的自环边并检出.
     3. 超时锁 (acquire(timeout=...)): 带超时的等待边会被标记 expires_at,
        环检测时整条边被忽略 -- 它迟早会自行断开, 不可能构成真正的死锁环.
     4. 非阻塞 acquire(blocking=False): 不存在等待, 不登记边.
@@ -132,8 +135,10 @@ class DeadlockDetector:
             self._note_thread(waiter)
             if waiter in self._cond_waiters:
                 return  # 排除规则 1: 条件变量等待期间不登记
-            if waiter == holder:
-                return  # 排除规则 2: 自等待 (可重入) 不登记
+            # waiter == holder 的自环不能一刀切忽略:
+            # RLock 的同线程重入在 TrackedRLock 中已提前放行, 根本不会走到这里;
+            # 能走到这里的自环是普通 Lock 上 "持锁线程再次 acquire 自己" 的
+            # 自锁, 属于真实死锁, 必须登记并参与成环检测.
             self._edges[waiter] = _Edge(waiter, holder, lock_key, lock_name,
                                         time.monotonic(), expires_at)
 
@@ -194,8 +199,9 @@ class DeadlockDetector:
                     if index.get(nxt, -1) < index[start]:
                         continue  # 只从环上最小编号节点出发, 去重
                     if nxt == start:
-                        if len(path) >= 2:
-                            cycles.append(list(path_edges) + [e])
+                        # path 长度为 1 时是 waiter == holder 的自环 (普通
+                        # Lock 自锁), 同样是真实死锁环, 必须报告.
+                        cycles.append(list(path_edges) + [e])
                         continue
                     if nxt in on_path:
                         continue
@@ -287,7 +293,9 @@ class TrackedLock:
             return ok
         has_timeout = timeout is not None and timeout >= 0
         holder = detector.holder_of(self._key)
-        if holder is not None and holder != me:
+        if holder is not None:
+            # 普通 Lock 不可重入: holder == me 时再次阻塞式 acquire 是
+            # 自锁 (self-deadlock), 登记自环边让检测器能发现它.
             expires = time.monotonic() + timeout if has_timeout else None
             detector.add_wait_edge(me, holder, self._key, self.name, expires)
         try:
