@@ -1,0 +1,39 @@
+镜像: myapp:1.0
+层数: 6   最终文件数: 9   镜像总大小: 108.6 MiB (113921300 B)
+
+== 分层归因（净增 = 该层对最终镜像的实际贡献）==
+层     ID                                 逻辑体积           净增体积            被遮蔽
+0     sha256:base                    30.7 MiB       16.9 MiB       13.7 MiB
+1     sha256:deps                    91.6 MiB       91.6 MiB            0 B
+2     sha256:app-v1                  46.9 KiB            0 B       46.9 KiB
+3     sha256:app-v2-hotfix           47.9 KiB        3.0 KiB       44.9 KiB
+4     sha256:app-v3-empty-laye            0 B            0 B            0 B
+5     sha256:app-v4-final           163.1 KiB      163.1 KiB            0 B
+
+== 自洽校验 ==
+  [OK] sum_net_equals_total
+  [OK] total_equals_filetree_sum
+  [OK] logical_equals_net_plus_wasted
+  结论: 各层净增之和 == 镜像总大小 == 113921300 B
+
+== 体积最大的路径 ==
+      45.8 MiB  /usr/lib/python3/site-packages/numpy/core.so                 (层 1)
+      45.8 MiB  /opt/vendor/numpy/core.so                                    (层 1)
+      14.7 MiB  /usr/bin/python3                                             (层 0)
+       2.0 MiB  /usr/lib/libc.so                                             (层 0)
+     244.1 KiB  /etc/ssl/certs.pem                                           (层 0)
+     117.2 KiB  /app/static/logo.png                                         (层 5)
+      45.9 KiB  /app/server.py                                               (层 5)
+       3.0 KiB  /app/config.yaml                                             (层 3)
+       1.2 KiB  /app/requirements.txt                                        (层 1)
+
+== 可优化项 ==
+  预计可回收: 13.8 MiB (14494000 B)
+  -- 同路径多层重复（旧版本被覆盖）--
+         88.9 KiB  /app/server.py                                           (2 个废弃版本)
+          2.9 KiB  /app/config.yaml                                         (1 个废弃版本)
+  -- 已删除但仍占下层体积 --
+          7.9 MiB  /tmp/build-cache/obj1.o                                  (1 个废弃版本)
+          5.8 MiB  /tmp/build-cache/obj2.o                                  (1 个废弃版本)
+  -- 跨文件内容重复（按 digest）--
+         45.8 MiB  sha256:np1  x2 份: /opt/vendor/numpy/core.so, /usr/lib/python3/site-packages/numpy/core.so

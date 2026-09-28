@@ -1,0 +1,50 @@
+{
+  "image": "myapp:1.0",
+  "layers": [
+    {
+      "id": "sha256:base",
+      "files": [
+        {"path": "/usr/bin/python3", "size": 15400000},
+        {"path": "/usr/lib/libc.so", "size": 2100000},
+        {"path": "/etc/ssl/certs.pem", "size": 250000},
+        {"path": "/tmp/build-cache/obj1.o", "size": 8300000},
+        {"path": "/tmp/build-cache/obj2.o", "size": 6100000}
+      ]
+    },
+    {
+      "id": "sha256:deps",
+      "files": [
+        {"path": "/app/requirements.txt", "size": 1200},
+        {"path": "/usr/lib/python3/site-packages/numpy/core.so", "size": 48000000, "digest": "sha256:np1"},
+        {"path": "/opt/vendor/numpy/core.so", "size": 48000000, "digest": "sha256:np1"},
+        {"path": "/tmp/build-cache/obj1.o", "type": "whiteout"},
+        {"path": "/tmp/build-cache", "type": "opaque"}
+      ]
+    },
+    {
+      "id": "sha256:app-v1",
+      "files": [
+        {"path": "/app/server.py", "size": 45000},
+        {"path": "/app/config.yaml", "size": 3000}
+      ]
+    },
+    {
+      "id": "sha256:app-v2-hotfix",
+      "files": [
+        {"path": "/app/server.py", "size": 46000},
+        {"path": "/app/config.yaml", "size": 3100}
+      ]
+    },
+    {
+      "id": "sha256:app-v3-empty-layer",
+      "files": []
+    },
+    {
+      "id": "sha256:app-v4-final",
+      "files": [
+        {"path": "/app/server.py", "size": 47000},
+        {"path": "/app/static/logo.png", "size": 120000}
+      ]
+    }
+  ]
+}
