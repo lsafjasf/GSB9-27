@@ -18,9 +18,14 @@
 错误定位
 --------
 所有 :class:`ParserError` 子类都携带：
-- ``record_index``：出错记录是第几条（0 起，只数成功产出的记录之前的序号，
+- ``record_index``：出错记录是第几条（0 起，只数非空记录；空行跳过不计数，
   即“正在解析的第 N 条”，N 从 0 开始）；
-- ``byte_offset``：该记录第一个字节在整个输入流中的绝对偏移（0 起）。
+- ``line_number``：出错位置所在物理行号（1 起，空行也占行号，便于定位编辑器行）；
+- ``byte_offset``：**出错字节本身**在整个输入流中的绝对偏移（0 起），
+  不是记录起始偏移：JSON 错误按 ``JSONDecodeError`` 的字符位置换算为
+  UTF-8 字节偏移（多字节字符与列号不再一一对应），UTF-8 解码错误直接取
+  ``UnicodeDecodeError.start``；超长记录取第一个放不下的字节，
+  末尾截断取输入结束位置（EOF 边界）。
 """
 
 from __future__ import annotations
@@ -33,11 +38,13 @@ _SKIP = object()
 
 
 class ParserError(Exception):
-    """解析错误基类，携带 record_index 与 byte_offset。"""
+    """解析错误基类，携带 record_index、line_number 与 byte_offset。"""
 
-    def __init__(self, message: str, record_index: int, byte_offset: int):
+    def __init__(self, message: str, record_index: int,
+                 line_number: int, byte_offset: int):
         super().__init__(message)
         self.record_index = record_index
+        self.line_number = line_number
         self.byte_offset = byte_offset
 
 
@@ -76,6 +83,7 @@ class StreamingParser:
         self._buf = bytearray()
         self._consumed = 0   # 已完整消费的字节数 == 缓冲起始的绝对偏移
         self._records = 0    # 已成功产出的记录数 == 下一条记录的序号
+        self._line = 1       # 当前正在累积的物理行号（1 起，空行也计数）
         self._closed = False
 
     # -- 只读状态 -----------------------------------------------------
@@ -115,9 +123,10 @@ class StreamingParser:
                 # 整块都是不完整记录的尾部：只有放得下才进缓冲
                 if len(self._buf) + (end - pos) > self._max:
                     raise RecordTooLargeError(
-                        f"record #{self._records} exceeds max_record_size="
-                        f"{self._max} (record starts at byte {self._consumed})",
-                        self._records, self._consumed,
+                        f"record #{self._records} (line {self._line}) exceeds "
+                        f"max_record_size={self._max}: first overflow byte at "
+                        f"byte {self._consumed + self._max}",
+                        self._records, self._line, self._consumed + self._max,
                     )
                 self._buf += chunk[pos:]
                 pos = end
@@ -130,13 +139,16 @@ class StreamingParser:
                     line = seg
                 if len(line) > self._max:
                     raise RecordTooLargeError(
-                        f"record #{self._records} exceeds max_record_size="
-                        f"{self._max} (record starts at byte {self._consumed})",
-                        self._records, self._consumed,
+                        f"record #{self._records} (line {self._line}) exceeds "
+                        f"max_record_size={self._max}: first overflow byte at "
+                        f"byte {self._consumed + self._max}",
+                        self._records, self._line, self._consumed + self._max,
                     )
                 start = self._consumed
                 self._consumed += len(line) + 1
-                record = self._parse_line(line, start)
+                line_no = self._line
+                record = self._parse_line(line, start, line_no)
+                self._line += 1
                 if record is not _SKIP:
                     out.append(record)
                     self._records += 1
@@ -150,10 +162,12 @@ class StreamingParser:
         self._closed = True
         if self._buf:
             leftover = len(self._buf)
+            end_offset = self._consumed + leftover
             raise TruncatedInputError(
-                f"truncated record #{self._records}: {leftover} leftover "
-                f"byte(s) at byte {self._consumed} (input ended mid-record)",
-                self._records, self._consumed,
+                f"truncated record #{self._records} (line {self._line}): "
+                f"{leftover} leftover byte(s) starting at byte "
+                f"{self._consumed}, input ended at byte {end_offset}",
+                self._records, self._line, end_offset,
             )
 
     def abort(self) -> None:
@@ -163,7 +177,7 @@ class StreamingParser:
 
     # -- 内部 ---------------------------------------------------------
 
-    def _parse_line(self, line: bytes, start: int):
+    def _parse_line(self, line: bytes, start: int, line_no: int):
         if line.endswith(b"\r"):
             line = line[:-1]
         if not line:
@@ -171,17 +185,23 @@ class StreamingParser:
         try:
             text = line.decode("utf-8")
         except UnicodeDecodeError as exc:
+            error_offset = start + exc.start
             raise ParseError(
-                f"record #{self._records}: invalid UTF-8 at byte {start}: {exc}",
-                self._records, start,
+                f"record #{self._records} (line {line_no}): invalid UTF-8 at "
+                f"byte {error_offset}: {exc}",
+                self._records, line_no, error_offset,
             ) from exc
         try:
             return json.loads(text)
         except json.JSONDecodeError as exc:
+            # exc.pos / exc.colno 是字符位置（0/1 起）；多字节字符与列号
+            # 不再一一对应，必须换算成出错字节在原始字节流中的偏移。
+            byte_pos_in_record = len(text[:exc.pos].encode("utf-8"))
+            error_offset = start + byte_pos_in_record
             raise ParseError(
-                f"record #{self._records}: invalid JSON at byte {start} "
-                f"(line col {exc.colno}): {exc.msg}",
-                self._records, start,
+                f"record #{self._records} (line {line_no}): invalid JSON at "
+                f"byte {error_offset} (col {exc.colno}): {exc.msg}",
+                self._records, line_no, error_offset,
             ) from exc
 
 

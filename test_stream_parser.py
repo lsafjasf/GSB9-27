@@ -100,7 +100,9 @@ class BoundaryTest(unittest.TestCase):
             parser.feed(data[10:])
         err = ctx.exception
         self.assertEqual(1, err.record_index)      # 第 2 条记录（0 起）
-        self.assertEqual(10, err.byte_offset)      # 该记录起始字节
+        self.assertEqual(2, err.line_number)       # 物理第 2 行
+        # 第一个放不下的字节：记录从 10 开始，上限 1024 -> 字节 1034
+        self.assertEqual(10 + 1024, err.byte_offset)
         self.assertLessEqual(parser.buffered_bytes, 1024)  # 缓冲有界
 
     def test_oversized_record_arrives_in_one_chunk(self):
@@ -119,7 +121,8 @@ class BoundaryTest(unittest.TestCase):
             parser.finish()
         err = ctx.exception
         self.assertEqual(2, err.record_index)
-        self.assertEqual(data.index(b'{"c"'), err.byte_offset)
+        self.assertEqual(3, err.line_number)
+        self.assertEqual(len(data), err.byte_offset)  # EOF 边界字节偏移
 
     def test_abort_discards_residual(self):
         parser = StreamingParser()
@@ -139,7 +142,7 @@ class BoundaryTest(unittest.TestCase):
 
 
 class ErrorLocationTest(unittest.TestCase):
-    """错误必须报出第几条记录、第几个字节。"""
+    """错误必须报出第几条记录、第几行、第几个字节（出错字节本身）。"""
 
     def test_json_error_position(self):
         good1 = b'{"a": 1}\n'
@@ -150,7 +153,9 @@ class ErrorLocationTest(unittest.TestCase):
             parse_all(data)
         err = ctx.exception
         self.assertEqual(2, err.record_index)
-        self.assertEqual(len(good1) + len(good2), err.byte_offset)
+        self.assertEqual(3, err.line_number)
+        # JSONDecodeError.pos=6（'o' 的字符位置），必须落到出错字节本身
+        self.assertEqual(len(good1) + len(good2) + 6, err.byte_offset)
 
     def test_json_error_position_with_chunking(self):
         data = b'{"a": 1}\nBAD\n{"c": 3}\n'
@@ -158,15 +163,65 @@ class ErrorLocationTest(unittest.TestCase):
         with self.assertRaises(ParseError) as ctx:
             for i in range(0, len(data), 3):
                 parser.feed(data[i:i + 3])
-        self.assertEqual(1, ctx.exception.record_index)
-        self.assertEqual(9, ctx.exception.byte_offset)
+        err = ctx.exception
+        self.assertEqual(1, err.record_index)
+        self.assertEqual(2, err.line_number)
+        self.assertEqual(9, err.byte_offset)
 
     def test_invalid_utf8_position(self):
         data = b'{"a": 1}\n\xff\xfe\n'
         with self.assertRaises(ParseError) as ctx:
             parse_all(data)
-        self.assertEqual(1, ctx.exception.record_index)
+        err = ctx.exception
+        self.assertEqual(1, err.record_index)
+        self.assertEqual(2, err.line_number)
         self.assertEqual(9, ctx.exception.byte_offset)
+
+    def test_json_error_byte_offset_with_multibyte_chars(self):
+        # 列号按字符计、字节偏移按字节计：错误字节不能再由列号直接换算。
+        prefix = b'{"a": 1}\n'                       # 9 字节，第 1 行
+        line_text = '{"名": "值", "x": BAD}'         # 错误在字符 'B'
+        line = line_text.encode("utf-8")
+        data = prefix + line + b"\n"
+        bad_char_index = line_text.index("B")        # JSONDecodeError.pos
+        expected_offset = len(prefix) + len(line_text[:bad_char_index]
+                                          .encode("utf-8"))
+        # 直接验证预期值本身精确（而非由实现的换算公式反推）：
+        # 错误前有 14 个 ASCII 字节 + 2 个 3 字节字符（名、值）= 20 字节
+        self.assertEqual(29, expected_offset)
+        self.assertEqual(b"BAD",
+                         data[expected_offset:expected_offset + 3])
+        with self.assertRaises(ParseError) as ctx:
+            parse_all(data)
+        err = ctx.exception
+        self.assertEqual(1, err.record_index)
+        self.assertEqual(2, err.line_number)
+        self.assertEqual(expected_offset, err.byte_offset)
+
+    def test_utf8_error_byte_offset_inside_record(self):
+        # 非法字节出现在记录中间：偏移必须精确落在非法字节上，而非记录起点。
+        prefix = b'{"a": 1}\n'                       # 9 字节
+        line = b'{"ok": "\xe4\xb8\xad\xff\xff"}\n'   # 中(3) + 2 个非法字节
+        data = prefix + line
+        bad_offset = line.index(b"\xff") + len(prefix)
+        with self.assertRaises(ParseError) as ctx:
+            parse_all(data)
+        err = ctx.exception
+        self.assertEqual(1, err.record_index)
+        self.assertEqual(2, err.line_number)
+        self.assertEqual(bad_offset, err.byte_offset)
+        self.assertEqual(b"\xff",
+                         data[err.byte_offset:err.byte_offset + 1])
+
+    def test_line_numbers_count_blank_lines(self):
+        # record_index 只数非空记录；line_number 数全部物理行（含空行）。
+        data = b'{"a": 1}\n\r\n\nBAD\n'
+        with self.assertRaises(ParseError) as ctx:
+            parse_all(data)
+        err = ctx.exception
+        self.assertEqual(1, err.record_index)        # 第 2 条非空记录
+        self.assertEqual(4, err.line_number)         # 但在物理第 4 行
+        self.assertEqual(data.index(b"BAD"), err.byte_offset)
 
 
 class MemoryBoundTest(unittest.TestCase):
