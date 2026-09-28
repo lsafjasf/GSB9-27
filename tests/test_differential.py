@@ -19,12 +19,20 @@ from clocktime.clock import FakeClock
 from clocktime.timing import AbsoluteExpiry, RetryPolicy, Timeout, run_with_retry
 from legacy import legacy_timeouts as legacy
 
+# ---- 每个用例的初始条件在此显式声明，全文件唯一 ----
+SEED = 20260927        # 随机种子：整个测试进程只在这一处确定
+START_WALL = 5_000.0   # 假时钟墙上时间起点
+START_MONO = 5_000.0   # 假时钟单调时间起点
+
 
 class ClockDrivenCase(unittest.TestCase):
     def setUp(self):
-        self.rng = random.Random(20260927)
-        self._reset_clock()
+        # 每个用例只初始化一次：种子与时钟起点都来自上面的常量。
+        self.rng = random.Random(SEED)
+        self.clock = self._new_clock()
         # 旧代码读到的 time.time() 与假时钟完全一致。
+        # lambda 按名字引用 self.clock，_fresh_round() 换钟后 mock 自动
+        # 跟随新时钟，无需也不允许在用例内重新 patch。
         patches = [
             mock.patch.object(legacy.time, "time", side_effect=lambda: self.clock.wall_now()),
             mock.patch.object(legacy.time, "sleep", side_effect=lambda s: self.clock.advance(s)),
@@ -33,8 +41,16 @@ class ClockDrivenCase(unittest.TestCase):
             p.start()
             self.addCleanup(p.stop)
 
-    def _reset_clock(self):
-        self.clock = FakeClock(start_wall=5_000.0, start_mono=5_000.0)
+    def _new_clock(self):
+        return FakeClock(start_wall=START_WALL, start_mono=START_MONO)
+
+    def _fresh_round(self):
+        """开启新一轮时刻序列：换一只全新假时钟（初始条件与 setUp 相同）。
+
+        只换时钟，绝不动随机种子——rng 流在整个用例内连续推进，
+        保证每一轮真的跑在不同的随机序列上。
+        """
+        self.clock = self._new_clock()
 
     def move_to_next(self):
         self.clock.advance(self.rng.uniform(0.0, 5.0))
@@ -42,45 +58,47 @@ class ClockDrivenCase(unittest.TestCase):
     # ---- 绝对过期（墙上时间） ----
 
     def test_expiry_decisions_match_across_many_sequences(self):
-        for _ in range(300):
-            self._reset_clock()
-            ttl = self.rng.choice([0.0, 0.5, 2.0, 10.0, 100.0])
-            skew = self.rng.choice([0.0, 0.0, 0.25, 1.0])
-            old_exp = legacy.make_token_expiry(ttl)
-            new_exp = AbsoluteExpiry.ttl(self.clock, ttl)
-            self.assertEqual(old_exp, new_exp.expires_at)
-            for _ in range(self.rng.randrange(0, 12)):
-                self.move_to_next()
-                self.assertEqual(
-                    legacy.is_token_expired(old_exp, skew),
-                    new_exp.is_expired(self.clock, skew),
-                )
-                self.assertAlmostEqual(
-                    legacy.token_seconds_remaining(old_exp, skew),
-                    new_exp.seconds_remaining(self.clock, skew),
-                    places=9,
-                )
+        for round_no in range(300):
+            self._fresh_round()
+            with self.subTest(round=round_no):
+                ttl = self.rng.choice([0.0, 0.5, 2.0, 10.0, 100.0])
+                skew = self.rng.choice([0.0, 0.0, 0.25, 1.0])
+                old_exp = legacy.make_token_expiry(ttl)
+                new_exp = AbsoluteExpiry.ttl(self.clock, ttl)
+                self.assertEqual(old_exp, new_exp.expires_at)
+                for _ in range(self.rng.randrange(0, 12)):
+                    self.move_to_next()
+                    self.assertEqual(
+                        legacy.is_token_expired(old_exp, skew),
+                        new_exp.is_expired(self.clock, skew),
+                    )
+                    self.assertAlmostEqual(
+                        legacy.token_seconds_remaining(old_exp, skew),
+                        new_exp.seconds_remaining(self.clock, skew),
+                        places=9,
+                    )
 
     # ---- 相对超时（旧代码误用墙上时间；正常无校时时结果应一致） ----
 
     def test_timeout_decisions_match(self):
-        for _ in range(300):
-            self.setUp()
-            seconds = self.rng.choice([0.0, 0.1, 3.0, 7.5, 50.0])
-            old_deadline = legacy.timeout_deadline(seconds)
-            new_timeout = Timeout(self.clock, seconds)
-            self.assertEqual(old_deadline, new_timeout.deadline)
-            for _ in range(self.rng.randrange(0, 12)):
-                self.move_to_next()
-                self.assertEqual(
-                    legacy.is_timeout_expired(old_deadline),
-                    new_timeout.expired(self.clock),
-                )
-                self.assertAlmostEqual(
-                    legacy.timeout_remaining(old_deadline),
-                    new_timeout.remaining(self.clock),
-                    places=9,
-                )
+        for round_no in range(300):
+            self._fresh_round()
+            with self.subTest(round=round_no):
+                seconds = self.rng.choice([0.0, 0.1, 3.0, 7.5, 50.0])
+                old_deadline = legacy.timeout_deadline(seconds)
+                new_timeout = Timeout(self.clock, seconds)
+                self.assertEqual(old_deadline, new_timeout.deadline)
+                for _ in range(self.rng.randrange(0, 12)):
+                    self.move_to_next()
+                    self.assertEqual(
+                        legacy.is_timeout_expired(old_deadline),
+                        new_timeout.expired(self.clock),
+                    )
+                    self.assertAlmostEqual(
+                        legacy.timeout_remaining(old_deadline),
+                        new_timeout.remaining(self.clock),
+                        places=9,
+                    )
 
     # ---- 重试判定与退避表 ----
 
@@ -122,36 +140,35 @@ class ClockDrivenCase(unittest.TestCase):
 
     def test_run_with_retry_success_paths_match(self):
         for fail_before in range(0, 4):
-            self._reset_clock()
-            params = dict(max_attempts=5, base_delay=0.1,
-                          multiplier=2.0, max_delay=0.3)
-            policy = RetryPolicy(**params)
-            old_func, old_calls = self._make_script(fail_before, ConnectionError)
-            new_func, new_calls = self._make_script(fail_before, ConnectionError)
+            self._fresh_round()
+            with self.subTest(fail_before=fail_before):
+                params = dict(max_attempts=5, base_delay=0.1,
+                              multiplier=2.0, max_delay=0.3)
+                policy = RetryPolicy(**params)
+                old_func, old_calls = self._make_script(fail_before, ConnectionError)
+                new_func, new_calls = self._make_script(fail_before, ConnectionError)
 
-            old_slept = []
-            new_clock = FakeClock(start_wall=5_000.0, start_mono=5_000.0)
-            new_slept = []
-            new_sleep = new_clock.sleep
+                old_slept = []
+                new_clock = self._new_clock()
+                new_slept = []
 
-            with mock.patch.object(legacy.time, "sleep",
-                                   side_effect=lambda s: (old_slept.append(s),
-                                                          self.clock.advance(s))):
-                old_result = legacy.run_with_retry(old_func, **params)
-            orig_new_sleep = new_clock.sleep
-            new_clock.sleep = lambda s: (new_slept.append(s), orig_new_sleep(s))
-            new_result = run_with_retry(new_func, policy, new_clock)
+                with mock.patch.object(legacy.time, "sleep",
+                                       side_effect=lambda s: (old_slept.append(s),
+                                                              self.clock.advance(s))):
+                    old_result = legacy.run_with_retry(old_func, **params)
+                orig_new_sleep = new_clock.sleep
+                new_clock.sleep = lambda s: (new_slept.append(s), orig_new_sleep(s))
+                new_result = run_with_retry(new_func, policy, new_clock)
 
-            self.assertEqual(old_result, new_result)
-            self.assertEqual(old_calls["n"], new_calls["n"])
-            self.assertEqual(old_slept, new_slept)
-            self.assertEqual(self.clock.mono_now(), new_clock.mono_now())
+                self.assertEqual(old_result, new_result)
+                self.assertEqual(old_calls["n"], new_calls["n"])
+                self.assertEqual(old_slept, new_slept)
+                self.assertEqual(self.clock.mono_now(), new_clock.mono_now())
 
     def test_run_with_retry_exhaustion_matches(self):
-        self._reset_clock()
         params = dict(max_attempts=3, base_delay=0.2,
                       multiplier=2.0, max_delay=1.0)
-        new_clock = FakeClock(start_wall=5_000.0, start_mono=5_000.0)
+        new_clock = self._new_clock()
 
         old_err = new_err = None
         try:
@@ -174,7 +191,7 @@ class ClockDrivenCase(unittest.TestCase):
                          str(old_err).split(": ", 1)[1])
         self.assertAlmostEqual(self.clock.mono_now(), new_clock.mono_now(),
                                places=9)
-        self.assertGreater(self.clock.mono_now(), 5_000.0)  # 退避确实发生
+        self.assertGreater(self.clock.mono_now(), START_MONO)  # 退避确实发生
 
 
 if __name__ == "__main__":
