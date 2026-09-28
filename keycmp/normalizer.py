@@ -12,11 +12,16 @@
 
 规范化流水线（顺序固定）：
     NFKC 兼容分解/合成 -> 区域特有的大小写折叠 -> NFD 规范分解
-    -> 去掉非间距记号(Mn) -> NFC 重新合成
+    -> （可选）按语言范围去掉组合记号(Mn) -> NFC 重新合成
 
-说明：默认去掉变音记号（accent-insensitive，"café" == "cafe"），
-这是为了满足“带变音符号的字符与去音符形式视为同键”的需求；该行为
-在 MIGRATION.md 中明确标注，属于会改变等价类的决策。
+说明：去记号（strip_marks）是显式可选项，默认 "none" 不删任何记号，
+只处理题面点名的现象（大小写、全角/半角、预组合 vs 组合写法）。
+历史上默认无条件删除全部 Mn 记号，会把不同文字错误合并：
+  - 日文 が(か+U+3099 浊点) 被并成 か；
+  - 西里尔 й(и+U+0306) 被并成 и；
+  - 拉丁 café 与 cafe 被并成同键（accent-insensitive）。
+现在这些行为只能通过 strip_marks="latin"（仅拉丁基字母上的记号）
+或 strip_marks="all"（旧行为，全部 Mn）显式开启。
 """
 
 from __future__ import annotations
@@ -25,11 +30,42 @@ import unicodedata
 
 DEFAULT_LOCALE = "root"
 SUPPORTED_LOCALES = ("root", "tr")
+DEFAULT_STRIP_MARKS = "none"
+STRIP_MARKS_MODES = ("none", "latin", "all")
 
 
-def _strip_marks(text: str) -> str:
-    """去掉组合记号（Unicode 类别 Mn），基字母保留。"""
-    return "".join(ch for ch in text if unicodedata.category(ch) != "Mn")
+def _is_latin_base(ch: str) -> bool:
+    """判断字符是否拉丁字母（用字符名前缀，标准库内最可靠的方式）。"""
+    if not ch:
+        return False
+    try:
+        return unicodedata.name(ch).startswith("LATIN")
+    except ValueError:
+        return False
+
+
+def _strip_marks(text: str, mode: str) -> str:
+    """按语言范围去掉组合记号（Unicode 类别 Mn）。
+
+    mode="none"  ：不删任何记号（默认）。
+    mode="latin" ：只删附着在拉丁基字母上的记号（é->e、İ 的附加点），
+                  日文浊点、西里尔短音符等其他文字的记号保留。
+    mode="all"   ：删除全部 Mn（旧行为，跨文字合并，仅作显式兼容选项）。
+    """
+    if mode == "none":
+        return text
+    if mode == "all":
+        return "".join(ch for ch in text if unicodedata.category(ch) != "Mn")
+    out = []
+    last_base = ""
+    for ch in text:
+        if unicodedata.category(ch) == "Mn":
+            if _is_latin_base(last_base):
+                continue  # 拉丁字母上的变音记号：删
+        else:
+            last_base = ch
+        out.append(ch)
+    return "".join(out)
 
 
 def _fold_root(text: str) -> str:
@@ -62,12 +98,19 @@ class KeyNormalizer:
         norm.normalize("İstanbul") == norm.normalize("istanbul")
     """
 
-    def __init__(self, locale: str = DEFAULT_LOCALE) -> None:
+    def __init__(self, locale: str = DEFAULT_LOCALE,
+                 strip_marks: str = DEFAULT_STRIP_MARKS) -> None:
         if locale not in SUPPORTED_LOCALES:
             raise ValueError(
                 f"不支持的区域 {locale!r}，可选：{', '.join(SUPPORTED_LOCALES)}"
             )
+        if strip_marks not in STRIP_MARKS_MODES:
+            raise ValueError(
+                f"不支持的 strip_marks {strip_marks!r}，可选："
+                f"{', '.join(STRIP_MARKS_MODES)}"
+            )
         self.locale = locale
+        self.strip_marks = strip_marks
         self._fold = _FOLDERS[locale]
 
     def normalize(self, key: str) -> str:
@@ -77,10 +120,11 @@ class KeyNormalizer:
         canonical = unicodedata.normalize("NFKC", key)
         # 2) 区域相关的大小写折叠。
         folded = self._fold(canonical)
-        # 3) NFD 分解后去掉组合变音记号（é 的重音、分音符等）。
-        #    必须先分解：预组合的 é(U+00E9) 本身是 Ll，直接过滤 Mn 去不掉。
+        # 3) NFD 分解后按配置去组合记号。必须先分解：预组合的 é(U+00E9)
+        #    本身是 Ll，直接过滤 Mn 去不掉。默认 "none" 时此步只保证
+        #    预组合与组合写法落到同一规范形式，不删任何记号。
         decomposed = unicodedata.normalize("NFD", folded)
-        stripped = _strip_marks(decomposed)
+        stripped = _strip_marks(decomposed, self.strip_marks)
         # 4) 重新合成，输出稳定形式。
         return unicodedata.normalize("NFC", stripped)
 
@@ -88,11 +132,13 @@ class KeyNormalizer:
         return self.normalize(a) == self.normalize(b)
 
 
-def normalize_key(key: str, locale: str = DEFAULT_LOCALE) -> str:
-    return KeyNormalizer(locale).normalize(key)
+def normalize_key(key: str, locale: str = DEFAULT_LOCALE,
+                  strip_marks: str = DEFAULT_STRIP_MARKS) -> str:
+    return KeyNormalizer(locale, strip_marks=strip_marks).normalize(key)
 
 
 
 
-def keys_equal(a: str, b: str, locale: str = DEFAULT_LOCALE) -> bool:
-    return KeyNormalizer(locale).equal(a, b)
+def keys_equal(a: str, b: str, locale: str = DEFAULT_LOCALE,
+               strip_marks: str = DEFAULT_STRIP_MARKS) -> bool:
+    return KeyNormalizer(locale, strip_marks=strip_marks).equal(a, b)

@@ -19,6 +19,8 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from keycmp import (
     DEFAULT_LOCALE,
+    DEFAULT_STRIP_MARKS,
+    STRIP_MARKS_MODES,
     SUPPORTED_LOCALES,
     KeyNormalizer,
     keys_equal,
@@ -34,18 +36,13 @@ EQUIVALENCE_CLASSES_ROOT = [
     {"ABC", "abc", "Abc", "aBc"},
     # 2) 全角 / 半角（含全角数字）
     {"ABC123", "abc123", "\uff21\uff22\uff23\uff11\uff12\uff13"},
-    # 3) 组合字符：预组合 é vs e + U+0301
+    # 3) 组合字符：预组合 é vs e + U+0301（规范化等价，不删记号）
     {"\u00e9", "e\u0301", "\u00c9", "E\u0301"},
-    # 4) 带变音符号：café 的全部常见写法 + 去音符形式（默认 accent-insensitive）
-    {
-        "caf\u00e9",          # café（预组合）
-        "cafe\u0301",         # cafe + 组合重音
-        "CAF\u00c9",          # CAFÉ
-        "Caf\u00c9",          # CafÉ
-        "cafe",               # 无重音
-        "CAFE",
-        "ＣＡＦＥ",            # 全角
-    },
+    # 4) café 的各种写法：大小写、全角、预组合/组合形式统一，
+    #    但默认不与无音符的 cafe 合并（accent-sensitive）
+    {"caf\u00e9", "cafe\u0301", "CAF\u00c9", "Caf\u00c9", "ＣＡＦ\u00c9"},
+    # 4b) 无音符 cafe 自身的大小写/全角变体（与上一组默认不等价）
+    {"cafe", "CAFE", "Cafe", "ＣＡＦＥ"},
     # 5) casefold 才覆盖的大小写：德语 ß casefold 为 ss
     {"Stra\u00dfe", "strasse", "STRASSE", "STRA\u00dfE"},
     # 6) 兼容合字：NFKC + casefold 后 ﬃ(U+FB03) 与 ffi 等价
@@ -60,10 +57,19 @@ EQUIVALENCE_CLASSES_TR = [
     {"I\u015f\u0131k", "\u0131\u015f\u0131k", "IŞIK"},
 ]
 
+# strip_marks="latin"（显式开启 accent-insensitive）下才等价的组：
+# 只合并拉丁字母上的变音记号，其他文字的记号一律保留。
+EQUIVALENCE_CLASSES_LATIN_STRIP = [
+    {"caf\u00e9", "cafe\u0301", "CAF\u00c9", "cafe", "CAFE", "ＣＡＦＥ"},
+    {"na\u00efve", "nai\u0308ve", "NAIVE"},
+    {"\u0130stanbul", "istanbul"},  # root 下 İ casefold 出的附加点也被去掉
+]
 
-def _assert_equivalence_class(testcase: unittest.TestCase, members, locale: str):
+
+def _assert_equivalence_class(testcase: unittest.TestCase, members, locale: str,
+                              strip_marks: str = DEFAULT_STRIP_MARKS):
     """一个等价类必须满足：自身等价 + 两两等价（由此保证传递性前提）。"""
-    norm = KeyNormalizer(locale)
+    norm = KeyNormalizer(locale, strip_marks=strip_marks)
     forms = {norm.normalize(m) for m in members}
     testcase.assertEqual(
         len(forms), 1,
@@ -97,6 +103,12 @@ class EquivalenceClassTests(unittest.TestCase):
             with self.subTest(members=sorted(members)):
                 _assert_equivalence_class(self, members, "tr")
 
+    def test_latin_strip_classes_collapse_to_one(self):
+        for members in EQUIVALENCE_CLASSES_LATIN_STRIP:
+            with self.subTest(members=sorted(members)):
+                _assert_equivalence_class(self, members, "root",
+                                          strip_marks="latin")
+
     def test_distinct_classes_stay_distinct(self):
         """不同等价类不能被错误合并（防止修复过度，例如丢字符过头）。"""
         norm = KeyNormalizer("root")
@@ -111,6 +123,56 @@ class EquivalenceClassTests(unittest.TestCase):
         norm = KeyNormalizer("root")
         for a, b in [("abc", "abd"), ("cafe", "cafel"), ("abc", "ab c")]:
             self.assertNotEqual(norm.normalize(a), norm.normalize(b))
+
+    def test_accent_variants_not_merged_by_default(self):
+        """默认只处理题面点名的现象：café 与 cafe 是不同的键。"""
+        norm = KeyNormalizer("root")
+        self.assertNotEqual(norm.normalize("caf\u00e9"), norm.normalize("cafe"))
+        self.assertFalse(keys_equal("caf\u00e9", "cafe"))
+        self.assertFalse(keys_equal("CAF\u00c9", "CAFE"))
+
+
+class CrossScriptTests(unittest.TestCase):
+    """跨文字用例：去记号不得把不同文字/不同字母的键合并。
+
+    历史缺陷：无条件删除全部 Mn 记号，导致
+      が(か+U+3099 浊点) 被并成 か、й(и+U+0306) 被并成 и。
+    默认模式与 latin 模式都必须保留这些区别；只有显式 strip_marks="all"
+    （旧行为，仅为兼容保留）才会合并。
+    """
+
+    def test_japanese_dakuten_not_stripped(self):
+        for mode in ("none", "latin"):
+            with self.subTest(strip_marks=mode):
+                self.assertFalse(keys_equal("が", "か", strip_marks=mode))
+                self.assertFalse(keys_equal("がくせい", "かくせい",
+                                            strip_marks=mode))
+                # 半浊点同理：ぱ 不得并成 は
+                self.assertFalse(keys_equal("ぱ", "は", strip_marks=mode))
+
+    def test_cyrillic_breve_not_stripped(self):
+        for mode in ("none", "latin"):
+            with self.subTest(strip_marks=mode):
+                self.assertFalse(keys_equal("й", "и", strip_marks=mode))
+                self.assertFalse(keys_equal("молоко́", "молоко",
+                                            strip_marks=mode))
+
+    def test_greek_tonos_not_stripped(self):
+        for mode in ("none", "latin"):
+            with self.subTest(strip_marks=mode):
+                self.assertFalse(keys_equal("ά", "α", strip_marks=mode))
+
+    def test_all_mode_is_explicit_opt_in_for_legacy_behavior(self):
+        # 旧的无差别去记号行为仍可通过显式参数获得（用于兼容旧索引）
+        self.assertTrue(keys_equal("が", "か", strip_marks="all"))
+        self.assertTrue(keys_equal("caf\u00e9", "cafe", strip_marks="all"))
+
+    def test_japanese_keys_stay_distinct_in_dedup(self):
+        """去重场景：不同文字的键不得被错误去重。"""
+        raw = ["がくせい", "かくせい", "がくせい"]  # 学生 vs 学生(误) —— 不同词
+        norm = KeyNormalizer()
+        deduped = {norm.normalize(k) for k in raw}
+        self.assertEqual(len(deduped), 2)
 
 
 class EquivalenceRelationAxiomsTests(unittest.TestCase):
@@ -178,8 +240,8 @@ class LocaleDifferenceTests(unittest.TestCase):
         root: 大写 I -> 小写 i（英语直觉），故 Işık 与 ışık 不等价
         tr  : 大写 I -> 无点 ı(U+0131)，故 Işık == ışık，且与 isik 不同
     差异 2：İ
-        root: İ(U+0130) casefold 为 "i\u0307"，去记号后 == "i"
-              —— root 下 İ 与 i 恰好同形（无点 i），但与 ı 不同
+        root: İ(U+0130) casefold 为 "i\u0307"；默认不去记号，故 İ != i，
+              仅当显式 strip_marks="latin" 时附加点被去掉、İ == i
         tr  : İ 显式映射为 i
     结论：在 tr 下 "i" 与 "ı" 严格区分；root 下 I 并入 i。
     """
@@ -191,9 +253,12 @@ class LocaleDifferenceTests(unittest.TestCase):
         self.assertFalse(keys_equal("I", "\u0131", locale="root"))
 
     def test_dotted_capital_i(self):
-        # İ(U+0130)：两种区域下都与 i 等价
-        self.assertTrue(keys_equal("\u0130", "i", locale="root"))
+        # İ(U+0130)：tr 显式映射为 i；root 默认保留附加点，不与 i 合并
+        self.assertFalse(keys_equal("\u0130", "i", locale="root"))
         self.assertTrue(keys_equal("\u0130", "i", locale="tr"))
+        # root 下显式开启 latin 去记号后 İ == i
+        self.assertTrue(keys_equal("\u0130", "i", locale="root",
+                                   strip_marks="latin"))
         # 但都不应与无点 ı 合并
         self.assertFalse(keys_equal("\u0130", "\u0131", locale="root"))
         self.assertFalse(keys_equal("\u0130", "\u0131", locale="tr"))
@@ -217,6 +282,12 @@ class LocaleDifferenceTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             normalize_key("x", locale="")
 
+    def test_invalid_strip_marks_rejected(self):
+        with self.assertRaises(ValueError):
+            KeyNormalizer(strip_marks="japanese")
+        with self.assertRaises(ValueError):
+            normalize_key("x", strip_marks="")
+
     def test_non_string_rejected(self):
         with self.assertRaises(TypeError):
             KeyNormalizer().normalize(123)
@@ -231,14 +302,29 @@ class LookupAndDedupSmokeTests(unittest.TestCase):
         key = "ＣＡＦÉ"
         table[norm.normalize(key)] = 42
         self.assertEqual(table.get(norm.normalize("cafe\u0301")), 42)
+        self.assertEqual(table.get(norm.normalize("CAFÉ")), 42)
+        # 默认不去音符：无音符写法查不到
+        self.assertIsNone(table.get(norm.normalize("CAFE")))
+
+    def test_accent_insensitive_lookup_is_opt_in(self):
+        norm = KeyNormalizer(strip_marks="latin")
+        table = {norm.normalize("ＣＡＦÉ"): 42}
         self.assertEqual(table.get(norm.normalize("CAFE")), 42)
+        self.assertEqual(table.get(norm.normalize("cafe")), 42)
 
     def test_dedup_collapses_variants(self):
         raw = ["caf\u00e9", "CAFE", "cafe\u0301", "ＣＡＦＥ", "tea"]
-        norm = KeyNormalizer()
+        norm = KeyNormalizer(strip_marks="latin")
         deduped = list({norm.normalize(k): k for k in raw})
         self.assertEqual(sorted(norm.normalize(k) for k in deduped),
                          ["cafe", "tea"])
+
+    def test_dedup_default_keeps_accented_and_plain_apart(self):
+        raw = ["caf\u00e9", "CAFE", "cafe\u0301", "ＣＡＦＥ", "tea"]
+        norm = KeyNormalizer()
+        deduped = {norm.normalize(k) for k in raw}
+        # café 组、cafe 组、tea：默认模式下是 3 个不同的键
+        self.assertEqual(len(deduped), 3)
 
 
 if __name__ == "__main__":

@@ -31,23 +31,37 @@ python3 migrate_index.py --keys old_keys.txt --locale root \
 ```python
 from keycmp import normalize_key, keys_equal, KeyNormalizer
 
-normalize_key("ＣＡＦÉ") == normalize_key("cafe\u0301") == "cafe"  # True
+normalize_key("ＣＡＦÉ") == normalize_key("café") == "café"      # True（规范化等价）
 keys_equal("Straße", "STRASSE")                      # True (root, casefold ß->ss)
 keys_equal("Işık", "ışık", locale="tr")              # True（土耳其语 I->ı）
 keys_equal("Işık", "ışık", locale="root")            # False
+keys_equal("café", "cafe")                           # False（默认不去音符）
+keys_equal("café", "cafe", strip_marks="latin")      # True（显式开启）
+keys_equal("が", "か")                                # False（浊点不会被误删）
 
 norm = KeyNormalizer(locale="tr")
 table = {norm.normalize(k): v for k, v in raw_items.items()}
 table[norm.normalize("İSTANBUL")]                     # 查找任意等价写法
 ```
 
-## 默认规则 vs 可选规则
+## 去记号（strip_marks）按语言可配置
+
+题面点名的现象（大小写、全角/半角、预组合 vs 组合写法）默认即处理；
+“删变音记号”是显式可选项，避免把不同文字错误合并：
+
+| `strip_marks` | 行为 | 例子 |
+|---|---|---|
+| `none`（默认） | 不删记号，只做规范化等价 | `é`==`e+◌́`，但 `café`!=`cafe`、`が`!=`か` |
+| `latin` | 只删拉丁基字母上的组合记号 | `café`==`cafe`、`İ`==`i`(root)；`が`/`й`/`ά` 仍各自独立 |
+| `all` | 删除全部 Mn（旧行为，仅兼容用） | `が`==`か`（⚠️ 跨文字合并） |
+
+## 默认规则 vs 可选规则（locale）
 
 | | `root`（默认，Unicode 无区域） | `tr`（土耳其语，显式可选） |
 |---|---|---|
-| 全角/半角、组合字符、去重音 | 统一 | 统一 |
+| 全角/半角、组合字符 | 统一 | 统一 |
 | `ß` 折叠 | `ß`→`ss` | 同 root |
 | 大写 `I` | →`i`（`I` 与 `i` 同键） | →`ı`（U+0131，`I` 与无点 ı 同键，与 `i` 不同） |
-| `İ`(U+0130) | casefold 去点后 →`i` | 显式 →`i` |
+| `İ`(U+0130) | casefold 为 `i`+附加点（默认保留，与 `i` 不同） | 显式 →`i` |
 
 切换区域会改变等价类，已建索引必须按 `MIGRATION.md` 重建。
