@@ -46,6 +46,13 @@ class OrderIndependentSuite(unittest.TestCase):
         self.fx.registry["plugin_alpha"] = object()
         self.assertEqual(set(self.fx.registry), {"plugin_alpha"})
 
+    def test_09_cache_starts_cold(self):
+        self.assertEqual(self.fx.lookup_cache, {})
+
+    def test_10_populate_cache(self):
+        self.assertEqual(self.fx.cached_lookup("profile", "testing"), "testing")
+        self.assertEqual(self.fx.lookup_cache, {"profile": "testing"})
+
     def test_08_boom_is_cleaned_up(self):
         # 失败路径：污染后抛异常，清理断言在 test_cleanup.py 中验证
         self.fx.registry["boom"] = True

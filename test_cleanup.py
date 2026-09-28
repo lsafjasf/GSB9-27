@@ -48,6 +48,14 @@ class CleanupOnFailureTest(unittest.TestCase):
         fx.close()
         self.assertFalse(os.path.exists(tmpdir))
 
+    def test_cache_is_per_fixture(self):
+        with IsolatedFixture("c1") as fx1:
+            self.assertEqual(fx1.cached_lookup("k", "v1"), "v1")
+            self.assertEqual(fx1.lookup_cache, {"k": "v1"})
+        with IsolatedFixture("c2") as fx2:
+            self.assertEqual(fx2.lookup_cache, {}, "新夹具的缓存必须是冷的")
+            self.assertEqual(fx2.cached_lookup("k", "v2"), "v2")
+
 
 class ConcurrencyIsolationTest(unittest.TestCase):
     def test_concurrent_fixtures_do_not_interfere(self):
