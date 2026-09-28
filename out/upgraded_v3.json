@@ -1,0 +1,22 @@
+{
+  "version": 3,
+  "server": {
+    "host": "db.internal",
+    "retries": 3,
+    "port": 80
+  },
+  "owner": "team-pay",
+  "timeout_ms": 30000,
+  "tags": [],
+  "_meta": {
+    "source_version": 1,
+    "removed": {
+      "name": "order-service"
+    },
+    "defaulted": [
+      "server.port",
+      "server.retries",
+      "tags"
+    ]
+  }
+}

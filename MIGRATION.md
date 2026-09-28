@@ -59,5 +59,61 @@
 
 ```bash
 python3 repro_bug.py                      # 复现旧版缺陷（修复前行为）
-python3 -m unittest discover -s tests -v  # 回归 + 兼容性测试（18 个用例）
+python3 -m unittest discover -s tests -v  # 回归 + 兼容性 + 报告/往返测试（33 个用例）
 ```
+
+## 迁移报告（可逐条核对）
+
+`dataformat/report.py` 提供报告生成与独立核对：
+
+- `build_report(input_data, from_v, to_v, result=None)`：从 (输入, 迁移结果)
+  派生逐字段报告，每条记录动作与来源：
+  - `renamed`：改名/转换（来源路径、目标路径、转换函数名、前后值）；
+  - `removed`：删除（值归档到 `_meta.removed`，降级可恢复）；
+  - `defaulted`：缺失被 schema 默认值填充（来源标记为 `schema_default`，
+    与用户显式配置严格区分）；
+  - `kept` / `preserved_unknown`：已知字段保留 / 未知字段原样保留；
+  - `version_bump`：版本号推进。
+- `verify_report(report, input_data, result)`：独立于生成逻辑，对照输入与
+  迁移结果逐条复核，并做完备性检查（输入/结果的每个叶子字段都必须被
+  恰好一条报告条目覆盖），任何不一致抛 `ReportMismatchError`。
+  因此报告不是「迁移过程的自述」，而是可被第三方核对的断言集合。
+
+## 回退（降级）工具与往返一致性
+
+命令行工具 `migrate_tool.py`：
+
+```bash
+python3 migrate_tool.py upgrade   in.json --from 1 --to 3 -o out.json --report report.json
+python3 migrate_tool.py downgrade out.json --from 3 --to 1 -o back.json
+python3 migrate_tool.py roundtrip in.json --from 1 --via 3
+```
+
+`roundtrip` 子命令（及 `roundtrip_diff()` API）执行 升级 -> 降级 往返，
+列出往返结果与原文档的全部差异。
+
+**往返是超集，不是严格相等。** 以 v1 -> v3 -> v1 为例，往返结果比原文档多出：
+
+| 多出字段         | 来源                                   |
+| ---------------- | -------------------------------------- |
+| `server.port`    | v1 起就有的可选默认值（80）            |
+| `server.retries` | v2 新增的可选默认值（3）               |
+| `tags`           | v3 新增的可选默认值（`[]`）            |
+
+原因：这些字段在升级时由默认值填充，降级时对旧版本是「未知字段」，
+按未知字段策略**保留而非丢弃**——这是有意行为，保证降级不丢数据、
+再升级时用户已生效的值不被默认值覆盖。差异只会是「多出」（added），
+不会出现原字段被改动或丢失；`roundtrip_diff` 的测试断言了这一点。
+
+反向地，若严格相等是硬需求，可在降级后按上表显式剔除这些字段，
+但代价是丢失「用户后来显式配置过这些字段」的信息。
+
+## 可复跑验证
+
+```bash
+python3 verify_roundtrip.py
+```
+
+端到端执行：升级并生成报告 -> 逐条核对报告 -> 降级回退 -> 往返差异断言，
+真实输出（迁移结果、报告 JSON、降级结果、差异列表）写入 `out/` 目录，
+可逐条人工核对。任何一步失败即非零退出。

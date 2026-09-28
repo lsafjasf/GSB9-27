@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "server": {
+    "host": "db.internal",
+    "retries": 3,
+    "port": 80
+  },
+  "owner": "team-pay",
+  "tags": [],
+  "name": "order-service",
+  "timeout": 30
+}

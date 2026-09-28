@@ -8,6 +8,9 @@
 def _ms_to_seconds(ms):
     return ms // 1000 if ms % 1000 == 0 else ms / 1000
 
+def _seconds_to_ms(seconds):
+    return seconds * 1000
+
 # 每个版本的必填字段（点分路径）。缺失即抛 MissingFieldError。
 REQUIRED = {
     1: ["name", "timeout", "server.host"],
@@ -27,7 +30,7 @@ DEFAULTS = {
 # removes [路径]（删除时归档到 _meta.removed，供降级恢复）。
 UPGRADES = {
     (1, 2): {
-        "renames": {"timeout": ("timeout_ms", lambda seconds: seconds * 1000)},
+        "renames": {"timeout": ("timeout_ms", _seconds_to_ms)},
         "adds": {"server.retries": 3},
         "removes": [],
     },

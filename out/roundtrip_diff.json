@@ -1,0 +1,20 @@
+[
+  {
+    "path": "server.port",
+    "kind": "added",
+    "roundtrip_value": 80,
+    "reason": "较新版本引入的字段，降级时按未知字段策略保留（超集）"
+  },
+  {
+    "path": "server.retries",
+    "kind": "added",
+    "roundtrip_value": 3,
+    "reason": "较新版本引入的字段，降级时按未知字段策略保留（超集）"
+  },
+  {
+    "path": "tags",
+    "kind": "added",
+    "roundtrip_value": [],
+    "reason": "较新版本引入的字段，降级时按未知字段策略保留（超集）"
+  }
+]

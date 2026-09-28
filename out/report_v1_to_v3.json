@@ -1,0 +1,70 @@
+{
+  "from_version": 1,
+  "to_version": 3,
+  "fields": [
+    {
+      "path": "version",
+      "action": "version_bump",
+      "value_before": 1,
+      "value_after": 3
+    },
+    {
+      "path": "name",
+      "action": "removed",
+      "source": "input",
+      "archived_to": "_meta.removed.name",
+      "value_before": "order-service"
+    },
+    {
+      "path": "owner",
+      "action": "preserved_unknown",
+      "source": "input",
+      "value_before": "team-pay",
+      "value_after": "team-pay"
+    },
+    {
+      "path": "server.host",
+      "action": "kept",
+      "source": "input",
+      "value_before": "db.internal",
+      "value_after": "db.internal"
+    },
+    {
+      "path": "timeout",
+      "action": "renamed",
+      "to": "timeout_ms",
+      "transform": "_seconds_to_ms",
+      "source": "input",
+      "value_before": 30,
+      "value_after": 30000
+    },
+    {
+      "path": "server.port",
+      "action": "defaulted",
+      "source": "schema_default",
+      "value_after": 80
+    },
+    {
+      "path": "server.retries",
+      "action": "defaulted",
+      "source": "schema_default",
+      "value_after": 3
+    },
+    {
+      "path": "tags",
+      "action": "defaulted",
+      "source": "schema_default",
+      "value_after": []
+    }
+  ],
+  "summary": {
+    "renamed": 1,
+    "removed": 1,
+    "defaulted": 3,
+    "kept": 1,
+    "preserved_unknown": 1,
+    "changed": 0,
+    "added": 0,
+    "version_bump": 1
+  }
+}
