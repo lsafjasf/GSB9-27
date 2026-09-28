@@ -101,7 +101,8 @@ def main():
     sol = solve(lambda t, y: y * y, 0.0, 2.0, 1.0,
                 atol=1e-10, rtol=1e-8, h_min=1e-10)
     print("\nfailure demo: y' = y^2, y(0)=1, [0, 2] (blows up at t=1)")
-    print("  status=%s, stopped at t=%.10f" % (sol.status, sol.t[-1]))
+    print("  status=%s, reason=%s, stopped at t=%.10f"
+          % (sol.status, sol.reason, sol.t[-1]))
     print("  message: %s" % sol.message)
     summary_rows.append(["blowup", "y'=y^2, y(0)=1, [0,2]", "FAILED",
                          len(sol.accepted_steps), len(sol.rejected_steps),

@@ -29,5 +29,14 @@ for s in sol.steps:          # every attempted step
     print(s.t, s.h, s.err, s.accepted)
 ```
 
-Failure (e.g. minimum step reached at a singularity) is reported via
-`sol.status == "failed"` and `sol.message`, which includes the location.
+Failures are reported via `sol.status == "failed"`, a machine-readable
+`sol.reason`, and `sol.message` (which includes the location plus the
+step size and error estimate at the failure point). Reasons:
+
+- `diverged` — the solution blows up (super-exponential growth /
+  non-finite values); loosening the tolerance will not help
+- `non_smooth_rhs` — the right-hand side is not differentiable there
+  (error estimate stops shrinking with `h`, or `f` went non-finite)
+- `tolerance` — the local error genuinely cannot be met with `|h| >= h_min`
+- `min_step` — step size underflowed below `h_min`
+- `max_steps` — step budget exhausted

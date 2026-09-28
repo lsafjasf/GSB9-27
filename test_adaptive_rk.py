@@ -96,20 +96,47 @@ class TestEdgeCases(unittest.TestCase):
         self.assertLess(err, 1e-6)
         self.assertEqual(sol.t[-1], 1.0)
 
-    def test_min_step_failure_is_reported(self):
+    def test_blowup_failure_is_reported_as_divergence(self):
         # y' = y^2, y(0) = 1 blows up at t = 1; the solver must fail near
-        # t = 1 instead of spinning with steps below h_min.
+        # t = 1 instead of spinning with steps below h_min, and the cause
+        # is the diverging solution -- not an unsatisfiable tolerance.
         sol = solve(lambda t, y: y * y, 0.0, 2.0, 1.0,
                     atol=1e-10, rtol=1e-8, h_min=1e-10)
-        print("\n[blowup]     status=%s t_fail=%.6f msg=%s"
-              % (sol.status, sol.t[-1], sol.message))
+        print("\n[blowup]     status=%s reason=%s t_fail=%.6f msg=%s"
+              % (sol.status, sol.reason, sol.t[-1], sol.message))
         self.assertFalse(sol.ok)
         self.assertEqual(sol.status, "failed")
+        self.assertEqual(sol.reason, "diverged")
+        self.assertIn("diverg", sol.message)
         self.assertIn("t =", sol.message)
         self.assertGreater(sol.t[-1], 0.9)
         self.assertLess(sol.t[-1], 1.1)
         # No step smaller than h_min was ever taken.
         self.assertTrue(all(abs(s.h) >= 1e-10 for s in sol.accepted_steps))
+
+    def test_tolerance_failure_reason(self):
+        # Smooth problem, impossibly tight tolerances: the local error
+        # genuinely cannot be met with |h| >= h_min.
+        sol = solve(lambda t, y: -y, 0.0, 1.0, 1.0,
+                    atol=1e-30, rtol=1e-30, h_min=1e-6)
+        print("\n[tolerance]  status=%s reason=%s msg=%s"
+              % (sol.status, sol.reason, sol.message))
+        self.assertFalse(sol.ok)
+        self.assertEqual(sol.reason, "tolerance")
+        self.assertIn("t =", sol.message)
+        self.assertIn("h_min", sol.message)
+
+    def test_non_smooth_rhs_failure_reason(self):
+        # y' jumps at t = 0.5; with h_min too large to resolve the kink
+        # the error estimate stops shrinking with h.
+        sol = solve(lambda t, y: 1.0 if t < 0.5 else -1.0,
+                    0.0, 1.0, 0.0, atol=1e-10, rtol=1e-9, h_min=1e-4)
+        print("\n[non-smooth] status=%s reason=%s msg=%s"
+              % (sol.status, sol.reason, sol.message))
+        self.assertFalse(sol.ok)
+        self.assertEqual(sol.reason, "non_smooth_rhs")
+        self.assertIn("non-differentiable", sol.message)
+        self.assertIn("t =", sol.message)
 
     def test_step_log_records_h_and_error(self):
         sol = solve(lambda t, y: -y, 0.0, 1.0, 1.0)

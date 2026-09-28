@@ -6,10 +6,24 @@ size is adapted so the normalized local error stays below 1, where each
 component is scaled by ``atol + rtol * |y|``.
 
 Every attempted step (accepted or rejected) is recorded with its step
-size and error estimate.  If the step size would have to drop below
-``h_min`` to satisfy the tolerance, the solver stops and reports failure
-together with the location, instead of spinning with too-small steps.
+size and error estimate.  If the integration cannot continue, the solver
+stops and reports *why* it failed, together with the location, the step
+size and the error estimate at that point, instead of spinning with
+too-small steps.  The failure reason (``Solution.reason``) is one of:
+
+- ``"diverged"``: the solution blows up (super-exponential growth or
+  non-finite values) -- loosening the tolerance will not help.
+- ``"non_smooth_rhs"``: the right-hand side is not differentiable at
+  the failure point (error estimate does not shrink with the step size,
+  or ``f`` returned non-finite values).
+- ``"tolerance"``: the local error genuinely exceeds the tolerance and
+  satisfying it would require ``|h| < h_min``.
+- ``"min_step"``: the step size underflowed below ``h_min`` without a
+  rejected step.
+- ``"max_steps"``: the step budget was exhausted.
 """
+
+import math
 
 from collections import namedtuple
 
@@ -47,7 +61,12 @@ class Solution:
         steps: every attempted step as a :class:`Step` record.
         nfev: number of right-hand-side evaluations.
         status: ``"success"`` or ``"failed"``.
-        message: human-readable description, includes the failure location.
+        reason: machine-readable failure cause; ``"success"`` if the
+            integration completed, otherwise one of ``"diverged"``,
+            ``"non_smooth_rhs"``, ``"tolerance"``, ``"min_step"`` or
+            ``"max_steps"``.
+        message: human-readable description, includes the failure
+            location and the step size / error estimate at that point.
     """
 
     def __init__(self):
@@ -56,6 +75,7 @@ class Solution:
         self.steps = []
         self.nfev = 0
         self.status = "success"
+        self.reason = "success"
         self.message = "converged"
 
     @property
@@ -72,7 +92,12 @@ class Solution:
 
 
 def _rkf45_step(fw, t, y, h):
-    """One RKF45 step from (t, y); returns (y_new, err) component lists."""
+    """One RKF45 step from (t, y).
+
+    Returns ``(y_new, err, rhs_finite)``: component lists for the new
+    state and the local error estimate, and whether every right-hand-side
+    evaluation stayed finite.
+    """
     n = len(y)
     k = [fw(t, y)]
     for i in range(5):
@@ -84,9 +109,62 @@ def _rkf45_step(fw, t, y, h):
                 s += b * k[m][j]
             yi.append(y[j] + h * s)
         k.append(fw(t + _C[i] * h, yi))
+    rhs_finite = all(math.isfinite(v) for ki in k for v in ki)
     y_new = [y[j] + h * sum(_W4[m] * k[m][j] for m in range(6)) for j in range(n)]
     err = [h * sum(_E[m] * k[m][j] for m in range(6)) for j in range(n)]
-    return y_new, err
+    return y_new, err, rhs_finite
+
+
+def _magnitude(value):
+    if isinstance(value, list):
+        return max(abs(c) for c in value)
+    return abs(value)
+
+
+def _growth_rates(sol, points=8):
+    """Log-growth rates d(ln|y|)/dt over the last accepted points."""
+    pts = [(t, _magnitude(v)) for t, v in zip(sol.t, sol.y)
+           if _magnitude(v) > 0.0]
+    pts = pts[-(points + 1):]
+    rates = []
+    for (ta, ma), (tb, mb) in zip(pts, pts[1:]):
+        if tb == ta:
+            continue
+        rates.append(math.log(mb / ma) / (tb - ta))
+    return rates
+
+
+def _is_diverging(sol, y):
+    """True if the solution is blowing up rather than merely hard to resolve.
+
+    Detects non-finite or astronomically large states, and sustained
+    *super*-exponential growth (the relative growth rate itself grows,
+    as in y ~ 1/(t* - t)); plain exponential growth keeps a constant
+    rate and is not flagged.
+    """
+    if not all(math.isfinite(v) for v in y):
+        return True
+    if max(abs(v) for v in y) >= 1e50:
+        return True
+    rates = _growth_rates(sol)
+    if len(rates) < 3 or any(r <= 0.0 for r in rates):
+        return False
+    accelerating = all(b > a for a, b in zip(rates, rates[1:]))
+    return accelerating and rates[-1] > 1.2 * rates[0]
+
+
+def _error_stagnates(sol):
+    """True if recent rejections show the error estimate not shrinking
+    with h -- the signature of a non-differentiable right-hand side
+    (for a smooth RHS the RKF45 error scales like h**5)."""
+    rej = [s for s in sol.steps[-6:] if not s.accepted]
+    if len(rej) < 3:
+        return False
+    stagnant = 0
+    for a, b in zip(rej, rej[1:]):
+        if abs(b.h) < 0.9 * abs(a.h) and b.err > 0.2 * a.err:
+            stagnant += 1
+    return stagnant >= 2
 
 
 def solve(f, t0, t1, y0, atol=1e-8, rtol=1e-6, h0=None,
@@ -136,30 +214,75 @@ def solve(f, t0, t1, y0, atol=1e-8, rtol=1e-6, h0=None,
     t = float(t0)
     n = len(y)
     index = 0
+    last_err = None
 
-    def fail(message):
+    def fail(reason, message):
         sol.status = "failed"
+        sol.reason = reason
         sol.message = message
         return sol
 
     while (t1 - t) * direction > 0.0:
         if index >= max_steps:
             return fail(
-                "exceeded max_steps=%d at t = %.12g" % (max_steps, t))
+                "max_steps",
+                "exceeded max_steps=%d at t = %.12g (last h = %.3e, "
+                "error estimate %s)" % (max_steps, t, h,
+                                        "%.3e" % last_err if last_err is not None
+                                        else "n/a"))
         # Land exactly on the endpoint with the last step.
         if (t + h - t1) * direction > 0.0:
             h = t1 - t
         if abs(h) < h_min:
+            # Step-size underflow: find out *why* h collapsed.
+            if _is_diverging(sol, y):
+                return fail(
+                    "diverged",
+                    "solution diverges near t = %.12g: |y| reached %.3e "
+                    "with super-exponential growth, so the step size "
+                    "collapsed below h_min = %.3e (last h = %.3e, error "
+                    "estimate %s); loosening the tolerance will not help"
+                    % (t, max(abs(v) for v in y), h_min, h,
+                       "%.3e" % last_err if last_err is not None else "n/a"))
+            if _error_stagnates(sol):
+                return fail(
+                    "non_smooth_rhs",
+                    "right-hand side appears non-differentiable near "
+                    "t = %.12g: error estimate %s does not decrease as h "
+                    "shrinks; |h| = %.3e fell below h_min = %.3e"
+                    % (t, "%.3e" % last_err if last_err is not None else "n/a",
+                       abs(h), h_min))
             return fail(
-                "step size |h| = %.3e below h_min = %.3e at t = %.12g; "
-                "cannot satisfy tolerance" % (abs(h), h_min, t))
+                "min_step",
+                "step size |h| = %.3e below h_min = %.3e at t = %.12g "
+                "(last error estimate %s)"
+                % (abs(h), h_min, t,
+                   "%.3e" % last_err if last_err is not None else "n/a"))
 
-        y_new, err = _rkf45_step(fw, t, y, h)
+        y_new, err, rhs_finite = _rkf45_step(fw, t, y, h)
         sol.nfev += 6
+
+        if not rhs_finite or not all(math.isfinite(v) for v in y_new):
+            # Non-finite state or RHS: divergence vs. singular RHS.
+            if _is_diverging(sol, y):
+                return fail(
+                    "diverged",
+                    "solution diverged near t = %.12g: |y| = %.3e "
+                    "overflowed to non-finite values at step h = %.3e; "
+                    "the singularity cannot be crossed"
+                    % (t, max(abs(v) for v in y), h))
+            return fail(
+                "non_smooth_rhs",
+                "right-hand side returned non-finite values at "
+                "t = %.12g, |y| = %.3e (step h = %.3e); f is not "
+                "evaluable/differentiable there"
+                % (t, max(abs(v) for v in y), h))
+
         err_norm = 0.0
         for j in range(n):
             scale = atol + rtol * max(abs(y[j]), abs(y_new[j]))
             err_norm = max(err_norm, abs(err[j]) / scale)
+        last_err = err_norm
 
         accepted = err_norm <= 1.0
         sol.steps.append(Step(index, t, h, err_norm, accepted))
@@ -173,10 +296,28 @@ def solve(f, t0, t1, y0, atol=1e-8, rtol=1e-6, h0=None,
         h_next = h * factor
 
         if not accepted and abs(h_next) < h_min:
+            if _is_diverging(sol, y):
+                return fail(
+                    "diverged",
+                    "solution diverges near t = %.12g: |y| reached %.3e "
+                    "with super-exponential growth; error estimate %.3e "
+                    "at h = %.3e would require |h| = %.3e < h_min = %.3e"
+                    % (t, max(abs(v) for v in y), err_norm, abs(h),
+                       abs(h_next), h_min))
+            if _error_stagnates(sol):
+                return fail(
+                    "non_smooth_rhs",
+                    "right-hand side appears non-differentiable near "
+                    "t = %.12g: error estimate %.3e does not decrease as "
+                    "h shrinks (h = %.3e, required |h| = %.3e < "
+                    "h_min = %.3e)"
+                    % (t, err_norm, abs(h), abs(h_next), h_min))
             return fail(
-                "minimum step size reached at t = %.12g: local error "
-                "estimate %.3e exceeds tolerance but |h| = %.3e would "
-                "drop below h_min = %.3e" % (t, err_norm, abs(h_next), h_min))
+                "tolerance",
+                "cannot satisfy tolerance at t = %.12g: error estimate "
+                "%.3e > 1 with h = %.3e, and the required |h| = %.3e "
+                "would drop below h_min = %.3e"
+                % (t, err_norm, abs(h), abs(h_next), h_min))
 
         if accepted:
             t += h
