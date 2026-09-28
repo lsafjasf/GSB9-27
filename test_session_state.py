@@ -19,6 +19,7 @@ RUNNER = os.path.join(HERE, "runner.py")
 
 SESSION = "s-1"
 ACTION = "a-1"
+ACTION_2 = "a-2"
 
 
 def run_process(engine, workdir, crash_after=None, kill=False):
@@ -128,6 +129,68 @@ class FixedEngineTest(unittest.TestCase):
         with open(state_path, encoding="utf-8") as fh:
             state = json.load(fh)
         self.assertEqual(state["actions"][ACTION]["status"], "done")
+
+    def test_shape_damaged_envelope_triggers_rebuild(self):
+        # Legal JSON with a structurally damaged envelope must be treated
+        # as corrupt (and rebuilt), never crash later with a KeyError.
+        variants = (
+            ("missing_actions",
+             lambda s: s.pop("actions")),
+            ("missing_steps",
+             lambda s: s["actions"][ACTION].pop("steps")),
+            ("missing_idempotency_key",
+             lambda s: s["actions"][ACTION]["steps"]["notify"].pop(
+                 "idempotency_key")),
+            ("forged_idempotency_key",
+             lambda s: s["actions"][ACTION]["steps"]["notify"].update(
+                 {"idempotency_key": "forged:key"})),
+        )
+        for name, damage in variants:
+            with self.subTest(variant=name):
+                with tempfile.TemporaryDirectory() as vdir:
+                    proc = run_process("fixed", vdir,
+                                       crash_after="notify", kill=True)
+                    self.assertEqual(proc.returncode, -signal.SIGKILL)
+                    state_path = os.path.join(
+                        vdir, f"state-{SESSION}.json")
+                    with open(state_path, encoding="utf-8") as fh:
+                        saved = json.load(fh)
+                    damage(saved)
+                    with open(state_path, "w", encoding="utf-8") as fh:
+                        json.dump(saved, fh)
+
+                    state = SessionEngine(vdir, SESSION).run_action(ACTION)
+                    self.assertEqual(
+                        state["actions"][ACTION]["status"], "done")
+                    counts = effects_by_kind(vdir)
+                    self.assertEqual(
+                        counts, {"notify": 1, "deduct_quota": 1})
+
+    def test_rebuild_restores_all_actions_of_session(self):
+        # One action finishes fully; another is killed mid-flight.  A
+        # corrupt envelope must be rebuilt for the WHOLE session: the
+        # sibling action's records must survive the post-rebuild save.
+        proc = run_process("fixed", self.workdir,
+                           crash_after="notify", kill=True)
+        self.assertEqual(proc.returncode, -signal.SIGKILL)
+        SessionEngine(self.workdir, SESSION).run_action(ACTION_2)
+        self.assertEqual(effects_by_kind(self.workdir),
+                         {"notify": 2, "deduct_quota": 1})
+
+        state_path = os.path.join(self.workdir, f"state-{SESSION}.json")
+        with open(state_path, "r+", encoding="utf-8") as fh:
+            fh.truncate(os.path.getsize(state_path) // 2)
+
+        state = SessionEngine(self.workdir, SESSION).run_action(ACTION)
+        self.assertIn(ACTION, state["actions"])
+        self.assertIn(ACTION_2, state["actions"])
+        self.assertEqual(state["actions"][ACTION]["status"], "done")
+        self.assertEqual(state["actions"][ACTION_2]["status"], "done")
+        # The sibling action was already fully applied; resume redoes
+        # nothing (no extra effects).
+        SessionEngine(self.workdir, SESSION).run_action(ACTION_2)
+        self.assertEqual(effects_by_kind(self.workdir),
+                         {"notify": 2, "deduct_quota": 2})
 
     def test_version_mismatch_refuses_to_run(self):
         state_path = os.path.join(self.workdir, f"state-{SESSION}.json")

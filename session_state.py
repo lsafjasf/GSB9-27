@@ -16,11 +16,14 @@ Partial writes
     directory, fsync, os.replace(), then fsync the directory.  A crash can
     therefore only leave either the old or the new state -- never a torn
     file.  If the state file is nevertheless found corrupt (disk damage,
-    manual truncation), the engine does NOT guess: it rebuilds the state for
-    the requested action from the effect journal.  Because keys are
-    deterministic, the journal can be queried for exactly the keys this
-    action would have used; steps whose key is already applied are marked
-    done, the rest stay pending.  No step is ever re-executed blindly.
+    manual truncation, or a structurally damaged envelope), the engine does
+    NOT guess: it rebuilds the state for *every action of this session*
+    from the effect journal.  Because keys are deterministic, the journal
+    can be queried for exactly the keys each action would have used; steps
+    whose key is already applied are marked done, the rest stay pending.
+    Rebuilding the whole session (not just the requested action) is what
+    makes the post-rebuild save safe: sibling actions' records survive.
+    No step is ever re-executed blindly.
 
 Version mismatch
     The state file carries a "version" field.  A mismatch raises
@@ -39,7 +42,9 @@ STEPS = ("notify", "deduct_quota")
 
 
 class StateCorruptError(Exception):
-    """State file exists but is not valid JSON / not an object."""
+    """State file exists but fails the structural envelope validation:
+    not valid JSON, not an object, or has a malformed/missing field
+    (version, session_id, actions, action records or step records)."""
 
 
 class StateVersionError(Exception):
@@ -127,7 +132,13 @@ class SessionEngine:
             os.close(dir_fd)
 
     def _load(self):
-        """Load state, or None if no state file exists yet."""
+        """Load state, or None if no state file exists yet.
+
+        The whole on-disk envelope is shape-checked (top-level fields,
+        per-action structure, per-step structure and idempotency keys);
+        any structural defect raises StateCorruptError so callers always
+        get a usable state object instead of a later KeyError.
+        """
         if not os.path.exists(self.state_path):
             return None
         try:
@@ -142,21 +153,69 @@ class SessionEngine:
         if state["version"] != STATE_VERSION:
             raise StateVersionError(
                 f"state version {state['version']!r} != {STATE_VERSION}")
+        if state.get("session_id") != self.session_id:
+            raise StateCorruptError(
+                f"state file {self.state_path} session_id mismatch "
+                f"({state.get('session_id')!r} != {self.session_id!r})")
+        actions = state.get("actions")
+        if not isinstance(actions, dict):
+            raise StateCorruptError(
+                f"state file {self.state_path} has no 'actions' object")
+        for action_id, action in actions.items():
+            if not isinstance(action, dict):
+                raise StateCorruptError(
+                    f"action {action_id!r} is not an object")
+            if action.get("status") not in ("pending", "done"):
+                raise StateCorruptError(
+                    f"action {action_id!r} has bad status")
+            steps = action.get("steps")
+            if not isinstance(steps, dict):
+                raise StateCorruptError(
+                    f"action {action_id!r} has no 'steps' object")
+            for step, rec in steps.items():
+                if not isinstance(rec, dict):
+                    raise StateCorruptError(
+                        f"step {action_id!r}/{step} is not an object")
+                if rec.get("status") not in ("in_progress", "done"):
+                    raise StateCorruptError(
+                        f"step {action_id!r}/{step} has bad status")
+                if rec.get("idempotency_key") != self._key(action_id, step):
+                    raise StateCorruptError(
+                        f"step {action_id!r}/{step} has a bad "
+                        f"idempotency key")
         return state
 
-    def _rebuild_from_journal(self, action_id):
-        """Rebuild state for one action from the effect journal.
+    def _rebuild_from_journal(self):
+        """Rebuild state for *all* actions of this session from the journal.
 
         Safe because idempotency keys are deterministic: we can ask the
-        gateway exactly which keys this action would have used.
+        gateway exactly which keys each action would have used.  The set of
+        actions is taken from the journal itself (the journal is the only
+        source of truth after the state envelope is lost); rebuilding only
+        the requested action would silently drop every sibling action when
+        the rebuilt state is saved.  Actions whose effects never reached
+        the journal have nothing applied, so simply resuming them as
+        pending later is safe.
         """
         state = self._fresh_state()
-        steps = {}
-        for step in STEPS:
-            key = self._key(action_id, step)
-            if key in self.gateway.applied_keys():
-                steps[step] = {"status": "done", "idempotency_key": key}
-        state["actions"][action_id] = {"status": "pending", "steps": steps}
+        prefix = f"{self.session_id}:"
+        action_ids = set()
+        for rec in self.gateway.applied_effects():
+            if rec.get("payload", {}).get("session") != self.session_id:
+                continue
+            action_id = rec["payload"].get("action")
+            if isinstance(action_id, str) and action_id:
+                action_ids.add(action_id)
+        for action_id in sorted(action_ids):
+            steps = {}
+            for step in STEPS:
+                key = self._key(action_id, step)
+                if key in self.gateway.applied_keys():
+                    steps[step] = {"status": "done",
+                                   "idempotency_key": key}
+            state["actions"][action_id] = {
+                "status": "done" if len(steps) == len(STEPS) else "pending",
+                "steps": steps}
         return state
 
     # -- action execution --------------------------------------------------
@@ -173,7 +232,7 @@ class SessionEngine:
         try:
             state = self._load()
         except StateCorruptError:
-            state = self._rebuild_from_journal(action_id)
+            state = self._rebuild_from_journal()
         if state is None:
             state = self._fresh_state()
 

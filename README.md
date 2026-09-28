@@ -26,11 +26,19 @@ gateway could not dedupe it → duplicate external side effect.
   once. Steps already marked `done` are skipped entirely.
 - **Partial writes**: state is written atomically — temp file in the same
   directory, `fsync`, `os.replace`, `fsync` the directory — so a crash
-  yields either the old or the new state, never a torn file. If the state
-  file is nevertheless corrupt (disk damage, truncation), the engine does
-  not guess: it rebuilds the requested action's state from the effect
-  journal. Because keys are deterministic, the journal can be probed for
-  exactly the keys this action would have used; applied steps are marked
+  yields either the old or the new state, never a torn file. The state is
+  also read through a **structural envelope check** — top-level fields
+  (`version`, `session_id`, `actions`), per-action records, per-step
+  records and idempotency keys are all validated; a legal-JSON file that
+  is missing or has a malformed field is rejected as corrupt rather than
+  crashing later with a `KeyError`. If the state file is nevertheless
+  corrupt (disk damage, truncation, damaged envelope), the engine does not
+  guess: it rebuilds the state from the effect journal for **every action
+  of the session**, not just the requested one — rebuilding a single
+  action would silently wipe the sibling actions' records when the
+  rebuilt state is saved. The action set is taken from the journal
+  itself; because keys are deterministic, the journal can be probed for
+  exactly the keys each action would have used, applied steps are marked
   done, the rest stay pending. Nothing is re-executed blindly.
 - **Version mismatch**: the state carries a `version` field; a mismatch
   raises `StateVersionError` and the engine refuses to run (no silent
@@ -65,4 +73,10 @@ python3 runner.py fixed /tmp/demo2 s-1 a-1  # resumes; each effect exactly once
 - `test_in_process_simulated_crash` — same scenario without a subprocess
 - `test_corrupt_state_file_recovers_from_journal` — truncated state file,
   rebuilt from journal, no duplicate effects
+- `test_shape_damaged_envelope_triggers_rebuild` — legal JSON with
+  missing/malformed envelope fields (no `actions`, no `steps`, missing or
+  forged idempotency key) is treated as corrupt and rebuilt, no KeyError
+- `test_rebuild_restores_all_actions_of_session` — with two actions in
+  one session (one done, one killed mid-flight), journal rebuild restores
+  both and the sibling's records survive the post-rebuild save
 - `test_version_mismatch_refuses_to_run` — `StateVersionError`, zero effects
