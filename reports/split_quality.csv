@@ -1,0 +1,8 @@
+case,strategy,max_load,mean_load,std,imbalance,utilisation_lb
+1. mixed workload (n=200, lognormal costs),cost_balanced,456.8800,456.2287,0.7040,0.0014,0.9986
+1. mixed workload (n=200, lognormal costs),even_chunks,617.6500,456.2287,103.6707,0.3538,0.7387
+2. shards(16) > tasks(2),cost_balanced,7.0000,5.0000,2.0000,0.4000,0.7143
+3. single extremely long item (500 vs 2x63),cost_balanced,500.0000,78.2500,159.4065,5.3898,0.1565
+4. all items fail,cost_balanced,15.0000,15.0000,0.0000,0.0000,1.0000
+5. partial failures + re-split (max 4 attempts),cost_balanced,20.0000,20.0000,0.0000,0.0000,1.0000
+6. dynamic batch added at tick 30,cost_balanced,16.0000,16.0000,0.0000,0.0000,1.0000

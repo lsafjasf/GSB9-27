@@ -1,0 +1,3039 @@
+{
+  "workers": 8,
+  "cases": [
+    {
+      "name": "1. mixed workload (n=200, lognormal costs)",
+      "task_count": 200,
+      "shards_requested": 8,
+      "workers": 8,
+      "split_quality_balanced": {
+        "shards_requested": 8.0,
+        "shards_nonempty": 8.0,
+        "max_load": 456.88,
+        "min_load": 455.18,
+        "mean_load": 456.22875,
+        "std_load": 0.704049669767686,
+        "imbalance_ratio": 0.001427463744886758,
+        "straggler_overhead": 0.001427463744886781,
+        "utilisation_lower_bound": 0.9985745710033269,
+        "lpt_bound_vs_lb": 0.001427463744886781
+      },
+      "makespan": 456.88,
+      "wasted_work_on_failed_attempts": 0.0,
+      "succeeded": 200,
+      "dead": 0,
+      "resplit_events": 0,
+      "dynamically_added": 0,
+      "final_progress": 1.0,
+      "item_completion_time": {
+        "count": 200.0,
+        "min": 61.41,
+        "p50": 386.80499999999995,
+        "mean": 349.50955,
+        "p90": 452.563,
+        "p99": 456.8305000000001,
+        "max": 456.88,
+        "std": 102.72250660053764
+      },
+      "shard_duration": {
+        "count": 8.0,
+        "min": 455.18,
+        "p50": 456.56999999999994,
+        "mean": 456.22875,
+        "p90": 456.87999999999994,
+        "p99": 456.88,
+        "max": 456.88,
+        "std": 0.70404966976769
+      },
+      "worker_busy_time": [
+        456.83,
+        456.87999999999994,
+        455.23,
+        456.8300000000001,
+        456.88,
+        455.18,
+        456.3099999999999,
+        455.69
+      ],
+      "progress_series": [
+        {
+          "tick": 0.0,
+          "fraction": 0.0,
+          "completed_work": 0,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 61.41,
+          "fraction": 0.0168254411849319,
+          "completed_work": 61.41,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 65.7,
+          "fraction": 0.03482627958014483,
+          "completed_work": 127.11,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 69.28,
+          "fraction": 0.053807985577410455,
+          "completed_work": 196.39,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 70.42,
+          "fraction": 0.07310203488929622,
+          "completed_work": 266.81,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 87.84,
+          "fraction": 0.09716890923686856,
+          "completed_work": 354.65,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 97.57,
+          "fraction": 0.12390166117326014,
+          "completed_work": 452.22,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 118.48,
+          "fraction": 0.13706939775277205,
+          "completed_work": 500.28,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 119.83,
+          "fraction": 0.15307562270023536,
+          "completed_work": 558.7,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 123.35,
+          "fraction": 0.18687171731286115,
+          "completed_work": 682.05,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 123.92,
+          "fraction": 0.20282314518758407,
+          "completed_work": 740.27,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 127.27000000000001,
+          "fraction": 0.21871155642865558,
+          "completed_work": 798.26,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 135.02,
+          "fraction": 0.2316381858881099,
+          "completed_work": 845.44,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 143.78,
+          "fraction": 0.24429904954477333,
+          "completed_work": 891.65,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 164.15,
+          "fraction": 0.2568119611050378,
+          "completed_work": 937.32,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 165.49,
+          "fraction": 0.2693221328116652,
+          "completed_work": 982.98,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 165.91,
+          "fraction": 0.28082677823350677,
+          "completed_work": 1024.97,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 167.03,
+          "fraction": 0.2917204362942932,
+          "completed_work": 1064.73,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 167.09,
+          "fraction": 0.303704556102613,
+          "completed_work": 1108.47,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 174.37,
+          "fraction": 0.31448588016428164,
+          "completed_work": 1147.82,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 181.65,
+          "fraction": 0.3248617058876715,
+          "completed_work": 1185.69,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 201.84,
+          "fraction": 0.33518821424559503,
+          "completed_work": 1223.38,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 201.88,
+          "fraction": 0.3450434677779513,
+          "completed_work": 1259.35,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 202.24,
+          "fraction": 0.3546740533120721,
+          "completed_work": 1294.5,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 202.34,
+          "fraction": 0.3643484765043851,
+          "completed_work": 1329.81,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 203.16000000000003,
+          "fraction": 0.3746695051550346,
+          "completed_work": 1367.48,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 207.48000000000002,
+          "fraction": 0.38374116054720353,
+          "completed_work": 1400.59,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 213.86,
+          "fraction": 0.3925662291120408,
+          "completed_work": 1432.8,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 231.05,
+          "fraction": 0.40043234890392154,
+          "completed_work": 1461.51,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 231.60000000000002,
+          "fraction": 0.4082244926476028,
+          "completed_work": 1489.95,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 231.61,
+          "fraction": 0.4162714427795267,
+          "completed_work": 1519.32,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 232.32999999999998,
+          "fraction": 0.4246142971042487,
+          "completed_work": 1549.77,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 232.72,
+          "fraction": 0.4883761709449481,
+          "completed_work": 1782.49,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 233.45,
+          "fraction": 0.49703684829156425,
+          "completed_work": 1814.1,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 235.44000000000003,
+          "fraction": 0.5046974790606685,
+          "completed_work": 1842.06,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 240.96,
+          "fraction": 0.5121224824169893,
+          "completed_work": 1869.16,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 257.88,
+          "fraction": 0.5194735097251105,
+          "completed_work": 1895.99,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 257.95,
+          "fraction": 0.5261861511358064,
+          "completed_work": 1920.49,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 258.2,
+          "fraction": 0.5334714219566391,
+          "completed_work": 1947.08,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 258.34,
+          "fraction": 0.540490926974681,
+          "completed_work": 1972.7,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 258.38,
+          "fraction": 0.5478282550146172,
+          "completed_work": 1999.48,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 258.9,
+          "fraction": 0.5551080461281759,
+          "completed_work": 2026.05,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 259.57000000000005,
+          "fraction": 0.561719312954302,
+          "completed_work": 2050.18,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 264.40000000000003,
+          "fraction": 0.5681415298794739,
+          "completed_work": 2073.62,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 280.28,
+          "fraction": 0.5741418093445448,
+          "completed_work": 2095.52,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 280.33,
+          "fraction": 0.580166747492349,
+          "completed_work": 2117.51,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 280.53,
+          "fraction": 0.5862848406638118,
+          "completed_work": 2139.84,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 280.70000000000005,
+          "fraction": 0.5920741513988322,
+          "completed_work": 2160.97,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 280.76,
+          "fraction": 0.5980634714493551,
+          "completed_work": 2182.83,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 281.19,
+          "fraction": 0.6044308913017867,
+          "completed_work": 2206.07,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 281.21,
+          "fraction": 0.6108229698369514,
+          "completed_work": 2229.4,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 285.28000000000003,
+          "fraction": 0.6165437842310465,
+          "completed_work": 2250.28,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 300.25,
+          "fraction": 0.62176046555593,
+          "completed_work": 2269.32,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 300.27,
+          "fraction": 0.6271059200017535,
+          "completed_work": 2288.83,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 300.33,
+          "fraction": 0.6323499998630073,
+          "completed_work": 2307.97,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 300.49000000000007,
+          "fraction": 0.6377721702106675,
+          "completed_work": 2327.76,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 300.55999999999995,
+          "fraction": 0.6432600970456158,
+          "completed_work": 2347.79,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 300.59,
+          "fraction": 0.6488110405142158,
+          "completed_work": 2368.05,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 300.65,
+          "fraction": 0.6543921223728228,
+          "completed_work": 2388.42,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 304.05,
+          "fraction": 0.659534827649507,
+          "completed_work": 2407.19,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 318.17999999999995,
+          "fraction": 0.6643377910752007,
+          "completed_work": 2424.72,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 318.34999999999997,
+          "fraction": 0.6692119906954571,
+          "completed_work": 2442.51,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 318.37000000000006,
+          "fraction": 0.6741108489984465,
+          "completed_work": 2460.39,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 318.38,
+          "fraction": 0.6789850486187028,
+          "completed_work": 2478.18,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 318.45,
+          "fraction": 0.6839496634089808,
+          "completed_work": 2496.3,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 318.84999999999997,
+          "fraction": 0.6890403114665615,
+          "completed_work": 2514.88,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 318.91,
+          "fraction": 0.6941528783532384,
+          "completed_work": 2533.54,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 321.5,
+          "fraction": 0.698933922949836,
+          "completed_work": 2550.99,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 335.34,
+          "fraction": 0.7035807147182197,
+          "completed_work": 2567.95,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 335.36999999999995,
+          "fraction": 0.7082905231202549,
+          "completed_work": 2585.14,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 335.39,
+          "fraction": 0.7129318351813646,
+          "completed_work": 2602.08,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 335.4100000000001,
+          "fraction": 0.7176005457788445,
+          "completed_work": 2619.12,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 335.43999999999994,
+          "fraction": 0.7221459629626585,
+          "completed_work": 2635.71,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 335.45000000000005,
+          "fraction": 0.7266776808782875,
+          "completed_work": 2652.25,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 335.47999999999996,
+          "fraction": 0.7313710501585006,
+          "completed_work": 2669.38,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 337.73,
+          "fraction": 0.7358178326113819,
+          "completed_work": 2685.61,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 350.53,
+          "fraction": 0.7399413123350951,
+          "completed_work": 2700.66,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 350.64000000000004,
+          "fraction": 0.7441031500097265,
+          "completed_work": 2715.85,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 350.68999999999994,
+          "fraction": 0.74828142680618,
+          "completed_work": 2731.1,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 351.19000000000005,
+          "fraction": 0.7526049158453956,
+          "completed_work": 2746.88,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 351.34999999999997,
+          "fraction": 0.7569777222500774,
+          "completed_work": 2762.84,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 351.46999999999997,
+          "fraction": 0.7613888866056776,
+          "completed_work": 2778.94,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 351.47999999999996,
+          "fraction": 0.7658110103758258,
+          "completed_work": 2795.08,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 352.59000000000003,
+          "fraction": 0.7698824328804356,
+          "completed_work": 2809.94,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 364.03,
+          "fraction": 0.7733209491948939,
+          "completed_work": 2822.49,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 364.53999999999996,
+          "fraction": 0.777115646482165,
+          "completed_work": 2836.34,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 364.55999999999995,
+          "fraction": 0.7807021148930224,
+          "completed_work": 2849.43,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 364.57,
+          "fraction": 0.7843242014011612,
+          "completed_work": 2862.65,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 365.01000000000005,
+          "fraction": 0.788110679127521,
+          "completed_work": 2876.47,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 365.13000000000005,
+          "fraction": 0.7915464555883426,
+          "completed_work": 2889.01,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 365.22,
+          "fraction": 0.7955411621911158,
+          "completed_work": 2903.59,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 365.32,
+          "fraction": 0.7995934057202665,
+          "completed_work": 2918.38,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 376.13,
+          "fraction": 0.8027606765246601,
+          "completed_work": 2929.94,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 376.22999999999996,
+          "fraction": 0.8061032979618229,
+          "completed_work": 2942.14,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 376.32,
+          "fraction": 0.8091171369625434,
+          "completed_work": 2953.14,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 376.32000000000005,
+          "fraction": 0.8121830331823674,
+          "completed_work": 2964.33,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 376.37,
+          "fraction": 0.8152379699876433,
+          "completed_work": 2975.48,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 376.3999999999999,
+          "fraction": 0.8184819566938735,
+          "completed_work": 2987.32,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 376.51000000000005,
+          "fraction": 0.821632788376445,
+          "completed_work": 2998.82,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 376.58,
+          "fraction": 0.8249315721554155,
+          "completed_work": 3010.86,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 386.75999999999993,
+          "fraction": 0.8277700605233668,
+          "completed_work": 3021.22,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 386.85,
+          "fraction": 0.8306414271349624,
+          "completed_work": 3031.7,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 386.86000000000007,
+          "fraction": 0.8334771756492769,
+          "completed_work": 3042.05,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 386.91999999999996,
+          "fraction": 0.8363101843099542,
+          "completed_work": 3052.39,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 387.01,
+          "fraction": 0.8392911450670305,
+          "completed_work": 3063.27,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 387.08000000000004,
+          "fraction": 0.8422392275804628,
+          "completed_work": 3074.03,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 387.09999999999997,
+          "fraction": 0.845217448483902,
+          "completed_work": 3084.9,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 387.12,
+          "fraction": 0.8481764904118821,
+          "completed_work": 3095.7,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 396.88,
+          "fraction": 0.8508505875616125,
+          "completed_work": 3105.46,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 396.93999999999994,
+          "fraction": 0.8535959209059052,
+          "completed_work": 3115.48,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 396.93999999999994,
+          "fraction": 0.8562919368847317,
+          "completed_work": 3125.32,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 396.9600000000001,
+          "fraction": 0.8590591890581205,
+          "completed_work": 3135.42,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 397.0,
+          "fraction": 0.8617963028415022,
+          "completed_work": 3145.41,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 397.06,
+          "fraction": 0.8645936934048983,
+          "completed_work": 3155.62,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 397.06000000000006,
+          "fraction": 0.867328067334643,
+          "completed_work": 3165.6,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 397.06999999999994,
+          "fraction": 0.8701528564344092,
+          "completed_work": 3175.91,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 405.98999999999995,
+          "fraction": 0.87259680587863,
+          "completed_work": 3184.83,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 406.09000000000003,
+          "fraction": 0.875070893712858,
+          "completed_work": 3193.86,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 406.16,
+          "fraction": 0.8775641605225449,
+          "completed_work": 3202.96,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 406.41,
+          "fraction": 0.8801423627949795,
+          "completed_work": 3212.37,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 406.4100000000001,
+          "fraction": 0.8827315244819622,
+          "completed_work": 3221.82,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 406.5299999999999,
+          "fraction": 0.8853590441198631,
+          "completed_work": 3231.41,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 406.6,
+          "fraction": 0.8880221818550453,
+          "completed_work": 3241.13,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 406.63999999999993,
+          "fraction": 0.8906798398829534,
+          "completed_work": 3250.83,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 414.63,
+          "fraction": 0.8928799423534796,
+          "completed_work": 3258.86,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 414.6599999999999,
+          "fraction": 0.8950773049703685,
+          "completed_work": 3266.88,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 414.69,
+          "fraction": 0.8974144001227454,
+          "completed_work": 3275.41,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 414.7300000000001,
+          "fraction": 0.899693958348745,
+          "completed_work": 3283.73,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 414.77000000000004,
+          "fraction": 0.9020721513056772,
+          "completed_work": 3292.41,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 414.78000000000003,
+          "fraction": 0.9043654087998619,
+          "completed_work": 3300.78,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 414.7899999999999,
+          "fraction": 0.9066285279040394,
+          "completed_work": 3309.04,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 414.87999999999994,
+          "fraction": 0.909064257787349,
+          "completed_work": 3317.93,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 422.2099999999999,
+          "fraction": 0.9110972291860169,
+          "completed_work": 3325.35,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 422.28999999999996,
+          "fraction": 0.9131274607310477,
+          "completed_work": 3332.7599999999998,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 422.3,
+          "fraction": 0.9151878306660859,
+          "completed_work": 3340.28,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 422.43000000000006,
+          "fraction": 0.9172865585520422,
+          "completed_work": 3347.94,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 422.5200000000001,
+          "fraction": 0.9194209045352798,
+          "completed_work": 3355.73,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 422.61,
+          "fraction": 0.9215908686157986,
+          "completed_work": 3363.65,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 422.65,
+          "fraction": 0.9237882312326876,
+          "completed_work": 3371.67,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 422.6699999999999,
+          "fraction": 0.9259828539959395,
+          "completed_work": 3379.68,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 429.13999999999993,
+          "fraction": 0.9277555392990907,
+          "completed_work": 3386.15,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 429.19,
+          "fraction": 0.9295474035777009,
+          "completed_work": 3392.69,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 429.25,
+          "fraction": 0.9313666663926813,
+          "completed_work": 3399.33,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 429.2600000000001,
+          "fraction": 0.933213327744032,
+          "completed_work": 3406.07,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 429.44,
+          "fraction": 0.9351695832408633,
+          "completed_work": 3413.21,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 429.44000000000005,
+          "fraction": 0.9370902206404134,
+          "completed_work": 3420.22,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 429.5399999999999,
+          "fraction": 0.9390985333563482,
+          "completed_work": 3427.55,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 429.54999999999995,
+          "fraction": 0.9410876670968237,
+          "completed_work": 3434.81,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 435.09,
+          "fraction": 0.9426055460117321,
+          "completed_work": 3440.35,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 435.1700000000001,
+          "fraction": 0.9441754821457438,
+          "completed_work": 3446.08,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 435.19,
+          "fraction": 0.9457508979870295,
+          "completed_work": 3451.83,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 435.2499999999999,
+          "fraction": 0.9473153544137672,
+          "completed_work": 3457.54,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 435.42999999999995,
+          "fraction": 0.949038722351452,
+          "completed_work": 3463.83,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 435.4300000000001,
+          "fraction": 0.9507292120454925,
+          "completed_work": 3470.0,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 435.44,
+          "fraction": 0.9524416205686292,
+          "completed_work": 3476.25,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 435.48,
+          "fraction": 0.9541485493844919,
+          "completed_work": 3482.48,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 440.44000000000005,
+          "fraction": 0.9555924522512007,
+          "completed_work": 3487.75,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 440.46,
+          "fraction": 0.9570363551179096,
+          "completed_work": 3493.02,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 440.4799999999999,
+          "fraction": 0.9584692985700705,
+          "completed_work": 3498.25,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 440.54,
+          "fraction": 0.9598556645104018,
+          "completed_work": 3503.31,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 440.56,
+          "fraction": 0.9612584695725555,
+          "completed_work": 3508.43,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 440.58,
+          "fraction": 0.9627626492192788,
+          "completed_work": 3513.92,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 440.5800000000001,
+          "fraction": 0.9641736738423434,
+          "completed_work": 3519.07,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 440.61999999999995,
+          "fraction": 0.965595657879956,
+          "completed_work": 3524.2599999999998,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 444.86000000000007,
+          "fraction": 0.9667683152366001,
+          "completed_work": 3528.54,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 444.87999999999994,
+          "fraction": 0.9679354928859701,
+          "completed_work": 3532.8,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 445.05,
+          "fraction": 0.9691602074617174,
+          "completed_work": 3537.27,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 445.07,
+          "fraction": 0.9703958814520129,
+          "completed_work": 3541.78,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 445.35,
+          "fraction": 0.9717137510514189,
+          "completed_work": 3546.59,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 445.3699999999999,
+          "fraction": 0.973053539479921,
+          "completed_work": 3551.48,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 445.40999999999997,
+          "fraction": 0.9744097670302452,
+          "completed_work": 3556.43,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 445.45000000000005,
+          "fraction": 0.9757824337023917,
+          "completed_work": 3561.44,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 449.0900000000001,
+          "fraction": 0.9769413917908506,
+          "completed_work": 3565.67,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 449.09999999999997,
+          "fraction": 0.9780976100256724,
+          "completed_work": 3569.89,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 449.21999999999997,
+          "fraction": 0.9792346492850352,
+          "completed_work": 3574.04,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 449.23,
+          "fraction": 0.980379908105309,
+          "completed_work": 3578.22,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 449.33000000000004,
+          "fraction": 0.9814429713164723,
+          "completed_work": 3582.1,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 449.39,
+          "fraction": 0.9825334330640058,
+          "completed_work": 3586.08,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 449.4499999999999,
+          "fraction": 0.9836512933479094,
+          "completed_work": 3590.16,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 449.45000000000005,
+          "fraction": 0.984774633339087,
+          "completed_work": 3594.2599999999998,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 452.56,
+          "fraction": 0.9856870046002143,
+          "completed_work": 3597.59,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 452.59000000000003,
+          "fraction": 0.9865473186422381,
+          "completed_work": 3600.73,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 452.65000000000003,
+          "fraction": 0.9874569500497284,
+          "completed_work": 3604.05,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 452.6899999999999,
+          "fraction": 0.9883446626281224,
+          "completed_work": 3607.29,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 452.68999999999994,
+          "fraction": 0.9893282700838122,
+          "completed_work": 3610.88,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 452.69,
+          "fraction": 0.9902324217840283,
+          "completed_work": 3614.18,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 452.6900000000001,
+          "fraction": 0.9912187690933552,
+          "completed_work": 3617.78,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 452.72999999999996,
+          "fraction": 0.9921804577199486,
+          "completed_work": 3621.29,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 454.85999999999996,
+          "fraction": 0.9927640465446336,
+          "completed_work": 3623.42,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 454.9600000000001,
+          "fraction": 0.9933859933202369,
+          "completed_work": 3625.69,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 455.04,
+          "fraction": 0.9940298589249362,
+          "completed_work": 3628.04,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 455.10999999999996,
+          "fraction": 0.9946929035050948,
+          "completed_work": 3630.46,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 455.1299999999999,
+          "fraction": 0.9953614277925273,
+          "completed_work": 3632.9,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 455.18,
+          "fraction": 0.9960710498845151,
+          "completed_work": 3635.49,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 455.23,
+          "fraction": 0.996777932122866,
+          "completed_work": 3638.07,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 455.69,
+          "fraction": 0.9976355063112529,
+          "completed_work": 3641.2,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 456.3099999999999,
+          "fraction": 0.9979588090404211,
+          "completed_work": 3642.38,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 456.83,
+          "fraction": 0.9984300638659883,
+          "completed_work": 3644.1,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 456.8300000000001,
+          "fraction": 0.9989424164961107,
+          "completed_work": 3645.97,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 456.87999999999994,
+          "fraction": 0.9994958669307885,
+          "completed_work": 3647.99,
+          "total_work": 3649.83
+        },
+        {
+          "tick": 456.88,
+          "fraction": 1.0,
+          "completed_work": 3649.83,
+          "total_work": 3649.83
+        }
+      ],
+      "resplits": [],
+      "invocations": {
+        "i0": 1,
+        "i1": 1,
+        "i10": 1,
+        "i100": 1,
+        "i101": 1,
+        "i102": 1,
+        "i103": 1,
+        "i104": 1,
+        "i105": 1,
+        "i106": 1,
+        "i107": 1,
+        "i108": 1,
+        "i109": 1,
+        "i11": 1,
+        "i110": 1,
+        "i111": 1,
+        "i112": 1,
+        "i113": 1,
+        "i114": 1,
+        "i115": 1,
+        "i116": 1,
+        "i117": 1,
+        "i118": 1,
+        "i119": 1,
+        "i12": 1,
+        "i120": 1,
+        "i121": 1,
+        "i122": 1,
+        "i123": 1,
+        "i124": 1,
+        "i125": 1,
+        "i126": 1,
+        "i127": 1,
+        "i128": 1,
+        "i129": 1,
+        "i13": 1,
+        "i130": 1,
+        "i131": 1,
+        "i132": 1,
+        "i133": 1,
+        "i134": 1,
+        "i135": 1,
+        "i136": 1,
+        "i137": 1,
+        "i138": 1,
+        "i139": 1,
+        "i14": 1,
+        "i140": 1,
+        "i141": 1,
+        "i142": 1,
+        "i143": 1,
+        "i144": 1,
+        "i145": 1,
+        "i146": 1,
+        "i147": 1,
+        "i148": 1,
+        "i149": 1,
+        "i15": 1,
+        "i150": 1,
+        "i151": 1,
+        "i152": 1,
+        "i153": 1,
+        "i154": 1,
+        "i155": 1,
+        "i156": 1,
+        "i157": 1,
+        "i158": 1,
+        "i159": 1,
+        "i16": 1,
+        "i160": 1,
+        "i161": 1,
+        "i162": 1,
+        "i163": 1,
+        "i164": 1,
+        "i165": 1,
+        "i166": 1,
+        "i167": 1,
+        "i168": 1,
+        "i169": 1,
+        "i17": 1,
+        "i170": 1,
+        "i171": 1,
+        "i172": 1,
+        "i173": 1,
+        "i174": 1,
+        "i175": 1,
+        "i176": 1,
+        "i177": 1,
+        "i178": 1,
+        "i179": 1,
+        "i18": 1,
+        "i180": 1,
+        "i181": 1,
+        "i182": 1,
+        "i183": 1,
+        "i184": 1,
+        "i185": 1,
+        "i186": 1,
+        "i187": 1,
+        "i188": 1,
+        "i189": 1,
+        "i19": 1,
+        "i190": 1,
+        "i191": 1,
+        "i192": 1,
+        "i193": 1,
+        "i194": 1,
+        "i195": 1,
+        "i196": 1,
+        "i197": 1,
+        "i198": 1,
+        "i199": 1,
+        "i2": 1,
+        "i20": 1,
+        "i21": 1,
+        "i22": 1,
+        "i23": 1,
+        "i24": 1,
+        "i25": 1,
+        "i26": 1,
+        "i27": 1,
+        "i28": 1,
+        "i29": 1,
+        "i3": 1,
+        "i30": 1,
+        "i31": 1,
+        "i32": 1,
+        "i33": 1,
+        "i34": 1,
+        "i35": 1,
+        "i36": 1,
+        "i37": 1,
+        "i38": 1,
+        "i39": 1,
+        "i4": 1,
+        "i40": 1,
+        "i41": 1,
+        "i42": 1,
+        "i43": 1,
+        "i44": 1,
+        "i45": 1,
+        "i46": 1,
+        "i47": 1,
+        "i48": 1,
+        "i49": 1,
+        "i5": 1,
+        "i50": 1,
+        "i51": 1,
+        "i52": 1,
+        "i53": 1,
+        "i54": 1,
+        "i55": 1,
+        "i56": 1,
+        "i57": 1,
+        "i58": 1,
+        "i59": 1,
+        "i6": 1,
+        "i60": 1,
+        "i61": 1,
+        "i62": 1,
+        "i63": 1,
+        "i64": 1,
+        "i65": 1,
+        "i66": 1,
+        "i67": 1,
+        "i68": 1,
+        "i69": 1,
+        "i7": 1,
+        "i70": 1,
+        "i71": 1,
+        "i72": 1,
+        "i73": 1,
+        "i74": 1,
+        "i75": 1,
+        "i76": 1,
+        "i77": 1,
+        "i78": 1,
+        "i79": 1,
+        "i8": 1,
+        "i80": 1,
+        "i81": 1,
+        "i82": 1,
+        "i83": 1,
+        "i84": 1,
+        "i85": 1,
+        "i86": 1,
+        "i87": 1,
+        "i88": 1,
+        "i89": 1,
+        "i9": 1,
+        "i90": 1,
+        "i91": 1,
+        "i92": 1,
+        "i93": 1,
+        "i94": 1,
+        "i95": 1,
+        "i96": 1,
+        "i97": 1,
+        "i98": 1,
+        "i99": 1
+      },
+      "split_quality_even": {
+        "shards_requested": 8.0,
+        "shards_nonempty": 8.0,
+        "max_load": 617.65,
+        "min_load": 329.27,
+        "mean_load": 456.22875,
+        "std_load": 103.67067647573977,
+        "imbalance_ratio": 0.3538164791236852,
+        "straggler_overhead": 0.3538164791236851,
+        "utilisation_lower_bound": 0.7386525540354569,
+        "lpt_bound_vs_lb": 0.3538164791236851
+      }
+    },
+    {
+      "name": "2. shards(16) > tasks(2)",
+      "task_count": 2,
+      "shards_requested": 16,
+      "workers": 4,
+      "split_quality_balanced": {
+        "shards_requested": 2.0,
+        "shards_nonempty": 2.0,
+        "max_load": 7.0,
+        "min_load": 3.0,
+        "mean_load": 5.0,
+        "std_load": 2.0,
+        "imbalance_ratio": 0.4,
+        "straggler_overhead": 0.3999999999999999,
+        "utilisation_lower_bound": 0.7142857142857143,
+        "lpt_bound_vs_lb": 0.3999999999999999
+      },
+      "makespan": 7.0,
+      "wasted_work_on_failed_attempts": 0.0,
+      "succeeded": 2,
+      "dead": 0,
+      "resplit_events": 0,
+      "dynamically_added": 0,
+      "final_progress": 1.0,
+      "item_completion_time": {
+        "count": 2.0,
+        "min": 3.0,
+        "p50": 5.0,
+        "mean": 5.0,
+        "p90": 6.6,
+        "p99": 6.96,
+        "max": 7.0,
+        "std": 2.0
+      },
+      "shard_duration": {
+        "count": 2.0,
+        "min": 3.0,
+        "p50": 5.0,
+        "mean": 5.0,
+        "p90": 6.6,
+        "p99": 6.96,
+        "max": 7.0,
+        "std": 2.0
+      },
+      "worker_busy_time": [
+        7.0,
+        3.0,
+        0.0,
+        0.0
+      ],
+      "progress_series": [
+        {
+          "tick": 0.0,
+          "fraction": 0.0,
+          "completed_work": 0,
+          "total_work": 10.0
+        },
+        {
+          "tick": 3.0,
+          "fraction": 0.3,
+          "completed_work": 3.0,
+          "total_work": 10.0
+        },
+        {
+          "tick": 7.0,
+          "fraction": 1.0,
+          "completed_work": 10.0,
+          "total_work": 10.0
+        }
+      ],
+      "resplits": [],
+      "invocations": {
+        "t0": 1,
+        "t1": 1
+      }
+    },
+    {
+      "name": "3. single extremely long item (500 vs 2x63)",
+      "task_count": 64,
+      "shards_requested": 8,
+      "workers": 8,
+      "split_quality_balanced": {
+        "shards_requested": 8.0,
+        "shards_nonempty": 8.0,
+        "max_load": 500.0,
+        "min_load": 18.0,
+        "mean_load": 78.25,
+        "std_load": 159.40651649164158,
+        "imbalance_ratio": 5.389776357827476,
+        "straggler_overhead": 5.389776357827476,
+        "utilisation_lower_bound": 0.1565,
+        "lpt_bound_vs_lb": 5.389776357827476
+      },
+      "makespan": 500.0,
+      "wasted_work_on_failed_attempts": 0.0,
+      "succeeded": 64,
+      "dead": 0,
+      "resplit_events": 0,
+      "dynamically_added": 0,
+      "final_progress": 1.0,
+      "item_completion_time": {
+        "count": 64.0,
+        "min": 2.0,
+        "p50": 10.0,
+        "mean": 17.65625,
+        "p90": 18.0,
+        "p99": 196.33999999999878,
+        "max": 500.0,
+        "std": 60.985197678924514
+      },
+      "shard_duration": {
+        "count": 8.0,
+        "min": 18.0,
+        "p50": 18.0,
+        "mean": 78.25,
+        "p90": 162.5999999999999,
+        "p99": 466.2599999999999,
+        "max": 500.0,
+        "std": 159.40651649164158
+      },
+      "worker_busy_time": [
+        500.0,
+        18.0,
+        18.0,
+        18.0,
+        18.0,
+        18.0,
+        18.0,
+        18.0
+      ],
+      "progress_series": [
+        {
+          "tick": 0.0,
+          "fraction": 0.0,
+          "completed_work": 0,
+          "total_work": 626.0
+        },
+        {
+          "tick": 2.0,
+          "fraction": 0.003194888178913738,
+          "completed_work": 2.0,
+          "total_work": 626.0
+        },
+        {
+          "tick": 2.0,
+          "fraction": 0.006389776357827476,
+          "completed_work": 4.0,
+          "total_work": 626.0
+        },
+        {
+          "tick": 2.0,
+          "fraction": 0.009584664536741214,
+          "completed_work": 6.0,
+          "total_work": 626.0
+        },
+        {
+          "tick": 2.0,
+          "fraction": 0.012779552715654952,
+          "completed_work": 8.0,
+          "total_work": 626.0
+        },
+        {
+          "tick": 2.0,
+          "fraction": 0.01597444089456869,
+          "completed_work": 10.0,
+          "total_work": 626.0
+        },
+        {
+          "tick": 2.0,
+          "fraction": 0.019169329073482427,
+          "completed_work": 12.0,
+          "total_work": 626.0
+        },
+        {
+          "tick": 2.0,
+          "fraction": 0.022364217252396165,
+          "completed_work": 14.0,
+          "total_work": 626.0
+        },
+        {
+          "tick": 4.0,
+          "fraction": 0.025559105431309903,
+          "completed_work": 16.0,
+          "total_work": 626.0
+        },
+        {
+          "tick": 4.0,
+          "fraction": 0.02875399361022364,
+          "completed_work": 18.0,
+          "total_work": 626.0
+        },
+        {
+          "tick": 4.0,
+          "fraction": 0.03194888178913738,
+          "completed_work": 20.0,
+          "total_work": 626.0
+        },
+        {
+          "tick": 4.0,
+          "fraction": 0.03514376996805112,
+          "completed_work": 22.0,
+          "total_work": 626.0
+        },
+        {
+          "tick": 4.0,
+          "fraction": 0.038338658146964855,
+          "completed_work": 24.0,
+          "total_work": 626.0
+        },
+        {
+          "tick": 4.0,
+          "fraction": 0.04153354632587859,
+          "completed_work": 26.0,
+          "total_work": 626.0
+        },
+        {
+          "tick": 4.0,
+          "fraction": 0.04472843450479233,
+          "completed_work": 28.0,
+          "total_work": 626.0
+        },
+        {
+          "tick": 6.0,
+          "fraction": 0.04792332268370607,
+          "completed_work": 30.0,
+          "total_work": 626.0
+        },
+        {
+          "tick": 6.0,
+          "fraction": 0.051118210862619806,
+          "completed_work": 32.0,
+          "total_work": 626.0
+        },
+        {
+          "tick": 6.0,
+          "fraction": 0.054313099041533544,
+          "completed_work": 34.0,
+          "total_work": 626.0
+        },
+        {
+          "tick": 6.0,
+          "fraction": 0.05750798722044728,
+          "completed_work": 36.0,
+          "total_work": 626.0
+        },
+        {
+          "tick": 6.0,
+          "fraction": 0.06070287539936102,
+          "completed_work": 38.0,
+          "total_work": 626.0
+        },
+        {
+          "tick": 6.0,
+          "fraction": 0.06389776357827476,
+          "completed_work": 40.0,
+          "total_work": 626.0
+        },
+        {
+          "tick": 6.0,
+          "fraction": 0.0670926517571885,
+          "completed_work": 42.0,
+          "total_work": 626.0
+        },
+        {
+          "tick": 8.0,
+          "fraction": 0.07028753993610223,
+          "completed_work": 44.0,
+          "total_work": 626.0
+        },
+        {
+          "tick": 8.0,
+          "fraction": 0.07348242811501597,
+          "completed_work": 46.0,
+          "total_work": 626.0
+        },
+        {
+          "tick": 8.0,
+          "fraction": 0.07667731629392971,
+          "completed_work": 48.0,
+          "total_work": 626.0
+        },
+        {
+          "tick": 8.0,
+          "fraction": 0.07987220447284345,
+          "completed_work": 50.0,
+          "total_work": 626.0
+        },
+        {
+          "tick": 8.0,
+          "fraction": 0.08306709265175719,
+          "completed_work": 52.0,
+          "total_work": 626.0
+        },
+        {
+          "tick": 8.0,
+          "fraction": 0.08626198083067092,
+          "completed_work": 54.0,
+          "total_work": 626.0
+        },
+        {
+          "tick": 8.0,
+          "fraction": 0.08945686900958466,
+          "completed_work": 56.0,
+          "total_work": 626.0
+        },
+        {
+          "tick": 10.0,
+          "fraction": 0.0926517571884984,
+          "completed_work": 58.0,
+          "total_work": 626.0
+        },
+        {
+          "tick": 10.0,
+          "fraction": 0.09584664536741214,
+          "completed_work": 60.0,
+          "total_work": 626.0
+        },
+        {
+          "tick": 10.0,
+          "fraction": 0.09904153354632587,
+          "completed_work": 62.0,
+          "total_work": 626.0
+        },
+        {
+          "tick": 10.0,
+          "fraction": 0.10223642172523961,
+          "completed_work": 64.0,
+          "total_work": 626.0
+        },
+        {
+          "tick": 10.0,
+          "fraction": 0.10543130990415335,
+          "completed_work": 66.0,
+          "total_work": 626.0
+        },
+        {
+          "tick": 10.0,
+          "fraction": 0.10862619808306709,
+          "completed_work": 68.0,
+          "total_work": 626.0
+        },
+        {
+          "tick": 10.0,
+          "fraction": 0.11182108626198083,
+          "completed_work": 70.0,
+          "total_work": 626.0
+        },
+        {
+          "tick": 12.0,
+          "fraction": 0.11501597444089456,
+          "completed_work": 72.0,
+          "total_work": 626.0
+        },
+        {
+          "tick": 12.0,
+          "fraction": 0.1182108626198083,
+          "completed_work": 74.0,
+          "total_work": 626.0
+        },
+        {
+          "tick": 12.0,
+          "fraction": 0.12140575079872204,
+          "completed_work": 76.0,
+          "total_work": 626.0
+        },
+        {
+          "tick": 12.0,
+          "fraction": 0.12460063897763578,
+          "completed_work": 78.0,
+          "total_work": 626.0
+        },
+        {
+          "tick": 12.0,
+          "fraction": 0.12779552715654952,
+          "completed_work": 80.0,
+          "total_work": 626.0
+        },
+        {
+          "tick": 12.0,
+          "fraction": 0.13099041533546327,
+          "completed_work": 82.0,
+          "total_work": 626.0
+        },
+        {
+          "tick": 12.0,
+          "fraction": 0.134185303514377,
+          "completed_work": 84.0,
+          "total_work": 626.0
+        },
+        {
+          "tick": 14.0,
+          "fraction": 0.13738019169329074,
+          "completed_work": 86.0,
+          "total_work": 626.0
+        },
+        {
+          "tick": 14.0,
+          "fraction": 0.14057507987220447,
+          "completed_work": 88.0,
+          "total_work": 626.0
+        },
+        {
+          "tick": 14.0,
+          "fraction": 0.14376996805111822,
+          "completed_work": 90.0,
+          "total_work": 626.0
+        },
+        {
+          "tick": 14.0,
+          "fraction": 0.14696485623003194,
+          "completed_work": 92.0,
+          "total_work": 626.0
+        },
+        {
+          "tick": 14.0,
+          "fraction": 0.1501597444089457,
+          "completed_work": 94.0,
+          "total_work": 626.0
+        },
+        {
+          "tick": 14.0,
+          "fraction": 0.15335463258785942,
+          "completed_work": 96.0,
+          "total_work": 626.0
+        },
+        {
+          "tick": 14.0,
+          "fraction": 0.15654952076677317,
+          "completed_work": 98.0,
+          "total_work": 626.0
+        },
+        {
+          "tick": 16.0,
+          "fraction": 0.1597444089456869,
+          "completed_work": 100.0,
+          "total_work": 626.0
+        },
+        {
+          "tick": 16.0,
+          "fraction": 0.16293929712460065,
+          "completed_work": 102.0,
+          "total_work": 626.0
+        },
+        {
+          "tick": 16.0,
+          "fraction": 0.16613418530351437,
+          "completed_work": 104.0,
+          "total_work": 626.0
+        },
+        {
+          "tick": 16.0,
+          "fraction": 0.16932907348242812,
+          "completed_work": 106.0,
+          "total_work": 626.0
+        },
+        {
+          "tick": 16.0,
+          "fraction": 0.17252396166134185,
+          "completed_work": 108.0,
+          "total_work": 626.0
+        },
+        {
+          "tick": 16.0,
+          "fraction": 0.1757188498402556,
+          "completed_work": 110.0,
+          "total_work": 626.0
+        },
+        {
+          "tick": 16.0,
+          "fraction": 0.17891373801916932,
+          "completed_work": 112.0,
+          "total_work": 626.0
+        },
+        {
+          "tick": 18.0,
+          "fraction": 0.18210862619808307,
+          "completed_work": 114.0,
+          "total_work": 626.0
+        },
+        {
+          "tick": 18.0,
+          "fraction": 0.1853035143769968,
+          "completed_work": 116.0,
+          "total_work": 626.0
+        },
+        {
+          "tick": 18.0,
+          "fraction": 0.18849840255591055,
+          "completed_work": 118.0,
+          "total_work": 626.0
+        },
+        {
+          "tick": 18.0,
+          "fraction": 0.19169329073482427,
+          "completed_work": 120.0,
+          "total_work": 626.0
+        },
+        {
+          "tick": 18.0,
+          "fraction": 0.19488817891373802,
+          "completed_work": 122.0,
+          "total_work": 626.0
+        },
+        {
+          "tick": 18.0,
+          "fraction": 0.19808306709265175,
+          "completed_work": 124.0,
+          "total_work": 626.0
+        },
+        {
+          "tick": 18.0,
+          "fraction": 0.2012779552715655,
+          "completed_work": 126.0,
+          "total_work": 626.0
+        },
+        {
+          "tick": 500.0,
+          "fraction": 1.0,
+          "completed_work": 626.0,
+          "total_work": 626.0
+        }
+      ],
+      "resplits": [],
+      "invocations": {
+        "i0": 1,
+        "i1": 1,
+        "i10": 1,
+        "i11": 1,
+        "i12": 1,
+        "i13": 1,
+        "i14": 1,
+        "i15": 1,
+        "i16": 1,
+        "i17": 1,
+        "i18": 1,
+        "i19": 1,
+        "i2": 1,
+        "i20": 1,
+        "i21": 1,
+        "i22": 1,
+        "i23": 1,
+        "i24": 1,
+        "i25": 1,
+        "i26": 1,
+        "i27": 1,
+        "i28": 1,
+        "i29": 1,
+        "i3": 1,
+        "i30": 1,
+        "i31": 1,
+        "i32": 1,
+        "i33": 1,
+        "i34": 1,
+        "i35": 1,
+        "i36": 1,
+        "i37": 1,
+        "i38": 1,
+        "i39": 1,
+        "i4": 1,
+        "i40": 1,
+        "i41": 1,
+        "i42": 1,
+        "i43": 1,
+        "i44": 1,
+        "i45": 1,
+        "i46": 1,
+        "i47": 1,
+        "i48": 1,
+        "i49": 1,
+        "i5": 1,
+        "i50": 1,
+        "i51": 1,
+        "i52": 1,
+        "i53": 1,
+        "i54": 1,
+        "i55": 1,
+        "i56": 1,
+        "i57": 1,
+        "i58": 1,
+        "i59": 1,
+        "i6": 1,
+        "i60": 1,
+        "i61": 1,
+        "i62": 1,
+        "i63": 1,
+        "i7": 1,
+        "i8": 1,
+        "i9": 1
+      }
+    },
+    {
+      "name": "4. all items fail",
+      "task_count": 24,
+      "shards_requested": 8,
+      "workers": 8,
+      "split_quality_balanced": {
+        "shards_requested": 8.0,
+        "shards_nonempty": 8.0,
+        "max_load": 15.0,
+        "min_load": 15.0,
+        "mean_load": 15.0,
+        "std_load": 0.0,
+        "imbalance_ratio": 0.0,
+        "straggler_overhead": 0.0,
+        "utilisation_lower_bound": 1.0,
+        "lpt_bound_vs_lb": 0.0
+      },
+      "makespan": 45.0,
+      "wasted_work_on_failed_attempts": 360.0,
+      "succeeded": 0,
+      "dead": 24,
+      "resplit_events": 32,
+      "dynamically_added": 0,
+      "final_progress": 0.0,
+      "item_completion_time": {
+        "count": 0,
+        "min": 0.0,
+        "p50": 0.0,
+        "mean": 0.0,
+        "p90": 0.0,
+        "p99": 0.0,
+        "max": 0.0,
+        "std": 0.0
+      },
+      "shard_duration": {
+        "count": 56.0,
+        "min": 5.0,
+        "p50": 5.0,
+        "mean": 6.428571428571429,
+        "p90": 15.0,
+        "p99": 15.0,
+        "max": 15.0,
+        "std": 3.499271061118826
+      },
+      "worker_busy_time": [
+        45.0,
+        45.0,
+        45.0,
+        45.0,
+        45.0,
+        45.0,
+        45.0,
+        45.0
+      ],
+      "progress_series": [
+        {
+          "tick": 0.0,
+          "fraction": 0.0,
+          "completed_work": 0,
+          "total_work": 120.0
+        },
+        {
+          "tick": 45.0,
+          "fraction": 0.0,
+          "completed_work": 0,
+          "total_work": 120.0
+        }
+      ],
+      "resplits": [
+        {
+          "parent": "add0.0",
+          "at_tick": 15.0,
+          "residual_items": [
+            "f0",
+            "f16",
+            "f23"
+          ],
+          "children": [
+            "add0.0.r.d1-0",
+            "add0.0.r.d1-1",
+            "add0.0.r.d1-2"
+          ],
+          "depth": 1
+        },
+        {
+          "parent": "add0.1",
+          "at_tick": 15.0,
+          "residual_items": [
+            "f1",
+            "f17",
+            "f3"
+          ],
+          "children": [
+            "add0.1.r.d1-0",
+            "add0.1.r.d1-1",
+            "add0.1.r.d1-2"
+          ],
+          "depth": 1
+        },
+        {
+          "parent": "add0.2",
+          "at_tick": 15.0,
+          "residual_items": [
+            "f10",
+            "f18",
+            "f4"
+          ],
+          "children": [
+            "add0.2.r.d1-0",
+            "add0.2.r.d1-1",
+            "add0.2.r.d1-2"
+          ],
+          "depth": 1
+        },
+        {
+          "parent": "add0.3",
+          "at_tick": 15.0,
+          "residual_items": [
+            "f11",
+            "f19",
+            "f5"
+          ],
+          "children": [
+            "add0.3.r.d1-0",
+            "add0.3.r.d1-1",
+            "add0.3.r.d1-2"
+          ],
+          "depth": 1
+        },
+        {
+          "parent": "add0.4",
+          "at_tick": 15.0,
+          "residual_items": [
+            "f12",
+            "f2",
+            "f6"
+          ],
+          "children": [
+            "add0.4.r.d1-0",
+            "add0.4.r.d1-1",
+            "add0.4.r.d1-2"
+          ],
+          "depth": 1
+        },
+        {
+          "parent": "add0.5",
+          "at_tick": 15.0,
+          "residual_items": [
+            "f13",
+            "f20",
+            "f7"
+          ],
+          "children": [
+            "add0.5.r.d1-0",
+            "add0.5.r.d1-1",
+            "add0.5.r.d1-2"
+          ],
+          "depth": 1
+        },
+        {
+          "parent": "add0.6",
+          "at_tick": 15.0,
+          "residual_items": [
+            "f14",
+            "f21",
+            "f8"
+          ],
+          "children": [
+            "add0.6.r.d1-0",
+            "add0.6.r.d1-1",
+            "add0.6.r.d1-2"
+          ],
+          "depth": 1
+        },
+        {
+          "parent": "add0.7",
+          "at_tick": 15.0,
+          "residual_items": [
+            "f15",
+            "f22",
+            "f9"
+          ],
+          "children": [
+            "add0.7.r.d1-0",
+            "add0.7.r.d1-1",
+            "add0.7.r.d1-2"
+          ],
+          "depth": 1
+        },
+        {
+          "parent": "add0.0.r.d1-0",
+          "at_tick": 20.0,
+          "residual_items": [
+            "f0"
+          ],
+          "children": [
+            "add0.0.r.d1-0.r.d2-0"
+          ],
+          "depth": 2
+        },
+        {
+          "parent": "add0.0.r.d1-1",
+          "at_tick": 20.0,
+          "residual_items": [
+            "f16"
+          ],
+          "children": [
+            "add0.0.r.d1-1.r.d2-0"
+          ],
+          "depth": 2
+        },
+        {
+          "parent": "add0.0.r.d1-2",
+          "at_tick": 20.0,
+          "residual_items": [
+            "f23"
+          ],
+          "children": [
+            "add0.0.r.d1-2.r.d2-0"
+          ],
+          "depth": 2
+        },
+        {
+          "parent": "add0.1.r.d1-0",
+          "at_tick": 20.0,
+          "residual_items": [
+            "f1"
+          ],
+          "children": [
+            "add0.1.r.d1-0.r.d2-0"
+          ],
+          "depth": 2
+        },
+        {
+          "parent": "add0.1.r.d1-1",
+          "at_tick": 20.0,
+          "residual_items": [
+            "f17"
+          ],
+          "children": [
+            "add0.1.r.d1-1.r.d2-0"
+          ],
+          "depth": 2
+        },
+        {
+          "parent": "add0.1.r.d1-2",
+          "at_tick": 20.0,
+          "residual_items": [
+            "f3"
+          ],
+          "children": [
+            "add0.1.r.d1-2.r.d2-0"
+          ],
+          "depth": 2
+        },
+        {
+          "parent": "add0.2.r.d1-0",
+          "at_tick": 20.0,
+          "residual_items": [
+            "f10"
+          ],
+          "children": [
+            "add0.2.r.d1-0.r.d2-0"
+          ],
+          "depth": 2
+        },
+        {
+          "parent": "add0.2.r.d1-1",
+          "at_tick": 20.0,
+          "residual_items": [
+            "f18"
+          ],
+          "children": [
+            "add0.2.r.d1-1.r.d2-0"
+          ],
+          "depth": 2
+        },
+        {
+          "parent": "add0.2.r.d1-2",
+          "at_tick": 25.0,
+          "residual_items": [
+            "f4"
+          ],
+          "children": [
+            "add0.2.r.d1-2.r.d2-0"
+          ],
+          "depth": 2
+        },
+        {
+          "parent": "add0.3.r.d1-0",
+          "at_tick": 25.0,
+          "residual_items": [
+            "f11"
+          ],
+          "children": [
+            "add0.3.r.d1-0.r.d2-0"
+          ],
+          "depth": 2
+        },
+        {
+          "parent": "add0.3.r.d1-1",
+          "at_tick": 25.0,
+          "residual_items": [
+            "f19"
+          ],
+          "children": [
+            "add0.3.r.d1-1.r.d2-0"
+          ],
+          "depth": 2
+        },
+        {
+          "parent": "add0.3.r.d1-2",
+          "at_tick": 25.0,
+          "residual_items": [
+            "f5"
+          ],
+          "children": [
+            "add0.3.r.d1-2.r.d2-0"
+          ],
+          "depth": 2
+        },
+        {
+          "parent": "add0.4.r.d1-0",
+          "at_tick": 25.0,
+          "residual_items": [
+            "f12"
+          ],
+          "children": [
+            "add0.4.r.d1-0.r.d2-0"
+          ],
+          "depth": 2
+        },
+        {
+          "parent": "add0.4.r.d1-1",
+          "at_tick": 25.0,
+          "residual_items": [
+            "f2"
+          ],
+          "children": [
+            "add0.4.r.d1-1.r.d2-0"
+          ],
+          "depth": 2
+        },
+        {
+          "parent": "add0.4.r.d1-2",
+          "at_tick": 25.0,
+          "residual_items": [
+            "f6"
+          ],
+          "children": [
+            "add0.4.r.d1-2.r.d2-0"
+          ],
+          "depth": 2
+        },
+        {
+          "parent": "add0.5.r.d1-0",
+          "at_tick": 25.0,
+          "residual_items": [
+            "f13"
+          ],
+          "children": [
+            "add0.5.r.d1-0.r.d2-0"
+          ],
+          "depth": 2
+        },
+        {
+          "parent": "add0.5.r.d1-1",
+          "at_tick": 30.0,
+          "residual_items": [
+            "f20"
+          ],
+          "children": [
+            "add0.5.r.d1-1.r.d2-0"
+          ],
+          "depth": 2
+        },
+        {
+          "parent": "add0.5.r.d1-2",
+          "at_tick": 30.0,
+          "residual_items": [
+            "f7"
+          ],
+          "children": [
+            "add0.5.r.d1-2.r.d2-0"
+          ],
+          "depth": 2
+        },
+        {
+          "parent": "add0.6.r.d1-0",
+          "at_tick": 30.0,
+          "residual_items": [
+            "f14"
+          ],
+          "children": [
+            "add0.6.r.d1-0.r.d2-0"
+          ],
+          "depth": 2
+        },
+        {
+          "parent": "add0.6.r.d1-1",
+          "at_tick": 30.0,
+          "residual_items": [
+            "f21"
+          ],
+          "children": [
+            "add0.6.r.d1-1.r.d2-0"
+          ],
+          "depth": 2
+        },
+        {
+          "parent": "add0.6.r.d1-2",
+          "at_tick": 30.0,
+          "residual_items": [
+            "f8"
+          ],
+          "children": [
+            "add0.6.r.d1-2.r.d2-0"
+          ],
+          "depth": 2
+        },
+        {
+          "parent": "add0.7.r.d1-0",
+          "at_tick": 30.0,
+          "residual_items": [
+            "f15"
+          ],
+          "children": [
+            "add0.7.r.d1-0.r.d2-0"
+          ],
+          "depth": 2
+        },
+        {
+          "parent": "add0.7.r.d1-1",
+          "at_tick": 30.0,
+          "residual_items": [
+            "f22"
+          ],
+          "children": [
+            "add0.7.r.d1-1.r.d2-0"
+          ],
+          "depth": 2
+        },
+        {
+          "parent": "add0.7.r.d1-2",
+          "at_tick": 30.0,
+          "residual_items": [
+            "f9"
+          ],
+          "children": [
+            "add0.7.r.d1-2.r.d2-0"
+          ],
+          "depth": 2
+        }
+      ],
+      "invocations": {
+        "f0": 3,
+        "f1": 3,
+        "f10": 3,
+        "f11": 3,
+        "f12": 3,
+        "f13": 3,
+        "f14": 3,
+        "f15": 3,
+        "f16": 3,
+        "f17": 3,
+        "f18": 3,
+        "f19": 3,
+        "f2": 3,
+        "f20": 3,
+        "f21": 3,
+        "f22": 3,
+        "f23": 3,
+        "f3": 3,
+        "f4": 3,
+        "f5": 3,
+        "f6": 3,
+        "f7": 3,
+        "f8": 3,
+        "f9": 3
+      }
+    },
+    {
+      "name": "5. partial failures + re-split (max 4 attempts)",
+      "task_count": 16,
+      "shards_requested": 8,
+      "workers": 8,
+      "split_quality_balanced": {
+        "shards_requested": 8.0,
+        "shards_nonempty": 8.0,
+        "max_load": 20.0,
+        "min_load": 20.0,
+        "mean_load": 20.0,
+        "std_load": 0.0,
+        "imbalance_ratio": 0.0,
+        "straggler_overhead": 0.0,
+        "utilisation_lower_bound": 1.0,
+        "lpt_bound_vs_lb": 0.0
+      },
+      "makespan": 50.0,
+      "wasted_work_on_failed_attempts": 60.0,
+      "succeeded": 16,
+      "dead": 0,
+      "resplit_events": 6,
+      "dynamically_added": 0,
+      "final_progress": 1.0,
+      "item_completion_time": {
+        "count": 16.0,
+        "min": 10.0,
+        "p50": 20.0,
+        "mean": 20.0,
+        "p90": 35.0,
+        "p99": 48.5,
+        "max": 50.0,
+        "std": 11.180339887498949
+      },
+      "shard_duration": {
+        "count": 14.0,
+        "min": 10.0,
+        "p50": 20.0,
+        "mean": 15.714285714285714,
+        "p90": 20.0,
+        "p99": 20.0,
+        "max": 20.0,
+        "std": 4.948716593053935
+      },
+      "worker_busy_time": [
+        50.0,
+        40.0,
+        30.0,
+        20.0,
+        20.0,
+        20.0,
+        20.0,
+        20.0
+      ],
+      "progress_series": [
+        {
+          "tick": 0.0,
+          "fraction": 0.0,
+          "completed_work": 0,
+          "total_work": 160.0
+        },
+        {
+          "tick": 10.0,
+          "fraction": 0.0625,
+          "completed_work": 10.0,
+          "total_work": 160.0
+        },
+        {
+          "tick": 10.0,
+          "fraction": 0.125,
+          "completed_work": 20.0,
+          "total_work": 160.0
+        },
+        {
+          "tick": 10.0,
+          "fraction": 0.1875,
+          "completed_work": 30.0,
+          "total_work": 160.0
+        },
+        {
+          "tick": 10.0,
+          "fraction": 0.25,
+          "completed_work": 40.0,
+          "total_work": 160.0
+        },
+        {
+          "tick": 10.0,
+          "fraction": 0.3125,
+          "completed_work": 50.0,
+          "total_work": 160.0
+        },
+        {
+          "tick": 10.0,
+          "fraction": 0.375,
+          "completed_work": 60.0,
+          "total_work": 160.0
+        },
+        {
+          "tick": 20.0,
+          "fraction": 0.4375,
+          "completed_work": 70.0,
+          "total_work": 160.0
+        },
+        {
+          "tick": 20.0,
+          "fraction": 0.5,
+          "completed_work": 80.0,
+          "total_work": 160.0
+        },
+        {
+          "tick": 20.0,
+          "fraction": 0.5625,
+          "completed_work": 90.0,
+          "total_work": 160.0
+        },
+        {
+          "tick": 20.0,
+          "fraction": 0.625,
+          "completed_work": 100.0,
+          "total_work": 160.0
+        },
+        {
+          "tick": 20.0,
+          "fraction": 0.6875,
+          "completed_work": 110.0,
+          "total_work": 160.0
+        },
+        {
+          "tick": 20.0,
+          "fraction": 0.75,
+          "completed_work": 120.0,
+          "total_work": 160.0
+        },
+        {
+          "tick": 20.0,
+          "fraction": 0.8125,
+          "completed_work": 130.0,
+          "total_work": 160.0
+        },
+        {
+          "tick": 30.0,
+          "fraction": 0.875,
+          "completed_work": 140.0,
+          "total_work": 160.0
+        },
+        {
+          "tick": 40.0,
+          "fraction": 0.9375,
+          "completed_work": 150.0,
+          "total_work": 160.0
+        },
+        {
+          "tick": 50.0,
+          "fraction": 1.0,
+          "completed_work": 160.0,
+          "total_work": 160.0
+        }
+      ],
+      "resplits": [
+        {
+          "parent": "add0.1",
+          "at_tick": 20.0,
+          "residual_items": [
+            "i3"
+          ],
+          "children": [
+            "add0.1.r.d1-0"
+          ],
+          "depth": 1
+        },
+        {
+          "parent": "add0.2",
+          "at_tick": 20.0,
+          "residual_items": [
+            "i10"
+          ],
+          "children": [
+            "add0.2.r.d1-0"
+          ],
+          "depth": 1
+        },
+        {
+          "parent": "add0.7",
+          "at_tick": 20.0,
+          "residual_items": [
+            "i15"
+          ],
+          "children": [
+            "add0.7.r.d1-0"
+          ],
+          "depth": 1
+        },
+        {
+          "parent": "add0.1.r.d1-0",
+          "at_tick": 30.0,
+          "residual_items": [
+            "i3"
+          ],
+          "children": [
+            "add0.1.r.d1-0.r.d2-0"
+          ],
+          "depth": 2
+        },
+        {
+          "parent": "add0.7.r.d1-0",
+          "at_tick": 30.0,
+          "residual_items": [
+            "i15"
+          ],
+          "children": [
+            "add0.7.r.d1-0.r.d2-0"
+          ],
+          "depth": 2
+        },
+        {
+          "parent": "add0.7.r.d1-0.r.d2-0",
+          "at_tick": 40.0,
+          "residual_items": [
+            "i15"
+          ],
+          "children": [
+            "add0.7.r.d1-0.r.d2-0.r.d3-0"
+          ],
+          "depth": 3
+        }
+      ],
+      "invocations": {
+        "i0": 1,
+        "i1": 1,
+        "i10": 2,
+        "i11": 1,
+        "i12": 1,
+        "i13": 1,
+        "i14": 1,
+        "i15": 4,
+        "i2": 1,
+        "i3": 3,
+        "i4": 1,
+        "i5": 1,
+        "i6": 1,
+        "i7": 1,
+        "i8": 1,
+        "i9": 1
+      }
+    },
+    {
+      "name": "6. dynamic batch added at tick 30",
+      "task_count": 16,
+      "shards_requested": 8,
+      "workers": 8,
+      "split_quality_balanced": {
+        "shards_requested": 8.0,
+        "shards_nonempty": 8.0,
+        "max_load": 16.0,
+        "min_load": 16.0,
+        "mean_load": 16.0,
+        "std_load": 0.0,
+        "imbalance_ratio": 0.0,
+        "straggler_overhead": 0.0,
+        "utilisation_lower_bound": 1.0,
+        "lpt_bound_vs_lb": 0.0
+      },
+      "makespan": 42.0,
+      "wasted_work_on_failed_attempts": 0.0,
+      "succeeded": 24,
+      "dead": 0,
+      "resplit_events": 0,
+      "dynamically_added": 8,
+      "final_progress": 1.0,
+      "item_completion_time": {
+        "count": 24.0,
+        "min": 8.0,
+        "p50": 16.0,
+        "mean": 22.0,
+        "p90": 42.0,
+        "p99": 42.0,
+        "max": 42.0,
+        "std": 14.514360704718161
+      },
+      "shard_duration": {
+        "count": 16.0,
+        "min": 12.0,
+        "p50": 14.0,
+        "mean": 14.0,
+        "p90": 16.0,
+        "p99": 16.0,
+        "max": 16.0,
+        "std": 2.0
+      },
+      "worker_busy_time": [
+        28.0,
+        28.0,
+        28.0,
+        28.0,
+        28.0,
+        28.0,
+        28.0,
+        28.0
+      ],
+      "progress_series": [
+        {
+          "tick": 0.0,
+          "fraction": 0.0,
+          "completed_work": 0,
+          "total_work": 128.0
+        },
+        {
+          "tick": 8.0,
+          "fraction": 0.0625,
+          "completed_work": 8.0,
+          "total_work": 128.0
+        },
+        {
+          "tick": 8.0,
+          "fraction": 0.125,
+          "completed_work": 16.0,
+          "total_work": 128.0
+        },
+        {
+          "tick": 8.0,
+          "fraction": 0.1875,
+          "completed_work": 24.0,
+          "total_work": 128.0
+        },
+        {
+          "tick": 8.0,
+          "fraction": 0.25,
+          "completed_work": 32.0,
+          "total_work": 128.0
+        },
+        {
+          "tick": 8.0,
+          "fraction": 0.3125,
+          "completed_work": 40.0,
+          "total_work": 128.0
+        },
+        {
+          "tick": 8.0,
+          "fraction": 0.375,
+          "completed_work": 48.0,
+          "total_work": 128.0
+        },
+        {
+          "tick": 8.0,
+          "fraction": 0.4375,
+          "completed_work": 56.0,
+          "total_work": 128.0
+        },
+        {
+          "tick": 8.0,
+          "fraction": 0.5,
+          "completed_work": 64.0,
+          "total_work": 128.0
+        },
+        {
+          "tick": 16.0,
+          "fraction": 0.5625,
+          "completed_work": 72.0,
+          "total_work": 128.0
+        },
+        {
+          "tick": 16.0,
+          "fraction": 0.625,
+          "completed_work": 80.0,
+          "total_work": 128.0
+        },
+        {
+          "tick": 16.0,
+          "fraction": 0.6875,
+          "completed_work": 88.0,
+          "total_work": 128.0
+        },
+        {
+          "tick": 16.0,
+          "fraction": 0.75,
+          "completed_work": 96.0,
+          "total_work": 128.0
+        },
+        {
+          "tick": 16.0,
+          "fraction": 0.8125,
+          "completed_work": 104.0,
+          "total_work": 128.0
+        },
+        {
+          "tick": 16.0,
+          "fraction": 0.875,
+          "completed_work": 112.0,
+          "total_work": 128.0
+        },
+        {
+          "tick": 16.0,
+          "fraction": 0.9375,
+          "completed_work": 120.0,
+          "total_work": 128.0
+        },
+        {
+          "tick": 16.0,
+          "fraction": 1.0,
+          "completed_work": 128.0,
+          "total_work": 128.0
+        },
+        {
+          "tick": 30.0,
+          "fraction": 0.5714285714285714,
+          "completed_work": 128.0,
+          "total_work": 224.0
+        },
+        {
+          "tick": 42.0,
+          "fraction": 0.625,
+          "completed_work": 140.0,
+          "total_work": 224.0
+        },
+        {
+          "tick": 42.0,
+          "fraction": 0.6785714285714286,
+          "completed_work": 152.0,
+          "total_work": 224.0
+        },
+        {
+          "tick": 42.0,
+          "fraction": 0.7321428571428571,
+          "completed_work": 164.0,
+          "total_work": 224.0
+        },
+        {
+          "tick": 42.0,
+          "fraction": 0.7857142857142857,
+          "completed_work": 176.0,
+          "total_work": 224.0
+        },
+        {
+          "tick": 42.0,
+          "fraction": 0.8392857142857143,
+          "completed_work": 188.0,
+          "total_work": 224.0
+        },
+        {
+          "tick": 42.0,
+          "fraction": 0.8928571428571429,
+          "completed_work": 200.0,
+          "total_work": 224.0
+        },
+        {
+          "tick": 42.0,
+          "fraction": 0.9464285714285714,
+          "completed_work": 212.0,
+          "total_work": 224.0
+        },
+        {
+          "tick": 42.0,
+          "fraction": 1.0,
+          "completed_work": 224.0,
+          "total_work": 224.0
+        }
+      ],
+      "resplits": [],
+      "invocations": {
+        "b0": 1,
+        "b1": 1,
+        "b10": 1,
+        "b11": 1,
+        "b12": 1,
+        "b13": 1,
+        "b14": 1,
+        "b15": 1,
+        "b2": 1,
+        "b3": 1,
+        "b4": 1,
+        "b5": 1,
+        "b6": 1,
+        "b7": 1,
+        "b8": 1,
+        "b9": 1,
+        "n0": 1,
+        "n1": 1,
+        "n2": 1,
+        "n3": 1,
+        "n4": 1,
+        "n5": 1,
+        "n6": 1,
+        "n7": 1
+      }
+    }
+  ]
+}
