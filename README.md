@@ -1,7 +1,8 @@
-# GSB9-27 — 控制流图分析与支配树构造
+# GSB9-27 — 控制流图分析、支配树构造与 SSA 转换
 
 纯 Python 3 标准库实现：从三地址码（TAC）构建控制流图（CFG），标记不可达块，
-构造支配树（idom）与支配边界（DF），供单赋值形式（SSA）插入与后续优化使用。
+构造支配树（idom）与支配边界（DF），并在此基础上构造单赋值形式（SSA）：
+按迭代支配边界在汇合点插入 phi 节点、变量重命名，附双解释器对拍验证。
 
 ## 目录结构
 
@@ -12,11 +13,18 @@ cfgdom/            库
   dom.py           支配集（迭代数据流）、idom（Cooper-Harvey-Kennedy）、
                    支配树、支配边界（Cytron 算法，迭代后序遍历）
   brute.py         暴力参考实现（删点可达性），用于对拍
+  expr.py          表达式解析 / 安全求值 / 变量重命名（ast 白名单子集）
+  ssa.py           SSA 构造：phi 插入（迭代 DF 工作表算法）、重命名
+                   （支配树 DFS + 版本栈）、可读输出、两类校验器
+  interp.py        双解释器：原始 TAC 与 SSA 形式共用同一表达式求值器
 tests/
   test_structures.py  结构用例集（8 个）
   fuzz_diff.py        随机图对拍脚本
+  test_ssa.py         SSA 结构用例集（7 个，精确断言 phi 位置）
+  fuzz_ssa_interp.py  随机程序优化前后解释器对拍
 bench.py           上万块规模耗时基准
 examples_demo.py   用法示例
+ssa_demo.py        SSA 构造演示（phi 位置逐项核对 + 对拍真实输出）
 ```
 
 ## TAC 文法
@@ -36,8 +44,31 @@ ret x               返回（出口）；文件末尾未终止时隐式出口
 python3 examples_demo.py            # 用法示例
 python3 tests/test_structures.py    # 结构用例集（单块/直线/菱形/嵌套循环/多出口/自环/不可达）
 python3 tests/fuzz_diff.py 1000 1   # 随机图对拍：1000 轮，种子 1
+python3 ssa_demo.py                 # SSA 演示：phi 位置核对 + 重命名 + 解释器对拍
+python3 tests/test_ssa.py           # SSA 结构用例集（phi 位置精确断言 + def-use 校验）
+python3 tests/fuzz_ssa_interp.py 1000 7   # 随机程序对拍：TAC 解释器 vs SSA 解释器
 python3 bench.py                    # 万块规模耗时基准
 ```
+
+## SSA 构造
+
+- **phi 插入**：变量 v 的 phi 位置 = 其定义点集合的迭代支配边界 DF+
+  （Cytron 工作表算法）；DF+ 中只可能出现汇合点（可达前驱 ≥ 2）。
+- **重命名**：支配树 DFS + 每变量版本栈。v 的第 k 个定义命名为 `v_k`；
+  `v_0` 为隐式入口版本，表示程序输入（未定义即引用的变量）。
+- **phi 参数**：按边记录 `phi(v_i@B前驱, ...)`，与可达前驱一一对应。
+
+## SSA 正确性保证
+
+- `verify_phi_placement`：独立复算每个变量的迭代支配边界，逐变量核对
+  phi 位置；测试中同时用快速 DF 与暴力 DF（`df_brute`）双重核对，
+  并断言 phi 只落在汇合点。
+- `verify_ssa`：每个版本恰好定义一次；每次使用的版本均有定义；
+  定义支配使用（phi 参数按“定义支配该边前驱”判定）；phi 参数与
+  可达前驱一一对应。
+- 解释器对拍：随机生成保证终止的结构化程序（赋值 / if-else / 计数循环），
+  同一输入下 `run_tac` 与 `run_ssa` 返回值必须一致；
+  3 个种子 × 300–1000 轮全部通过（单轮 phi 总数约 1.2 万）。
 
 ## 正确性保证
 
@@ -69,10 +100,18 @@ python3 bench.py                    # 万块规模耗时基准
 
 ```python
 from cfgdom import (build_cfg, dominators, dominator_tree,
-                    dominance_frontier, dom_brute, df_brute)
+                    dominance_frontier, dom_brute, df_brute,
+                    to_ssa, verify_phi_placement, verify_ssa,
+                    run_tac, run_ssa)
 
 cfg = build_cfg(tac_source)   # cfg.blocks / cfg.reachable_ids / cfg.unreachable
 dom = dominators(cfg)         # {块号: 支配集}，仅可达块
 idom, children = dominator_tree(cfg)
 df = dominance_frontier(cfg)  # {块号: 支配边界}，仅可达块
+
+prog = to_ssa(tac_source)     # SSAProgram：prog.to_text() 输出可读 SSA
+verify_phi_placement(prog, cfg)   # 核对 phi 位置 == 迭代支配边界
+verify_ssa(prog, cfg)             # 核对定义唯一 / 使用有定义 / 定义支配使用
+run_tac(tac_source, {"n": 100})   # 优化前解释执行
+run_ssa(prog, {"n": 100})         # 优化后解释执行（结果应一致）
 ```
