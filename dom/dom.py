@@ -99,12 +99,22 @@ def dominance_frontiers(cfg, idom):
     df = {name: set() for name in idom}
     for name in idom:
         preds = [p for p in cfg.blocks[name].preds if p in idom]
-        if len(preds) < 2:
+        # The classic ">= 2 preds" filter must not skip the entry block:
+        # with a self loop or a back edge to the entry, the entry is its
+        # own frontier (loop headers need phi nodes there too).
+        if len(preds) < 2 and name != cfg.entry:
             continue
         for pred in preds:
             runner = pred
-            while runner != idom[name]:
+            while True:
+                if runner == idom[name] and runner != name:
+                    break
                 df[runner].add(name)
+                if runner == name:
+                    # Reached the frontier block itself.  For the entry
+                    # (idom[entry] == entry) this is exactly the case the
+                    # usual "walk up to idom[name]" loop misses.
+                    break
                 runner = idom[runner]
     return df
 

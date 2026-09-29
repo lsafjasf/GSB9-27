@@ -5,7 +5,8 @@ import sys
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 from dom import (parse_tac, compute_idom, dominator_sets, dominator_tree,
-                 dominance_frontiers, brute_dominator_sets, brute_idom)
+                 dominance_frontiers, brute_dominator_sets, brute_idom,
+                 brute_dominance_frontiers)
 
 CASES = os.path.join(os.path.dirname(__file__), "..", "cases")
 
@@ -47,6 +48,13 @@ EXPECT = {
                "exit1": set(), "exit2": set()},
         "unreachable": ["dead1", "dead2"],
     },
+    "06_entry_backedge_parser_tolerance.tac": {
+        "idom": {"entry": "entry", "alias": "entry", "toexit": "alias",
+                 "body": "alias", "exit": "toexit"},
+        "df": {"entry": {"entry"}, "alias": {"entry"}, "toexit": set(),
+               "body": {"entry", "body"}, "exit": set()},
+        "unreachable": [],
+    },
 }
 
 
@@ -71,6 +79,7 @@ def run_case(fname):
     # cross-check against brute force
     assert dominator_sets(idom) == brute_dominator_sets(cfg), fname
     assert idom == brute_idom(cfg), fname
+    assert df == brute_dominance_frontiers(cfg), fname
 
     # sanity: dom tree children partition reachable nodes minus entry
     tree = dominator_tree(idom)

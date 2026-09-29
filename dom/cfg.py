@@ -62,11 +62,11 @@ class CFG:
 
 def _parse_instr(line):
     if line.startswith("if ") and " goto " in line:
-        # if <cond> goto L1 else goto L2
+        # if <cond> goto L1 [else goto L2]   (no else: fall through)
         head, _, rest = line.partition(" goto ")
         true_t, _, rest2 = rest.partition(" else goto ")
         return Instr("cbranch", line, true_target=true_t.strip(),
-                     false_target=rest2.strip())
+                     false_target=rest2.strip() or None)
     if line.startswith("goto "):
         return Instr("jump", line, target=line[len("goto "):].strip())
     if line == "return" or line.startswith("return "):
@@ -118,8 +118,9 @@ def parse_tac(text):
     for label, instr in items:
         if label is not None:
             if pending_label is not None:
-                raise ValueError("consecutive labels: %s, %s"
-                                 % (pending_label, label))
+                # consecutive labels: the earlier one becomes an empty
+                # block that falls through to the next one
+                new_block(pending_label)
             pending_label = label
             continue
         starts_new = (cur is None) or (
@@ -147,7 +148,10 @@ def parse_tac(text):
         last = block.instrs[-1]
         if last.kind == "cbranch":
             block.succs.append(last.true_target)
-            block.succs.append(last.false_target)
+            if last.false_target is not None:
+                block.succs.append(last.false_target)
+            elif fall is not None:
+                block.succs.append(fall)   # no else: fall through
         elif last.kind == "jump":
             block.succs.append(last.target)
         elif last.kind == "return":

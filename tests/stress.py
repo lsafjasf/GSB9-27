@@ -11,7 +11,8 @@ import sys
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 from dom.cfg import CFG, Block
 from dom import (compute_idom, dominator_sets, dominance_frontiers,
-                 brute_dominator_sets, brute_idom)
+                 brute_dominator_sets, brute_idom,
+                 brute_dominance_frontiers)
 
 
 def random_cfg(rng, n):
@@ -53,14 +54,13 @@ def check(cfg, gid):
     reachable = cfg.reachable_names()
     assert set(idom) == reachable, "graph %d: reachable mismatch" % gid
 
-    # dominance frontier sanity: b in DF[a]  =>  a dominates a pred of b
-    # but does not strictly dominate b
+    # dominance frontier: full set equality against the reference
+    # (b in DF[a]  <=>  a dominates a pred of b and does not strictly
+    # dominate b)
     df = dominance_frontiers(cfg, idom)
-    for a, fronts in df.items():
-        for b in fronts:
-            assert any(a in doms[p] for p in cfg.blocks[b].preds
-                       if p in doms), (gid, a, b)
-            assert a == b or a not in doms[b] - {b}, (gid, a, b)
+    ref_df = brute_dominance_frontiers(cfg, doms)
+    assert df == ref_df, "graph %d: DF differs\nfast=%s\nbrute=%s" \
+        % (gid, df, ref_df)
 
 
 def main():
