@@ -9,7 +9,8 @@
 - `dom/dom.py` — 支配分析：RPO、idom（Cooper-Harvey-Kennedy 迭代算法）、
   支配集合、支配树、支配边界（Cytron 算法）；只处理可达块
 - `dom/brute.py` — 暴力参考实现：删点后做可达性判定，O(V·(V+E))
-- `cases/` — 结构用例集（单块、直线、菱形、嵌套循环、多出口+自环+不可达）
+- `cases/` — 结构用例集（单块、直线、菱形、嵌套循环、多出口+自环+不可达、
+  入口自环+回边、连续标号+无 else 条件跳转）
 - `tests/test_structures.py` — 结构用例断言（含与暴力实现的对拍）
 - `tests/stress.py` — 随机图对拍脚本
 - `bench.py` — 大规模图构建/分析耗时基准
@@ -19,12 +20,14 @@
 ```
 <label>:
   <dst> = <expr>
-  if <cond> goto <L1> else goto <L2>
+  if <cond> goto <L1> [else goto <L2>]
   goto <L>
   return
 ```
 
 `#` 起注释；基本块在标号处和控制转移后开始，末尾无转移时顺序落入下一块。
+允许连续多个标号（作为同一块的别名）；`if` 省略 `else goto` 时，
+条件不成立分支顺序落入下一块。
 
 ## 运行命令
 
@@ -40,8 +43,9 @@ python3 bench.py 2500 --dom-sets      # 额外物化完整支配集合（O(n^2) 
 - 快速算法（CHK）算出的每个块的支配集合、idom，与暴力可达性参考
   实现逐一对比：3 个种子 × 共 8000 张随机图（1–24 块，含自环、多出口、
   不可达块）全部一致。
-- 支配边界性质校验：`b ∈ DF[a]` 当且仅当 `a` 支配 `b` 的某个前驱、
-  且不严格支配 `b`。
+- 支配边界对拍：快速算法（Cytron）的 DF 与按定义暴力计算的 DF
+  （`b ∈ DF[a]` 当且仅当 `a` 支配 `b` 的某个前驱、且不严格支配 `b`，
+  含入口自环/回边情形）做集合相等校验。
 - 不可达块单独列出于 `CFG.unreachable_names()`，不参与 idom/DF 计算
   （断言 `set(idom) == reachable`）。
 

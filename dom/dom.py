@@ -99,13 +99,21 @@ def dominance_frontiers(cfg, idom):
     df = {name: set() for name in idom}
     for name in idom:
         preds = [p for p in cfg.blocks[name].preds if p in idom]
-        if len(preds) < 2:
+        # The >=2-predecessors shortcut is valid for every block except
+        # the entry: a single back edge (or a self loop) into the entry
+        # still puts the entry on the frontier of its predecessors.
+        if len(preds) < 2 and name != cfg.entry:
             continue
+        # idom[entry] == entry would stop the walk immediately; treat
+        # the entry as having no idom so self loops / back edges to it
+        # are propagated correctly.
+        stop = idom[name] if name != cfg.entry else None
         for pred in preds:
             runner = pred
-            while runner != idom[name]:
+            while runner is not None and runner != stop:
                 df[runner].add(name)
-                runner = idom[runner]
+                parent = idom[runner]
+                runner = None if parent == runner else parent
     return df
 
 

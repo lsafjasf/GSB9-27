@@ -52,3 +52,23 @@ def brute_idom(cfg):
                 idom[n] = cand
                 break
     return idom
+
+
+def brute_dominance_frontiers(cfg, doms=None):
+    """Dominance frontiers by definition, for cross-checking.
+
+    b in DF[a]  <=>  a dominates some (reachable) predecessor of b
+    and a does not strictly dominate b.
+    """
+    if doms is None:
+        doms = brute_dominator_sets(cfg)
+    reachable = cfg.reachable_names()
+    df = {a: set() for a in reachable}
+    for b in reachable:
+        preds = [p for p in cfg.blocks[b].preds if p in reachable]
+        for a in reachable:
+            if a != b and a in doms[b]:
+                continue         # a strictly dominates b
+            if any(a in doms[p] for p in preds):
+                df[a].add(b)
+    return df
