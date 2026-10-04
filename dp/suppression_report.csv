@@ -1,0 +1,6 @@
+group,true_count,noisy_count,published,suppression_threshold
+上海,420,420.2132,True,10.0
+北京,500,500.9159,True,10.0
+小县城A,7,,False,10.0
+小县城B,3,,False,10.0
+广州,60,59.2665,True,10.0
