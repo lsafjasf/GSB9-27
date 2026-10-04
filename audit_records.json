@@ -1,0 +1,56 @@
+{
+  "rotations": [
+    {
+      "ts": 1791117107.2102478,
+      "event": "privilege-escalation-rotation",
+      "old_sid": "GlGybEuOkivK5GBADa-p8dvcvKFKkgcu9VMygHl95zU",
+      "new_sid": "o3AVpZd25m6sjFFohqcOTNrClDD_HEysxrhWGGcIAFo",
+      "user_id": "demo-user"
+    }
+  ],
+  "rejections": [
+    {
+      "ts": 1791117107.2108083,
+      "sid": "GlGybEuOkivK5GBADa-p8dvcvKFKkgcu9VMygHl95zU",
+      "reason": "unknown-or-invalidated-sid",
+      "thread": "old-4"
+    },
+    {
+      "ts": 1791117107.2109008,
+      "sid": "GlGybEuOkivK5GBADa-p8dvcvKFKkgcu9VMygHl95zU",
+      "reason": "unknown-or-invalidated-sid",
+      "thread": "old-0"
+    },
+    {
+      "ts": 1791117107.2109635,
+      "sid": "GlGybEuOkivK5GBADa-p8dvcvKFKkgcu9VMygHl95zU",
+      "reason": "unknown-or-invalidated-sid",
+      "thread": "old-1"
+    },
+    {
+      "ts": 1791117107.2110145,
+      "sid": "GlGybEuOkivK5GBADa-p8dvcvKFKkgcu9VMygHl95zU",
+      "reason": "unknown-or-invalidated-sid",
+      "thread": "old-2"
+    },
+    {
+      "ts": 1791117107.2110634,
+      "sid": "GlGybEuOkivK5GBADa-p8dvcvKFKkgcu9VMygHl95zU",
+      "reason": "unknown-or-invalidated-sid",
+      "thread": "old-3"
+    },
+    {
+      "ts": 1791117107.2111197,
+      "sid": "o3AVpZd25m6sjFFohqcOTNrClDD_HEysxrhWGGcIAFo",
+      "reason": "unknown-or-invalidated-sid",
+      "thread": "MainThread"
+    }
+  ],
+  "logouts": [
+    {
+      "ts": 1791117107.211118,
+      "sid": "o3AVpZd25m6sjFFohqcOTNrClDD_HEysxrhWGGcIAFo",
+      "user_id": "demo-user"
+    }
+  ]
+}
