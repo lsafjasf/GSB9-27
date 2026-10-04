@@ -1,0 +1,78 @@
+{
+  "name": "demo-plugin",
+  "version": "1.0.0",
+  "functions": [
+    {
+      "name": "ping",
+      "params": [{"name": "message", "type": "str", "required": true}],
+      "returns": {"type": "str"}
+    },
+    {
+      "name": "greet",
+      "params": [
+        {"name": "name", "type": "str", "required": true},
+        {"name": "punctuation", "type": "str", "required": false, "default": "."}
+      ],
+      "returns": {"type": "str"}
+    },
+    {
+      "name": "get_user",
+      "params": [{"name": "user_id", "type": "int", "required": true}],
+      "returns": {
+        "type": "object",
+        "fields": [
+          {"name": "id", "type": "int"},
+          {"name": "name", "type": "str"},
+          {"name": "email", "type": "str", "required": false}
+        ]
+      }
+    },
+    {
+      "name": "resize",
+      "params": [
+        {"name": "path", "type": "str", "required": true},
+        {"name": "width", "type": "int", "required": false, "default": 100}
+      ],
+      "returns": {
+        "type": "object",
+        "fields": [
+          {"name": "path", "type": "str"},
+          {"name": "width", "type": "int"},
+          {"name": "fmt", "type": "str"}
+        ]
+      }
+    },
+    {
+      "name": "sum2",
+      "params": [
+        {"name": "a", "type": "int", "required": true},
+        {"name": "b", "type": "int", "required": true}
+      ],
+      "returns": {"type": "int"}
+    },
+    {
+      "name": "upload",
+      "params": [
+        {"name": "path", "type": "str", "required": true},
+        {"name": "compress", "type": "bool", "required": false, "default": false},
+        {"name": "quality", "type": "int", "required": false, "default": 80}
+      ],
+      "returns": {
+        "type": "object",
+        "fields": [
+          {"name": "path", "type": "str"},
+          {"name": "compress", "type": "bool"},
+          {"name": "size", "type": "int"}
+        ]
+      }
+    },
+    {
+      "name": "connect",
+      "params": [
+        {"name": "host", "type": "str", "required": true},
+        {"name": "port", "type": "int", "required": true}
+      ],
+      "returns": {"type": "str"}
+    }
+  ]
+}

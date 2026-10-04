@@ -1,0 +1,22 @@
+{
+  "cases": [
+    {"id": "c1", "function": "ping", "args": ["hi"],
+     "note": "完全兼容：接口与行为均未变"},
+    {"id": "c2", "function": "greet", "args": ["ann"],
+     "note": "默认值变化：省略 punctuation 时行为不同"},
+    {"id": "c3", "function": "get_user", "args": [7],
+     "note": "返回结构扩展：新版多出 email 字段"},
+    {"id": "c4", "function": "resize", "args": ["a.png"], "kwargs": {"width": 80},
+     "note": "删除可选参数：不传 fmt 时仍可正常调用"},
+    {"id": "c5", "function": "resize", "args": ["a.png"], "kwargs": {"fmt": "jpg"},
+     "note": "删除可选参数：仍按旧接口传 fmt 则新版报错"},
+    {"id": "c6", "function": "sum2", "args": [3, 1],
+     "note": "接口未变但实现回归：静态判兼容、实际结果不同"},
+    {"id": "c7", "function": "legacy",
+     "note": "删除函数：新版直接 AttributeError"},
+    {"id": "c8", "function": "upload", "args": ["f.bin"],
+     "note": "新增可选参数：旧调用不受影响"},
+    {"id": "c9", "function": "connect", "args": ["db.local"],
+     "note": "新增必填参数：旧调用缺参报错"}
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "name": "demo-plugin",
+  "version": "1.0.0",
+  "functions": [
+    {
+      "name": "ping",
+      "params": [{"name": "message", "type": "str", "required": true}],
+      "returns": {"type": "str"}
+    },
+    {
+      "name": "greet",
+      "params": [
+        {"name": "name", "type": "str", "required": true},
+        {"name": "punctuation", "type": "str", "required": false, "default": "!"}
+      ],
+      "returns": {"type": "str"}
+    },
+    {
+      "name": "get_user",
+      "params": [{"name": "user_id", "type": "int", "required": true}],
+      "returns": {
+        "type": "object",
+        "fields": [
+          {"name": "id", "type": "int"},
+          {"name": "name", "type": "str"}
+        ]
+      }
+    },
+    {
+      "name": "resize",
+      "params": [
+        {"name": "path", "type": "str", "required": true},
+        {"name": "width", "type": "int", "required": false, "default": 100},
+        {"name": "fmt", "type": "str", "required": false, "default": "png"}
+      ],
+      "returns": {
+        "type": "object",
+        "fields": [
+          {"name": "path", "type": "str"},
+          {"name": "width", "type": "int"},
+          {"name": "fmt", "type": "str"}
+        ]
+      }
+    },
+    {
+      "name": "sum2",
+      "params": [
+        {"name": "a", "type": "int", "required": true},
+        {"name": "b", "type": "int", "required": true}
+      ],
+      "returns": {"type": "int"}
+    },
+    {
+      "name": "legacy",
+      "params": [],
+      "returns": {"type": "str"}
+    },
+    {
+      "name": "upload",
+      "params": [
+        {"name": "path", "type": "str", "required": true},
+        {"name": "compress", "type": "bool", "required": false, "default": false}
+      ],
+      "returns": {
+        "type": "object",
+        "fields": [
+          {"name": "path", "type": "str"},
+          {"name": "compress", "type": "bool"},
+          {"name": "size", "type": "int"}
+        ]
+      }
+    },
+    {
+      "name": "connect",
+      "params": [{"name": "host", "type": "str", "required": true}],
+      "returns": {"type": "str"}
+    }
+  ]
+}
