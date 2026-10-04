@@ -1,0 +1,15 @@
+mode: incremental
+changed: demo/src/calculator.py, demo/data/users.json, README.md
+infer: demo/src/calculator.py -> py-syntax, py-style, py-tests
+infer: demo/data/users.json -> json-validate
+infer: README.md: ignored (no check depends on it)
+affected: py-syntax, py-style, py-tests, json-validate
+skipped: config-validate (inputs unchanged)
+checks-run: 4
+[PASS] py-syntax (0.5ms)
+[PASS] py-style (0.2ms)
+[PASS] py-tests (1.1ms)
+       ran 5 test(s)
+[PASS] json-validate (0.1ms)
+total-check-ms: 1.8
+verdict: PASS (4/4 passed)

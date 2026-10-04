@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "ignore_patterns": ["**.md", "docs/**", ".git/**"],
+  "config_files": ["precheck.json", "DEPENDENCY_MAP.md"],
+  "checks": [
+    {
+      "name": "py-syntax",
+      "patterns": ["demo/src/**.py", "demo/tests/**.py"]
+    },
+    {
+      "name": "py-style",
+      "patterns": ["demo/src/**.py"],
+      "args": {"max_line_length": 100}
+    },
+    {
+      "name": "py-tests",
+      "patterns": ["demo/src/**.py", "demo/tests/**.py"],
+      "args": {"test_dir": "demo/tests", "pythonpath": ["demo/src"]}
+    },
+    {
+      "name": "json-validate",
+      "patterns": ["demo/data/**.json"]
+    },
+    {
+      "name": "config-validate",
+      "patterns": ["precheck.json"]
+    }
+  ]
+}

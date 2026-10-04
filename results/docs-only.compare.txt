@@ -1,0 +1,6 @@
+compare: changed=[README.md]
+mode: none
+affected checks: (none)
+verdict(affected): incremental=PASS full=PASS
+verdict(overall):  incremental=PASS full=PASS
+result: CONSISTENT

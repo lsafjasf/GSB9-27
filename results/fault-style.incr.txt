@@ -1,0 +1,13 @@
+mode: incremental
+changed: demo/src/calculator.py
+infer: demo/src/calculator.py -> py-syntax, py-style, py-tests
+affected: py-syntax, py-style, py-tests
+skipped: json-validate, config-validate (inputs unchanged)
+checks-run: 3
+[PASS] py-syntax (0.9ms)
+[FAIL] py-style (0.2ms)
+       demo/src/calculator.py:21: line too long (155 > 100)
+[PASS] py-tests (1.1ms)
+       ran 5 test(s)
+total-check-ms: 2.2
+verdict: FAIL (2/3 passed)

@@ -1,0 +1,9 @@
+mode: incremental
+changed: demo/data/users.json
+infer: demo/data/users.json -> json-validate
+affected: json-validate
+skipped: py-syntax, py-style, py-tests, config-validate (inputs unchanged)
+checks-run: 1
+[PASS] json-validate (0.2ms)
+total-check-ms: 0.2
+verdict: PASS (1/1 passed)

@@ -1,0 +1,11 @@
+compare: changed=[demo/tests/test_calculator.py]
+mode: incremental
+affected checks: py-syntax, py-tests
+  py-syntax: identical (PASS)
+  py-tests: identical (FAIL)
+  py-style: skipped by incremental, full-run status PASS
+  json-validate: skipped by incremental, full-run status PASS
+  config-validate: skipped by incremental, full-run status PASS
+verdict(affected): incremental=FAIL full=FAIL
+verdict(overall):  incremental=FAIL full=FAIL
+result: CONSISTENT

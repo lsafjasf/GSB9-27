@@ -1,0 +1,11 @@
+compare: changed=[demo/src/strings.py]
+mode: incremental
+affected checks: py-syntax, py-style, py-tests
+  py-syntax: identical (FAIL)
+  py-style: identical (PASS)
+  py-tests: identical (FAIL)
+  json-validate: skipped by incremental, full-run status PASS
+  config-validate: skipped by incremental, full-run status PASS
+verdict(affected): incremental=FAIL full=FAIL
+verdict(overall):  incremental=FAIL full=FAIL
+result: CONSISTENT

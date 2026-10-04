@@ -1,0 +1,12 @@
+mode: incremental
+changed: demo/tests/test_calculator.py
+infer: demo/tests/test_calculator.py -> py-syntax, py-tests
+affected: py-syntax, py-tests
+skipped: py-style, json-validate, config-validate (inputs unchanged)
+checks-run: 2
+[PASS] py-syntax (0.6ms)
+[FAIL] py-tests (1.3ms)
+       ran 6 test(s)
+       test_multiply_by_zero (test_calculator.CalculatorTest.test_multiply_by_zero): AssertionError: 0 != 1
+total-check-ms: 2.0
+verdict: FAIL (1/2 passed)

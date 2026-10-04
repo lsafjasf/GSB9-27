@@ -1,0 +1,13 @@
+mode: incremental->full
+changed: demo/assets/logo.png
+fallback: UNKNOWN_IMPACT: demo/assets/logo.png matches no declared dependency pattern
+affected: py-syntax, py-style, py-tests, json-validate, config-validate
+checks-run: 5
+[PASS] py-syntax (0.4ms)
+[PASS] py-style (0.1ms)
+[PASS] py-tests (0.7ms)
+       ran 5 test(s)
+[PASS] json-validate (0.2ms)
+[PASS] config-validate (0.0ms)
+total-check-ms: 1.5
+verdict: PASS (5/5 passed)

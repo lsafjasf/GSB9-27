@@ -1,0 +1,13 @@
+mode: full
+affected: py-syntax, py-style, py-tests, json-validate, config-validate
+checks-run: 5
+[FAIL] py-syntax (0.5ms)
+       demo/src/strings.py:8: expected ':'
+[PASS] py-style (0.1ms)
+[FAIL] py-tests (1.2ms)
+       ran 4 test(s)
+       test_strings (unittest.loader._FailedTest.test_strings): SyntaxError: expected ':'
+[PASS] json-validate (0.2ms)
+[PASS] config-validate (0.0ms)
+total-check-ms: 2.0
+verdict: FAIL (3/5 passed)

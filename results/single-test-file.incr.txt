@@ -1,0 +1,11 @@
+mode: incremental
+changed: demo/tests/test_calculator.py
+infer: demo/tests/test_calculator.py -> py-syntax, py-tests
+affected: py-syntax, py-tests
+skipped: py-style, json-validate, config-validate (inputs unchanged)
+checks-run: 2
+[PASS] py-syntax (0.6ms)
+[PASS] py-tests (1.0ms)
+       ran 6 test(s)
+total-check-ms: 1.6
+verdict: PASS (2/2 passed)

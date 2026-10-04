@@ -1,0 +1,11 @@
+mode: full
+affected: py-syntax, py-style, py-tests, json-validate, config-validate
+checks-run: 5
+[PASS] py-syntax (0.6ms)
+[PASS] py-style (0.1ms)
+[PASS] py-tests (1.2ms)
+       ran 6 test(s)
+[PASS] json-validate (0.2ms)
+[PASS] config-validate (0.0ms)
+total-check-ms: 2.1
+verdict: PASS (5/5 passed)

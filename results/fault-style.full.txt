@@ -1,0 +1,12 @@
+mode: full
+affected: py-syntax, py-style, py-tests, json-validate, config-validate
+checks-run: 5
+[PASS] py-syntax (0.8ms)
+[FAIL] py-style (0.2ms)
+       demo/src/calculator.py:21: line too long (155 > 100)
+[PASS] py-tests (1.4ms)
+       ran 5 test(s)
+[PASS] json-validate (0.2ms)
+[PASS] config-validate (0.0ms)
+total-check-ms: 2.6
+verdict: FAIL (4/5 passed)

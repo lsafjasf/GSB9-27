@@ -1,0 +1,12 @@
+mode: full
+affected: py-syntax, py-style, py-tests, json-validate, config-validate
+checks-run: 5
+[PASS] py-syntax (0.7ms)
+[PASS] py-style (0.1ms)
+[PASS] py-tests (0.9ms)
+       ran 5 test(s)
+[FAIL] json-validate (0.2ms)
+       demo/data/users.json: Expecting value: line 2 column 1 (char 29)
+[PASS] config-validate (0.1ms)
+total-check-ms: 1.9
+verdict: FAIL (4/5 passed)

@@ -1,0 +1,12 @@
+compare: changed=[demo/assets/logo.png]
+mode: incremental->full
+fallback: UNKNOWN_IMPACT: demo/assets/logo.png matches no declared dependency pattern
+affected checks: py-syntax, py-style, py-tests, json-validate, config-validate
+  py-syntax: identical (PASS)
+  py-style: identical (PASS)
+  py-tests: identical (PASS)
+  json-validate: identical (PASS)
+  config-validate: identical (PASS)
+verdict(affected): incremental=PASS full=PASS
+verdict(overall):  incremental=PASS full=PASS
+result: CONSISTENT

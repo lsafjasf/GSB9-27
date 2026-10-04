@@ -1,0 +1,11 @@
+compare: changed=[demo/data/users.json]
+mode: incremental
+affected checks: json-validate
+  json-validate: identical (FAIL)
+  py-syntax: skipped by incremental, full-run status PASS
+  py-style: skipped by incremental, full-run status PASS
+  py-tests: skipped by incremental, full-run status PASS
+  config-validate: skipped by incremental, full-run status PASS
+verdict(affected): incremental=FAIL full=FAIL
+verdict(overall):  incremental=FAIL full=FAIL
+result: CONSISTENT

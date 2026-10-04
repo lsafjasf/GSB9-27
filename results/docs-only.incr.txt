@@ -1,0 +1,6 @@
+mode: none
+changed: README.md
+infer: README.md: ignored (no check depends on it)
+checks-run: 0
+total-check-ms: 0.0
+verdict: PASS (0/0 passed)
