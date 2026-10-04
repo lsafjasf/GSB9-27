@@ -1,0 +1,97 @@
+{
+  "nodes": [
+    {
+      "data_id": "crm.customers",
+      "label": {
+        "level": "CONFIDENTIAL",
+        "restrictions": [
+          "PII"
+        ]
+      },
+      "created_at": "2026-10-04T13:10:42+00:00",
+      "system": "crm",
+      "parents": [],
+      "op": null,
+      "payload_digest": "abf0232b9e88b23ae9336e3ac71a6d76301c3630a3c1409aa35bd4b190f3250a"
+    },
+    {
+      "data_id": "legacy.orders",
+      "label": {
+        "level": "UNLABELED",
+        "restrictions": []
+      },
+      "created_at": "2026-10-04T13:10:42+00:00",
+      "system": "legacy",
+      "parents": [],
+      "op": null,
+      "payload_digest": "2056072f481863bcf21762be4488eaa2123865ba13072d31e6b45ec669ab1ef2"
+    },
+    {
+      "data_id": "etl.customer_orders",
+      "label": {
+        "level": "CONFIDENTIAL",
+        "restrictions": [
+          "PII"
+        ]
+      },
+      "created_at": "2026-10-04T13:10:42+00:00",
+      "system": "etl",
+      "parents": [
+        "crm.customers",
+        "legacy.orders"
+      ],
+      "op": {
+        "system": "etl",
+        "transform": "join+cleanse",
+        "note": "客户表与历史订单按客户ID关联"
+      },
+      "payload_digest": "3a1ebd24883cdcdee0715de6b980232184bb7a6732b591c8f57cafed497d88c2"
+    },
+    {
+      "data_id": "bi.weekly_report",
+      "label": {
+        "level": "CONFIDENTIAL",
+        "restrictions": [
+          "PII"
+        ]
+      },
+      "created_at": "2026-10-04T13:10:42+00:00",
+      "system": "bi",
+      "parents": [
+        "etl.customer_orders"
+      ],
+      "op": {
+        "system": "bi",
+        "transform": "aggregate",
+        "note": "周报聚合"
+      },
+      "payload_digest": "d2e458ea1092a0cc6812bd906a91faa9baf6582798993238ee78f4ad8bd24411"
+    },
+    {
+      "data_id": "export.weekly_report_csv",
+      "label": {
+        "level": "CONFIDENTIAL",
+        "restrictions": [
+          "PII"
+        ]
+      },
+      "created_at": "2026-10-04T13:10:42+00:00",
+      "system": "export",
+      "parents": [
+        "bi.weekly_report"
+      ],
+      "op": {
+        "system": "export",
+        "transform": "to_csv",
+        "note": "导出文件，加密=False"
+      },
+      "payload_digest": "57bbcb0d1c738e5f756eed0141326cf78c25955e19cac9c8f4b185d08272aeb1"
+    }
+  ],
+  "final_label": {
+    "level": "CONFIDENTIAL",
+    "restrictions": [
+      "PII"
+    ]
+  }
+}
