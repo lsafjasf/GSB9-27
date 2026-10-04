@@ -1,0 +1,24 @@
+INCCHECK-REPORT v1.0.0
+ROOT <repo>
+C001 src/shop/__init__.py PASS
+C001 src/shop/billing.py PASS
+C001 src/shop/cart.py PASS
+C001 src/shop/checkout.py PASS
+C001 src/shop/inventory.py PASS
+C001 src/shop/pricing.py PASS
+C002 src/shop/__init__.py PASS
+C002 src/shop/billing.py PASS
+C002 src/shop/cart.py PASS
+C002 src/shop/checkout.py PASS
+C002 src/shop/inventory.py PASS
+C002 src/shop/pricing.py PASS
+C003 src/shop/__init__.py PASS
+C003 src/shop/billing.py PASS
+C003 src/shop/cart.py PASS
+C003 src/shop/checkout.py PASS
+C003 src/shop/inventory.py FAIL :: lines exceed 80 chars: 8
+C003 src/shop/pricing.py PASS
+C004 <repo> PASS
+C005 docs/API.md PASS
+C005 docs/README.md PASS
+SUMMARY total=21 failed=1

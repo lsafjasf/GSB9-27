@@ -1,0 +1,3 @@
+.inccheck/
+__pycache__/
+*.pyc

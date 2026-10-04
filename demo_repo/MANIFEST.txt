@@ -1,0 +1,7 @@
+# shipped modules (consumed by global check C004)
+shop
+shop.billing
+shop.cart
+shop.checkout
+shop.inventory
+shop.pricing
