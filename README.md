@@ -9,13 +9,37 @@
 - `ringbuffer.py` — 库：`RingBuffer`、`Reader`、`OverrunError`
 - `test_ringbuffer.py` — 覆盖与并发自测（6 个用例）
 - `bench.py` — 吞吐基准
+- `prioritize.py` — 用例排序库：按覆盖率增量贪心排序（见下节）
+- `test_prioritize.py` — 排序库自测（12 个用例，含边界情形）
+- `prioritization_data.json` — 示例排序结果与累积曲线数据
 
 ## 运行
 
 ```bash
 python3 -m unittest test_ringbuffer -v   # 自测
 python3 bench.py                          # 吞吐基准（约 20s）
+python3 -m unittest test_prioritize -v    # 用例排序库自测
+python3 prioritize.py                     # 打印示例排序结果 + 累积曲线（JSON）
 ```
+
+## 用例排序（按覆盖率增量）
+
+`prioritize.py` 解决回归用例太多跑不完的问题：按覆盖率增益贪心排序，
+优先执行能覆盖新代码的用例。
+
+- `prioritize(coverage)` — 输入 `{用例id: {覆盖行集合}}`，返回排序后的
+  用例 id 列表。每步选边际增益最大的用例；增益相同时按确定性规则
+  打破平局：总覆盖行数多者优先，再按用例 id 字典序。规则是候选集上
+  的全序，因此排序结果只取决于覆盖率集合本身，与输入顺序无关
+  （自测中对全部排列做了断言）。
+- `cumulative_curve(coverage, order=None, top=None)` — 沿排序结果给出
+  累积曲线：`rank / test / gain / covered / pct`，`top` 可只取前若干行。
+- 边界行为：完全重叠的用例首个之后增益为 0；互不重叠时按集合大小
+  排序；未覆盖任何行的用例沉到队尾（按同一确定性规则排列）；空集合
+  输入返回空列表；全部无覆盖时 pct 记为 100。
+
+示例数据见 `prioritization_data.json`（8 个用例，前 5 个即达 100% 覆盖：
+42.86% → 64.29% → 85.71% → 92.86% → 100%）。
 
 ## 使用
 

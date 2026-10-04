@@ -1,0 +1,71 @@
+{
+  "order": [
+    "test_upload",
+    "test_login",
+    "test_profile",
+    "test_logout",
+    "test_search",
+    "test_download",
+    "test_empty",
+    "test_noop"
+  ],
+  "total_coverable_lines": 14,
+  "cumulative_curve": [
+    {
+      "rank": 1,
+      "test": "test_upload",
+      "gain": 6,
+      "covered": 6,
+      "pct": 42.86
+    },
+    {
+      "rank": 2,
+      "test": "test_login",
+      "gain": 3,
+      "covered": 9,
+      "pct": 64.29
+    },
+    {
+      "rank": 3,
+      "test": "test_profile",
+      "gain": 3,
+      "covered": 12,
+      "pct": 85.71
+    },
+    {
+      "rank": 4,
+      "test": "test_logout",
+      "gain": 1,
+      "covered": 13,
+      "pct": 92.86
+    },
+    {
+      "rank": 5,
+      "test": "test_search",
+      "gain": 1,
+      "covered": 14,
+      "pct": 100.0
+    },
+    {
+      "rank": 6,
+      "test": "test_download",
+      "gain": 0,
+      "covered": 14,
+      "pct": 100.0
+    },
+    {
+      "rank": 7,
+      "test": "test_empty",
+      "gain": 0,
+      "covered": 14,
+      "pct": 100.0
+    },
+    {
+      "rank": 8,
+      "test": "test_noop",
+      "gain": 0,
+      "covered": 14,
+      "pct": 100.0
+    }
+  ]
+}
