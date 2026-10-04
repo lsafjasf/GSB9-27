@@ -1,0 +1,82 @@
+{
+  "fields": [
+    {
+      "id": "F01",
+      "name": "mobile",
+      "source": "CRM-客户管理",
+      "samples": ["13812345678", "15998765432", "18700001111"]
+    },
+    {
+      "id": "F02",
+      "name": "id_card_no",
+      "source": "HR-人事系统",
+      "samples": ["11010519491231002X", "310110199001011234", "440305198807076543"]
+    },
+    {
+      "id": "F03",
+      "name": "bank_card",
+      "source": "财务系统",
+      "samples": ["6222020200011111222", "6225880123456783"]
+    },
+    {
+      "id": "F04",
+      "name": "remark",
+      "source": "客服工单",
+      "samples": ["11010519491231002X", "310110199001011234", "a.b@example.com", "lisi@mail.cn", "一般咨询，无敏感信息"]
+    },
+    {
+      "id": "F05",
+      "name": "user_idcard",
+      "source": "OA-办公系统",
+      "samples": ["E0001", "E0023", "E1042"]
+    },
+    {
+      "id": "F06",
+      "name": "contact_info",
+      "source": "CRM-客户管理",
+      "samples": ["zhangsan@example.com", "lisi_88@mail.cn", "13800001111"]
+    },
+    {
+      "id": "F07",
+      "name": "real_name",
+      "source": "HR-人事系统",
+      "samples": ["张伟", "李娜", "王芳"]
+    },
+    {
+      "id": "F08",
+      "name": "company_address",
+      "source": "官网公开页",
+      "samples": ["北京市海淀区中关村大街1号", "上海市浦东新区世纪大道100号"]
+    },
+    {
+      "id": "F09",
+      "name": "order_status",
+      "source": "订单中心",
+      "samples": ["PAID", "SHIPPED", "CANCELLED"]
+    },
+    {
+      "id": "F10",
+      "name": "score",
+      "source": "数据中台",
+      "samples": ["87", "92", "75"]
+    },
+    {
+      "id": "F11",
+      "name": "email",
+      "source": "CRM-客户管理",
+      "samples": []
+    },
+    {
+      "id": "F12",
+      "name": "id_card_remark",
+      "source": "测试库",
+      "samples": ["11010519491231002X", "N/A", "test", ""]
+    },
+    {
+      "id": "F13",
+      "name": "status",
+      "source": "官网公开页",
+      "samples": ["ACTIVE", "INACTIVE"]
+    }
+  ]
+}
