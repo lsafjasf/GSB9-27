@@ -1,0 +1,5 @@
+phase,offered,errors_offered,errors_kept,error_retention_pct,normal_offered,normal_kept,normal_retention_pct
+low_traffic,100,0,0,100.0,100,100,100.0
+traffic_spike,10000,12,12,100.0,9988,1623,16.2495
+rare_anomaly,4000,28,28,100.0,3972,1454,36.6062
+budget_exhausted,40000,423,423,100.0,39577,1266,3.1988
